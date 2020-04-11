@@ -2,45 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
 
-    <title>Feast and Fast: The art of food in Europe, 1500 –1800</title>
+    @include('includes.meta')
 
-    <!-- CSS -->
-<!-- Add Material font (Roboto) and Material icon as needed -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700"
-      rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Yrsa:500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link href="/css/material.min.css" rel="stylesheet">
-<link href="/css/site.css" rel="stylesheet">
-<link rel="icon" href="/favicon.ico"/>
-
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Feast &amp; Fast | Food defines us as individuals, communities, and nations: we are what we eat and, equally, what we don’t eat. When, where, why, how and with whom we eat are crucial to our identity. Feast &amp; Fast presents novel approaches to understanding the history and culture of food and eating.</title>
-<meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Feast &amp; Fast" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Food defines us as individuals, communities, and nations: we are what we eat and, equally, what we don’t eat. When, where, why, how and with whom we eat are crucial to our identity. Feast &amp; Fast presents novel approaches to understanding the history and culture of food and eating." />
-<meta property="og:description" content="Food defines us as individuals, communities, and nations: we are what we eat and, equally, what we don’t eat. When, where, why, how and with whom we eat are crucial to our identity. Feast &amp; Fast presents novel approaches to understanding the history and culture of food and eating." />
-<link rel="canonical" href="https://feast-and-fast.fitzmuseum.cam.ac.uk/" />
-<meta property="og:url" content="https://feast-and-fast.fitzmuseum.cam.ac.uk/" />
-<meta property="og:site_name" content="Feast &amp; Fast" />
-<script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://feast-and-fast.fitzmuseum.cam.ac.uk/images/logos/FitzLogo.png"}},"headline":"Feast &amp; Fast","@type":"WebSite","url":"https://feast-and-fast.fitzmuseum.cam.ac.uk/","name":"Feast &amp; Fast","description":"Food defines us as individuals, communities, and nations: we are what we eat and, equally, what we don’t eat. When, where, why, how and with whom we eat are crucial to our identity. Feast &amp; Fast presents novel approaches to understanding the history and culture of food and eating.","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+    @include('includes.css')
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="alternate" type="application/atom+xml" href="/feed/events.xml" />
-<link rel="alternate" type="application/atom+xml" href="/feed/discover.xml" />
-<link rel="alternate" type="application/atom+xml" href="/feed.xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="alternate" type="application/atom+xml" href="/feed/events.xml" />
+    <link rel="alternate" type="application/atom+xml" href="/feed/discover.xml" />
+    <link rel="alternate" type="application/atom+xml" href="/feed.xml" />
 
 </head>
 <body class="doc-body">
@@ -67,25 +40,25 @@
       <a class="nav-link" href="https://fitzmuseum.cam.ac.uk">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/about">Visit us</a>
+      <a class="nav-link" href="/visit-us">Visit us</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/discover">About us</a>
+      <a class="nav-link" href="/about-us">About us</a>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="/news">Latest news</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/labels">Objects and artworks</a>
+      <a class="nav-link" href="/object-and-artworks">Objects and artworks</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/events">Learn with us</a>
+      <a class="nav-link" href="/learning">Learn with us</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/film">Support us</a>
+      <a class="nav-link" href="/support-us">Support us</a>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="/museum-in-a-box">Our research</a>
+      <a class="nav-link" href="/research">Our research</a>
     </li>
 </ul>
 </div>
@@ -255,7 +228,7 @@
   gtag('config', 'UA-3319190-17');
 </script>
 
-
+@include('includes.fullscreen')
 
 </body>
 </html>

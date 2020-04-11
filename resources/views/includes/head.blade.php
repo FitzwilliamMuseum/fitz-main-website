@@ -7,4 +7,5 @@
       </div>
     </div>
   </div>
+  <div id="fullscreen-btn"><i class="fas fa-expand fa-inverse" ></i> </div>
 </div>

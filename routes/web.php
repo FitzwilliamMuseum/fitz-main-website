@@ -22,7 +22,11 @@ Route::resource('research', 'researchController');
 Route::resource('collections', 'collectionsController');
 Route::resource('visit-us', 'visitController');
 Route::resource('news', 'newsController');
+Route::resource('departments', 'departmentsController');
 
 Route::get('/news/article/{slug}/', 'newsController@article');
 
 Route::get('/collections/by-focus/{slug}/', 'collectionsController@details');
+Route::get('/departments/titled/{slug}/', 'departmentsController@details');
+Route::get('/{section}/{slug}/', 'pagesController@index');
+Route::get('/{section}/', 'pagesController@landing');
