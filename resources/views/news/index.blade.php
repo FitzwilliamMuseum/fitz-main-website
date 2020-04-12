@@ -1,13 +1,12 @@
 @extends('layouts/layout')
 
 @section('title','News from the Fitz')
-
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('content')
 <div class="row">
   @foreach($news['data'] as $project)
   <div class="col-md-6 mb-3">
-    <div class="card card-body h-100
-    intro-card ">
+    <div class="card card-body h-100">
 
     <div class="container h-100">
 

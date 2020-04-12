@@ -3,6 +3,7 @@
 @section('title','Our departments')
 
 @section('content')
+<div class="row">
   @foreach($departments['data'] as $dept)
   <div class="col-md-6 mb-3">
     <div class="card card-body h-100
@@ -25,6 +26,7 @@
     <a href="/departments/titled/{{ $dept['slug']}}" class="btn btn-dark">Read more</a>
   </div>
 
+</div>
 @endforeach
 </div>
 @endsection

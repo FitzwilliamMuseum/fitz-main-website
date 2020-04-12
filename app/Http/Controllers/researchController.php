@@ -19,5 +19,15 @@ class researchController extends Controller
       return view('research.index', compact('projects'));
     }
 
+    public function profiles()
+    {
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/staff_profiles?fields=*.*.*');
+      $profiles = $response->json();
+      return view('research.profiles', compact('profiles'));
+    }
 
+    public function profile()
+    {
+      return view('research.profile');
+    }
 }

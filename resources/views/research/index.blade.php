@@ -1,5 +1,6 @@
 @extends('layouts/layout')
 @section('title','Research projects')
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
 @section('content')
 
 <div class="row">

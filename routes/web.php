@@ -13,16 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::resource('aboutus', 'aboutUsController');
-Route::resource('research', 'researchController');
-Route::resource('collections', 'collectionsController');
-Route::resource('visit-us', 'visitController');
-Route::resource('news', 'newsController');
-Route::resource('departments', 'departmentsController');
+Route::get('/', 'homeController@index');
+Route::get('aboutus', 'aboutUsController@index');
+Route::get('research/projects', 'researchController@index');
+Route::get('research/staff-profiles', 'researchController@profiles');
+Route::get('research/staff-profiles/{slug}', 'researchController@profile');
+Route::get('collections', 'collectionsController@index');
+Route::get('visit-us', 'visitController@index');
+Route::get('news', 'newsController@index');
+Route::get('departments', 'departmentsController@index');
 
 Route::get('/news/article/{slug}/', 'newsController@article');
 

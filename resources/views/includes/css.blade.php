@@ -15,4 +15,22 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+      .second-parallax-home {
+        min-height: 200px;
+        background-image: url(@yield('parallax_two'));
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .third-parallax-home {
+        min-height: 200px;
+        background-image: url(@yield('parallax_three'));
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .parallax-home {
+        min-height: 200px;
+        background-image: url(@yield('parallax_home'));
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     </style>

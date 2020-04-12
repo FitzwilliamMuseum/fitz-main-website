@@ -5,7 +5,7 @@
       <div class="col-lg-12 col-xl-12 shadow-sm rounded bg-black-opacity">
         <h1 class="shout ">@yield('title')</h1>
       </div>
+      <div id="fullscreen-btn" class="col-lg-6 col-xl-6 shadow-sm rounded bg-black-opacity pt-2 pb-1"><p class="text-center white"><i class="fas fa-expand fa-inverse mr-3" ></i>   @yield('hero_image_title')</span></div>
     </div>
   </div>
-  <div id="fullscreen-btn"><i class="fas fa-expand fa-inverse" ></i> </div>
 </div>
