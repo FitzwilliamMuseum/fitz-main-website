@@ -7,21 +7,17 @@
   @foreach($news['data'] as $project)
   <div class="col-md-6 mb-3">
     <div class="card card-body h-100">
-
-    <div class="container h-100">
-
-      <!-- start image block -->
-      <div class="cover-image ">
-        @if(!is_null($project['field_image']))
-        <img class="align-self-center ml-1 mr-3 rounded-circle float-right thumb-post" src="{{ $project['field_image']['data']['full_url']}}" alt="Discover stories from the exhibition's profile image" height="150" width="150" loading="lazy">
+      @if(!is_null($project['field_image']))
+      <img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"/>
         @endif
-      </div>
-      <!-- end image block -->
+    <div class="container h-100">
 
       <div class="contents-label mb-3">
         <h3>
           <a href="news/article/{{ $project['slug']}}">{{ $project['article_title']}}</a>
         </h3>
+        {!! Str::limit($project['article_body'],200, ' (...)') !!}
+
       </div>
     </div>
     <a href="news/article/{{ $project['slug']}}" class="btn btn-dark">Read more</a>

@@ -24,7 +24,9 @@ Trieste-Zurich-Paris 1914-1921
 @foreach($news['data'] as $project)
 <div class="col-md-4 mb-3">
   <div class="card card-body h-100">
-
+    @if(!is_null($project['field_image']))
+    <img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"/>
+      @endif
   <div class="container h-100">
 
     <div class="contents-label mb-3">

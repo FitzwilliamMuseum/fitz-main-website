@@ -19,7 +19,9 @@ class learningController extends Controller
 
     public function lookthinkdomain()
     {
-        return view('learning.lookthinkdomain');
+        $response = Http::get('https://content.fitz.ms/fitz-website/items/look_think_do?fields=*.*.*');
+        $ltd = $response->json();
+        return view('learning.lookthinkdomain', compact('ltd'));
     }
 
     public function lookthinkdoactivity($slug)

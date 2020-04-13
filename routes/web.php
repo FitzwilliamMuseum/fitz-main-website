@@ -25,7 +25,13 @@ Route::get('departments', 'departmentsController@index');
 Route::get('/news/article/{slug}/', 'newsController@article');
 Route::get('/collections/by-focus/{slug}/', 'collectionsController@details');
 Route::get('/departments/titled/{slug}/', 'departmentsController@details');
+Route::get('/learning/look-think-do/', 'learningController@lookthinkdomain');
+Route::get('/learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
+
+
+
+/*
+Put these last
+*/
 Route::get('/{section}/{slug}/', 'pagesController@index');
 Route::get('/{section}/', 'pagesController@landing');
-Route::get('/learning/lookthinkdo/', 'learningController@lookthinkdomain');
-Route::get('/learning/lookthinkdo/{slug}', 'learningController@lookthinkdoactivity');

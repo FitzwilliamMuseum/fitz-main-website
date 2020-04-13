@@ -95,6 +95,11 @@ footer, .chip-icon {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #eee;
+
+}
+.shadow-sm {
+  background-color: white;
 }
 
 a {
@@ -468,4 +473,8 @@ body {
     .carousel-item>img {
         max-height: 600px;
     }
+}
+
+.cropped-image img {
+    object-fit: cover;
 }

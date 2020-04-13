@@ -5,7 +5,7 @@
 @section('content')
   @if(isset($look['focus_image']['data']['full_url']))
   @section('hero_image', $look['focus_image']['data']['full_url'])
-  @section('hero_image_title', $look['object_metadata']) 
+  @section('hero_image_title', $look['object_metadata'])
   @endif
   @section('content')
       <h2>{{ $look['title_of_work'] }}</h2>
@@ -27,7 +27,6 @@
          <h3>Do someything in response</h3>
          {!! $look['do_text'] !!}
       </div>
-
     </div>
   @endsection
 @endforeach
