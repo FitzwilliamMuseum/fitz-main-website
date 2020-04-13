@@ -31,9 +31,9 @@ class researchController extends Controller
 
     public function project($slug)
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*');
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*&filter[slug]=' . $slug);
       $projects = $response->json();
-      return view('research.projects', compact('projects'));
+      return view('research.project', compact('projects'));
     }
 
     public function profiles()
@@ -43,8 +43,10 @@ class researchController extends Controller
       return view('research.profiles', compact('profiles'));
     }
 
-    public function profile()
+    public function profile($slug)
     {
-      return view('research.profile');
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/staff_profiles?fields=*.*.*&filter[slug]=' . $slug);
+      $profiles = $response->json();
+      return view('research.profile', compact('profiles'));
     }
 }

@@ -22,7 +22,6 @@
         <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About us</a>
         <a class="dropdown-item" href="{{ URL::to('/collections') }}">Our collections</a>
         <a class="dropdown-item" href="{{ URL::to('/departments') }}">Our departments</a>
-
       </div>
     </li>
     <li class="nav-item active">
@@ -42,8 +41,15 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/support-us') }}">Support us</a>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('/research') }}">Our research</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Our research</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ URL::to('/research') }}">Research at the museum</a>
+        <a class="dropdown-item" href="/research/projects">Research projects</a>
+        <a class="dropdown-item" href="/research/staff-profiles">Researcher profiles</a>
+
+      </div>
     </li>
 </ul>
 </div>
