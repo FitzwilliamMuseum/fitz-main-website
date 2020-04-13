@@ -32,6 +32,8 @@
   </div>
 
         @yield('research-projects')
+        @yield('themes')
+        @yield('collections')
   @include('includes.share')
 
   @include('includes.footer')

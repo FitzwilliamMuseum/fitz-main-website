@@ -47,7 +47,7 @@
   <div class="container mt-3">
     <h2>Museum themes</h2>
     <div class="row">
-        @yield('news')
+        @yield('themes')
     </div>
   </div>
   <div class="container-fluid carousel-pad">
@@ -60,7 +60,7 @@
         @yield('research')
     </div>
   </div>
-  <div class="container-fluid parallax third-parallax-home">
+  <div class="container-fluid parallax third-parallax-home mb-3">
   </div>
   @include('includes.share')
 

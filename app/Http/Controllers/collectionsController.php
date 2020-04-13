@@ -14,9 +14,11 @@ class collectionsController extends Controller
      */
     public function index()
     {
+        $first = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=objects-and-artworks&filter[landing_page]=1');
+        $pages = $first->json();
         $response = Http::get('https://content.fitz.ms/fitz-website/items/collections?fields=*.*.*&sort=-id');
         $collections = $response->json();
-        return view('collections.index', compact('collections'));
+        return view('collections.index', compact('collections', 'pages'));
     }
 
     public function details($slug)

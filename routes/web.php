@@ -24,13 +24,15 @@ Route::get('collections', 'collectionsController@index');
 Route::get('visit-us', 'visitController@index');
 Route::get('news', 'newsController@index');
 Route::get('departments', 'departmentsController@index');
-Route::get('/news/article/{slug}/', 'newsController@article');
-Route::get('/collections/by-focus/{slug}/', 'collectionsController@details');
-Route::get('/departments/titled/{slug}/', 'departmentsController@details');
-Route::get('/learning/look-think-do/', 'learningController@lookthinkdomain');
-Route::get('/learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
-
-
+Route::get('news/article/{slug}/', 'newsController@article');
+Route::get('collections/by-focus/{slug}/', 'collectionsController@details');
+Route::get('departments/titled/{slug}/', 'departmentsController@details');
+Route::get('learning/look-think-do/', 'learningController@lookthinkdomain');
+Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
+Route::get('themes/', 'themesController@index');
+Route::get('themes/{slug}', 'themesController@theme');
+Route::get('galleries', 'galleriesController@index');
+Route::get('galleries/{slug}', 'galleriesController@gallery');
 
 /*
 Put these last

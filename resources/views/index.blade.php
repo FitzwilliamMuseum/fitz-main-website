@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/founders.jpg')
-@section('hero_image_alt_text','The founder\'s building of the museum')
+@section('hero_image_title','The founder\'s building of the museum')
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 @section('parallax_two', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/confection.jpg')
 @section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/25th_november_057.jpg')
@@ -76,6 +76,9 @@ Trieste-Zurich-Paris 1914-1921
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       <div class="container h-100">
+        @if(!is_null($project['hero_image']))
+        <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"/>
+          @endif
         <div class="contents-label mb-3">
           <h3>
             <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
@@ -83,6 +86,26 @@ Trieste-Zurich-Paris 1914-1921
         </div>
       </div>
       <a href="research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
+    </div>
+  </div>
+  @endforeach
+@endsection
+
+@section('themes')
+  @foreach($themes['data'] as $theme)
+  <div class="col-md-4 mb-3">
+    <div class="card card-body h-100">
+      @if(!is_null($theme['hero_image']))
+      <img class="img-fluid" src="{{ $theme['hero_image']['data']['thumbnails'][4]['url']}}"/>
+      @endif
+      <div class="container h-100">
+        <div class="contents-label mb-3">
+          <h3>
+            <a href="themes/{{ $theme['slug']}}">{{ $theme['title']}}</a>
+          </h3>
+        </div>
+      </div>
+      <a href="themes/{{ $theme['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach

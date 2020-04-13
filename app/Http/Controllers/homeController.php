@@ -20,6 +20,8 @@ class homeController extends Controller
     $news = $request_two->json();
     $request_three = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*&sort=-id&limit=3');
     $research = $request_three->json();
-    return view('index', compact('carousel','news', 'research'));
+    $request_four = Http::get('https://content.fitz.ms/fitz-website/items/themes?fields=*.*&sort=-id&limit=3');
+    $themes = $request_four->json();
+    return view('index', compact('carousel','news', 'research', 'themes'));
   }
 }
