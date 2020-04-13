@@ -13,47 +13,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.peacock {
-  background-image: url(../images/layouts/peacock.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.crockery {
-  background-image: url(../images/layouts/crockery.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.pavilion {
-  background-image: url(../images/layouts/pavilion.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.box {
-  background-image: url(../images/layouts/box.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.tools {
-  background-image: url(../images/layouts/tools.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.knives {
-  background-image: url(../images/discover/DP836657.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.lobster {
-  background-image: url(../images/layouts/lobsterClaws.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.meat {
-  background-image: url(../images/layouts/P.4961-R_1_201811_amt49_dc1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 
 
 @media screen and (max-width: 400px) {
@@ -465,7 +424,7 @@ body {
 .white {
   color: white;
 }
-.carousel-pad {
+.carousel-pad, .map-box {
   padding-left: 0px!important;
   padding-right: 0px!important;
 }
@@ -477,4 +436,11 @@ body {
 
 .cropped-image img {
     object-fit: cover;
+}
+
+.gnw-map.fade {
+    transition: opacity .15s linear;
+}
+.gnw-map.fade:not(.show) {
+    opacity: 0;
 }

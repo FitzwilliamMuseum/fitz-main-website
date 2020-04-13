@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class visitController extends Controller
 {
@@ -13,20 +14,9 @@ class visitController extends Controller
      */
     public function index()
     {
-        return view('visit/index');
+        $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=visit-us&filter[landing_page]=1');
+        $pages = $response->json();
+        return view('visit/index', compact('pages'));
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    
 }

@@ -14,7 +14,7 @@ class newsController extends Controller
    */
   public function index()
   {
-    $response = Http::get('https://content.fitz.ms/fitz-website/items/news_articles?fields=*.*.*&sort=-id&limit=20');
+    $response = Http::get('https://content.fitz.ms/fitz-website/items/news_articles?fields=*.*.*&sort=-id&limit=6');
     $news = $response->json();
     return view('news.index', compact('news'));
   }
