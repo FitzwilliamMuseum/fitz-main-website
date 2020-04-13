@@ -31,7 +31,7 @@
         @yield('content')
   </div>
 
-  
+        @yield('research-projects')
   @include('includes.share')
 
   @include('includes.footer')

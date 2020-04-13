@@ -27,6 +27,8 @@
     'lat' => 52.200278,
     'lng' => 0.119444,
     'zoom' => 18,
+    'minZoom' => 16,
+    'maxZoom' => 18,
     'markers' => [
         [
             'title' => 'Find the museum',

@@ -12,11 +12,28 @@ class researchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+     public function index()
+     {
+       $first = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=research&filter[landing_page]=1');
+       $pages = $first->json();
+       $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*&limit=3');
+       $projects = $response->json();
+       return view('research.index', compact('projects', 'pages'));
+     }
+
+    public function projects()
     {
       $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*');
       $projects = $response->json();
-      return view('research.index', compact('projects'));
+      return view('research.projects', compact('projects'));
+    }
+
+    public function project($slug)
+    {
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*');
+      $projects = $response->json();
+      return view('research.projects', compact('projects'));
     }
 
     public function profiles()

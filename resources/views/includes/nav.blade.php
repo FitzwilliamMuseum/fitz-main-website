@@ -24,8 +24,13 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/objects-and-artworks') }}">Objects and artworks</a>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('/learning') }}">Learn with us</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Learning</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ URL::to('/learning') }}">Learn with us</a>
+        <a class="dropdown-item" href="/learning/look-think-do">Look, think, do</a>
+      </div>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/support-us') }}">Support us</a>

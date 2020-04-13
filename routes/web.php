@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'homeController@index');
 Route::get('aboutus', 'aboutUsController@index');
-Route::get('research/projects', 'researchController@index');
+Route::get('research/', 'researchController@index');
+Route::get('research/projects/', 'researchController@projects');
+Route::get('research/project/{slug}/', 'researchController@project');
 Route::get('research/staff-profiles', 'researchController@profiles');
 Route::get('research/staff-profiles/{slug}', 'researchController@profile');
 Route::get('collections', 'collectionsController@index');
