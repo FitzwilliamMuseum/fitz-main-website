@@ -15,8 +15,15 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/visit-us') }}">Visit us</a>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('/about-us') }}">About us</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      About us</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About us</a>
+        <a class="dropdown-item" href="{{ URL::to('/collections') }}">Our collections</a>
+        <a class="dropdown-item" href="{{ URL::to('/departments') }}">Our departments</a>
+
+      </div>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/news') }}">Latest news</a>

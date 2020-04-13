@@ -34,6 +34,8 @@
         @yield('research-projects')
         @yield('themes')
         @yield('collections')
+        @yield('departments')
+        @yield('galleries')
   @include('includes.share')
 
   @include('includes.footer')

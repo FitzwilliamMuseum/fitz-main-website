@@ -15,14 +15,17 @@ class departmentsController extends Controller
    */
   public function index()
   {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/departments?fields=*.*.*&sort=-id');
+
+      $first = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=departments&filter[landing_page]=1');
+      $pages = $first->json();
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/departments?fields=*.*.*&sort=id');
       $departments = $response->json();
-      return view('departments.index', compact('departments'));
+      return view('departments.index', compact('departments', 'pages'));
   }
 
   public function details($slug)
   {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/departments?filter[slug]=' . $slug . '&fields=*.*.*');
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/departments?filter[slug]=' . $slug . '&fields=*.*.*.*');
       $departments = $response->json();
       return view('departments.details', compact('departments'));
   }

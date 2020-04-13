@@ -24,6 +24,7 @@ Route::get('collections', 'collectionsController@index');
 Route::get('visit-us', 'visitController@index');
 Route::get('news', 'newsController@index');
 Route::get('departments', 'departmentsController@index');
+Route::get('departments/{slug}', 'departmentsController@details');
 Route::get('news/article/{slug}/', 'newsController@article');
 Route::get('collections/by-focus/{slug}/', 'collectionsController@details');
 Route::get('departments/titled/{slug}/', 'departmentsController@details');
