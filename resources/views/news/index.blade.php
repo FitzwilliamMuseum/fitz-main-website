@@ -17,7 +17,6 @@
         <h3>
           <a href="news/article/{{ $project['slug']}}">{{ $project['article_title']}}</a>
         </h3>
-        {!! Str::limit($project['article_body'],200, ' (...)') !!}
 
       </div>
     </div>
