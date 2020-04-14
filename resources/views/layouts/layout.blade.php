@@ -36,6 +36,7 @@
         @yield('collections')
         @yield('departments')
         @yield('galleries')
+        @yield('associated_pages')
   @include('includes.share')
 
   @include('includes.footer')
