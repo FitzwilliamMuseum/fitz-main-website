@@ -1,6 +1,7 @@
 @extends('layouts/layout')
 @section('title','Research projects')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
+@section('hero_image_title', 'A Baroque feasting table by Ivan Day in feast and fast')
 @section('content')
 
 <div class="row">
@@ -13,12 +14,12 @@
       <div class="container h-100">
         <div class="contents-label mb-3">
         <h3>
-          <a href="research/project/{{ $project['slug']}}">{{ $project['title']}}</a>
+          <a href="/research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
         </h3>
           <p class="card-text">{{ $project['summary']}}</p>
         </div>
       </div>
-      <a href="research/project/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
+      <a href="/research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
     </div>
 
     </div>
