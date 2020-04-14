@@ -28,6 +28,8 @@ Have fun and don't forget to share your creations using #FitzVirtual #LookThinkD
               <h3>
                 <a href="look-think-do/{{ $look['slug']}}">{{ $look['title_of_work']}}</a>
               </h3>
+              <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['main_text_description'])),0,200) }}...</p>
+
             </div>
           </div>
           <a href="look-think-do/{{ $look['slug']}}" class="btn btn-dark">Read more</a>
