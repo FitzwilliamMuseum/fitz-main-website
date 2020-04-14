@@ -448,3 +448,8 @@ body {
 a.share-click {
   color: white!important;
 }
+
+#panorama {
+  width: 100%;
+  height: 500px;
+}

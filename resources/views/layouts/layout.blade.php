@@ -24,8 +24,9 @@
   @include('includes.announcement')
 
   @include('includes.head')
-
-
+  @hasSection('360')
+  @include('includes.photosphere-css')
+  @endif
   <div class="container">
         @include('includes.breadcrumb')
         @yield('content')
@@ -37,12 +38,15 @@
         @yield('departments')
         @yield('galleries')
         @yield('associated_pages')
+        @yield('360')
   @include('includes.share')
 
   @include('includes.footer')
   @include('includes.modal')
   @include('includes.javascript')
-
+  @hasSection('360')
+  @include('includes.photosphere-js')
+  @endif
   @include('includes.fullscreen')
 
 </body>

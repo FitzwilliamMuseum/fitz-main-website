@@ -11,4 +11,14 @@
         @markdown($gallery['gallery_description'])
       </div>
   @endsection
+  @section('360')
+  @if(!empty($gallery['image_360_pano']))
+  <div class="container">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+      <div id="panorama"></div>
+    </div>
+  </div>
+  @section('360_image', $gallery['image_360_pano']['data']['full_url']))
+  @endif
+  @endsection
 @endforeach
