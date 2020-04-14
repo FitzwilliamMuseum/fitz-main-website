@@ -7,16 +7,14 @@
       <div class="col-md-6 mb-3">
       <div class="card card-body h-100 ">
         @if(!is_null($project['profile_image']))
-        <img class="img-fluid" src="{{ $project['profile_image']['data']['thumbnails'][7]['url']}}"/>
+        <img class="img-fluid" src="{{ $project['profile_image']['data']['thumbnails'][2]['url']}}"/>
           @endif
       <div class="container h-100">
         <div class="contents-label mb-3">
         <h3>
           <a href="/research/staff-profiles/{{ $project['slug']}}">{{ $project['display_name']}}</a>
         </h3>
-
-      </h4>
-
+          <p class="card-text">{!! Str::limit($project['biography'],200, ' (...)')   !!}</p>
         </div>
       </div>
       <a href="/research/staff-profiles/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
