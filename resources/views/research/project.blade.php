@@ -13,7 +13,7 @@
       </ul>
     </div>
   @endsection
-
+  @php(phpinfo())
   @section('research-projects')
   <div class="container">
     <h2>Outcomes of this project</h2>
