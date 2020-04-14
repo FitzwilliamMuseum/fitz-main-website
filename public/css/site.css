@@ -15,7 +15,7 @@
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .head {
     padding-top: 100px;
     /* display: none; */
@@ -30,8 +30,8 @@
   .shout {
     color: white!important;
     font-family: 'Yrsa', serif;
-    font-size: 6rem;
-    margin-top:4rem;
+    font-size: 3.5rem;
+    margin-top:3rem;
   }
   .shout-less {
     color: white!important;
@@ -317,11 +317,11 @@ label.cm-app-label {
 body {
   font-size: 1rem;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 440px) {
   .shout {
     color: white!important;
     font-family: 'Yrsa', serif;
-    font-size: 4rem;
+    font-size: 8rem;
     margin-top:4rem;
   }
   .shout-less {
