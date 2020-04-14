@@ -148,7 +148,7 @@
   @include('includes.share')
 
   @include('includes.footer')
-
+  @include('includes.modal')
   @include('includes.javascript')
   @mapscripts
   @include('includes.fullscreen')

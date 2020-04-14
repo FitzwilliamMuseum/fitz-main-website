@@ -444,3 +444,6 @@ body {
 .gnw-map.fade:not(.show) {
     opacity: 0;
 }
+a.share-click {
+  color: white!important;
+}
