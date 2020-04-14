@@ -3,7 +3,7 @@
   @section('title','News from the Fitz')
   @if(isset($project['field_image']['data']['full_url']))
   @section('hero_image', $project['field_image']['data']['full_url'])
-  @section('hero_image', $project['field_image_alt_text'])
+  @section('hero_image_title', $project['field_image_alt_text'])
 
   @endif
 
