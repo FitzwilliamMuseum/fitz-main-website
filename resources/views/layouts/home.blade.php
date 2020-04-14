@@ -55,7 +55,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2>Latest featured research</h2>
+    <h2 class="lead">Latest featured research</h2>
     <div class="row">
         @yield('research')
     </div>

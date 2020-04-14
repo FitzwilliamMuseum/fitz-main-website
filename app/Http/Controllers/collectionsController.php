@@ -23,7 +23,7 @@ class collectionsController extends Controller
 
     public function details($slug)
     {
-        $response = Http::get('https://content.fitz.ms/fitz-website/items/collections?filter[slug]=' . $slug . '&fields=*.*.*');
+        $response = Http::get('https://content.fitz.ms/fitz-website/items/collections?filter[slug]=' . $slug . '&fields=*.*.*.*');
         $collection = $response->json();
         return view('collections.details', compact('collection'));
     }

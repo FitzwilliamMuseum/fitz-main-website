@@ -25,6 +25,7 @@
           <h3>
             <a href="/collections/by-focus/{{ $project['slug']}}">{{ $project['collection_name']}}</a>
           </h3>
+          <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['collection_description'])),0,200) }}...</p>
         </div>
       </div>
       <a href="/collections/by-focus/{{ $project['slug']}}" class="btn btn-dark">Read more</a>

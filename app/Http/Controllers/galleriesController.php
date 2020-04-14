@@ -18,7 +18,7 @@ class galleriesController extends Controller
 
     public function gallery($slug)
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/galleries?filter[slug]=' . $slug . '&fields=*.*.*');
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/galleries?filter[slug]=' . $slug . '&fields=*.*.*.*');
       $galleries = $response->json();
       return view('galleries.gallery', compact('galleries'));
     }
