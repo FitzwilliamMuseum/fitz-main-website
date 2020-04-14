@@ -22,6 +22,7 @@
         <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About us</a>
         <a class="dropdown-item" href="{{ URL::to('/collections') }}">Our collections</a>
         <a class="dropdown-item" href="{{ URL::to('/departments') }}">Our departments</a>
+        <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Our galleries</a>
       </div>
     </li>
     <li class="nav-item active">
