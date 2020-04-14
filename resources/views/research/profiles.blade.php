@@ -4,7 +4,7 @@
 @section('content')
 <div class="row">
     @foreach($profiles['data'] as $project)
-      <div class="col-md-6 mb-3">
+      <div class="col-md-4 mb-3">
       <div class="card card-body h-100 ">
         @if(!is_null($project['profile_image']))
         <img class="img-fluid" src="{{ $project['profile_image']['data']['thumbnails'][2]['url']}}"/>
