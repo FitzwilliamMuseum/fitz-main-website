@@ -14,7 +14,7 @@
         <h3>
           <a href="/research/staff-profiles/{{ $project['slug']}}">{{ $project['display_name']}}</a>
         </h3>
-          <p class="card-text">{!! $project['biography'] !!}</p>
+          <p class="card-text">{{ strip_tags(htmlspecialchars_decode($project['biography'])) | limit:'200' }}</p>
         </div>
       </div>
       <a href="/research/staff-profiles/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
