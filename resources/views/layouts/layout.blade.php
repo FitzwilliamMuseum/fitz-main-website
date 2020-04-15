@@ -39,6 +39,7 @@
         @yield('galleries')
         @yield('associated_pages')
         @yield('360')
+        @yield('sketchfab-collection')
   @include('includes.share')
 
   @include('includes.footer')

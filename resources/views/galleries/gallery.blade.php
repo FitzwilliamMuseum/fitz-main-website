@@ -21,4 +21,18 @@
   @section('360_image', $gallery['image_360_pano']['data']['full_url']))
   @endif
   @endsection
+  @section('sketchfab-collection')
+
+    @if(!empty($gallery['sketchfab_id_collection']))
+    <div class="container">
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="embed-responsive embed-responsive-1by1">
+          <iframe title="A 3D model" class="embed-responsive-item"
+          src="https://sketchfab.com/playlists/embed?collection={{ $gallery['sketchfab_id_collection']}}"
+          frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+    @endif
+  @endsection]
 @endforeach
