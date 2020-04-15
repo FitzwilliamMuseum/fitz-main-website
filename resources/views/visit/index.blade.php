@@ -68,3 +68,11 @@
 </div>
 </div>
 @endsection
+
+@section('floorplans')
+<ul id="floor-plans">
+@foreach($floors['data'] as $floor)
+  <li><a href="{{$floor['file']['data']['full_url']}}">{{$floor['title']}}</a></li>
+@endforeach
+</ul>
+@endsection

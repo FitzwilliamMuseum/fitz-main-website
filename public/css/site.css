@@ -456,3 +456,12 @@ a.share-click {
   width: 100%;
   height: 500px;
 }
+
+ul#floor-plans {
+    list-style: none;
+    display: inline-block;
+    columns: 2;
+    -webkit-columns: 3;
+    width: 100%;
+    -moz-columns: 2;
+}

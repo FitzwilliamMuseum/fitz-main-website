@@ -20,7 +20,9 @@ class visitController extends Controller
         $pages = $response->json();
         $request_five = Http::get('https://content.fitz.ms/fitz-website/items/directions?fields=*.*&sort=-id&limit=3');
         $directions = $request_five->json();
-        return view('visit/index', compact('pages', 'associated', 'directions'));
+        $floorplans = Http::get('https://content.fitz.ms/fitz-website/items/floorplans_guides?fields=*.*&sort=id&[filter][type][eq]=floor_plan]');
+        $floors = $floorplans->json();
+        return view('visit/index', compact('pages', 'associated', 'directions', 'floors'));
     }
 
 }
