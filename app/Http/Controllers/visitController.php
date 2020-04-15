@@ -18,7 +18,9 @@ class visitController extends Controller
         $associated = $response->json();
         $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=visit-us&filter[landing_page]=1');
         $pages = $response->json();
-        return view('visit/index', compact('pages', 'associated'));
+        $request_five = Http::get('https://content.fitz.ms/fitz-website/items/directions?fields=*.*&sort=-id&limit=3');
+        $directions = $request_five->json();
+        return view('visit/index', compact('pages', 'associated', 'directions'));
     }
 
 }
