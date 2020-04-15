@@ -31,7 +31,7 @@
         @include('includes.breadcrumb')
         @yield('content')
   </div>
-
+        @yield('publications')
         @yield('research-projects')
         @yield('themes')
         @yield('collections')

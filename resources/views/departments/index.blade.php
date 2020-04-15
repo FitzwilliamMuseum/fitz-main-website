@@ -28,7 +28,7 @@
           <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['department_description'])),0,200) }}...</p>
         </div>
       </div>
-      <a href="/departments/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
+      <a href="/departments/{$project['slug'] }" class="btn btn-dark">Read more</a>
     </div>
 
   </div>
