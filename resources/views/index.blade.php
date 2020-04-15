@@ -8,14 +8,18 @@
 @section('title', 'The Fitzwilliam Museum')
 
 @section('content')
+<h2>Welcome to the Fitzwilliam Museum</h2>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-  <h2>Welcome to the Fitzwilliam Museum</h2>
   @markdown
-  Martha Rudy Buck Mulligan Sirens moody brooding Howth Head. Seedcake rhododendrons he proves by algebra kidneys Rudy moody brooding plump ineluctable modality of the visible. Sinbad the Sailor melons the scrotumtightening sea Proteus Stephen Sandymount strand song moody brooding met him pike hoses. Buck Mulligan met him pike hoses seedcake Sandycove burgundy oxen of the sun O rocks cyclops sweets of sin. Sandymount strand Stephen Frseeeeeeeeeeeeeeeeeeeefrong Davy Byrne’s Agenbite of Inwit portals of discovery Martha gorgonzola metempsychosis melons Poldy. Sixteen transmigration Circe met him pike hoses burgundy Buck Mulligan smellow la ci darem la mano. Sinbad the Sailor Poldy letter cyclops ineluctable modality of the visible moody brooding Davy Byrne’s Ithaca song. Love laughs at locksmiths Howth Head sixteen portals of discovery contransmagnificandjewbangtantiality Bloom Martha. Yes I said yes I will Yes Love loves to love love ben Bloom Elijah like a shot off a shovel oxen of the sun yellow.
+  The Fitzwilliam Museum is the principal museum of the University of Cambridge and leads the University of Cambridge Museums (UCM) consortium, an Arts Council England funded National Portfolio Organisation.
 
-Martha letter nighttown Buck Mulligan Poldy soft love gorgonzola yellow. Ineluctable modality of the visible sixteen fortyfoot moody brooding stately smellow sweets of sin Bloom he proves by algebra nighttown. Yellow the scrotumtightening sea Circe sweets of sin Dedalus Proteus Agenbite of Inwit he proves by algebra nighttown Penelope soft. Love laughs at locksmiths Blazes Boylan plump the snotgreen sea Bloom yellow transmigration Poldy fortyfoot Kinch gorgonzola. Love loves to love love Sandycove Circe stately soft Howth Head faintly scented urine seedcake 7 Eccles Street la ci darem la mano Sirens. Like a shot off a shovel met him pike hoses the citizen mellow Poldy Gerty MacDowell love. Fortyfoot met him pike hoses metempsychosis smellow Stephen Dedalus Bloom Circe. Nausicaa Rudy Frseeeeeeeeeeeeeeeeeeeefrong seedcake omphalos Stephen 7 Eccles Street Blazes Boylan Sandycove. O rocks stately sixteen contransmagnificandjewbangtantiality yes I said yes I will Yes Rudy rhododendrons portals of discovery Proteus love laughs at locksmiths Ithaca plump Molly Dedalus.
+  The UCM consortium brings together eight University Museums and the Cambridge University Botanic Garden. Together, they represent the UK’s highest concentration of internationally important collections outside London. With more than five million works of art, artefacts, and specimens, the collections span four and a half billion years. Close to a million people of all ages and backgrounds participate in events for our extensive public, educational and outreach programme every year.
 
-Trieste-Zurich-Paris 1914-1921
+  Our mission is to contribute to society through the pursuit of education, learning and research at the highest international levels of excellence.  We do this by preserving and extending our world‐class collections and buildings, and by offering public programmes to engage with as wide an audience as possible.
+
+  We aim to be one of the leading University Museums in the world.  We are known internationally for: exemplary collections and exhibitions; exceptional research; high standards of curatorial and conservation work; and a creative, inclusive and impactful learning service.   We strive to be innovators in the enhancement of learning.
+
+  Through local partnerships we play a role in making the city and region a better place to live, work and visit.
 @endmarkdown
 </div>
 @endsection
