@@ -18,6 +18,9 @@
 @media screen and (max-width: 440px) {
   .head {
     padding-top: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     /* display: none; */
     /* visibility: hidden; */
   }
