@@ -8,7 +8,6 @@
 @section('hero_image_title', $profile['hero_image_alt_text'])
 @endif
   @section('content')
-
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
       <img class="align-self-center mr-3 rounded-circle float-right
       thumb-post" src="{{ $profile['profile_image']['data']['full_url']}}" alt="Meet the Creative Economy Engagement team's profile image" height="150" width="150">
@@ -42,60 +41,87 @@
   @if(!empty($profile['research_projects']))
   @section('research-projects')
   <div class="container">
-  <h2>Associated Research Projects</h2>
-  <div class="row">
-        @foreach($profile['research_projects'] as $project)
-              <div class="col-md-6 mb-3">
+    <h2>Associated Research Projects</h2>
+    <div class="row">
+      @foreach($profile['research_projects'] as $project)
+      <div class="col-md-6 mb-3">
         <div class="card card-body h-100 ">
           @if(!is_null($project['research_projects_id']['hero_image']))
           <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"/>
-            @endif
-        <div class="container h-100">
-          <div class="contents-label mb-3">
-          <h3>
-            <a href="research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
-          </h3>
-            <p class="card-text">{{ $project['research_projects_id']['summary']}}</p>
+          @endif
+          <div class="container h-100">
+            <div class="contents-label mb-3">
+              <h3>
+                <a href="research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
+              </h3>
+              <p class="card-text">{{ $project['research_projects_id']['summary']}}</p>
+            </div>
           </div>
+          <a href="research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
         </div>
-        <a href="research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
-      </div>
 
       </div>
       @endforeach
+    </div>
   </div>
-</div>
-
   @endsection
   @endif
 
-  @if(!empty($profile['research_projects']))
-  @section('research-projects')
-  <div class="container">
-  <h2>Associated Research Projects</h2>
-  <div class="row">
-        @foreach($profile['research_projects'] as $project)
-              <div class="col-md-6 mb-3">
-        <div class="card card-body h-100 ">
-          @if(!is_null($project['research_projects_id']['hero_image']))
-          <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"/>
+  @if(!empty($profile['departments_affiliated']))
+    @section('departments')
+    <div class="container">
+      <h2>Associated Departments</h2>
+      <div class="row">
+        @foreach($profile['departments_affiliated'] as $project)
+        <div class="col-md-6 mb-3">
+          <div class="card card-body h-100 ">
+            @if(!is_null($project['department']['hero_image']))
+            <img class="img-fluid" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"/>
             @endif
-        <div class="container h-100">
-          <div class="contents-label mb-3">
-          <h3>
-            <a href="research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
-          </h3>
-            <p class="card-text">{{ $project['research_projects_id']['summary']}}</p>
+            <div class="container h-100">
+              <div class="contents-label mb-3">
+                <h3>
+                  <a href="departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
+                </h3>
+                <p class="card-text">{{ $project['department']['department_description']}}</p>
+              </div>
+            </div>
+            <a href="departments/{{ $project['department']['slug']}}" class="btn btn-dark">Read more</a>
           </div>
+
         </div>
-        <a href="research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
+        @endforeach
       </div>
+    </div>
+    @endsection
+  @endif
 
+  @if(!empty($profile['research_projects']))
+    @section('research-projects')
+    <div class="container">
+      <h2>Associated Research Projects</h2>
+      <div class="row">
+        @foreach($profile['research_projects'] as $project)
+        <div class="col-md-6 mb-3">
+          <div class="card card-body h-100 ">
+            @if(!is_null($project['research_projects_id']['hero_image']))
+            <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"/>
+            @endif
+            <div class="container h-100">
+              <div class="contents-label mb-3">
+                <h3>
+                  <a href="research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
+                </h3>
+                <p class="card-text">{{ $project['research_projects_id']['summary']}}</p>
+              </div>
+            </div>
+            <a href="research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
+          </div>
+
+        </div>
+        @endforeach
       </div>
-      @endforeach
-  </div>
-</div>
-
-  @endsection
+    </div>
+    @endsection
   @endif
 @endforeach

@@ -38,7 +38,7 @@ class researchController extends Controller
 
     public function profiles()
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/staff_profiles?fields=*.*.*');
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/staff_profiles?fields=*.*.*&sort=last_name');
       $profiles = $response->json();
       return view('research.profiles', compact('profiles'));
     }
