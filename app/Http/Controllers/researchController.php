@@ -24,7 +24,7 @@ class researchController extends Controller
 
     public function projects()
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*');
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*&sort=title');
       $projects = $response->json();
       return view('research.projects', compact('projects'));
     }
