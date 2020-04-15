@@ -1,5 +1,4 @@
 @extends('layouts/layout')
-
 @section('title','News from the Fitz')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
@@ -28,17 +27,9 @@
 @endforeach
 
 </div>
-<nav aria-label="Page navigation example">
-<ul class="pagination justify-content-center">
-  <li class="page-item disabled">
-    <a class="page-link" href="#" tabindex="-1">Previous</a>
-  </li>
-  <li class="page-item"><a class="page-link" href="#">1</a></li>
-  <li class="page-item"><a class="page-link" href="#">2</a></li>
-  <li class="page-item"><a class="page-link" href="#">3</a></li>
-  <li class="page-item">
-    <a class="page-link" href="#">Next</a>
-  </li>
-</ul>
+
+
+<nav aria-label="Page navigation justify-content-center">
+  {{ $paginator->links() }}
 </nav>
 @endsection
