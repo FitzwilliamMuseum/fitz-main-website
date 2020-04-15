@@ -144,6 +144,7 @@
 </div>
   </div>
 
+  @yield('associated_pages')
 
   @include('includes.share')
 
