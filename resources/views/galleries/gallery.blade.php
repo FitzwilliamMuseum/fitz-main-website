@@ -25,6 +25,7 @@
 
     @if(!empty($gallery['sketchfab_id_collection']))
     <div class="container">
+      <h2>3D scans of objects in gallery</h2>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
         <div class="embed-responsive embed-responsive-1by1">
           <iframe title="A 3D model" class="embed-responsive-item"
