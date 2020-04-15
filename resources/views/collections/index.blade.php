@@ -9,7 +9,7 @@
   </div>
 @endsection
 @endforeach
-@section('title','Our collections')
+@section('title','Objects and Artworks')
 
 @section('collections')
 <div class="container">
