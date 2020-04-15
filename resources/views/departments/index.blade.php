@@ -23,12 +23,12 @@
       <div class="container h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="/departments/{ $project['slug']}}">{{ $project['title']}}</a>
+            <a href="/departments/{{$project['slug']}}">{{ $project['title']}}</a>
           </h3>
           <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['department_description'])),0,200) }}...</p>
         </div>
       </div>
-      <a href="/departments/{$project['slug'] }" class="btn btn-dark">Read more</a>
+      <a href="/departments/{{$project['slug']}}" class="btn btn-dark">Read more</a>
     </div>
 
   </div>
