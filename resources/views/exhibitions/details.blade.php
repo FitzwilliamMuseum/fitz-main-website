@@ -8,12 +8,38 @@
 @section('hero_image_title', $coll['hero_image_alt_text'])
 
 @section('content')
-
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
-    {!! $coll['exhibition_narrative'] !!}
+    @markdown($coll['exhibition_narrative'])
   </div>
+@endsection
+@if(!empty($coll['associated_curators']))
+@section('curators')
 
+<div class="container">
+  <h2>Associated curators</h2>
+  <div class="row">
+@foreach($coll['associated_curators'] as $curator)
+<div class="col-md-4 mb-3">
+  <div class="card card-body h-100">
+    @if(!is_null($curator['staff_profiles_id']['profile_image']))
+    <img class="img-fluid" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][7]['url']}}"/>
+      @endif
+  <div class="container h-100">
+    <div class="contents-label mb-3">
+      <h3>
+        <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}">{{ $curator['staff_profiles_id']['display_name']}}</a>
+      </h3>
+    </div>
+  </div>
+  <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}" class="btn btn-dark">Read more</a>
+</div>
 
+</div>
+@endforeach
+  </div>
+</div>
+@endsection
+@endif
 
     @if(!empty($coll['associated_departments']))
     @section('departments')
@@ -83,5 +109,5 @@
 
 
 
-@endsection
+
 @endforeach

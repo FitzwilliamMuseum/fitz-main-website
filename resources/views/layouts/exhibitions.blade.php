@@ -31,6 +31,8 @@
         @include('includes.breadcrumb')
         @yield('content')
   </div>
+        @yield('curators')
+
         @yield('current')
         @yield('displays')
         @yield('future')

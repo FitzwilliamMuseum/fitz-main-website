@@ -23,7 +23,7 @@ class exhibitionsController extends Controller
   public function details($slug)
   {
 
-    $details = Http::get('https://content.fitz.ms/fitz-website/items/exhibitions?fields=*.*.*&filter[slug][eq]='.$slug.'&meta=*');
+    $details = Http::get('https://content.fitz.ms/fitz-website/items/exhibitions?fields=*.*.*.*&filter[slug][eq]='.$slug.'&meta=*');
     $exhibitions = $details->json();
     return view('exhibitions.details', compact('exhibitions'));
   }
