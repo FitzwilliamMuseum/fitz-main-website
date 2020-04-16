@@ -14,6 +14,19 @@
     </div>
   @endsection
 
+  @section('research-funders')
+  <div class="container">
+    <h2>Funders and partners</h2>
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <ul>
+    @foreach($project['project_partnerships'] as $partner)
+      <li>{{ $partner['partner']['partner_full_name']}} : {{ $partner['partner']['partner_type'][0]}}</li>
+    @endforeach
+    </ul>
+  </div>
+</div>
+  @endsection
+
   @section('research-projects')
   <div class="container">
     <h2>Outcomes of the project</h2>
