@@ -474,3 +474,14 @@ blockquote {
     margin-bottom: 1rem;
     padding: 0 1rem;
 }
+
+@media screen and ( max-width: 440px ){
+    li.page-item {
+        display: none;
+    }
+    .page-item:first-child,
+    .page-item:last-child,
+    .page-item.active {
+        display: block;
+    }
+}
