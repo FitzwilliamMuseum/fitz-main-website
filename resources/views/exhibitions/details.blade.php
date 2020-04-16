@@ -11,6 +11,16 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
     @markdown($coll['exhibition_narrative'])
   </div>
+  @if($coll['youtube_id'])
+  <h2>Exhibition film</h2>
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item "
+    src="https://www.youtube.com/embed/{{$coll['youtube_id']}}" frameborder="0"
+    allowfullscreen></iframe>
+  </div>
+</div>
+  @endif
 @endsection
 @if(!empty($coll['associated_curators']))
 @section('curators')
