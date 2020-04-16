@@ -14,6 +14,7 @@
 @section('current')
 <div class="container">
   <h2>Our current displays</h2>
+  <div class="row">
   @foreach($current['data'] as $project)
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
@@ -33,6 +34,7 @@
   </div>
   @endforeach
 </div>
+</div>
 @endsection
 
 
@@ -40,6 +42,7 @@
 @section('future')
 <div class="container">
   <h2>Our forthcoming exhibitions</h2>
+  <div class="row">
   @foreach($future['data'] as $project)
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
@@ -59,12 +62,15 @@
   </div>
   @endforeach
 </div>
+</div>
 @endsection
 
 @section('archive')
 <div class="container">
   <h2>Archived exhibitions</h2>
+    <div class="row">
   @foreach($archive['data'] as $project)
+
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       @if(!is_null($project['hero_image']))
@@ -82,5 +88,6 @@
   </div>
   </div>
   @endforeach
+</div>
 </div>
 @endsection
