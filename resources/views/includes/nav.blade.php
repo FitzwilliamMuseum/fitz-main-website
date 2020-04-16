@@ -26,7 +26,10 @@
       </div>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('/news') }}">Latest news</a>
+      <a class="nav-link" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ URL::to('/news') }}">News</a>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/objects-and-artworks') }}">Objects and artworks</a>
