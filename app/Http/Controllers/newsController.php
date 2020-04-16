@@ -22,7 +22,7 @@ class newsController extends Controller
     $response = Http::get('https://content.fitz.ms/fitz-website/items/news_articles?fields=*.*.*&sort=-id&limit=6&meta=*&offset=' . $offset);
     $news = $response->json();
     $currentPage = LengthAwarePaginator::resolveCurrentPage();
-    $total = $news['meta']['result_count'];
+    $total = $news['meta']['total_count'];
     $paginator = new LengthAwarePaginator($news, $total, $perPage, $currentPage);
     $paginator->setPath('news');
     return view('news.index', compact('news', 'paginator'));
