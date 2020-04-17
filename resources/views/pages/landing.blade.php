@@ -8,6 +8,11 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
   @markdown($page['body'])
   </div>
+  @if($page['vimeo_id'])
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    @include('includes.vimeo')
+  </div>
+  @endif
 @endsection
 @endforeach
 @section('associated_pages')
@@ -36,4 +41,5 @@
 @endforeach
 </div>
 </div>
+
 @endsection
