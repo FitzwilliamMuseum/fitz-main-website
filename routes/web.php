@@ -31,6 +31,7 @@ Route::get('departments/titled/{slug}/', 'departmentsController@details');
 Route::get('learning/look-think-do/', 'learningController@lookthinkdomain');
 Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
 Route::get('learning/resources/', 'learningController@resources');
+Route::get('learning/resources/{slug}', 'learningController@resource');
 Route::get('themes/', 'themesController@index');
 Route::get('themes/{slug}', 'themesController@theme');
 Route::get('galleries', 'galleriesController@index');
