@@ -28,6 +28,9 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
     </li>
+        <li class="nav-item active">
+      <a class="nav-link" href="https://my.fitzmuseum.cam.ac.uk">Events & Tickets</a>
+    </li>
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/news') }}">News</a>
     </li>
