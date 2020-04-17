@@ -8,9 +8,11 @@
   @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
       @markdown($project['project_overview'])
+      @if($project['project_url'])
       <ul>
         <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>
       </ul>
+      @endif
     </div>
   @endsection
 
