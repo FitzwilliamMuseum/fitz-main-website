@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 
 class aboutusController extends Controller
 {
@@ -16,16 +18,10 @@ class aboutusController extends Controller
         return view('aboutus/index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function directors()
     {
-        //
+      $response = Http::get('https://content.fitz.ms/fitz-website/items/directors?fields=*.*.*');
+      $directors = $response->json();
+      return view('aboutus.directors', compact('directors'));
     }
-
-
 }

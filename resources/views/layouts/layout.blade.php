@@ -24,12 +24,18 @@
   @include('includes.announcement')
 
   @include('includes.head')
+
+  @hasSection('timeline')
+  @include('includes.timeline-css')
+  @endif
+
   @hasSection('360')
   @include('includes.photosphere-css')
   @endif
   <div class="container">
         @include('includes.breadcrumb')
         @yield('content')
+        @yield('timeline')
   </div>
         @yield('publications')
         @yield('research-projects')
@@ -49,7 +55,10 @@
   @hasSection('360')
   @include('includes.photosphere-js')
   @endif
-  @include('includes.fullscreen')
+
+  @hasSection('timeline')
+    @include('includes.timeline-js')
+  @endif
 
 </body>
 </html>
