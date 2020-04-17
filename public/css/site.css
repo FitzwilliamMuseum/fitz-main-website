@@ -485,3 +485,6 @@ blockquote {
         display: block;
     }
 }
+.card, .shadow-sm {
+  box-shadow: none!important;
+}
