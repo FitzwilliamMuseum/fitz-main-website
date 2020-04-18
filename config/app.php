@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Buzzylab\Laradown\MarkdownServiceProvider::class,
+        Alaouy\Youtube\YoutubeServiceProvider::class,
 
     ],
 
@@ -229,7 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Markdown' => Buzzylab\Laradown\Facades\MarkdownFacade::class,
-        'Str' => Illuminate\Support\Str::class
+        'Str' => Illuminate\Support\Str::class,
+        'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
     ],
 
 ];

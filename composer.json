@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "alaouy/youtube": "^2.2",
         "buzzylab/laradown": "~0.2",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
@@ -19,7 +20,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "rebing/graphql-laravel": "^5.0",
-        "thepinecode/blade-filters": "^0.6.0"
+        "thepinecode/blade-filters": "^0.6.0",
+        "thujohn/twitter": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -24,6 +24,18 @@
     /* display: none; */
     /* visibility: hidden; */
   }
+  .second-parallax-home {
+    background-position: center center;
+  }
+  .third-parallax-home {
+    background-position: center center;
+  }
+  .fourth-parallax-home {
+    background-position: center center;
+  }
+  .parallax-home {
+    background-position: center center;
+  }
   .hide {
     padding-top:5rem;
   }
@@ -202,13 +214,12 @@ video {
 }
 
 .carousel-caption {
-  color: #000;
-  bottom:-60px;
-  font-size:smaller;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 .carousel-control-prev, .carousel-control-next, .carousel-indicators li {
-  background-color: hsla(0, 93%, 31%, 0.98)
+  background-color: hsla(0, 93%, 31%, 0.98);
 }
 #sponsors img {
   height: 50px;
@@ -488,3 +499,12 @@ blockquote {
 .card, .shadow-sm {
   box-shadow: none!important;
 }
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        min-height: 600px;
+        line-height: 1;
+        margin:auto;
+        width: 100%; // Add this
+        }

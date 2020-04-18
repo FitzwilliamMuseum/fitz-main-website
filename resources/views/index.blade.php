@@ -4,7 +4,7 @@
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 @section('parallax_two', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/confection.jpg')
 @section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/25th_november_057.jpg')
-
+@section('parallax_four', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/e1a3159c12ca0f5091e3e9e5000ad4d0-landscape.jpg')
 @section('title', 'The Fitzwilliam Museum')
 
 @section('content')
@@ -52,15 +52,29 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="{{ $carousel['data']['image_one']['data']['full_url']}}" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ $carousel['data']['image_one_alt_text']}}</h5>
+      </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{ $carousel['data']['image_two']['data']['full_url']}}" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+      </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{ $carousel['data']['image_three']['data']['full_url']}}" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+      </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{ $carousel['data']['image_four']['data']['full_url']}}" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ $carousel['data']['image_four_alt_text']}}</h5>
+      </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -113,4 +127,12 @@
     </div>
   </div>
   @endforeach
+@endsection
+
+@section('twitter')
+@include('includes.tweets')
+@endsection
+
+@section('youtube-list')
+@include('includes.youtubelist')
 @endsection

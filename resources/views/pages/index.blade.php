@@ -11,5 +11,15 @@
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   @markdown($page['body'])
 </div>
+@if($page['vimeo_id'])
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  @include('includes.vimeo')
+</div>
+@endif
+@if($page['youtube_id'])
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  @include('includes.youtube')
+</div>
+@endif
 @endsection
 @endforeach

@@ -27,6 +27,12 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+      .fourth-parallax-home {
+        min-height: 200px;
+        background-image: url(@yield('parallax_four'));
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       .parallax-home {
         min-height: 200px;
         background-image: url(@yield('parallax_home'));

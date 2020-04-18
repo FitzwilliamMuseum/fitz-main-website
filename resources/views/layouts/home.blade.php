@@ -62,6 +62,17 @@
   </div>
   <div class="container-fluid parallax third-parallax-home mb-3">
   </div>
+
+  <div class="container ">
+    <h2>Latest Tweets</h2>
+    @yield('twitter')
+  </div>
+  <div class="container-fluid parallax fourth-parallax-home mb-3">
+  </div>
+  <div class="container ">
+    <h2>Latest videos</h2>
+    @yield('youtube-list')
+  </div>
   @include('includes.share')
 
   @include('includes.footer')
