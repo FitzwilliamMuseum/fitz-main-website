@@ -32,9 +32,11 @@ class learningController extends Controller
     {
         $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*&filter[section][eq]=learning&meta=*&filter[landing_page][nnull]&filter[slug][eq]=resources');
         $ltd = $response->json();
-        $resources = Http::get('https://content.fitz.ms/fitz-website/items/learning_pages?fields=*.*.*.*');
+        $resources = Http::get('https://content.fitz.ms/fitz-website/items/learning_pages?fields=*.*.*.*&filter[page_type][eq]=Fact%20Sheets');
         $res = $resources->json();
-        return view('learning.resources', compact('ltd', 'res'));
+        $diy = Http::get('https://content.fitz.ms/fitz-website/items/learning_pages?fields=*.*.*.*&filter[page_type][neq]=Fact%20Sheets');
+        $stages = $diy->json();
+        return view('learning.resources', compact('ltd', 'res', 'stages'));
     }
     public function resource($slug)
     {

@@ -23,7 +23,7 @@ class pagesController extends Controller
   {
     $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*&filter[section][eq]=' . $section . '&meta=*&filter[landing_page][null]&filter[associate_with_landing_page][eq]=1');
     $associated = $response->json();
-    $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=' . $section . '&filter[landing_page]=1');
+    $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=' . $section . '&filter[landing_page]=1]');
     $pages = $response->json();
     return view('pages.landing', compact('pages', 'associated'));
   }

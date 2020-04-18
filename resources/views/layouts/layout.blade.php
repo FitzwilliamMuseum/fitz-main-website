@@ -37,7 +37,9 @@
         @yield('content')
         @yield('timeline')
   </div>
+        @yield('releases')
         @yield('resources-plans')
+        @yield('diy')
         @yield('publications')
         @yield('research-projects')
         @yield('research-funders')

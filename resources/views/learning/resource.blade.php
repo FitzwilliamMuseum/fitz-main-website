@@ -11,7 +11,8 @@
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
     <ul>
     @foreach($page['associated_learning_files'] as $files)
-    <li><a href="{{ $files['learning_files_id']['file']['data']['full_url']}}">{{ $files['learning_files_id']['title'] }} - {{ $files['learning_files_id']['type'] }}</a></li>
+    <li><a href="{{ $files['learning_files_id']['file']['data']['full_url']}}">{{ $files['learning_files_id']['title'] }} 
+    @if(!is_null($files['learning_files_id']['keystages'])) - {{ implode(', ', $files['learning_files_id']['keystages']) }} @endif</a></li>
     @endforeach
     </ul>
     </div>
