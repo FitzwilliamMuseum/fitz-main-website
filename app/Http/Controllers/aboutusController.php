@@ -29,6 +29,20 @@ class aboutusController extends Controller
       return view('aboutus.directors', compact('directors'));
     }
 
+    public function governance()
+    {
+      $directus = new DirectUs;
+      $directus->setEndpoint('governance_files');
+      $directus->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'meta' => '*'
+        )
+      );
+      $gov = $directus->getData();
+      return view('aboutus.governance', compact('gov'));
+    }
+
     public function press(Request $request)
     {
       $perPage = 6;
