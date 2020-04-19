@@ -2,10 +2,36 @@
 @section('title', 'Our directors')
 @section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/1024px-picture_of_sidney_colvin.jpg')
 @section('hero_image_title', 'A portrait of Sidney Colvin')
+
+@section('content')
+<h2>Our directors</h2>
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Date from</th>
+        <th scope="col">Date to</th>
+        <th scope="col">Director</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($directors['data'] as $director)
+      <tr>
+        <td>{{ $director['date_from'] }}</td>
+        <td>{{ $director['date_to'] }}</td>
+        <td>{{ $director['display_name'] }}</td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
+</div>
+@endsection
+
 @section('timeline')
 <h2>Our Directors - a timeline</h2>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
-
   <section class="cd-horizontal-timeline">
   	<div class="timeline">
   		<div class="events-wrapper">
@@ -30,16 +56,16 @@
   		<ol>
         <li data-date="01/01/1800" class="selected">
   				<h2>{{$directors['data']['0']['display_name']}}</h2>
-  				<p>
-  					Bio here
-  				</p>
+  				@if(!is_null($directors['data']['0']['biography']))
+          @markdown($directors['data']['0']['biography'])
+          @endif
   			</li>
         @foreach($directors['data'] as $director)
   			<li data-date="01/01/{{$director['date_from']}}">
   				<h2>{{$director['display_name']}}</h2>
-  				<p>
-  					Bio to go here with image
-  				</p>
+          @if(!is_null($director['biography']))
+          @markdown($director['biography'])
+          @endif
   			</li>
         @endforeach
   		</ol>

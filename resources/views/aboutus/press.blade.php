@@ -17,6 +17,7 @@
   <h3>
     {{ $release['title']}}
   </h3>
+  <h4><small class="text-muted">{{ $release['release_date']}}</small></h4>
     <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($release['body'])),0,200) }}...</p>
   </div>
 </div>
