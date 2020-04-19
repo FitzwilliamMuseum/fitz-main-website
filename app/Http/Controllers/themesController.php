@@ -10,17 +10,42 @@ class themesController extends Controller
 
   public function index()
   {
-    $first = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=themes&filter[landing_page]=1');
-    $pages = $first->json();
-    $response = Http::get('https://content.fitz.ms/fitz-website/items/themes?fields=*.*.*&limit=3');
-    $themes = $response->json();
+    $api = $this->getApi();
+    $api->setEndpoint('stubs_and_pages');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'filter[section][eq]' => 'themes',
+          'filter[landing_page][eq]' => '1'
+      )
+    );
+    $pages = $api->getData();
+
+    $api2 = $this->getApi();
+    $api2->setEndpoint('themes');
+    $api2->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+      )
+    );
+    $themes = $api2->getData();
     return view('themes.index', compact('themes', 'pages'));
   }
 
   public function theme($slug)
   {
-    $response = Http::get('https://content.fitz.ms/fitz-website/items/themes?filter[slug]=' . $slug . '&fields=*.*.*');
-    $themes = $response->json();
+    $api = $this->getApi();
+    $api->setEndpoint('themes');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'filter[slug][eq]' => $slug
+      )
+    );
+    $themes = $api->getData();
     return view('themes.theme', compact('themes'));
   }
 }

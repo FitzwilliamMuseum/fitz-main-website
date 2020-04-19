@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use App\DirectUs;
 
 class departmentsController extends Controller
 {
@@ -16,28 +16,41 @@ class departmentsController extends Controller
   public function index()
   {
 
-      $first = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=departments&filter[landing_page]=1');
-      $pages = $first->json();
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/departments?fields=*.*.*&sort=id');
-      $departments = $response->json();
+      $api = new DirectUs;
+      $api->setEndpoint('stubs_and_pages');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'filter[section]' => 'departments',
+            'filter[landing_page]' => '1' ,
+            'meta' => '*'
+        )
+      );
+      $pages = $api->getData();
+      $api2 = new DirectUs;
+      $api2->setEndpoint('departments');
+      $api2->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'sort' => 'id',
+            'meta' => '*'
+        )
+      );
+      $departments = $api2->getData();
       return view('departments.index', compact('departments', 'pages'));
   }
 
   public function details($slug)
   {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/departments?filter[slug]=' . $slug . '&fields=*.*.*.*');
-      $departments = $response->json();
+      $api = new DirectUs;
+      $api->setEndpoint('departments');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'filter[slug]' => $slug,
+        )
+      );
+      $departments = $api->getData();
       return view('departments.details', compact('departments'));
   }
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function show($id)
-  {
-      //
-  }
-
 }

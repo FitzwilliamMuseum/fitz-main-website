@@ -14,17 +14,47 @@ class pagesController extends Controller
    */
   public function index($section, $slug)
   {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[slug][eq]=' . $slug . '&filter[section]=' . $section);
-      $pages = $response->json();
+      $api = $this->getApi();
+      $api->setEndpoint('stubs_and_pages');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug,
+            'filter[section][eq]' => $section,
+        )
+      );
+      $pages = $api->getData();
       return view('pages.index', compact('pages'));
   }
 
   public function landing($section)
   {
-    $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*&filter[section][eq]=' . $section . '&meta=*&filter[landing_page][null]&filter[associate_with_landing_page][eq]=1');
-    $associated = $response->json();
+    $api = $this->getApi();
+    $api->setEndpoint('stubs_and_pages');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'filter[landing_page][null]' => '',
+          'filter[section][eq]' => $section,
+          'filter[associate_with_landing_page][eq]' => '1'
+      )
+    );
+    $associated = $api->getData();
+    
+    $api2 = $this->getApi();
+    $api2->setEndpoint('stubs_and_pages');
+    $api2->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'filter[landing_page][eq]' => '1',
+          'filter[section][eq]' => $section,
+      )
+    );
     $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=' . $section . '&filter[landing_page]=1]');
-    $pages = $response->json();
+    $pages = $api2->getData();
     return view('pages.landing', compact('pages', 'associated'));
   }
 }

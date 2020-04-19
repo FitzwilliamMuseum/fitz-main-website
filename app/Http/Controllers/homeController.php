@@ -18,14 +18,56 @@ class homeController extends Controller
    */
   public function index()
   {
-    $request_one = Http::get('https://content.fitz.ms/fitz-website/items/carousels?fields=*.*&sort=-id&single=1&filter[section]=home');
-    $carousel = $request_one->json();
-    $request_two = Http::get('https://content.fitz.ms/fitz-website/items/news_articles?fields=*.*&sort=-id&limit=3');
-    $news = $request_two->json();
-    $request_three = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*&sort=-id&limit=3');
-    $research = $request_three->json();
-    $request_four = Http::get('https://content.fitz.ms/fitz-website/items/themes?fields=*.*&sort=-id&limit=3');
-    $themes = $request_four->json();
+    $api = $this->getApi();
+    $api->setEndpoint('carousels');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'filter[section][eq]' => 'home',
+          'single' => '1',
+          'sort' => '-id'
+      )
+    );
+    $carousel = $api->getData();
+
+
+    $api2 = $this->getApi();
+    $api2->setEndpoint('news_articles');
+    $api2->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'sort' => '-id',
+          'limit' => 3
+      )
+    );
+    $news = $api2->getData();
+
+    $api3 = $this->getApi();
+    $api3->setEndpoint('research_projects');
+    $api3->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'sort' => '-id',
+          'limit' => 3
+      )
+    );
+    $research = $api3->getData();
+
+    $api4 = $this->getApi();
+    $api4->setEndpoint('research_projects');
+    $api4->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'sort' => '-id',
+          'limit' => 3
+      )
+    );
+    $themes = $api4->getData();
+
     if (Cache::has('cache_twitter')) {
       $tweets = Cache::get('cache_twitter');
     } else {

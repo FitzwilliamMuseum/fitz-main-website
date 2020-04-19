@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\DirectUs;
 
 class aboutusController extends Controller
 {
@@ -22,17 +23,26 @@ class aboutusController extends Controller
 
     public function directors()
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/directors?fields=*.*.*');
-      $directors = $response->json();
+      $directus = new DirectUs;
+      $directus->setEndpoint('directors');
+      $directors = $directus->getData();
       return view('aboutus.directors', compact('directors'));
     }
 
     public function press(Request $request)
     {
       $perPage = 6;
-      $offset = ($request->page -1) * $perPage ;
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/pressroom_files?fields=*.*.*&meta=*&limit=6&offset=' . $offset);
-      $press = $response->json();
+      $directus = new DirectUs;
+      $directus->setEndpoint('pressroom_files');
+      $directus->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'limit' => 6,
+            'offset' => ($request->page -1) * $perPage ,
+            'meta' => '*'
+        )
+      );
+      $press = $directus->getData();
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
       $total = $press['meta']['total_count'];
       $paginator = new LengthAwarePaginator($press, $total, $perPage, $currentPage);

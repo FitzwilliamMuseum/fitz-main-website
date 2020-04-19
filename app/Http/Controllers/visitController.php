@@ -14,14 +14,55 @@ class visitController extends Controller
      */
     public function index()
     {
-        $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*&filter[section][eq]=visit-us&meta=*&filter[landing_page][null]&filter[associate_with_landing_page][eq]=1');
-        $associated = $response->json();
-        $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=visit-us&filter[landing_page]=1');
-        $pages = $response->json();
-        $request_five = Http::get('https://content.fitz.ms/fitz-website/items/directions?fields=*.*&sort=-id&limit=3');
-        $directions = $request_five->json();
-        $floorplans = Http::get('https://content.fitz.ms/fitz-website/items/floorplans_guides?fields=*.*&sort=id&[filter][type][eq]=floor_plan]');
-        $floors = $floorplans->json();
+
+        $api = $this->getApi();
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[section][eq]' => 'visit-us',
+              'filter[landing_page][null]' => '',
+              'filter[associate_with_landing_page][eq]' => '1'
+          )
+        );
+        $associated = $api->getData();
+
+        $api2 = $this->getApi();
+        $api2->setEndpoint('stubs_and_pages');
+        $api2->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[section][eq]' => 'visit-us',
+              'filter[landing_page][eq]' => '1',
+          )
+        );
+        $pages = $api2->getData();
+
+        $api3 = $this->getApi();
+        $api3->setEndpoint('directions');
+        $api3->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => '-id',
+              'limit' => '3',
+          )
+        );
+        $directions = $api3->getData();
+
+        $api4 = $this->getApi();
+        $api4->setEndpoint('floorplans_guides');
+        $api4->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => 'id',
+              '[filter][type][eq]' => 'floor_plan',
+          )
+        );
+        $floors = $api4->getData();
         return view('visit/index', compact('pages', 'associated', 'directions', 'floors'));
     }
 

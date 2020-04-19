@@ -42,7 +42,7 @@ Route::get('exhibitions/', 'exhibitionsController@index');
 Route::get('exhibitions/archive', 'exhibitionsController@archive');
 Route::get('exhibitions/future', 'exhibitionsController@future');
 Route::get('exhibitions/{slug}', 'exhibitionsController@details');
-
+Route::feeds();
 /*
 Put these last
 */

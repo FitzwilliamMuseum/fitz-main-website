@@ -15,38 +15,88 @@ class researchController extends Controller
 
      public function index()
      {
-       $first = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=research&filter[landing_page]=1');
-       $pages = $first->json();
-       $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*&limit=3');
-       $projects = $response->json();
+       $api = $this->getApi();
+       $api->setEndpoint('stubs_and_pages');
+       $api->setArguments(
+         $args = array(
+             'fields' => '*.*.*.*',
+             'meta' => '*',
+             'filter[landing_page][eq]' => '1',
+             'filter[section][eq]' => 'research',
+         )
+       );
+       $pages = $api->getData();
+
+       $api2 = $this->getApi();
+       $api2->setEndpoint('research_projects');
+       $api2->setArguments(
+         $args = array(
+             'fields' => '*.*.*',
+             'meta' => '*',
+             'limit' => '3'
+         )
+       );
+       $projects = $api2->getData();
        return view('research.index', compact('projects', 'pages'));
      }
 
     public function projects()
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*&sort=title');
-      $projects = $response->json();
+      $api = $this->getApi();
+      $api->setEndpoint('research_projects');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'sort' => 'title'
+        )
+      );
+      $projects = $api->getData();
       return view('research.projects', compact('projects'));
     }
 
     public function project($slug)
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/research_projects?fields=*.*.*&filter[slug]=' . $slug);
-      $projects = $response->json();
+      $api = $this->getApi();
+      $api->setEndpoint('research_projects');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug
+        )
+      );
+      $projects = $api->getData();
       return view('research.project', compact('projects'));
     }
 
     public function profiles()
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/staff_profiles?fields=*.*.*&sort=last_name');
-      $profiles = $response->json();
+      $api = $this->getApi();
+      $api->setEndpoint('staff_profiles');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'sort' => 'last_name'
+        )
+      );
+      $profiles = $api->getData();
       return view('research.profiles', compact('profiles'));
     }
 
     public function profile($slug)
     {
-      $response = Http::get('https://content.fitz.ms/fitz-website/items/staff_profiles?fields=*.*.*.*&filter[slug]=' . $slug);
-      $profiles = $response->json();
+      $api = $this->getApi();
+      $api->setEndpoint('staff_profiles');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug
+        )
+      );
+      $profiles = $api->getData();
       return view('research.profile', compact('profiles'));
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\DirectUs;
 
 class learningController extends Controller
 {
@@ -14,34 +15,94 @@ class learningController extends Controller
      */
 
 
+     public function getApi(){
+       $directus = new DirectUs;
+       return $directus;
+     }
+
+
     public function lookthinkdomain()
     {
-        $response = Http::get('https://content.fitz.ms/fitz-website/items/look_think_do?fields=*.*.*');
-        $ltd = $response->json();
+        $api = $this->getApi();
+        $api->setEndpoint('look_think_do');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*'
+          )
+        );
+        $ltd = $api->getData();
         return view('learning.lookthinkdomain', compact('ltd'));
     }
 
     public function lookthinkdoactivity($slug)
     {
-        $response = Http::get('https://content.fitz.ms/fitz-website/items/look_think_do?filter[slug]=' . $slug . '&fields=*.*.*');
-        $ltd = $response->json();
+        $api = $this->getApi();
+        $api->setEndpoint('look_think_do');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[slug][eq]' => $slug
+          )
+        );
+        $ltd = $api->getData();
         return view('learning.lookthinkdoactivity', compact('ltd'));
     }
 
     public function resources()
     {
-        $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*&filter[section][eq]=learning&meta=*&filter[landing_page][nnull]&filter[slug][eq]=resources');
-        $ltd = $response->json();
-        $resources = Http::get('https://content.fitz.ms/fitz-website/items/learning_pages?fields=*.*.*.*&filter[page_type][eq]=Fact%20Sheets');
-        $res = $resources->json();
-        $diy = Http::get('https://content.fitz.ms/fitz-website/items/learning_pages?fields=*.*.*.*&filter[page_type][neq]=Fact%20Sheets');
-        $stages = $diy->json();
+        $api = $this->getApi();
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[section][eq]' => 'learning',
+              'filter[landing_page][nnull]' => '',
+              'filter[slug][eq]' => 'resources'
+          )
+        );
+
+        $ltd = $api->getData();
+
+        $api2 = $this->getApi();
+        $api2->setEndpoint('learning_pages');
+        $api2->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[page_type][eq]' => 'Fact%20Sheets'
+          )
+        );
+        $res = $api2->getData();
+
+        $api3 = $this->getApi();
+        $api3->setEndpoint('learning_pages');
+        $api3->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[page_type][neq]' => 'Fact%20Sheets'
+          )
+        );
+        $stages = $api3->getData();
+
         return view('learning.resources', compact('ltd', 'res', 'stages'));
     }
+
     public function resource($slug)
     {
-        $resources = Http::get('https://content.fitz.ms/fitz-website/items/learning_pages?fields=*.*.*.*&filter[slug][eq]=' . $slug);
-        $res = $resources->json();
+        $api = $this->getApi();
+        $api->setEndpoint('learning_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[slug][eq]' => $slug
+          )
+        );
+        $res = $api->getData();
         return view('learning.resource', compact('res'));
     }
 }
