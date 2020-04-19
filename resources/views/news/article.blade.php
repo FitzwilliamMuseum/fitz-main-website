@@ -21,5 +21,14 @@
         </div>
       </div>
       @endif
+      @if($project['vimeo_id'])
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item "
+          src="https://player.vimeo.com/video/{{$project['vimeo_id']}}" frameborder="0"
+          allowfullscreen></iframe>
+        </div>
+      </div>
+      @endif
   @endsection
 @endforeach

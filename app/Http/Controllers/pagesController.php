@@ -42,7 +42,7 @@ class pagesController extends Controller
       )
     );
     $associated = $api->getData();
-    
+
     $api2 = $this->getApi();
     $api2->setEndpoint('stubs_and_pages');
     $api2->setArguments(
@@ -53,7 +53,6 @@ class pagesController extends Controller
           'filter[section][eq]' => $section,
       )
     );
-    $response = Http::get('https://content.fitz.ms/fitz-website/items/stubs_and_pages?fields=*.*.*&filter[section]=' . $section . '&filter[landing_page]=1]');
     $pages = $api2->getData();
     return view('pages.landing', compact('pages', 'associated'));
   }
