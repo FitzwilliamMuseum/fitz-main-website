@@ -37,6 +37,13 @@
         @yield('content')
         @yield('timeline')
   </div>
+  @hasSection('map')
+  <div class="container-fluid map-box">
+    @yield('map')
+  </div>
+
+  
+  @endif
         @yield('releases')
         @yield('resources-plans')
         @yield('diy')
@@ -50,13 +57,19 @@
         @yield('associated_pages')
         @yield('360')
         @yield('sketchfab-collection')
+
   @include('includes.share')
 
   @include('includes.footer')
   @include('includes.modal')
   @include('includes.javascript')
+
   @hasSection('360')
-  @include('includes.photosphere-js')
+    @include('includes.photosphere-js')
+  @endif
+
+  @hasSection('map')
+    @mapscripts
   @endif
 
   @hasSection('timeline')

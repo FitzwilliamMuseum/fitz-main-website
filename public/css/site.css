@@ -508,3 +508,7 @@ blockquote {
         margin:auto;
         width: 100%; // Add this
         }
+.map {
+  min-height: 400px;
+  max-height: 400px;
+}

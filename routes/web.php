@@ -42,6 +42,8 @@ Route::get('exhibitions/', 'exhibitionsController@index');
 Route::get('exhibitions/archive', 'exhibitionsController@archive');
 Route::get('exhibitions/future', 'exhibitionsController@future');
 Route::get('exhibitions/{slug}', 'exhibitionsController@details');
+Route::get('objects-and-artworks/pharos', 'pharosController@index');
+Route::get('objects-and-artworks/pharos/{slug}/', 'pharosController@details');
 Route::feeds();
 /*
 Put these last
