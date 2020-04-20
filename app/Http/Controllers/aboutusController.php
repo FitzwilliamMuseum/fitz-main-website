@@ -29,6 +29,21 @@ class aboutusController extends Controller
       return view('aboutus.directors', compact('directors'));
     }
 
+    public function director($slug)
+    {
+      $directus = new DirectUs;
+      $directus->setEndpoint('directors');
+      $directus->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug
+        )
+      );
+      $directors = $directus->getData();
+      return view('aboutus.director', compact('directors'));
+    }
+
     public function governance()
     {
       $directus = new DirectUs;
