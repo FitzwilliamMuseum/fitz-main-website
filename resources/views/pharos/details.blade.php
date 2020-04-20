@@ -27,7 +27,7 @@
     @map([
         'lat' => $record['map']['lat'],
         'lng' => $record['map']['lng'],
-        'zoom' => 18,
+        'zoom' => 6,
         'markers' => [
             [
                 'title' => 'Find the museum',

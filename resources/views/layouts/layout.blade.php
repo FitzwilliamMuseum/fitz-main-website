@@ -6,7 +6,9 @@
     @include('includes.meta')
 
     @include('includes.css')
-
+    @hasSection('map')
+    @mapstyles
+    @endif
     @include('includes.manifest')
 
 </head>
@@ -42,7 +44,7 @@
     @yield('map')
   </div>
 
-  
+
   @endif
         @yield('releases')
         @yield('resources-plans')
