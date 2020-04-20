@@ -13,8 +13,29 @@
 <script defer type="text/javascript" src="/js/klaro.js"></script>
 <!-- End of body -->
 
+@hasSection('audio-guide')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.10/plyr.min.js"></script>
+<script>
+// Change "{}" to your options:
+// https://github.com/sampotts/plyr/#options
+var controls =
+[
+    'restart', // Restart playback
+    'play', // Play/pause playback
+    'progress', // The progress bar and scrubber for playback and buffering
+    'current-time', // The current time of playback
+    'duration', // The full duration of the media
+    'mute', // Toggle mute
+    'volume', // Volume control
+    'settings', // Settings menu
+    'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+];
+const player = new Plyr('.player', { controls });
 
-
+// Expose player so it can be used from the console
+window.player = player;
+</script>
+@endif
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3319190-17"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

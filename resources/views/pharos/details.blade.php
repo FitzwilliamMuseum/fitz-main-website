@@ -90,4 +90,9 @@
       </div>
       @endif
     @endsection
+    @if(!empty($record['audio_guide']))
+    @section('audio-guide')
+      @include('includes.audio-guide')
+    @endsection
+    @endif
 @endforeach

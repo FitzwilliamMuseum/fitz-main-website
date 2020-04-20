@@ -60,7 +60,7 @@
         @yield('360')
         @yield('youtube')
         @yield('sketchfab-collection')
-
+        @yield('audio-guide')
   @include('includes.share')
 
   @include('includes.footer')

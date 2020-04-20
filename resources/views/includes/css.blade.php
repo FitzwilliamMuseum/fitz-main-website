@@ -8,6 +8,10 @@
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="/css/material.min.css" rel="stylesheet">
     <link href="/css/site.css" rel="stylesheet">
+    @hasSection('audio-guide')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.css" rel="stylesheet">
+
+    @endif
     <link rel="icon" href="/favicon.ico"/>
     <style>
       .head {

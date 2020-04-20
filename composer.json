@@ -21,6 +21,7 @@
         "laravel/ui": "^2.0",
         "rebing/graphql-laravel": "^5.0",
         "spatie/laravel-feed": "^2.6",
+        "spatie/laravel-responsecache": "^6.6",
         "thepinecode/blade-filters": "^0.6.0",
         "thujohn/twitter": "^2.2"
     },
