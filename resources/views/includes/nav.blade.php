@@ -24,6 +24,8 @@
         <a class="dropdown-item" href="{{ URL::to('/departments') }}">Our departments</a>
         <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Our galleries</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Our press room</a>
+        <a class="dropdown-item" href="{{ URL::to('/about-us/directors') }}">Our directors</a>
+
       </div>
     </li>
     <li class="nav-item active">
