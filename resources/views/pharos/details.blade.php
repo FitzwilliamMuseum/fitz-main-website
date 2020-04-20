@@ -39,5 +39,19 @@
     ])
 
     @endsection
+    @section('sketchfab-collection')
 
+      @if(!empty($record['sketchfab_id']))
+      <div class="container">
+        <h2>3D scan</h2>
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+          <div class="embed-responsive embed-responsive-1by1">
+            <iframe title="A 3D model" class="embed-responsive-item"
+            src="https://sketchfab.com/models/{{ $record['sketchfab_id']}}/embed?"
+            frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          </div>
+        </div>
+      </div>
+      @endif
+    @endsection
 @endforeach
