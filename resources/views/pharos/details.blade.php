@@ -7,10 +7,14 @@
   @section('hero_image_title', $record['image_alt_text'])
     @section('content')
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <figure class="figure">
         <img src="{{ $record['image']['data']['thumbnails']['5']['url']}}"
         alt="{{$record['image_alt_text']}}" class="img-fluid float-right"
         width="400"
         />
+        <figcaption class="figure-caption text-right">{{$record['image_alt_text']}}</figcaption>
+
+        </figure>
         @markdown($record['description'])
       </div>
 
