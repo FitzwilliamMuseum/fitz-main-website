@@ -27,6 +27,7 @@
 
     @endsection
 
+    @if(!is_null($record['map']))
     @section('map')
     @map([
         'lat' => $record['map']['lat'],
@@ -43,6 +44,8 @@
     ])
 
     @endsection
+    @endif
+    
     @section('sketchfab-collection')
 
       @if(!empty($record['sketchfab_id']))
