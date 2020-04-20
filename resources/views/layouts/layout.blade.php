@@ -58,6 +58,7 @@
         @yield('galleries')
         @yield('associated_pages')
         @yield('360')
+        @yield('youtube')
         @yield('sketchfab-collection')
 
   @include('includes.share')

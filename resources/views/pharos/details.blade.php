@@ -15,13 +15,22 @@
         <figcaption class="figure-caption text-right">{{$record['image_alt_text']}}</figcaption>
 
         </figure>
+        <h2>Collections ID: {{$record['adlib_id']}}</h2>
         @markdown($record['description'])
       </div>
 
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
         <h2>Meta Data</h2>
         <ul>
+          @if(!is_null($record['place_of_origin']))
           <li>Place of origin: {{ $record['place_of_origin'] }}</li>
+          @endif
+          @if(!is_null($record['maker'] ))
+          <li>Maker: {{ $record['maker'] }}</li>
+          @endif
+          @if(!is_null($record['material'] ))
+          <li>Material: {{ $record['material'] }}</li>
+          @endif
         </ul>
       </div>
 
@@ -45,7 +54,21 @@
 
     @endsection
     @endif
-    
+
+    @section('youtube')
+      @if(!empty($record['youtube_id']))
+      <div class="container">
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item "
+          src="https://www.youtube.com/embed/{{$record['youtube_id']}}" frameborder="0"
+          allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+      @endif
+    @endsection
+
     @section('sketchfab-collection')
 
       @if(!empty($record['sketchfab_id']))
