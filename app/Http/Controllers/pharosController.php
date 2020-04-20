@@ -29,7 +29,7 @@ class pharosController extends Controller
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
       $total = $pharos['meta']['total_count'];
       $paginator = new LengthAwarePaginator($pharos, $total, $perPage, $currentPage);
-      $paginator->setPath('collections/pharos/');
+      $paginator->setPath('pharos/');
       return view('pharos.index', compact('pharos', 'paginator'));
     }
 
