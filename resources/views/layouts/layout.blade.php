@@ -40,7 +40,7 @@
         @yield('timeline')
   </div>
   @hasSection('map')
-  <div class="container-fluid map-box">
+  <div class="container-fluid map-box mb-3">
     @yield('map')
   </div>
 
