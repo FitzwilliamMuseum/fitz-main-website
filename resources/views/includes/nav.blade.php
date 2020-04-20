@@ -39,8 +39,9 @@
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Objects and artworks</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks') }}">An introduction</a>
-        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library') }}">Image library</a>
+        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/') }}">An introduction</a>
+        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/pharos/') }}">Pharos highlights</a>
+        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
       </div>
     </li>
     <li class="nav-item dropdown">
