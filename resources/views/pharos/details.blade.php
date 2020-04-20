@@ -25,11 +25,17 @@
           @if(!is_null($record['place_of_origin']))
           <li>Place of origin: {{ $record['place_of_origin'] }}</li>
           @endif
+          @if(!is_null($record['date']))
+          <li>Date: {{ $record['date'] }}</li>
+          @endif
           @if(!is_null($record['maker'] ))
           <li>Maker: {{ $record['maker'] }}</li>
           @endif
           @if(!is_null($record['material'] ))
           <li>Material: {{ $record['material'] }}</li>
+          @endif
+          @if(!is_null($record['map']))
+          <li>Map coordinates: {{ $record['map']['lat'] }}, {{$record['map']['lng']}}</li>
           @endif
         </ul>
       </div>
