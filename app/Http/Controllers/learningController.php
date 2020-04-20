@@ -59,12 +59,11 @@ class learningController extends Controller
               'fields' => '*.*.*.*',
               'meta' => '*',
               'filter[section][eq]' => 'learning',
-              'filter[landing_page][nnull]' => '',
+              'filter[landing_page][eq]' => '1',
               'filter[slug][eq]' => 'resources'
           )
         );
-
-        $ltd = $api->getData();
+        $pages = $api->getData();
 
         $api2 = $this->getApi();
         $api2->setEndpoint('learning_pages');
@@ -72,7 +71,7 @@ class learningController extends Controller
           $args = array(
               'fields' => '*.*.*.*',
               'meta' => '*',
-              'filter[page_type][eq]' => 'Fact%20Sheets'
+              'filter[page_type][eq]' => 'Fact Sheets'
           )
         );
         $res = $api2->getData();
@@ -83,12 +82,13 @@ class learningController extends Controller
           $args = array(
               'fields' => '*.*.*.*',
               'meta' => '*',
-              'filter[page_type][neq]' => 'Fact%20Sheets'
+              'filter[page_type][neq]' => 'Fact Sheets',
+              'sort' => '-id'
           )
         );
         $stages = $api3->getData();
 
-        return view('learning.resources', compact('ltd', 'res', 'stages'));
+        return view('learning.resources', compact('pages', 'res', 'stages'));
     }
 
     public function resource($slug)
