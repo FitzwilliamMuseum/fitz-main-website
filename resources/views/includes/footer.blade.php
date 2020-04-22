@@ -54,11 +54,9 @@
                     <li><a href="https://www.museums.cam.ac.uk/"
                       aria-label="The University of Cambridge museums site">University
                       of Cambridge Museums</a></li>
-                                  <li><a href="https://www.fitzmuseum.cam.ac.uk/website/tou"
+                                  <li><a href="/about-us/terms-of-use"
                       aria-label="Website terms and conditions">Website Terms of Use</a></li>
-                    <li><a href="https://www.fitzmuseum.cam.ac.uk/website/cookiepolicy"
-                      aria-label="Our privacy policy">Privacy and cookies</a></li>
-                    <li><a href="https://www.fitzmuseum.cam.ac.uk/website/cookiepolicy">Accessibility</a></li>
+                    <li><a href="/about-us/privacy-and-cookies">Cookies, privacy & accessibility</a></li>
                     <li><a aria-label="Contact the museum" href="/contactus">Contact us</a></li>
                     <li><a aria-label="Join our mailing list"
                       href="/signup">Join the Fitz email list</a></li>
