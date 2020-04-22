@@ -57,7 +57,7 @@
                                   <li><a href="/about-us/terms-of-use"
                       aria-label="Website terms and conditions">Website Terms of Use</a></li>
                     <li><a href="/about-us/privacy-and-cookies">Cookies, privacy & accessibility</a></li>
-                    <li><a aria-label="Contact the museum" href="/contactus">Contact us</a></li>
+                    <li><a aria-label="Contact the museum" href="/about-us/contact-us">Contact us</a></li>
                     <li><a aria-label="Join our mailing list"
                       href="/signup">Join the Fitz email list</a></li>
                     <li><a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
