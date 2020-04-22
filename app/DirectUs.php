@@ -82,6 +82,9 @@ class DirectUs {
       $data = $response->json();
       Cache::put($key, $data, 60);
     }
+    if(empty($data['data'])){
+      abort(404);
+    }
     return $data;
   }
 }
