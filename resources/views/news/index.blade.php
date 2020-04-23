@@ -9,7 +9,9 @@
     <div class="card card-body h-100">
       @if(!is_null($project['field_image']))
       <img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"/>
-        @endif
+      @else
+      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"/>
+      @endif
     <div class="container h-100">
 
       <div class="contents-label mb-3">

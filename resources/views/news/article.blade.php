@@ -1,9 +1,12 @@
 @extends('layouts/layout')
 @foreach($news['data'] as $project)
 @section('title', $project['article_title'])
-@if(isset($project['field_image']['data']['full_url']))
+@if(!empty($project['field_image']))
 @section('hero_image', $project['field_image']['data']['full_url'])
 @section('hero_image_title', $project['field_image_alt_text'])
+@else
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+@section('hero_image_title', "The inside of our Founder's entrance")
 @endif
 
 @section('content')
