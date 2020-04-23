@@ -35,11 +35,11 @@
 
       <div class="contents-label mb-3">
         <h3>
-          <a href="news/article/{{ $project['slug']}}">{{ $project['article_title']}}</a>
+          <a href="news/{{ $project['slug']}}">{{ $project['article_title']}}</a>
         </h3>
       </div>
     </div>
-    <a href="news/article/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
+    <a href="news/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
   </div>
 
   </div>
