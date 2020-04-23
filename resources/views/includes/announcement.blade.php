@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <p class="text-center">
       <i class="fa fa-exclamation-circle fa-inverse"></i>
-      The Fitzwilliam Museum is currently closed due to Covid-19.
+      The Fitzwilliam Museum is currently closed due to <a href="/news/the-museum-and-coronavirus-covid-19-an-update">Covid-19</a>.
       Join us online as we bring you #FitzVirtual.
     </p>
   </div>

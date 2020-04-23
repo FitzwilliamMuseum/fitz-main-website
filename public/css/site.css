@@ -505,3 +505,6 @@ blockquote {
   min-height: 400px;
   max-height: 400px;
 }
+a.share {
+  color: white;
+}
