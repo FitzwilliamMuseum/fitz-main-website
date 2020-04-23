@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "rebing/graphql-laravel": "^5.0",
+        "solarium/solarium": "^5.2",
         "spatie/laravel-feed": "^2.6",
         "spatie/laravel-responsecache": "^6.6",
         "thepinecode/blade-filters": "^0.6.0",
