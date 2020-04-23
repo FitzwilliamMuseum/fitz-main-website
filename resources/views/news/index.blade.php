@@ -16,14 +16,14 @@
 
       <div class="contents-label mb-3">
         <h3>
-          <a href="news/article/{{ $project['slug']}}">{{ $project['article_title']}}</a>
+          <a href="news/{{ $project['slug']}}">{{ $project['article_title']}}</a>
         </h3>
         <h4><small class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</small></h4>
         <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['article_body'])),0,200) }}...</p>
 
       </div>
     </div>
-    <a href="news/article/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
+    <a href="news/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
   </div>
 
 </div>
