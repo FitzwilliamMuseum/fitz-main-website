@@ -5,7 +5,7 @@
   @section('content')
   <h2>Look, think, do activities</h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-<p>These activities have been designed as a starting point for looking, talking and doing together. 
+<p>These activities have been designed as a starting point for looking, talking and doing together.
 We will be adding new entries throughout April and May 2020.
 </p>
 <p>The Look and Think activities should take 5 -10 minutes.</p>
@@ -16,7 +16,7 @@ We will be adding new entries throughout April and May 2020.
       <div class="row">
 
         @foreach($ltd['data'] as $look)
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <div class="card card-body h-100">
             <img class="img-fluid" src="{{ $look['focus_image']['data']['thumbnails'][4]['url']}}"/>
           <div class="container h-100">
