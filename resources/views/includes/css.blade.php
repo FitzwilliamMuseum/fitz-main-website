@@ -18,28 +18,40 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+
+      @hasSection('parallax_two')
       .second-parallax-home {
         min-height: 200px;
         background-image: url(@yield('parallax_two'));
         background-repeat: no-repeat;
         background-size: cover;
       }
+      @endif
+
+      @hasSection('parallax_three')
       .third-parallax-home {
         min-height: 200px;
         background-image: url(@yield('parallax_three'));
         background-repeat: no-repeat;
         background-size: cover;
       }
+      @endif
+
+      @hasSection('parallax_four')
       .fourth-parallax-home {
         min-height: 200px;
         background-image: url(@yield('parallax_four'));
         background-repeat: no-repeat;
         background-size: cover;
       }
+      @endif
+
+      @hasSection('parallax_home')
       .parallax-home {
         min-height: 200px;
         background-image: url(@yield('parallax_home'));
         background-repeat: no-repeat;
         background-size: cover;
       }
+      @endif
     </style>
