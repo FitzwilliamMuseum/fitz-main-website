@@ -57,7 +57,7 @@ class homeController extends Controller
     $research = $api3->getData();
 
     $api4 = $this->getApi();
-    $api4->setEndpoint('research_projects');
+    $api4->setEndpoint('themes');
     $api4->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
