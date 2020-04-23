@@ -24,6 +24,7 @@ We will be adding new entries throughout April and May 2020.
               <h3>
                 <a href="look-think-do/{{ $look['slug']}}">{{ $look['title_of_work']}}</a>
               </h3>
+              <h4><small class="text-muted">{{  Carbon\Carbon::parse($look['publication_date'])->format('l dS F Y') }}</small></h4>
               <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($look['main_text_description'])),0,200) }}...</p>
 
             </div>
