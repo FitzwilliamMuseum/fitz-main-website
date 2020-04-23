@@ -8,13 +8,6 @@
   margin-bottom: 0;
 }
 
-.head {
-  background-image: url(https://feast-and-fast.fitzmuseum.cam.ac.uk/images/layouts/confection.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
 @media screen and (max-width: 440px) {
   .head {
     padding-top: 100px;

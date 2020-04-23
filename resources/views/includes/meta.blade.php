@@ -27,8 +27,11 @@
     <link type="text/plain" rel="author" href="{{ URL::to('/humans.txt') }}" />
 
     <script type="application/ld+json">
-    {"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://feast-and-fast.fitzmuseum.cam.ac.uk/images/logos/FitzLogo.png"}},
-    "headline":"Feast &amp; Fast","@type":"WebSite","url":"https://feast-and-fast.fitzmuseum.cam.ac.uk/",
-    "name":"Feast &amp; Fast",
-    "description":"Food defines us as individuals, communities, and nations: we are what we eat and, equally, what we don’t eat. When, where, why, how and with whom we eat are crucial to our identity. Feast &amp; Fast presents novel approaches to understanding the history and culture of food and eating.","@context":"https://schema.org"}</script>
-    <!-- End Jekyll SEO tag -->
+    {"publisher":{"@type":"Organization",
+    "logo":{"@type":"ImageObject",
+    "url":"https://feast-and-fast.fitzmuseum.cam.ac.uk/images/logos/FitzLogo.png"}},
+    "headline":"Feast &amp; Fast","@type":"WebSite","url":"{{ URL::to('/')}}",
+    "name":"The Fitzwilliam Museum",
+    "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
+    "@context":"https://schema.org"}
+  </script>
