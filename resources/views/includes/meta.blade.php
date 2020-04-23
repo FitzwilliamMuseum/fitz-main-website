@@ -35,3 +35,6 @@
     "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
     "@context":"https://schema.org"}
   </script>
+  @if(Request::url() === 'https://beta.fitz.ms')
+        <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g" async="true"></script>
+  @endif
