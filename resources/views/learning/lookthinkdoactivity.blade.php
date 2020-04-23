@@ -19,7 +19,7 @@
           </div>
 
           <div class="shadow-sm p-3 mx-auto  rounded">
-          {!! $look['main_text_description'] !!}
+          @markdown($look['main_text_description'])
           </div>
 
       </div>
@@ -35,5 +35,23 @@
          <p>{!! $look['adlib_id_number'] !!}</p>
       </div>
     </div>
+    @if($look['youtube_id'])
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item "
+        src="https://www.youtube.com/embed/{{$look['youtube_id']}}" frameborder="0"
+        allowfullscreen></iframe>
+      </div>
+    </div>
+    @endif
+    @if($look['vimeo_id'])
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item "
+        src="https://player.vimeo.com/video/{{$look['vimeo_id']}}" frameborder="0"
+        allowfullscreen></iframe>
+      </div>
+    </div>
+    @endif
   @endsection
 @endforeach
