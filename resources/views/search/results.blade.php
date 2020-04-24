@@ -10,20 +10,23 @@
     Your search for <strong>{{ $queryString }}</strong> returned <strong>{{ $number }}</strong> results.
   </p>
 </div>
+
   @if(!empty($records))
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+
   @foreach($records as $result)
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
       <h3><a href="/{{ $result['url'][0]}}/{{ $result['slug'][0]}}">{{ $result['title'][0]}}</a></h3>
       <p>
         @if(!empty($result['description'][0]))
           {{ substr(strip_tags(htmlspecialchars_decode($result['description'][0])),0,200) }}...
         @endif
       </p>
+      </div>
   @endforeach
   <nav aria-label="Page navigation">
     {{ $paginate->links() }}
   </nav>
-</div>
+
 @else
   <p>No results to display.</p>
 @endif
