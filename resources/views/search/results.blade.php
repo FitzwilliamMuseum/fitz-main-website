@@ -9,17 +9,17 @@
   <p>
     Your search for <strong>{{ $queryString }}</strong> returned <strong>{{ $number }}</strong> results.
   </p>
+</div>
   @if(!empty($records))
-  <ul>
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   @foreach($records as $result)
-      <li>
-        <a href="/{{ $result['url'][0]}}/{{ $result['slug'][0]}}">{{ $result['title'][0]}}</a><br />
+      <h3><a href="/{{ $result['url'][0]}}/{{ $result['slug'][0]}}">{{ $result['title'][0]}}</a></h3>
+      <p>
         @if(!empty($result['description'][0]))
-          {{ $result['description'][0] }}
+          {{ substr(strip_tags(htmlspecialchars_decode($result['description'][0])),0,200) }}...
         @endif
-      </li>
+      </p>
   @endforeach
-  </ul>
   <nav aria-label="Page navigation">
     {{ $paginate->links() }}
   </nav>
@@ -27,5 +27,6 @@
 @else
   <p>No results to display.</p>
 @endif
+</div>
 </div>
 @endsection
