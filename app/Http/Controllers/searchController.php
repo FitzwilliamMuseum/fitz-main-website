@@ -55,7 +55,7 @@ class searchController extends Controller
           $this->client = new Client($configSolr);
           $query = $this->client->createSelect();
           $query->setQuery($queryString);
-          $query->setQueryDefaultOperator('OR');
+          $query->setQueryDefaultOperator('AND');
           $query->setStart($from);
           $query->setRows($perPage);
           $data = $this->client->select($query);
