@@ -10,10 +10,16 @@
     Your search for <strong>{{ $queryString }}</strong> returned <strong>{{ $number }}</strong> results.
   </p>
   @if(!empty($records))
+  <ul>
   @foreach($records as $result)
-    @php(var_dump($result))
+      <li>
+        <a href="/{{ $result['url'][0]}}/{{ $result['slug'][0]}}">{{ $result['title'][0]}}</a><br />
+        @if(!empty($result['description'][0]))
+          {{ $result['description'][0] }}
+        @endif
+      </li>
   @endforeach
-
+  </ul>
   <nav aria-label="Page navigation">
     {{ $paginate->links() }}
   </nav>
