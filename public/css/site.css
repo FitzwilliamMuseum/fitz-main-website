@@ -508,3 +508,8 @@ blockquote {
 a.share {
   color: white;
 }
+.svg-logo {
+  z-index: -1;
+	float: right;
+	margin-top: -6px;
+}
