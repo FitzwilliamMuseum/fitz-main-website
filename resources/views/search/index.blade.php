@@ -4,14 +4,13 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')
-<h2></h2>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   {{ \Form::open(['url' => url('search/results'),'method' => 'GET']) }}
   <div class="row center-block">
     <div class="col-lg-6 center-block searchform">
-      <div class="input-group">
-        <input type="text" id="query" name="query" value="" class="form-control"
-        placeholder="Search archive" required value="{{ old('query') }}">
+      <div class="input-group mr-3">
+        <input type="text" id="query" name="query" value="" class="form-control mr-4"
+        placeholder="Search our site" required value="{{ old('query') }}">
         <span class="input-group-btn">
           <button class="btn btn-dark" type="submit">Search...</button>
         </span>

@@ -1,7 +1,7 @@
 <!-- Nav bars -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-  <a class="navbar-brand order-md-last " href="{{ URL::to('/') }}">The Fitzwilliam Museum</a>
+  <!-- <a class="navbar-brand order-md-last " href="{{ URL::to('/') }}">The Fitzwilliam Museum</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
   aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -69,5 +69,9 @@
       </div>
     </li>
 </ul>
+{{ \Form::open(['url' => url('search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
+  <input id="query" name="query" type="text" class="form-control mr-sm-2" placeholder="Search" required value="{{ old('query') }}">
+  <button type="submit" class="btn btn-outline-light">Search</button>
+{!! Form::close() !!}
 </div>
 </nav>

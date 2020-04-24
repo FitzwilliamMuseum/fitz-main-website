@@ -4,6 +4,32 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  {{ \Form::open(['url' => url('search/results'),'method' => 'GET']) }}
+  <div class="row center-block">
+    <div class="col-lg-6 center-block searchform">
+      <div class="input-group">
+        <input type="text" id="query" name="query" value="" class="form-control mr-4" 
+        placeholder="Search our site" required value="{{ old('query') }}">
+        <span class="input-group-btn">
+          <button class="btn btn-dark" type="submit">Search...</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  @if(count($errors))
+  <div class="form-group">
+    <div class="alert alert-danger">
+      <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  </div>
+  @endif
+  {!! Form::close() !!}
+</div>
 <h2>Search results</h2>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   <p>
@@ -15,12 +41,13 @@
 
   @foreach($records as $result)
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-      <h3><a href="/{{ $result['url'][0]}}/{{ $result['slug'][0]}}">{{ $result['title'][0]}}</a></h3>
+      <h3><a href="/{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
       <p>
         @if(!empty($result['description'][0]))
-          {{ substr(strip_tags(htmlspecialchars_decode($result['description'][0])),0,200) }}...
+          {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200) }}...
         @endif
       </p>
+      <p><span class="badge badge-dark p-2">{{ ucfirst($result['contentType'][0])}}</span></p>
       </div>
   @endforeach
   <nav aria-label="Page navigation">
