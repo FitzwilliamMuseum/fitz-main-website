@@ -328,7 +328,7 @@ body {
   .shout {
     color: white!important;
     font-family: 'Lato', sans-serif;
-    font-size: 8rem;
+    font-size: 6rem;
     margin-top:4rem;
   }
   .shout-less {
@@ -512,4 +512,8 @@ a.share {
   z-index: -1;
 	float: right;
 	margin-top: -6px;
+}
+input#query {
+    background-color: #ffffff;
+    color: #000000;
 }
