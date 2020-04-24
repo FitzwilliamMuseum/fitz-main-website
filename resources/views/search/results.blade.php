@@ -11,7 +11,7 @@
   </p>
   @if(!empty($records))
   @foreach($records as $result)
-  @php(var_dump($result)
+    @php(var_dump($result))
   @endforeach
 
   <nav aria-label="Page navigation">
