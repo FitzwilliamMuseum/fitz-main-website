@@ -47,7 +47,8 @@
           {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200) }}...
         @endif
       </p>
-      <p><span class="badge badge-dark p-2">{{ ucfirst($result['contentType'][0])}}</span> URL: {{URL::to('/')}}{{$result['url'][0]}}</p>
+      <p><a href="{{URL::to('/')}}/{{$result['url'][0]}}">{{URL::to('/')}}/{{$result['url'][0]}}</a></p>
+      <p><span class="badge badge-dark p-2">{{ ucfirst($result['contentType'][0])}}</span> </p>
       </div>
   @endforeach
   <nav aria-label="Page navigation">
