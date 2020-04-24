@@ -9,7 +9,7 @@
   <div class="row center-block">
     <div class="col-lg-6 center-block searchform">
       <div class="input-group">
-        <input type="text" id="query" name="query" value="" class="form-control mr-4" 
+        <input type="text" id="query" name="query" value="" class="form-control mr-4"
         placeholder="Search our site" required value="{{ old('query') }}">
         <span class="input-group-btn">
           <button class="btn btn-dark" type="submit">Search...</button>
@@ -47,7 +47,7 @@
           {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200) }}...
         @endif
       </p>
-      <p><span class="badge badge-dark p-2">{{ ucfirst($result['contentType'][0])}}</span></p>
+      <p><span class="badge badge-dark p-2">{{ ucfirst($result['contentType'][0])}}</span> URL: {{URL::to('/')}}{{$result['url'][0]}}</p>
       </div>
   @endforeach
   <nav aria-label="Page navigation">
