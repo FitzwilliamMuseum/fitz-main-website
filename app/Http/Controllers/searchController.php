@@ -337,7 +337,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,title,description,slug'
+          'fields' => 'id,title,description,slug,image.*'
       )
     );
     $profiles = $api->getData();
@@ -355,6 +355,7 @@ class searchController extends Controller
       $doc->slug = $profile['slug'];
       $doc->url = 'objects-and-artworks/pharos/' . $profile['slug'];
       $doc->contentType = 'pharos';
+      $doc->image = $profile['image']['data']['thumbnails']['4']['url'];
       $documents[] = $doc;
     }
     // add the documents and a commit command to the update query

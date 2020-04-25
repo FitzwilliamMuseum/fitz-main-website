@@ -95,4 +95,37 @@
       @include('includes.audio-guide')
     @endsection
     @endif
+
+    @if(!empty($records))
+    @section('mlt')
+    <div class="container">
+    <h3>Other Pharos objects you might like</h3>
+    <div class="row">
+
+      @foreach($records as $record)
+
+      <div class="col-md-4 mb-3">
+        <div class="card card-body h-100">
+          @if(!is_null($record['image']))
+          <img class="img-fluid" src="{{ $record['image'][0]}}"/>
+          @endif
+        <div class="container h-100">
+
+          <div class="contents-label mb-3">
+            <h3>
+              <a href="/objects-and-artworks/pharos/{{ $record['slug'][0]}}">{{ $record['title'][0]}}</a>
+            </h3>
+            <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...</p>
+
+          </div>
+        </div>
+        <a href="/objects-and-artworks/pharos/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+      </div>
+
+    </div>
+    @endforeach
+  </div>
+    </div>
+    @endsection
+    @endif
 @endforeach

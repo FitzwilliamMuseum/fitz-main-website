@@ -8,6 +8,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\DirectUs;
+use App\MoreLikeThis;
 
 class pharosController extends Controller
 {
@@ -29,7 +30,7 @@ class pharosController extends Controller
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
       $total = $pharos['meta']['total_count'];
       $paginator = new LengthAwarePaginator($pharos, $total, $perPage, $currentPage);
-      $paginator->setPath('pharos/');
+      $paginator->setPath('pharos');
       return view('pharos.index', compact('pharos', 'paginator'));
     }
 
@@ -45,6 +46,10 @@ class pharosController extends Controller
         )
       );
       $pharos = $api->getData();
-      return view('pharos.details', compact('pharos'));
+
+      $mlt = new MoreLikeThis;
+      $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
+      $records = $mlt->getData();
+      return view('pharos.details', compact('pharos', 'records'));
     }
 }

@@ -61,6 +61,7 @@
         @yield('youtube')
         @yield('sketchfab-collection')
         @yield('audio-guide')
+        @yield('mlt')
   @include('includes.share')
 
   @include('includes.footer')

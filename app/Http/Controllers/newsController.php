@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
-
+use App\MoreLikeThis;
 
 class newsController extends Controller
 {
@@ -53,7 +53,11 @@ class newsController extends Controller
       )
     );
     $news = $api->getData();
-    return view('news.article', compact('news'));
+
+    $mlt = new MoreLikeThis;
+    $mlt->setLimit(3)->setType('news')->setQuery($slug);
+    $records = $mlt->getData();
+    return view('news.article', compact('news', 'records'));
   }
 
 }
