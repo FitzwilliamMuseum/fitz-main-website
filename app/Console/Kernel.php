@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use App\Http\Controllers;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -24,7 +24,17 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call('App\Http\Controllers\searchController@staff')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@stubs')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@news')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@directors')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@researchprojects')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@galleries')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@lookthinkdo')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@collections')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@departments')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@pressroom')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@themes')->cron('0 */5 * * *');
     }
 
     /**

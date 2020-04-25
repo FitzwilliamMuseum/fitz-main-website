@@ -48,9 +48,9 @@ class searchController extends Controller
       $perPage = 20;
       $expiresAt = now()->addMinutes(3600);
       $from = ($request->get('page', 1) - 1) * $perPage;
-      // if (Cache::has($key)) {
-      //     $data = Cache::store('file')->get($key);
-      // } else {
+      if (Cache::has($key)) {
+          $data = Cache::store('file')->get($key);
+      } else {
           $configSolr = \Config::get('solarium');
           $this->client = new Client($configSolr);
           $query = $this->client->createSelect();
@@ -58,9 +58,13 @@ class searchController extends Controller
           $query->setQueryDefaultOperator('AND');
           $query->setStart($from);
           $query->setRows($perPage);
+          // get the facetset component
+          $facetSet = $query->getFacetSet();
+          // create a facet field instance and set options
+          $facetSet->createFacetField('type')->setField('contentType');
           $data = $this->client->select($query);
-      //     Cache::store('file')->put($key, $data, $expiresAt);
-      // }
+          Cache::store('file')->put($key, $data, $expiresAt);
+      }
       $number = $data->getNumFound();
       $records = $data->getDocuments();
       $paginate = new LengthAwarePaginator($records, $number, $perPage);
@@ -96,7 +100,6 @@ class searchController extends Controller
           'fields' => 'id,display_name,biography, slug'
       )
     );
-    $url = '/research/staff-profiles/';
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
     $this->client = new Client($configSolr);
@@ -108,13 +111,12 @@ class searchController extends Controller
       $doc->id = $profile['id'] . '-staff';
       $doc->title = $profile['display_name'];
       $doc->description = strip_tags($profile['biography']);
+      $doc->body = strip_tags($profile['biography']);
       $doc->slug = $profile['slug'];
-      $doc->url = $url;
+      $doc->url = 'research/staff-profiles/' . $profile['slug'];
       $doc->contentType = 'staffProfile';
       $documents[] = $doc;
-
     }
-
     // add the documents and a commit command to the update query
     $update->addDocuments($documents);
     $update->addCommit();
@@ -132,7 +134,6 @@ class searchController extends Controller
           'fields' => 'id,article_title,article_body,slug'
       )
     );
-    $url = '/news/article/';
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
     $this->client = new Client($configSolr);
@@ -144,8 +145,9 @@ class searchController extends Controller
       $doc->id = $profile['id'] . '-news';
       $doc->title = $profile['article_title'];
       $doc->description = strip_tags($profile['article_body']);
+      $doc->body = strip_tags($profile['article_body']);
       $doc->slug = $profile['slug'];
-      $doc->url = $url;
+      $doc->url = 'news/' . $profile['slug'];
       $doc->contentType = 'news';
       $documents[] = $doc;
     }
@@ -156,7 +158,347 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function stubs()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('stubs_and_pages');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,section,title,body,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-pages';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['body']);
+      $doc->body = strip_tags($profile['body']);
+      $doc->slug = $profile['slug'];
+      $doc->url = implode('/', array($profile['section'], $profile['slug']));
+      $doc->contentType = 'page';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
 
+  public function researchprojects()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('research_projects');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,project_overview,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-research-projects';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['project_overview']);
+      $doc->body = strip_tags($profile['project_overview']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'research/projects/' . $profile['slug'];
+      $doc->contentType = 'projects';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function galleries()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('galleries');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,gallery_name,gallery_description,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-galleries';
+      $doc->title = $profile['gallery_name'];
+      $doc->description = strip_tags($profile['gallery_description']);
+      $doc->body = strip_tags($profile['gallery_description']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'galleries/' . $profile['slug'];
+      $doc->contentType = 'gallery';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+
+  public function collections()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('collections');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,collection_name,collection_description,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-collections';
+      $doc->title = $profile['collection_name'];
+      $doc->description = strip_tags($profile['collection_description']);
+      $doc->body = strip_tags($profile['collection_description']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'collections/' . $profile['slug'];
+      $doc->contentType = 'collection';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function lookthinkdo()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('look_think_do');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title_of_work,main_text_description,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-lookthinkdo';
+      $doc->title = $profile['title_of_work'];
+      $doc->description = strip_tags($profile['main_text_description']);
+      $doc->body = strip_tags($profile['main_text_description']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'learning/look-think-do/' . $profile['slug'];
+      $doc->contentType = 'learning';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+
+  public function pharos()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('pharos');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,description,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-pharos';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['description']);
+      $doc->body = strip_tags($profile['description']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'objects-and-artworks/pharos/' . $profile['slug'];
+      $doc->contentType = 'pharos';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function pressroom()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('pressroom_files');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,body'
+      )
+    );
+    $profiles = $api->getData();
+
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-press';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['body']);
+      $doc->body = strip_tags($profile['body']);
+      $doc->url = 'about-us/pressroom/';
+      $doc->contentType = 'pressroom';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function departments()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('departments');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,department_description,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-departments';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['department_description']);
+      $doc->body = strip_tags($profile['department_description']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'departments/' . $profile['slug'];
+      $doc->contentType = 'department';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function directors()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('directors');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,display_name,biography,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-directors';
+      $doc->title = $profile['display_name'];
+      $doc->description = strip_tags($profile['biography']);
+      $doc->body = strip_tags($profile['biography']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'about-us/directors/' . $profile['slug'];
+      $doc->contentType = 'director';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function themes()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('themes');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,theme_description,slug'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-themes';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['theme_description']);
+      $doc->body = strip_tags($profile['theme_description']);
+      $doc->slug = $profile['slug'];
+      $doc->url = 'themes/' . $profile['slug'];
+      $doc->contentType = 'theme';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
 
   function change_key( $array, $old_key, $new_key ) {
 

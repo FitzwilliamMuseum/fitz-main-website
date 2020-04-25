@@ -47,6 +47,19 @@ Route::get('objects-and-artworks/pharos', 'pharosController@index');
 Route::get('objects-and-artworks/pharos/{slug}/', 'pharosController@details');
 Route::feeds();
 Route::get('search', 'searchController@index');
+Route::get('search/staff', 'searchController@staff');
+Route::get('search/news', 'searchController@news');
+Route::get('search/stubs', 'searchController@stubs');
+Route::get('search/researchprojects', 'searchController@researchprojects');
+Route::get('search/galleries', 'searchController@galleries');
+Route::get('search/collections', 'searchController@collections');
+Route::get('search/lookthinkdo', 'searchController@lookthinkdo');
+Route::get('search/pharos', 'searchController@pharos');
+Route::get('search/pressroom', 'searchController@pressroom');
+Route::get('search/departments', 'searchController@departments');
+Route::get('search/directors', 'searchController@directors');
+Route::get('search/themes', 'searchController@themes');
+
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
     'as' => 'search.results'
