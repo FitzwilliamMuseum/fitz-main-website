@@ -471,7 +471,7 @@ ul#floor-plans {
 }
 blockquote {
   font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: bolder;
     letter-spacing: .02em;
     line-height: 1.4;
     border-left: .3125rem solid #731200;
