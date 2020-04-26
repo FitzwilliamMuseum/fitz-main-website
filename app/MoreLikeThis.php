@@ -49,7 +49,8 @@ class MoreLikeThis {
 
   public function getData()
   {
-    $queryString = \Purifier::clean($this->getQuery(), array('HTML.Allowed' => ''));
+    $queryString = $this->getQuery();
+    #\Purifier::clean($this->getQuery(), array('HTML.Allowed' => ''));
     $key = md5($queryString . 'mlt');
     $expiresAt = now()->addMinutes(3600);
     if (Cache::has($key)) {
