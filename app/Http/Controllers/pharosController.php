@@ -40,16 +40,32 @@ class pharosController extends Controller
       $api->setEndpoint('pharos');
       $api->setArguments(
         $args = array(
-            'fields' => '*.*.*.*',
+            'fields' => '*.*.*.*.*',
             'meta' => '*',
             'filter[slug][eq]' => $slug,
         )
       );
       $pharos = $api->getData();
-
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
       $records = $mlt->getData();
       return view('pharos.details', compact('pharos', 'records'));
+    }
+
+    public function associate($section, $slug)
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('pharos_pages');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug,
+            'filter[section][eq]' => $section
+        )
+      );
+      $pharos = $api->getData();
+
+      return view('pharos.associate', compact('pharos'));
     }
 }
