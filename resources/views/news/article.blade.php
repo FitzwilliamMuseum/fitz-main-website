@@ -12,6 +12,15 @@
 @section('content')
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
+  @if($project['field_image'])
+  <figure class="figure float-right p-3">
+    <img src="{{ $project['field_image']['data']['thumbnails']['5']['url']}}"
+    alt="{{$project['field_image_alt_text']}}" class="img-fluid"
+    width="400"
+    />
+    <figcaption class="figure-caption text-right">{{$project['field_image_alt_text']}}</figcaption>
+  </figure>
+  @endif
   @markdown($project['article_body'])
 </div>
 
