@@ -17,6 +17,7 @@
         background-image: url(@yield('hero_image'));
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
 
       @hasSection('parallax_two')
