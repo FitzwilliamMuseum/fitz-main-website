@@ -60,6 +60,7 @@
         @yield('360')
         @yield('youtube')
         @yield('sketchfab-collection')
+        @yield('sketchfab')
         @yield('audio-guide')
         @yield('pharos-pages')
         @yield('mlt')
