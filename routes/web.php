@@ -62,6 +62,7 @@ Route::get('search/departments', 'searchController@departments');
 Route::get('search/directors', 'searchController@directors');
 Route::get('search/themes', 'searchController@themes');
 Route::get('search/pharospages', 'searchController@pharospages');
+Route::get('search/pharos', 'searchController@pharos');
 Route::get('search/floor', 'searchController@floor');
 Route::get('search/gov', 'searchController@governance');
 Route::get('search/learningfiles', 'searchController@learningfiles');
