@@ -17,7 +17,7 @@
     <h2>Associated Galleries</h2>
     <div class="row">
   @foreach($dept['associated_galleries'] as $gallery)
-  <div class="col-md-6 mb-3">
+  <div class="col-md-4 mb-3">
 
     <div class="card card-body h-100">
       @if(!is_null($gallery['galleries_id']['hero_image']))
