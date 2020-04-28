@@ -527,3 +527,8 @@ input#query::placeholder {
     background-color: #731200;
     color: #fff;
 }
+
+.contents-label {
+    margin-left: -13px;
+    margin-top: 10px;
+}
