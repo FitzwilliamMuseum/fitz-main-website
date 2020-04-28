@@ -97,7 +97,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,display_name,biography,profile_image.*,slug'
+          'fields' => 'id,display_name,biography,slug,profile_image.*'
       )
     );
     $profiles = $api->getData();
@@ -177,7 +177,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,section,title,body,slug'
+          'fields' => 'id,section,title,body,slug,hero_image.*'
       )
     );
     $profiles = $api->getData();
@@ -195,6 +195,11 @@ class searchController extends Controller
       $doc->slug = $profile['slug'];
       $doc->url = implode('/', array($profile['section'], $profile['slug']));
       $doc->contentType = 'page';
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
       $documents[] = $doc;
     }
     // add the documents and a commit command to the update query
@@ -211,7 +216,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,title,project_overview,slug'
+          'fields' => 'id,title,project_overview,slug,hero_image.*'
       )
     );
     $profiles = $api->getData();
@@ -229,6 +234,11 @@ class searchController extends Controller
       $doc->slug = $profile['slug'];
       $doc->url = 'research/projects/' . $profile['slug'];
       $doc->contentType = 'projects';
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
       $documents[] = $doc;
     }
     // add the documents and a commit command to the update query
