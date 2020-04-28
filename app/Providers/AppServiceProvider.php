@@ -49,6 +49,15 @@ class AppServiceProvider extends ServiceProvider
             case "pharospages":
               $clean = 'Pharos information';
             break;
+            case "gallery":
+              $clean = 'Gallery information';
+            break;
+            case "department":
+              $clean = 'Department information';
+            break;
+            case "directors":
+              $clean = 'About our directors';
+            break;
             default:
               $clean = $string;
             break;
