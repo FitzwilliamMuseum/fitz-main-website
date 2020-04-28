@@ -628,8 +628,8 @@ class searchController extends Controller
       $doc = $update->createDocument();
       $doc->id = $profile['id'] . '-floorplanGuides';
       $doc->title = $profile['title'];
-      $doc->description = strip_tags($profile['body']);
-      $doc->body = strip_tags($profile['body']);
+      $doc->description = strip_tags($profile['description']);
+      $doc->body = strip_tags($profile['description']);
       $doc->url = $profile['file']['data']['url'];
       $doc->mimetype = $profile['file']['type'];
       $doc->filesize = $profile['file']['filesize'];
