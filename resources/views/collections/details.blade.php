@@ -21,7 +21,7 @@
       <h2>Associated departments</h2>
       <div class="row">
     @foreach($coll['associated_departments'] as $gallery)
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4 mb-3">
 
       <div class="card card-body h-100">
         @if(!is_null($gallery['departments_id']['hero_image']))
@@ -57,7 +57,7 @@
   <?php
   // dd($gallery);
   ?>
-  <div class="col-md-6 mb-3">
+  <div class="col-md-4 mb-3">
 
     <div class="card card-body h-100">
       @if(!is_null($gallery['galleries_id']['hero_image']))
@@ -80,9 +80,5 @@
   @endsection
   @endif
 
-
-<?php
-// dd($collection);
-?>
 @endsection
 @endforeach
