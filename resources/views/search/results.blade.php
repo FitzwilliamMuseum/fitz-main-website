@@ -42,7 +42,7 @@
   @foreach($records as $result)
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
       @if(isset($result['searchImage']))
-        <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right" height="150px" />
+        <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right" height="150" width="150" />
       @endif
       <h3><a href="/{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
       @if(isset($result['pubDate']))

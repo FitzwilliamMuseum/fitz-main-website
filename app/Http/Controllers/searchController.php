@@ -152,7 +152,7 @@ class searchController extends Controller
       if(isset($profile['field_image'])){
         $doc->thumbnail = $profile['field_image']['data']['thumbnails'][5]['url'];
         $doc->image = $profile['field_image']['data']['full_url'];
-        $doc->searchImage = $profile['field_image']['data']['thumbnails'][6]['url'];
+        $doc->searchImage = $profile['field_image']['data']['thumbnails'][2]['url'];
       }
       $doc->contentType = 'news';
       $documents[] = $doc;
