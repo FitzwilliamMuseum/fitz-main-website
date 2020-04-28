@@ -377,7 +377,13 @@ class searchController extends Controller
       $doc->slug = $profile['slug'];
       $doc->url = 'objects-and-artworks/pharos/' . $profile['slug'];
       $doc->contentType = 'pharos';
-      $doc->image = $profile['image']['data']['thumbnails']['4']['url'];
+
+      if(isset($profile['image'])){
+        $doc->thumbnail = $profile['image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['image']['data']['full_url'];
+        $doc->smallimage = $profile['image']['data']['thumbnails']['4']['url'];
+        $doc->searchImage = $profile['image']['data']['thumbnails'][2]['url'];
+      }
       $documents[] = $doc;
     }
     // add the documents and a commit command to the update query

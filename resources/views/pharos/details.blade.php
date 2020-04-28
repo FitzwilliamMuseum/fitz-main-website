@@ -134,8 +134,8 @@
 
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
-        @if(!is_null($record['image']))
-        <img class="img-fluid" src="{{ $record['image'][0]}}"/>
+        @if(!is_null($record['smallimage']))
+        <img class="img-fluid" src="{{ $record['smallimage'][0]}}"/>
         @endif
         <div class="container h-100">
 
