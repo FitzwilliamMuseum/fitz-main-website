@@ -31,12 +31,19 @@
 
 <div class="col-md-4 mb-3">
   <div class="card card-body h-100">
+    @if(!is_null($record['thumbnail']))
+    <img class="img-fluid" src="{{ $record['thumbnail'][0]}}"/>
+    @else
+    <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"/>
+    @endif
   <div class="container h-100">
 
     <div class="contents-label mb-3">
       <h3>
         <a href="/news/{{ $record['slug'][0]}}">{{ $record['title'][0]}}</a>
       </h3>
+      <h4><small class="text-muted">{{  Carbon\Carbon::parse($record['pubDate'][0])->format('l dS F Y') }}</small></h4>
+
       <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...</p>
 
     </div>

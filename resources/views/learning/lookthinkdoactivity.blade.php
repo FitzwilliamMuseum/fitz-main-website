@@ -23,18 +23,27 @@
           </div>
 
       </div>
-      <div class="col-md-4 shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col-md-4 ">
+        <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
          <h3>Look at the work</h3>
          {!! $look['look_text'] !!}
+        </div>
+        <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
          <h3>Think about this work</h3>
          {!! $look['think_text'] !!}
+       </div>
+       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
          <h3>Do something in response</h3>
          {!! $look['do_text'] !!}
-         <hr />
+       </div>
+      @if(isset($look['adlib_id_number']))
+       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
          <h3>Collections record</h3>
          <p>{!! $look['adlib_id_number'] !!}</p>
       </div>
+      @endif
     </div>
+  </div>
     @if($look['youtube_id'])
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       <div class="embed-responsive embed-responsive-16by9">

@@ -42,6 +42,12 @@
   @foreach($records as $result)
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
       <h3><a href="/{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
+      @if(isset($result['pubDate']))
+      <h4class="text-muted">{{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}</h4>
+      @endif
+      @if(isset($result['searchImage']))
+        <img src="{{$result['searchImage'][0]}}" class="img-fluid rounded float-right" />
+      @endif
       <p>
         @if(!empty($result['description'][0]))
           {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200) }}...

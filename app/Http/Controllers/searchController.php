@@ -131,7 +131,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,article_title,article_body,slug'
+          'fields' => 'id,article_title,article_body,slug,publication_date,field_image.*'
       )
     );
     $profiles = $api->getData();
@@ -148,9 +148,16 @@ class searchController extends Controller
       $doc->body = strip_tags($profile['article_body']);
       $doc->slug = $profile['slug'];
       $doc->url = 'news/' . $profile['slug'];
+      $doc->pubDate = $profile['publication_date'];
+      if(isset($profile['field_image'])){
+        $doc->thumbnail = $profile['field_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['field_image']['data']['full_url'];
+        $doc->searchImage = $profile['field_image']['data']['thumbnails'][6]['url'];
+      }
       $doc->contentType = 'news';
       $documents[] = $doc;
     }
+
     // add the documents and a commit command to the update query
     $update->addDocuments($documents);
     $update->addCommit();
