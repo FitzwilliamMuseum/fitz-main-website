@@ -111,7 +111,7 @@
         <div class="contents-label mb-3">
           <h3><a href="/objects-and-artworks/pharos/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
           <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($pharosassoc['pharos_pages_id']['body'])),0,200) }}...</p>
-          <span class="badge badge-primary">{{ucwords(str_replace('-', ' ', $pharosassoc['pharos_pages_id']['section']))}}</span>
+          <span class="p-1 badge badge-primary">{{ucwords(str_replace('-', ' ', $pharosassoc['pharos_pages_id']['section']))}}</span>
         </div>
       </div>
       <a href="/objects-and-artworks/pharos/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}" class="btn btn-dark">Read more</a>

@@ -33,7 +33,7 @@
               @if(isset($record['section']))
               <h3><a href="/objects-and-artworks/pharos/{{ $record['section'][0]}}/{{ $record['slug'][0]}}">{{ $record['title'][0]}}</a></h3>
               <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...</p>
-              <span class="badge badge-primary">{{ucwords(str_replace('-', ' ', $record['section'][0]))}}</span>
+              <span class="p-1 badge badge-primary">{{ucwords(str_replace('-', ' ', $record['section'][0]))}}</span>
 
               @else
               <a href="/objects-and-artworks/pharos/{{ $record['slug'][0]}}">{{ $record['title'][0]}}</a>
