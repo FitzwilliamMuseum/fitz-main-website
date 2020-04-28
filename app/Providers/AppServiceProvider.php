@@ -58,6 +58,12 @@ class AppServiceProvider extends ServiceProvider
             case "director":
               $clean = 'About our directors';
             break;
+            case "staffProfile":
+              $clean = 'Staff research profile';
+            break;
+            case "projects":
+              $clean = 'Research project details';
+            break;
             default:
               $clean = $string;
             break;
