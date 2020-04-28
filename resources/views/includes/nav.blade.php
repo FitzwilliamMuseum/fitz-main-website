@@ -70,7 +70,7 @@
     </li>
 </ul>
 {{ \Form::open(['url' => url('search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
-  <input id="query" name="query" type="text" class="form-control mr-sm-2" placeholder="Search" required value="{{ old('query') }}">
+  <input id="query" name="query" type="text" class="form-control mr-sm-2" placeholder="Search our site" required value="{{ old('query') }}">
   <button type="submit" class="btn btn-outline-light">Search</button>
 {!! Form::close() !!}
 </div>

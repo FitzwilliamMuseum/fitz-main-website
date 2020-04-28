@@ -517,3 +517,6 @@ input#query {
     background-color: #ffffff;
     color: #000000;
 }
+input#query::placeholder {
+    color: #000;
+}
