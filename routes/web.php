@@ -44,7 +44,9 @@ Route::get('exhibitions/archive', 'exhibitionsController@archive');
 Route::get('exhibitions/future', 'exhibitionsController@future');
 Route::get('exhibitions/{slug}', 'exhibitionsController@details');
 Route::get('objects-and-artworks/pharos', 'pharosController@index');
+Route::get('objects-and-artworks/', 'pharosController@landing');
 Route::get('objects-and-artworks/pharos/{slug}/', 'pharosController@details');
+Route::match(array('GET','POST'),'objects-and-artworks/pharos/search/results/', 'pharosController@results');
 Route::get('objects-and-artworks/pharos/{section}/{slug}/', 'pharosController@associate');
 Route::feeds();
 Route::get('search', 'searchController@index');
@@ -55,7 +57,6 @@ Route::get('search/researchprojects', 'searchController@researchprojects');
 Route::get('search/galleries', 'searchController@galleries');
 Route::get('search/collections', 'searchController@collections');
 Route::get('search/lookthinkdo', 'searchController@lookthinkdo');
-Route::get('search/pharos', 'searchController@pharos');
 Route::get('search/pressroom', 'searchController@pressroom');
 Route::get('search/departments', 'searchController@departments');
 Route::get('search/directors', 'searchController@directors');
@@ -65,12 +66,10 @@ Route::get('search/floor', 'searchController@floor');
 Route::get('search/gov', 'searchController@governance');
 Route::get('search/learningfiles', 'searchController@learningfiles');
 
-
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
     'as' => 'search.results'
 ]);
-
 /*
  * Route for checking solr up and running
  */
