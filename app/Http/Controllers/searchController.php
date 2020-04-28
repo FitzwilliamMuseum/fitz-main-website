@@ -679,6 +679,45 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function learningfiles()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('learning_files');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,type,curriculum_area,keystages,file.type,file.filesize,file.data,'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-learningfiles';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['title']);
+      $doc->body = strip_tags($profile['title']);
+      $doc->url = $profile['file']['data']['url'];
+      $doc->mimetype = $profile['file']['type'];
+      $doc->filesize = $profile['file']['filesize'];
+      $doc->keystages = $profile['keystages'];
+      $doc->learningfiletype = $profile['type'];
+      $doc->contentType = 'learning_files';
+      $doc->curriculum_area = $profile['curriculum_area'];
+      $documents[] = $doc;
+    }
+
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
   function change_key( $array, $old_key, $new_key ) {
 
     if( ! array_key_exists( $old_key, $array ) )
