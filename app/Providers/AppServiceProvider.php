@@ -67,6 +67,9 @@ class AppServiceProvider extends ServiceProvider
             case "collection":
               $clean = 'Collections description';
             break;
+            case "learning":
+              $clean = 'Learning and Education';
+            break;
             default:
               $clean = $string;
             break;
