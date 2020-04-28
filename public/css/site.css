@@ -520,3 +520,6 @@ input#query {
 input#query::placeholder {
     color: #000;
 }
+.search-results {
+  min-height: 200px;
+}

@@ -40,7 +40,7 @@
   @if(!empty($records))
 
   @foreach($records as $result)
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded search-results">
       @if(isset($result['searchImage']))
         <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right" height="150" width="150" />
         @else
