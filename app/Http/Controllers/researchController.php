@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use App\MoreLikeThis;
 class researchController extends Controller
 {
     /**
@@ -52,6 +52,7 @@ class researchController extends Controller
         )
       );
       $projects = $api->getData();
+
       return view('research.projects', compact('projects'));
     }
 
@@ -67,7 +68,11 @@ class researchController extends Controller
         )
       );
       $projects = $api->getData();
-      return view('research.project', compact('projects'));
+
+      $mlt = new MoreLikeThis;
+      $mlt->setLimit(3)->setType('projects')->setQuery($slug);
+      $records = $mlt->getData();
+      return view('research.project', compact('projects', 'records'));
     }
 
     public function profiles()
