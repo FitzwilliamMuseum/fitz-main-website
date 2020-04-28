@@ -47,8 +47,24 @@
           {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200) }}...
         @endif
       </p>
-      <p><a href="{{URL::to('/')}}/{{$result['url'][0]}}">{{URL::to('/')}}/{{$result['url'][0]}}</a></p>
-      <p><span class="badge badge-dark p-2">{{ ucfirst($result['contentType'][0])}}</span> </p>
+      @if(isset($result['mimetype']))
+      @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
+        <p><a href="{{$result['url'][0]}}">{{$result['url'][0]}}</a></p>
+      @else
+        <p><a href="{{URL::to('/')}}/{{$result['url'][0]}}">{{URL::to('/')}}/{{$result['url'][0]}}</a></p>
+      @endif
+      @endif
+      <p>
+        <span class="badge badge-dark p-2">@contentType($result['contentType'][0])</span>
+        @if(isset($result['mimetype']))
+        @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
+        <span class="badge badge-dark p-2">
+          <i class="fas fa-file-pdf mr-2"></i>
+          <i class="fa fa-download mr-2" aria-hidden="true"></i> @humansize($result['filesize'][0],2)
+        </span>
+        @endif
+        @endif
+      </p>
       </div>
   @endforeach
   <nav aria-label="Page navigation">
