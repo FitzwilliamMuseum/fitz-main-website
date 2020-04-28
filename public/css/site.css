@@ -523,3 +523,7 @@ input#query::placeholder {
 .search-results {
   min-height: 200px;
 }
+.badge-wine {
+    background-color: #731200;
+    color: #fff;
+}
