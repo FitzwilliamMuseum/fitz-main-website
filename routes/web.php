@@ -62,6 +62,7 @@ Route::get('search/directors', 'searchController@directors');
 Route::get('search/themes', 'searchController@themes');
 Route::get('search/pharospages', 'searchController@pharospages');
 Route::get('search/floor', 'searchController@floor');
+Route::get('search/gov', 'searchController@governance');
 
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',

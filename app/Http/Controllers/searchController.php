@@ -643,7 +643,41 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function governance()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('governance_files');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,file.type,file.filesize,file.data,'
+      )
+    );
+    $profiles = $api->getData();
 
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-governance';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['title']);
+      $doc->body = strip_tags($profile['title']);
+      $doc->url = $profile['file']['data']['url'];
+      $doc->mimetype = $profile['file']['type'];
+      $doc->filesize = $profile['file']['filesize'];
+      $doc->contentType = 'governance';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
 
   function change_key( $array, $old_key, $new_key ) {
 
