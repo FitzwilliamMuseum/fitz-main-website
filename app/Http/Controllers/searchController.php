@@ -435,6 +435,11 @@ class searchController extends Controller
       $doc->mimetype = $profile['file']['type'];
       $doc->filesize = $profile['file']['filesize'];
       $doc->contentType = 'pressroom';
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
       $documents[] = $doc;
     }
     // add the documents and a commit command to the update query
