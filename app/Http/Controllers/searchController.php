@@ -415,7 +415,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,title,body,file.type,file.filesize,file.data'
+          'fields' => 'id,title,body,file.type,file.filesize,file.data,hero_image.*'
       )
     );
     $profiles = $api->getData();
