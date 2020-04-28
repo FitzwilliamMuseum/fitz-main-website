@@ -372,7 +372,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,title,body'
+          'fields' => 'id,title,body,file.type,file.filesize,file.data'
       )
     );
     $profiles = $api->getData();
@@ -388,7 +388,9 @@ class searchController extends Controller
       $doc->title = $profile['title'];
       $doc->description = strip_tags($profile['body']);
       $doc->body = strip_tags($profile['body']);
-      $doc->url = 'about-us/pressroom/';
+      $doc->url = $profile['file']['data']['url'];
+      $doc->mimetype = $profile['file']['type'];
+      $doc->filesize = $profile['file']['filesize'];
       $doc->contentType = 'pressroom';
       $documents[] = $doc;
     }
@@ -500,6 +502,43 @@ class searchController extends Controller
     // this executes the query and returns the result
     $result = $this->client->update($update);
   }
+
+  public function pharospages()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('pharos_pages');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,body,slug,section'
+      )
+    );
+
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-pharos-pages';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['body']);
+      $doc->body = strip_tags($profile['body']);
+      $doc->slug = $profile['slug'];
+      $doc->section = $profile['section'];
+      $doc->url = 'objects-and-artworks/pharos/'.  $profile['section'] . '/' . $profile['slug'];
+      $doc->contentType = 'pharospages';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
 
   function change_key( $array, $old_key, $new_key ) {
 
