@@ -106,6 +106,11 @@
     @foreach($record['associated_pharos_content'] as $pharosassoc)
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
+        @if(!is_null($pharosassoc['pharos_pages_id']['hero_image']))
+        <img class="img-fluid" src="{{ $pharosassoc['pharos_pages_id']['hero_image']['data']['thumbnails'][4]['url']}}"/>
+        @else
+        <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  />
+        @endif
       <div class="container h-100">
 
         <div class="contents-label mb-3">
