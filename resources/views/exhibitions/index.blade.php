@@ -5,6 +5,7 @@
 @section('hero_image_title', $page['hero_image_alt_text'])
 
 
+@endforeach
 
 @section('current')
 <div class="container">
