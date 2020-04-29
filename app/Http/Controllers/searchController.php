@@ -726,7 +726,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '500',
-          'fields' => 'id,exhibition_title,exhibition_abstract,slug,hero_image.*'
+          'fields' => 'id,exhibition_title,exhibition_narrative,slug,hero_image.*'
       )
     );
     $profiles = $api->getData();
@@ -739,8 +739,8 @@ class searchController extends Controller
       $doc = $update->createDocument();
       $doc->id = $profile['id'] . '-exhibitions';
       $doc->title = $profile['exhibition_title'];
-      $doc->description = strip_tags($profile['exhibition_abstract']);
-      $doc->body = strip_tags($profile['exhibition_abstract']);
+      $doc->description = strip_tags($profile['exhibition_narrative']);
+      $doc->body = strip_tags($profile['exhibition_narrative']);
       $doc->slug = $profile['slug'];
       $doc->url = $this->url . 'exhibitions/' . $profile['slug'];
       $doc->contentType = 'exhibitions';

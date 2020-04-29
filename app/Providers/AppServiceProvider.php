@@ -85,6 +85,9 @@ class AppServiceProvider extends ServiceProvider
             case 'dataislands':
               $clean = 'Linking Islands of Data';
               break;
+              case 'exhibitions':
+                $clean = 'Exhibitions information';
+                break;
             default:
               $clean = $string;
             break;
