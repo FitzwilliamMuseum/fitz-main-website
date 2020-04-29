@@ -17,6 +17,8 @@ class searchController extends Controller
    */
   protected $client;
 
+  protected $url = 'https://beta.fitz.ms/';
+
   public function __construct(\Solarium\Client $client)
   {
       $this->client = $client;
@@ -113,7 +115,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['biography']);
       $doc->body = strip_tags($profile['biography']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'research/staff-profiles/' . $profile['slug'];
+      $doc->url = $this->url . 'research/staff-profiles/' . $profile['slug'];
       $doc->contentType = 'staffProfile';
       if(isset($profile['profile_image'])){
         $doc->thumbnail = $profile['profile_image']['data']['thumbnails'][5]['url'];
@@ -121,6 +123,7 @@ class searchController extends Controller
         $doc->searchImage = $profile['profile_image']['data']['thumbnails'][2]['url'];
       }
       $documents[] = $doc;
+      dd($documents);
     }
     // add the documents and a commit command to the update query
     $update->addDocuments($documents);
@@ -152,7 +155,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['article_body']);
       $doc->body = strip_tags($profile['article_body']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'news/' . $profile['slug'];
+      $doc->url = $this->url . 'news/' . $profile['slug'];
       $doc->pubDate = $profile['publication_date'];
       if(isset($profile['field_image'])){
         $doc->thumbnail = $profile['field_image']['data']['thumbnails'][5]['url'];
@@ -193,7 +196,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['body']);
       $doc->body = strip_tags($profile['body']);
       $doc->slug = $profile['slug'];
-      $doc->url = implode('/', array($profile['section'], $profile['slug']));
+      $doc->url = $this->url . implode('/', array($profile['section'], $profile['slug']));
       $doc->contentType = 'page';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -232,7 +235,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['project_overview']);
       $doc->body = strip_tags($profile['project_overview']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'research/projects/' . $profile['slug'];
+      $doc->url = $this->url . 'research/projects/' . $profile['slug'];
       $doc->contentType = 'projects';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -271,7 +274,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['gallery_description']);
       $doc->body = strip_tags($profile['gallery_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'galleries/' . $profile['slug'];
+      $doc->url = $this->url . 'galleries/' . $profile['slug'];
       $doc->contentType = 'gallery';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -311,7 +314,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['collection_description']);
       $doc->body = strip_tags($profile['collection_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'collections/' . $profile['slug'];
+      $doc->url = $this->url . 'collections/' . $profile['slug'];
       $doc->contentType = 'collection';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -350,7 +353,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['main_text_description']);
       $doc->body = strip_tags($profile['main_text_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'learning/look-think-do/' . $profile['slug'];
+      $doc->url = $this->url . 'learning/look-think-do/' . $profile['slug'];
       $doc->contentType = 'learning';
       if(isset($profile['focus_image'])){
         $doc->thumbnail = $profile['focus_image']['data']['thumbnails'][5]['url'];
@@ -390,7 +393,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['description']);
       $doc->body = strip_tags($profile['description']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'objects-and-artworks/pharos/' . $profile['slug'];
+      $doc->url = $this->url . 'objects-and-artworks/pharos/' . $profile['slug'];
       $doc->contentType = 'pharos';
 
       if(isset($profile['image'])){
@@ -472,7 +475,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['department_description']);
       $doc->body = strip_tags($profile['department_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'departments/' . $profile['slug'];
+      $doc->url = $this->url . 'departments/' . $profile['slug'];
       $doc->contentType = 'department';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -511,7 +514,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['biography']);
       $doc->body = strip_tags($profile['biography']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'about-us/directors/' . $profile['slug'];
+      $doc->url = $this->url . 'about-us/directors/' . $profile['slug'];
       $doc->contentType = 'director';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -550,7 +553,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['theme_description']);
       $doc->body = strip_tags($profile['theme_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = 'themes/' . $profile['slug'];
+      $doc->url = $this->url . 'themes/' . $profile['slug'];
       $doc->contentType = 'theme';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -591,7 +594,7 @@ class searchController extends Controller
       $doc->body = strip_tags($profile['body']);
       $doc->slug = $profile['slug'];
       $doc->section = $profile['section'];
-      $doc->url = 'objects-and-artworks/pharos/'.  $profile['section'] . '/' . $profile['slug'];
+      $doc->url = $this->url . 'objects-and-artworks/pharos/'.  $profile['section'] . '/' . $profile['slug'];
       $doc->contentType = 'pharospages';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
