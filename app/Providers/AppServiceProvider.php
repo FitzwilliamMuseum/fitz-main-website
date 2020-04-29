@@ -76,6 +76,15 @@ class AppServiceProvider extends ServiceProvider
             case "learning_files":
               $clean = 'Learning files';
             break;
+            case 'ucmblog':
+              $clean = 'University of Cambridge Museums Blog';
+              break;
+            case 'egyptiancoffins':
+              $clean = 'Egyptian Coffins website';
+              break;
+            case 'dataislands':
+              $clean = 'Linking Islands of Data';
+              break;
             default:
               $clean = $string;
             break;
