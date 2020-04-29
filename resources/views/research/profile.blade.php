@@ -83,7 +83,7 @@
                 <h3>
                   <a href="departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
                 </h3>
-                <p class="card-text">{{ $project['department']['department_description']}}</p>
+                <p class="card-text">{{ substr(strip_tags($project['department']['department_description'])),0,200) }}...</p>
               </div>
             </div>
             <a href="departments/{{ $project['department']['slug']}}" class="btn btn-dark">Read more</a>
@@ -112,7 +112,7 @@
                 <h3>
                   <a href="research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
                 </h3>
-                <p class="card-text">{{ $project['research_projects_id']['summary']}}</p>
+                <p class="card-text">{{ substr(strip_tags($project['research_projects_id']['summary']),0,200) }}...</p>
               </div>
             </div>
             <a href="research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
