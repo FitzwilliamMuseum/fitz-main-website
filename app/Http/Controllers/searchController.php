@@ -123,7 +123,6 @@ class searchController extends Controller
         $doc->searchImage = $profile['profile_image']['data']['thumbnails'][2]['url'];
       }
       $documents[] = $doc;
-      dd($documents);
     }
     // add the documents and a commit command to the update query
     $update->addDocuments($documents);
