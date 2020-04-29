@@ -44,7 +44,7 @@
     <h2>Associated Research Projects</h2>
     <div class="row">
       @foreach($profile['research_projects'] as $project)
-      <div class="col-md-6 mb-3">
+      <div class="col-md-4 mb-3">
         <div class="card card-body h-100 ">
           @if(!is_null($project['research_projects_id']['hero_image']))
           <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"/>
@@ -73,7 +73,7 @@
       <h2>Associated Departments</h2>
       <div class="row">
         @foreach($profile['departments_affiliated'] as $project)
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <div class="card card-body h-100 ">
             @if(!is_null($project['department']['hero_image']))
             <img class="img-fluid" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"/>
