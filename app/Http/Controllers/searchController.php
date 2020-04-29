@@ -719,7 +719,45 @@ class searchController extends Controller
     // this executes the query and returns the result
     $result = $this->client->update($update);
   }
-
+  public function exhibitions()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('exhibitions');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,exhibition_title,exhibition_abstract,slug,hero_image.*'
+      )
+    );
+    $profiles = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-staff';
+      $doc->title = $profile['exhibition_title'];
+      $doc->description = strip_tags($profile['exhibition_abstract']);
+      $doc->body = strip_tags($profile['exhibition_abstract']);
+      $doc->slug = $profile['slug'];
+      $doc->url = $this->url . 'exhibitions/' . $profile['slug'];
+      $doc->contentType = 'exhibitions';
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+  
   function change_key( $array, $old_key, $new_key ) {
 
     if( ! array_key_exists( $old_key, $array ) )
