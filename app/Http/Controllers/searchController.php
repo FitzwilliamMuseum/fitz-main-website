@@ -737,7 +737,7 @@ class searchController extends Controller
     foreach($profiles['data'] as $profile)
     {
       $doc = $update->createDocument();
-      $doc->id = $profile['id'] . '-staff';
+      $doc->id = $profile['id'] . '-exhibitions';
       $doc->title = $profile['exhibition_title'];
       $doc->description = strip_tags($profile['exhibition_abstract']);
       $doc->body = strip_tags($profile['exhibition_abstract']);
@@ -757,7 +757,7 @@ class searchController extends Controller
     // this executes the query and returns the result
     $result = $this->client->update($update);
   }
-  
+
   function change_key( $array, $old_key, $new_key ) {
 
     if( ! array_key_exists( $old_key, $array ) )
