@@ -7,10 +7,40 @@
   @endif
   @section('content')
       <h2>{{ $gallery['gallery_name'] }}</h2>
+      @if(isset($gallery['gallery_description']))
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
         @markdown($gallery['gallery_description'])
       </div>
+      @endif
+      @if(isset($gallery['gallery_floor']))
+      <h3>Gallery data</h3>
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <ul>
+          <li>{{ $gallery['gallery_floor']}}</li>
+      </div>
+      @endif
   @endsection
+
+  @if(!empty($gallery['audio_guide']))
+  @section('audio-guide')
+  <div class="container">
+    <h3>Audio description</h3>
+
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="plyr">
+          <div class="embed-responsive audio-player">
+            <audio id="player" controls class="embed-responsive-item">
+              <source src="{{ $gallery['audio_guide']['data']['full_url'] }}" type="audio/aac">
+              </audio>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>  @endsection
+  @endif
+
   @section('360')
   @if(!empty($gallery['image_360_pano']))
   <div class="container">

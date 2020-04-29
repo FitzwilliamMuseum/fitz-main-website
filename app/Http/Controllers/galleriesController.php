@@ -37,7 +37,7 @@ class galleriesController extends Controller
         )
       );
       $galleries = $api2->getData();
-      
+
       return view('galleries.index', compact('galleries', 'pages'));
     }
 
@@ -47,7 +47,7 @@ class galleriesController extends Controller
       $api->setEndpoint('galleries');
       $api->setArguments(
         $args = array(
-            'fields' => '*.*.*.*',
+            'fields' => '*.*.*.*.*',
             'filter[slug]' => $slug,
             'meta' => '*'
         )
