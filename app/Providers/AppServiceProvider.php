@@ -95,7 +95,7 @@ class AppServiceProvider extends ServiceProvider
               $clean = 'Conservation team blog post';
               break;
             case 'creativeeconomy':
-              $clean = 'Creative Economy AHRC'
+              $clean = 'Creative Economy AHRC';
               break;
             default:
               $clean = $string;
