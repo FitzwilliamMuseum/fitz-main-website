@@ -91,7 +91,7 @@ class AppServiceProvider extends ServiceProvider
             case 'hkiblog.com':
               $clean = 'The Hamilton Kerr Institute Blog';
               break;
-            case 'conservation':
+            case 'conservationblog':
               $clean = 'Our conservation team\'s blog';
               break;
             default:
