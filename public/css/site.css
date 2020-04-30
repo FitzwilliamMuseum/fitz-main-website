@@ -38,8 +38,8 @@
   .shout {
     color: white!important;
     font-family: 'Lato', sans-serif;
-    font-size: 3.5rem;
-    margin-top:3rem;
+    font-size: 2.6rem;
+    margin-top:-3rem;
   }
   .shout-less {
     color: white!important;
@@ -328,8 +328,8 @@ body {
   .shout {
     color: white!important;
     font-family: 'Lato', sans-serif;
-    font-size: 6rem;
-    margin-top:4rem;
+    font-size: 5rem;
+    margin-top:-1rem;
   }
   .shout-less {
     color: white!important;
@@ -428,6 +428,13 @@ body {
   font-size: 1.2rem;
   padding-top: 10px;
   padding-bottom: 10px
+}
+.beta {
+  background-color: #731200;
+  min-height: 50px;
+  color: white;
+  font-size: 1.2rem;
+  padding-top: 10px;
 }
 .white {
   color: white;
@@ -531,4 +538,15 @@ input#query::placeholder {
 .contents-label {
     margin-left: -13px;
     margin-top: 10px;
+}
+.ucam {
+    margin-bottom: -40px;
+    margin-top: 9px;
+}
+
+.frontpageQuote {
+  font-size: 5rem;
+  font-weight: normal;
+  color: white;
+  border-left:none;
 }

@@ -23,20 +23,14 @@
 
   @include('includes.announcement')
 
-  @include('includes.head')
+  @include('includes.headHome')
+  @include('includes.beta')
 
-  <div class="container">
-      @include('includes.breadcrumb')
-  </div>
-
-  <div class="container">
-        @yield('content')
-  </div>
-  <div class="container-fluid parallax parallax-home">
+  <div class="container-fluid parallax parallax-home text-center">
   </div>
 
   <div class="container mt-3">
-    <h2>Latest news from us</h2>
+    <h2>What's happening</h2>
     <div class="row">
         @yield('news')
     </div>
@@ -55,7 +49,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2>Latest featured research</h2>
+    <h2>Our world class research</h2>
     <div class="row">
         @yield('research')
     </div>
@@ -64,13 +58,13 @@
   </div>
 
   <div class="container ">
-    <h2>Latest Tweets</h2>
+    <h2>Talk to us</h2>
     @yield('twitter')
   </div>
   <div class="container-fluid parallax fourth-parallax-home mb-3">
   </div>
   <div class="container ">
-    <h2>Latest videos</h2>
+    <h2>Watch us</h2>
     @yield('youtube-list')
   </div>
   @include('includes.share')
