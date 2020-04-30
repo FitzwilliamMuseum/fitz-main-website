@@ -35,16 +35,16 @@ class AppServiceProvider extends ServiceProvider
         BladeHelper::directive('contentType', function ($string) {
           switch($string) {
             case "pressroom":
-              $clean = 'Press room downloads';
+              $clean = 'A press room pdf release';
             break;
             case "news":
-              $clean = 'News Articles';
+              $clean = 'A news article';
             break;
             case "page":
-              $clean = 'Pages and Articles';
+              $clean = 'A pages or article';
             break;
             case "pharos":
-              $clean = 'Pharos Objects';
+              $clean = 'A Pharos object';
             break;
             case "pharospages":
               $clean = 'Pharos information';
@@ -56,28 +56,28 @@ class AppServiceProvider extends ServiceProvider
               $clean = 'Department information';
             break;
             case "director":
-              $clean = 'About our directors';
+              $clean = 'A director\'s profile';
             break;
             case "staffProfile":
-              $clean = 'Staff research profile';
+              $clean = 'A staff research profile';
             break;
             case "projects":
-              $clean = 'Research project details';
+              $clean = 'A research project\'s details';
             break;
             case "collection":
               $clean = 'Collections description';
             break;
             case "learning":
-              $clean = 'Learning and Education';
+              $clean = 'A Learning and Education resource';
             break;
             case "governance":
               $clean = 'Reports and reviews';
             break;
             case "learning_files":
-              $clean = 'Learning files';
+              $clean = 'Learning and Education files';
             break;
             case 'ucmblog':
-              $clean = 'University of Cambridge Museums Blog';
+              $clean = 'A UCM blog post';
               break;
             case 'egyptiancoffins':
               $clean = 'Egyptian Coffins website';
@@ -89,10 +89,13 @@ class AppServiceProvider extends ServiceProvider
               $clean = 'Exhibitions information';
               break;
             case 'hkiblog.com':
-              $clean = 'The Hamilton Kerr Institute Blog';
+              $clean = 'Hamilton Kerr Institute blog post';
               break;
             case 'conservationblog':
-              $clean = 'Our conservation team\'s blog';
+              $clean = 'Conservation team blog post';
+              break;
+            case 'creativeeconomy':
+              $clean = 'Creative Economy AHRC'
               break;
             default:
               $clean = $string;
