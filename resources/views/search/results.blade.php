@@ -53,7 +53,7 @@
       @endif
       <p>
         @if(!empty($result['body'][0]))
-          {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200) }}...
+          {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,500) }}...
         @endif
       </p>
 
@@ -66,7 +66,7 @@
       @endif
       <p>
 
-        <span class="badge badge-dark p-2">@contentType($result['contentType'][0])</span>
+        <span class="badge badge-wine p-2">@contentType($result['contentType'][0])</span>
         @if(isset($result['mimetype']))
           @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
           <span class="badge badge-dark p-2">
@@ -77,12 +77,12 @@
         @endif
 
         @if($result['contentType'][0] == 'learning_files')
-          <span class="badge badge-dark p-2">{{ $result['learningfiletype'][0]}}</span>
+          <span class="badge badge-wine p-2">{{ $result['learningfiletype'][0]}}</span>
           @if(isset($result['keystages']))
-          <span class="badge badge-dark p-2">{{ implode(', ', $result['keystages']) }}</span>
+          <span class="badge badge-wine p-2">{{ implode(', ', $result['keystages']) }}</span>
           @endif
           @if(isset($result['curriculum_area']))
-          <span class="badge badge-dark p-2">{{ $result['curriculum_area'][0]}}</span>
+          <span class="badge badge-wine p-2">{{ $result['curriculum_area'][0]}}</span>
           @endif
         @endif
 
