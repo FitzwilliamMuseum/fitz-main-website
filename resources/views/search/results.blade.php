@@ -49,7 +49,7 @@
 
       <h3><a href="{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
       @if(isset($result['pubDate']))
-      <h4 class="text-muted">{{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}</h4>
+      <h4 class="text-muted">Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}</h4>
       @endif
       <p>
         @if(!empty($result['body'][0]))
