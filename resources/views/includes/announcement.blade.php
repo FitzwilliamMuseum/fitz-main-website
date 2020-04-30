@@ -1,5 +1,5 @@
 <div class="container-fluid covid-19 ">
-  <img src="/images/logos/FV.svg"  width="75px" class="svg-logo"/>
+<img src="/images/logos/FV.svg"  width="75px" class="svg-logo"/>
 
   <div class="col-md-12">
     <p class="text-center share">
