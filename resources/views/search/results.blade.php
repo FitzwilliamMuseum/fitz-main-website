@@ -66,7 +66,7 @@
       @endif
       <p>
 
-        <span class="badge badge-wine p-2">@contentType($result['contentType'][0])</span>
+        <span class="badge badge-wine p-2">Content to expect: @contentType($result['contentType'][0])</span>
         @if(isset($result['mimetype']))
           @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
           <span class="badge badge-dark p-2">
