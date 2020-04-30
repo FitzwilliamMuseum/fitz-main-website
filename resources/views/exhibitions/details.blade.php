@@ -105,7 +105,7 @@
         <?php
         // dd($gallery);
         ?>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
 
           <div class="card card-body h-100">
             @if(!is_null($gallery['galleries_id']['hero_image']))
