@@ -100,6 +100,15 @@ class AppServiceProvider extends ServiceProvider
             case 'feastfast':
               $clean = 'Feast and Fast exhibition';
               break;
+            case 'beyond':
+              $clean = 'Beyond the Label content';
+              break;
+            case 'do-not-touch':
+                $clean = 'Do Not Touch research';
+              break;
+            case 'hayley':
+                $clean = 'Correspondence of William Hayley';
+                break;
             default:
               $clean = $string;
             break;
