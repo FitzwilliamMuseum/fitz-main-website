@@ -41,6 +41,18 @@
          <h3>Collections record</h3>
          <p>{!! $look['adlib_id_number'] !!}</p>
       </div>
+      @if(!empty($look['sketchfab_id']))
+      <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
+        <h2>3d model</h2>
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+          <div class="embed-responsive embed-responsive-1by1">
+            <iframe title="A 3D model" class="embed-responsive-item"
+            src="https://sketchfab.com/models/{{ $look['sketchfab_id']}}/embed?"
+            frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          </div>
+        </div>
+      </div>
+      @endif
       @endif
     </div>
   </div>
@@ -62,20 +74,5 @@
       </div>
     </div>
     @endif
-
-    @section('sketchfab')
-      @if(!empty($look['sketchfab_id']))
-      <div class="container">
-        <h2>3d model</h2>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-          <div class="embed-responsive embed-responsive-1by1">
-            <iframe title="A 3D model" class="embed-responsive-item"
-            src="https://sketchfab.com/models/{{ $look['sketchfab_id']}}/embed?"
-            frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-          </div>
-        </div>
-      </div>
-      @endif
-    @endsection
   @endsection
 @endforeach
