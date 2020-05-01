@@ -68,6 +68,19 @@
 
   @include('includes.footer')
   @include('includes.modal')
+
+  @hasSection('lookanswers')
+    @yield('lookanswers')
+  @endif
+
+  @hasSection('thinkanswers')
+    @yield('thinkanswers')
+  @endif
+
+  @hasSection('doanswers')
+    @yield('doanswers')
+  @endif
+
   @include('includes.javascript')
 
   @hasSection('360')
