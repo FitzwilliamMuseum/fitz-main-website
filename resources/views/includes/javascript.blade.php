@@ -36,7 +36,12 @@ const player = new Plyr('.player', { controls });
 window.player = player;
 </script>
 @endif
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3319190-17"></script>
+
+@hasSection('height-test')
+  @yield('height-test')
+@endif
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3319190-"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

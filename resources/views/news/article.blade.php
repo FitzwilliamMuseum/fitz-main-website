@@ -10,12 +10,12 @@
 @endif
 
 @section('content')
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded article">
   <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
   @if($project['field_image'])
   <figure class="figure float-right p-3">
     <img src="{{ $project['field_image']['data']['thumbnails']['5']['url']}}"
-    alt="{{$project['field_image_alt_text']}}" class="img-fluid"
+    alt="{{$project['field_image_alt_text']}}" class="img-fluid" id="stand-out"
     width="400"
     />
     <figcaption class="figure-caption text-right">{{$project['field_image_alt_text']}}</figcaption>
@@ -65,27 +65,40 @@
   </div>
 </div>
 @endif
-@if($project['vimeo_id'])
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item "
-    src="https://player.vimeo.com/video/{{$project['vimeo_id']}}" frameborder="0"
-    allowfullscreen></iframe>
-  </div>
-</div>
-@endif
-@endsection
-@section('sketchfab-collection')
-@if(!empty($project['sketchfab_id']))
-<div class="container">
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    <div class="embed-responsive embed-responsive-1by1">
-      <iframe title="A 3D model" class="embed-responsive-item"
-      src="https://sketchfab.com/models/{{ $project['sketchfab_id']}}/embed?"
-      frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  @if($project['vimeo_id'])
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item "
+      src="https://player.vimeo.com/video/{{$project['vimeo_id']}}" frameborder="0"
+      allowfullscreen></iframe>
     </div>
   </div>
-</div>
-@endif
+  @endif
 @endsection
+@section('sketchfab-collection')
+  @if(!empty($project['sketchfab_id']))
+  <div class="container">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="embed-responsive embed-responsive-1by1">
+        <iframe title="A 3D model" class="embed-responsive-item"
+        src="https://sketchfab.com/models/{{ $project['sketchfab_id']}}/embed?"
+        frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+    </div>
+  </div>
+  @endif
+@endsection
+
+@if(!empty($project['field_image']))
+@section('height-test')
+  <script>
+  $("#stand-out").on("load", function(){
+    var height = $(this).height();
+    console.log(height);
+    $('.article').css('min-height', height + 100);
+  })
+  </script>
+  @endsection
+@endif
+
 @endforeach
