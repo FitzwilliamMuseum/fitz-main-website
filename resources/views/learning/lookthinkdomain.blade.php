@@ -12,6 +12,8 @@ We will be adding new entries throughout April and May 2020.
 <p>The Do activities might take longer depending on the task and how creative you are feeling!</p>
 <p>Answers and suggestions about how to find out more at the bottom of each page.</p>
 <p>Have fun and don't forget to share your creations using #FitzVirtual #LookThinkDo.</p>
+
+<p><a href="https://drive.google.com/file/d/1vGjaXixzXLJ6J__-EqUE0Ah141eyL1Pk/view">Notes for parents and teacher</a></p>
 </div>
       <div class="row">
 
