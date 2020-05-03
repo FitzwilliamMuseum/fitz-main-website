@@ -21,7 +21,7 @@
       </figure>
       <btn class="btn btn-wine m-1 share">
         <a href="{{ URL::to( $look['focus_image']['data']['full_url'] )  }}"
-        target="_blank"><i class="fas fa-download mr-2"></i>  Download this image</a>
+         download="{{ $look['title_of_work'] }}.jpg"><i class="fas fa-download mr-2"></i>  Download this image</a>
       </btn>
     </div>
 

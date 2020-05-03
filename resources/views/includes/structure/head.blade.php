@@ -10,6 +10,8 @@
           fa-inverse mr-3" ></i>  @yield('hero_image_title')</a></span>
           <br />
           <img src="{{ URL::to('/images/logos/ucamLogo.png') }}"  width="220px" class="img-fluid p-3"/>
+          <img src="/images/logos/FV.svg"  width="75px" />
+
         </div>
       </div>
 
