@@ -13,7 +13,7 @@ We will be adding new entries throughout April and May 2020.
 <p>Answers and suggestions about how to find out more at the bottom of each page.</p>
 <p>Have fun and don't forget to share your creations using #FitzVirtual #LookThinkDo.</p>
 
-<p><a href="https://drive.google.com/file/d/1vGjaXixzXLJ6J__-EqUE0Ah141eyL1Pk/view">Notes for parents and teacher</a></p>
+<p><a href="https://drive.google.com/file/d/1vGjaXixzXLJ6J__-EqUE0Ah141eyL1Pk/view">Notes for parents and teachers</a></p>
 </div>
       <div class="row">
 
