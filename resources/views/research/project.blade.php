@@ -9,12 +9,36 @@
 @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     @markdown($project['project_overview'])
-    @if($project['project_url'])
-    <ul>
-      <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>
-    </ul>
-    @endif
   </div>
+  <h3>Project information</h3>
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+
+    <ul>
+      @if($project['project_principal'])
+        <li>Principal Investigator: {{ $project['project_principal']}}</li>
+      @endif
+      @if($project['co_investigator'])
+        <li>Co-Investigator: {{ $project['co_investigator']}}</li>
+      @endif
+      @if($project['project_start_date'])
+        <li>Project start date: {{ Carbon\Carbon::parse($project['project_start_date'])->format('l dS F Y') }}</li>
+      @endif
+      @if($project['project_end_date'])
+        <li>Project end date: {{  Carbon\Carbon::parse($project['project_end_date'])->format('l dS F Y')}}</li>
+      @endif
+      @if($project['project_url'])
+        <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>
+      @endif
+      @if($project['award_value'])
+        <li>Funding award value: {{ $project['award_value'] }}</li>
+      @endif
+      @if($project['funding_reference_id'])
+        <li>Funding reference: {{ $project['funding_reference_id'] }}</li>
+      @endif
+    </ul>
+
+  </div>
+
 @endsection
 
 @if(!empty($project['project_partnerships'] ))
