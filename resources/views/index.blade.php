@@ -8,11 +8,7 @@
 @section('title', 'The Fitzwilliam Museum')
 
 @section('content')
-  <blockquote class="frontpageQuote">
-    <p class="pt-5">
-      Discover one of the greatest art collections of the nation
-    </p>
-  </blockquote>
+"Discover one of the greatest art collections of the nation"
 @endsection
 
 @section('news')

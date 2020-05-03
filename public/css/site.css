@@ -39,7 +39,6 @@
     color: white!important;
     font-family: 'Lato', sans-serif;
     font-size: 2.6rem;
-    margin-top:-3rem;
   }
   .shout-less {
     color: white!important;
@@ -549,4 +548,32 @@ input#query::placeholder {
   font-weight: normal;
   color: white;
   border-left:none;
+}
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 100;
+  -webkit-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  transform: scale(1.8);
+}
+
+.heroCaption {
+    font-size: 1.3rem;
+    padding: 10px 16px;
+    width: 220px;
+    position: absolute;
+    bottom: 100%;
+    top: auto;
+    right: 0;
+    left: auto;
+    margin-bottom: 20px;
+}
+.parallax-home {
+  margin-top: -25px;
 }
