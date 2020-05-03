@@ -7,7 +7,7 @@
 @section('opening-hours')
   <h2>When we're open</h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    @include('includes/opening')
+    @include('includes.elements.opening')
   </div>
 @endsection
 

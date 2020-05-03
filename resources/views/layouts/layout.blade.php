@@ -3,71 +3,74 @@
 <html lang="en">
 <head>
 
-    @include('includes.meta')
+    @include('includes.structure.meta')
 
-    @include('includes.css')
+    @include('includes.css.css')
+
     @hasSection('map')
-    @mapstyles
+      @mapstyles
     @endif
-    @include('includes.manifest')
+
+    @include('includes.structure.manifest')
 
 </head>
 <body class="doc-body">
 
-<!-- Screen reader skip to main -->
-<a class="sr-only sr-only-focusable doc-skip" href="#doc-main-h1">
-    <div class="container">
-        <span class="doc-skip-text">Skip to main content</span>
-    </div>
-</a>
+  @include('includes.structure.accessibility')
 
-  @include('includes.nav')
+  @include('includes.structure.nav')
 
-  @include('includes.announcement')
+  @include('includes.structure.announcement')
 
-  @include('includes.head')
+  @include('includes.structure.head')
+
+  @include('includes.structure.beta')
+
 
   @hasSection('timeline')
-  @include('includes.timeline-css')
+    @include('includes.css.timeline-css')
   @endif
 
   @hasSection('360')
-  @include('includes.photosphere-css')
+    @include('includes.css.photosphere-css')
   @endif
+
   <div class="container">
-        @include('includes.breadcrumb')
-        @yield('content')
-        @yield('timeline')
+    @include('includes.structure.breadcrumb')
+    @yield('content')
+    @yield('timeline')
   </div>
+
   @hasSection('map')
   <div class="container-fluid map-box mb-3">
     @yield('map')
   </div>
-
-
   @endif
-        @yield('releases')
-        @yield('resources-plans')
-        @yield('diy')
-        @yield('publications')
-        @yield('research-projects')
-        @yield('research-funders')
-        @yield('themes')
-        @yield('collections')
-        @yield('departments')
-        @yield('galleries')
-        @yield('associated_pages')
-        @yield('360')
-        @yield('youtube')
-        @yield('sketchfab-collection')
-        @yield('sketchfab')
-        @yield('audio-guide')
-        @yield('pharos-pages')
-        @yield('mlt')
-  @include('includes.share')
 
-  @include('includes.footer')
-  @include('includes.modal')
+    @yield('releases')
+    @yield('resources-plans')
+    @yield('diy')
+    @yield('publications')
+    @yield('research-projects')
+    @yield('research-funders')
+    @yield('themes')
+    @yield('collections')
+    @yield('departments')
+    @yield('galleries')
+    @yield('associated_pages')
+    @yield('360')
+    @yield('youtube')
+    @yield('sketchfab-collection')
+    @yield('sketchfab')
+    @yield('audio-guide')
+    @yield('pharos-pages')
+    @yield('mlt')
+
+  @include('includes.structure.share')
+
+  @include('includes.structure.footer')
+
+  @include('includes.structure.modal')
 
   @hasSection('lookanswers')
     @yield('lookanswers')
@@ -81,26 +84,19 @@
     @yield('doanswers')
   @endif
 
-  @include('includes.javascript')
+  @include('includes.scripts.javascript')
 
   @hasSection('360')
-    @include('includes.photosphere-js')
+    @include('includes.scripts.photosphere-js')
   @endif
 
   @hasSection('map')
     @mapscripts
-    <script>
-    window.addEventListener('LaravelMaps:MapInitialized', function (event) {
-   var element = event.detail.element;
-   var map = event.detail.map;
-   map.scrollWheelZoom.disable();
-});
-
-    </script>
+    @include('includes.scripts.mapjs')
   @endif
 
   @hasSection('timeline')
-    @include('includes.timeline-js')
+    @include('includes.scripts.timeline-js')
   @endif
 
 </body>

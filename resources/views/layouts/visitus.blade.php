@@ -1,13 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-    @include('includes.meta')
+    @include('includes.structure.meta')
 
-    @include('includes.css')
+    @include('includes.css.css')
+
     @mapstyles
-    @include('includes.manifest')
+
+    @include('includes.structure.manifest')
 
 </head>
 <body class="doc-body">
@@ -19,14 +20,16 @@
     </div>
 </a>
 
-  @include('includes.nav')
+  @include('includes.structure.nav')
 
-  @include('includes.announcement')
+  @include('includes.structure.announcement')
 
-  @include('includes.head')
+  @include('includes.structure.head')
+
+  @include('includes.structure.beta')
 
   <div class="container">
-    @include('includes.breadcrumb')
+    @include('includes.structure.breadcrumb')
 
   </div>
   <div class="container">
@@ -61,17 +64,17 @@
     </div>
   </div>
 
-  @include('includes.directions')
+  @include('includes.elements.directions')
 
   @yield('associated_pages')
 
-  @include('includes.share')
+  @include('includes.structure.share')
 
-  @include('includes.footer')
-  @include('includes.modal')
-  @include('includes.javascript')
+  @include('includes.structure.footer')
+  @include('includes.structure.modal')
+  @include('includes.scripts.javascript')
   @mapscripts
-  @include('includes.fullscreen')
+  @include('includes.scripts.fullscreen')
 
 </body>
 </html>

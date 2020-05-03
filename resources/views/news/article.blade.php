@@ -1,6 +1,8 @@
 @extends('layouts/layout')
 @foreach($news['data'] as $project)
 @section('title', $project['article_title'])
+@section('meta_description',$project['meta_description'])
+@section('meta_keywords',$project['meta_keywords'])
 @if(!empty($project['field_image']))
 @section('hero_image', $project['field_image']['data']['full_url'])
 @section('hero_image_title', $project['field_image_alt_text'])

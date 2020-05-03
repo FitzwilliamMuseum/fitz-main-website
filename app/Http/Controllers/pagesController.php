@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\MoreLikeThis;
 
 class pagesController extends Controller
 {
@@ -25,7 +26,11 @@ class pagesController extends Controller
         )
       );
       $pages = $api->getData();
-      return view('pages.index', compact('pages'));
+
+      $mlt = new MoreLikeThis;
+      $mlt->setLimit(3)->setType('page')->setQuery($slug);
+      $records = $mlt->getData();
+      return view('pages.index', compact('pages', 'records'));
   }
 
   public function landing($section)

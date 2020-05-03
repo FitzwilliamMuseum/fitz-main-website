@@ -3,32 +3,31 @@
 <html lang="en">
 <head>
 
-    @include('includes.meta')
+    @include('includes.structure.meta')
 
-    @include('includes.css')
+    @include('includes.css.css')
 
-    @include('includes.manifest')
+    @include('includes.structure.manifest')
 
 </head>
 <body class="doc-body">
 
-<!-- Screen reader skip to main -->
-<a class="sr-only sr-only-focusable doc-skip" href="#doc-main-h1">
-    <div class="container">
-        <span class="doc-skip-text">Skip to main content</span>
-    </div>
-</a>
+  @include('includes.structure.accessibility')
 
-  @include('includes.nav')
+  @include('includes.structure.nav')
 
-  @include('includes.announcement')
+  @include('includes.structure.announcement')
 
-  @include('includes.head')
-  @hasSection('360')
-  @include('includes.photosphere-css')
-  @endif
+  @include('includes.structure.head')
+
+  @include('includes.structure.beta')
+
+    @hasSection('360')
+      @include('includes.css.photosphere-css')
+    @endif
+
   <div class="container">
-        @include('includes.breadcrumb')
+        @include('includes.structure.breadcrumb')
         @yield('content')
   </div>
         @yield('curators')
@@ -39,15 +38,18 @@
         @yield('archive')
         @yield('galleries')
         @yield('departments')
-  @include('includes.share')
 
-  @include('includes.footer')
-  @include('includes.modal')
-  @include('includes.javascript')
+  @include('includes.structure.share')
+
+  @include('includes.structure.footer')
+  @include('includes.structure.modal')
+  @include('includes.scripts.javascript')
+
   @hasSection('360')
-  @include('includes.photosphere-js')
+    @include('includes.scripts.photosphere-js')
   @endif
-  @include('includes.fullscreen')
+
+  @include('includes.scripts.fullscreen')
 
 </body>
 </html>

@@ -121,9 +121,9 @@
 @endsection
 
 @section('twitter')
-@include('includes.tweets')
+  @include('includes.social.tweets')
 @endsection
 
 @section('youtube-list')
-@include('includes.youtubelist')
+  @include('includes.social.youtubelist')
 @endsection

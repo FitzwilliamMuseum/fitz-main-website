@@ -75,12 +75,13 @@ class DirectUs {
 
     $url = $this->getDirectUsUrl() . $this->getEndPoint() . $this->buildQuery();
     $key = md5($url);
+    $expiresAt = now()->addMinutes(60);
     if (Cache::has($key)) {
       $data = Cache::get($key);
     } else {
       $response = Http::get($url);
       $data = $response->json();
-      Cache::put($key, $data, 60);
+      Cache::put($key, $data, $expiresAt);
     }
     if(empty($data['data'])){
       abort(404);

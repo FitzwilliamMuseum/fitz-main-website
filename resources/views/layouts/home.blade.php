@@ -3,28 +3,24 @@
 <html lang="en">
 <head>
 
-    @include('includes.meta')
+    @include('includes.structure.meta')
 
-    @include('includes.css')
+    @include('includes.css.css')
 
-    @include('includes.manifest')
+    @include('includes.structure.manifest')
     @include('feed::links')
 </head>
 <body class="doc-body">
 
-<!-- Screen reader skip to main -->
-<a class="sr-only sr-only-focusable doc-skip" href="#doc-main-h1">
-    <div class="container">
-        <span class="doc-skip-text">Skip to main content</span>
-    </div>
-</a>
+  @include('includes.structure.accessibility')
 
-  @include('includes.nav')
+  @include('includes.structure.nav')
 
-  @include('includes.announcement')
+  @include('includes.structure.announcement')
 
-  @include('includes.headHome')
-  @include('includes.beta')
+  @include('includes.structure.headHome')
+
+  @include('includes.structure.beta')
 
   <div class="container-fluid parallax parallax-home text-center">
   </div>
@@ -44,6 +40,7 @@
         @yield('themes')
     </div>
   </div>
+
   <div class="container-fluid carousel-pad">
       @yield('carousel')
   </div>
@@ -54,6 +51,7 @@
         @yield('research')
     </div>
   </div>
+
   <div class="container-fluid parallax third-parallax-home mb-3">
   </div>
 
@@ -61,19 +59,21 @@
     <h2>Talk to us</h2>
     @yield('twitter')
   </div>
+
   <div class="container-fluid parallax fourth-parallax-home mb-3">
   </div>
+
   <div class="container ">
     <h2>Watch us</h2>
-    @yield('youtube-list')
+      @yield('youtube-list')
   </div>
-  @include('includes.share')
+  @include('includes.structure.share')
 
-  @include('includes.footer')
-  @include('includes.modal')
-  @include('includes.javascript')
+  @include('includes.structure.footer')
+  @include('includes.structure.modal')
+  @include('includes.scripts.javascript')
 
-  @include('includes.fullscreen')
+  @include('includes.scripts.fullscreen')
 
 </body>
 </html>

@@ -3,13 +3,15 @@
 <html lang="en">
 <head>
 
-    @include('includes.meta')
+    @include('includes.structure.meta')
 
-    @include('includes.css')
+    @include('includes.css.css')
+
     @hasSection('map')
-    @mapstyles
+      @mapstyles
     @endif
-    @include('includes.manifest')
+
+    @include('includes.structure.manifest')
 
 </head>
 <body class="doc-body">
@@ -21,38 +23,32 @@
     </div>
 </a>
 
-  @include('includes.nav')
+  @include('includes.structure.nav')
 
-  @include('includes.announcement')
-  @include('includes.head')
+  @include('includes.structure.announcement')
 
+  @include('includes.structure.head')
+
+  @include('includes.structure.beta')
   <div class="container">
         @yield('content')
   </div>
 
 
-  @include('includes.footer')
-  @include('includes.modal')
-  @include('includes.javascript')
+  @include('includes.structure.footer')
+  @include('includes.structure.modal')
+  @include('includes.scripts.javascript')
 
   @hasSection('360')
-    @include('includes.photosphere-js')
+    @include('includes.scripts.photosphere-js')
   @endif
 
   @hasSection('map')
-    @mapscripts
-    <script>
-    window.addEventListener('LaravelMaps:MapInitialized', function (event) {
-   var element = event.detail.element;
-   var map = event.detail.map;
-   map.scrollWheelZoom.disable();
-});
-
-    </script>
+    @include(includes.scripts.mapjs)
   @endif
 
   @hasSection('timeline')
-    @include('includes.timeline-js')
+    @include('includes.scripts.timeline-js')
   @endif
 
 </body>

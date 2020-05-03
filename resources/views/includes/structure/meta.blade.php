@@ -22,25 +22,27 @@
     <meta name="twitter:site" content="@yield('twitter_id', '@fitzmuseum_uk')" />
     <meta name="twitter:image" content="{{ URL::to('/images/') }}" />
     <meta name="twitter:creator" content="@yield('twitter_id', '@fitzmuseum_uk')" />
+
     <!--
-    d888888P dP                    88888888b oo   dP                       oo dP dP oo                        8888ba.88ba
+  d888888P dP                  88888888b oo   dP                       oo dP dP oo                        8888ba.88ba
    88    88                    88             88                          88 88                           88  `8b  `8b
    88    88d888b. .d8888b.    a88aaaa    dP d8888P d888888b dP  dP  dP dP 88 88 dP .d8888b. 88d8b.d8b.    88   88   88 dP    dP .d8888b. .d8888b. dP    dP 88d8b.d8b.
    88    88'  `88 88ooood8     88        88   88      .d8P' 88  88  88 88 88 88 88 88'  `88 88'`88'`88    88   88   88 88    88 Y8ooooo. 88ooood8 88    88 88'`88'`88
    88    88    88 88.  ...     88        88   88    .Y8P    88.88b.88' 88 88 88 88 88.  .88 88  88  88    88   88   88 88.  .88       88 88.  ... 88.  .88 88  88  88
    dP    dP    dP `88888P'     dP        dP   dP   d888888P 8888P Y8P  dP dP dP dP `88888P8 dP  dP  dP    dP   dP   dP `88888P' `88888P' `88888P' `88888P' dP  dP  dP
+    -->
 
-  -->
     <!-- Humans text -->
     <link type="text/plain" rel="author" href="{{ URL::to('/humans.txt') }}" />
+    <!-- end of humans.txt -->
 
     <script type="application/ld+json">
     {"publisher":{"@type":"Organization",
     "logo":{"@type":"ImageObject",
-    "url":"https://feast-and-fast.fitzmuseum.cam.ac.uk/images/logos/FitzLogo.png"}},
-    "headline":"Feast &amp; Fast","@type":"WebSite","url":"{{ URL::to('/')}}",
+    "url":"{{ URL::to('/images/logos/FV.png') }}"}},
+    "headline":"The Fitzwilliam Museum","@type":"WebSite","url":"{{ URL::to('/')}}",
     "name":"The Fitzwilliam Museum",
     "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
     "@context":"https://schema.org"}
-  </script>
-  <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g" async="true"></script>
+    </script>
+    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g" async="true"></script>

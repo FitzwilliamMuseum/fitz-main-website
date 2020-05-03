@@ -21,7 +21,7 @@
         @else
         <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded float-right" width="200" />
       @endif
-      <h3><a href="/{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
+      <h3><a href="{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
       @if(isset($result['pubDate']))
       <h4class="text-muted">{{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}</h4>
       @endif
