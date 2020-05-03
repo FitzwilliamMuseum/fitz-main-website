@@ -76,15 +76,15 @@
 
 <div class="col-md-4 mb-3">
 <div class="card card-body h-100">
-    <img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/ucm_400.jpg?key=directus-large-crop"/>
+    <img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/macclesfield.png"/>
     <div class="container h-100">
 
 <div class="contents-label mb-3">
 <h3>
-  <a href="https://museums.cam.ac.uk">Visit our museums</a>
+  <a href="https://www.fitzmuseum.cam.ac.uk/illuminated/">Seek Illumination</a>
 </h3>
 <p>
-  Find inspiration, discover us
+  Discover our manuscripts
 </p>
 </div>
 </div>
