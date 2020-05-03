@@ -40,7 +40,14 @@ window.player = player;
 @hasSection('height-test')
   @yield('height-test')
 @endif
-
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3319190-"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

@@ -275,11 +275,14 @@ label.cm-app-label {
   color:#686868;
 }
 
-@media  (max-width : 480px) {
+@media  (max-width : 440px) {
   .shorten-words {
-    max-width: 200px;
+    max-width: 330px;
+    display:inline-block
   }
+
 }
+
 
 .shareTwitter a {
   color: #000;
@@ -543,6 +546,10 @@ input#query::placeholder {
     margin-top: 9px;
 }
 
+.further-info {
+    margin-top: -4.125rem;
+}
+
 .frontpageQuote {
   font-size: 5rem;
   font-weight: normal;
@@ -576,4 +583,13 @@ input#query::placeholder {
 }
 .parallax-home {
   margin-top: -25px;
+}
+.popover {
+    background: black;
+    color: white;
+    font-size: 1.3rem;
+    max-width: 100%;
+}
+.further-info a:hover, .further-info a:active {
+  color: black;
 }

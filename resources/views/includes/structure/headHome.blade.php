@@ -13,10 +13,9 @@
   </div>
 
 </div>
-<a href="#overlay" class="menu fa-stack fa-lg float-right mr-4 mb-4">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-info fa-stack-1x fa-inverse"></i>
-  </a>
-<div class="heroCaption" aria-hidden="true">
-  @yield('hero_image_title')
-</div>
+<a tabindex="0" class="further-info fa-stack fa-lg float-right mr-4 mb-4"
+role="button" data-toggle="popover" data-trigger="focus"
+data-content="@yield('hero_image_title')">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-info fa-stack-1x fa-inverse"></i>
+</a>
