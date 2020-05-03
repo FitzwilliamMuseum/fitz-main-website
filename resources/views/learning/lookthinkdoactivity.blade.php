@@ -19,10 +19,12 @@
         <img src="{{ $look['focus_image']['data']['full_url'] }}"
         class="img-fluid" alt="{{ $look['title_of_work'] }}"/>
       </figure>
-      <btn class="btn btn-wine m-1 share">
-        <a href="{{ URL::to( $look['focus_image']['data']['full_url'] )  }}"
-         download="{{ $look['title_of_work'] }}.jpg"><i class="fas fa-download mr-2"></i>  Download this image</a>
-      </btn>
+      <span class="btn btn-wine m-1 p-2 share">
+        <a href="{{ URL::to( $look['focus_image']['data']['full_url'] )  }}" target="_blank"
+         download><i class="fas fa-download mr-2"></i>  Download this image</a>
+      </span>
+      <span class="btn btn-dark p-2">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span>
     </div>
 
     <div class="shadow-sm p-3 mx-auto mb-3 mt-3 rounded">
