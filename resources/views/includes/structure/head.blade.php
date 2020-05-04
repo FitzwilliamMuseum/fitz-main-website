@@ -8,6 +8,8 @@
         width="220px" class="img-fluid p-3"/></a>
         <a aria-label="The main Fitzwilliam website" href="https://www.fitzmuseum.cam.ac.uk"><img src="{{ URL::to('/images/logos/Fitz_logo_white.png') }}"
         width="75px" alt="The Fitz Logo"/></a>
+        <a aria-label="The main Fitzwilliam website" href="https://www.fitzmuseum.cam.ac.uk"><img src="{{ URL::to('/images/logos/FV.svg') }}"
+        width="100px" alt="The Fitz Logo"/></a>
       </div>
     </div>
   </div>
