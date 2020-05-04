@@ -2,7 +2,7 @@
 <div class="jumbotron jumbotron-fluid doc-jumbotron head parallax">
   <div class="container">
     <div>
-      <div class="col-lg-12 col-xl-12 shadow-sm rounded bg-black p-4">
+      <div class="col-lg-12 col-xl-12 shadow-sm rounded bg-black bg-fade p-4">
         <h1 class="shout ">@yield('title')</h1>
         <a href="{{ URL::to('https://cam.ac.uk') }}"><img src="{{ URL::to('/images/logos/ucamLogo.png') }}"  alt="The University of Cambridge logo"
         width="220px" class="img-fluid p-3"/></a>
