@@ -68,21 +68,36 @@ class homeController extends Controller
     );
     $themes = $api4->getData();
 
+    $api5 = $this->getApi();
+    $api5->setEndpoint('things_to_do');
+    $api5->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'sort' => '-id',
+          'limit' => 3
+      )
+    );
+    $things = $api5->getData();
+    $expiresTwitter = now()->addMinutes(60);
+    $expiresYouTube = now()->addMinutes(6000);
+
     if (Cache::has('cache_twitter')) {
       $tweets = Cache::get('cache_twitter');
     } else {
       $tweets = Twitter::getUserTimeline(['screen_name' => 'fitzmuseum_uk', 'count' => 3, 'format' => 'object']);
-      Cache::put('cache_twitter', $tweets, 60); // 1 hour
+      Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
     }
     if (Cache::has('cache_yt')) {
       $videoList = Cache::get('cache_yt');
     } else {
       $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
-      Cache::put('cache_yt', $videoList, 14400); // 1 hour
+      Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
     return view('index', compact(
       'carousel','news', 'research',
-      'themes','tweets', 'videoList'
+      'themes','tweets', 'videoList',
+      'things'
     ));
   }
 }
