@@ -482,36 +482,36 @@ ul#floor-plans {
 }
 blockquote {
   font-size: 1.25rem;
-    font-weight: bolder;
-    letter-spacing: .02em;
-    line-height: 1.4;
-    border-left: .3125rem solid #731200;
-    margin-bottom: 1rem;
-    padding: 0 1rem;
+  font-weight: bolder;
+  letter-spacing: .02em;
+  line-height: 1.4;
+  border-left: .3125rem solid #731200;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 @media screen and ( max-width: 440px ){
-    li.page-item {
-        display: none;
-    }
-    .page-item:first-child,
-    .page-item:last-child,
-    .page-item.active {
-        display: block;
-    }
+  li.page-item {
+    display: none;
+  }
+  .page-item:first-child,
+  .page-item:last-child,
+  .page-item.active {
+    display: block;
+  }
 }
 .card, .shadow-sm {
   box-shadow: none!important;
 }
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-        display: block;
-        height: auto;
-        max-width: 100%;
-        min-height: 600px;
-        line-height: 1;
-        margin:auto;
-        width: 100%; // Add this
-        }
+  display: block;
+  height: auto;
+  max-width: 100%;
+  min-height: 600px;
+  line-height: 1;
+  margin:auto;
+  width: 100%; // Add this
+}
 .map {
   min-height: 400px;
   max-height: 400px;
@@ -521,35 +521,35 @@ a.share {
 }
 .svg-logo {
   z-index: -1;
-	float: right;
-	margin-top: -6px;
+  float: right;
+  margin-top: -6px;
 }
 input#query {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 input#query::placeholder {
-    color: #000;
+  color: #000;
 }
 .search-results {
   min-height: 200px;
 }
 .badge-wine {
-    background-color: #731200;
-    color: #fff;
+  background-color: #731200;
+  color: #fff;
 }
 
 .contents-label {
-    margin-left: -13px;
-    margin-top: 10px;
+  margin-left: -13px;
+  margin-top: 10px;
 }
 .ucam {
-    margin-bottom: -40px;
-    margin-top: 9px;
+  margin-bottom: -40px;
+  margin-top: 9px;
 }
 
 .further-info {
-    margin-top: -4.125rem;
+  margin-top: -4.125rem;
 }
 
 .frontpageQuote {
@@ -573,35 +573,36 @@ input#query::placeholder {
 }
 
 .heroCaption {
-    font-size: 1.3rem;
-    padding: 10px 16px;
-    width: 220px;
-    position: absolute;
-    bottom: 100%;
-    top: auto;
-    right: 0;
-    left: auto;
-    margin-bottom: 20px;
+  font-size: 1.3rem;
+  padding: 10px 16px;
+  width: 220px;
+  position: absolute;
+  bottom: 100%;
+  top: auto;
+  right: 0;
+  left: auto;
+  margin-bottom: 20px;
 }
 .parallax-home {
   margin-top: -25px;
 }
 .popover {
-    background: black;
-    color: white;
-    font-size: 1.3rem;
-    max-width: 100%;
+  background: black;
+  color: white;
+  font-size: 1.3rem;
+  max-width: 100%;
 }
 .further-info a:hover, .further-info a:active {
   color: black;
 }
 .small-muted {
-    color: rgba(214, 217, 207, 0.6)!important;
-    font-size: 2.5rem;
+  color: rgba(214, 217, 207, 0.6)!important;
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
 .beta a, .covid-19 a {
   text-decoration: underline;
 }
 figcaption.figure-caption.text-right {
-    font-size: 1rem;
+  font-size: 1rem;
 }
