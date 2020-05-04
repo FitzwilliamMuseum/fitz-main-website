@@ -602,3 +602,6 @@ input#query::placeholder {
 .beta a, .covid-19 a {
   text-decoration: underline;
 }
+figcaption.figure-caption.text-right {
+    font-size: 1rem;
+}
