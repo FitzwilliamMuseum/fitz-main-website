@@ -18,7 +18,7 @@
 
   @include('includes.structure.announcement')
 
-  @include('includes.structure.head')
+  @include('includes.structure.headHome')
 
   @include('includes.structure.beta')
 

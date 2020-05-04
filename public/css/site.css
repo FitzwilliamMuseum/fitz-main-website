@@ -593,3 +593,7 @@ input#query::placeholder {
 .further-info a:hover, .further-info a:active {
   color: black;
 }
+.small-muted {
+    color: rgba(214, 217, 207, 0.6)!important;
+    font-size: 2.5rem;
+}
