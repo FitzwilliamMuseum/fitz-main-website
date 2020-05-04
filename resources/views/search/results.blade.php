@@ -94,7 +94,9 @@
   </nav>
 
 @else
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   <p>No results to display.</p>
+</div>
 @endif
 </div>
 </div>
