@@ -597,3 +597,6 @@ input#query::placeholder {
     color: rgba(214, 217, 207, 0.6)!important;
     font-size: 2.5rem;
 }
+.beta a, .covid-19 a {
+  text-decoration: underline;
+}
