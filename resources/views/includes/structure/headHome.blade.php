@@ -3,7 +3,7 @@
   <div class="container">
     <div>
       <div class="col-lg-12 col-xl-12 shadow-sm rounded bg-black p-4">
-        <h1 class="shout ">@yield('content')  <small class="small-muted">The Fitzwilliam Museum</small></h1> 
+        <h1 class="shout ">@yield('content')</h1><h2 class="small-muted">The Fitzwilliam Museum</small></h2>
         <a href="{{ URL::to('https://cam.ac.uk') }}"><img src="{{ URL::to('/images/logos/ucamLogo.png') }}"  alt="The University of Cambridge logo"
         width="220px" class="img-fluid p-3"/></a>
         <img src="{{ URL::to('/images/logos/FV.svg') }}"
