@@ -47,7 +47,7 @@ class galleriesController extends Controller
       $api->setEndpoint('galleries');
       $api->setArguments(
         $args = array(
-            'fields' => '*.*.*.*.*',
+            'fields' => '*.*.*.*',
             'filter[slug]' => $slug,
             'meta' => '*'
         )

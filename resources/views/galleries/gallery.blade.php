@@ -19,7 +19,30 @@
           <li>{{ $gallery['gallery_floor']}}</li>
       </div>
       @endif
+      <h3>Highlight objects from Pharos</h3>
+      <div class="row">
+          @foreach($gallery['star_objects'] as $object)
+            <div class="col-md-4 mb-3">
+            <div class="card card-body h-100 ">
+              @if(!is_null($object['pharos_id']['image']))
+              <img class="img-fluid" src="{{ $object['pharos_id']['image']['data']['thumbnails'][2]['url']}}"/>
+                @endif
+            <div class="container h-100">
+              <div class="contents-label mb-3">
+              <h3>
+                <a href="/objects-and-artworks/pharos/{{ $object['pharos_id']['slug']}}">{{ $object['pharos_id']['title']}}</a>
+              </h3>
+                <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($object['pharos_id']['description'])),0,200) }}...</p>
+              </div>
+            </div>
+            <a href="/objects-and-artworks/pharos/{{ $object['pharos_id']['slug']}}" class="btn btn-dark">Read more</a>
+          </div>
+          </div>
+          @endforeach
+      </div>
   @endsection
+
+
 
   @if(!empty($gallery['audio_guide']))
   @section('audio-guide')
@@ -55,7 +78,7 @@
 
     @if(!empty($gallery['sketchfab_id_collection']))
     <div class="container">
-      <h2>3D scans of objects in gallery</h2>
+      <h3>3D scans of objects in gallery</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
         <div class="embed-responsive embed-responsive-1by1">
           <iframe title="A 3D model" class="embed-responsive-item"
