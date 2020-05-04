@@ -36,7 +36,7 @@
   </div>
 
   @include('includes.structure.thingstodo')
-  
+
   <div class="container-fluid parallax second-parallax-home">
   </div>
 
@@ -47,8 +47,10 @@
     </div>
   </div>
 
-  <div class="container-fluid carousel-pad">
-    @yield('carousel')
+  <div class="container-fluid bg-black">
+    <div class="container">
+      @include('includes.structure.carousel')
+    </div>
   </div>
 
   <div class="container mt-3">
