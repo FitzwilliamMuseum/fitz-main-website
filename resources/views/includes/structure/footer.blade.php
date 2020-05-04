@@ -88,7 +88,6 @@
                 </p>
             </div>
             <div class="col-sm mt-2 mb-2">
-                <a aria-label="The main Fitzwilliam website" href="https://www.fitzmuseum.cam.ac.uk"><img alt="Fitzwilliam Museum logo" src="/images/logos/FitzwilliamLogoFooter.png" loading="lazy" class="rounded d-block"/></a>
                 <p class="share">
                     &copy; 2020 The University of Cambridge<br/>
                     Content: CC-BY<br />

@@ -6,8 +6,8 @@
         <h1 class="shout ">@yield('content')</h1><h2 class="small-muted">The Fitzwilliam Museum</small></h2>
         <a href="{{ URL::to('https://cam.ac.uk') }}"><img src="{{ URL::to('/images/logos/ucamLogo.png') }}"  alt="The University of Cambridge logo"
         width="220px" class="img-fluid p-3"/></a>
-        <img src="{{ URL::to('/images/logos/FV.svg') }}"
-        width="75px" alt="The FitzVirtual Logo"/>
+        <a aria-label="The main Fitzwilliam website" href="https://www.fitzmuseum.cam.ac.uk"><img src="{{ URL::to('/images/logos/Fitz_logo_white.png') }}"
+        width="75px" alt="The Fitz Logo"/></a>
       </div>
     </div>
   </div>
