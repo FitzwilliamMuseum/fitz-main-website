@@ -10,7 +10,7 @@
       </div>
     </div>
     <p>Interactions: {{ $media->getCommentsCount() }} Favourited: {{$media->getLikesCount()}} </p>
-    <a href="" class="btn btn-dark">Read more</a>
+    <a href="{{ $media->getLink() }}" class="btn btn-dark">Read more</a>
   </div>
 </div>
 @endforeach
