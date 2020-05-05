@@ -67,6 +67,7 @@ Route::get('search/floor', 'searchController@floor');
 Route::get('search/gov', 'searchController@governance');
 Route::get('search/learningfiles', 'searchController@learningfiles');
 Route::get('search/exhibitions', 'searchController@exhibitions');
+Route::get('search/instagram', 'searchController@instagram');
 
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',

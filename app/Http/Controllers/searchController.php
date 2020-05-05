@@ -9,6 +9,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
 use Mews\Purifier;
 use App\Directus;
+use InstagramScraper\Instagram;
 
 class searchController extends Controller
 {
@@ -749,6 +750,42 @@ class searchController extends Controller
         $doc->image = $profile['hero_image']['data']['full_url'];
         $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
       }
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+  public function instagram()
+  {
+    $expires = now()->addMinutes(6000);
+
+    if (Cache::has('cache_insta_search')) {
+      $insta = Cache::get('cache_insta_search');
+    } else {
+      $instagram = new Instagram();
+      $insta = $instagram->getMedias('fitzmuseum_uk', 300);
+    Cache::put('cache_insta_search', $insta, $expires); // 1 hour
+    }
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($insta as $gram)
+    {
+      $doc = $update->createDocument();
+      $doc->id = md5($gram->getId());
+      $doc->title = substr(strip_tags(htmlspecialchars_decode($gram->getCaption())),0,150);
+      $doc->description = strip_tags($gram->getCaption());
+      $doc->body =strip_tags($gram->getCaption());
+      $doc->url = $gram->getLink();
+      $doc->contentType = 'instagram-'. $gram->getType();
+      $doc->thumbnail = $gram->getImageThumbnailUrl();
+      $doc->image = $gram->getImageHighResolutionUrl();
+      $doc->searchImage = $gram->getImageThumbnailUrl();
       $documents[] = $doc;
     }
     // add the documents and a commit command to the update query
