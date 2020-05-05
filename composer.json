@@ -22,6 +22,7 @@
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
         "mews/purifier": "^3.2",
+        "raiym/instagram-php-scraper": "^0.9.9",
         "rebing/graphql-laravel": "^5.0",
         "solarium/solarium": "^5.2",
         "spatie/laravel-feed": "^2.6",

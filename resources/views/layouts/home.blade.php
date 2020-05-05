@@ -64,10 +64,13 @@
   </div>
 
   <div class="container ">
-    <h2>Talk to us</h2>
+    <h2>Our Twitter profile</h2>
     @yield('twitter')
   </div>
-
+  <div class="container ">
+    <h2>Our Instagram profile</h2>
+    @yield('instagram')
+  </div>
   <div class="container-fluid parallax fourth-parallax-home mb-3">
   </div>
 

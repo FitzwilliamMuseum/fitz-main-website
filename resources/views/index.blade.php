@@ -77,6 +77,10 @@
   @include('includes.social.tweets')
 @endsection
 
+@section('instagram')
+  @include('includes.social.insta')
+@endsection
+
 @section('youtube-list')
   @include('includes.social.youtubelist')
 @endsection

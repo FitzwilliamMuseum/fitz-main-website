@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e999c849506ba4a83cf58f688ae044ec",
+    "content-hash": "75d9ec274cf45767d606c00b9df404e1",
     "packages": [
         {
             "name": "alaouy/youtube",
@@ -1669,6 +1669,52 @@
             "time": "2020-04-16T13:21:26+00:00"
         },
         {
+            "name": "mashape/unirest-php",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mashape/unirest-php.git",
+                "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+                "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "0.1.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "suggest": {
+                "ext-json": "Allows using JSON Bodies for sending and parsing requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Unirest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Unirest PHP",
+            "homepage": "https://github.com/Mashape/unirest-php",
+            "keywords": [
+                "client",
+                "curl",
+                "http",
+                "https",
+                "rest"
+            ],
+            "time": "2016-08-11T17:49:21+00:00"
+        },
+        {
             "name": "mews/purifier",
             "version": "3.2.2",
             "source": {
@@ -2478,6 +2524,55 @@
                 "shell"
             ],
             "time": "2020-04-07T06:44:48+00:00"
+        },
+        {
+            "name": "raiym/instagram-php-scraper",
+            "version": "v0.9.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/postaddictme/instagram-php-scraper.git",
+                "reference": "3b08bcd680711753b6b4a1da97e1599b6c2cd335"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/postaddictme/instagram-php-scraper/zipball/3b08bcd680711753b6b4a1da97e1599b6c2cd335",
+                "reference": "3b08bcd680711753b6b4a1da97e1599b6c2cd335",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "mashape/unirest-php": "3.0.*",
+                "php": ">=5.4.0",
+                "psr/simple-cache": "~1.0"
+            },
+            "require-dev": {
+                "phpfastcache/phpfastcache": "^7.1",
+                "phpunit/phpunit": "5.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "InstagramScraper\\": "src/InstagramScraper/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "raiym",
+                    "email": "r.kapishev@gmail.com"
+                }
+            ],
+            "description": "Instagram PHP Scraper. Get account information, photos and videos without any authorization",
+            "homepage": "https://github.com/raiym/instagram-php-scraper",
+            "keywords": [
+                "instagram",
+                "scraper"
+            ],
+            "time": "2020-05-02T06:08:40+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

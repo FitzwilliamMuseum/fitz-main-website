@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 use Twitter;
 use Youtube;
 use Cache;
-
+use InstagramScraper\Instagram;
 class homeController extends Controller
 {
   /**
@@ -94,10 +94,18 @@ class homeController extends Controller
       $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
+
+    if (Cache::has('cache_insta')) {
+      $insta = Cache::get('cache_insta');
+    } else {
+      $instagram = new Instagram();
+      $insta = $instagram->getMedias('fitzmuseum_uk', 3);
+    Cache::put('cache_insta', $insta, $expiresYouTube); // 1 hour
+    }
     return view('index', compact(
       'carousel','news', 'research',
       'themes','tweets', 'videoList',
-      'things'
+      'things','insta'
     ));
   }
 }
