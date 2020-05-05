@@ -5,6 +5,8 @@
 @section('parallax_two', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/confection.jpg')
 @section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/25th_november_057.jpg')
 @section('parallax_four', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/e1a3159c12ca0f5091e3e9e5000ad4d0-landscape.jpg')
+@section('parallax_three_lower', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/25th_november_057.jpg')
+
 @section('title', 'The Fitzwilliam Museum')
 
 @section('content')

@@ -7,9 +7,9 @@
 
       <div class="contents-label mb-3">
         <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($media->getCaption())),0,200) }}...</p>
-        <p>Interactions: {{ $media->getCommentsCount() }} Favourited: {{$media->getLikesCount()}} </p>
       </div>
     </div>
+    <p>Interactions: {{ $media->getCommentsCount() }} Favourited: {{$media->getLikesCount()}} </p>
     <a href="" class="btn btn-dark">Read more</a>
   </div>
 </div>
