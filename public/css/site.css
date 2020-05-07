@@ -279,7 +279,7 @@ label.cm-app-label {
 
 @media  (max-width : 440px) {
   .shorten-words {
-    max-width: 330px;
+    max-width: 300px;
     display:inline-block
   }
 
