@@ -26,7 +26,7 @@
     <div class="col-lg-6 center-block searchform">
       <div class="input-group mr-3">
         <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
-        placeholder="Search Pharos" required value="{{ old('query') }}&contentType:pharos">
+        placeholder="Search our highlight objects" required value="{{ old('query') }}&contentType:pharos">
         <span class="input-group-btn">
           <button class="btn btn-dark" type="submit">Search...</button>
         </span>
