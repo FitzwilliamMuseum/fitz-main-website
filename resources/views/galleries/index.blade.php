@@ -23,6 +23,9 @@
           <h3>
             <a href="galleries/{{ $theme['slug']}}">{{ $theme['gallery_name']}}</a>
           </h3>
+          @if($theme['gallery_status'])
+          <span class="badge badge-wine">{{$theme['gallery_status'][0]}}</span>
+          @endif
         </div>
       </div>
       <a href="galleries/{{ $theme['slug']}}" class="btn btn-dark">Read more</a>
