@@ -9,7 +9,7 @@
   <figure class="figure">
   <img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/searle_cat.jpg" />
 </figure>
-  <p>Sorry, we can’t seem to find what you’re looking for.</p>
-  <p>You've landed on a URL that doesn't seem to exist.</p>
+  <p>Sorry, we have a problem with our code. This problem has been noted and
+    we will see if we can fix it.</p>
 </div>
 @endsection
