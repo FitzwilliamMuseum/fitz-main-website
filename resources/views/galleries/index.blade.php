@@ -24,7 +24,9 @@
             <a href="galleries/{{ $theme['slug']}}">{{ $theme['gallery_name']}}</a>
           </h3>
           @if($theme['gallery_status'])
-          <span class="badge badge-wine">{{$theme['gallery_status'][0]}}</span>
+          @foreach($theme['gallery_status'] as $status)
+            <span class="badge badge-wine mb-1">{{$status}}</span>
+          @endforeach
           @endif
         </div>
       </div>

@@ -7,6 +7,14 @@
   @endif
   @section('content')
       <h2>{{ $gallery['gallery_name'] }}</h2>
+
+      @if(!empty($gallery['gallery_status']))
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        @foreach($gallery['gallery_status'] as $status)
+          <span class="badge badge-wine">{{$status}}</span>
+        @endforeach
+      </div>
+      @endif
       @if(isset($gallery['gallery_description']))
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
         @markdown($gallery['gallery_description'])
