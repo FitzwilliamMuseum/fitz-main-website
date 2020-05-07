@@ -88,7 +88,6 @@
   @include('includes.structure.footer')
   @include('includes.structure.modal')
   @include('includes.scripts.javascript')
-  @include('includes.scripts.fullscreen')
 
 </body>
 </html>

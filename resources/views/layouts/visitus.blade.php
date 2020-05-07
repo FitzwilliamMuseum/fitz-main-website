@@ -74,7 +74,6 @@
   @include('includes.structure.modal')
   @include('includes.scripts.javascript')
   @mapscripts
-  @include('includes.scripts.fullscreen')
 
 </body>
 </html>
