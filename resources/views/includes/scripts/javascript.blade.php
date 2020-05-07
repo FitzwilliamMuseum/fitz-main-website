@@ -56,5 +56,5 @@ $('.popover-dismiss').popover({
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', {{ env('APP_GOOGLE_ANALYTICS') }});
+  gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
 </script>
