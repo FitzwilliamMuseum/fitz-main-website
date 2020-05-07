@@ -42,16 +42,16 @@
   @foreach($records as $result)
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded search-results">
       @if(isset($result['searchImage']))
-        <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right" height="150" width="150" />
+        <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right ml-2" height="150" width="150" />
         @else
-        <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded float-right" width="200" />
+        <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded float-right ml-2" width="150" />
       @endif
 
       <h3><a href="{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
       @if(isset($result['pubDate']))
       <h4 class="text-muted">Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}</h4>
       @endif
-      <p>
+      <p class="text-justify">
         @if(!empty($result['body'][0]))
           {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,500) }}...
         @endif
