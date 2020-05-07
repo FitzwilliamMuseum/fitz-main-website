@@ -48,11 +48,13 @@ $('.popover-dismiss').popover({
   trigger: 'focus'
 })
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3319190-"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ app.google.analytics}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-3319190-xx');
+  gtag('config', {{ app.google.analytics}});
 </script>
