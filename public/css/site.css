@@ -51,7 +51,7 @@
 }
 
 footer, .chip-icon {
-  background-color: #731200;
+  background-color: #a3c1ad ;
 }
 
 .bg-black {
@@ -425,7 +425,7 @@ body {
   float: none;
 }
 .covid-19 {
-  background-color: #731200;
+  background-color: #a3c1ad ;
   min-height: 50px;
   margin-top: 56px;
   color: white;
@@ -434,7 +434,7 @@ body {
   padding-bottom: 10px
 }
 .beta {
-  background-color: #731200;
+  background-color: #a3c1ad ;
   min-height: 50px;
   color: white;
   font-size: 1.2rem;
