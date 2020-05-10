@@ -10,10 +10,6 @@
   @endif
 
   @section('content')
-  <h4>
-    {{ $gallery['gallery_name'] }}
-  </h4>
-
   @if(!empty($gallery['gallery_status']))
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
       @foreach($gallery['gallery_status'] as $status)

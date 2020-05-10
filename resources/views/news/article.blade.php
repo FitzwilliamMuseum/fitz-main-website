@@ -1,5 +1,8 @@
 @extends('layouts/layout')
 @foreach($news['data'] as $project)
+  @section('jsonld')
+    @include('includes.jsonld.news')
+  @endsection
   @section('title', $project['article_title'])
   @section('description',$project['meta_description'])
   @section('keywords',$project['meta_keywords'])
@@ -13,7 +16,7 @@
   @endif
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded article">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded article" >
     <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['field_image'])
     <figure class="figure float-right p-3">

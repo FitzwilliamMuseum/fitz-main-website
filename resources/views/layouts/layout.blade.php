@@ -12,7 +12,7 @@
     @endif
 
     @include('includes.structure.manifest')
-
+    @yield('jsonld')
 </head>
 <body class="doc-body">
 
