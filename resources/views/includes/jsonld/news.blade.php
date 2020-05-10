@@ -9,12 +9,19 @@
     "name" : "The Fitzwilliam Museum"
   },
   "datePublished" : "{{ $project['publication_date'] }}",
+  @if(isset($project['modified'])){
+  "dateModified" : "{{ $project['modified'] }}",
+  }
   "image" : "{{ $project['field_image']['data']['full_url'] }}",
   "articleBody" : "{{ $project['article_body'] }}",
   "url" : "{{ Request::url() }}",
   "publisher" : {
     "@type" : "Organization",
-    "name" : "The University of Cambridge"
+    "name" : "The University of Cambridge",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://beta.fitz.ms/images/logos/FV.png"
+    }
   }
 }
 </script>
