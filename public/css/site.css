@@ -428,7 +428,7 @@ body {
   background-color: #a3c1ad ;
   min-height: 50px;
   margin-top: 56px;
-  color: white;
+  color: #000;
   font-size: 1.2rem;
   padding-top: 10px;
   padding-bottom: 10px
@@ -436,7 +436,7 @@ body {
 .beta {
   background-color: #a3c1ad ;
   min-height: 50px;
-  color: white;
+  color: #000;
   font-size: 1.2rem;
   padding-top: 10px;
 }
@@ -601,6 +601,7 @@ input#query::placeholder {
   font-weight: bolder;
 }
 .beta a, .covid-19 a {
+  color: #000;
   text-decoration: underline;
 }
 figcaption.figure-caption.text-right {
