@@ -1,12 +1,13 @@
 @extends('layouts.layout')
-@foreach($projects['data'] as $project)
-@section('keywords', $project['meta_keywords'])
-@section('description', $project['meta_description'])
-@section('title', $project['title'])
-@section('hero_image', $project['hero_image']['data']['full_url'])
-@section('hero_image_title', $project['hero_image_alt_text'])
 
-@section('content')
+@foreach($projects['data'] as $project)
+  @section('keywords', $project['meta_keywords'])
+  @section('description', $project['meta_description'])
+  @section('title', $project['title'])
+  @section('hero_image', $project['hero_image']['data']['full_url'])
+  @section('hero_image_title', $project['hero_image_alt_text'])
+
+  @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     @markdown($project['project_overview'])
   </div>
@@ -15,31 +16,29 @@
 
     <ul>
       @if($project['project_principal'])
-        <li>Principal Investigator: {{ $project['project_principal']}}</li>
+      <li>Principal Investigator: {{ $project['project_principal']}}</li>
       @endif
       @if($project['co_investigator'])
-        <li>Co-Investigator: {{ $project['co_investigator']}}</li>
+      <li>Co-Investigator: {{ $project['co_investigator']}}</li>
       @endif
       @if($project['project_start_date'])
-        <li>Project start date: {{ Carbon\Carbon::parse($project['project_start_date'])->format('l dS F Y') }}</li>
+      <li>Project start date: {{ Carbon\Carbon::parse($project['project_start_date'])->format('l dS F Y') }}</li>
       @endif
       @if($project['project_end_date'])
-        <li>Project end date: {{  Carbon\Carbon::parse($project['project_end_date'])->format('l dS F Y')}}</li>
+      <li>Project end date: {{  Carbon\Carbon::parse($project['project_end_date'])->format('l dS F Y')}}</li>
       @endif
       @if($project['project_url'])
-        <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>
+      <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>
       @endif
       @if($project['award_value'])
-        <li>Funding award value: {{ $project['award_value'] }}</li>
+      <li>Funding award value: {{ $project['award_value'] }}</li>
       @endif
       @if($project['funding_reference_id'])
-        <li>Funding reference: {{ $project['funding_reference_id'] }}</li>
+      <li>Funding reference: {{ $project['funding_reference_id'] }}</li>
       @endif
     </ul>
-
   </div>
-
-@endsection
+  @endsection
 
 @if(!empty($project['project_partnerships'] ))
   @section('research-funders')
@@ -50,9 +49,15 @@
         <div class="col-md-4 mb-3">
           <div class="card card-body h-100">
             @if(!is_null( $partner['partner']['partner_logo']))
-            <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['url']}}"/>
+              <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['url']}}"
+              alt="Logo for {{ $partner['partner']['partner_full_name']}}"
+              height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['height'] }}"
+              width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['width'] }}"
+              loading="lazy"/>
             @else
-            <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"/>
+              <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+              alt="The Fitzwilliam Museum's Gallery 3 roof"
+              loading="lazy"/>
             @endif
             <div class="container h-100">
               <div class="contents-label mb-3">
@@ -72,7 +77,6 @@
     </div>
   @endsection
 @endif
-
 
   @if(isset($project['outcomes']))
     @section('research-projects')
@@ -95,18 +99,22 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($record['thumbnail']))
-          <img class="img-fluid" src="{{ $record['thumbnail'][0]}}"/>
+            <img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
+            alt="Featured image for the project: {{ $record['title'][0] }}"
+            loading="lazy"/>
           @else
-          <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"/>
+            <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+            alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/>
           @endif
           <div class="container h-100">
 
             <div class="contents-label mb-3">
               <h3>
-                <a href="/research/projects/{{ $record['slug'][0]}}">{{ $record['title'][0]}}</a>
+                <a href="/research/projects/{{ $record['slug'][0]}}">{{ $record['title'][0] }}</a>
               </h3>
-              <p class="card-text">{{ substr(strip_tags($record['description'][0]),0,200) }}...</p>
-
+              <p class="card-text">
+                {{ substr(strip_tags($record['description'][0]),0,200) }}...
+              </p>
             </div>
           </div>
           <a href="/research/projects/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>

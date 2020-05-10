@@ -2,6 +2,8 @@
 @section('title','Search results')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
+@section('meta_description', "Search results for your query" )
+@section('meta_keywords', 'search,results,fitzwilliam,museum')
 
 @section('content')
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
@@ -37,61 +39,71 @@
   </p>
 </div>
 
-  @if(!empty($records))
+@if(!empty($records))
 
-  @foreach($records as $result)
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded search-results">
-      @if(isset($result['searchImage']))
-        <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right ml-2" height="150" width="150" />
-        @else
-        <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded float-right ml-2" width="150" />
-      @endif
+@foreach($records as $result)
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded search-results">
+  @if(isset($result['searchImage']))
+    <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle
+    float-right ml-2" height="150" width="150" alt="Fitzwilliam Museum logo"
+    loading="lazy"/>
+  @else
+    <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg"
+  class="rounded float-right ml-2" width="150" alt="FitzVirtual Logo" loading="lazy"/>
+  @endif
+  <h3>
+    <a href="{{ $result['url'][0]}}">{{ $result['title'][0]}}</a>
+  </h3>
+  @if(isset($result['pubDate']))
+  <h4 class="text-muted">
+    Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}
+  </h4>
+  @endif
+  <p class="text-justify">
+    @if(!empty($result['body'][0]))
+    {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,500) }}...
+    @endif
+  </p>
 
-      <h3><a href="{{ $result['url'][0]}}">{{ $result['title'][0]}}</a></h3>
-      @if(isset($result['pubDate']))
-      <h4 class="text-muted">Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}</h4>
-      @endif
-      <p class="text-justify">
-        @if(!empty($result['body'][0]))
-          {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,500) }}...
-        @endif
-      </p>
+  @if(isset($result['mimetype']))
+  @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
+    <p>
+      <a href="{{$result['url'][0]}}">{{$result['url'][0]}}</a>
+    </p>
+  @else
+    <p>
+      <a href="{{URL::to('/')}}/{{$result['url'][0]}}">{{URL::to('/')}}/{{$result['url'][0]}}</a>
+    </p>
+  @endif
+  @endif
+  <p>
 
-      @if(isset($result['mimetype']))
-      @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
-        <p><a href="{{$result['url'][0]}}">{{$result['url'][0]}}</a></p>
-      @else
-        <p><a href="{{URL::to('/')}}/{{$result['url'][0]}}">{{URL::to('/')}}/{{$result['url'][0]}}</a></p>
-      @endif
-      @endif
-      <p>
+    <span class="badge badge-wine p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
+    @if(isset($result['mimetype']))
+    @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
+    <span class="badge badge-wine p-2">
+      <i class="fas fa-file-pdf mr-2"></i>
+      <i class="fa fa-download mr-2" aria-hidden="true"></i> @humansize($result['filesize'][0],2)
+    </span>
+    @endif
+    @endif
 
-        <span class="badge badge-wine p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
-        @if(isset($result['mimetype']))
-          @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
-          <span class="badge badge-wine p-2">
-            <i class="fas fa-file-pdf mr-2"></i>
-            <i class="fa fa-download mr-2" aria-hidden="true"></i> @humansize($result['filesize'][0],2)
-          </span>
-          @endif
-        @endif
+    @if($result['contentType'][0] == 'learning_files')
+    <span class="badge badge-wine p-2">{{ $result['learningfiletype'][0]}}</span>
+    @if(isset($result['keystages']))
+    <span class="badge badge-wine p-2">Key Stages this is for: {{ implode(', ', $result['keystages']) }}</span>
+    @endif
+    @if(isset($result['curriculum_area']))
+    <span class="badge badge-wine p-2">{{ $result['curriculum_area'][0]}}</span>
+    @endif
+    @endif
 
-        @if($result['contentType'][0] == 'learning_files')
-          <span class="badge badge-wine p-2">{{ $result['learningfiletype'][0]}}</span>
-          @if(isset($result['keystages']))
-          <span class="badge badge-wine p-2">Key Stages this is for: {{ implode(', ', $result['keystages']) }}</span>
-          @endif
-          @if(isset($result['curriculum_area']))
-          <span class="badge badge-wine p-2">{{ $result['curriculum_area'][0]}}</span>
-          @endif
-        @endif
-
-      </p>
-      </div>
-  @endforeach
-  <nav aria-label="Page navigation">
-    {{ $paginate->links() }}
-  </nav>
+  </p>
+</div>
+@endforeach
+<nav aria-label="Page navigation">
+  {{ $paginate->links() }}
+</nav>
 
 @else
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">

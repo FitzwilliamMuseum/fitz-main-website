@@ -4,6 +4,7 @@
 @section('hero_image_title', "The Museum's founder's building")
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 
+
 @section('opening-hours')
   <h2>When we're open</h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
@@ -14,7 +15,8 @@
 @section('content')
 
   @foreach($pages['data'] as $page)
-
+  @section('description', $page['meta_description'])
+  @section('keyword', $page['meta_keywords'])
   <div class="col-12 shadow-sm p-3 mt-3 mx-auto mb-3 rounded">
     <h2>{{ $page['title']}}</h2>
     @markdown($page['body'])
@@ -43,29 +45,31 @@
 
 @section('associated_pages')
 <div class="container">
-<div class="row">
-  @foreach($associated['data'] as $project)
-  <div class="col-md-6 mb-3">
-    <div class="card card-body h-100">
-      @if(!is_null($project['hero_image']))
-      <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"/>
+  <div class="row">
+    @foreach($associated['data'] as $project)
+    <div class="col-md-6 mb-3">
+      <div class="card card-body h-100">
+        @if(!is_null($project['hero_image']))
+        <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+        alt="{{ $project['hero_image_alt_text'] }}"
+        width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
+        height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
+        loading="lazy"/>
         @endif
-    <div class="container h-100">
-
-      <div class="contents-label mb-3">
-        <h3>
-          <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
-        </h3>
-        <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['body'])),0,200) }}...</p>
-
+        <div class="container h-100">
+          <div class="contents-label mb-3">
+            <h3>
+              <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
+            </h3>
+            <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['body'])),0,200) }}...</p>
+          </div>
+        </div>
+        <a href="{{ $project['section']}}/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
       </div>
-    </div>
-    <a href="{{ $project['section']}}/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
-  </div>
 
-</div>
-@endforeach
-</div>
+    </div>
+    @endforeach
+  </div>
 </div>
 @endsection
 

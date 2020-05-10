@@ -2,26 +2,31 @@
 @section('title','Researcher profiles')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
 @section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
-@section('content')
-<div class="row">
-    @foreach($profiles['data'] as $project)
+@section('description', 'A page detailing research active staff for the Fitzwilliam Museum')
+@section('keywords', 'research,active,museum, archaeology, classics,history,art')
+  @section('content')
+  <div class="row">
+      @foreach($profiles['data'] as $profile)
       <div class="col-md-4 mb-3">
-      <div class="card card-body h-100 ">
-        @if(!is_null($project['profile_image']))
-        <img class="img-fluid" src="{{ $project['profile_image']['data']['thumbnails'][2]['url']}}"/>
+        <div class="card card-body h-100 ">
+          @if(!is_null($profile['profile_image']))
+            <img class="img-fluid" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+            alt="Profile image for {{ $profile['display_name'] }}"
+            width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
+            height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}"
+            loading="lazy"/>
           @endif
-      <div class="container h-100">
-        <div class="contents-label mb-3">
-        <h3>
-          <a href="/research/staff-profiles/{{ $project['slug']}}">{{ $project['display_name']}}</a>
-        </h3>
-          <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['biography'])),0,200) }}...</p>
+          <div class="container h-100">
+            <div class="contents-label mb-3">
+            <h3>
+              <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
+            </h3>
+              <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($profile['biography'])),0,200) }}...</p>
+            </div>
+          </div>
+          <a href="/research/staff-profiles/{{ $profile['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
-      <a href="/research/staff-profiles/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
-    </div>
-
-    </div>
-    @endforeach
-</div>
-@endsection
+      @endforeach
+  </div>
+  @endsection

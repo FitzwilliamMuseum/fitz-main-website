@@ -1,14 +1,17 @@
 @extends('layouts.layout')
-@foreach($pages['data'] as $page)
-@section('title', $page['title'])
-@section('hero_image', $page['hero_image']['data']['full_url'])
-@section('hero_image_title', $page['hero_image_alt_text'])
 
-@section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
-  @markdown($page['body'])
-  </div>
-@endsection
+@foreach($pages['data'] as $page)
+  @section('title', $page['title'])
+  @section('hero_image', $page['hero_image']['data']['full_url'])
+  @section('hero_image_title', $page['hero_image_alt_text'])
+  @section('meta_description', $page['meta_description'])
+  @section('meta_keywords', $page['meta_keywords'])
+
+  @section('content')
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+      @markdown($page['body'])
+    </div>
+  @endsection
 @endforeach
 
 @section('research-projects')
@@ -21,8 +24,12 @@
 
     <div class="card card-body h-100">
       @if(!is_null($project['hero_image']))
-      <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"/>
-        @endif
+        <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+        alt="{{ $project['hero_image_alt_text'] }}"
+        height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
+        width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
+        loading="lazy"/>
+      @endif
       <div class="container h-100">
         <div class="contents-label mb-3">
           <h3>
@@ -34,6 +41,6 @@
     </div>
   </div>
   @endforeach
-</div>
+  </div>
 </div>
 @endsection

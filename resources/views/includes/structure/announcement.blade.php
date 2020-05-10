@@ -1,5 +1,4 @@
 <div class="container-fluid covid-19 ">
-
   <div class="col-md-12">
     <p class="text-center share">
       <i class="fa fa-exclamation-circle fa-inverse"></i>

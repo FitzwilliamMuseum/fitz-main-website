@@ -1,14 +1,16 @@
 @extends('layouts/layout')
-@foreach($themes['data'] as $project)
-  @section('title', $project['title'])
-  @if(isset($project['hero_image']['data']['full_url']))
-  @section('hero_image', $project['hero_image']['data']['full_url'])
-  @section('hero_image_title', $project['hero_image_alt_text'])
+@foreach($themes['data'] as $page)
+  @section('title', $page['title'])
+  @section('description', $page['meta_description'])
+  @section('keywords', $page['meta_keywords'])
+  @if(isset($page['hero_image']['data']['full_url']))
+    @section('hero_image', $page['hero_image']['data']['full_url'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
   @endif
   @section('content')
-      <h2>{{ $project['title'] }}</h2>
+      <h2>{{ $page['title'] }}</h2>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-        @markdown($project['theme_description'])
+        @markdown($page['theme_description'])
       </div>
   @endsection
 @endforeach

@@ -1,7 +1,10 @@
 @extends('layouts.layout')
+
 @section('title','Search our site')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
+@section('meta_description', 'An introductory page to the Museum\'s collection')
+@section('meta_keywords', 'collection,museum,objects, art works')
 
 @section('content')
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">

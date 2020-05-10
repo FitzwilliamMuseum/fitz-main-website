@@ -1,5 +1,4 @@
 <!-- Nav bars -->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
   <!-- <a class="navbar-brand order-md-last " href="{{ URL::to('/') }}">The Fitzwilliam Museum</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -25,7 +24,6 @@
         <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Our galleries</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Our press room</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/directors') }}">Our directors</a>
-
       </div>
     </li>
     <li class="nav-item active">
@@ -39,7 +37,7 @@
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Objects and artworks</a>
+      Objects and art works</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/') }}">An introduction</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/pharos/') }}">Pharos highlights</a>
@@ -70,8 +68,10 @@
     </li>
 </ul>
 {{ \Form::open(['url' => url('search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
-  <input id="query" name="query" type="text" class="form-control mr-sm-2" placeholder="Search our site" required value="{{ old('query') }}">
-  <button type="submit" class="btn btn-outline-light">Search</button>
+  <label for="search" class="sr-only">Search: </label>
+  <input id="query" name="query" type="text" class="form-control mr-sm-2"
+  placeholder="Search our site" required value="{{ old('query') }}">
+  <button type="submit" class="btn btn-outline-light" id="searchButton">Search</button>
 {!! Form::close() !!}
 </div>
 </nav>

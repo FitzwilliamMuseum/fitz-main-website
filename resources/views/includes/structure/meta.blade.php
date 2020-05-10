@@ -3,6 +3,9 @@
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
 
     <title>The Fitzwilliam Museum - @yield('title')</title>
+    <meta name="description" content="@yield('description')" />
+    <meta name="keywords" content="@yield('keywords')" />
+
     <!-- Canonical link -->
     <link rel="canonical" href="{{ URL::current() }}" />
 
