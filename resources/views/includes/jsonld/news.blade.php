@@ -15,6 +15,10 @@
   "image" : "{{ $project['field_image']['data']['full_url'] }}",
   "articleBody" : "{{ $project['article_body'] }}",
   "url" : "{{ Request::url() }}",
+  "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "{{ Request::url() }}"
+      },
   "publisher" : {
     "@type" : "Organization",
     "name" : "The University of Cambridge",
