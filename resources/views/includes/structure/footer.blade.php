@@ -30,7 +30,7 @@
 </div>
 
 <!--- Footer stuff -->
-<footer class="text-white">
+<footer class="text-black">
 
     <div class="container ">
         <div class="row">

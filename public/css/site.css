@@ -87,10 +87,10 @@ video {
 }
 
 .share  a {
-  color: #fff;
+  color: #000;
 }
 .w3w a {
-  color: #fff;
+  color: #000;
 }
 
 .cd-nugget-info {
@@ -517,7 +517,8 @@ blockquote {
   max-height: 400px;
 }
 a.share {
-  color: white;
+  color: black;
+  decoration: underline;
 }
 .svg-logo {
   z-index: -1;
