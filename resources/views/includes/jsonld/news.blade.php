@@ -9,9 +9,9 @@
     "name" : "The Fitzwilliam Museum"
   },
   "datePublished" : "{{ $project['publication_date'] }}",
-  @if(isset($project['modified'])){
+  @if(isset($project['modified']))
   "dateModified" : "{{ $project['modified'] }}",
-  }
+  @endif
   "image" : "{{ $project['field_image']['data']['full_url'] }}",
   "articleBody" : "{{ $project['article_body'] }}",
   "url" : "{{ Request::url() }}",
