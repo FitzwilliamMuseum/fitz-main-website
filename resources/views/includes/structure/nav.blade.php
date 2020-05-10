@@ -70,8 +70,8 @@
 {{ \Form::open(['url' => url('search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
   <label for="search" class="sr-only">Search: </label>
   <input id="query" name="query" type="text" class="form-control mr-sm-2"
-  placeholder="Search our site" required value="{{ old('query') }}">
-  <button type="submit" class="btn btn-outline-light" id="searchButton">Search</button>
+  placeholder="Search our site" required value="{{ old('query') }}" aria-label="Your query">
+  <button type="submit" class="btn btn-outline-light" id="searchButton" aria-label="Submit your search">Search</button>
 {!! Form::close() !!}
 </div>
 </nav>
