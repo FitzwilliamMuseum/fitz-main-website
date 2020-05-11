@@ -30,8 +30,8 @@
       <div class="card card-body h-100">
         <img class="img-fluid" src="{{ $look['focus_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $look['focus_image_alt_text'] }}"
-        width="{{ {{ $look['focus_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ {{ $look['focus_image']['data']['thumbnails'][4]['height'] }}"
+        width="{{ $look['focus_image']['data']['thumbnails'][4]['width'] }}"
+        height="{{ $look['focus_image']['data']['thumbnails'][4]['height'] }}"
         loading="lazy"/>
         <div class="container h-100">
           <div class="contents-label mb-3">
