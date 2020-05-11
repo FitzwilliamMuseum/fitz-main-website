@@ -5,9 +5,7 @@
 <script src="/js/material.min.js"></script>
 <!-- Back to top script -->
 <script src="/js/backtotop.js"></script>
-<!-- Add feedback form -->
-<script id="zammad_form_script" src="https://helpdesk.fitzmuseum.cam.ac.uk/assets/form/form.js"></script>
-<script src="/js/feedback.js"></script>
+
 <!-- Cookie management -->
 <script defer type="text/javascript" src="/js/config.js"></script>
 <script defer type="text/javascript" src="/js/klaro.js"></script>
