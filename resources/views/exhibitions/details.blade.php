@@ -122,7 +122,7 @@
             <div class="card card-body h-100">
               @if(!is_null($gallery['galleries_id']['hero_image']))
               <img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
-              alt="A highlight image of {{ $gallery['galleries_id']['hero_image'] }}"
+              alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
               height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
               width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
               />
