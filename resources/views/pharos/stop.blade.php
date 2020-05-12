@@ -99,21 +99,21 @@
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
-          @if(!is_null($record['smallimage']))
-            <img class="img-fluid" src="{{ $record['smallimage'][0]}}"
+          @if(!is_null($record['searchImage']))
+            <img class="img-fluid" src="{{ $record['searchImage'][0]}}"
             alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3>
-                <a href="/objects-and-artworks/pharos/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+                <a href="/objects-and-artworks/audioguide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               </h3>
               <p class="card-text">
                 {{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...
               </p>
             </div>
           </div>
-          <a href="/objects-and-artworks/pharos/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/audioguide/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach
