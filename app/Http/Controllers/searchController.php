@@ -795,6 +795,47 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function audio()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('audio_guide');
+    $api->setArguments(
+      $args = array(
+          'limit' => '500',
+          'fields' => 'id,title,stop_number,transcription,slug,hero_image.*'
+      )
+    );
+    $profiles = $api->getData();
+
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-audioguide';
+      $doc->title = $profile['stop_number'] . ': ' . $profile['title'];
+      $doc->description = strip_tags($profile['transcription']);
+      $doc->body = strip_tags($profile['transcription']);
+      $doc->url = $this->url . 'objects-and-artworks/audioguide/' . $profile['slug'];
+      $doc->slug = $profile['slug'];
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
+      $doc->contentType = 'audioguide';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
+
   function change_key( $array, $old_key, $new_key ) {
 
     if( ! array_key_exists( $old_key, $array ) )
