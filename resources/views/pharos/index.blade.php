@@ -1,5 +1,5 @@
 @extends('layouts/layout')
-@section('title','Pharos highlights of our collection')
+@section('title','Highlights from our collection')
 @section('description', 'A collection of objects from the collection of the Fitzwilliam Museum')
 @section('keywords', 'museum,highlights,collection,objects')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
