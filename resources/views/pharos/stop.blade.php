@@ -10,7 +10,7 @@
 
   @section('content')
 
-  <h2>Audio guide stop: 101</h2>
+  <h2>Audio guide stop: {{ $record['stop_number'] }}</h2>
 
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     <div class="shadow-sm p-3 mx-auto mb-3 rounded">
