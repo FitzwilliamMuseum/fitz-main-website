@@ -49,8 +49,9 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     <img src="https://content.fitz.ms/fitz-website/assets/MP_SQUARE_notype.png?key=directus-medium-crop" class="float-right img-fluid p-2" alt="The MicroPasts logo" width="100" height="100"/>
     <p>
-      The transcription of the audio file for this stop was enabled by the crowd
-      sourcing platform MicroPasts. The below generously gave their time to transcribe the
+      The transcription of the audio file for this stop was enabled by the AHRC
+      funded crowd-sourcing platform <a href="https://crowdsourced.micropasts.org">MicroPasts</a>.
+      The below generously gave their time to transcribe the
       file.
     </p>
     @markdown($record['transcribers'])
