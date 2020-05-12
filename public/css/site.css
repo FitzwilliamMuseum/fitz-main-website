@@ -58,7 +58,7 @@ footer, .chip-icon {
   background-color: #000000!important;
 }
 .bg-fade {
-  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(115, 18, 0));
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(163, 193, 173));
 }
 
 body {
