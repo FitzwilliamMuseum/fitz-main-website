@@ -128,7 +128,8 @@ class pharosController extends Controller
       $first->setArguments(
         array(
 
-          'fields' => '*.*.*.*'
+          'fields' => '*.*.*.*',
+          'sort' => 'stop_number'
         )
       );
       $stops = $first->getData();
