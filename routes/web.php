@@ -48,6 +48,9 @@ Route::get('objects-and-artworks/', 'pharosController@landing');
 Route::get('objects-and-artworks/pharos/{slug}/', 'pharosController@details');
 Route::match(array('GET','POST'),'objects-and-artworks/pharos/search/results/', 'pharosController@results');
 Route::get('objects-and-artworks/pharos/{section}/{slug}/', 'pharosController@associate');
+Route::get('objects-and-artworks/audioguide/', 'pharosController@audioguide');
+Route::get('objects-and-artworks/audioguide/{slug}/', 'pharosController@stop');
+
 Route::feeds();
 Route::get('search', 'searchController@index');
 Route::get('search/staff', 'searchController@staff');

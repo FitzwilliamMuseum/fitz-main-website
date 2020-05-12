@@ -121,4 +121,37 @@ class pharosController extends Controller
         return view('pharos.results', compact('records', 'number', 'paginate', 'queryString'));
     }
 
+    public function audioguide()
+    {
+      $first = new DirectUs;
+      $first->setEndpoint('audio_guide');
+      $first->setArguments(
+        array(
+
+          'fields' => '*.*.*.*'
+        )
+      );
+      $stops = $first->getData();
+      return view('pharos.audioguide', compact('stops'));
+    }
+
+    public function stop( $slug)
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('audio_guide');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug,
+        )
+      );
+      $stop = $api->getData();
+      // dd($stop);
+
+      $mlt = new MoreLikeThis;
+      $mlt->setLimit(3)->setType('audioguide')->setQuery($slug);
+      $records = $mlt->getData();
+      return view('pharos.stop', compact('stop', 'records'));
+    }
 }

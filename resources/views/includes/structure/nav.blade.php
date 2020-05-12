@@ -41,6 +41,7 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/') }}">An introduction</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/pharos/') }}">Collection highlights</a>
+        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/audioguide/') }}">Audio guide</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
       </div>
     </li>

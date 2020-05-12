@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use App\DirectUs;
 class collectionsController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +51,5 @@ class collectionsController extends Controller
         $collection = $second->getData();
         return view('collections.details', compact('collection'));
     }
-
-
 
 }
