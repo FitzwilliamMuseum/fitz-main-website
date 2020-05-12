@@ -25,6 +25,7 @@
 
     </div>
 
+  <h3>Crowdsourced transcription of the audio file</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     <figure class="figure float-right p-3">
       <img src="{{ $record['hero_image']['data']['thumbnails']['7']['url']}}"
