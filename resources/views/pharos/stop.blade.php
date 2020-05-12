@@ -3,7 +3,7 @@
 @foreach($stop['data'] as $record)
   @section('keywords', $record['meta_keywords'])
   @section('description', $record['meta_description'])
-  @section('title', $record['title'])
+  @section('title', 'Audio guide: ' . $record['title'])
   @section('hero_image', $record['hero_image']['data']['full_url'])
   @section('hero_image_title', $record['hero_image_alt_text'])
 
