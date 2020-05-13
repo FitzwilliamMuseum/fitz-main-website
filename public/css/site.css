@@ -618,3 +618,7 @@ figcaption.figure-caption.text-right {
 btn.btn.btn-wine.m-1 a {
     color: white!important;
 }
+
+span.btn.btn-wine.m-1.p-2.share a {
+    color: white!important;
+}
