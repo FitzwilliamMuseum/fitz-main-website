@@ -21,10 +21,10 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($resource['hero_image']))
-            <img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][7]['url']}}"
+            <img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="A highlight image for {{ $resource['title'] }}"
-            width="{{ $resource['hero_image']['data']['thumbnails'][7]['width'] }}"
-            height="{{ $resource['hero_image']['data']['thumbnails'][7]['height'] }}"
+            width="{{ $resource['hero_image']['data']['thumbnails'][4]['width'] }}"
+            height="{{ $resource['hero_image']['data']['thumbnails'][4]['height'] }}"
             loading="lazy"/>
           @endif
           <div class="container h-100">
@@ -51,10 +51,10 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($resource['hero_image']))
-            <img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][7]['url']}}"
+            <img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $resource['hero_image_alt_text'] }}"
-            height="{{ $resource['hero_image']['data']['thumbnails'][7]['height'] }}"
-            width="{{ $resource['hero_image']['data']['thumbnails'][7]['width'] }}"
+            height="{{ $resource['hero_image']['data']['thumbnails'][4]['height'] }}"
+            width="{{ $resource['hero_image']['data']['thumbnails'][4]['width'] }}"
             loading="lazy"/>
           @endif
           <div class="container h-100">
