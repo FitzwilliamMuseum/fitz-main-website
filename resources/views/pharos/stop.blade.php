@@ -26,13 +26,14 @@
     </div>
 
   <h3>Crowdsourced transcription of the audio file</h3>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded article" >
     <figure class="figure float-right p-3">
       <img src="{{ $record['hero_image']['data']['thumbnails']['7']['url']}}"
       alt="{{ $record['hero_image_alt_text'] }}" class="img-fluid"
       loading="lazy"
       height="{{ $record['hero_image']['data']['thumbnails']['7']['height'] }}"
       width="{{ $record['hero_image']['data']['thumbnails']['7']['width'] }}"
+      id="stand-out"
       />
       <figcaption class="figure-caption text-right">{{$record['hero_image_alt_text']}}</figcaption>
       <span class="btn btn-wine m-1 p-2 share">
@@ -58,7 +59,17 @@
   </div>
   @endsection
 
-
+  @if(!empty($record['hero_image']))
+    @section('height-test')
+      <script>
+        $("#stand-out").on("load", function(){
+          var height = $(this).height();
+          console.log(height);
+          $('.article').css('min-height', height + 120);
+        });
+      </script>
+    @endsection
+  @endif
 
 
   @if(!empty($record['associated_pharos_object']))
