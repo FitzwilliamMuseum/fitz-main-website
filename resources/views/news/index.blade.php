@@ -28,9 +28,7 @@
             <h4>
               <small class="text-muted">{{ Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</small>
             </h4>
-            <p class="card-text">
-              {{ substr(strip_tags(htmlspecialchars_decode($project['article_body'])),0,200) }}...
-            </p>
+            
           </div>
         </div>
         <a href="news/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
