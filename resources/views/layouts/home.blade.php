@@ -7,7 +7,6 @@
   @include('includes.css.css')
 
   @include('includes.structure.manifest')
-  @include('feed::links')
 </head>
 <body class="doc-body">
 

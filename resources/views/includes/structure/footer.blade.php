@@ -86,6 +86,10 @@
                           </svg>
                         </a></span>
                 </p>
+                <h4>Subscribe to feeds</h4>
+                <p class="share">
+                  <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/news/feed') }}"><i class="fas fa-rss"></i></a>
+                </p>
             </div>
             <div class="col-sm mt-2 mb-2">
                 <p class="share">
