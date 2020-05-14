@@ -23,7 +23,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL
     <pubDate>{{ date('D, d M Y H:i:s', strtotime($item['publication_date'])) }} GMT</pubDate>
     <link href="{{ url($item['slug']) }}" />
     <guid>{{ url($item['slug']) }}</guid>
-    <link href="{{ url($item['slug']) }}" rel="self" type="application/rss+xml"/>
+    <link href="{{ url($item['slug']) }}" rel="alternate"  />
   </entry>
   @endforeach
 </feed>
