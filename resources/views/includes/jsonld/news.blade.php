@@ -12,7 +12,11 @@
   @if(isset($project['modified_on']) && !is_null($project['modified_on']))
   "dateModified" : "{{ $project['modified_on'] }}",
   @endif
+  @if(isset($project['field_image']))
   "image" : "{{ $project['field_image']['data']['full_url'] }}",
+  @else
+  "image" : "https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop",
+  @endif
   "articleBody" : "{{ $project['article_body'] }}",
   "url" : "{{ Request::url() }}",
   "mainEntityOfPage": {
