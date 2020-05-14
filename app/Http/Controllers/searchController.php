@@ -158,7 +158,7 @@ class searchController extends Controller
       $doc->url = $this->url . 'news/' . $profile['slug'];
       $doc->pubDate = $profile['publication_date'];
       if(isset($profile['field_image'])){
-        $doc->thumbnail = $profile['field_image']['data']['thumbnails'][5]['url'];
+        $doc->thumbnail = $profile['field_image']['data']['thumbnails'][4]['url'];
         $doc->image = $profile['field_image']['data']['full_url'];
         $doc->searchImage = $profile['field_image']['data']['thumbnails'][2]['url'];
       }
@@ -199,7 +199,7 @@ class searchController extends Controller
       $doc->url = $this->url . implode('/', array($profile['section'], $profile['slug']));
       $doc->contentType = 'page';
       if(isset($profile['hero_image'])){
-        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][4]['url'];
         $doc->image = $profile['hero_image']['data']['full_url'];
         $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
       }
