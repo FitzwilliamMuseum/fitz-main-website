@@ -1,6 +1,6 @@
 <div class="row">
   @foreach($tweets as $tweet)
-  <div class="col-md-4 mb-3 h-100">
+  <div class="col-md-4 mb-3">
 
     <div class="card card-body h-100">
       @if(isset($tweet->extended_entities))
