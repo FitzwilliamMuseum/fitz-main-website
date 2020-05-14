@@ -6,23 +6,27 @@
             <a href="http://www.museums.cam.ac.uk"><img class="img-responsive" loading="lazy"
                                                         alt="University of Cambridge Museums logo"
                                                         src="/images/logos/ucm_logo_black_white.png"
+                                                        width="162" height="50"
             ></a>
             <a href="http://www.artscouncil.org.uk/what-we-do/raising-standards/designation-scheme/"><img
                     class="img-responsive" alt="Designation scheme Logo" loading="lazy"
                     src="/images/logos/designation.png"
+                    height="50" width="50"
             ></a>
             <a href="http://www.artscouncil.org.uk/what-we-do/supporting-museums/accreditation-scheme/"><img
                     class="img-responsive" alt="Accredited Museum status logo" loading="lazy"
-                    src="/images/logos/accredited.png"
+                    src="/images/logos/accredited.png" width="53" height="50"
             ></a>
             <a href="http://www.cambridge.gov.uk/"><img class="img-responsive" alt="Cambridge City Council Logo" loading="lazy"
-                                                        src="/images/logos/camcity_logo.png"
+                                                        src="/images/logos/camcity_logo.png" width="40" height="50"
             ></a>
             <a href="http://www.artscouncil.org.uk/"><img
                     class="img-responsive" alt="Arts Council England Logo" src="/images/logos/ace.png" loading="lazy"
+                    width="159" height="50"
             ></a>
             <a href="https://re.ukri.org/"><img class="img-responsive" alt="Research England logo" loading="lazy"
                                                 src="/images/logos/research_england.png"
+                                                width="92" height="50"
             ></a>
 
         </div>
