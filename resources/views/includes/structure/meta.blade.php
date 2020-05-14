@@ -45,6 +45,8 @@
     <!-- Humans text -->
     <link type="text/plain" rel="author" href="{{ URL::to('/humans.txt') }}" />
     <!-- end of humans.txt -->
+    <link href="{{ URL::to('/news/feed') }}" rel="alternate"
+    type="application/atom+xml" title="Latest news from the museum"/>
 
     <script type="application/ld+json">
     {"publisher":{"@type":"Organization",

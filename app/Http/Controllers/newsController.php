@@ -60,4 +60,20 @@ class newsController extends Controller
     return view('news.article', compact('news', 'records'));
   }
 
+  public function atom()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('news_articles');
+    $api->setArguments(
+      $args = array(
+          'limit' => '20',
+          'sort' => '-id',
+          'fields' => 'id,article_title,article_body,article_excerpt,slug,publication_date,field_image.*'
+      )
+    );
+    $items = $api->getData();
+    $output = view('feedme.atom', compact('items'));
+
+    return response($output, '200')->header('Content-Type', 'text/xml');
+  }
 }

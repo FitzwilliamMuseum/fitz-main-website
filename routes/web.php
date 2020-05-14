@@ -29,6 +29,7 @@ Route::get('news/', 'newsController@index');
 Route::get('departments/', 'departmentsController@index');
 Route::get('departments/{slug}', 'departmentsController@details');
 Route::get('news/{slug}/', 'newsController@article');
+Route::get('feed/', 'newsController@atom');
 Route::get('collections/{slug}/', 'collectionsController@details');
 Route::get('departments/titled/{slug}/', 'departmentsController@details');
 Route::get('learning/look-think-do/', 'learningController@lookthinkdomain');
@@ -51,7 +52,6 @@ Route::get('objects-and-artworks/pharos/{section}/{slug}/', 'pharosController@as
 Route::get('objects-and-artworks/audioguide/', 'pharosController@audioguide');
 Route::get('objects-and-artworks/audioguide/{slug}/', 'pharosController@stop');
 
-Route::feeds();
 Route::get('search', 'searchController@index');
 Route::get('search/staff', 'searchController@staff');
 Route::get('search/news', 'searchController@news');
@@ -81,8 +81,8 @@ Route::match(array('GET', 'POST'), 'search/results', [
  * Route for checking solr up and running
  */
 Route::get('/ping', 'searchController@ping');
-/*
-Put these last
-*/
-Route::get('/{section}/{slug}/', 'pagesController@index');
-Route::get('/{section}/', 'pagesController@landing');
+
+//
+//
+// Route::get('/{section}/{slug}/', 'pagesController@index');
+// Route::get('/{section}/', 'pagesController@landing');
