@@ -84,5 +84,5 @@ Route::get('/ping', 'searchController@ping');
 
 //
 //
-// Route::get('/{section}/{slug}/', 'pagesController@index');
-// Route::get('/{section}/', 'pagesController@landing');
+Route::get('/{section}/{slug}/', 'pagesController@index');
+Route::get('/{section}/', 'pagesController@landing');
