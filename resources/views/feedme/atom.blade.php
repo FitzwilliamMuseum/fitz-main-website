@@ -7,7 +7,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Fitzwilliam Museum news</title>
   <description>Atom Feed for Fitzwilliam Museum news </description>
-  <link href="{{ url('/news/feed') }}" />
+  <link href="{{ URL::to('/news/feed') }}" />
   <author>
     <name>The Fitzwilliam Museum</name>
     <email>press@fitzmuseum.cam.ac.uk</email>
@@ -21,8 +21,9 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL
     <summary><![CDATA[{!! $item['article_excerpt'] !!}]]></summary>
     <content type="html"><![CDATA[ @markdown($item['article_body'])]]></content>
     <pubDate>{{ date('D, d M Y H:i:s', strtotime($item['publication_date'])) }} GMT</pubDate>
-    <link href="news/{{ url($item['slug']) }}" />
+    <link href="{{ URL::to('/') }}/news/{{ $item['slug']}}" />
     <guid>{{ url($item['slug']) }}</guid>
+    <link href="{{ URL::to('/') }}/news/{{ $item['slug']}}" rel="alternate"  />
   </entry>
   @endforeach
 </feed>
