@@ -21,7 +21,7 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3>Other Pharos pathways and stories you might like</h3>
+    <h3>Other pathways and stories you might like</h3>
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">

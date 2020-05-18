@@ -16,7 +16,7 @@
       />
       <figcaption class="figure-caption text-right">{{$record['image_alt_text']}}</figcaption>
       <span class="btn btn-wine m-1 p-2 share">
-        <a href="{{ URL::to( $record['image']['data']['full_url'] ) }}" 
+        <a href="{{ URL::to( $record['image']['data']['full_url'] ) }}"
          download><i class="fas fa-download mr-2"></i>  Download image</a>
       </span>
       <span class="btn btn-dark p-2">
@@ -144,7 +144,7 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3>Other Pharos objects you might like</h3>
+    <h3>Other highlight objects you might like</h3>
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
