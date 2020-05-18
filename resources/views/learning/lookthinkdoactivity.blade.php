@@ -95,7 +95,7 @@
       @if(!empty($look['associated_pharos']))
       <div class="col shadow-sm p-3 mx-auto mb-3 rounde">
         <h3>
-          Pharos record
+          Highlight record
         </h3>
         <div class="card card-body h-100">
           @if(!is_null($look['associated_pharos'][0]['pharos_id']['image']))
