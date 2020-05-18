@@ -818,7 +818,7 @@ class searchController extends Controller
       $doc->title = $profile['stop_number'] . ': ' . $profile['title'];
       $doc->description = strip_tags($profile['transcription']);
       $doc->body = strip_tags($profile['transcription']);
-      $doc->url = $this->url . 'objects-and-artworks/audioguide/' . $profile['slug'];
+      $doc->url = $this->url . 'objects-and-artworks/audio-guide/' . $profile['slug'];
       $doc->slug = $profile['slug'];
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];

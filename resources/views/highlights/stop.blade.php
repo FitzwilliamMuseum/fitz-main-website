@@ -118,14 +118,14 @@
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3>
-                <a href="/objects-and-artworks/audioguide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+                <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               </h3>
               <p class="card-text">
                 {{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...
               </p>
             </div>
           </div>
-          <a href="/objects-and-artworks/audioguide/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach

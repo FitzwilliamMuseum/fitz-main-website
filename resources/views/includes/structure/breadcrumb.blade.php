@@ -18,7 +18,7 @@
     $bread = $bread."/".$subs[$i];
     $title = urldecode($subs[$i]);
     $title = str_replace("-", " ", $title);
-    $title = ucfirst($title);
+    $title = ucwords($title);
     @endphp
 
     <li class="breadcrumb-item active" aria-current="page"><a
