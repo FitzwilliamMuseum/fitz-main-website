@@ -34,23 +34,23 @@
             <div class="contents-label mb-3">
               @if(isset($record['section']))
                 <h3>
-                  <a href="/objects-and-artworks/pharos/{{ $record['section'][0]}}/{{ $record['slug'][0] }}">{{ $record['title'][0]}}</a>
+                  <a href="/objects-and-artworks/highlights/{{ $record['section'][0]}}/{{ $record['slug'][0] }}">{{ $record['title'][0]}}</a>
                 </h3>
                 <p class="card-text">
                   {{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...
                 </p>
                 <span class="p-1 badge badge-wine">{{ucwords(str_replace('-', ' ', $record['section'][0])) }}</span>
               @else
-                <a href="/objects-and-artworks/pharos/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+                <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               @endif
             </h3>
 
           </div>
         </div>
         @if(isset($record['section']))
-          <a href="/objects-and-artworks/pharos/{{ $record['section'][0]}}/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/highlights/{{ $record['section'][0]}}/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         @else
-          <a href="/objects-and-artworks/pharos/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/highlights/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         @endif
       </div>
 

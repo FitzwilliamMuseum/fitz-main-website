@@ -26,7 +26,7 @@
 
 </div>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-  {{ \Form::open(['url' => url('objects-and-artworks/pharos/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
+  {{ \Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
   <div class="row center-block">
     <div class="col-lg-6 center-block searchform">
       <div class="input-group mr-3">

@@ -13,7 +13,7 @@ use Solarium\Core\Client\Client;
 use App\DirectUs;
 use App\MoreLikeThis;
 
-class pharosController extends Controller
+class highlightsController extends Controller
 {
     public function index(Request $request)
     {
@@ -33,8 +33,8 @@ class pharosController extends Controller
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
       $total = $pharos['meta']['total_count'];
       $paginator = new LengthAwarePaginator($pharos, $total, $perPage, $currentPage);
-      $paginator->setPath('pharos');
-      return view('pharos.index', compact('pharos', 'paginator'));
+      $paginator->setPath('highlights');
+      return view('highlights.index', compact('pharos', 'paginator'));
     }
 
     public function details( $slug)
@@ -52,7 +52,7 @@ class pharosController extends Controller
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
       $records = $mlt->getData();
-      return view('pharos.details', compact('pharos', 'records'));
+      return view('highlights.details', compact('pharos', 'records'));
     }
 
     public function associate($section, $slug)
@@ -72,12 +72,12 @@ class pharosController extends Controller
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('pharospages')->setQuery($slug);
       $records = $mlt->getData();
-      return view('pharos.associate', compact('pharos', 'records'));
+      return view('highlights.associate', compact('pharos', 'records'));
     }
 
     public function landing()
     {
-      return view('pharos.landing');
+      return view('highlights.landing');
     }
 
 
@@ -118,7 +118,7 @@ class pharosController extends Controller
         $records = $data->getDocuments();
         $paginate = new LengthAwarePaginator($records, $number, $perPage);
         $paginate->setPath($request->getBaseUrl() . '?query='. $queryString);
-        return view('pharos.results', compact('records', 'number', 'paginate', 'queryString'));
+        return view('highlights.results', compact('records', 'number', 'paginate', 'queryString'));
     }
 
     public function audioguide()
@@ -133,7 +133,7 @@ class pharosController extends Controller
         )
       );
       $stops = $first->getData();
-      return view('pharos.audioguide', compact('stops'));
+      return view('highlights.audioguide', compact('stops'));
     }
 
     public function stop( $slug)
@@ -153,6 +153,6 @@ class pharosController extends Controller
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('audioguide')->setQuery($slug);
       $records = $mlt->getData();
-      return view('pharos.stop', compact('stop', 'records'));
+      return view('highlights.stop', compact('stop', 'records'));
     }
 }

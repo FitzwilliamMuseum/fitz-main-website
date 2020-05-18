@@ -370,7 +370,7 @@ class searchController extends Controller
   }
 
 
-  public function pharos()
+  public function highlights()
   {
     $api = $this->getApi();
     $api->setEndpoint('pharos');
@@ -393,7 +393,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['description']);
       $doc->body = strip_tags($profile['description']);
       $doc->slug = $profile['slug'];
-      $doc->url = $this->url . 'objects-and-artworks/pharos/' . $profile['slug'];
+      $doc->url = $this->url . 'objects-and-artworks/highlights/' . $profile['slug'];
       $doc->contentType = 'pharos';
 
       if(isset($profile['image'])){
@@ -594,7 +594,7 @@ class searchController extends Controller
       $doc->body = strip_tags($profile['body']);
       $doc->slug = $profile['slug'];
       $doc->section = $profile['section'];
-      $doc->url = $this->url . 'objects-and-artworks/pharos/'.  $profile['section'] . '/' . $profile['slug'];
+      $doc->url = $this->url . 'objects-and-artworks/highlights/'.  $profile['section'] . '/' . $profile['slug'];
       $doc->contentType = 'pharospages';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];

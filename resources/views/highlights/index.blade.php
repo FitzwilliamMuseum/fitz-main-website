@@ -19,7 +19,7 @@
       <div class="container h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="/objects-and-artworks/pharos/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
+            <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
           @if(!empty($record['maker']))
             <h4>
               <small class="text-muted">{{ $record['maker']}}</small>
@@ -30,7 +30,7 @@
           </p>
         </div>
       </div>
-      <a href="/objects-and-artworks/pharos/{{ $record['slug']}}"
+      <a href="/objects-and-artworks/highlights/{{ $record['slug']}}"
       class="btn btn-dark">Read more</a>
     </div>
   </div>

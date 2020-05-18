@@ -126,12 +126,12 @@
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
-              <h3><a href="/objects-and-artworks/pharos/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
+              <h3><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
               <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($pharosassoc['pharos_pages_id']['body'])),0,200) }}...</p>
               <span class="p-1 badge badge-wine">{{ucwords(str_replace('-', ' ', $pharosassoc['pharos_pages_id']['section']))}}</span>
             </div>
           </div>
-          <a href="/objects-and-artworks/pharos/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}" class="btn btn-dark">Read more</a>
         </div>
 
       </div>
@@ -156,14 +156,14 @@
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3>
-                <a href="/objects-and-artworks/pharos/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+                <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               </h3>
               <p class="card-text">
                 {{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...
               </p>
             </div>
           </div>
-          <a href="/objects-and-artworks/pharos/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/highlights/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach

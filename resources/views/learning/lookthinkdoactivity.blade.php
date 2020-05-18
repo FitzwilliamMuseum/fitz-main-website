@@ -109,7 +109,7 @@
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3>
-                <a href="/objects-and-artworks/pharos/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}">{{ $look['associated_pharos'][0]['pharos_id']['title']}}</a>
+                <a href="/objects-and-artworks/highlights/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}">{{ $look['associated_pharos'][0]['pharos_id']['title']}}</a>
               </h3>
               @if(!empty($record['maker']))
               <h4>
@@ -121,7 +121,7 @@
               </p>
             </div>
           </div>
-          <a href="/objects-and-artworks/pharos/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}" class="btn btn-dark">Read more</a>
+          <a href="/objects-and-artworks/highlights/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endif
