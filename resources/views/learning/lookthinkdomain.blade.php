@@ -37,11 +37,7 @@
           <div class="contents-label mb-3">
             <h3>
               <a href="look-think-do/{{ $look['slug']}}">{{ $look['title_of_work'] }}</a>
-            </h3>
-            <h4>
-              <small class="text-muted">{{  Carbon\Carbon::parse($look['publication_date'])->format('l dS F Y') }}</small>
-            </h4>
-            
+            </h3>    
           </div>
         </div>
         <a href="look-think-do/{{ $look['slug']}}" class="btn btn-dark">Read more</a>
