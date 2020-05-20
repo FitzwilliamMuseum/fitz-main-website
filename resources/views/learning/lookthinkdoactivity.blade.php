@@ -51,32 +51,33 @@
 
     <!-- column two -->
     <div class="col-md-5 mt-3">
+      <h3>
+        Look at the work
+      </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
-        <h3>
-          Look at the work
-        </h3>
+
         {!! $look['look_text'] !!}
         @if(isset($look['look_answers']))
         <button type="button" class="btn btn-dark" data-toggle="modal"
         data-target="#lookanswers">Answers</button>
         @endif
       </div>
-
+      <h3>
+        Think about this work
+      </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
-        <h3>
-          Think about this work
-        </h3>
+
         {!! $look['think_text'] !!}
         @if(isset($look['think_answers']))
         <button type="button" class="btn btn-dark" data-toggle="modal"
         data-target="#thinkanswers">Answers</button>
         @endif
       </div>
-
+      <h3>
+        Do something in response
+      </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
-        <h3>
-          Do something in response
-        </h3>
+
         {!! $look['do_text'] !!}
         @if(isset($look['do_answers']))
         <button type="button" class="btn btn-dark" data-toggle="modal"
