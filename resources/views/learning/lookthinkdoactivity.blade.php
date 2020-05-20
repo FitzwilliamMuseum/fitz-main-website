@@ -86,18 +86,20 @@
       </div>
 
       @if(isset($look['adlib_id_number']))
+      <h3>
+        Collections record
+      </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
-        <h3>
-          Collections record
-        </h3>
+
         <p>{!! $look['adlib_id_number'] !!}</p>
       </div>
 
       @if(!empty($look['associated_pharos']))
+      <h4>
+        Highlight record
+      </h4>
       <div class="col shadow-sm p-3 mx-auto mb-3 rounde">
-        <h3>
-          Highlight record
-        </h3>
+
         <div class="card card-body h-100">
           @if(!is_null($look['associated_pharos'][0]['pharos_id']['image']))
           <img class="img-fluid" src="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
@@ -129,8 +131,9 @@
 
       <!-- Sketchfab include -->
       @if(!empty($look['sketchfab_id']))
+      <h3>3d model</h3>
       <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
-        <h2>3d model</h2>
+
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
           <div class="embed-responsive embed-responsive-1by1">
             <iframe title="A 3D model related to {{ $look['title_of_work'] }}" class="embed-responsive-item"
