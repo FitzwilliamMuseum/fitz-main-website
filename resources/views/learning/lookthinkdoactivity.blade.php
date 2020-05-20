@@ -32,18 +32,18 @@
         <span class="btn btn-dark p-2">
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span>
       </div>
-
+      <h4>
+        Collections database information
+      </h4>
       <div class="shadow-sm p-3 mx-auto mb-3 mt-3 rounded">
-        <h4>
-          Collections database information
-        </h4>
+
           @markdown($look['object_metadata'])
       </div>
-
+      <h4>
+        Description of this object or artwork
+      </h4>
       <div class="shadow-sm p-3 mx-auto  rounded">
-        <h4>
-          Description of this object or artwork
-        </h4>
+
           @markdown($look['main_text_description'])
       </div>
     </div>
