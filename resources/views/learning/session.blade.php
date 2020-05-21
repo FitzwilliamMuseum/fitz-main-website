@@ -64,7 +64,7 @@
       </ul>
     </div>
 
-    @if(!empty($file['associated_learning_files']))
+    @if(!empty($page['associated_learning_files']))
     <h3>Factsheets and related files</h3>
     <div class="row">
 
