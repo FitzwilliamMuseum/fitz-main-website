@@ -30,7 +30,7 @@
     <h3>More about this session</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       <ul>
-        @if(isset($page['key_stages']))
+        @if(isset($page['key_stages']) && !empty($page['key_stages']))
         <li>Key stages appropriate:
           @php
           echo implode(', ', $page['key_stages']);
@@ -38,7 +38,7 @@
         </li>
         @endif
 
-        @if(isset($page['curriculum_link']))
+        @if(isset($page['curriculum_link']) && !empty($page['curriculum_link']))
         <li>Curriculum links:
           @php
           echo implode(', ', $page['curriculum_link']);
@@ -46,7 +46,7 @@
         </li>
         @endif
 
-        @if(isset($page['session_type']))
+        @if(isset($page['session_type']) && !empty($page['session_type']))
         <li>Session type:
           @php
           echo implode(', ', $page['session_type']);
@@ -54,7 +54,7 @@
         </li>
         @endif
 
-        @if(isset($page['type_of_activity']))
+        @if(isset($page['type_of_activity']) && !empty($page['type_of_activity']))
         <li>Type of activity:
           @php
           echo implode(', ', $page['type_of_activity']);
