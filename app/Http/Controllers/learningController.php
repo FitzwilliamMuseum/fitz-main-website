@@ -105,4 +105,32 @@ class learningController extends Controller
         $res = $api->getData();
         return view('learning.resource', compact('res'));
     }
+
+    public static function schoolsessions()
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('school_sessions');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*'        )
+        );
+        $sessions = $api->getData();
+        return $sessions;
+    }
+
+    public function session($slug)
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('school_sessions');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[slug][eq]' => $slug
+          )
+        );
+        $session = $api->getData();
+        return view('learning.session', compact('session'));
+    }
 }

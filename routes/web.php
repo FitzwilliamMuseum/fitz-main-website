@@ -36,6 +36,7 @@ Route::get('learning/look-think-do/', 'learningController@lookthinkdomain');
 Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
 Route::get('learning/resources/', 'learningController@resources');
 Route::get('learning/resources/{slug}', 'learningController@resource');
+Route::get('learning/school-sessions/{slug}', 'learningController@session');
 Route::get('themes/', 'themesController@index');
 Route::get('themes/{slug}', 'themesController@theme');
 Route::get('galleries', 'galleriesController@index');
@@ -51,7 +52,6 @@ Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results
 Route::get('objects-and-artworks/highlights/{section}/{slug}/', 'highlightsController@associate');
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop');
-
 Route::get('search', 'searchController@index');
 Route::get('search/staff', 'searchController@staff');
 Route::get('search/news', 'searchController@news');

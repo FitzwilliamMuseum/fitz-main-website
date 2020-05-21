@@ -23,6 +23,14 @@
     </div>
     @endif
 
+    @if($page['slug'] == 'school-sessions')
+      @inject('learningController', 'App\Http\Controllers\learningController')
+      @php
+      $sessions = $learningController::schoolsessions();
+      @endphp
+      @include('includes.structure.sessions')
+    @endif
+
     @if(!empty($records))
     <h3>
       Related to this page
