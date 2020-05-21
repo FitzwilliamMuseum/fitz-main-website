@@ -94,4 +94,39 @@
     </div>
     @endif
     @endsection
+
+    @if(!empty($records))
+      @section('mlt')
+      <div class="container">
+        <h3>Other related schools sessions</h3>
+        <div class="row">
+          @foreach($records as $record)
+          <div class="col-md-4 mb-3">
+            <div class="card card-body h-100">
+              @if(!is_null($record['thumbnail']))
+                <img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
+                alt="Featured image for the session: {{ $record['title'][0] }}"
+                loading="lazy"/>
+              @else
+                <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/>
+              @endif
+              <div class="container h-100">
+
+                <div class="contents-label mb-3">
+                  <h3>
+                    <a href="/learning/school-sessions/{{ $record['slug'][0]}}">{{ $record['title'][0] }}</a>
+                  </h3>
+                  
+                </div>
+              </div>
+              <a href="/learning/school-sessions/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+            </div>
+
+          </div>
+          @endforeach
+        </div>
+      </div>
+      @endsection
+    @endif
 @endforeach

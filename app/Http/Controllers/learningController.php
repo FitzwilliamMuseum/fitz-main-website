@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
+use App\MoreLikeThis;
 
 class learningController extends Controller
 {
@@ -131,6 +132,10 @@ class learningController extends Controller
           )
         );
         $session = $api->getData();
-        return view('learning.session', compact('session'));
+
+        $mlt = new MoreLikeThis;
+        $mlt->setLimit(3)->setType('schoolsessions')->setQuery($slug);
+        $records = $mlt->getData();
+        return view('learning.session', compact('session','records'));
     }
 }
