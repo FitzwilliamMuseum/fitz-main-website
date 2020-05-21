@@ -835,15 +835,60 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function sessions()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('school_sessions');
+    $api->setArguments(
+      $args = array(
+          'limit' => '30',
+          'fields' => 'id,title,description,format_session,quote,key_stages,theme,session_type,type_of_activity,curriculum_link,hero_image.*'
+      )
+    );
+    $profiles = $api->getData();
 
-  function change_key( $array, $old_key, $new_key ) {
-
-    if( ! array_key_exists( $old_key, $array ) )
-        return $array;
-
-    $keys = array_keys( $array );
-    $keys[ array_search( $old_key, $keys ) ] = $new_key;
-
-    return array_combine( $keys, $array );
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-school_sessions';
+      $doc->title = $profile['title'];
+      $description = $profile['description'] . ' ' . $profile['quote'] . ' ' . $profile['format_session'];
+      $doc->description = strip_tags($description);
+      $doc->body = strip_tags($description);
+      $doc->url = $this->url . 'learning/school-sessions/' . $profile['slug'];
+      $doc->slug = $profile['slug'];
+      if(isset($profile['key_stages'])){
+        $doc->keystages = $profile['key_stages'];
+      }
+      if(isset($profile['theme'])){
+        $doc->theme = $profile['theme'];
+      }
+      if(isset($profile['session_type'])){
+        $doc->session_type = $profile['session_type'];
+      }
+      if(isset($profile['type_of_activity'])){
+        $doc->type_of_activity = $profile['type_of_activity'];
+      }
+      if(isset($profile['curriculum_link'])){
+        $doc->curriculum_link = $profile['curriculum_link'];
+      }
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
+      $doc->contentType = 'schoolsessions';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
   }
+
 }
