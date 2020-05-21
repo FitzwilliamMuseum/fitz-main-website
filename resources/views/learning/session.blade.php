@@ -64,7 +64,7 @@
       </ul>
     </div>
 
-    @if(!empty($file['learning_files_id']))
+    @if(!empty($file['associated_learning_files']))
     <h3>Factsheets and related files</h3>
     <div class="row">
 
@@ -117,7 +117,7 @@
                   <h3>
                     <a href="/learning/school-sessions/{{ $record['slug'][0]}}">{{ $record['title'][0] }}</a>
                   </h3>
-                  
+
                 </div>
               </div>
               <a href="/learning/school-sessions/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
