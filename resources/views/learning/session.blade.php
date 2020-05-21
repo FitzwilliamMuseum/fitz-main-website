@@ -63,6 +63,8 @@
         @endif
       </ul>
     </div>
+
+    @if(!empty($file['learning_files_id']))
     <h3>Factsheets and related files</h3>
     <div class="row">
 
@@ -90,5 +92,6 @@
 
       @endforeach
     </div>
+    @endif
     @endsection
 @endforeach
