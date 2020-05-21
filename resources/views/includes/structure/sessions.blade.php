@@ -18,6 +18,14 @@
           <h3>
             <a href="/learning/school-sessions/{{ $session['slug'] }}">{{ $session['title'] }}</a>
           </h3>
+          @if(isset($session['key_stages']))
+          <p>
+            Key stages:
+            @php
+            echo implode(',',$session['key_stages']);
+            @endphp
+          </p>
+          @endif
         </div>
       </div>
       <a href="/learning/school-sessions/{{ $session['slug'] }}" class="btn btn-dark">Read more</a>
