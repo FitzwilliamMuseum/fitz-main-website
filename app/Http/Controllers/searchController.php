@@ -842,7 +842,7 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '30',
-          'fields' => 'id,title,description,format_session,quote,key_stages,theme,session_type,type_of_activity,curriculum_link,hero_image.*'
+          'fields' => 'id,title,description,format_session,quote,key_stages,theme,session_type,slug,type_of_activity,curriculum_link,hero_image.*'
       )
     );
     $profiles = $api->getData();
