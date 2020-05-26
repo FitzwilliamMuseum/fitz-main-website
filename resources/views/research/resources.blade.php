@@ -20,8 +20,9 @@
                 <a href="/research/online-resources/{{ $project['slug']}}">{{ $project['title']}}</a>
               </h3>
             </div>
-            <a href="/research/online-resources/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
           </div>
+          <a href="/research/online-resources/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
+
         </div>
       </div>
       @endforeach

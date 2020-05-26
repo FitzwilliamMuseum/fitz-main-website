@@ -64,7 +64,7 @@
         <a class="dropdown-item" href="{{ URL::to('/research') }}">Research at the museum</a>
         <a class="dropdown-item" href="/research/projects">Research projects</a>
         <a class="dropdown-item" href="/research/staff-profiles">Researcher profiles</a>
-
+        <a class="dropdown-item" href="{{ URL::to('/research/online-resources/') }}">Online resources</a>
       </div>
     </li>
 </ul>
