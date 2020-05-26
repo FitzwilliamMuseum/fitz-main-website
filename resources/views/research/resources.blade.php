@@ -6,10 +6,9 @@
 @section('content')
   <div class="row">
       @foreach($resources['data'] as $project)
-      @php(dd($project))
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100 ">
-          @if(!is_null($project['hero_image']))
+          @if(!empty($project['hero_image']))
             <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $project['hero_image_alt_text']}}" loading="lazy"
             width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
