@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-@php(dd($resources))
 
 @foreach($resources['data'] as $project)
   @section('keywords', $project['meta_keywords'])
