@@ -104,4 +104,34 @@ class researchController extends Controller
       $profiles = $api->getData();
       return view('research.profile', compact('profiles'));
     }
+
+    public function resource($slug)
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('online_resources');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug
+        )
+      );
+      $resource = $api->getData();
+      return view('research.resource', compact('resource'));
+    }
+
+    public function resources()
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('online_resources');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'sort' => 'id'
+        )
+      );
+      $resources = $api->getData();
+      return view('research.resources', compact('resources'));
+    }
 }

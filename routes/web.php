@@ -23,6 +23,8 @@ Route::get('research/projects/', 'researchController@projects');
 Route::get('research/projects/{slug}/', 'researchController@project');
 Route::get('research/staff-profiles', 'researchController@profiles');
 Route::get('research/staff-profiles/{slug}', 'researchController@profile');
+Route::get('research/online-resources/', 'researchController@resources');
+Route::get('research/online-resources/{slug}', 'researchController@resource');
 Route::get('collections', 'collectionsController@index');
 Route::get('visit-us/', 'visitController@index');
 Route::get('news/', 'newsController@index');
