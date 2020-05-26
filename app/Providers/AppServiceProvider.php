@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
               $clean = 'A pages or article';
             break;
             case "pharos":
-              $clean = 'A Pharos object';
+              $clean = 'A collection highlight';
             break;
             case "pharospages":
               $clean = 'Pharos information';
@@ -108,6 +108,9 @@ class AppServiceProvider extends ServiceProvider
               break;
             case 'hayley':
                 $clean = 'Correspondence of William Hayley';
+                break;
+            case 'audioguide':
+                $clean = 'Audio guide content';
                 break;
             default:
               $clean = $string;
