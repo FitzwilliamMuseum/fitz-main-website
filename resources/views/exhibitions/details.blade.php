@@ -35,7 +35,7 @@
       <ul>
         @foreach($coll['exhibition_files'] as $file)
           <li>
-            <a href="{{ $file['directus_files_id']['data']['full_url'] }}">{{ $file['directus_files_id']['title] }}</a>
+            <a href="{{ $file['directus_files_id']['data']['full_url'] }}">{{ $file['directus_files_id']['title'] }}</a>
           </li>
         @endforeach
       </ul>
