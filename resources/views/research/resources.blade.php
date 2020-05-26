@@ -5,7 +5,7 @@
 
 @section('content')
   <div class="row">
-      @foreach($projects['data'] as $project)
+      @foreach($resources['data'] as $project)
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100 ">
           @if(!is_null($project['hero_image']))

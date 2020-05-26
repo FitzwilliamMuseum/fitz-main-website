@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@foreach($projects['data'] as $project)
+@foreach($resource['data'] as $project)
   @section('keywords', $project['meta_keywords'])
   @section('description', $project['meta_description'])
   @section('title', $project['title'])
