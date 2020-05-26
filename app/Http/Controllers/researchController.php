@@ -116,8 +116,8 @@ class researchController extends Controller
             'filter[slug][eq]' => $slug
         )
       );
-      $resource = $api->getData();
-      return view('research.resource', compact('resource'));
+      $resources = $api->getData();
+      return view('research.resource', compact('resources'));
     }
 
     public function resources()
