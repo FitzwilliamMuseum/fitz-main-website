@@ -23,7 +23,7 @@
             <a href="/research/online-resources/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
           </div>
         </div>
+      </div>
       @endforeach
-  </div>
 </div>
 @endsection
