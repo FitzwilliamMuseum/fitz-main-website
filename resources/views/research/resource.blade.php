@@ -11,6 +11,7 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     @markdown($project['description'])
   </div>
+  
   <h3>Project information</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
 
@@ -19,5 +20,6 @@
       <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>
       @endif
     </ul>
+  </div>
   @endsection
 @endforeach
