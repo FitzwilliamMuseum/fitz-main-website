@@ -28,11 +28,12 @@
         @endif
       </ul>
     </div>
+
     @if(!empty($coll['exhibition_files']))
     <h2>Exhibition files</h2>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       <ul>
-        @foreach($coll['exhibition_files'] as $file))
+        @foreach($coll['exhibition_files'] as $file)
           <li>
             <a href="{{ $file['directus_files_id']['data']['full_url'] }}">{{ $file['directus_files_id']['title] }}</a>
           </li>
