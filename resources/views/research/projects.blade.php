@@ -20,6 +20,7 @@
                 <a href="/research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
               </h3>
             </div>
+            </div>
             <a href="/research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
           </div>
         </div>
