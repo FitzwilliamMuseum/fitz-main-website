@@ -21,4 +21,4 @@
       @endif
     </ul>
   @endsection
-@endif
+@endforeach
