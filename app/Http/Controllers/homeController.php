@@ -87,7 +87,7 @@ class homeController extends Controller
     } else {
       $tweets = Twitter::getUserTimeline([
         'screen_name' => 'fitzmuseum_uk',
-        'count' => 3,
+        'count' => 4,
         'format' => 'object',
         'tweet_mode' => 'extended',
         'include_rts' => false,
