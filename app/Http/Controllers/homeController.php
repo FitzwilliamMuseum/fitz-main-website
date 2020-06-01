@@ -85,7 +85,14 @@ class homeController extends Controller
     if (Cache::has('cache_twitter')) {
       $tweets = Cache::get('cache_twitter');
     } else {
-      $tweets = Twitter::getUserTimeline(['screen_name' => 'fitzmuseum_uk', 'count' => 3, 'format' => 'object', 'tweet_mode' => 'extended']);
+      $tweets = Twitter::getUserTimeline([
+        'screen_name' => 'fitzmuseum_uk',
+        'count' => 3,
+        'format' => 'object',
+        'tweet_mode' => 'extended',
+        'include_rts' => false,
+        'exclude_replies' => true
+      ]);
       Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
     }
     if (Cache::has('cache_yt')) {
