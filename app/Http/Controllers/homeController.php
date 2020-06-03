@@ -105,7 +105,7 @@ class homeController extends Controller
       $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
-
+    dd(env('INSTAGRAM_USER'));
     if (Cache::has('cache_insta')) {
       $insta = Cache::get('cache_insta');
     } else {
