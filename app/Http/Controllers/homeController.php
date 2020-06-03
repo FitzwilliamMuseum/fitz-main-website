@@ -113,7 +113,7 @@ class homeController extends Controller
        env('INSTAGRAM_PASS'),
        new Psr16Adapter('Files')
      );
-      $instagram->login(false, true);
+      $instagram->login();
       $insta = $instagram->getMedias('fitzmuseum_uk', 3);
       Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
     }
