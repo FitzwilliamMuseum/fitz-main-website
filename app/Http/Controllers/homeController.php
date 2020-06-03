@@ -80,6 +80,7 @@ class homeController extends Controller
     );
     $things = $api5->getData();
     $expiresTwitter = now()->addMinutes(60);
+    $expiresInstagram = now()->addMinutes(600);
     $expiresYouTube = now()->addMinutes(6000);
 
     if (Cache::has('cache_twitter')) {
@@ -87,7 +88,7 @@ class homeController extends Controller
     } else {
       $tweets = Twitter::getUserTimeline([
         'screen_name' => 'fitzmuseum_uk',
-        'count' => 4,
+        'count' => 10,
         'format' => 'object',
         'tweet_mode' => 'extended',
         'include_rts' => false,
@@ -95,6 +96,7 @@ class homeController extends Controller
       ]);
       Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
     }
+    // dd($tweets);
     if (Cache::has('cache_yt')) {
       $videoList = Cache::get('cache_yt');
     } else {
@@ -102,18 +104,17 @@ class homeController extends Controller
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
 
-    // if (Cache::has('cache_insta')) {
-    //   $insta = Cache::get('cache_insta');
-    // } else {
-    //   $instagram = new Instagram();
-    //   $insta = $instagram->getMedias('fitzmuseum_uk', 3);
-    //   Cache::put('cache_insta', $insta, $expiresYouTube); // 1 hour
-    // }
+    if (Cache::has('cache_insta')) {
+      $insta = Cache::get('cache_insta');
+    } else {
+      $instagram = new Instagram();
+      $insta = $instagram->getMedias('fitzmuseum_uk', 3);
+      Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
+    }
     return view('index', compact(
       'carousel','news', 'research',
       'themes','tweets', 'videoList',
-      'things',
-      // 'insta'
+      'things', 'insta'
     ));
   }
 }
