@@ -109,7 +109,16 @@ class homeController extends Controller
     if (Cache::has('cache_insta')) {
       $insta = Cache::get('cache_insta');
     } else {
-      $instagram = Instagram::withCredentials(env('INSTAGRAM_USER'), env('INSTAGRAM_PASSWORD'), new Psr16Adapter('Files'));
+      $instagram = Instagram::withCredentials(
+        env('INSTAGRAM_USER'),
+       env('INSTAGRAM_PASSWORD'),
+       new Psr16Adapter(
+         'Files',
+         array(
+           'path' => '../storage/framework/cache'
+         )
+       )
+     );
       $instagram->login();
       $insta = $instagram->getMedias('fitzmuseum_uk', 3);
       Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
