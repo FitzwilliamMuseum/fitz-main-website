@@ -26,6 +26,8 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-image: url(@yield('parallax_two'));
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: scroll;
+
 }
 @endif
 
@@ -35,6 +37,8 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-image: url(@yield('parallax_three'));
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: scroll;
+
 }
 @endif
 
@@ -45,6 +49,8 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  background-attachment: scroll;
+
 }
 @endif
 
@@ -54,6 +60,8 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-image: url(@yield('parallax_four'));
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: scroll;
+
 }
 @endif
 
@@ -63,6 +71,8 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-image: url(@yield('parallax_home'));
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: scroll;
+
 }
 @endif
 </style>
