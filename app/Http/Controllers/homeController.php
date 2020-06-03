@@ -9,7 +9,8 @@ use Twitter;
 use Youtube;
 use Cache;
 use InstagramScraper\Instagram;
-use Phpfastcache\Helper\Psr16Adapter;
+use Symfony\Component\Cache\Adapter\Psr16Adapter;
+
 class homeController extends Controller
 {
   /**
@@ -108,7 +109,7 @@ class homeController extends Controller
     if (Cache::has('cache_insta')) {
       $insta = Cache::get('cache_insta');
     } else {
-      $instagram = Instagram::withCredentials(env('INSTAGRAM_USER'), env('INSTAGRAM_PASSWORD'), new Psr16Adapter('/var/www/beta.fitz.ms/storage/framework/cache/'));
+      $instagram = Instagram::withCredentials(env('INSTAGRAM_USER'), env('INSTAGRAM_PASSWORD'), new Psr16Adapter('Files'));
       $instagram->login();
       $insta = $instagram->getMedias('fitzmuseum_uk', 3);
       Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
