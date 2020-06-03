@@ -17,7 +17,7 @@
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       About us</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About us</a>
+        <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About the Museum</a>
         <a class="dropdown-item" href="{{ URL::to('/collections') }}">Our collections</a>
         <a class="dropdown-item" href="{{ URL::to('/departments') }}">Our departments</a>
         <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Our galleries</a>
