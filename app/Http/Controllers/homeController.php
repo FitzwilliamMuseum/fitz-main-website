@@ -9,7 +9,7 @@ use Twitter;
 use Youtube;
 use Cache;
 use InstagramScraper\Instagram;
-use Symfony\Component\Cache\Adapter\Psr16Adapter;
+use Phpfastcache\Helper\Psr16Adapter;
 
 class homeController extends Controller
 {
@@ -112,12 +112,7 @@ class homeController extends Controller
       $instagram = Instagram::withCredentials(
         env('INSTAGRAM_USER'),
        env('INSTAGRAM_PASSWORD'),
-       new Psr16Adapter(
-         'Files',
-         array(
-           'path' => '../storage/framework/cache'
-         )
-       )
+       new Psr16Adapter('Files')
      );
       $instagram->login();
       $insta = $instagram->getMedias('fitzmuseum_uk', 3);
