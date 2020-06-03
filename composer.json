@@ -27,6 +27,7 @@
         "solarium/solarium": "^5.2",
         "spatie/laravel-feed": "^2.6",
         "spatie/laravel-responsecache": "^6.6",
+        "symfony/cache": "^5.1",
         "thepinecode/blade-filters": "^0.6.0",
         "thujohn/twitter": "^2.2"
     },
