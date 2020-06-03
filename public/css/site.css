@@ -12,7 +12,7 @@
   .head {
     padding-top: 100px;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
     background-position: center center;
     /* display: none; */
     /* visibility: hidden; */
@@ -327,6 +327,12 @@ label.cm-app-label {
 }
 body {
   font-size: 1.1rem;
+}
+
+@media screen and (min-width: 441px) {
+  .hidden {
+    display: none;
+  }
 }
 @media screen and (min-width: 440px) {
   .shout {
