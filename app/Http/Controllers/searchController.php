@@ -238,7 +238,7 @@ class searchController extends Controller
       $doc->url = $this->url . 'research/projects/' . $profile['slug'];
       $doc->contentType = 'projects';
       if(isset($profile['hero_image'])){
-        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][4]['url'];
         $doc->image = $profile['hero_image']['data']['full_url'];
         $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
       }
