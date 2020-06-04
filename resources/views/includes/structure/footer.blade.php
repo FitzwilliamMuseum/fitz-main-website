@@ -36,10 +36,10 @@
 <!--- Footer stuff -->
 <footer class="text-black">
 
-    <div class="container ">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm mt-2 mb-2 border-right border-white">
-                <h4>Contact us</h4>
+                <h4 class="lead">Contact us</h4>
                 <p>
                     The Fitzwilliam Museum,<br/>
                     Trumpington Street,<br/>
@@ -96,11 +96,18 @@
                 </p>
             </div>
             <div class="col-sm mt-2 mb-2">
-                <p class="share">
-                    &copy; 2020 The University of Cambridge<br/>
-                    Content: CC-BY<br />
-                    Code: AGPL
-                </p>
+              <h4 class="lead">About the University</h4>
+              <ul class="share">
+                <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">How the University and Colleges work</a></li>
+                <li><a href="https://cam.ac.uk/about-the-university/visiting-the-university" aria-label="How to visit the university">Visiting the University</a></li>
+                <li><a href="https://www.philanthropy.cam.ac.uk/give-now" aria-label="How to support the University" >Give to Cambridge</a></li>
+              </ul>
+              <h4>License</h4>
+              <ul class="share">
+                <li>&copy; 2020 The University of Cambridge</li>
+                <li>Content: CC-BY</li>
+                <li>Code: AGPL</li>
+              </ul>
             </div>
         </div>
     </div>
