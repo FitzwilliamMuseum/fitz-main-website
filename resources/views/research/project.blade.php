@@ -49,10 +49,10 @@
         <div class="col-md-4 mb-3">
           <div class="card card-body h-100">
             @if(!is_null( $partner['partner']['partner_logo']))
-              <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['url']}}"
+              <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
               alt="Logo for {{ $partner['partner']['partner_full_name']}}"
-              height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['height'] }}"
-              width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][3]['width'] }}"
+              height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['height'] }}"
+              width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['width'] }}"
               loading="lazy"/>
             @else
               <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
