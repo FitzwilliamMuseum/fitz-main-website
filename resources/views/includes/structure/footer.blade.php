@@ -81,8 +81,8 @@
                     <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg"><i
                             class="fab fa-youtube fa-2x p-2"></i></a>
                             <span class="padding-top:10px;"><a aria-label="Fitzwilliam Museum github account" href="https://www.sketchfab.com/fitzwilliammuseum/">
-                              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                              viewBox="0 0 50 50" style="fill:#fff;">
+                              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
+                              viewBox="0 0 50 50" style="fill:#000;">
                               <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z
                               M24,38.805l-10-6.25V20.664l10,6.458V38.805z M14.367,18.484L25,11.819l10.633,6.665L25,25.149L14.367,
                               18.484z M36,32.555l-10,6.25V27.122l10-6.458V32.555z">
