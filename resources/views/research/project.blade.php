@@ -112,9 +112,6 @@
               <h3>
                 <a href="/research/projects/{{ $record['slug'][0]}}">{{ $record['title'][0] }}</a>
               </h3>
-              <p class="card-text">
-                {{ substr(strip_tags($record['description'][0]),0,200) }}...
-              </p>
             </div>
           </div>
           <a href="/research/projects/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
