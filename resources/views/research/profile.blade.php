@@ -3,7 +3,7 @@
   @section('keywords', $profile['meta_keywords'])
   @section('description', $profile['meta_description'])
   @section('title', $profile['display_name'])
-  @if(!is_null($profile['hero_image']))
+  @if(!isset($profile['hero_image']))
   @section('hero_image', $profile['hero_image']['data']['full_url'])
   @section('hero_image_title', $profile['hero_image_alt_text'])
 @endif
