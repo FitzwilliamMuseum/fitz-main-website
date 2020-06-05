@@ -33,56 +33,53 @@
   @endsection
 
   @if(!empty($profile['publications']))
-  @section('publications')
-  <div class="container">
-      <h3>Publications</h3>
-      <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 rounded">
-        {!! $profile['publications'] !!}
-      </div>
-  </div>
-  @endsection
+    @section('publications')
+    <div class="container">
+        <h4>Publications</h4>
+        <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 rounded">
+          {!! $profile['publications'] !!}
+        </div>
+    </div>
+    @endsection
   @endif
 
 
   @if(!empty($profile['research_projects']))
-  @section('research-projects')
-  <div class="container">
-    <h2>Associated Research Projects</h2>
-    <div class="row">
-      @foreach($profile['research_projects'] as $project)
-      <div class="col-md-4 mb-3">
-        <div class="card card-body h-100 ">
-          @if(!is_null($project['research_projects_id']['hero_image']))
-            <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-            width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-            alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
-            loading="lazy"/>
-          @endif
-          <div class="container h-100">
-            <div class="contents-label mb-3">
-              <h3>
-                <a href="/research/projects/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
-              </h3>
-              <p class="card-text">
-                {{ substr(strip_tags(htmlspecialchars_decode( $project['research_projects_id']['summary'])),0,200) }}...
-              </p>
+    @section('research-projects')
+    <div class="container">
+      <h3>Associated Research Projects</h3>
+      <div class="row">
+        @foreach($profile['research_projects'] as $project)
+        <div class="col-md-4 mb-3">
+          <div class="card card-body h-100 ">
+            @if(!is_null($project['research_projects_id']['hero_image']))
+              <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+              width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
+              height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
+              alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
+              loading="lazy"/>
+            @endif
+            <div class="container h-100">
+              <div class="contents-label mb-3">
+                <h3>
+                  <a href="/research/projects/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
+                </h3>
+              </div>
             </div>
+            <a href="/research/projects/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
           </div>
-          <a href="/research/projects/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
-        </div>
 
+        </div>
+        @endforeach
       </div>
-      @endforeach
     </div>
-  </div>
-  @endsection
+    @endsection
   @endif
 
   @if(!empty($profile['departments_affiliated']))
     @section('departments')
     <div class="container">
-      <h2>Associated Departments</h2>
+      <h3>Associated Departments</h3>
       <div class="row">
         @foreach($profile['departments_affiliated'] as $project)
         <div class="col-md-4 mb-3">
@@ -99,9 +96,6 @@
                 <h3>
                   <a href="/departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
                 </h3>
-                <p class="card-text">
-                  {{ substr(strip_tags(htmlspecialchars_decode($project['department']['department_description'])),0,200) }}...
-                </p>
               </div>
             </div>
             <a href="/departments/{{ $project['department']['slug']}}" class="btn btn-dark">Read more</a>
@@ -117,7 +111,7 @@
   @if(!empty($profile['research_projects']))
     @section('research-projects')
     <div class="container">
-      <h2>Associated Research Projects</h2>
+      <h3>Associated Research Projects</h2>
       <div class="row">
         @foreach($profile['research_projects'] as $project)
         <div class="col-md-6 mb-3">
@@ -134,9 +128,6 @@
                 <h3>
                   <a href="/research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
                 </h3>
-                <p class="card-text">
-                  {{ substr(strip_tags(htmlspecialchars_decode($project['research_projects_id']['summary'])),0,200) }}...
-                </p>
               </div>
             </div>
             <a href="/research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
