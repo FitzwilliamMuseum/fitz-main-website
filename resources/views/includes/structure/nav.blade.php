@@ -18,10 +18,10 @@
       About us</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About the Museum</a>
-        <a class="dropdown-item" href="{{ URL::to('/collections') }}">Our collections</a>
-        <a class="dropdown-item" href="{{ URL::to('/departments') }}">Our departments</a>
-        <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Our galleries</a>
-        <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Our press room</a>
+        <a class="dropdown-item" href="{{ URL::to('/collections') }}">Collection areas</a>
+        <a class="dropdown-item" href="{{ URL::to('/departments') }}">Departments</a>
+        <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Galleries</a>
+        <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Press room</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/directors') }}">Our directors</a>
       </div>
     </li>
