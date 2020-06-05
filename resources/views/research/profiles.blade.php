@@ -21,7 +21,6 @@
             <h3>
               <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
             </h3>
-              <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($profile['biography'])),0,200) }}...</p>
             </div>
           </div>
           <a href="/research/staff-profiles/{{ $profile['slug']}}" class="btn btn-dark">Read more</a>
