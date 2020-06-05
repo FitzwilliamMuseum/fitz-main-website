@@ -20,14 +20,6 @@
         <div class="contents-label mb-3">
           <h3>
             <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
-          @if(!empty($record['maker']))
-            <h4>
-              <small class="text-muted">{{ $record['maker']}}</small>
-            </h4>
-          @endif
-          <p class="card-text">
-            {{ substr(strip_tags(htmlspecialchars_decode($record['description'])),0,200) }}...
-          </p>
         </div>
       </div>
       <a href="/objects-and-artworks/highlights/{{ $record['slug']}}"
