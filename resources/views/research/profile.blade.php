@@ -14,7 +14,7 @@
       alt="{{ $profile['profile_image_alt_text'] }}" height="150" width="150">
       {!! $profile['biography'] !!}
     </div>
-
+    @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) || isset($profile['college_affiliated']))
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 rounded">
       @if(isset($profile['college_affiliated']))
       <h4>Affiliated college</h4>
@@ -30,6 +30,7 @@
       </ul>
       @endif
     </div>
+    @endif
   @endsection
 
   @if(!empty($profile['publications']))
