@@ -61,12 +61,10 @@
             <h3>
               <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
             </h3>
-            <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($project['body'])),0,200) }}...</p>
           </div>
         </div>
         <a href="{{ $project['section']}}/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
       </div>
-
     </div>
     @endforeach
   </div>
