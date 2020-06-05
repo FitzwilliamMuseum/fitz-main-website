@@ -75,7 +75,7 @@
   @if(!empty($record['associated_pharos_object']))
   @section('pharos-pages')
   <div class="container">
-    <h3>Associated content</h3>
+    <h3>Associated highlight record</h3>
     <div class="row">
       @foreach($record['associated_pharos_object'] as $pharosassoc)
       <div class="col-md-4 mb-3">
