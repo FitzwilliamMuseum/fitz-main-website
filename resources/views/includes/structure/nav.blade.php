@@ -49,7 +49,7 @@
       Learning</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="{{ URL::to('/learning') }}">Learn with us</a>
-        <a class="dropdown-item" href="/learning/look-think-do">Look, think, do</a>
+        <a class="dropdown-item" href="/learning/look-think-do">Look, Think, Do</a>
         <a class="dropdown-item" href="/learning/resources">Resources</a>
       </div>
     </li>

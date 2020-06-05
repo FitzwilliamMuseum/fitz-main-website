@@ -6,14 +6,19 @@
 @section('keywords', 'schools, monet,millais,art,ramesses III, fitzwilliam')
   @section('content')
   <h2>
-    Look, think, do activities
+    Look, Think, Do activities
   </h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    <p>These activities have been designed as a starting point for looking, talking and doing together.
-    We will be adding new entries throughout April and May 2020.
+    <p>
+      These activities have been designed as a starting point for looking, talking and doing together.
+      We will be adding new entries throughout April and May 2020.
     </p>
-    <p>The Look and Think activities should take 5 -10 minutes.</p>
-    <p>The Do activities might take longer depending on the task and how creative you are feeling!</p>
+    <p>
+      The Look and Think activities should take 5 -10 minutes.
+    </p>
+    <p>
+      The Do activities might take longer depending on the task and how creative you are feeling!
+    </p>
     <p>
       Answers and suggestions about how to find out more at the bottom of each page.
     </p>
