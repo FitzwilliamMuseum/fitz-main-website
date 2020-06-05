@@ -11,10 +11,10 @@
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       @if(!is_null($record['hero_image']))
-        <img class="img-fluid" src="{{ $record['hero_image']['data']['thumbnails'][4]['url']}}"
+        <a href="/objects-and-artworks/audio-guide/{{ $record['slug']}}"><img class="img-fluid" src="{{ $record['hero_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $record['hero_image_alt_text'] }}" loading="lazy"
         width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/>
+        height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
       @endif
       <div class="container h-100">
         <div class="contents-label mb-3">
@@ -25,9 +25,6 @@
               <small class="text-muted">Stop number: {{ $record['stop_number']}}</small>
             </h4>
           @endif
-          <p class="card-text">
-            {{ substr(strip_tags(htmlspecialchars_decode($record['transcription'])),0,200) }}...
-          </p>
         </div>
       </div>
       <a href="/objects-and-artworks/audio-guide/{{ $record['slug']}}"
