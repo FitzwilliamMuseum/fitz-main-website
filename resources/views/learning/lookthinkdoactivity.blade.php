@@ -102,26 +102,18 @@
 
         <div class="card card-body h-100">
           @if(!is_null($look['associated_pharos'][0]['pharos_id']['image']))
-          <img class="img-fluid" src="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
+          <a href="/objects-and-artworks/highlights/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}"><img class="img-fluid" src="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $look['associated_pharos'][0]['pharos_id']['image_alt_text'] }}"
           loading="lazy"
           width="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['height'] }}"
-          />
+          /></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3>
                 <a href="/objects-and-artworks/highlights/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}">{{ $look['associated_pharos'][0]['pharos_id']['title']}}</a>
               </h3>
-              @if(!empty($record['maker']))
-              <h4>
-                <small class="text-muted">{{ $look['associated_pharos'][0]['pharos_id']['maker']}}</small>
-              </h4>
-              @endif
-              <p class="card-text">
-                {{ substr(strip_tags($look['associated_pharos'][0]['pharos_id']['description']),0,200) }}...
-              </p>
             </div>
           </div>
           <a href="/objects-and-artworks/highlights/{{ $look['associated_pharos'][0]['pharos_id']['slug']}}" class="btn btn-dark">Read more</a>

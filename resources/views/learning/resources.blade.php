@@ -21,11 +21,11 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($resource['hero_image']))
-            <img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="/learning/resources/{{ $resource['slug']}}"><img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="A highlight image for {{ $resource['title'] }}"
             width="{{ $resource['hero_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $resource['hero_image']['data']['thumbnails'][4]['height'] }}"
-            loading="lazy"/>
+            loading="lazy"/></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
@@ -51,11 +51,11 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($resource['hero_image']))
-            <img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="/learning/resources/{{ $resource['slug']}}"><img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $resource['hero_image_alt_text'] }}"
             height="{{ $resource['hero_image']['data']['thumbnails'][4]['height'] }}"
             width="{{ $resource['hero_image']['data']['thumbnails'][4]['width'] }}"
-            loading="lazy"/>
+            loading="lazy"/></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">

@@ -33,11 +33,11 @@
     @foreach($ltd['data'] as $look)
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
-        <img class="img-fluid" src="{{ $look['focus_image']['data']['thumbnails'][4]['url']}}"
+        <a href="look-think-do/{{ $look['slug']}}"><img class="img-fluid" src="{{ $look['focus_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $look['focus_image_alt_text'] }}"
         width="{{ $look['focus_image']['data']['thumbnails'][4]['width'] }}"
         height="{{ $look['focus_image']['data']['thumbnails'][4]['height'] }}"
-        loading="lazy"/>
+        loading="lazy"/></a>
         <div class="container h-100">
           <div class="contents-label mb-3">
             <h3>
