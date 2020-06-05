@@ -81,16 +81,15 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($pharosassoc['pharos_id']['image']))
-            <img class="img-fluid" src="{{ $pharosassoc['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
+            <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}"><img class="img-fluid" src="{{ $pharosassoc['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $pharosassoc['pharos_id']['image_alt_text'] }}"
-            loading="lazy"/>
+            loading="lazy"/></a>
           @else
-            <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  />
+            <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}"><img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  /></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}">{{ $pharosassoc['pharos_id']['title']}}</a></h3>
-              <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($pharosassoc['pharos_id']['description'])),0,200) }}...</p>
             </div>
           </div>
           <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}" class="btn btn-dark">Read more</a>
@@ -112,17 +111,14 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($record['searchImage']))
-            <img class="img-fluid" src="{{ $record['searchImage'][0]}}"
-            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+            <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['searchImage'][0]}}"
+            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
               <h3>
                 <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               </h3>
-              <p class="card-text">
-                {{ substr(strip_tags(htmlspecialchars_decode($record['description'][0])),0,200) }}...
-              </p>
             </div>
           </div>
           <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
