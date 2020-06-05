@@ -1,5 +1,5 @@
 @extends('layouts/layout')
-@section('title', 'Look, think, do')
+@section('title', 'Look, Think, Do')
 @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
 @section('hero_image_title', 'Springtime by Claude Monet')
 @section('description', 'A set of exercises for families and learners to do at home')
@@ -37,7 +37,7 @@
           <div class="contents-label mb-3">
             <h3>
               <a href="look-think-do/{{ $look['slug']}}">{{ $look['title_of_work'] }}</a>
-            </h3>    
+            </h3>
           </div>
         </div>
         <a href="look-think-do/{{ $look['slug']}}" class="btn btn-dark">Read more</a>
