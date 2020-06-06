@@ -1,8 +1,12 @@
 
 .parallax {
-  min-height: 300px;
+  min-height: 450px;
   background-attachment: fixed;
   background-size: cover;
+}
+.absolute-bottom {
+  position : absolute;
+  bottom   : 0;
 }
 .jumbotron{
   margin-top: 30px;
@@ -40,6 +44,7 @@
     color: white!important;
     font-family: 'Lato', sans-serif;
     font-size: 2.6rem;
+    font-weight: bolder;
   }
   .shout-less {
     color: white!important;
