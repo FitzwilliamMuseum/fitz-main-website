@@ -10,7 +10,7 @@
 
 @section('current')
 <div class="container">
-  <h2>Our current displays</h2>
+  <h2>Our current exhibitions & displays</h2>
   <div class="row">
     @foreach($current['data'] as $project)
     <div class="col-md-4 mb-3">
@@ -41,7 +41,7 @@
 
 @section('future')
 <div class="container">
-  <h2>Our forthcoming exhibitions</h2>
+  <h2>Our forthcoming exhibitions and displays</h2>
   <div class="row">
     @foreach($future['data'] as $project)
     <div class="col-md-4 mb-3">
@@ -73,7 +73,7 @@
 @section('archive')
 <div class="container">
   <h2>
-    Archived exhibitions
+    Archived exhibitions and displays
   </h2>
   <div class="row">
     @foreach($archive['data'] as $project)
