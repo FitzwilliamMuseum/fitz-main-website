@@ -28,13 +28,13 @@
       </span>
       @endif
     </figure>
-    <h2>Collections ID: {{$record['adlib_id']}}</h2>
     @markdown($record['description'])
   </div>
 
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     <h2>Meta Data</h2>
     <ul>
+      <li>Collections ID: {{$record['adlib_id']}}</li>
       @if(!is_null($record['place_of_origin']))
         <li>Place of origin: {{ $record['place_of_origin'] }}</li>
       @endif
