@@ -128,7 +128,7 @@ class learningController extends Controller
           $args = array(
               'fields' => '*.*.*.*',
               'meta' => '*',
-              'filter[section][eq]' => 'young-peple'
+              'filter[subsection][eq]' => 'young-peple'
             )
         );
         $sessions = $api->getData();
