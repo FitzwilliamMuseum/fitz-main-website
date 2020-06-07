@@ -38,7 +38,7 @@
 
   @if(!empty($gallery['star_objects']))
   <h4>
-    Highlight objects from Pharos
+    Highlight objects
   </h4>
   <div class="row">
     @foreach($gallery['star_objects'] as $object)
@@ -56,7 +56,6 @@
             <h3>
               <a href="/objects-and-artworks/highlights/{{ $object['pharos_id']['slug'] }}">{{ $object['pharos_id']['title'] }}</a>
             </h3>
-            <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($object['pharos_id']['description'])),0,200) }}...</p>
           </div>
         </div>
         <a href="/objects-and-artworks/highlights/{{ $object['pharos_id']['slug'] }}" class="btn btn-dark">Read more</a>
