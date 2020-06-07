@@ -170,7 +170,7 @@ class learningController extends Controller
         $mlt = new MoreLikeThis;
         $mlt->setLimit(3)->setType('schoolsessions')->setQuery($slug);
         $records = $mlt->getData();
-        return view('learning.session', compact('session','records'));
+        return view('learning.young', compact('session','records'));
     }
 
 }
