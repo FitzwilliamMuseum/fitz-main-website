@@ -13,6 +13,7 @@
     @include('includes.structure.manifest')
 
 </head>
+
 <body class="doc-body">
 
 <!-- Screen reader skip to main -->

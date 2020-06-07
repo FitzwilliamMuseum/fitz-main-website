@@ -20,8 +20,8 @@
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       @if(!is_null($project['field_image']))
-      <img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"
-      alt="{{ $project['field_image_alt_text'] }}" />
+        <a href="news/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"
+      alt="{{ $project['field_image_alt_text'] }}" /></a>
       @endif
       <div class="container h-100">
         <div class="contents-label mb-3">
@@ -42,11 +42,11 @@
     <div class="card card-body h-100">
       <div class="container h-100">
         @if(!is_null($project['hero_image']))
-        <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-        alt="{{ $project['hero_image_alt_text'] }}" loading="lazy"
-        width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}" />
-          @endif
+          <a href="research/projects/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+          alt="{{ $project['hero_image_alt_text'] }}" loading="lazy"
+          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
+          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}" /></a>
+        @endif
         <div class="contents-label mb-3">
           <h3>
             <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
@@ -64,11 +64,11 @@
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       @if(!is_null($theme['hero_image']))
-      <img class="img-fluid" src="{{ $theme['hero_image']['data']['thumbnails'][4]['url']}}"
+      <a href="themes/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['hero_image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $theme['hero_image_alt_text'] }}"
       loading="lazy"
       height="{{ $theme['hero_image']['data']['thumbnails'][4]['height'] }}"
-      width="{{ $theme['hero_image']['data']['thumbnails'][4]['width'] }}"/>
+      width="{{ $theme['hero_image']['data']['thumbnails'][4]['width'] }}"/></a>
       @endif
       <div class="container h-100">
         <div class="contents-label mb-3">
