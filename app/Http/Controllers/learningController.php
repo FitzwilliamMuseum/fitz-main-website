@@ -154,5 +154,23 @@ class learningController extends Controller
         return view('learning.session', compact('session','records'));
     }
 
+    public function young($slug)
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[slug][eq]' => $slug
+          )
+        );
+        $session = $api->getData();
+
+        $mlt = new MoreLikeThis;
+        $mlt->setLimit(3)->setType('schoolsessions')->setQuery($slug);
+        $records = $mlt->getData();
+        return view('learning.session', compact('session','records'));
+    }
 
 }
