@@ -4,8 +4,9 @@
 
     <title>The Fitzwilliam Museum - @yield('title')</title>
     <meta name="description" content="@yield('description')" />
-    <meta name="keywords" content="@yield('keywords')" />
-
+    @hasSection('keywords')
+      <meta name="keywords" content="@yield('keywords')" />
+    @endif
     <!-- Canonical link -->
     <link rel="canonical" href="{{ URL::current() }}" />
 
@@ -14,15 +15,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('title')" />
     <meta property="og:description" content="@yield('description')" />
-    <meta property="og:url" content="{{ URL::to('/') }}" />
+    <meta property="og:url" content="{{ URL::current() }}" />
     <meta property="og:site_name" content="The Fitzwilliam Museum" />
 
     @hasSection('social_thumbnail')
-    <meta property="og:image" content="@yield('social_thumbnail')" />
-    <meta name="twitter:image" content="@yield('social_thumbnail')" />
+      <meta property="og:image" content="@yield('hero_image')" />
+      <meta name="twitter:image" content="@yield('hero_image')" />
     @else
-    <meta property="og:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
-    <meta name="twitter:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
+      <meta property="og:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
+      <meta name="twitter:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
     @endif
 
     <!-- Twitter card -->
@@ -30,10 +31,9 @@
     <meta name="twitter:description" content="@yield('description')" />
     <meta name="twitter:title" content="@yield('title')" />
     <meta name="twitter:site" content="@yield('twitter_id', '@fitzmuseum_uk')" />
-
     <meta name="twitter:creator" content="@yield('twitter_id', '@fitzmuseum_uk')" />
 
-
+    <!-- DNS prefetches -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">

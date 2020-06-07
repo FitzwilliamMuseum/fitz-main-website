@@ -11,7 +11,6 @@
       <div class="modal-body">
         <img src="@yield('hero_image')" class="img-fluid" />
       </div>
-
     </div>
   </div>
 </div>

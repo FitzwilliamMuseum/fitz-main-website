@@ -4,7 +4,6 @@
 @section('hero_image_title','Millais\'s Bridesmaid')
 @section('description', 'A list of governance files for the Fitzwilliam Museum')
 @section('keywords', 'fitzwilliam,museum,governance,pdf')
-
 @section('content')
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   <ul>
