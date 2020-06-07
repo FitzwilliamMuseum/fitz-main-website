@@ -7,6 +7,7 @@
 @foreach($pages['data'] as $page)
   @section('hero_image', $page['hero_image']['data']['full_url'])
   @section('hero_image_title', $page['hero_image_alt_text'])
+  @section('social_thumbnail', $page['hero_image']['data']['full_url'])
 @endforeach
 
 @section('themes')
@@ -19,10 +20,10 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($gallery['hero_image']))
-            <img class="img-fluid" src="{{ $gallery['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="galleries/{{ $gallery['slug']}}"><img class="img-fluid" src="{{ $gallery['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="A highlight image for {{ $gallery['gallery_name'] }}" loading="lazy"
             width="{{ $gallery['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $gallery['hero_image']['data']['thumbnails'][4]['height'] }}"/>
+            height="{{ $gallery['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">

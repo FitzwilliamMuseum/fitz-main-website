@@ -16,14 +16,21 @@
     <meta property="og:description" content="@yield('description')" />
     <meta property="og:url" content="{{ URL::to('/') }}" />
     <meta property="og:site_name" content="The Fitzwilliam Museum" />
-    <meta property="og:image" content="{{ URL::to('/images/') }}" />
+
+    @hasSection('social_thumbnail')
+    <meta property="og:image" content="@yield('social_thumbnail')" />
+    <meta name="twitter:image" content="@yield('social_thumbnail')" />
+    @else
+    <meta property="og:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
+    <meta name="twitter:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
+    @endif
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="@yield('description')" />
     <meta name="twitter:title" content="@yield('title')" />
     <meta name="twitter:site" content="@yield('twitter_id', '@fitzmuseum_uk')" />
-    <meta name="twitter:image" content="{{ URL::to('/images/') }}" />
+
     <meta name="twitter:creator" content="@yield('twitter_id', '@fitzmuseum_uk')" />
 
 

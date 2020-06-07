@@ -7,6 +7,7 @@
   @if(isset($gallery['hero_image']['data']['full_url']))
     @section('hero_image', $gallery['hero_image']['data']['full_url'])
     @section('hero_image_title', $gallery['hero_image_alt_text'])
+    @section('social_thumbnail', $gallery['hero_image']['data']['full_url'])
   @endif
 
   @section('content')
