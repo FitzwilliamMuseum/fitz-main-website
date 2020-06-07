@@ -23,6 +23,12 @@
     </div>
     @endif
 
+    @if($page['sms_id'])
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+      @include('includes.social.sms')
+    </div>
+    @endif
+
     @if($page['slug'] == 'school-sessions')
       @inject('learningController', 'App\Http\Controllers\learningController')
       @php
