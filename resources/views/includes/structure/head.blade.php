@@ -10,7 +10,7 @@
   </div>
 </div>
 <div class="container-fluid bg-black">
-  <div class="ml-3 pt-3 pb-2 mt-3">
+  <div class="ml-3 pt-4 pb-4">
     <h1 class="shout">@yield('title')</h1>
   </div>
 </div>
