@@ -34,7 +34,7 @@
       @yield('opening-hours')
   </div>
 
-  <div class="container-fluid parallax parallax-home">
+  <div class="container-fluid parallax parallax-home mt-3">
   </div>
 
   <div class="container">
