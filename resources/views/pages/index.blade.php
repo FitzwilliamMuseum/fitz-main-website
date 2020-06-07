@@ -37,6 +37,16 @@
       @include('includes.structure.sessions')
     @endif
 
+    @if($page['slug'] == 'young-people')
+      @inject('learningController', 'App\Http\Controllers\learningController')
+      @php
+      $sessions = $learningController::youngpeople();
+      @endphp
+      @include('includes.structure.young')
+    @endif
+
+
+
     @if(!empty($records))
     <h3>
       Related to this page

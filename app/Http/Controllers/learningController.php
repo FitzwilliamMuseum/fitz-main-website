@@ -120,6 +120,21 @@ class learningController extends Controller
         return $sessions;
     }
 
+    public static function youngpeople()
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[section][eq]' => 'young-peple'
+            )
+        );
+        $sessions = $api->getData();
+        return $sessions;
+    }
+
     public function session($slug)
     {
         $api = $this->getApi();
@@ -138,4 +153,6 @@ class learningController extends Controller
         $records = $mlt->getData();
         return view('learning.session', compact('session','records'));
     }
+
+
 }
