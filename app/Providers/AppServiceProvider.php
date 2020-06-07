@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
               $clean = 'A news article';
             break;
             case "page":
-              $clean = 'A pages or article';
+              $clean = 'A page or article';
             break;
             case "pharos":
               $clean = 'A collection highlight';
