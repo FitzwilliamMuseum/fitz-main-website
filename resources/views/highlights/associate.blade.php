@@ -27,7 +27,7 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($record['image']))
-            <img class="img-fluid" src="{{ $record['image'][0]}}"
+            <img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
             alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
           @endif
           <div class="container h-100">
