@@ -63,7 +63,7 @@
   @foreach($objects['data'] as $theme)
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
-      @if(!is_null($theme['hero_image']))
+      @if(!is_null($theme['image']))
       <a href="objects-and-artworks/highlights/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $theme['image_alt_text'] }}"
       loading="lazy"
