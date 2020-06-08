@@ -5,7 +5,7 @@
     <div class="card card-body h-100">
       @if(isset($tweet->extended_entities))
       @foreach($tweet->extended_entities as $entity)
-        <img class="img-fluid" src="{{ $entity[0]->media_url_https }}:small"
+        <img class="img-fluid twitter" src="{{ $entity[0]->media_url_https }}:small"
         width="680" height="672" loading="lazy" alt="An image from Twitter"/>
       @endforeach
       @else
