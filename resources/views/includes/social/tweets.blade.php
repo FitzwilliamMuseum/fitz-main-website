@@ -9,7 +9,7 @@
         width="680" height="672" loading="lazy" alt="An image from Twitter"/>
       @endforeach
       @else
-        <img class="img-fluid" src="https://pbs.twimg.com/profile_images/1057934206368710656/NE1KayiE.jpg"/>
+        <img class="img-fluid twitter" src="https://pbs.twimg.com/profile_images/1057934206368710656/NE1KayiE.jpg"/>
       @endif
       <div class="container h-100">
         <div class="contents-label mb-3">

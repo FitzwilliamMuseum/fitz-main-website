@@ -634,3 +634,9 @@ btn.btn.btn-wine.m-1 a {
 span.btn.btn-wine.m-1.p-2.share a {
     color: white!important;
 }
+
+img.img-fluid.twitter {
+  object-fit: cover;
+  width: 308px;
+  height: 308px;
+}
