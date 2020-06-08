@@ -64,11 +64,11 @@
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       @if(!is_null($theme['hero_image']))
-      <a href="objects-and-artworks/highlights/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['hero_image']['data']['thumbnails'][4]['url']}}"
-      alt="{{ $theme['hero_image_alt_text'] }}"
+      <a href="objects-and-artworks/highlights/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['image']['data']['thumbnails'][4]['url']}}"
+      alt="{{ $theme['image_alt_text'] }}"
       loading="lazy"
-      height="{{ $theme['hero_image']['data']['thumbnails'][4]['height'] }}"
-      width="{{ $theme['hero_image']['data']['thumbnails'][4]['width'] }}"/></a>
+      height="{{ $theme['image']['data']['thumbnails'][4]['height'] }}"
+      width="{{ $theme['image']['data']['thumbnails'][4]['width'] }}"/></a>
       @endif
       <div class="container h-100">
         <div class="contents-label mb-3">
