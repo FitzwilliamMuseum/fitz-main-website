@@ -59,7 +59,7 @@ class homeController extends Controller
     $research = $api3->getData();
 
     $api4 = $this->getApi();
-    $api4->setEndpoint('themes');
+    $api4->setEndpoint('pharos');
     $api4->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
@@ -68,7 +68,7 @@ class homeController extends Controller
           'limit' => 3
       )
     );
-    $themes = $api4->getData();
+    $objects = $api4->getData();
 
     $api5 = $this->getApi();
     $api5->setEndpoint('things_to_do');
@@ -119,7 +119,7 @@ class homeController extends Controller
     }
     return view('index', compact(
       'carousel','news', 'research',
-      'themes','tweets', 'videoList',
+      'objects','tweets', 'videoList',
       'things', 'insta'
     ));
   }

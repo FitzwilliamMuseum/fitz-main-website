@@ -60,11 +60,11 @@
 @endsection
 
 @section('themes')
-  @foreach($themes['data'] as $theme)
+  @foreach($objects['data'] as $theme)
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
       @if(!is_null($theme['hero_image']))
-      <a href="themes/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['hero_image']['data']['thumbnails'][4]['url']}}"
+      <a href="objects-and-artworks/highlights/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['hero_image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $theme['hero_image_alt_text'] }}"
       loading="lazy"
       height="{{ $theme['hero_image']['data']['thumbnails'][4]['height'] }}"
@@ -73,11 +73,11 @@
       <div class="container h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="themes/{{ $theme['slug']}}">{{ $theme['title']}}</a>
+            <a href="objects-and-artworks/highlights/{{ $theme['slug']}}">{{ $theme['title']}}</a>
           </h3>
         </div>
       </div>
-      <a href="themes/{{ $theme['slug']}}" class="btn btn-dark">Read more</a>
+      <a href="objects-and-artworks/highlights/{{ $theme['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach

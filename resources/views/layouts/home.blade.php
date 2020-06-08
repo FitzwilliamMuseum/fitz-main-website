@@ -37,7 +37,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2>Museum themes</h2>
+    <h2>Collections highlights</h2>
     <div class="row">
       @yield('themes')
     </div>
