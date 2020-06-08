@@ -91,8 +91,9 @@
 
     @section('360')
       @if(!empty($gallery['image_360_pano']))
-      <h4>{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h4>
         <div class="container">
+          <h4>{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h4>
+
           <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
             <div id="panorama"></div>
           </div>
@@ -119,7 +120,7 @@
     @section('sketchfab')
       @if(!empty($gallery['sketchfab_sketchup_id']))
       <div class="container">
-        <h2>Sketchup model of this gallery</h2>
+        <h4>Sketchup model of this gallery</h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
           <div class="embed-responsive embed-responsive-1by1">
             <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}" class="embed-responsive-item"
