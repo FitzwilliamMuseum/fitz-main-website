@@ -16,11 +16,11 @@
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
         @if(!is_null($project['hero_image']))
-          <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
+          <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
           alt="{{ $project['hero_image_alt_text'] }}"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-          />
+          /></a>
         @endif
         <div class="container h-100">
           <div class="contents-label mb-3">
@@ -47,12 +47,12 @@
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
         @if(!is_null($project['hero_image']))
-          <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           loading="lazy"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           alt="{{ $project['hero_image_alt_text'] }}"
-          />
+          /></a>
         @endif
         <div class="container h-100">
 
@@ -80,12 +80,12 @@
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
         @if(!is_null($project['hero_image']))
-          <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $project['hero_image_alt_text'] }}"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
           loading='lazy'
-          />
+          /></a>
         @endif
         <div class="container h-100">
           <div class="contents-label mb-3">
