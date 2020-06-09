@@ -295,9 +295,6 @@ label.cm-app-label {
 .shareTwitter a {
   color: #000;
 }
-.navbar {
-  z-index: 2147483647;
-}
 
 .txt-intro {
   text-align:left;
@@ -638,4 +635,6 @@ img.img-fluid.twitter {
   object-fit: cover;
   width: 308px;
   height: 308px;
+}
+.navbar-nav {
 }
