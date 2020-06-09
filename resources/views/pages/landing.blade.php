@@ -24,11 +24,11 @@
       <div class="col-md-6 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($project['hero_image']))
-            <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $project['hero_image_alt_text'] }}"
             width="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
             height="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-            loading="lazy" />
+            loading="lazy" /></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
