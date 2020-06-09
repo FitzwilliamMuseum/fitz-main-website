@@ -8,7 +8,7 @@
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
   <ul>
     @foreach($gov['data'] as $document)
-    <li>
+    <li class="square-list">
       <a href="{{ $document['file']['data']['full_url'] }}">{{ $document['title'] }}</a>
       {{ $document['type'] }} - @humansize($document['file']['filesize'])
     </li>

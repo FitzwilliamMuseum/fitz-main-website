@@ -636,5 +636,6 @@ img.img-fluid.twitter {
   width: 308px;
   height: 308px;
 }
-.navbar-nav {
+.square-list li {
+  list-style: square;
 }
