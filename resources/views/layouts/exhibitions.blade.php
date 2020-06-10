@@ -36,6 +36,7 @@
         @yield('archive')
         @yield('galleries')
         @yield('departments')
+        @yield('360')
 
   @include('includes.structure.share')
 
