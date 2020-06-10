@@ -1,13 +1,14 @@
 <div class="container-fluid head parallax position-relative">
-  <div class="absolute-bottom w-100">
-    <div class="mr-3">
-      <a tabindex="0" class="further-info fa-stack fa-lg float-right mr-4 mb-4" role="button" data-toggle="popover"
+  <div class="row w-100 col-md-12 absolute-bottom">
+    <div class="col-md-3 ml-3 absolute-bottom">
+      <a aria-label="The main Fitzwilliam website" href="https://www.fitzmuseum.cam.ac.uk"><img src="{{ URL::to('/images/logos/FV.svg') }}"
+      width="300" alt="The Fitz Logo" /></a>
+    
+      <a tabindex="0" class="further-info fa-stack fa-lg mr-4 mb-4" role="button" data-toggle="popover"
       data-placement="left" data-content="@yield('hero_image_title')">
       <i class="fa fa-circle fa-stack-2x"></i>
       <i class="fa fa-info fa-stack-1x fa-inverse"></i></a>
-    </div>
-    <div class="mr-3">
-      <a tabindex="0" class="further-info fa-stack fa-lg float-right mr-4 mb-4"
+      <a tabindex="0" class="further-info fa-stack fa-lg mr-4 mb-4"
       role="button" data-toggle="lightbox" data-max-width="80%" data-max-height="80%"
       data-remote="@yield('hero_image')" data-title="@yield('hero_image_title')">
       <i class="fa fa-circle fa-stack-2x"></i>

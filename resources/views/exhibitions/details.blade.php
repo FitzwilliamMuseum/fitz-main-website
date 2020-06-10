@@ -10,9 +10,13 @@
     @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       @markdown($coll['exhibition_narrative'])
+      @if(isset($coll['exhibition_abstract']))
+        @markdown($coll['exhibition_abstract'])
+      @endif
     </div>
 
-    <h2>Exhibition details</h2>
+    @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
+    <h3>Exhibition details</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       <ul>
         @if(isset($coll['exhibition_url']))
@@ -28,9 +32,10 @@
         @endif
       </ul>
     </div>
+    @endif
 
     @if(!empty($coll['exhibition_files']))
-    <h2>Exhibition files</h2>
+    <h3>Exhibition files</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       <ul>
         @foreach($coll['exhibition_files'] as $file)
@@ -43,9 +48,9 @@
     @endif
 
     @if(isset($coll['youtube_id']))
-      <h2>
+      <h3>
         Exhibition film
-      </h2>
+      </h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
@@ -61,7 +66,7 @@
     @if(!empty($coll['associated_curators']))
       @section('curators')
         <div class="container">
-          <h2>Associated curators</h2>
+          <h3>Associated curators</h3>
           <div class="row">
             @foreach($coll['associated_curators'] as $curator)
             <div class="col-md-4 mb-3">
@@ -95,7 +100,7 @@
     @if(!empty($coll['associated_departments']))
       @section('departments')
         <div class="container">
-          <h2>Associated departments</h2>
+          <h3>Associated departments</h3>
           <div class="row">
             @foreach($coll['associated_departments'] as $gallery)
             <div class="col-md-4 mb-3">
@@ -128,7 +133,7 @@
     @if(!empty($coll['associated_galleries']))
     @section('galleries')
       <div class="container">
-        <h2>Associated Galleries</h2>
+        <h3>Associated Galleries</h3>
         <div class="row">
           @foreach($coll['associated_galleries'] as $gallery)
           <div class="col-md-4 mb-3">
