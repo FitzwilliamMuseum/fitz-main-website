@@ -96,6 +96,44 @@
     @endif
     <!-- End of assoociated curators -->
 
+    @if(!empty($coll['exhibition_partners'] ))
+      @section('research-funders')
+        <div class="container">
+          <h3>Funders and partners</h3>
+          <div class="row">
+            @foreach($coll['exhibition_partners'] as $partner)
+            <div class="col-md-4 mb-3">
+              <div class="card card-body h-100">
+                @if(!is_null( $partner['partner']['partner_logo']))
+                  <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
+                  alt="Logo for {{ $partner['partner']['partner_full_name']}}"
+                  height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['height'] }}"
+                  width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['width'] }}"
+                  loading="lazy"/>
+                @else
+                  <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                  alt="The Fitzwilliam Museum's Gallery 3 roof"
+                  loading="lazy"/>
+                @endif
+                <div class="container h-100">
+                  <div class="contents-label mb-3">
+                    <h3>
+                      <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
+                    </h3>
+                    <p>{{ $partner['partner']['partner_type'][0]}}</p>
+                  </div>
+                </div>
+
+                <a href="{{ $partner['partner']['partner_url']}}" class="btn btn-dark">Read more</a>
+              </div>
+
+            </div>
+            @endforeach
+          </div>
+        </div>
+      @endsection
+    @endif
+
     <!-- Associated departments block -->
     @if(!empty($coll['associated_departments']))
       @section('departments')
@@ -165,6 +203,7 @@
     @section('360')
       @if(!empty($coll['image_360_pano']))
         <div class="container">
+          <h3>360 gallery image</h3>
           <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
             <div id="panorama"></div>
           </div>

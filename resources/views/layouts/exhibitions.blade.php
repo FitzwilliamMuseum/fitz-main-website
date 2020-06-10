@@ -29,7 +29,7 @@
         @yield('content')
   </div>
         @yield('curators')
-
+        @yield('research-funders')
         @yield('current')
         @yield('displays')
         @yield('future')
