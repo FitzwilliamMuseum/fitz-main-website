@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
+use App\MoreLikeThis;
 
 class exhibitionsController extends Controller
 {
@@ -12,7 +13,7 @@ class exhibitionsController extends Controller
     $directus = new DirectUs;
     return $directus;
   }
-  
+
   public function index()
   {
     $api = $this->getApi();
@@ -78,6 +79,10 @@ class exhibitionsController extends Controller
       )
     );
     $exhibitions = $api->getData();
-    return view('exhibitions.details', compact('exhibitions'));
+
+    $mlt = new MoreLikeThis;
+    $mlt->setLimit(3)->setType('exhibitions')->setQuery($slug);
+    $records = $mlt->getData();
+    return view('exhibitions.details', compact('exhibitions', 'records'));
   }
 }

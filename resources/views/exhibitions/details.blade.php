@@ -213,3 +213,31 @@
     @endsection
 
 @endforeach
+
+@if(!empty($records))
+@section('mlt')
+<div class="container">
+  <h3>Similar exhibitions</h3>
+  <div class="row">
+    @foreach($records as $record)
+    <div class="col-md-4 mb-3">
+      <div class="card card-body h-100">
+        @if(!is_null($record['smallimage']))
+          <img class="img-fluid" src="{{ $record['smallimage'][0]}}"
+          alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+        @endif
+        <div class="container h-100">
+          <div class="contents-label mb-3">
+            <h3>
+              <a href="/exhibitions/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+            </h3>
+          </div>
+        </div>
+        <a href="/exhibitions/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
+      </div>
+    </div>
+    @endforeach
+  </div>
+</div>
+@endsection
+@endif
