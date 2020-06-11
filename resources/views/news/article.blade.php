@@ -29,7 +29,14 @@
     </figure>
     @endif
     @markdown($project['article_body'])
+    @if($project['youtube_playlist_id'])
+      @section('youtube-playlist')
+      @include('includes.social.youtube-playlist')
+      @endsection
+    @endif
   </div>
+
+
 
   @if(!empty($records))
   <h3>Other recommended articles</h3>
@@ -39,13 +46,17 @@
       <div class="card card-body h-100">
         @if(!is_null($record['thumbnail']))
           <img class="img-fluid" src="{{ $record['thumbnail'][0]}}" alt="A highlight image for {{ $record['title'][0] }}"
-          height=""
-          width=""
+          height="600"
+          width="800"
           loading="lazy"
           />
         @else
           <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-          alt="No image was provided for {{ $record['title'][0] }}"/>
+          alt="No image was provided for {{ $record['title'][0] }}"
+          loading="lazy"
+          height="600"
+          width="800"
+          />
         @endif
         <div class="container h-100">
           <div class="contents-label mb-3">
@@ -55,7 +66,7 @@
             <h4>
               <small class="text-muted">{{  Carbon\Carbon::parse($record['pubDate'][0])->format('l dS F Y') }}</small>
             </h4>
-            
+
           </div>
         </div>
         <a href="/news/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
@@ -74,6 +85,8 @@
     </div>
   </div>
   @endif
+
+
     @if($project['vimeo_id'])
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
       <div class="embed-responsive embed-responsive-16by9">

@@ -57,6 +57,7 @@
     @yield('associated_pages')
     @yield('360')
     @yield('youtube')
+    @yield('youtube-playlist')
     @yield('sketchfab-collection')
     @yield('sketchfab')
     @yield('audio-guide')
