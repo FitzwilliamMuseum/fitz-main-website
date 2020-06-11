@@ -21,7 +21,7 @@
       <ul>
         @if(isset($coll['exhibition_url']))
           <li>
-            <a href="$coll['exhibition_url']">Exhibition website</a>
+            <a href="{{ $coll['exhibition_url']  }}">Exhibition website</a>
           </li>
         @endif
         @if(isset($coll['exhibition_start_date']))
