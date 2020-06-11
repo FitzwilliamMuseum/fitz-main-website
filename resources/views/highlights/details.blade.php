@@ -148,8 +148,8 @@
       <div class="col-md-4 mb-3">
         <div class="card card-body h-100">
           @if(!is_null($record['smallimage']))
-            <img class="img-fluid" src="{{ $record['smallimage'][0]}}"
-            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+            <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
+            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
           @endif
           <div class="container h-100">
             <div class="contents-label mb-3">
