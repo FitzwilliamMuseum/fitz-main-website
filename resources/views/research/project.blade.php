@@ -95,15 +95,19 @@
   @endif
 
   @if($project['youtube_id'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" title="A YouTube video related to this story"
-      src="https://www.youtube.com/embed/{{$project['youtube_id']}}" frameborder="0"
-      allowfullscreen></iframe>
+  @section('youtube')
+  <div class="container">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" title="A YouTube video related to this story"
+        src="https://www.youtube.com/embed/{{$project['youtube_id']}}" frameborder="0"
+        allowfullscreen></iframe>
+      </div>
     </div>
   </div>
+  @endsection
   @endif
-  
+
 @endforeach
 
 
