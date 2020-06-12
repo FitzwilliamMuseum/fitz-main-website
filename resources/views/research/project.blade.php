@@ -38,6 +38,11 @@
       @endif
     </ul>
   </div>
+  @if($project['publications'])
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    @markdown($project['publications'])
+  </div>
+  @endif
   @endsection
 
 @if(!empty($project['project_partnerships'] ))
