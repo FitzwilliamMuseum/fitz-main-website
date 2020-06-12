@@ -71,7 +71,10 @@
   @include('includes.structure.footer')
   @include('includes.structure.modal')
   @include('includes.scripts.javascript')
-  @mapscripts
+  @hasSection('map')
+    @mapscripts
+    @include('includes.scripts.mapjs')
+  @endif
 
 </body>
 </html>
