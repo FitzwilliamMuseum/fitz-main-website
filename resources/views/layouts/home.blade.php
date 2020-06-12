@@ -58,7 +58,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2>Our world class research</h2>
+    <h2>Our research</h2>
     <div class="row">
       @yield('research')
     </div>
