@@ -639,3 +639,7 @@ img.img-fluid.twitter {
 .square-list li {
   list-style: square;
 }
+.container-fluid.remove {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}

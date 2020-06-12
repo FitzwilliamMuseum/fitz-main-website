@@ -36,6 +36,14 @@
   <div class="container-fluid parallax second-parallax-home">
   </div>
 
+  <div class="container-fluid remove">
+    <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://poly.google.com/view/4GQfIK8JYDB/embed?chrome=min"
+    frameborder="0" style="border:none;" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; autoplay;"
+     allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="" ></iframe>
+    </div>
+  </div>
+
   <div class="container mt-3">
     <h2>Collections highlights</h2>
     <div class="row">
