@@ -645,12 +645,12 @@ img.img-fluid.twitter {
 }
 
 @media only screen and (max-width: 1024px) {
-  .head {
+  .head, .parallax {
       background-attachment: scroll !important;
   }
 }
 @media only screen and (max-width: 768px) {
-  .head {
+  .head, .parallax {
       background-attachment: scroll !important;
   }
 }
