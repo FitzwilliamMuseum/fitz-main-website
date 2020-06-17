@@ -49,8 +49,8 @@
         <div class="container h-100">
           <div class="contents-label mb-3">
             <h3>
-            <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
-          <  </h3>
+              <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
+            </h3>
           </div>
         </div>
       <a href="research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
