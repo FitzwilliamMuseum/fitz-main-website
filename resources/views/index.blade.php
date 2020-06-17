@@ -40,19 +40,19 @@
   @foreach($research['data'] as $project)
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
-      <div class="container h-100">
         @if(!is_null($project['hero_image']))
           <a href="research/projects/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $project['hero_image_alt_text'] }}" loading="lazy"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}" /></a>
         @endif
-        <div class="contents-label mb-3">
-          <h3>
+        <div class="container h-100">
+          <div class="contents-label mb-3">
+            <h3>
             <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
-          </h3>
+          <  </h3>
+          </div>
         </div>
-      </div>
       <a href="research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
