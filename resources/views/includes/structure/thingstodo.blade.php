@@ -14,7 +14,6 @@
             <h3>
               <a href="{{ $thing['url'] }}">{{ $thing['title'] }}</a>
             </h3>
-            @markdown($thing['body'])
           </div>
         </div>
       </div>
