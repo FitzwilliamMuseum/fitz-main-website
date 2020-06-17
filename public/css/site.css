@@ -222,8 +222,6 @@ video {
   background-color: hsla(0, 93%, 31%, 0.98);
 }
 #sponsors img {
-  height: 50px;
-  margin-right: 10px;
   margin-bottom: 10px;
 }
 
@@ -695,4 +693,7 @@ img.img-fluid.twitter {
 .negative-padding {
     margin-left: -20px !important;
     margin-right: -20px !important;
+}
+.carousel-caption {
+  position: static !important;
 }
