@@ -1,28 +1,28 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{{ $carousel['data']['image_one']['data']['full_url']}}"
+    <div class="carousel-item active" style="background-image: url({{ $carousel['data']['image_one']['data']['full_url']}});">
+      <img class="d-block w-100" src="{{ $carousel['data']['image_one']['data']['data']['thumbnails'][2]['url']}}"
       alt="{{ $carousel['data']['image_one_alt_text'] }}" loading="lazy" />
       <div class="carousel-caption d-none d-md-block bg-black">
         <h5>{{ $carousel['data']['image_one_alt_text'] }}</h5>
       </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{ $carousel['data']['image_two']['data']['full_url']}}"
+    <div class="carousel-item" style="background-image: url({{ $carousel['data']['image_two']['data']['full_url']}});">
+      <img class="d-block w-100" src="{{ $carousel['data']['image_two']['data']['data']['thumbnails'][2]['url']}}"
       alt="{{ $carousel['data']['image_two_alt_text']}}" loading="lazy"  />
       <div class="carousel-caption d-none d-md-block bg-black">
         <h5>{{ $carousel['data']['image_two_alt_text']}}</h5>
       </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{ $carousel['data']['image_three']['data']['full_url']}}"
+    <div class="carousel-item" style="background-image: url({{ $carousel['data']['image_three']['data']['full_url']}});">
+      <img class="d-block w-100" src="{{ $carousel['data']['image_three']['data']['data']['thumbnails'][2]['url']}}"
       alt="{{ $carousel['data']['image_three_alt_text'] }}" loading="lazy" />
       <div class="carousel-caption d-none d-md-block bg-black">
         <h5>{{ $carousel['data']['image_three_alt_text'] }}</h5>
       </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{ $carousel['data']['image_four']['data']['full_url']}}"
+    <div class="carousel-item" style="background-image: url({{ $carousel['data']['image_four']['data']['full_url']}});">
+      <img class="d-block w-100" src="{{ $carousel['data']['image_four']['data']['data']['thumbnails'][2]['url']}}"
       alt="{{ $carousel['data']['image_four_alt_text'] }}" loading="lazy" />
       <div class="carousel-caption d-none d-md-block bg-black">
         <h5>{{ $carousel['data']['image_four_alt_text'] }}</h5>

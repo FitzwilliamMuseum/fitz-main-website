@@ -41,7 +41,7 @@
     <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://poly.google.com/view/4GQfIK8JYDB/embed?chrome=min"
     frameborder="0" style="border:none;" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; autoplay;"
-     allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="" ></iframe>
+     allowfullscreen="1" mozallowfullscreen="1" webkitallowfullscreen="true" onmousewheel="" ></iframe>
     </div>
   </div>
 
@@ -52,8 +52,8 @@
     </div>
   </div>
 
-  <div class="container-fluid bg-black">
-    <div class="container">
+  <div class="container-fluid">
+    <div class="negative-padding">
       @include('includes.structure.carousel')
     </div>
   </div>
