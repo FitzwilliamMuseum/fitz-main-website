@@ -88,5 +88,12 @@ Route::get('/ping', 'searchController@ping');
 
 //
 //
+
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
+
 Route::get('/{section}/{slug}/', 'pagesController@index');
 Route::get('/{section}/', 'pagesController@landing');
