@@ -82,9 +82,9 @@ class searchController extends Controller
 
   public function ping()
   {
-      // create a ping query
+      $configSolr = \Config::get('solarium');
+      $this->client = new Client($configSolr);
       $ping = $this->client->createPing();
-      // execute the ping query
       try {
           $this->client->ping($ping);
           return response()->json('OK');
