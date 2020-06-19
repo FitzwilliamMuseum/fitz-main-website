@@ -169,4 +169,39 @@ class highlightsController extends Controller
       $pharos = $api->getData();
       return view('highlights.sections', compact('pharos'));
     }
+
+    public function contextual()
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('pharos_pages');
+      $api->setArguments(
+        $args = array(
+            'fields' => 'section,hero_image.*',
+            'meta' => '*'
+        )
+      );
+      $pharos = $api->getData();
+      $context = $this->group_by("section", $pharos['data']);
+      return view('highlights.context', compact('context'));
+    }
+
+    /**
+     * Function that groups an array of associative arrays by some key.
+     *
+     * @param {String} $key Property to sort by.
+     * @param {Array} $data Array that stores multiple associative arrays.
+     */
+     public function group_by($key, $data) {
+        $result = array();
+
+        foreach($data as $val) {
+            if(array_key_exists($key, $val)){
+                $result[$val[$key]][] = $val;
+            }else{
+                $result[""][] = $val;
+            }
+        }
+
+        return $result;
+    }
 }
