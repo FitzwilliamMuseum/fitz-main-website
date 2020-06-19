@@ -155,4 +155,18 @@ class highlightsController extends Controller
       $records = $mlt->getData();
       return view('highlights.stop', compact('stop', 'records'));
     }
+
+    public function pharosSections($section){
+      $api = $this->getApi();
+      $api->setEndpoint('pharos_pages');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*.*',
+            'meta' => '*',
+            'filter[section][eq]' => $section
+        )
+      );
+      $pharos = $api->getData();
+      return view('highlights.sections', compact('pharos'));
+    }
 }

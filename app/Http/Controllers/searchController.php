@@ -594,7 +594,7 @@ class searchController extends Controller
       $doc->body = strip_tags($profile['body']);
       $doc->slug = $profile['slug'];
       $doc->section = $profile['section'];
-      $doc->url = $this->url . 'objects-and-artworks/highlights/'.  $profile['section'] . '/' . $profile['slug'];
+      $doc->url = $this->url . 'objects-and-artworks/highlights/context/'.  $profile['section'] . '/' . $profile['slug'];
       $doc->contentType = 'pharospages';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
