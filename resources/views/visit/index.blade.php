@@ -47,7 +47,7 @@
 <div class="container">
   <div class="row">
     @foreach($associated['data'] as $project)
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
         @if(!is_null($project['hero_image']))
         <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
