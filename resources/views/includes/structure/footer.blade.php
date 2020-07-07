@@ -36,9 +36,9 @@
             <!--- Footer stuff -->
             <footer class="text-black">
 
-              <div class="container-fluid">
+              <div class="container">
                 <div class="row">
-                  <div class="col-sm mt-2 mb-2 border-right border-black">
+                  <div class="col-sm mt-2 mb-2">
                     <h4 class="lead">Contact us</h4>
                     <p>
                       The Fitzwilliam Museum,<br/>
@@ -51,7 +51,7 @@
                         aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
                       </p>
                     </div>
-                    <div class="col-sm mt-2 mb-2 border-right border-black ">
+                    <div class="col-sm mt-2 mb-2">
                       <h4>Useful links</h4>
 
                       <ul class="share">
@@ -69,7 +69,7 @@
 
                               </ul>
                             </div>
-                            <div class="col-sm mt-2 mb-2 border-right border-black ">
+                            <div class="col-sm mt-2 mb-2">
                               <h4>Join our conversations</h4>
                               <p class="share">
                                 <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK"><i class="fab fa-twitter fa-2x p-2"></i></a>
