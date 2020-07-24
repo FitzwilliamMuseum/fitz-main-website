@@ -37,7 +37,7 @@
 @endsection
 
 @section('fundraising')
-<div class="container">
+<div class="container mt-3">
   <h2>Support us</h2>
 <div class="row">
   @foreach($fundraising['data'] as $project)
