@@ -30,7 +30,6 @@
 
   <div class="container-fluid parallax second-parallax-home">
   </div>
-  @include('includes.structure.fundraising')
 
   @yield('fundraising')
 
