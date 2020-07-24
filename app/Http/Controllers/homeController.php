@@ -109,6 +109,7 @@ class homeController extends Controller
       ]);
       Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
     }
+    $tweets = array_slice($tweets, 0,3);
     // dd($tweets);
     if (Cache::has('cache_yt')) {
       $videoList = Cache::get('cache_yt');
