@@ -32,6 +32,7 @@
   </div>
 
   @yield('fundraising')
+  @include('includes.structure.thingstodo')
 
   <div class="container-fluid parallax second-parallax-home mt-3">
   </div>
