@@ -76,8 +76,8 @@
     @yield('twitter')
   </div>
 
-  <div class="container-fluid parallax third-parallax-home-lower mb-3">
-  </div>
+  <!-- <div class="container-fluid parallax third-parallax-home-lower mb-3">
+  </div> -->
 
   <!-- <div class="container ">
     <h2>Our Instagram profile</h2>
