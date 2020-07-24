@@ -58,6 +58,17 @@ class homeController extends Controller
     );
     $research = $api3->getData();
 
+    $api6 = $this->getApi();
+    $api6->setEndpoint('fundraising');
+    $api6->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'limit' => 3
+      )
+    );
+    $donate = $api6->getData();
+
     $api4 = $this->getApi();
     $api4->setEndpoint('pharos');
     $api4->setArguments(
@@ -120,7 +131,7 @@ class homeController extends Controller
     return view('index', compact(
       'carousel','news', 'research',
       'objects','tweets', 'videoList',
-      'things',
+      'things', 'donate'
       // 'insta'
     ));
   }

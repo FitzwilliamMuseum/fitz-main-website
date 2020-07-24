@@ -36,6 +36,26 @@
   @endforeach
 @endsection
 
+@section('fundraising')
+  @foreach($fundraising['data'] as $project)
+  <div class="col-md-4 mb-3">
+    <div class="card card-body h-100">
+      @if(!is_null($project['hero_image']))
+        <a href="{{ $project['url']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+      alt="{{ $project['hero_image_alt_text'] }}" /></a>
+      @endif
+      <div class="container h-100">
+        <div class="contents-label mb-3">
+          <h3>
+            <a href="{{ $project['url']}}">{{ $project['title']}}</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endforeach
+@endsection
+
 @section('research')
   @foreach($research['data'] as $project)
   <div class="col-md-4 mb-3">

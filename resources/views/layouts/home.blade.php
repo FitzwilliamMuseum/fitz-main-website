@@ -30,8 +30,9 @@
 
   <div class="container-fluid parallax second-parallax-home">
   </div>
+  @include('includes.structure.fundraising')
 
-  @include('includes.structure.thingstodo')
+  @yield('fundraising')
 
   <div class="container-fluid parallax second-parallax-home mt-3">
   </div>
@@ -80,7 +81,7 @@
     <h2>Our Instagram profile</h2>
     @yield('instagram')
   </div> -->
-  
+
   <div class="container-fluid parallax fourth-parallax-home mb-3">
   </div>
 
