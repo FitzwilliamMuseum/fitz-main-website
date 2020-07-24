@@ -37,6 +37,7 @@
 @endsection
 
 @section('fundraising')
+<div class="row">
   @foreach($fundraising['data'] as $project)
   <div class="col-md-4 mb-3">
     <div class="card card-body h-100">
@@ -54,6 +55,7 @@
     </div>
   </div>
   @endforeach
+</div>
 @endsection
 
 @section('research')
