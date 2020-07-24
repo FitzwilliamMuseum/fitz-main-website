@@ -131,7 +131,7 @@ class homeController extends Controller
     return view('index', compact(
       'carousel','news', 'research',
       'objects','tweets', 'videoList',
-      'things', 'donate'
+      'things', 'fundraising'
       // 'insta'
     ));
   }
