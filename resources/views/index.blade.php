@@ -61,7 +61,7 @@
 </div>
 @endsection
 
-@include('include.structure.thingstodo')
+@include('includes.structure.thingstodo')
 
 @section('research')
   @foreach($research['data'] as $project)
