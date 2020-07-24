@@ -67,7 +67,7 @@ class homeController extends Controller
           'limit' => 3
       )
     );
-    $donate = $api6->getData();
+    $fundraising = $api6->getData();
 
     $api4 = $this->getApi();
     $api4->setEndpoint('pharos');
