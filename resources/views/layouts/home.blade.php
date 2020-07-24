@@ -32,13 +32,15 @@
   </div>
 
   @yield('fundraising')
+  <div class="container-fluid parallax second-parallax-home mt-3">
+  </div>
   @include('includes.structure.thingstodo')
 
   <div class="container-fluid parallax second-parallax-home mt-3">
   </div>
 
   <div class="container-fluid remove mt-4">
-    <div class="container"><h2>Visit our galleries in 360 vision</h2></div>
+    <div class="container"><h2 class="mb-2">Visit our galleries in 360 vision</h2></div>
     <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://poly.google.com/view/4GQfIK8JYDB/embed?chrome=min"
     frameborder="0" style="border:none;" allowvr="yes" allow="vr; xr; accelerometer; magnetometer; gyroscope; autoplay;"
