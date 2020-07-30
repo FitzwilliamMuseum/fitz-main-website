@@ -1,6 +1,6 @@
 <div class="container-fluid head parallax ">
   <div class="row">
-  <div class="col-md-6 mb-3 mt-3 mx-auto d-block">
+  <div class="col-md-6 mb-3 mt-3 mx-auto d-block book">
     <div class="card card-body">
       <a href="https://tickets.museums.cam.ac.uk"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/opening soon.jpg?key=directus-large-contain" alt="Opening the Fitzwilliam banner"></a>
       <div class="container h-100">
