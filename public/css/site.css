@@ -701,3 +701,22 @@ img.img-fluid.twitter {
 .pagination, .breadcrumb {
   background-color: #fff !important;
 }
+
+@media (max-width: 480px)
+ul.logos-sponsors li {
+    display: block;
+    list-style: none;
+    padding: 10px;
+    text-align: center!important;
+}
+
+.logos-sponsors img {
+    height: 86px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.col-md-6.mb-3.mt-3.mx-auto.d-block.book {
+    margin-top: 100px!important;
+}

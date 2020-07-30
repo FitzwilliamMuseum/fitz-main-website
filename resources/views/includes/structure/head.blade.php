@@ -1,20 +1,16 @@
-<div class="container-fluid head parallax position-relative">
-  <div class="absolute-bottom w-95">
-    <div class="mr-3">
-      <a tabindex="0" class="further-info fa-stack fa-lg float-right mr-4 mb-4" role="button" data-toggle="popover"
-      data-placement="left" data-content="@yield('hero_image_title')">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-info fa-stack-1x fa-inverse"></i></a>
-    </div>
-    <div class="mr-3">
-      <a tabindex="0" class="further-info fa-stack fa-lg float-right mr-4 mb-4"
-      role="button" data-toggle="lightbox" data-max-width="1024"
-      data-remote="@yield('hero_image')" data-title="@yield('hero_image_title')">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-expand fa-stack-1x fa-inverse"></i>
-    </a>
+<div class="container-fluid head parallax ">
+  <div class="row">
+  <div class="col-md-6 mb-3 mt-3 mx-auto d-block">
+    <div class="card card-body">
+      <a href="news/reopening-the-fitzwilliam-museum"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/opening soon.jpg?key=directus-large-contain" alt="Opening the Fitzwilliam banner"></a>
+      <div class="container h-100">
+        <div class="contents-label mb-3">
+        </div>
+      </div>
+      <a href="news/reopening-the-fitzwilliam-museum" class="btn btn-dark">Book your ticket now</a>
     </div>
   </div>
+</div>
 </div>
 <div class="container-fluid bg-black">
   <div class="ml-3 pt-4 pb-4">
