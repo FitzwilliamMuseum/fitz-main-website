@@ -27,7 +27,7 @@
       </div>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('https://tickets.museums.cam.ac.uk') }}">Exhibitions</a>
+      <a class="nav-link" href="{{ URL::to('https://tickets.museums.cam.ac.uk') }}">Tickets</a>
     </li>
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/news') }}">News</a>
