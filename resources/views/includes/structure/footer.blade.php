@@ -1,117 +1,111 @@
 <!-- Footer logos -->
+<div class="bg-white p-2 row">
+  <div class="container ">
+    <div class="row">
+      <div class="col">
+        <a href="http://www.museums.cam.ac.uk"><img class="img-fluid" loading="lazy" alt="University of Cambridge Museums logo" src="/images/logos/ucm_logo_black_white.png" width="162" height="50"/></a>
+      </div>
+        <div class="col">
+          <a href="http://www.artscouncil.org.uk/what-we-do/raising-standards/designation-scheme/"><img class="img-fluid" alt="Designation scheme Logo" loading="lazy" src="/images/logos/designation.png" height="50" width="50" /></a>
+        </div>
+        <div class="col">
+          <a href="http://www.artscouncil.org.uk/what-we-do/supporting-museums/accreditation-scheme/"><img class="img-fluid" alt="Accredited Museum status logo" loading="lazy" src="/images/logos/accredited.png" width="53" height="50" /></a>
+        </div>
+        <div class="col">
+          <a href="http://www.cambridge.gov.uk/"><img class="img-fluid" alt="Cambridge City Council Logo" loading="lazy" src="/images/logos/camcity_logo.png" width="40" height="50" /></a>
+        </div>
+        <div class="col">
+          <a href="http://www.artscouncil.org.uk/"><img class="img-fluid" alt="Arts Council England Logo" src="/images/logos/ace.png" loading="lazy" width="159" height="50" /></a>
+        </div>
+        <div class="col">
+          <a href="https://re.ukri.org/"><img class="img-fluid" alt="Research England logo" loading="lazy" src="/images/logos/research_england.png" width="92" height="50" /></a>
+        </div>
+        <div class="col">
+          <img class="img-fluid" alt="Research England logo" loading="lazy" src="/images/logos/goodToGo.png" width="86" height="86"/>
+        </div>
+    </div>
+  </div>
+</div>
 
-<div class="bg-white p-2">
-  <div class="row mx-auto">
-    <div class="mx-auto mt-3 " id="sponsors">
-      <a href="http://www.museums.cam.ac.uk"><img class="img-responsive" loading="lazy"
-        alt="University of Cambridge Museums logo"
-        src="/images/logos/ucm_logo_black_white.png"
-        width="162" height="50"
-        ></a>
-        <a href="http://www.artscouncil.org.uk/what-we-do/raising-standards/designation-scheme/"><img
-          class="img-responsive" alt="Designation scheme Logo" loading="lazy"
-          src="/images/logos/designation.png"
-          height="50" width="50"
-          ></a>
-          <a href="http://www.artscouncil.org.uk/what-we-do/supporting-museums/accreditation-scheme/"><img
-            class="img-responsive" alt="Accredited Museum status logo" loading="lazy"
-            src="/images/logos/accredited.png" width="53" height="50"
-            ></a>
-            <a href="http://www.cambridge.gov.uk/"><img class="img-responsive" alt="Cambridge City Council Logo" loading="lazy"
-              src="/images/logos/camcity_logo.png" width="40" height="50"
-              ></a>
-              <a href="http://www.artscouncil.org.uk/"><img
-                class="img-responsive" alt="Arts Council England Logo" src="/images/logos/ace.png" loading="lazy"
-                width="159" height="50"
-                ></a>
-                <a href="https://re.ukri.org/"><img class="img-responsive" alt="Research England logo" loading="lazy"
-                  src="/images/logos/research_england.png"
-                  width="92" height="50"
-                  ></a>
+<!--- Footer stuff -->
+<footer class="text-black">
 
-                </div>
-              </div>
-            </div>
+<div class="container">
+<div class="row">
+<div class="col-sm mt-2 mb-2">
+<h4 class="lead">Contact us</h4>
+<p>
+The Fitzwilliam Museum,<br/>
+Trumpington Street,<br/>
+Cambridge<br/>
+CB2 1RB<br/>
+Tel: +44 (0)1223 332900<br />
+What3Words location: <span class="w3w"><a
+  href="https://map.what3words.com/lofts.puzzle.given"
+  aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
+</p>
+</div>
+<div class="col-sm mt-2 mb-2">
+<h4>Useful links</h4>
 
-            <!--- Footer stuff -->
-            <footer class="text-black">
+<ul class="share">
+  <li><a href="https://www.museums.cam.ac.uk/"
+    aria-label="The University of Cambridge museums site">University
+    of Cambridge Museums</a></li>
+    <li><a href="/about-us/terms-of-use"
+      aria-label="Website terms and conditions">Website Terms of Use</a></li>
+      <li><a href="/about-us/privacy-and-cookies">Cookies, privacy & accessibility</a></li>
+      <li><a aria-label="Contact the museum" href="/about-us/contact-us">Contact us</a></li>
+      <li><a aria-label="Join our mailing list"
+        href="/signup">Join the Fitz email list</a></li>
+        <li><a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
+          aria-label="Modern Slavery Act statement of compliance">Modern Slavery Act Statement</a>
 
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm mt-2 mb-2">
-                    <h4 class="lead">Contact us</h4>
-                    <p>
-                      The Fitzwilliam Museum,<br/>
-                      Trumpington Street,<br/>
-                      Cambridge<br/>
-                      CB2 1RB<br/>
-                      Tel: +44 (0)1223 332900<br />
-                      What3Words location: <span class="w3w"><a
-                        href="https://map.what3words.com/lofts.puzzle.given"
-                        aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
-                      </p>
-                    </div>
-                    <div class="col-sm mt-2 mb-2">
-                      <h4>Useful links</h4>
+        </ul>
+      </div>
+      <div class="col-sm mt-2 mb-2">
+        <h4>Join our conversations</h4>
+        <p class="share">
+          <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK"><i class="fab fa-twitter fa-2x p-2"></i></a>
+          <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk"><i class="fab fa-instagram fa-2x  p-2"></i></a>
+          <a aria-label="Fitzwilliam Museum facebook account" href="https://www.facebook.com/fitzwilliammuseum/"><i class="fab fa-facebook fa-2x p-2"></i></a>
+          <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/beta.fitz.ms"><i
+            class="fab fa-github fa-2x p-2"></i></a>
 
-                      <ul class="share">
-                        <li><a href="https://www.museums.cam.ac.uk/"
-                          aria-label="The University of Cambridge museums site">University
-                          of Cambridge Museums</a></li>
-                          <li><a href="/about-us/terms-of-use"
-                            aria-label="Website terms and conditions">Website Terms of Use</a></li>
-                            <li><a href="/about-us/privacy-and-cookies">Cookies, privacy & accessibility</a></li>
-                            <li><a aria-label="Contact the museum" href="/about-us/contact-us">Contact us</a></li>
-                            <li><a aria-label="Join our mailing list"
-                              href="/signup">Join the Fitz email list</a></li>
-                              <li><a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
-                                aria-label="Modern Slavery Act statement of compliance">Modern Slavery Act Statement</a>
+            <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg"><i
+              class="fab fa-youtube fa-2x p-2"></i></a>
+              <span class="padding-top:10px;"><a aria-label="Fitzwilliam Museum github account" href="https://www.sketchfab.com/fitzwilliammuseum/">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
+                viewBox="0 0 50 50" style="fill:#000;">
+                <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z
+                M24,38.805l-10-6.25V20.664l10,6.458V38.805z M14.367,18.484L25,11.819l10.633,6.665L25,25.149L14.367,
+                18.484z M36,32.555l-10,6.25V27.122l10-6.458V32.555z">
+              </path>
+            </svg>
+          </a></span>
+        </p>
+        <h4>Subscribe to feeds</h4>
+        <p class="share">
+          <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/news/feed') }}"><i class="fas fa-rss"></i></a>
+        </p>
+      </div>
+      <div class="col-sm mt-2 mb-2">
+        <h4 class="lead">About the University</h4>
+        <ul class="share">
+          <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">How the University and Colleges work</a></li>
+          <li><a href="https://cam.ac.uk/about-the-university/visiting-the-university" aria-label="How to visit the university">Visiting the University</a></li>
+          <li><a href="https://www.philanthropy.cam.ac.uk/give-now" aria-label="How to support the University" >Give to Cambridge</a></li>
+        </ul>
+        <h4>License</h4>
+        <ul class="share">
+          <li>&copy; 2020 The University of Cambridge</li>
+          <li>Content: CC-BY</li>
+          <li>Code: AGPL</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-                              </ul>
-                            </div>
-                            <div class="col-sm mt-2 mb-2">
-                              <h4>Join our conversations</h4>
-                              <p class="share">
-                                <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK"><i class="fab fa-twitter fa-2x p-2"></i></a>
-                                <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk"><i class="fab fa-instagram fa-2x  p-2"></i></a>
-                                <a aria-label="Fitzwilliam Museum facebook account" href="https://www.facebook.com/fitzwilliammuseum/"><i class="fab fa-facebook fa-2x p-2"></i></a>
-                                <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/beta.fitz.ms"><i
-                                  class="fab fa-github fa-2x p-2"></i></a>
+  <a href="#0" class="cd-top js-cd-top">Top</a>
 
-                                  <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg"><i
-                                    class="fab fa-youtube fa-2x p-2"></i></a>
-                                    <span class="padding-top:10px;"><a aria-label="Fitzwilliam Museum github account" href="https://www.sketchfab.com/fitzwilliammuseum/">
-                                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
-                                      viewBox="0 0 50 50" style="fill:#000;">
-                                      <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z
-                                      M24,38.805l-10-6.25V20.664l10,6.458V38.805z M14.367,18.484L25,11.819l10.633,6.665L25,25.149L14.367,
-                                      18.484z M36,32.555l-10,6.25V27.122l10-6.458V32.555z">
-                                    </path>
-                                  </svg>
-                                </a></span>
-                              </p>
-                              <h4>Subscribe to feeds</h4>
-                              <p class="share">
-                                <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/news/feed') }}"><i class="fas fa-rss"></i></a>
-                              </p>
-                            </div>
-                            <div class="col-sm mt-2 mb-2">
-                              <h4 class="lead">About the University</h4>
-                              <ul class="share">
-                                <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">How the University and Colleges work</a></li>
-                                <li><a href="https://cam.ac.uk/about-the-university/visiting-the-university" aria-label="How to visit the university">Visiting the University</a></li>
-                                <li><a href="https://www.philanthropy.cam.ac.uk/give-now" aria-label="How to support the University" >Give to Cambridge</a></li>
-                              </ul>
-                              <h4>License</h4>
-                              <ul class="share">
-                                <li>&copy; 2020 The University of Cambridge</li>
-                                <li>Content: CC-BY</li>
-                                <li>Code: AGPL</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                        <a href="#0" class="cd-top js-cd-top">Top</a>
-
-                      </footer>
+</footer>
