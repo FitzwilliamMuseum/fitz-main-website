@@ -23,14 +23,12 @@
         <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Galleries</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Press room</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/directors') }}">Our directors</a>
+        <a class="dropdown-item" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
       </div>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
+      <a class="nav-link" href="{{ URL::to('https://tickets.museums.cam.ac.uk') }}">Exhibitions</a>
     </li>
-    <!-- <li class="nav-item active">
-      <a class="nav-link" href="https://my.fitzmuseum.cam.ac.uk">Events</a>
-    </li> -->
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/news') }}">News</a>
     </li>

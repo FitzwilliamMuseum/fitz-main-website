@@ -20,9 +20,6 @@
         <div class="col">
           <a href="https://re.ukri.org/"><img class="img-fluid" alt="Research England logo" loading="lazy" src="/images/logos/research_england.png" width="92" height="50" /></a>
         </div>
-        <div class="col">
-          <img class="img-fluid" alt="Research England logo" loading="lazy" src="/images/logos/goodToGo.png" width="86" height="86"/>
-        </div>
     </div>
   </div>
 </div>
