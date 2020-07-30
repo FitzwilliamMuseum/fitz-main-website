@@ -29,6 +29,7 @@
   </div>
 
   <div class="container-fluid parallax second-parallax-home">
+
   </div>
 
   @yield('fundraising')
