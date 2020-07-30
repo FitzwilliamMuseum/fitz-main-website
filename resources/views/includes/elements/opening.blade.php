@@ -1,3 +1,4 @@
+<p>We reopen to all on the 11th August.</p>
 <p>
   Tuesday - Saturday: 10:00 - 17:00<br/>
   Sundays & Bank Holidays: 12:00 - 17:00<br/>
