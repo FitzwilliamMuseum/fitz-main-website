@@ -12,9 +12,16 @@ use Solarium\Core\Client\Client;
 
 use App\DirectUs;
 use App\MoreLikeThis;
+use Elasticsearch\ClientBuilder;
+use App\FitzElastic\Elastic;
 
 class highlightsController extends Controller
 {
+    public function getElastic()
+    {
+      return new Elastic();
+    }
+
     public function index(Request $request)
     {
       $perPage = 12;
@@ -52,7 +59,20 @@ class highlightsController extends Controller
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
       $records = $mlt->getData();
-      return view('highlights.details', compact('pharos', 'records'));
+      $params = [
+        'index' => 'ciim',
+        'size' => 1,
+        'body'  => [
+          'query' => [
+            'match' => [
+              'identifier.accession_number' => strtoupper($pharos['data'][0]['adlib_id'])
+            ]
+          ]
+        ]
+      ];
+      $adlib = $this->getElastic()->setParams($params)->getSearch();
+      $adlib = $adlib['hits']['hits'];
+      return view('highlights.details', compact('pharos', 'records', 'adlib'));
     }
 
     public function associate($section, $slug)

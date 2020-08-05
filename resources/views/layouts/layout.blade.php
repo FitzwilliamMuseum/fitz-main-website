@@ -35,6 +35,7 @@
   <div class="container">
     @include('includes.structure.breadcrumb')
     @yield('content')
+    @yield('adlib')
     @yield('timeline')
   </div>
 

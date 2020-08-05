@@ -31,7 +31,7 @@
     @markdown($record['description'])
   </div>
 
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <!-- <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
     <h3>Further information</h3>
     <ul>
       <li>Collections ID: {{$record['adlib_id']}}</li>
@@ -51,7 +51,9 @@
         <li>Map coordinates: {{ $record['map']['lat'] }}, {{$record['map']['lng']}}</li>
       @endif
     </ul>
-  </div>
+
+
+  </div> -->
 
   @endsection
 
@@ -169,4 +171,37 @@
   </div>
   @endsection
   @endif
+
 @endforeach
+@section('adlib')
+@foreach($adlib as $record)
+<h3>Data from our collections database</h3>
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+
+      @include('includes/elements/descriptive')
+
+      @include('includes/elements/legal')
+
+      @include('includes/elements/lifecycle')
+
+      @include('includes/elements/measurements')
+
+      @include('includes/elements/agents-subjects')
+
+      @include('includes/elements/medium')
+
+      @include('includes/elements/materials')
+
+      @include('includes/elements/techniques')
+
+      @include('includes/elements/inscriptions')
+
+      @include('includes/elements/department')
+
+
+      @include('includes/elements/identification')
+
+      @include('includes/elements/institutions')
+    </div>
+  @endforeach
+  @endsection

@@ -30,7 +30,8 @@
         "spatie/laravel-responsecache": "^6.6",
         "symfony/cache": "^5.1",
         "thepinecode/blade-filters": "^0.6.0",
-        "thujohn/twitter": "^2.2"
+        "thujohn/twitter": "^2.2",
+        "elasticsearch/elasticsearch": "^7.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
