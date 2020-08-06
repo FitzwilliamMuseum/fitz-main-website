@@ -33,19 +33,48 @@
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span>
       </div>
       <h4>
-        Collections database information
-      </h4>
-      <div class="shadow-sm p-3 mx-auto mb-3 mt-3 rounded">
-
-          @markdown($look['object_metadata'])
-      </div>
-      <h4>
         Description of this object or artwork
       </h4>
       <div class="shadow-sm p-3 mx-auto  rounded">
 
           @markdown($look['main_text_description'])
       </div>
+      @foreach($adlib as $record)
+      <h4>
+        Collections database information
+      </h4>
+      <div class="shadow-sm p-3 mx-auto mb-3 mt-3 rounded">
+
+            @include('includes/elements/descriptive')
+
+            @include('includes/elements/legal')
+
+            @include('includes/elements/lifecycle')
+
+            @include('includes/elements/measurements')
+
+            @include('includes/elements/agents-subjects')
+
+            @include('includes/elements/medium')
+
+            @include('includes/elements/materials')
+
+            @include('includes/elements/techniques')
+
+            @include('includes/elements/inscriptions')
+
+            @include('includes/elements/department')
+
+
+            @include('includes/elements/identification')
+
+            @include('includes/elements/institutions')
+          </div>
+        @endforeach
+
+
+
+
     </div>
     <!-- End of column one -->
 

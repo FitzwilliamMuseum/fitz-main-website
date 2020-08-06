@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
 use App\MoreLikeThis;
+use App\FitzElastic\Elastic;
+use Elasticsearch\ClientBuilder;
 
 class learningController extends Controller
 {
@@ -21,6 +23,10 @@ class learningController extends Controller
        return $directus;
      }
 
+     public function getElastic()
+     {
+       return new Elastic();
+     }
 
     public function lookthinkdomain()
     {
@@ -48,7 +54,20 @@ class learningController extends Controller
           )
         );
         $ltd = $api->getData();
-        return view('learning.lookthinkdoactivity', compact('ltd'));
+        $params = [
+          'index' => 'ciim',
+          'size' => 1,
+          'body'  => [
+            'query' => [
+              'match' => [
+                'identifier.accession_number' => strtoupper($ltd['data'][0]['adlib_id_number'])
+              ]
+            ]
+          ]
+        ];
+        $adlib = $this->getElastic()->setParams($params)->getSearch();
+        $adlib = $adlib['hits']['hits'];
+        return view('learning.lookthinkdoactivity', compact('ltd', 'adlib'));
     }
 
     public function resources()
