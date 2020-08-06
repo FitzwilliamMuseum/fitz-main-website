@@ -22,8 +22,8 @@
       <meta property="og:image" content="@yield('hero_image')" />
       <meta name="twitter:image" content="@yield('hero_image')" />
     @else
-      <meta property="og:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
-      <meta name="twitter:image" content="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3.jpg" />
+      <meta property="og:image" content="@yield('hero_image')" />
+      <meta name="twitter:image" content="@yield('hero_image')" />
     @endif
 
     <!-- Twitter card -->
