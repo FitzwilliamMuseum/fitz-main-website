@@ -29,31 +29,12 @@
       @endif
     </figure>
     @markdown($record['description'])
+
+    @if(isset($record['period_assigned']))
+    <a href="/objects-and-artworks/highlights/periods/objects/{{$record['period_assigned']}}" class="btn btn-dark">Find other highlights from: {{$record['period_assigned']}}</a>
+    @endif
   </div>
 
-  <!-- <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    <h3>Further information</h3>
-    <ul>
-      <li>Collections ID: {{$record['adlib_id']}}</li>
-      @if(!is_null($record['place_of_origin']))
-        <li>Place of origin: {{ $record['place_of_origin'] }}</li>
-      @endif
-      @if(!is_null($record['date']))
-        <li>Date: {{ $record['date'] }}</li>
-      @endif
-      @if(!is_null($record['maker'] ))
-        <li>Maker: {{ $record['maker'] }}</li>
-      @endif
-      @if(!is_null($record['material'] ))
-        <li>Material: {{ $record['material'] }}</li>
-      @endif
-      @if(!is_null($record['map']))
-        <li>Map coordinates: {{ $record['map']['lat'] }}, {{$record['map']['lng']}}</li>
-      @endif
-    </ul>
-
-
-  </div> -->
 
   @endsection
 
@@ -173,7 +154,9 @@
   @endif
 
 @endforeach
+
 @section('adlib')
+@if(!empty($adlib))
 @foreach($adlib as $record)
 <h3>Data from our collections database</h3>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
@@ -204,4 +187,32 @@
       @include('includes/elements/institutions')
     </div>
   @endforeach
+  @else
+  @foreach($pharos['data'] as $record)
+
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <h3>Further information</h3>
+    <ul>
+      <li>Collections ID: {{$record['adlib_id']}}</li>
+      @if(!is_null($record['place_of_origin']))
+        <li>Place of origin: {{ $record['place_of_origin'] }}</li>
+      @endif
+      @if(!is_null($record['date']))
+        <li>Date: {{ $record['date'] }}</li>
+      @endif
+      @if(!is_null($record['maker'] ))
+        <li>Maker: {{ $record['maker'] }}</li>
+      @endif
+      @if(!is_null($record['material'] ))
+        <li>Material: {{ $record['material'] }}</li>
+      @endif
+      @if(!is_null($record['map']))
+        <li>Map coordinates: {{ $record['map']['lat'] }}, {{$record['map']['lng']}}</li>
+      @endif
+    </ul>
+
+  </div>
+  @endforeach
+
+  @endif
   @endsection

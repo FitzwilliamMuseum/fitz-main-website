@@ -59,19 +59,31 @@ class highlightsController extends Controller
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
       $records = $mlt->getData();
+      $string = '{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "identifier.accession_number": {
+              "query": "' . strtoupper(utf8_encode($pharos['data'][0]['adlib_id'])) . '",
+              "operator": "and"
+            }
+          }
+        }
+      ]
+    }
+  }
+}';
       $params = [
         'index' => 'ciim',
         'size' => 1,
-        'body'  => [
-          'query' => [
-            'match' => [
-              'identifier.accession_number' => strtoupper($pharos['data'][0]['adlib_id'])
-            ]
-          ]
-        ]
+        'body'  => $string
       ];
+
       $adlib = $this->getElastic()->setParams($params)->getSearch();
       $adlib = $adlib['hits']['hits'];
+      // dd($adlib);
       return view('highlights.details', compact('pharos', 'records', 'adlib'));
     }
 
@@ -204,6 +216,38 @@ class highlightsController extends Controller
       $context = $this->group_by("section", $pharos['data']);
       return view('highlights.context', compact('context'));
     }
+
+    public function period()
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('pharos');
+      $api->setArguments(
+        $args = array(
+            'fields' => 'period_assigned,image.*',
+            'meta' => '*'
+        )
+      );
+      $pharos = $api->getData();
+      $theme = $this->group_by("period_assigned", $pharos['data']);
+
+      return view('highlights.period', compact('theme'));
+    }
+
+    public function byperiod($theme)
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('pharos');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*.*',
+            'meta' => '*',
+            'filter[period_assigned][eq]' => $theme
+        )
+      );
+      $pharos = $api->getData();
+      return view('highlights.byperiod', compact('pharos'));
+    }
+
 
     /**
      * Function that groups an array of associative arrays by some key.
