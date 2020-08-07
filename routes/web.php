@@ -50,8 +50,8 @@ Route::get('exhibitions/future', 'exhibitionsController@future');
 Route::get('exhibitions/{slug}', 'exhibitionsController@details');
 Route::get('objects-and-artworks/highlights', 'highlightsController@index');
 Route::get('objects-and-artworks/', 'highlightsController@landing');
-Route::get('objects-and-artworks/highlights/period/', 'highlightsController@period');
-Route::get('objects-and-artworks/highlights/period/objects/{theme}', 'highlightsController@byperiod');
+Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period');
+Route::get('objects-and-artworks/highlights/periods/objects/{theme}', 'highlightsController@byperiod');
 
 Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual');
 Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details');
