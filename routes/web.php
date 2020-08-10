@@ -51,7 +51,9 @@ Route::get('exhibitions/{slug}', 'exhibitionsController@details');
 Route::get('objects-and-artworks/highlights', 'highlightsController@index');
 Route::get('objects-and-artworks/', 'highlightsController@landing');
 Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period');
-Route::get('objects-and-artworks/highlights/periods/objects/{theme}', 'highlightsController@byperiod');
+Route::get('objects-and-artworks/highlights/periods/{period}', 'highlightsController@byperiod');
+Route::get('objects-and-artworks/highlights/themes/', 'highlightsController@theme');
+Route::get('objects-and-artworks/highlights/themes/{theme}', 'highlightsController@bytheme');
 
 Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual');
 Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details');

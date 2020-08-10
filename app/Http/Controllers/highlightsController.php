@@ -44,7 +44,7 @@ class highlightsController extends Controller
       return view('highlights.index', compact('pharos', 'paginator'));
     }
 
-    public function details( $slug)
+    public function details($slug)
     {
       $api = $this->getApi();
       $api->setEndpoint('pharos');
@@ -60,21 +60,21 @@ class highlightsController extends Controller
       $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
       $records = $mlt->getData();
       $string = '{
-  "query": {
-    "bool": {
-      "must": [
-        {
-          "match": {
-            "identifier.accession_number": {
-              "query": "' . strtoupper(utf8_encode($pharos['data'][0]['adlib_id'])) . '",
-              "operator": "and"
-            }
+        "query": {
+          "bool": {
+            "must": [
+              {
+                "match": {
+                  "identifier.accession_number": {
+                    "query": "' . strtoupper($pharos['data'][0]['adlib_id']) . '",
+                    "operator": "and"
+                  }
+                }
+              }
+            ]
           }
         }
-      ]
-    }
-  }
-}';
+      }';
       $params = [
         'index' => 'ciim',
         'size' => 1,
@@ -83,7 +83,6 @@ class highlightsController extends Controller
 
       $adlib = $this->getElastic()->setParams($params)->getSearch();
       $adlib = $adlib['hits']['hits'];
-      // dd($adlib);
       return view('highlights.details', compact('pharos', 'records', 'adlib'));
     }
 
@@ -233,7 +232,7 @@ class highlightsController extends Controller
       return view('highlights.period', compact('theme'));
     }
 
-    public function byperiod($theme)
+    public function byperiod($period)
     {
       $api = $this->getApi();
       $api->setEndpoint('pharos');
@@ -241,14 +240,53 @@ class highlightsController extends Controller
         $args = array(
             'fields' => '*.*.*.*.*.*',
             'meta' => '*',
-            'filter[period_assigned][eq]' => $theme
+            'filter[period_assigned][eq]' => $period
         )
       );
       $pharos = $api->getData();
       return view('highlights.byperiod', compact('pharos'));
     }
 
+    public function theme()
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('pharos_themes');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'meta' => '*'
+        )
+      );
+      $pharos = $api->getData();
+      return view('highlights.theme', compact('pharos'));
+    }
 
+
+    public function bytheme($theme)
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('pharos');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'meta' => '*',
+            'filter[themes][contains]' => $theme,
+        )
+      );
+      $pharos = $api->getData();
+      $api2 = $this->getApi();
+      $api2->setEndpoint('pharos_themes');
+      $api2->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $theme,
+            'limit' => 1
+        )
+      );
+      $theme = $api2->getData();
+      return view('highlights.bytheme', compact('pharos', 'theme'));
+    }
     /**
      * Function that groups an array of associative arrays by some key.
      *
