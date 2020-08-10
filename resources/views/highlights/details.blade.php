@@ -29,13 +29,20 @@
       @endif
     </figure>
     @markdown($record['description'])
-
-    @if(isset($record['period_assigned']))
-    <a href="/objects-and-artworks/highlights/periods/objects/{{$record['period_assigned']}}" class="btn btn-dark">Find other highlights from: {{$record['period_assigned']}}</a>
-    @endif
   </div>
+  <h3>Themes and periods</h3>
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
 
+  @if(isset($record['period_assigned']))
+    <a href="/objects-and-artworks/highlights/periods/objects/{{$record['period_assigned']}}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
+  @endif
 
+  @if(isset($record['themes']))
+    @foreach($record['themes'] as $th)
+      <a href="/objects-and-artworks/highlights/themes/{{$th}}" class="btn btn-dark mr-2 mt-2">{{str_replace('-',' ',$th)}}</a>
+    @endforeach
+  @endif
+  </div>
   @endsection
 
   @if(!is_null($record['map']))
