@@ -42,13 +42,11 @@
   }
   .shout {
     color: white!important;
-    font-family: 'Lato', sans-serif;
     font-size: 2.6rem;
     font-weight: bolder;
   }
   .shout-less {
     color: white!important;
-    font-family: 'Lato', sans-serif;
     font-size: 2rem;
   }
   /* .jumbotron {
@@ -68,7 +66,7 @@ footer, .chip-icon {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   background-color: #eee;
 
 }
@@ -338,13 +336,11 @@ body {
 @media screen and (min-width: 440px) {
   .shout {
     color: white!important;
-    font-family: 'Lato', sans-serif;
     font-size: 5rem;
     margin-top:-1rem;
   }
   .shout-less {
     color: white!important;
-    font-family: 'Lato', sans-serif;
     font-size: 4rem;
   }
 }
