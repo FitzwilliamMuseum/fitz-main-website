@@ -35,6 +35,14 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\searchController@departments')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\searchController@pressroom')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\searchController@themes')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@pharospages')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@highlights')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@floor')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@governance')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@learningfiles')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@exhibitions')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@audio')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\searchController@sessions')->cron('0 */5 * * *');
     }
 
     /**
