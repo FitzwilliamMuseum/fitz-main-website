@@ -3,7 +3,7 @@
 	Sundays and Bank Holiday Mondays: 12:00 - 17:00<br/>
 	CLOSED: Mondays, Good Friday, 24-26 & 31 December and 1 January
 </p>
-<ul>
+<ul class="square-list">
 	<li>When you arrive at the Fitzwilliam Museum, please enter through the Courtyard Entrance gates (the left side as you are looking at the front of the Museum) where our team will be there to welcome you. Your visit starts at the Courtyard Entrance and our <a href="https://www.fitzmuseum.cam.ac.uk/sites/default/files/Floor%20plan%20reopening.pdf">floor plan</a> will help guide you through the Museum. Nearly all our galleries are open, except those which are shown as closed on the plan.
 	</li>
 	<li>Please have either a paper printout of your ticket or be ready to show this on your smartphone for scanning.
@@ -22,5 +22,15 @@
 	</li>
 	<li>If you feel unwell at any stage during your visit, please alert a member of staff immediately so we can assist you.
 	</li>
-	<li>After your visit, you can exit the museum using the Courtyard Entrance, although if you wish you can also exit from the Main Entrance in the Founder’s Building. The recent pandemic has profoundly impacted the economic situation of the cultural sector, The Fitzwilliam Museum included. If you are able, please consider making a donation, becoming a Friend or joining the Marlay Group. Your support, of any amount, is enormously appreciated as it will help to secure our future and enable us to continue to offer: free education sessions, inspiring exhibitions, world-class research, exemplary collections care and free access to our galleries. <a href="http://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam">Donate today</a> – your support has never been more important. Thank you.</li>
+	<li>After your visit, you can exit the museum using the Courtyard Entrance, although if you wish you can also exit from the Main Entrance in the Founder’s Building.</li>
 </ul>
+
+<p>
+	 The recent pandemic has profoundly impacted the economic situation of the cultural sector, The Fitzwilliam Museum included.
+</p>
+<p>
+	If you are able, please consider making a donation, becoming a Friend or joining the Marlay Group. Your support, of any amount, is enormously appreciated as it will help to secure our future and enable us to continue to offer: free education sessions, inspiring exhibitions, world-class research, exemplary collections care and free access to our galleries.
+</p>
+<p>
+	<a href="http://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam">Donate today</a> – your support has never been more important. Thank you.
+</p>
