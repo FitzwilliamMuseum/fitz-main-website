@@ -67,26 +67,26 @@ Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop');
 
 Route::get('search', 'searchController@index');
-Route::get('search/staff', 'searchController@staff');
-Route::get('search/news', 'searchController@news');
-Route::get('search/stubs', 'searchController@stubs');
-Route::get('search/researchprojects', 'searchController@researchprojects');
-Route::get('search/galleries', 'searchController@galleries');
-Route::get('search/collections', 'searchController@collections');
-Route::get('search/lookthinkdo', 'searchController@lookthinkdo');
-Route::get('search/pressroom', 'searchController@pressroom');
-Route::get('search/departments', 'searchController@departments');
-Route::get('search/directors', 'searchController@directors');
-Route::get('search/themes', 'searchController@themes');
-Route::get('search/highlightspages', 'searchController@pharospages');
-Route::get('search/highlights', 'searchController@highlights');
-Route::get('search/floor', 'searchController@floor');
-Route::get('search/gov', 'searchController@governance');
-Route::get('search/learningfiles', 'searchController@learningfiles');
-Route::get('search/exhibitions', 'searchController@exhibitions');
-Route::get('search/instagram', 'searchController@instagram');
-Route::get('search/audio', 'searchController@audio');
-Route::get('search/sessions', 'searchController@sessions');
+// Route::get('search/staff', 'searchController@staff');
+// Route::get('search/news', 'searchController@news');
+// Route::get('search/stubs', 'searchController@stubs');
+// Route::get('search/researchprojects', 'searchController@researchprojects');
+// Route::get('search/galleries', 'searchController@galleries');
+// Route::get('search/collections', 'searchController@collections');
+// Route::get('search/lookthinkdo', 'searchController@lookthinkdo');
+// Route::get('search/pressroom', 'searchController@pressroom');
+// Route::get('search/departments', 'searchController@departments');
+// Route::get('search/directors', 'searchController@directors');
+// Route::get('search/themes', 'searchController@themes');
+// Route::get('search/highlightspages', 'searchController@pharospages');
+// Route::get('search/highlights', 'searchController@highlights');
+// Route::get('search/floor', 'searchController@floor');
+// Route::get('search/gov', 'searchController@governance');
+// Route::get('search/learningfiles', 'searchController@learningfiles');
+// Route::get('search/exhibitions', 'searchController@exhibitions');
+// Route::get('search/instagram', 'searchController@instagram');
+// Route::get('search/audio', 'searchController@audio');
+// Route::get('search/sessions', 'searchController@sessions');
 
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
