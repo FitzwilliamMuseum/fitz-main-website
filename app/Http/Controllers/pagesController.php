@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\MoreLikeThis;
+use Twitter;
+use Cache;
 
 class pagesController extends Controller
 {
@@ -59,6 +61,26 @@ class pagesController extends Controller
       )
     );
     $pages = $api2->getData();
-    return view('pages.landing', compact('pages', 'associated'));
+    if($section == 'learning') {
+      $expiresTwitter = now()->addMinutes(60);
+
+    if (Cache::has('cache_twitter_schools_1')) {
+      $tweets = Cache::get('cache_twitter_schools_1');
+    } else {
+      $tweets = Twitter::getUserTimeline([
+        'screen_name' => 'FitzMuseumEduca',
+        'count' => 10,
+        'format' => 'object',
+        'tweet_mode' => 'extended',
+        'include_rts' => true,
+        'exclude_replies' => true
+      ]);
+      Cache::put('cache_twitter_schools_1', $tweets, $expiresTwitter); // 1 hour
+    }
+    $tweets = array_slice($tweets, 0,3);
+  } else {
+    $tweets = array();
+  }
+    return view('pages.landing', compact('pages', 'associated', 'tweets'));
   }
 }
