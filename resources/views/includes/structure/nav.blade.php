@@ -10,20 +10,22 @@
     <li class="nav-item active">
       <a class="nav-link" href="{{ URL::to('/') }}">Home <span class="sr-only">(current)</span></a>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('/visit-us') }}">Visit us</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVisit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visit us</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownVisit">
+        <a class="dropdown-item" href="{{ URL::to('/visit-us') }}">Your visit</a>
+        <a class="dropdown-item" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
+        <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Galleries</a>
+      </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       About us</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
         <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About the Museum</a>
         <a class="dropdown-item" href="{{ URL::to('/collections') }}">Collection areas</a>
         <a class="dropdown-item" href="{{ URL::to('/departments') }}">Departments</a>
-        <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Galleries</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Press room</a>
-        <a class="dropdown-item" href="{{ URL::to('/about-us/directors') }}">Our directors</a>
-        <a class="dropdown-item" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
       </div>
     </li>
     <li class="nav-item active">
@@ -33,9 +35,9 @@
       <a class="nav-link" href="{{ URL::to('/news') }}">News</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownObjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Objects and art works</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownObjects">
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/') }}">An introduction</a>
         <a class="dropdown-item" href="{{ URL('https://collection.beta.fitz.ms') }}">Search the collection</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/highlights/') }}">Collection highlights</a>
@@ -44,11 +46,16 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLearning" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Learning</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownLearning">
         <a class="dropdown-item" href="{{ URL::to('/learning') }}">Learn with us</a>
-        <a class="dropdown-item" href="/learning/look-think-do">Look, Think, Do</a>
+        <a class="dropdown-item" href="{{ URL::to('/learning/families') }}">Families</a>
+        <a class="dropdown-item" href="{{ URL::to('/learning/young-people') }}">Young audiences</a>
+        <a class="dropdown-item" href="{{ URL::to('/learning/school-sessions') }}">Schools</a>
+        <a class="dropdown-item" href="{{ URL::to('/learning/adult-programming') }}">Adults</a>
+        <a class="dropdown-item" href="{{ URL::to('/learning/community-programming') }}">Communities</a>
+        <a class="dropdown-item" href="{{ URL::to('/learning/group-activities') }}">Groups</a>
         <a class="dropdown-item" href="/learning/resources">Resources</a>
       </div>
     </li>
@@ -56,9 +63,9 @@
       <a class="nav-link" href="{{ URL::to('/support-us') }}">Support us</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownResearch" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Our research</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownResearch">
         <a class="dropdown-item" href="{{ URL::to('/research') }}">Research at the museum</a>
         <a class="dropdown-item" href="/research/projects">Research projects</a>
         <a class="dropdown-item" href="/research/staff-profiles">Researcher profiles</a>
