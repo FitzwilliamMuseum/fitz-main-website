@@ -1,0 +1,31 @@
+<h3>Story telling</h3>
+<div class="row">
+  @foreach($sessions['data'] as $session)
+  <div class="col-md-4 mb-3">
+    <div class="card card-body ">
+      @if(isset($session['youtube_id']))
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" title="A YouTube video from the Fitzwilliam Museum"
+          src="https://www.youtube.com/embed/{{$session['youtube_id']}}" frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+      @elseif(isset($session['vimeo_id']))
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" title="A Vimeo video from the Fitzwilliam Museum"
+        src="https://player.vimeo.com/video/{{$session['vimeo_id']}}" frameborder="0"
+        allowfullscreen></iframe>
+      </div>
+      @endif
+
+      <div class="container h-100">
+        <div class="contents-label mb-3">
+          <h3>{{ $session['title'] }}</h3>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  @endforeach
+</div>

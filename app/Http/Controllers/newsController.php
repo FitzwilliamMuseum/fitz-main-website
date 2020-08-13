@@ -20,7 +20,7 @@ class newsController extends Controller
 
   public function index(Request $request)
   {
-    $perPage = 6;
+    $perPage = 12;
     $offset = ($request->page -1) * $perPage ;
     $api = $this->getApi();
     $api->setEndpoint('news_articles');

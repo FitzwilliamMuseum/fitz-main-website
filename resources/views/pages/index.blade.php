@@ -45,6 +45,14 @@
       @include('includes.structure.young')
     @endif
 
+    @if($page['slug'] == 'families')
+      @inject('learningController', 'App\Http\Controllers\learningController')
+      @php
+      $sessions = $learningController::families();
+      @endphp
+      @include('includes.structure.families')
+    @endif
+
 
 
     @if(!empty($records))

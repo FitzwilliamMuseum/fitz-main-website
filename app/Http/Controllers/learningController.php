@@ -139,6 +139,19 @@ class learningController extends Controller
         return $sessions;
     }
 
+    public static function families()
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('story_telling');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*'        )
+        );
+        $stories = $api->getData();
+        return $stories;
+    }
+
     public static function youngpeople()
     {
         $api = new DirectUs;
