@@ -15,7 +15,7 @@
 
 @section('resources-plans')
   <div class="container">
-    <h2>Resources by topic</h2>
+    <h2>Factsheets by topic</h2>
     <div class="row">
       @foreach($res['data'] as $resource)
       <div class="col-md-4 mb-3">
