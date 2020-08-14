@@ -205,4 +205,20 @@ class learningController extends Controller
         return view('learning.young', compact('session','records'));
     }
 
+    public function profiles()
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('staff_profiles');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'sort' => 'last_name',
+            'filter[departments_affiliated.department][in]' => 9
+        )
+      );
+      $profiles = $api->getData();
+      return view('learning.profiles', compact('profiles'));
+    }
+
 }

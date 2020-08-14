@@ -83,7 +83,8 @@ class researchController extends Controller
         $args = array(
             'fields' => '*.*.*.*',
             'meta' => '*',
-            'sort' => 'last_name'
+            'sort' => 'last_name',
+            'filter[research_active][in]' => 'yes'
         )
       );
       $profiles = $api->getData();

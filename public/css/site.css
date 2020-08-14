@@ -717,3 +717,19 @@ ul.logos-sponsors li {
 .col-md-6.mb-3.mt-3.mx-auto.d-block.book {
     margin-top: 100px!important;
 }
+.pagination {
+  background-color: #f5f5f5;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0.625rem 0.5rem;
+}
+.pagination-lg .page-link {
+  font-size: 0.9375rem;
+  padding: 0.78125rem 1rem;
+}
+
+.pagination-sm .page-link {
+  font-size: 0.8125rem;
+  padding: 0.59375rem 1rem;
+}
