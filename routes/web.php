@@ -40,6 +40,7 @@ Route::get('learning/resources/', 'learningController@resources');
 Route::get('learning/resources/{slug}', 'learningController@resource');
 Route::get('learning/school-sessions/{slug}', 'learningController@session');
 Route::get('learning/young-people/{slug}', 'learningController@young');
+Route::get('learning/contact-us/', 'learningController@profiles');
 Route::get('themes/', 'themesController@index');
 Route::get('themes/{slug}', 'themesController@theme');
 Route::get('galleries', 'galleriesController@index');
