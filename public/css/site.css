@@ -3,6 +3,7 @@
   min-height: 450px;
   background-attachment: fixed;
   background-size: cover;
+  margin-top: 56px!important;
 }
 .absolute-bottom {
   position : absolute;
