@@ -12,7 +12,7 @@
 
   @section('content')
   @if(!empty($gallery['gallery_status']))
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
       @foreach($gallery['gallery_status'] as $status)
         <span class="badge badge-wine">{{ $status }}</span>
       @endforeach
@@ -20,7 +20,7 @@
   @endif
 
   @if(isset($gallery['gallery_description']))
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
       @markdown($gallery['gallery_description'])
     </div>
   @endif
