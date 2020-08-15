@@ -16,7 +16,7 @@
   @endif
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded article" >
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
     <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['field_image'])
     <figure class="figure float-right p-3">
@@ -41,7 +41,7 @@
 
 
   @if($project['youtube_id'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" title="A YouTube video related to this story"
       src="https://www.youtube.com/embed/{{$project['youtube_id']}}" frameborder="0"
@@ -52,7 +52,7 @@
 
 
     @if($project['vimeo_id'])
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" title="A Vimeo Video related to this story"
         src="https://player.vimeo.com/video/{{$project['vimeo_id']}}" frameborder="0"
@@ -64,7 +64,7 @@
   @section('sketchfab-collection')
     @if(!empty($project['sketchfab_id']))
     <div class="container">
-      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         <div class="embed-responsive embed-responsive-1by1">
           <iframe title="A 3D model related to this story" class="embed-responsive-item"
           src="https://sketchfab.com/models/{{ $project['sketchfab_id']}}/embed?"

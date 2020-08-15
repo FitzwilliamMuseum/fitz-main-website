@@ -1,8 +1,8 @@
 <div class="container">
   <h3>Audio description</h3>
 
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    <div class="shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class="shadow-sm p-3 mx-auto mb-3">
       <div class="plyr">
         <div class="embed-responsive audio-player">
           <audio id="player" controls class="embed-responsive-item">

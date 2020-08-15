@@ -9,7 +9,7 @@
   @section('description', $director['meta_description'])
   @section('keywords', $director['meta_keywords'])
   @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @if(!is_null($director['hero_image']))
         <figure class="figure">
           <img src="{{ $director['hero_image']['data']['thumbnails']['5']['url'] }}"

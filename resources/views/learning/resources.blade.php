@@ -7,7 +7,7 @@
   @section('description', 'Educational resources from the Fitzwilliam Museum')
   @section('keywords', 'education,resources,do it yourself, museum, cambridge, egypt,rome, greece')
     @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['body'])
     </div>
     @endsection

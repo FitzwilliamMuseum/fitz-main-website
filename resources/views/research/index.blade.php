@@ -8,7 +8,7 @@
   @section('meta_keywords', $page['meta_keywords'])
 
   @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @markdown($page['body'])
     </div>
   @endsection
@@ -22,7 +22,7 @@
   @foreach($projects['data'] as $project)
   <div class="col-md-4 mb-3">
 
-    <div class="card card-body h-100">
+    <div class="card  h-100">
       @if(!is_null($project['hero_image']))
         <img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $project['hero_image_alt_text'] }}"
@@ -30,14 +30,13 @@
         width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
         loading="lazy"/>
       @endif
-      <div class="container h-100">
+      <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
             <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
           </h3>
         </div>
       </div>
-      <a href="research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach

@@ -16,7 +16,7 @@
 
   <div class="row ">
     <!-- Column one -->
-    <div class="col-md-7 mb-3 rounded">
+    <div class="col-md-7 mb-3">
       <div class="shadow-sm p-3 mb-3 mt-3 rounded">
         <figure class="figure">
           <img src="{{ $look['focus_image']['data']['full_url'] }}"
@@ -83,7 +83,7 @@
       <h3>
         Look at the work
       </h3>
-      <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col shadow-sm p-3 mx-auto mb-3">
 
         {!! $look['look_text'] !!}
         @if(isset($look['look_answers']))
@@ -94,7 +94,7 @@
       <h3>
         Think about this work
       </h3>
-      <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col shadow-sm p-3 mx-auto mb-3">
 
         {!! $look['think_text'] !!}
         @if(isset($look['think_answers']))
@@ -105,7 +105,7 @@
       <h3>
         Do something in response
       </h3>
-      <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col shadow-sm p-3 mx-auto mb-3">
 
         {!! $look['do_text'] !!}
         @if(isset($look['do_answers']))
@@ -118,7 +118,7 @@
       <h3>
         Collections record
       </h3>
-      <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col shadow-sm p-3 mx-auto mb-3">
 
         <p>{!! $look['adlib_id_number'] !!}</p>
       </div>
@@ -153,9 +153,9 @@
       <!-- Sketchfab include -->
       @if(!empty($look['sketchfab_id']))
       <h3>3d model</h3>
-      <div class="col shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col shadow-sm p-3 mx-auto mb-3">
 
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-1by1">
             <iframe title="A 3D model related to {{ $look['title_of_work'] }}" class="embed-responsive-item"
             src="https://sketchfab.com/models/{{ $look['sketchfab_id'] }}/embed?"
@@ -172,7 +172,7 @@
   </div>
 
   @if($look['youtube_id'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" title="A YouTube video related to {{ $look['title_of_work'] }}"
       src="https://www.youtube.com/embed/{{ $look['youtube_id'] }}" frameborder="0"
@@ -182,7 +182,7 @@
   @endif
 
   @if($look['vimeo_id'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" title="A Vimeo video related to {{ $look['title_of_work'] }}"
       src="https://player.vimeo.com/video/{{$look['vimeo_id']}}" frameborder="0"

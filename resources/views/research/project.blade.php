@@ -8,11 +8,11 @@
   @section('hero_image_title', $project['hero_image_alt_text'])
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['project_overview'])
   </div>
   <h3>Project information</h3>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
     <ul>
       @if($project['project_principal'])
@@ -39,7 +39,7 @@
     </ul>
   </div>
   @if($project['publications'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['publications'])
   </div>
   @endif
@@ -52,7 +52,7 @@
       <div class="row">
         @foreach($project['project_partnerships'] as $partner)
         <div class="col-md-4 mb-3">
-          <div class="card card-body h-100">
+          <div class="card  h-100">
             @if(!is_null( $partner['partner']['partner_logo']))
               <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
               alt="Logo for {{ $partner['partner']['partner_full_name']}}"
@@ -64,7 +64,7 @@
               alt="The Fitzwilliam Museum's Gallery 3 roof"
               loading="lazy"/>
             @endif
-            <div class="container h-100">
+            <div class="card-body h-100">
               <div class="contents-label mb-3">
                 <h3>
                   <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
@@ -73,7 +73,6 @@
               </div>
             </div>
 
-            <a href="{{ $partner['partner']['partner_url']}}" class="btn btn-dark">Read more</a>
           </div>
 
         </div>
@@ -87,7 +86,7 @@
     @section('research-projects')
       <div class="container">
         <h4>Outcomes of the project</h4>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           @markdown($project['outcomes'])
         </div>
       </div>
@@ -97,7 +96,7 @@
   @if($project['youtube_id'])
   @section('youtube')
   <div class="container">
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" title="A YouTube video related to this story"
         src="https://www.youtube.com/embed/{{$project['youtube_id']}}" frameborder="0"
@@ -118,7 +117,7 @@
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card  h-100">
           @if(!is_null($record['thumbnail']))
             <img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
             alt="Featured image for the project: {{ $record['title'][0] }}"
@@ -127,7 +126,7 @@
             <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
             alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/>
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
 
             <div class="contents-label mb-3">
               <h3>
@@ -135,7 +134,6 @@
               </h3>
             </div>
           </div>
-          <a href="/research/projects/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         </div>
 
       </div>

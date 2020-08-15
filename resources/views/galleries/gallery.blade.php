@@ -29,7 +29,7 @@
     <h4>
       Gallery data
     </h4>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
       <ul>
         <li>{{ $gallery['gallery_floor'] }}</li>
       </ul>
@@ -74,8 +74,8 @@
         <h4>
           Audio description
         </h4>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-          <div class="shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+          <div class="shadow-sm p-3 mx-auto mb-3">
             <div class="plyr">
               <div class="embed-responsive audio-player">
                 <audio id="player" controls class="embed-responsive-item">
@@ -94,7 +94,7 @@
         <div class="container">
           <h4>{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h4>
 
-          <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+          <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div id="panorama"></div>
           </div>
         </div>
@@ -106,7 +106,7 @@
       @if(!empty($gallery['sketchfab_id_collection']))
       <div class="container">
         <h4>3D scans of objects in gallery</h4>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-1by1">
             <iframe title="A 3D model of {{ $gallery['gallery_name'] }}" class="embed-responsive-item"
             src="https://sketchfab.com/playlists/embed?collection={{ $gallery['sketchfab_id_collection']}}"
@@ -121,7 +121,7 @@
       @if(!empty($gallery['sketchfab_sketchup_id']))
       <div class="container">
         <h4>Sketchup model of this gallery</h4>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-1by1">
             <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}" class="embed-responsive-item"
             src="https://sketchfab.com/models/{{ $gallery['sketchfab_sketchup_id']}}/embed?"

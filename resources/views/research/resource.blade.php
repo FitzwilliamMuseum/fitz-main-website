@@ -8,12 +8,12 @@
   @section('hero_image_title', $project['hero_image_alt_text'])
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['description'])
   </div>
   
   <h3>Project information</h3>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
     <ul>
       @if($project['project_url'])

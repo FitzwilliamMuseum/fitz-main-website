@@ -7,7 +7,7 @@
 @section('content')
 
 <h2>Search results</h2>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
   <p>
     Your search for <strong>{{ $queryString }}</strong> returned <strong>{{ $number }}</strong> results.
   </p>
@@ -15,7 +15,7 @@
 
   @if(!empty($records))
   @foreach($records as $result)
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded search-results">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 search-results">
       @if(isset($result['searchImage']))
           <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle float-right" height="150" width="150"
           alt="Highlight image for {{ $result['title'][0] }}"/>

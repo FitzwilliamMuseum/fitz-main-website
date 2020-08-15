@@ -12,8 +12,8 @@
 
   <h2>Audio guide stop: {{ $record['stop_number'] }}</h2>
 
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-    <div class="shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class="shadow-sm p-3 mx-auto mb-3">
       <div class="plyr">
         <div class="embed-responsive audio-player">
           <audio id="player" controls class="embed-responsive-item">
@@ -26,7 +26,7 @@
     </div>
 
   <h3>Crowdsourced transcription of the audio file</h3>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded article" >
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
     <figure class="figure float-right p-3">
       <img src="{{ $record['hero_image']['data']['thumbnails']['7']['url']}}"
       alt="{{ $record['hero_image_alt_text'] }}" class="img-fluid"
@@ -47,7 +47,7 @@
     @markdown($record['transcription'])
   </div>
   <h3>Co-production of this resource</h3>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <img src="https://content.fitz.ms/fitz-website/assets/MP_SQUARE_notype.png?key=directus-medium-crop" class="float-right img-fluid p-2" alt="The MicroPasts logo" width="100" height="100"/>
     <p>
       The transcription of the audio file for this stop was enabled by the AHRC
@@ -79,7 +79,7 @@
     <div class="row">
       @foreach($record['associated_pharos_object'] as $pharosassoc)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card  h-100">
           @if(!is_null($pharosassoc['pharos_id']['image']))
             <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}"><img class="img-fluid" src="{{ $pharosassoc['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $pharosassoc['pharos_id']['image_alt_text'] }}"
@@ -87,12 +87,11 @@
           @else
             <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}"><img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  /></a>
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}">{{ $pharosassoc['pharos_id']['title']}}</a></h3>
             </div>
           </div>
-          <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}" class="btn btn-dark">Read more</a>
         </div>
 
       </div>
@@ -109,19 +108,18 @@
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card  h-100">
           @if(!is_null($record['searchImage']))
             <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['searchImage'][0]}}"
             alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3>
                 <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               </h3>
             </div>
           </div>
-          <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach

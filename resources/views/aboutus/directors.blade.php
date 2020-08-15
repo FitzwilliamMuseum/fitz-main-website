@@ -9,7 +9,7 @@
   <h2>
     Our directors
   </h2>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
   <div class="table-responsive">
     <table class="table table-striped">
       <thead class="thead-dark">
@@ -35,7 +35,7 @@
 
 @section('timeline')
 <h2>Our Directors - a timeline</h2>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
   <section class="cd-horizontal-timeline">
   	<div class="timeline">
   		<div class="events-wrapper">

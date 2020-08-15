@@ -13,7 +13,7 @@
   @endif
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($object['body'])
   </div>
   @endsection
@@ -25,12 +25,12 @@
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card h-100">
           @if(!is_null($record['image']))
             <a href="/objects-and-artworks/highlights/context/{{ $record['section'][0]}}/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
             alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
           @endif
-          <div class="container h-100">
+          <div class="card-body  h-100">
             <div class="contents-label mb-3">
               @if(isset($record['section']))
                 <h3>

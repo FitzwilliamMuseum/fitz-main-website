@@ -7,7 +7,7 @@
 
 @section('opening-hours')
   <h2>When we're open</h2>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @include('includes.elements.opening')
   </div>
 @endsection
@@ -17,7 +17,7 @@
   @foreach($pages['data'] as $page)
   @section('description', $page['meta_description'])
   @section('keyword', $page['meta_keywords'])
-  <div class="col-12 shadow-sm p-3 mt-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mt-3 mx-auto mb-3">
     <h2>{{ $page['title']}}</h2>
     @markdown($page['body'])
   </div>
@@ -48,7 +48,7 @@
   <div class="row">
     @foreach($associated['data'] as $project)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100">
+      <div class="card  h-100">
         @if(!is_null($project['hero_image']))
         <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $project['hero_image_alt_text'] }}"
@@ -56,14 +56,13 @@
         height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
         loading="lazy"/></a>
         @endif
-        <div class="container h-100">
+        <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
               <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
             </h3>
           </div>
         </div>
-        <a href="{{ $project['section']}}/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
       </div>
     </div>
     @endforeach

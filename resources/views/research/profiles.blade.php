@@ -8,22 +8,21 @@
   <div class="row">
       @foreach($profiles['data'] as $profile)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100 ">
+        <div class="card h-100 ">
           @if(!is_null($profile['profile_image']))
             <img class="img-fluid" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
             alt="Profile image for {{ $profile['display_name'] }}"
-            width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
-            height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}"
+            width="{{ $profile['profile_image']['data']['thumbnails'][4]['width'] }}"
+            height="{{ $profile['profile_image']['data']['thumbnails'][4]['height'] }}"
             loading="lazy"/>
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
             <h3>
               <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
             </h3>
             </div>
           </div>
-          <a href="/research/staff-profiles/{{ $profile['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach

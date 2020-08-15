@@ -18,14 +18,14 @@
   <div class="row">
     @foreach($galleries['data'] as $gallery)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card  h-100">
           @if(!is_null($gallery['hero_image']))
             <a href="galleries/{{ $gallery['slug']}}"><img class="img-fluid" src="{{ $gallery['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="A highlight image for {{ $gallery['gallery_name'] }}" loading="lazy"
             width="{{ $gallery['hero_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $gallery['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3>
                 <a href="galleries/{{ $gallery['slug']}}">{{ $gallery['gallery_name'] }}</a>
@@ -37,7 +37,6 @@
               @endif
             </div>
           </div>
-          <a href="galleries/{{ $gallery['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
     @endforeach

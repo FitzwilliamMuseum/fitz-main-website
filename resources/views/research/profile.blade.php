@@ -8,14 +8,14 @@
   @section('hero_image_title', $profile['hero_image_alt_text'])
 @endif
   @section('content')
-    <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
       <img class="align-self-center mr-3 rounded-circle float-right
       thumb-post" src="{{ $profile['profile_image']['data']['full_url']}}"
       alt="{{ $profile['profile_image_alt_text'] }}" height="150" width="150">
       {!! $profile['biography'] !!}
     </div>
     @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) || isset($profile['college_affiliated']))
-    <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 rounded">
+    <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
       @if(isset($profile['college_affiliated']))
       <h4>Affiliated college</h4>
       <ul>
@@ -37,7 +37,7 @@
     @section('publications')
     <div class="container">
         <h4>Publications</h4>
-        <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
           {!! $profile['publications'] !!}
         </div>
     </div>

@@ -5,7 +5,7 @@
 @section('description', 'A list of governance files for the Fitzwilliam Museum')
 @section('keywords', 'fitzwilliam,museum,governance,pdf')
 @section('content')
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
   <ul>
     @foreach($gov['data'] as $document)
     <li class="square-list">
