@@ -12,6 +12,11 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
                 $(this).ekkoLightbox();
             });
 </script>
+
+@hasSection('theme-carousel')
+<script src="/js/carousel-themes.js"></script>
+@endif
+
 <!-- Cookie management -->
 <script defer type="text/javascript" src="/js/config.js"></script>
 <script defer type="text/javascript" src="/js/klaro.js"></script>
@@ -19,26 +24,7 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
 
 @hasSection('audio-guide')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.10/plyr.min.js"></script>
-<script>
-// Change "{}" to your options:
-// https://github.com/sampotts/plyr/#options
-var controls =
-[
-    'restart', // Restart playback
-    'play', // Play/pause playback
-    'progress', // The progress bar and scrubber for playback and buffering
-    'current-time', // The current time of playback
-    'duration', // The full duration of the media
-    'mute', // Toggle mute
-    'volume', // Volume control
-    'settings', // Settings menu
-    'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
-];
-const player = new Plyr('.player', { controls });
-
-// Expose player so it can be used from the console
-window.player = player;
-</script>
+<script defer type="text/javascript" src="/js/plyr-controls.js"></script>
 @endif
 
 @hasSection('height-test')
@@ -60,4 +46,25 @@ $('.popover-dismiss').popover({
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
+</script>
+<script>
+
+
+$('.carousel .carousel-item').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
 </script>

@@ -108,7 +108,27 @@ class highlightsController extends Controller
 
     public function landing()
     {
-      return view('highlights.landing');
+      $api = $this->getApi();
+      $api->setEndpoint('pharos_themes');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*',
+            'meta' => '*'
+        )
+      );
+      $pharos = $api->getData();
+
+      $api2 = $this->getApi();
+      $api2->setEndpoint('pharos');
+      $api2->setArguments(
+        $args = array(
+          'fields' => 'period_assigned,image.*',
+          'meta' => '*'
+        )
+      );
+      $periods = $api2->getData();
+      $periods = $this->group_by("period_assigned", $periods['data']);
+      return view('highlights.landing', compact('pharos', 'periods'));
     }
 
 

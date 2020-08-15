@@ -39,6 +39,12 @@
     @yield('timeline')
   </div>
 
+  @hasSection('theme-carousel')
+    @yield('theme-carousel')
+  @endif
+  @hasSection('period-carousel')
+    @yield('period-carousel')
+  @endif
   @hasSection('map')
   <div class="container-fluid map-box mb-3">
     @yield('map')
