@@ -26,6 +26,8 @@
         <a class="dropdown-item" href="{{ URL::to('/collections') }}">Collection areas</a>
         <a class="dropdown-item" href="{{ URL::to('/departments') }}">Departments</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Press room</a>
+        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
+
       </div>
     </li>
     <li class="nav-item active">
@@ -40,9 +42,7 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdownObjects">
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/') }}">An introduction</a>
         <a class="dropdown-item" href="{{ URL('https://collection.beta.fitz.ms') }}">Search the collection</a>
-        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/highlights/') }}">Collection highlights</a>
-        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/audio-guide/') }}">Audio guide</a>
-        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
+        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/audio-guide/') }}">Our audio guide</a>
       </div>
     </li>
     <li class="nav-item dropdown">

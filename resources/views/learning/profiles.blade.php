@@ -18,7 +18,7 @@
             <p>
               {{ $profile['job_title']}}<br />
               Telephone: {{ $profile['telephone_number']}}<br />
-              Email: {{ $profile['email_address']}}
+              Email: <a href="mailto:{{ $profile['email_address']}}">{{ $profile['email_address']}}</a>
             </p>
             </div>
           </div>
