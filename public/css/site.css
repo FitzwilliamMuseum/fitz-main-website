@@ -726,3 +726,7 @@ h3 > a:hover::before {
   visibility: visible;
   transform: scaleX(1);
 }
+.page-link {
+  border: none!important;
+  color: #000;
+}
