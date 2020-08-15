@@ -17,7 +17,7 @@
   <div class="row ">
     <!-- Column one -->
     <div class="col-md-7 mb-3">
-      <div class="shadow-sm p-3 mb-3 mt-3 rounded">
+      <div class="shadow-sm p-3 mb-3 mt-3">
         <figure class="figure">
           <img src="{{ $look['focus_image']['data']['full_url'] }}"
           class="img-fluid" alt="{{ $look['title_of_work'] }}" loading="lazy"
@@ -35,7 +35,7 @@
       <h4>
         Description of this object or artwork
       </h4>
-      <div class="shadow-sm p-3 mx-auto  rounded">
+      <div class="shadow-sm p-3 mx-auto">
 
           @markdown($look['main_text_description'])
       </div>
@@ -43,7 +43,7 @@
       <h4>
         Collections database information
       </h4>
-      <div class="shadow-sm p-3 mx-auto mb-3 mt-3 rounded">
+      <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
 
             @include('includes/elements/descriptive')
 
