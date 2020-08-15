@@ -123,7 +123,8 @@ class highlightsController extends Controller
       $api2->setArguments(
         $args = array(
           'fields' => 'period_assigned,image.*',
-          'meta' => '*'
+          'meta' => '*',
+          'limit' => 200
         )
       );
       $periods = $api2->getData();
@@ -243,12 +244,12 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => 'period_assigned,image.*',
-            'meta' => '*'
+            'meta' => '*',
+            'limit' => 200
         )
       );
       $pharos = $api->getData();
       $theme = $this->group_by("period_assigned", $pharos['data']);
-
       return view('highlights.period', compact('theme'));
     }
 
