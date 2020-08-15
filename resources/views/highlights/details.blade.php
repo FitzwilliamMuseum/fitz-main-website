@@ -6,7 +6,7 @@
   @section('hero_image', $record['image']['data']['full_url'])
   @section('hero_image_title', $record['image_alt_text'])
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <figure class="figure float-right p-3">
       <img src="{{ $record['image']['data']['thumbnails']['7']['url']}}"
       alt="{{ $record['image_alt_text'] }}" class="img-fluid"
@@ -31,7 +31,7 @@
     @markdown($record['description'])
   </div>
   <h3>Themes and periods</h3>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
   @if(isset($record['period_assigned']))
     <a href="/objects-and-artworks/highlights/periods/objects/{{$record['period_assigned']}}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
@@ -66,7 +66,7 @@
   @section('youtube')
   @if(!empty($record['youtube_id']))
   <div class="container">
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" title="A video from YouTube related to {{ $record['title'] }}"
         src="https://www.youtube.com/embed/{{$record['youtube_id']}}" frameborder="0"
@@ -81,7 +81,7 @@
     @if(!empty($record['sketchfab_id']))
     <div class="container">
       <h2>3D scan</h2>
-      <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         <div class="embed-responsive embed-responsive-1by1">
           <iframe title="A 3D model of {{ $record['title'] }}" class="embed-responsive-item"
           src="https://sketchfab.com/models/{{ $record['sketchfab_id']}}/embed?"
@@ -106,7 +106,7 @@
     <div class="row">
       @foreach($record['associated_pharos_content'] as $pharosassoc)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card  h-100">
           @if(!is_null($pharosassoc['pharos_pages_id']['hero_image']))
             <a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}"><img class="img-fluid" src="{{ $pharosassoc['pharos_pages_id']['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $pharosassoc['pharos_pages_id']['hero_image_alt_text'] }}"
@@ -114,12 +114,11 @@
           @else
             <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  />
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3><a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
             </div>
           </div>
-          <a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}" class="btn btn-dark">Read more</a>
         </div>
 
       </div>
@@ -136,12 +135,12 @@
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card  h-100">
           @if(!is_null($record['smallimage']))
             <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
             alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
           @endif
-          <div class="container h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3>
                 <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
@@ -151,7 +150,6 @@
               </p> -->
             </div>
           </div>
-          <a href="/objects-and-artworks/highlights/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach
@@ -166,7 +164,7 @@
 @if(!empty($adlib))
 @foreach($adlib as $record)
 <h3>Data from our collections database</h3>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
       @include('includes/elements/descriptive')
 
@@ -197,7 +195,7 @@
   @else
   @foreach($pharos['data'] as $record)
 
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <h3>Further information</h3>
     <ul>
       <li>Collections ID: {{$record['adlib_id']}}</li>

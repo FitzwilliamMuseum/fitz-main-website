@@ -7,7 +7,7 @@
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])
   @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @markdown($page['body'])
     </div>
   @endsection

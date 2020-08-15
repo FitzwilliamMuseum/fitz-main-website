@@ -6,7 +6,7 @@
   @section('hero_image', $coll['hero_image']['data']['full_url'])
   @section('hero_image_title', $coll['hero_image_alt_text'])
 @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     {!! $coll['collection_description'] !!}
   </div>
 

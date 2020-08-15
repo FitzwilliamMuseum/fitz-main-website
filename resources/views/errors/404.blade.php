@@ -5,7 +5,7 @@
 @section('content')
 <h2>404 Error</h2>
 
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
   <figure class="figure">
   <img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/searle_cat.jpg" />
 </figure>

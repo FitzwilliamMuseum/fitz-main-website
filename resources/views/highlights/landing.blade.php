@@ -7,7 +7,7 @@
 @section('content')
 <h3>Search our objects and artworks</h3>
 
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
   {{ \Form::open(['url' => url('https://collection.beta.fitz.ms/search/results'),'method' => 'GET']) }}
 <div class="row">
   <div class="form-group col-md-12">
@@ -77,7 +77,7 @@
 </div>
 
 <h3>Search our highlights</h3>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
   {{ \Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
   <div class="row center-block">
     <div class="col-lg-12 center-block searchform">

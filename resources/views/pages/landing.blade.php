@@ -6,11 +6,11 @@
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['body'])
   </div>
   @if($page['vimeo_id'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @include('includes.social.vimeo')
   </div>
   @endif
@@ -22,7 +22,7 @@
     <div class="row">
       @foreach($associated['data'] as $project)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100">
+        <div class="card h-100">
           @if(!is_null($project['hero_image']))
             <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $project['hero_image_alt_text'] }}"
@@ -30,14 +30,11 @@
             height="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
             loading="lazy" /></a>
           @endif
-          <div class="container h-100">
-            <div class="contents-label mb-3">
-              <h3>
-                <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
-              </h3>
-            </div>
+        <div class="card-body h-100">
+          <h3>
+            <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
+          </h3>
           </div>
-          <a href="{{ $project['section']}}/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach
@@ -50,7 +47,9 @@
 <div class="row">
 
   <div class="container">
-      <h3>Our Twitter</h3>
+  <h3>
+    Our Twitter
+  </h3>
   @include('includes.social.tweets')
   </div>
 </div>

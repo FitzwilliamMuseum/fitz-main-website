@@ -7,24 +7,24 @@
 @section('keywords', $page['meta_keywords'])
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($page['body'])
   </div>
 
     @if($page['vimeo_id'])
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @include('includes.social.vimeo')
     </div>
     @endif
 
     @if($page['youtube_id'])
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @include('includes.social.youtube')
     </div>
     @endif
 
     @if($page['sms_id'])
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @include('includes.social.sms')
     </div>
     @endif

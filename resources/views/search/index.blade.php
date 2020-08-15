@@ -7,7 +7,7 @@
 @section('meta_keywords', 'collection,museum,objects, art works')
 
 @section('content')
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
   {{ \Form::open(['url' => url('search/results'),'method' => 'GET']) }}
   <div class="row center-block">
     <div class="col-lg-6 center-block searchform">

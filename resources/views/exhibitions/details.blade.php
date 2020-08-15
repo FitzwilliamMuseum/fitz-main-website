@@ -8,7 +8,7 @@
     @section('hero_image_title', $coll['hero_image_alt_text'])
 
     @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @markdown($coll['exhibition_narrative'])
       @if(isset($coll['exhibition_abstract']))
         @markdown($coll['exhibition_abstract'])
@@ -17,7 +17,7 @@
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
     <h3>Exhibition details</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <ul>
         @if(isset($coll['exhibition_url']))
           <li>
@@ -36,7 +36,7 @@
 
     @if(!empty($coll['exhibition_files']))
     <h3>Exhibition files</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <ul>
         @foreach($coll['exhibition_files'] as $file)
           <li>
@@ -51,7 +51,7 @@
       <h3>
         Exhibition film
       </h3>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
             loading="lazy"
@@ -204,7 +204,7 @@
       @if(!empty($coll['image_360_pano']))
         <div class="container">
           <h3>360 gallery image</h3>
-          <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+          <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div id="panorama"></div>
           </div>
         </div>

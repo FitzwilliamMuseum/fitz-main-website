@@ -7,7 +7,7 @@
   @section('keywords', $page['meta_keywords'])
     @section('content')
     <h3>Session Description</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['description'])
     <p>
       Contact us on 01223 332904 or <a href="mailto:education@fitzmuseum.cam.ac.uk">email</a>
@@ -15,12 +15,12 @@
     </p>
     </div>
     <h3>Format of the session</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['format_session'])
     </div>
 
     @if(isset($page['quote']))
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <blockquote class="blockquote">
       @markdown($page['quote'])
     </blockquote>
@@ -28,7 +28,7 @@
     @endif
 
     <h3>More about this session</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded ">
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <ul>
         @if(isset($page['key_stages']) && !empty($page['key_stages']))
         <li>Key stages appropriate:

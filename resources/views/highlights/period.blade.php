@@ -9,21 +9,20 @@
 <div class="row">
   @foreach($theme as $record)
   <div class="col-md-4 mb-3">
-    <div class="card card-body h-100">
+    <div class="card  h-100">
       @if(!is_null($record[0][ 'image']))
         <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $record[0][ 'image']['title'] }}" loading="lazy"
         width="{{ $record[0][ 'image']['data']['thumbnails'][4]['width'] }}"
         height="{{ $record[0][ 'image']['data']['thumbnails'][4]['height'] }}"/></a>
       @endif
-      <div class="container h-100">
+      <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
             <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a></h3>
         </div>
       </div>
-      <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}"
-      class="btn btn-dark">Read more</a>
+      
     </div>
   </div>
   @endforeach

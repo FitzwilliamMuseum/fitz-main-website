@@ -14,7 +14,7 @@
   <div class="row">
     @foreach($current['data'] as $project)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100">
+      <div class="card  h-100">
         @if(!is_null($project['hero_image']))
           <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
           alt="{{ $project['hero_image_alt_text'] }}"
@@ -22,14 +22,13 @@
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
           /></a>
         @endif
-        <div class="container h-100">
+        <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
               <a href="exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>
         </div>
-        <a href="exhibitions/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
       </div>
     </div>
     @endforeach
@@ -45,7 +44,7 @@
   <div class="row">
     @foreach($future['data'] as $project)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100">
+      <div class="card  h-100">
         @if(!is_null($project['hero_image']))
           <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           loading="lazy"
@@ -54,7 +53,7 @@
           alt="{{ $project['hero_image_alt_text'] }}"
           /></a>
         @endif
-        <div class="container h-100">
+        <div class="card-body h-100">
 
           <div class="contents-label mb-3">
             <h3>
@@ -62,7 +61,6 @@
             </h3>
           </div>
         </div>
-        <a href="exhibitions/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
       </div>
     </div>
     @endforeach
@@ -78,7 +76,7 @@
   <div class="row">
     @foreach($archive['data'] as $project)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100">
+      <div class="card  h-100">
         @if(!is_null($project['hero_image']))
           <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $project['hero_image_alt_text'] }}"
@@ -87,14 +85,13 @@
           loading='lazy'
           /></a>
         @endif
-        <div class="container h-100">
+        <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
               <a href="exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>
         </div>
-        <a href="exhibitions/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
       </div>
     </div>
     @endforeach
