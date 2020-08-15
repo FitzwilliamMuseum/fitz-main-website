@@ -255,17 +255,35 @@ class highlightsController extends Controller
 
     public function byperiod($period)
     {
+      if($period == 'italy-1400-1700'){
+        $query = 'Italy 1400 - 1700';
+      } elseif($period == 'northern-europe-1400-1700') {
+        $query = 'Italy 1400 - 1700';
+      } else {
+        $query = str_replace('-',' ', $period);
+      }
       $api = $this->getApi();
       $api->setEndpoint('pharos');
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*.*',
             'meta' => '*',
-            'filter[period_assigned][eq]' => $period
+            'filter[period_assigned][eq]' =>  $query
         )
       );
       $pharos = $api->getData();
-      return view('highlights.byperiod', compact('pharos'));
+
+      $api2 = $this->getApi();
+      $api2->setEndpoint('pharos_periods');
+      $api2->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*.*',
+            'meta' => '*',
+            'filter[slug][like]' => $period
+        )
+      );
+      $period = $api2->getData();
+      return view('highlights.byperiod', compact('pharos', 'period'));
     }
 
     public function theme()

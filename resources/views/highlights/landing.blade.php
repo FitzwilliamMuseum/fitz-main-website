@@ -158,8 +158,6 @@
       </div>
       @endforeach
     </div>
-
-
     <a class="carousel-control-prev" href="#carouselThemes" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -192,14 +190,14 @@
         <div class="col-md-4 ">
         <div class="card h-100 ">
           @if(!is_null($record[0][ 'image']))
-            <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
+            <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[0][ 'image']['title'] }}" loading="lazy"
             width="{{ $record[0][ 'image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $record[0][ 'image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body h-100">
             <h3>
-              <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
+              <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
             </h3>
           </div>
         </div>
@@ -218,7 +216,7 @@
           @endif
           <div class="card-body h-100">
             <h3>
-              <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
+              <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned']) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
             </h3>
           </div>
         </div>
@@ -226,8 +224,6 @@
       </div>
       @endforeach
     </div>
-
-
     <a class="carousel-control-prev" href="#carouselPeriods" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
