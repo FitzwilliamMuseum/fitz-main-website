@@ -6,8 +6,8 @@
       <div class="card  h-100">
         <a href="{{ $thing['url'] }}"><img class="img-fluid" src="{{ $thing['hero_image']['data']['thumbnails'][2]['url'] }}"
         alt="{{ $thing['hero_image_alt_text']}}" loading="lazy"
-        width="{{ $thing['hero_image']['data']['thumbnails'][2]['width'] }}"
-        height="{{ $thing['hero_image']['data']['thumbnails'][2]['height'] }}"
+        width="{{ $thing['hero_image']['data']['thumbnails'][4]['width'] }}"
+        height="{{ $thing['hero_image']['data']['thumbnails'][4]['height'] }}"
         /></a>
         <div class="card-body h-100">
           <div class="contents-label mb-3">
