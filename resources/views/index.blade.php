@@ -18,19 +18,18 @@
 @section('news')
   @foreach($news['data'] as $project)
   <div class="col-md-4 mb-3">
-    <div class="card card-body h-100">
+    <div class="card  h-100">
       @if(!is_null($project['field_image']))
         <a href="news/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $project['field_image_alt_text'] }}" /></a>
       @endif
-      <div class="container h-100">
+      <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
             <a href="news/{{ $project['slug']}}">{{ $project['article_title']}}</a>
           </h3>
         </div>
       </div>
-      <a href="news/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach
@@ -42,12 +41,12 @@
 <div class="row">
   @foreach($fundraising['data'] as $project)
   <div class="col-md-4 mb-3">
-    <div class="card card-body h-100">
+    <div class="card  h-100">
       @if(!is_null($project['hero_image']))
         <a href="{{ $project['url']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $project['hero_image_alt_text'] }}" /></a>
       @endif
-      <div class="container h-100">
+      <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
             <a href="{{ $project['url']}}">{{ $project['title']}}</a>
@@ -65,21 +64,20 @@
 @section('research')
   @foreach($research['data'] as $project)
   <div class="col-md-4 mb-3">
-    <div class="card card-body h-100">
+    <div class="card h-100">
         @if(!is_null($project['hero_image']))
           <a href="research/projects/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $project['hero_image_alt_text'] }}" loading="lazy"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}" /></a>
         @endif
-        <div class="container h-100">
+        <div class="card-body  h-100">
           <div class="contents-label mb-3">
             <h3>
               <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
             </h3>
           </div>
         </div>
-      <a href="research/projects/{{ $project['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach
@@ -88,7 +86,7 @@
 @section('themes')
   @foreach($objects['data'] as $theme)
   <div class="col-md-4 mb-3">
-    <div class="card card-body h-100">
+    <div class="card h-100">
       @if(!is_null($theme['image']))
       <a href="objects-and-artworks/highlights/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $theme['image_alt_text'] }}"
@@ -96,14 +94,13 @@
       height="{{ $theme['image']['data']['thumbnails'][4]['height'] }}"
       width="{{ $theme['image']['data']['thumbnails'][4]['width'] }}"/></a>
       @endif
-      <div class="container h-100">
+      <div class="card-body  h-100">
         <div class="contents-label mb-3">
           <h3>
             <a href="objects-and-artworks/highlights/{{ $theme['slug']}}">{{ $theme['title']}}</a>
           </h3>
         </div>
       </div>
-      <a href="objects-and-artworks/highlights/{{ $theme['slug']}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach
