@@ -68,7 +68,7 @@ footer, .chip-icon {
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
-  background-color: #eee;
+  background-color: #97816224;
 
 }
 .shadow-sm {
@@ -432,7 +432,7 @@ body {
   padding-bottom: 10px
 }
 .beta {
-  background-color: #a3c1ad ;
+  background-color: #fff;
   min-height: 50px;
   color: #000;
   font-size: 1.2rem;
