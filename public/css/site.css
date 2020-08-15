@@ -730,3 +730,10 @@ h3 > a:hover::before {
   border: none!important;
   color: #000;
 }
+.social_box ul {
+    list-style: none;
+}
+.social_box li {
+  display: inline;
+  margin
+}
