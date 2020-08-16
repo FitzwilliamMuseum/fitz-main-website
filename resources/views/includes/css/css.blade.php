@@ -25,7 +25,15 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-image: url(@yield('parallax_two'));
   background-repeat: no-repeat;
   background-size: cover;
+}
+@endif
 
+@hasSection('collection-parallax')
+.parallax-collection {
+  min-height: 200px;
+  background-image: url(@yield('collection-parallax'));
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @endif
 
