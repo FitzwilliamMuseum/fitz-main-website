@@ -30,7 +30,7 @@
             <a href="/objects-and-artworks/highlights/context/{{ $record['section'][0]}}/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
             alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
           @endif
-          <div class="card-body  h-100">
+          <div class="card-body h-100">
             <div class="contents-label mb-3">
               @if(isset($record['section']))
                 <h3>
@@ -43,11 +43,6 @@
 
           </div>
         </div>
-        @if(isset($record['section']))
-          <a href="/objects-and-artworks/highlights/context/{{ $record['section'][0]}}/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
-        @else
-          <a href="/objects-and-artworks/highlights/context/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
-        @endif
       </div>
 
     </div>
