@@ -12,7 +12,6 @@
 <div class="col-md-12 shadow-sm p-3 mb-3">
   {!! $detail['introductory_text'] !!}
 </div>
-@foreach($pharos['data'] as $object)
 
   <div class="row">
     @foreach($pharos['data'] as $record)
@@ -34,5 +33,4 @@
     </div>
     @endforeach
   </div>
-@endforeach
 @endsection

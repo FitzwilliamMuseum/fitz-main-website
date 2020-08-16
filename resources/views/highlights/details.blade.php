@@ -34,7 +34,7 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
   @if(isset($record['period_assigned']))
-    <a href="/objects-and-artworks/highlights/periods/{{$record['period_assigned']}}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
+    <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record['period_assigned'],'-') }}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
   @endif
 
   @if(isset($record['themes']))
