@@ -1,10 +1,14 @@
 <h4>Identification numbers</h4>
 <ul>
   @foreach($record['_source']['identifier'] as $id)
-  @if($id['type'] === 'uri')
-  <li><a href="{{ $id['value']}}">Stable URI</a></li>
+  @if(array_key_exists('type', $id))
+    @if($id['type'] === 'uri')
+    <li><a href="{{ $id['value']}}">Stable URI</a></li>
+    @else
+    <li>{{ ucfirst($id['type']) }}: {{ $id['value']}}</li>
+  @endif
   @else
-  <li>{{ ucfirst($id['type']) }}: {{ $id['value']}}</li>
+    <li>{{ $id['value']}}</li>
   @endif
   @endforeach
 </ul>
