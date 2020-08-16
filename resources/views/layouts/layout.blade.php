@@ -38,13 +38,33 @@
     @yield('adlib')
     @yield('timeline')
   </div>
-
+  @hasSection('collection-parallax')
+    @include('includes.structure.parallax')
+  @endif
   @hasSection('theme-carousel')
     @yield('theme-carousel')
   @endif
+
+  @hasSection('collection-parallax')
+    @include('includes.structure.parallax')
+  @endif
+
   @hasSection('period-carousel')
     @yield('period-carousel')
   @endif
+
+  @hasSection('collection-parallax')
+    @include('includes.structure.parallax')
+  @endif
+
+  @hasSection('context-carousel')
+    @yield('context-carousel')
+  @endif
+
+  @hasSection('collection-parallax')
+    @include('includes.structure.parallax')
+  @endif
+  
   @hasSection('map')
   <div class="container-fluid map-box mb-3">
     @yield('map')

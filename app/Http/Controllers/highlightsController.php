@@ -129,7 +129,19 @@ class highlightsController extends Controller
       );
       $periods = $api2->getData();
       $periods = $this->group_by("period_assigned", $periods['data']);
-      return view('highlights.landing', compact('pharos', 'periods'));
+
+      $api3 = $this->getApi();
+      $api3->setEndpoint('pharos_pages');
+      $api3->setArguments(
+        $args = array(
+            'fields' => 'section,hero_image_alt_text,hero_image.*',
+            'meta' => '*'
+        )
+      );
+      $contexts = $api3->getData();
+      $context = $this->group_by("section", $contexts['data']);
+
+      return view('highlights.landing', compact('pharos', 'periods', 'context'));
     }
 
 

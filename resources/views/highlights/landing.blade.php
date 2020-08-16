@@ -4,6 +4,7 @@
 @section('hero_image_title', 'Cupid and Psyche - del Sallaio')
 @section('description','A search page for our highlight objects')
 @section('keywords', 'search,highlights, objects')
+@section('collection-parallax', 'https://api.fitz.ms/mediaLib/pdp/pdp82/P_72_1999_200706_dc2.jpg')
 @section('content')
 <h3>Search our objects and artworks</h3>
 
@@ -109,7 +110,7 @@
 @section('theme-carousel')
 <div class="container">
   <h3>Explore highlights by theme</h3>
-  <div class="row mb-3">
+  <div class="row mb-2">
   <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
     <div class="carousel-inner row w-100 mx-auto">
       @php
@@ -141,14 +142,14 @@
       @foreach($rest as $record)
       <div class="carousel-item">
         <div class="col-md-4">
-        <div class="card h-100">
+        <div class="card">
           @if(!is_null($record['hero_image']))
             <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/"><img class="img-fluid" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"
             width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
-          <div class="card-body h-100">
+          <div class="card-body">
             <h3>
               <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
             </h3>
@@ -174,7 +175,7 @@
 @section('period-carousel')
 <div class="container">
   <h3>Explore highlights by period</h3>
-  <div class="row mb-3">
+  <div class="row mb-2">
   <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
   data-interval="false" data-pause="hover">
     <div class="carousel-inner row w-100 mx-auto">
@@ -189,13 +190,13 @@
       <div class="carousel-item active">
         <div class="col-md-4 ">
         <div class="card h-100 ">
-          @if(!is_null($record[0][ 'image']))
+          @if(!is_null($record[0]['image']))
             <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[0][ 'image']['title'] }}" loading="lazy"
-            width="{{ $record[0][ 'image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record[0][ 'image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[0]['period_assigned'] }}" loading="lazy"
+            width="{{ $record[0]['image']['data']['thumbnails'][4]['width'] }}"
+            height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
-          <div class="card-body h-100">
+          <div class="card-body">
             <h3>
               <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
             </h3>
@@ -210,11 +211,11 @@
         <div class="card h-100">
           @if(!is_null($record[0][ 'image']))
             <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[0][ 'image']['title'] }}" loading="lazy"
-            width="{{ $record[0][ 'image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record[0][ 'image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[0]['period_assigned'] }}" loading="lazy"
+            width="{{ $record[0]['image']['data']['thumbnails'][4]['width'] }}"
+            height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
-          <div class="card-body h-100">
+          <div class="card-body">
             <h3>
               <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned']) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
             </h3>
@@ -229,6 +230,72 @@
       <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselPeriods" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+@endsection
+
+@section('context-carousel')
+<div class="container">
+  <h3>Explore object contexts</h3>
+  <div class="row mb-3">
+  <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
+  data-interval="false" data-pause="hover">
+    <div class="carousel-inner row w-100 mx-auto">
+      @php
+      $slides = $context;
+      $count = sizeof($slides);
+      $first = array_slice($slides,0,1);
+      $rest = array_slice($slides, 1, $count);
+      @endphp
+
+      @foreach($first as $record)
+      <div class="carousel-item active">
+        <div class="col-md-4 ">
+        <div class="card h-100 ">
+          @if(!is_null($record[0]['hero_image']))
+            <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['url']}}"
+            alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"
+            width="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['width'] }}"
+            height="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+          @endif
+          <div class="card-body">
+            <h3>
+              <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+      </div>
+      @endforeach
+      @foreach($rest as $record)
+      <div class="carousel-item">
+        <div class="col-md-4">
+        <div class="card h-100">
+          @if(!is_null($record[0]['hero_image']))
+            <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
+            alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"
+            width="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['width'] }}"
+            height="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+          @endif
+          <div class="card-body">
+            <h3>
+              <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+      </div>
+      @endforeach
+    </div>
+    <a class="carousel-control-prev" href="#carouselContexts" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselContexts" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>

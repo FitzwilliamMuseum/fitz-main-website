@@ -666,6 +666,9 @@ ul.logos-sponsors li {
 #carouselPeriods .card {
   min-height: 380px;
 }
+#carouselContexts .card {
+  min-height: 380px;
+}
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
         display: none;
