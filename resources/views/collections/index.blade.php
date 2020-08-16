@@ -13,22 +13,23 @@
   <div class="row">
     @foreach($collections['data'] as $collection)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100">
+      <div class="card h-100">
         @if(!is_null($collection['hero_image']))
-          <a href="/collections/{{ $collection['slug']}}"><img class="img-fluid" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
+        <div class="embed-responsive embed-responsive-1by1">
+          <a href="/collections/{{ $collection['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
           width="{{ $collection['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $collection['hero_image']['data']['thumbnails'][4]['height']}}"
           alt="{{ $collection['hero_image_alt_text']}}" loading="lazy"
           /></a>
+        </div>
         @endif
-        <div class="container h-100">
+        <div class="card-body ">
           <div class="contents-label mb-3">
             <h3>
               <a href="/collections/{{ $collection['slug']}}">{{ $collection['collection_name']}}</a>
             </h3>
           </div>
         </div>
-        <a href="/collections/{{ $collection['slug']}}" class="btn btn-dark">Read more</a>
       </div>
     </div>
     @endforeach

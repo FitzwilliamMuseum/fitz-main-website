@@ -10,24 +10,26 @@
   <div class="row">
     @foreach($press['data'] as $release)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100 ">
+      <div class="card h-100">
         @if(!is_null($release['hero_image']))
-        <img class="img-fluid" src="{{ $release['hero_image']['data']['thumbnails'][2]['url']}}"
+        <div class="embed-responsive embed-responsive-1by1">
+        <img class="img-fluid embed-responsive-item" src="{{ $release['hero_image']['data']['thumbnails'][2]['url']}}"
         width="{{ $release['hero_image']['data']['thumbnails'][2]['width'] }}"
         height="{{ $release['hero_image']['data']['thumbnails'][2]['height'] }}"
         alt="{{ $release['hero_image_alt_text'] }}" loading="lazy"/>
+        </div>
         @endif
-        <div class="container h-100">
+        <div class="card-body ">
           <div class="contents-label mb-3">
             <h3>
-              {{ $release['title']}}
+              <a href="{{ $release['file']['data']['full_url'] }}">{{ $release['title']}}</a>
             </h3>
+          </div>
             <h4><small class="text-muted">{{ $release['release_date']}}</small></h4>
             <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($release['body'])),0,200) }}...</p>
-            
-          </div>
+            <a href="{{ $release['file']['data']['full_url'] }}" class="btn btn-dark">Download file</a>
+
         </div>
-        <a href="{{ $release['file']['data']['full_url'] }}" class="btn btn-dark">Download file</a>
       </div>
     </div>
     @endforeach
