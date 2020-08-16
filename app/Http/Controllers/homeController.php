@@ -53,7 +53,8 @@ class homeController extends Controller
           'fields' => '*.*.*.*',
           'meta' => '*',
           'sort' => '-id',
-          'limit' => 3
+          'limit' => 3,
+          'filter[featured][eq]' => 'yes'
       )
     );
     $research = $api3->getData();
