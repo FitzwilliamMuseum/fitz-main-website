@@ -53,4 +53,28 @@ class departmentsController extends Controller
       $departments = $api->getData();
       return view('departments.details', compact('departments'));
   }
+  public function conservation($slug)
+  {
+      $api = new DirectUs;
+      $api->setEndpoint('conservation_areas');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'filter[slug]' => $slug,
+        )
+      );
+      $departments = $api->getData();
+      return view('departments.areas', compact('departments'));
+  }
+  public static function areas()
+  {
+    $api = new DirectUs;
+    $api->setEndpoint('conservation_areas');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+      )
+    );
+    return $api->getData();
+  }
 }

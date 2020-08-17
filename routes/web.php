@@ -26,6 +26,7 @@ Route::get('about-us/collections', 'collectionsController@index');
 Route::get('about-us/collections/{slug}/', 'collectionsController@details');
 Route::get('about-us/departments/', 'departmentsController@index');
 Route::get('about-us/departments/{slug}', 'departmentsController@details');
+Route::get('about-us/departments/conservation-and-collections-care/{slug}', 'departmentsController@conservation');
 Route::get('about-us/departments/titled/{slug}/', 'departmentsController@details');
 
 /*

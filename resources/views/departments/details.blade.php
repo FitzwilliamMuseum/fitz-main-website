@@ -43,4 +43,14 @@
     </div>
     @endsection
   @endif
+
+@section('cons-areas')
+  @if($dept['slug'] == 'conservation-and-collections-care')
+    @inject('departmentsController', 'App\Http\Controllers\departmentsController')
+    @php
+    $areas = $departmentsController::areas();
+    @endphp
+    @include('includes.structure.areas')
+  @endif
+@endsection
 @endforeach
