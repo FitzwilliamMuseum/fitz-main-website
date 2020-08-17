@@ -19,7 +19,7 @@
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="/objects-and-artworks/audio-guide/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
+            <a href="/objects-and-artworks/audio-guide/{{ $record['slug']}}">@markdown($record['title'])</a></h3>
           @if(!empty($record['stop_number']))
             <h4>
               <small class="text-muted">Stop number: {{ $record['stop_number']}}</small>

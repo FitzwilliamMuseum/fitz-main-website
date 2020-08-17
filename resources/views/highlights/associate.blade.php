@@ -1,6 +1,10 @@
 @extends('layouts/layout')
 @foreach($pharos['data'] as $object)
-  @section('title', $object['title'])
+
+  @section('title')
+   @markdown($object['title'])
+  @endsection
+  
   @section('description', $object['meta_description'])
   @section('keywords', $object['meta_keywords'])
 

@@ -2,7 +2,9 @@
 @foreach($pharos['data'] as $record)
   @section('keywords', $record['meta_keywords'])
   @section('description', $record['meta_description'])
-  @section('title', $record['title'])
+  @section('title')
+   @markdown($record['title'])
+  @endsection
   @section('hero_image', $record['image']['data']['full_url'])
   @section('hero_image_title', $record['image_alt_text'])
   @section('content')

@@ -1,7 +1,9 @@
 @extends('layouts/layout')
 @section('content')
 @foreach($period['data'] as $detail)
-  @section('title', $detail['title'])
+  @section('title')
+   @markdown($detail['title']))
+  @endsection
   @section('description', '')
   @section('keywords', '')
 
@@ -26,7 +28,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
-              <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
+              <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">@markdown($record['title'])</a></h3>
           </div>
         </div>
       </div>
