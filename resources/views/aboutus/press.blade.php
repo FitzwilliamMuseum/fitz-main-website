@@ -12,7 +12,7 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100">
         @if(!is_null($release['hero_image']))
-        <div class="embed-responsive embed-responsive-1by1">
+        <div class="embed-responsive embed-responsive-4by3">
         <img class="img-fluid embed-responsive-item" src="{{ $release['hero_image']['data']['thumbnails'][2]['url']}}"
         width="{{ $release['hero_image']['data']['thumbnails'][2]['width'] }}"
         height="{{ $release['hero_image']['data']['thumbnails'][2]['height'] }}"

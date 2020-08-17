@@ -15,7 +15,7 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100">
         @if(!is_null($collection['hero_image']))
-        <div class="embed-responsive embed-responsive-1by1">
+        <div class="embed-responsive embed-responsive-4by3">
           <a href="/collections/{{ $collection['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
           width="{{ $collection['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $collection['hero_image']['data']['thumbnails'][4]['height']}}"

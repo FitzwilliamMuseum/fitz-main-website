@@ -19,7 +19,7 @@
           <div class="col-md-4 mb-3">
             <div class="card  h-100">
               @if(!is_null($gallery['departments_id']['hero_image']))
-              <div class="embed-responsive embed-responsive-1by1">
+              <div class="embed-responsive embed-responsive-4by3">
                 <a href="/departments/{{ $gallery['departments_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
                 width="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['width']}}"
                 height="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['height']}}"
@@ -50,7 +50,7 @@
         <div class="col-md-4 mb-3">
           <div class="card">
             @if(!is_null($gallery['galleries_id']['hero_image']))
-            <div class="embed-responsive embed-responsive-1by1">
+            <div class="embed-responsive embed-responsive-4by3">
             <a href="/galleries/{{ $gallery['galleries_id']['slug']}}"><img class="embed-responsive-item img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url'] }}"
             width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"

@@ -107,7 +107,7 @@
       <div class="container">
         <h4>3D scans of objects in gallery</h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-          <div class="embed-responsive embed-responsive-1by1">
+          <div class="embed-responsive embed-responsive-4by3">
             <iframe title="A 3D model of {{ $gallery['gallery_name'] }}" class="embed-responsive-item"
             src="https://sketchfab.com/playlists/embed?collection={{ $gallery['sketchfab_id_collection']}}"
             frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
@@ -122,7 +122,7 @@
       <div class="container">
         <h4>Sketchup model of this gallery</h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-          <div class="embed-responsive embed-responsive-1by1">
+          <div class="embed-responsive embed-responsive-4by3">
             <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}" class="embed-responsive-item"
             src="https://sketchfab.com/models/{{ $gallery['sketchfab_sketchup_id']}}/embed?"
             frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

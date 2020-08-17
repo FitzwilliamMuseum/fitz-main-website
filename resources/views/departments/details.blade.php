@@ -21,7 +21,7 @@
         <div class="col-md-4 mb-3">
           <div class="card h-100">
             @if(!is_null($gallery['galleries_id']['hero_image']))
-            <div class="embed-responsive embed-responsive-1by1">
+            <div class="embed-responsive embed-responsive-4by3">
             <img class="img-fluid embed-responsive-item" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $gallery['galleries_id']['hero_image_alt_text'] }}" loading="lazy"
             width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"

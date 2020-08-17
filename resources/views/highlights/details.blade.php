@@ -84,7 +84,7 @@
     <div class="container">
       <h2>3D scan</h2>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-        <div class="embed-responsive embed-responsive-1by1">
+        <div class="embed-responsive embed-responsive-4by3">
           <iframe title="A 3D model of {{ $record['title'] }}" class="embed-responsive-item"
           src="https://sketchfab.com/models/{{ $record['sketchfab_id']}}/embed?"
           frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
