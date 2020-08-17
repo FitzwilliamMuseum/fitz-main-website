@@ -9,9 +9,8 @@
 @endif
   @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-      <img class="align-self-center mr-3 rounded-circle float-right
-      thumb-post" src="{{ $profile['profile_image']['data']['full_url']}}"
-      alt="{{ $profile['profile_image_alt_text'] }}" height="150" width="150">
+      <img class="img-fluid float-right thumb-post" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+      alt="{{ $profile['profile_image_alt_text'] }}" >
       {!! $profile['biography'] !!}
     </div>
     @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) || isset($profile['college_affiliated']))
@@ -52,24 +51,24 @@
       <div class="row">
         @foreach($profile['research_projects'] as $project)
         <div class="col-md-4 mb-3">
-          <div class="card card-body h-100 ">
+          <div class="card  h-100 ">
             @if(!is_null($project['research_projects_id']['hero_image']))
-              <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+            <div class="embed-responsive embed-responsive-1by1">
+              <a href="/research/projects/{{ $project['research_projects_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
               width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
               height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
               alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
-              loading="lazy"/>
+              loading="lazy"/></a>
+            </div>
             @endif
-            <div class="container h-100">
+            <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
                   <a href="/research/projects/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
                 </h3>
               </div>
             </div>
-            <a href="/research/projects/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
           </div>
-
         </div>
         @endforeach
       </div>
@@ -84,22 +83,23 @@
       <div class="row">
         @foreach($profile['departments_affiliated'] as $project)
         <div class="col-md-4 mb-3">
-          <div class="card card-body h-100 ">
+          <div class="card  h-100 ">
             @if(!is_null($project['department']['hero_image']))
-              <img class="img-fluid" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
+            <div class="embed-responsive embed-responsive-1by1">
+              <a href="/departments/{{ $project['department']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
               alt="{{ $project['department']['hero_image_alt_text'] }}"
               height="{{ $project['department']['hero_image']['data']['thumbnails'][4]['height'] }}"
               width="{{ $project['department']['hero_image']['data']['thumbnails'][4]['width'] }}"
-              loading="lazy"/>
+              loading="lazy"/></a>
+            </div>
             @endif
-            <div class="container h-100">
+            <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
                   <a href="/departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
                 </h3>
               </div>
             </div>
-            <a href="/departments/{{ $project['department']['slug']}}" class="btn btn-dark">Read more</a>
           </div>
 
         </div>
@@ -116,7 +116,7 @@
       <div class="row">
         @foreach($profile['research_projects'] as $project)
         <div class="col-md-6 mb-3">
-          <div class="card card-body h-100 ">
+          <div class="card">
             @if(!is_null($project['research_projects_id']['hero_image']))
               <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
               alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
@@ -124,7 +124,7 @@
               width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
               loading="lazy"/>
             @endif
-            <div class="container h-100">
+            <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
                   <a href="/research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
