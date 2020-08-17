@@ -72,6 +72,10 @@
   @endif
     @yield('associated_pages')
 
+    @hasSection('cons-areas')
+      @yield('cons-areas')
+    @endif
+
     @yield('releases')
     @yield('resources-plans')
     @yield('diy')
