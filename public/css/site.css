@@ -242,6 +242,7 @@ video {
 .share li {
   list-style: none;
   margin-left: -40px;
+  font-size: 1rem;
 }
 
 #error {
