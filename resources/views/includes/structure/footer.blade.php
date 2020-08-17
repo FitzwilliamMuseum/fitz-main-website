@@ -1,36 +1,27 @@
 <!-- Footer logos -->
-<div class="bg-white p-2 row">
-  <div class="container ">
-    <div class="row">
-      <div class="col">
-        <a href="http://www.museums.cam.ac.uk"><img class="img-fluid" loading="lazy" alt="University of Cambridge Museums logo" src="/images/logos/ucm_logo_black_white.png" width="162" height="50"/></a>
+  <div class="container-fluid bg-white p-2 ">
+    <div class="col-md-12 mx-auto">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-2 col-sm-2">
+          <a href="http://www.museums.cam.ac.uk"><img class="img-fluid mx-auto " loading="lazy" alt="University of Cambridge Museums logo" src="/images/logos/ucm_logo_black_white.png" /></a>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <a href="http://www.artscouncil.org.uk/"><img class="img-fluid mx-auto d-block" alt="Arts Council England Logo" src="/images/logos/artscouncil_grant.png" loading="lazy"  /></a>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <a href="https://re.ukri.org/"><img class="img-fluid mx-auto d-block" alt="Research England logo" loading="lazy" src="/images/logos/UKRI_RE-Logo_Horiz-RGB.png" /></a>
+        </div>
       </div>
-        <div class="col">
-          <a href="http://www.artscouncil.org.uk/what-we-do/raising-standards/designation-scheme/"><img class="img-fluid" alt="Designation scheme Logo" loading="lazy" src="/images/logos/designation.png" height="50" width="50" /></a>
-        </div>
-        <div class="col">
-          <a href="http://www.artscouncil.org.uk/what-we-do/supporting-museums/accreditation-scheme/"><img class="img-fluid" alt="Accredited Museum status logo" loading="lazy" src="/images/logos/accredited.png" width="53" height="50" /></a>
-        </div>
-        <div class="col">
-          <a href="http://www.cambridge.gov.uk/"><img class="img-fluid" alt="Cambridge City Council Logo" loading="lazy" src="/images/logos/camcity_logo.png" width="40" height="50" /></a>
-        </div>
-        <div class="col">
-          <a href="http://www.artscouncil.org.uk/"><img class="img-fluid" alt="Arts Council England Logo" src="/images/logos/ace.png" loading="lazy" width="159" height="50" /></a>
-        </div>
-        <div class="col">
-          <a href="https://re.ukri.org/"><img class="img-fluid" alt="Research England logo" loading="lazy" src="/images/logos/research_england.png" width="92" height="50" /></a>
-        </div>
     </div>
   </div>
-</div>
 
 <!--- Footer stuff -->
 <footer class="text-black">
 
 <div class="container">
-<div class="row">
+<div class="row pt-2">
 <div class="col-sm mt-2 mb-2">
-<h4>Contact us</h4>
+<h4 class="sr-only">Contact us</h4>
 <p>
 The Fitzwilliam Museum,<br/>
 Trumpington Street,<br/>
@@ -43,7 +34,7 @@ What3Words location: <span class="w3w"><a
 </p>
 </div>
 <div class="col-sm mt-2 mb-2">
-<h4>Useful links</h4>
+<h4 class="sr-only">Useful links</h4>
 
 <ul class="share">
   <li><a href="https://www.museums.cam.ac.uk/"
@@ -61,7 +52,7 @@ What3Words location: <span class="w3w"><a
         </ul>
       </div>
       <div class="col-sm mt-2 mb-2">
-        <h4>Join our conversations</h4>
+        <h4 class="sr-only">Join our conversations</h4>
         <p class="share">
           <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK"><i class="fab fa-twitter fa-2x p-2"></i></a>
           <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk"><i class="fab fa-instagram fa-2x  p-2"></i></a>
@@ -81,21 +72,21 @@ What3Words location: <span class="w3w"><a
             </svg>
           </a></span>
         </p>
-        <h4>Subscribe to feeds</h4>
+        <h4 class="sr-only">Subscribe to feeds</h4>
         <p class="share">
           <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/news/feed') }}"><i class="fas fa-rss"></i></a>
         </p>
       </div>
       <div class="col-sm mt-2 mb-2">
-        <h4>About the University</h4>
+        <h4 class="sr-only">About the University</h4>
         <ul class="share">
           <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">How the University and Colleges work</a></li>
           <li><a href="https://cam.ac.uk/about-the-university/visiting-the-university" aria-label="How to visit the university">Visiting the University</a></li>
           <li><a href="https://www.philanthropy.cam.ac.uk/give-now" aria-label="How to support the University" >Give to Cambridge</a></li>
         </ul>
-        <h4>License</h4>
+        <h4 class="sr-only">License</h4>
         <ul class="share">
-          <li>&copy; 2020 The University of Cambridge</li>
+          <li>&copy; 2020 <br />The University of Cambridge</li>
           <li>Content: CC-BY</li>
           <li>Code: AGPL</li>
         </ul>
