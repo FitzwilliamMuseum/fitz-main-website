@@ -8,9 +8,9 @@
   <div class="row">
       @foreach($profiles['data'] as $profile)
       <div class="col-md-4 mb-3">
-        <div class="card card-body h-100 ">
+        <div class="card  h-100 ">
 
-          <div class="container h-100">
+          <div class="card-body">
             <div class="contents-label mb-3">
             <h3>
               <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
@@ -22,7 +22,6 @@
             </p>
             </div>
           </div>
-          <a href="/research/staff-profiles/{{ $profile['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach
