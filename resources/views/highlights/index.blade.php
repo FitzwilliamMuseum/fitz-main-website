@@ -19,10 +19,9 @@
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
+            <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">@markdown($record['title'])</a></h3>
         </div>
       </div>
-      
     </div>
   </div>
   @endforeach
