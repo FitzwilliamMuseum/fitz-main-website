@@ -65,7 +65,7 @@
     @if(!empty($project['sketchfab_id']))
     <div class="container">
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-        <div class="embed-responsive embed-responsive-1by1">
+        <div class="embed-responsive embed-responsive-4by3">
           <iframe title="A 3D model related to this story" class="embed-responsive-item"
           src="https://sketchfab.com/models/{{ $project['sketchfab_id']}}/embed?"
           frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

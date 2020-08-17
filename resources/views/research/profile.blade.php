@@ -53,7 +53,7 @@
         <div class="col-md-4 mb-3">
           <div class="card  h-100 ">
             @if(!is_null($project['research_projects_id']['hero_image']))
-            <div class="embed-responsive embed-responsive-1by1">
+            <div class="embed-responsive embed-responsive-4by3">
               <a href="/research/projects/{{ $project['research_projects_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
               width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
               height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
@@ -85,7 +85,7 @@
         <div class="col-md-4 mb-3">
           <div class="card  h-100 ">
             @if(!is_null($project['department']['hero_image']))
-            <div class="embed-responsive embed-responsive-1by1">
+            <div class="embed-responsive embed-responsive-4by3">
               <a href="/departments/{{ $project['department']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
               alt="{{ $project['department']['hero_image_alt_text'] }}"
               height="{{ $project['department']['hero_image']['data']['thumbnails'][4]['height'] }}"

@@ -10,11 +10,13 @@
       <div class="col-md-4 mb-3">
         <div class="card h-100">
           @if(!is_null($profile['profile_image']))
-            <img class="img-fluid" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+          <div class="embed-responsive embed-responsive-1by1">
+            <img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
             alt="Profile image for {{ $profile['display_name'] }}"
             width="{{ $profile['profile_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $profile['profile_image']['data']['thumbnails'][4]['height'] }}"
             loading="lazy"/>
+          </div>
           @endif
           <div class="card-body">
             <div class="contents-label mb-3">
