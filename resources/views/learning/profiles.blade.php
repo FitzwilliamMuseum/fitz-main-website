@@ -13,7 +13,7 @@
           <div class="card-body">
             <div class="contents-label mb-3">
             <h3>
-              <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
+              {{ $profile['display_name'] }}
             </h3>
             <p>
               {{ $profile['job_title']}}<br />
