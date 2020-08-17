@@ -30,7 +30,7 @@
 <div class="container">
 <div class="row">
 <div class="col-sm mt-2 mb-2">
-<h4 class="lead">Contact us</h4>
+<h4>Contact us</h4>
 <p>
 The Fitzwilliam Museum,<br/>
 Trumpington Street,<br/>
@@ -87,7 +87,7 @@ What3Words location: <span class="w3w"><a
         </p>
       </div>
       <div class="col-sm mt-2 mb-2">
-        <h4 class="lead">About the University</h4>
+        <h4>About the University</h4>
         <ul class="share">
           <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">How the University and Colleges work</a></li>
           <li><a href="https://cam.ac.uk/about-the-university/visiting-the-university" aria-label="How to visit the university">Visiting the University</a></li>
