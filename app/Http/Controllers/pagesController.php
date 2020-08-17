@@ -49,6 +49,7 @@ class pagesController extends Controller
       )
     );
     $associated = $api->getData();
+
     $api2 = $this->getApi();
     $api2->setEndpoint('stubs_and_pages');
     $api2->setArguments(

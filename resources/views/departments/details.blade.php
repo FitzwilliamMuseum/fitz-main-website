@@ -22,17 +22,17 @@
           <div class="card h-100">
             @if(!is_null($gallery['galleries_id']['hero_image']))
             <div class="embed-responsive embed-responsive-4by3">
-            <img class="img-fluid embed-responsive-item" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="/visit-us/galleries/{{ $gallery['galleries_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $gallery['galleries_id']['hero_image_alt_text'] }}" loading="lazy"
             width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-            />
+            /></a>
           </div>
             @endif
             <div class="card-body ">
               <div class="contents-label mb-3">
                 <h3>
-                  <a href="/galleries/{{ $gallery['galleries_id']['slug']}}">{{ $gallery['galleries_id']['gallery_name']}}</a>
+                  <a href="/visit-us/galleries/{{ $gallery['galleries_id']['slug']}}">{{ $gallery['galleries_id']['gallery_name']}}</a>
                 </h3>
               </div>
             </div>

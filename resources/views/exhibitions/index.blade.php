@@ -16,7 +16,7 @@
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
         @if(!is_null($project['hero_image']))
-          <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
+          <a href="/visit-us/exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
           alt="{{ $project['hero_image_alt_text'] }}"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
@@ -25,7 +25,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
-              <a href="exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
+              <a href="/visit-us/exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>
         </div>
@@ -46,7 +46,7 @@
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
         @if(!is_null($project['hero_image']))
-          <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="/visit-us/exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           loading="lazy"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
@@ -57,7 +57,7 @@
 
           <div class="contents-label mb-3">
             <h3>
-              <a href="exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
+              <a href="/visit-us/exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>
         </div>
@@ -78,7 +78,7 @@
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
         @if(!is_null($project['hero_image']))
-          <a href="exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="/visit-us/exhibitions/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $project['hero_image_alt_text'] }}"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
@@ -88,7 +88,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
-              <a href="exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
+              <a href="/visit-us/exhibitions/{{ $project['slug']}}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>
         </div>
