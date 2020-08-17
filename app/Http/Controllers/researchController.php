@@ -27,6 +27,19 @@ class researchController extends Controller
        );
        $pages = $api->getData();
 
+       $apiRes = $this->getApi();
+       $apiRes->setEndpoint('stubs_and_pages');
+       $apiRes->setArguments(
+         $args = array(
+             'fields' => '*.*.*.*',
+             'meta' => '*',
+             'filter[landing_page][null]' => '',
+             'filter[section][eq]' => 'research',
+             'filter[associate_with_landing_page][eq]' => '1'
+         )
+       );
+       $associated = $apiRes->getData();
+
        $api2 = $this->getApi();
        $api2->setEndpoint('research_projects');
        $api2->setArguments(
@@ -37,7 +50,7 @@ class researchController extends Controller
          )
        );
        $projects = $api2->getData();
-       return view('research.index', compact('projects', 'pages'));
+       return view('research.index', compact('projects', 'pages', 'associated'));
      }
 
     public function projects()
