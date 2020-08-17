@@ -20,7 +20,7 @@
       <div class="col-md-4 mb-3">
         <div class="card  h-100">
           @if(!is_null($gallery['hero_image']))
-            <a href="galleries/{{ $gallery['slug']}}"><img class="img-fluid" src="{{ $gallery['hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="/visit-us/galleries/{{ $gallery['slug']}}"><img class="img-fluid" src="{{ $gallery['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="A highlight image for {{ $gallery['gallery_name'] }}" loading="lazy"
             width="{{ $gallery['hero_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $gallery['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
@@ -28,7 +28,7 @@
           <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3>
-                <a href="galleries/{{ $gallery['slug']}}">{{ $gallery['gallery_name'] }}</a>
+                <a href="/visit-us/galleries/{{ $gallery['slug']}}">{{ $gallery['gallery_name'] }}</a>
               </h3>
               @if($gallery['gallery_status'])
               @foreach($gallery['gallery_status'] as $status)

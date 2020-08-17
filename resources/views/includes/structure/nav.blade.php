@@ -14,8 +14,8 @@
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVisit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visit us</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownVisit">
         <a class="dropdown-item" href="{{ URL::to('/visit-us') }}">Your visit</a>
-        <a class="dropdown-item" href="{{ URL::to('/exhibitions') }}">Exhibitions</a>
-        <a class="dropdown-item" href="{{ URL::to('/galleries') }}">Galleries</a>
+        <a class="dropdown-item" href="{{ URL::to('/visit-us/exhibitions') }}">Exhibitions</a>
+        <a class="dropdown-item" href="{{ URL::to('/visit-us/galleries') }}">Galleries</a>
       </div>
     </li>
     <li class="nav-item dropdown">
@@ -23,8 +23,8 @@
       About us</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
         <a class="dropdown-item" href="{{ URL::to('/about-us') }}">About the Museum</a>
-        <a class="dropdown-item" href="{{ URL::to('/collections') }}">Collection areas</a>
-        <a class="dropdown-item" href="{{ URL::to('/departments') }}">Departments</a>
+        <a class="dropdown-item" href="{{ URL::to('/about-us/collections') }}">Collection areas</a>
+        <a class="dropdown-item" href="{{ URL::to('/about-us/departments') }}">Departments</a>
         <a class="dropdown-item" href="{{ URL::to('/about-us/press-room') }}">Press room</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
 

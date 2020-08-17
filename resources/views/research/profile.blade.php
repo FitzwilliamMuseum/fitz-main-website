@@ -86,7 +86,7 @@
           <div class="card  h-100 ">
             @if(!is_null($project['department']['hero_image']))
             <div class="embed-responsive embed-responsive-4by3">
-              <a href="/departments/{{ $project['department']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
+              <a href="/about-us/departments/{{ $project['department']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
               alt="{{ $project['department']['hero_image_alt_text'] }}"
               height="{{ $project['department']['hero_image']['data']['thumbnails'][4]['height'] }}"
               width="{{ $project['department']['hero_image']['data']['thumbnails'][4]['width'] }}"
@@ -96,7 +96,7 @@
             <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
-                  <a href="/departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
+                  <a href="/about-us/departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
                 </h3>
               </div>
             </div>

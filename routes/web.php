@@ -14,10 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'homeController@index');
+
+/*
+About us routes
+*/
 Route::get('about-us/directors', 'aboutusController@directors');
 Route::get('about-us/directors/{slug}', 'aboutusController@director');
 Route::get('about-us/press-room', 'aboutusController@press');
 Route::get('about-us/governance', 'aboutusController@governance');
+Route::get('about-us/collections', 'collectionsController@index');
+Route::get('about-us/collections/{slug}/', 'collectionsController@details');
+Route::get('about-us/departments/', 'departmentsController@index');
+Route::get('about-us/departments/{slug}', 'departmentsController@details');
+Route::get('about-us/departments/titled/{slug}/', 'departmentsController@details');
+
+/*
+Research section routes
+*/
 Route::get('research/', 'researchController@index');
 Route::get('research/projects/', 'researchController@projects');
 Route::get('research/projects/{slug}/', 'researchController@project');
@@ -25,15 +38,28 @@ Route::get('research/staff-profiles', 'researchController@profiles');
 Route::get('research/staff-profiles/{slug}', 'researchController@profile');
 Route::get('research/online-resources/', 'researchController@resources');
 Route::get('research/online-resources/{slug}', 'researchController@resource');
-Route::get('collections', 'collectionsController@index');
+
+/*
+Visit us Route
+*/
 Route::get('visit-us/', 'visitController@index');
+Route::get('visit-us/galleries', 'galleriesController@index');
+Route::get('visit-us/galleries/{slug}', 'galleriesController@gallery');
+Route::get('visit-us/exhibitions/', 'exhibitionsController@index');
+Route::get('visit-us/exhibitions/archive', 'exhibitionsController@archive');
+Route::get('visit-us/exhibitions/future', 'exhibitionsController@future');
+Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details');
+
+/*
+News routes
+*/
 Route::get('news/', 'newsController@index');
-Route::get('departments/', 'departmentsController@index');
-Route::get('departments/{slug}', 'departmentsController@details');
 Route::get('news/feed/', 'newsController@atom');
 Route::get('news/{slug}/', 'newsController@article');
-Route::get('collections/{slug}/', 'collectionsController@details');
-Route::get('departments/titled/{slug}/', 'departmentsController@details');
+
+/*
+Learning routes
+*/
 Route::get('learning/look-think-do/', 'learningController@lookthinkdomain');
 Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
 Route::get('learning/resources/', 'learningController@resources');
@@ -41,29 +67,27 @@ Route::get('learning/resources/{slug}', 'learningController@resource');
 Route::get('learning/school-sessions/{slug}', 'learningController@session');
 Route::get('learning/young-people/{slug}', 'learningController@young');
 Route::get('learning/contact-us/', 'learningController@profiles');
+
+/*
+Themes routes - are these obsolete?
+*/
 Route::get('themes/', 'themesController@index');
 Route::get('themes/{slug}', 'themesController@theme');
-Route::get('galleries', 'galleriesController@index');
-Route::get('galleries/{slug}', 'galleriesController@gallery');
-Route::get('exhibitions/', 'exhibitionsController@index');
-Route::get('exhibitions/archive', 'exhibitionsController@archive');
-Route::get('exhibitions/future', 'exhibitionsController@future');
-Route::get('exhibitions/{slug}', 'exhibitionsController@details');
+
+/*
+Object and highlight routes
+*/
 Route::get('objects-and-artworks/highlights', 'highlightsController@index');
 Route::get('objects-and-artworks/', 'highlightsController@landing');
 Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period');
 Route::get('objects-and-artworks/highlights/periods/{period}', 'highlightsController@byperiod');
 Route::get('objects-and-artworks/highlights/themes/', 'highlightsController@theme');
 Route::get('objects-and-artworks/highlights/themes/{theme}', 'highlightsController@bytheme');
-
 Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual');
 Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details');
 Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results/', 'highlightsController@results');
-
-
 Route::get('objects-and-artworks/highlights/context/{section}/', 'highlightsController@pharosSections');
 Route::get('objects-and-artworks/highlights/context/{section}/{slug}/', 'highlightsController@associate');
-
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop');
 
@@ -93,19 +117,23 @@ Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
     'as' => 'search.results'
 ]);
+
+
 /*
  * Route for checking solr up and running
  */
 Route::get('/ping', 'searchController@ping');
 
-//
-//
-
-
+/*
+Cache clear route
+*/
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";
 });
 
+/*
+Catch all route
+*/
 Route::get('/{section}/{slug}/', 'pagesController@index');
-Route::get('/{section}/', 'pagesController@landing');
+Route::get('/{section}', 'pagesController@landing');

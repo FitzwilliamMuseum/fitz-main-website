@@ -16,7 +16,7 @@
       <div class="card h-100">
         @if(!is_null($collection['hero_image']))
         <div class="embed-responsive embed-responsive-4by3">
-          <a href="/collections/{{ $collection['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="/about-us/collections/{{ $collection['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
           width="{{ $collection['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $collection['hero_image']['data']['thumbnails'][4]['height']}}"
           alt="{{ $collection['hero_image_alt_text']}}" loading="lazy"
@@ -26,7 +26,7 @@
         <div class="card-body ">
           <div class="contents-label mb-3">
             <h3>
-              <a href="/collections/{{ $collection['slug']}}">{{ $collection['collection_name']}}</a>
+              <a href="/about-us/collections/{{ $collection['slug']}}">{{ $collection['collection_name']}}</a>
             </h3>
           </div>
         </div>

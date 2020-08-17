@@ -70,23 +70,25 @@
           <div class="row">
             @foreach($coll['associated_curators'] as $curator)
             <div class="col-md-4 mb-3">
-              <div class="card card-body h-100">
+              <div class="card h-100">
                 @if(!is_null($curator['staff_profiles_id']['profile_image']))
-                  <img class="img-fluid" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][7]['url']}}"
+                <div class="embed-responsive embed-responsive-1by1">
+                  <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}"><img
+                    class="img-fluid embed-responsive-item" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][7]['url']}}"
                   loading="lazy"
                   alt="{{ $curator['staff_profiles_id']['profile_image_alt_text'] }}"
                   height="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][7]['height'] }}"
                   width="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][7]['width'] }}"
-                  />
+                  /></a>
+                </div>
                 @endif
-                <div class="container h-100">
+                <div class="card-body">
                   <div class="contents-label mb-3">
                     <h3>
                       <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}">{{ $curator['staff_profiles_id']['display_name']}}</a>
                     </h3>
                   </div>
                 </div>
-                <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}" class="btn btn-dark">Read more</a>
               </div>
             </div>
             @endforeach
@@ -103,19 +105,23 @@
           <div class="row">
             @foreach($coll['exhibition_partners'] as $partner)
             <div class="col-md-4 mb-3">
-              <div class="card card-body h-100">
+              <div class="card  h-100">
                 @if(!is_null( $partner['partner']['partner_logo']))
-                  <img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
+                <div class="embed-responsive embed-responsive-4by3">
+                  <img class="img-fluid embed-responsive-item" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
                   alt="Logo for {{ $partner['partner']['partner_full_name']}}"
                   height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['height'] }}"
                   width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['width'] }}"
                   loading="lazy"/>
+                </div>
                 @else
-                  <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                <div class="embed-responsive embed-responsive-4by3">
+                  <img class="img-fluid embed-responsive-item" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                   alt="The Fitzwilliam Museum's Gallery 3 roof"
                   loading="lazy"/>
+                </div>
                 @endif
-                <div class="container h-100">
+                <div class="card-body">
                   <div class="contents-label mb-3">
                     <h3>
                       <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
@@ -142,22 +148,23 @@
           <div class="row">
             @foreach($coll['associated_departments'] as $gallery)
             <div class="col-md-4 mb-3">
-              <div class="card card-body h-100">
+              <div class="card  h-100">
                 @if(!is_null($gallery['departments_id']['hero_image']))
-                <img class="img-fluid" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+                <div class="embed-responsive embed-responsive-4by3">
+                <a href="/departments/{{ $gallery['departments_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
                 loading="lazy" alt="Highlight image for {{ gallery['departments_id']['hero_image_alt_text'] }}"
                 height="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
                 width="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-                />
+                /></a>
+                </div>
                 @endif
-                <div class="container h-100">
+                <div class="card-body ">
                   <div class="contents-label mb-3">
                     <h3>
                       <a href="/departments/{{ $gallery['departments_id']['slug']}}">{{ $gallery['departments_id']['title']}}</a>
                     </h3>
                   </div>
                 </div>
-                <a href="/departments/{{ $gallery['departments_id']['slug']}}" class="btn btn-dark">Read more</a>
               </div>
             </div>
             @endforeach
@@ -221,19 +228,20 @@
   <div class="row">
     @foreach($records as $record)
     <div class="col-md-4 mb-3">
-      <div class="card card-body h-100">
+      <div class="card h-100">
         @if(!is_null($record['smallimage']))
-          <img class="img-fluid" src="{{ $record['smallimage'][0]}}"
+        <div class="embed-responsive embed-responsive-4by3">
+          <img class="img-fluid embed-responsive-item" src="{{ $record['smallimage'][0]}}"
           alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+        </div>
         @endif
-        <div class="container h-100">
+        <div class="card-body ">
           <div class="contents-label mb-3">
             <h3>
-              <a href="/exhibitions/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+              <a href="/visit-us/exhibitions/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
             </h3>
           </div>
         </div>
-        <a href="/exhibitions/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
       </div>
     </div>
     @endforeach
