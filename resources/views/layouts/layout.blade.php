@@ -64,12 +64,13 @@
   @hasSection('collection-parallax')
     @include('includes.structure.parallax')
   @endif
-  
+
   @hasSection('map')
   <div class="container-fluid map-box mb-3">
     @yield('map')
   </div>
   @endif
+    @yield('associated_pages')
 
     @yield('releases')
     @yield('resources-plans')
@@ -81,7 +82,6 @@
     @yield('collections')
     @yield('departments')
     @yield('galleries')
-    @yield('associated_pages')
     @yield('360')
     @yield('youtube')
     @yield('youtube-playlist')
