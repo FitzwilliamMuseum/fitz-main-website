@@ -2,7 +2,7 @@
 @section('content')
 @foreach($period['data'] as $detail)
   @section('title')
-   @markdown($detail['title']))
+   @markdown($detail['title'])
   @endsection
   @section('description', '')
   @section('keywords', '')
