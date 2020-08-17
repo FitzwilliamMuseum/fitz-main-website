@@ -108,6 +108,18 @@ class highlightsController extends Controller
 
     public function landing()
     {
+      $intro = $this->getApi();
+      $intro->setEndpoint('stubs_and_pages');
+      $intro->setArguments(
+          $args = array(
+              'fields' => '*.*.*',
+              'meta' => '*',
+              'filter[id][eq]' => 9
+          )
+        );
+      $page = $intro->getData();
+      $page = $page['data'][0]['body'];
+
       $api = $this->getApi();
       $api->setEndpoint('pharos_themes');
       $api->setArguments(
@@ -141,7 +153,7 @@ class highlightsController extends Controller
       $contexts = $api3->getData();
       $context = $this->group_by("section", $contexts['data']);
 
-      return view('highlights.landing', compact('pharos', 'periods', 'context'));
+      return view('highlights.landing', compact('pharos', 'periods', 'context', 'page'));
     }
 
 

@@ -7,7 +7,9 @@
 @section('collection-parallax', 'https://api.fitz.ms/mediaLib/pdp/pdp82/P_72_1999_200706_dc2.jpg')
 @section('content')
 <h3>Search our objects and artworks</h3>
-
+<div class="col-12 shadow-sm p-3 mx-auto mb-3">
+{{ $page }}
+</div>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3">
   {{ \Form::open(['url' => url('https://collection.beta.fitz.ms/search/results'),'method' => 'GET']) }}
 <div class="row">
