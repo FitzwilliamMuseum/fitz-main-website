@@ -26,7 +26,7 @@
               <a href="news/{{ $project['slug'] }}">{{ $project['article_title'] }}</a>
             </h3>
             <h4>
-              <small class="text-muted">{{ Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</small>
+              <small class="text-muted">{{ Carbon\Carbon::parse($project['publication_date'])->format('l j F Y') }}</small>
             </h4>
 
           </div>
