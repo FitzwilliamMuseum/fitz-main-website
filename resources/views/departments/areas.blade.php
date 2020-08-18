@@ -12,5 +12,15 @@
       @markdown($dept['body'])
     </div>
   @endsection
-
+  @php
+  $uri = Route::current();
+  $path = $uri->uri;
+  @endphp
+  @if($path == 'about-us/departments/conservation-and-collections-care/{slug}')
+      @inject('departmentsController', 'App\Http\Controllers\departmentsController')
+      @php
+      $areas = $departmentsController::areasData($dept['slug']);
+      @endphp
+      @include('includes.structure.cons-research')
+  @endif
 @endforeach
