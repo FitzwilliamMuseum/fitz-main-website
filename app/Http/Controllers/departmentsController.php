@@ -22,7 +22,7 @@ class departmentsController extends Controller
         $args = array(
             'fields' => '*.*.*',
             'filter[section]' => 'departments',
-            'filter[landing_page]' => '1' ,
+            'filter[landing_page][eq]' => '1' ,
             'meta' => '*'
         )
       );
@@ -47,7 +47,7 @@ class departmentsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'filter[slug]' => $slug,
+            'filter[slug][eq]' => $slug,
         )
       );
       $departments = $api->getData();
@@ -60,19 +60,32 @@ class departmentsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'filter[slug]' => $slug,
+            'filter[slug][eq]' => $slug,
         )
       );
       $departments = $api->getData();
       return view('departments.areas', compact('departments'));
   }
+
   public static function areas()
   {
     $api = new DirectUs;
     $api->setEndpoint('conservation_areas');
     $api->setArguments(
       $args = array(
-          'fields' => '*.*.*.*',
+          'fields' => '*.*.*.*.*',
+      )
+    );
+    return $api->getData();
+  }
+  public static function areasData($slug)
+  {
+    $api = new DirectUs;
+    $api->setEndpoint('conservation_areas');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*.*',
+          'filter[slug][eq]' => $slug,
       )
     );
     return $api->getData();
