@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/founders.jpg')
-@section('hero_image_title','The founder\'s building of the museum')
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+@section('hero_image_title','The founder\'s building entrance ceiling')
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 @section('parallax_two', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/confection.jpg')
 @section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/25th_november_057.jpg')
@@ -97,7 +97,7 @@
       <div class="card-body  h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="objects-and-artworks/highlights/{{ $theme['slug']}}">{{ $theme['title']}}</a>
+            <a href="objects-and-artworks/highlights/{{ $theme['slug']}}">@markdown($theme['title'])</a>
           </h3>
         </div>
       </div>
