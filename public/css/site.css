@@ -738,3 +738,6 @@ h3 > a:hover::before {
   display: inline;
   margin
 }
+.navbar-dark .navbar-nav .nav-link {
+    color: #f5f5f5!important;
+}
