@@ -95,7 +95,7 @@
 <div class="row">
   @foreach($records as $record)
   <div class="col-md-4 mb-3">
-    <div class="card card-body h-100">
+    <div class="card  h-100">
       @if(!is_null($record['thumbnail']))
         <img class="img-fluid" src="{{ $record['thumbnail'][0]}}" alt="A highlight image for {{ $record['title'][0] }}"
         height="600"
@@ -110,7 +110,7 @@
         width="800"
         />
       @endif
-      <div class="container h-100">
+      <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
             <a href="/news/{{ $record['slug'][0]}}">{{ $record['title'][0] }}</a>
@@ -121,7 +121,6 @@
 
         </div>
       </div>
-      <a href="/news/{{ $record['slug'][0]}}" class="btn btn-dark">Read more</a>
     </div>
   </div>
   @endforeach
