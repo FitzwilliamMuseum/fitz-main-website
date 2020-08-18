@@ -4,7 +4,7 @@
     <div class="card h-100">
       @if(isset($tweet->extended_entities))
       @foreach($tweet->extended_entities as $entity)
-      <div class="embed-responsive embed-responsive-4by3">
+      <div class="embed-responsive embed-responsive-1by1">
         <a href="{{ Twitter::linkTweet($tweet) }}"><img class="img-fluid  embed-responsive-item" src="{{ $entity[0]->media_url_https }}:small"
         width="680" height="672" loading="lazy" alt="An image from Twitter"/></a>
       </div>
