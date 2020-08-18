@@ -116,7 +116,7 @@
             <a href="/news/{{ $record['slug'][0]}}">{{ $record['title'][0] }}</a>
           </h3>
           <h4>
-            <small class="text-muted">{{  Carbon\Carbon::parse($record['pubDate'][0])->format('l dS F Y') }}</small>
+            <small class="text-muted">{{  Carbon\Carbon::parse($record['pubDate'][0])->format('l j F Y') }}</small>
           </h4>
 
         </div>
