@@ -10,9 +10,7 @@
       </div>
       @endforeach
       @else
-      <div class="embed-responsive embed-responsive-4by3">
-        <a href="{{ Twitter::linkTweet($tweet) }}"><img class="img-fluid twitter embed-responsive-item" src="https://pbs.twimg.com/profile_images/1057934206368710656/NE1KayiE.jpg"/></a>
-      </div>
+        <a href="{{ Twitter::linkTweet($tweet) }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/portico.jpg"/></a>
       @endif
       <div class="card-body">
         <div class="contents-label mb-3">

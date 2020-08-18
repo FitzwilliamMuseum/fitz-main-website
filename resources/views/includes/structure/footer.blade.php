@@ -22,13 +22,13 @@
 <div class="row pt-2">
 <div class="col-sm mt-2 mb-2">
 <h4 class="sr-only">Contact us</h4>
-<p>
+<p class="small-font">
 The Fitzwilliam Museum,<br/>
 Trumpington Street,<br/>
 Cambridge<br/>
 CB2 1RB<br/>
 Tel: +44 (0)1223 332900<br />
-What3Words location: <span class="w3w"><a
+What3Words: <span class="w3w"><a
   href="https://map.what3words.com/lofts.puzzle.given"
   aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
 </p>
@@ -80,7 +80,7 @@ What3Words location: <span class="w3w"><a
       <div class="col-sm mt-2 mb-2">
         <h4 class="sr-only">About the University</h4>
         <ul class="share">
-          <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">How the University and Colleges work</a></li>
+          <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work" aria-label="How Collegiate Cambridge works">The University and Colleges</a></li>
           <li><a href="https://cam.ac.uk/about-the-university/visiting-the-university" aria-label="How to visit the university">Visiting the University</a></li>
           <li><a href="https://www.philanthropy.cam.ac.uk/give-now" aria-label="How to support the University" >Give to Cambridge</a></li>
         </ul>

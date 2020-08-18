@@ -741,3 +741,7 @@ h3 > a:hover::before {
 .navbar-dark .navbar-nav .nav-link {
     color: #f5f5f5!important;
 }
+
+p.small-font {
+  font-size: 1rem!important;
+}
