@@ -20,13 +20,13 @@
   <div class="col-md-4 mb-3">
     <div class="card  h-100">
       @if(!is_null($project['field_image']))
-        <a href="news/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"
+        <a href="{{ route('article', $project['slug']) }}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $project['field_image_alt_text'] }}" /></a>
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="news/{{ $project['slug']}}">{{ $project['article_title']}}</a>
+            <a href="{{ route('article', $project['slug']) }}">{{ $project['article_title']}}</a>
           </h3>
         </div>
       </div>
@@ -66,7 +66,7 @@
   <div class="col-md-4 mb-3">
     <div class="card h-100">
         @if(!is_null($project['hero_image']))
-          <a href="research/projects/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="{{ route('research-project', $project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $project['hero_image_alt_text'] }}" loading="lazy"
           width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}" /></a>
@@ -74,7 +74,7 @@
         <div class="card-body  h-100">
           <div class="contents-label mb-3">
             <h3>
-              <a href="research/projects/{{ $project['slug']}}">{{ $project['title']}}</a>
+              <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
             </h3>
           </div>
         </div>
@@ -88,7 +88,7 @@
   <div class="col-md-4 mb-3">
     <div class="card h-100">
       @if(!is_null($theme['image']))
-      <a href="objects-and-artworks/highlights/{{ $theme['slug']}}"><img class="img-fluid" src="{{ $theme['image']['data']['thumbnails'][4]['url']}}"
+      <a href="{{ route('highlight', $theme['slug']) }}"><img class="img-fluid" src="{{ $theme['image']['data']['thumbnails'][4]['url']}}"
       alt="{{ $theme['image_alt_text'] }}"
       loading="lazy"
       height="{{ $theme['image']['data']['thumbnails'][4]['height'] }}"
@@ -97,7 +97,7 @@
       <div class="card-body  h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="objects-and-artworks/highlights/{{ $theme['slug']}}">@markdown($theme['title'])</a>
+            <a href="{{ route('highlight', $theme['slug']) }}">@markdown($theme['title'])</a>
           </h3>
         </div>
       </div>

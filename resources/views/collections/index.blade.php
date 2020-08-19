@@ -6,7 +6,7 @@
   @section('keywords', $page['meta_keywords'])
 @endforeach
 
-@section('title','Objects and Art Works')
+@section('title','Our collections: an overview')
 
 @section('collections')
 <div class="container">
@@ -16,7 +16,7 @@
       <div class="card h-100">
         @if(!is_null($collection['hero_image']))
         <div class="embed-responsive embed-responsive-4by3">
-          <a href="/about-us/collections/{{ $collection['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="{{ route('collection', $collection['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $collection['hero_image']['data']['thumbnails'][4]['url']}}"
           width="{{ $collection['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $collection['hero_image']['data']['thumbnails'][4]['height']}}"
           alt="{{ $collection['hero_image_alt_text']}}" loading="lazy"
@@ -26,7 +26,7 @@
         <div class="card-body ">
           <div class="contents-label mb-3">
             <h3>
-              <a href="/about-us/collections/{{ $collection['slug']}}">{{ $collection['collection_name']}}</a>
+              <a href="{{ route('collection', $collection['slug']) }}">{{ $collection['collection_name']}}</a>
             </h3>
           </div>
         </div>

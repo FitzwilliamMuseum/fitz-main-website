@@ -2,7 +2,7 @@
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page"><a href="{{ URL::to('/') }}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('home') }}">Home</a></li>
 
 
     @php

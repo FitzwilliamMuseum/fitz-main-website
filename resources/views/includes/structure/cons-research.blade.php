@@ -9,7 +9,7 @@
       <div class="card  h-100 ">
         @if(!is_null($project['research_projects_id']['hero_image']))
         <div class="embed-responsive embed-responsive-4by3">
-          <a href="/research/projects/{{ $project['research_projects_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
           width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
           alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
@@ -19,7 +19,7 @@
         <div class="card-body">
           <div class="contents-label mb-3">
             <h3>
-              <a href="/research/projects/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
+              <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}">{{ $project['research_projects_id']['title']}}</a>
             </h3>
           </div>
         </div>

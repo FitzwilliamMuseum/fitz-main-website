@@ -11,17 +11,17 @@
         <div class="card h-100">
           @if(!is_null($profile['profile_image']))
           <div class="embed-responsive embed-responsive-1by1">
-            <img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+              <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
             alt="Profile image for {{ $profile['display_name'] }}"
             width="{{ $profile['profile_image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $profile['profile_image']['data']['thumbnails'][4]['height'] }}"
-            loading="lazy"/>
+            loading="lazy"/></a>
           </div>
           @endif
           <div class="card-body">
             <div class="contents-label mb-3">
             <h3>
-              <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
+              <a href="{{ route('research-profile', $profile['slug']) }}">{{ $profile['display_name'] }}</a>
             </h3>
             </div>
           </div>

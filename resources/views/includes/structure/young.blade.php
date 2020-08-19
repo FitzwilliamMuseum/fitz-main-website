@@ -4,7 +4,7 @@
   <div class="col-md-4 mb-3">
     <div class="card  h-100">
       @if(!is_null($session['hero_image']))
-        <a href="/learning/young-people/{{ $session['slug'] }}"><img class="img-fluid" src="{{ $session['hero_image']['data']['thumbnails'][4]['url']}}"
+        <a href="{{ route('young-people', $session['slug']) }}"><img class="img-fluid" src="{{ $session['hero_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $session['hero_image_alt_text'] }}"
         width="{{ $session['hero_image']['data']['thumbnails'][4]['height'] }}"
         height="{{ $session['hero_image']['data']['thumbnails'][4]['width'] }}"
@@ -16,7 +16,7 @@
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="/learning/young-people/{{ $session['slug'] }}">{{ $session['title'] }}</a>
+            <a href="{{ route('young-people', $session['slug']) }}">{{ $session['title'] }}</a>
           </h3>
           @if(isset($session['key_stages']))
           <p>
