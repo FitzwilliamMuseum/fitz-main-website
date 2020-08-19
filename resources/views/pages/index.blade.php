@@ -29,6 +29,14 @@
     </div>
     @endif
 
+    @if($page['slug'] == 'adult-programming')
+      @inject('learningController', 'App\Http\Controllers\learningController')
+      @php
+      $sessions = $learningController::adultsessions();
+      @endphp
+      @include('includes.structure.adult')
+    @endif
+
     @if($page['slug'] == 'school-sessions')
       @inject('learningController', 'App\Http\Controllers\learningController')
       @php

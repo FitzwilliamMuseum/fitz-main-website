@@ -88,6 +88,7 @@
     @yield('galleries')
     @yield('360')
     @yield('youtube')
+    @yield('sms')
     @yield('youtube-playlist')
     @yield('sketchfab-collection')
     @yield('sketchfab')
