@@ -13,7 +13,7 @@
           <div class="container h-100">
             <div class="contents-label mb-3">
             <h3>
-              <a href="/research/staff-profiles/{{ $profile['slug']}}">{{ $profile['display_name'] }}</a>
+              {{ $profile['display_name'] }}
             </h3>
             <p>
               {{ $profile['job_title']}}<br />
@@ -22,7 +22,6 @@
             </p>
             </div>
           </div>
-          <a href="/research/staff-profiles/{{ $profile['slug']}}" class="btn btn-dark">Read more</a>
         </div>
       </div>
       @endforeach

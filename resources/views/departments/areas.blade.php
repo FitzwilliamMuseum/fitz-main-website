@@ -12,11 +12,7 @@
       @markdown($dept['body'])
     </div>
   @endsection
-  @php
-  $uri = Route::current();
-  $path = $uri->uri;
-  @endphp
-  @if($path == 'about-us/departments/conservation-and-collections-care/{slug}')
+  @if(Route::currentRouteName() == 'conservation-care')
       @inject('departmentsController', 'App\Http\Controllers\departmentsController')
       @php
       $areas = $departmentsController::areasData($dept['slug']);

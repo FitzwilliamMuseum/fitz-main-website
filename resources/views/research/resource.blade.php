@@ -11,10 +11,9 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['description'])
   </div>
-  
+
   <h3>Project information</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-
     <ul>
       @if($project['project_url'])
       <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>

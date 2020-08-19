@@ -14,6 +14,7 @@ use App\DirectUs;
 use App\MoreLikeThis;
 use Elasticsearch\ClientBuilder;
 use App\FitzElastic\Elastic;
+use Illuminate\Support\Str;
 
 class highlightsController extends Controller
 {
@@ -66,7 +67,7 @@ class highlightsController extends Controller
               {
                 "match": {
                   "identifier.accession_number": {
-                    "query": "' . strtoupper($pharos['data'][0]['adlib_id']) . '",
+                    "query": "' . Str::upper($pharos['data'][0]['adlib_id']) . '",
                     "operator": "and"
                   }
                 }
@@ -199,7 +200,7 @@ class highlightsController extends Controller
 
     public function audioguide()
     {
-      $first = new DirectUs;
+      $first = $this->getApi();
       $first->setEndpoint('audio_guide');
       $first->setArguments(
         array(
@@ -212,7 +213,7 @@ class highlightsController extends Controller
       return view('highlights.audioguide', compact('stops'));
     }
 
-    public function stop( $slug)
+    public function stop($slug)
     {
       $api = $this->getApi();
       $api->setEndpoint('audio_guide');
@@ -224,8 +225,6 @@ class highlightsController extends Controller
         )
       );
       $stop = $api->getData();
-      // dd($stop);
-
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('audioguide')->setQuery($slug);
       $records = $mlt->getData();
@@ -358,7 +357,6 @@ class highlightsController extends Controller
      */
      public function group_by($key, $data) {
         $result = array();
-
         foreach($data as $val) {
             if(array_key_exists($key, $val)){
                 $result[$val[$key]][] = $val;
@@ -366,7 +364,6 @@ class highlightsController extends Controller
                 $result[""][] = $val;
             }
         }
-
         return $result;
     }
 }

@@ -54,7 +54,7 @@
           <div class="card  h-100 ">
             @if(!is_null($project['research_projects_id']['hero_image']))
             <div class="embed-responsive embed-responsive-4by3">
-              <a href="/research/projects/{{ $project['research_projects_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+              <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
               width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
               height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
               alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
@@ -64,7 +64,7 @@
             <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
-                  <a href="/research/projects/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
+                  <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}">{{ $project['research_projects_id']['title']}}</a>
                 </h3>
               </div>
             </div>
@@ -86,7 +86,7 @@
           <div class="card  h-100 ">
             @if(!is_null($project['department']['hero_image']))
             <div class="embed-responsive embed-responsive-4by3">
-              <a href="/about-us/departments/{{ $project['department']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
+              <a href="{{ route('department', $project['department']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
               alt="{{ $project['department']['hero_image_alt_text'] }}"
               height="{{ $project['department']['hero_image']['data']['thumbnails'][4]['height'] }}"
               width="{{ $project['department']['hero_image']['data']['thumbnails'][4]['width'] }}"
@@ -96,7 +96,7 @@
             <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
-                  <a href="/about-us/departments/{{ $project['department']['slug']}}">{{ $project['department']['title']}}</a>
+                  <a href="{{ route('department', $project['department']['slug']) }}">{{ $project['department']['title']}}</a>
                 </h3>
               </div>
             </div>
@@ -118,22 +118,20 @@
         <div class="col-md-6 mb-3">
           <div class="card">
             @if(!is_null($project['research_projects_id']['hero_image']))
-              <img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+              <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}"><img class="img-fluid" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
               alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
               height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
               width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-              loading="lazy"/>
+              loading="lazy"/></a>
             @endif
             <div class="card-body">
               <div class="contents-label mb-3">
                 <h3>
-                  <a href="/research/project/{{ $project['research_projects_id']['slug']}}">{{ $project['research_projects_id']['title']}}</a>
+                  <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}">{{ $project['research_projects_id']['title']}}</a>
                 </h3>
               </div>
             </div>
-            <a href="/research/project/{{ $project['research_projects_id']['slug']}}" class="btn btn-dark">Read more</a>
           </div>
-
         </div>
         @endforeach
       </div>

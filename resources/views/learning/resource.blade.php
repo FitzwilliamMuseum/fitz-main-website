@@ -15,10 +15,7 @@
     Downloadable resources
   </h2>
   @if(!empty($page['associated_learning_files']))
-  <h3>Factsheets and related files</h3>
   <div class="row">
-
-
     @foreach($page['associated_learning_files'] as $file)
     <div class="col-md-4 mb-3">
       <div class="card card-body h-100">
@@ -31,7 +28,7 @@
               <li>Resource type: {{ ucfirst($file['learning_files_id']['type']) }}</li>
               <li>File size: @humansize($file['learning_files_id']['file']['filesize'],2)</li>
               @if(isset($file['learning_files_id']['file']['type']))
-              <li>File type: PDF</li>
+                <li>File type: PDF</li>
               @endif
             </ul>
           </div>
@@ -39,7 +36,6 @@
         <a href="{{ $file['learning_files_id']['file']['data']['url'] }}" class="btn btn-dark"><i class="fa fa-download mr-2" aria-hidden="true"></i>  Download file</a>
       </div>
     </div>
-
     @endforeach
   </div>
   @endif

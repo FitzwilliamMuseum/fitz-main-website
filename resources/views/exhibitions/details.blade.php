@@ -73,7 +73,7 @@
               <div class="card h-100">
                 @if(!is_null($curator['staff_profiles_id']['profile_image']))
                 <div class="embed-responsive embed-responsive-1by1">
-                  <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}"><img
+                  <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}"><img
                     class="img-fluid embed-responsive-item" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][7]['url']}}"
                   loading="lazy"
                   alt="{{ $curator['staff_profiles_id']['profile_image_alt_text'] }}"
@@ -85,7 +85,7 @@
                 <div class="card-body">
                   <div class="contents-label mb-3">
                     <h3>
-                      <a href="/research/staff-profiles/{{ $curator['staff_profiles_id']['slug']}}">{{ $curator['staff_profiles_id']['display_name']}}</a>
+                      <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}">{{ $curator['staff_profiles_id']['display_name']}}</a>
                     </h3>
                   </div>
                 </div>
@@ -130,7 +130,6 @@
                   </div>
                 </div>
 
-                <a href="{{ $partner['partner']['partner_url']}}" class="btn btn-dark">Read more</a>
               </div>
 
             </div>
@@ -151,7 +150,7 @@
               <div class="card  h-100">
                 @if(!is_null($gallery['departments_id']['hero_image']))
                 <div class="embed-responsive embed-responsive-4by3">
-                <a href="/departments/{{ $gallery['departments_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+                <a href="{{ route('department', $gallery['departments_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
                 loading="lazy" alt="Highlight image for {{ gallery['departments_id']['hero_image_alt_text'] }}"
                 height="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
                 width="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
@@ -182,22 +181,21 @@
         <div class="row">
           @foreach($coll['associated_galleries'] as $gallery)
           <div class="col-md-4 mb-3">
-            <div class="card card-body h-100">
+            <div class="card  h-100">
               @if(!is_null($gallery['galleries_id']['hero_image']))
-              <img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
+              <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}"><img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
               alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
               height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
               width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-              />
+              /></a>
               @endif
-              <div class="container h-100">
+              <div class="card-body h-100">
                 <div class="contents-label mb-3">
                   <h3>
-                    <a href="/galleries/{{ $gallery['galleries_id']['slug']}}">{{ $gallery['galleries_id']['gallery_name']}}</a>
+                    <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
                   </h3>
                 </div>
               </div>
-              <a href="/galleries/{{ $gallery['galleries_id']['slug']}}" class="btn btn-dark">Read more</a>
             </div>
           </div>
           @endforeach

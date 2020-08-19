@@ -53,6 +53,7 @@ class departmentsController extends Controller
       $departments = $api->getData();
       return view('departments.details', compact('departments'));
   }
+  
   public function conservation($slug)
   {
       $api = new DirectUs;

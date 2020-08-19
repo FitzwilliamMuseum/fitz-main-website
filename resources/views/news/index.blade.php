@@ -11,19 +11,19 @@
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
         @if(!is_null($project['field_image']))
-          <a href="news/{{ $project['slug'] }}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url'] }}"
+          <a href="{{ route('article', $project['slug']) }}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url'] }}"
           alt="A highlight image for {{ $project['article_title'] }}"
           height="{{ $project['field_image']['data']['thumbnails'][4]['height'] }}"
           width="{{ $project['field_image']['data']['thumbnails'][4]['width'] }}"
           loading="lazy"/></a>
         @else
-          <a href="news/{{ $project['slug'] }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+          <a href="{{ route('article', $project['slug']) }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
           alt="A stand in image for {{ $project['article_title'] }}"/></a>
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
-              <a href="news/{{ $project['slug'] }}">{{ $project['article_title'] }}</a>
+              <a href="{{ route('article', $project['slug']) }}">{{ $project['article_title'] }}</a>
             </h3>
             <h4>
               <small class="text-muted">{{ Carbon\Carbon::parse($project['publication_date'])->format('l j F Y') }}</small>

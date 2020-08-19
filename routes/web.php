@@ -13,128 +13,108 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'homeController@index');
+Route::get('/', 'homeController@index')->name('home');
 
 /*
 About us routes
 */
-Route::get('about-us/directors', 'aboutusController@directors');
-Route::get('about-us/directors/{slug}', 'aboutusController@director');
-Route::get('about-us/press-room', 'aboutusController@press');
-Route::get('about-us/governance', 'aboutusController@governance');
-Route::get('about-us/collections', 'collectionsController@index');
-Route::get('about-us/collections/{slug}/', 'collectionsController@details');
-Route::get('about-us/departments/', 'departmentsController@index');
-Route::get('about-us/departments/{slug}', 'departmentsController@details');
-Route::get('about-us/departments/conservation-and-collections-care/{slug}', 'departmentsController@conservation');
-Route::get('about-us/departments/titled/{slug}/', 'departmentsController@details');
+Route::get('about-us/directors', 'aboutusController@directors')->name('directors');;
+Route::get('about-us/directors/{slug}', 'aboutusController@director')->name('director');
+Route::get('about-us/press-room', 'aboutusController@press')->name('press-room');
+Route::get('about-us/governance', 'aboutusController@governance')->name('governance');
+Route::get('about-us/collections', 'collectionsController@index')->name('collections');
+Route::get('about-us/collections/{slug}/', 'collectionsController@details')->name('collection');
+Route::get('about-us/departments/', 'departmentsController@index')->name('departments');
+Route::get('about-us/departments/{slug}', 'departmentsController@details')->name('department');
+Route::get('about-us/departments/conservation-and-collections-care/{slug}', 'departmentsController@conservation')->name('conservation-care');
 
 /*
 Research section routes
 */
-Route::get('research/', 'researchController@index');
-Route::get('research/projects/', 'researchController@projects');
-Route::get('research/projects/{slug}/', 'researchController@project');
-Route::get('research/staff-profiles', 'researchController@profiles');
-Route::get('research/staff-profiles/{slug}', 'researchController@profile');
-Route::get('research/online-resources/', 'researchController@resources');
-Route::get('research/online-resources/{slug}', 'researchController@resource');
+Route::get('research/', 'researchController@index')->name('research');
+Route::get('research/projects/', 'researchController@projects')->name('research-projects');
+Route::get('research/projects/{slug}/', 'researchController@project')->name('research-project');
+Route::get('research/staff-profiles', 'researchController@profiles')->name('research-profiles');
+Route::get('research/staff-profiles/{slug}', 'researchController@profile')->name('research-profile');
+Route::get('research/online-resources/', 'researchController@resources')->name('resources');
+Route::get('research/online-resources/{slug}', 'researchController@resource')->name('resource');
 
 /*
 Visit us Route
 */
-Route::get('visit-us/', 'visitController@index');
-Route::get('visit-us/galleries', 'galleriesController@index');
-Route::get('visit-us/galleries/{slug}', 'galleriesController@gallery');
-Route::get('visit-us/exhibitions/', 'exhibitionsController@index');
-Route::get('visit-us/exhibitions/archive', 'exhibitionsController@archive');
-Route::get('visit-us/exhibitions/future', 'exhibitionsController@future');
-Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details');
+Route::get('visit-us/', 'visitController@index')->name('visit');
+Route::get('visit-us/galleries', 'galleriesController@index')->name('galleries');
+Route::get('visit-us/galleries/{slug}', 'galleriesController@gallery')->name('gallery');
+Route::get('visit-us/exhibitions/', 'exhibitionsController@index')->name('exhibitions');
+Route::get('visit-us/exhibitions/archive', 'exhibitionsController@archive')->name('archive');
+Route::get('visit-us/exhibitions/future', 'exhibitionsController@future')->name('future');
+Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details')->name('exhibition');
 
 /*
 News routes
 */
-Route::get('news/', 'newsController@index');
-Route::get('news/feed/', 'newsController@atom');
-Route::get('news/{slug}/', 'newsController@article');
+Route::get('news/', 'newsController@index')->name('news');
+Route::get('news/feed/', 'newsController@atom')->name('feed');
+Route::get('news/{slug}/', 'newsController@article')->name('article');
 
 /*
 Learning routes
 */
-Route::get('learning/look-think-do/', 'learningController@lookthinkdomain');
-Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity');
-Route::get('learning/resources/', 'learningController@resources');
-Route::get('learning/resources/{slug}', 'learningController@resource');
-Route::get('learning/school-sessions/{slug}', 'learningController@session');
-Route::get('learning/young-people/{slug}', 'learningController@young');
-Route::get('learning/contact-us/', 'learningController@profiles');
+Route::get('learning/look-think-do/', 'learningController@lookthinkdomain')->name('ltd');
+Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity')->name('ltd-activity');
+Route::get('learning/resources/', 'learningController@resources')->name('learning-resources');
+Route::get('learning/resources/{slug}', 'learningController@resource')->name('learning-resource');
+Route::get('learning/school-sessions/{slug}', 'learningController@session')->name('school-sessions');
+Route::get('learning/young-people/{slug}', 'learningController@young')->name('young-people');
+Route::get('learning/contact-us/', 'learningController@profiles')->name('learning-profiles');
 
 /*
 Themes routes - are these obsolete?
 */
-Route::get('themes/', 'themesController@index');
-Route::get('themes/{slug}', 'themesController@theme');
+Route::get('themes/', 'themesController@index')->name('themes');
+Route::get('themes/{slug}', 'themesController@theme')->name('theme');
 
 /*
-Object and highlight routes
+* Object and highlight routes
 */
-Route::get('objects-and-artworks/highlights', 'highlightsController@index');
-Route::get('objects-and-artworks/', 'highlightsController@landing');
-Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period');
-Route::get('objects-and-artworks/highlights/periods/{period}', 'highlightsController@byperiod');
-Route::get('objects-and-artworks/highlights/themes/', 'highlightsController@theme');
-Route::get('objects-and-artworks/highlights/themes/{theme}', 'highlightsController@bytheme');
-Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual');
-Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details');
-Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results/', 'highlightsController@results');
-Route::get('objects-and-artworks/highlights/context/{section}/', 'highlightsController@pharosSections');
-Route::get('objects-and-artworks/highlights/context/{section}/{slug}/', 'highlightsController@associate');
-Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide');
-Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop');
+Route::get('objects-and-artworks/', 'highlightsController@landing')->name('objects');
+Route::get('objects-and-artworks/highlights', 'highlightsController@index')->name('highlights');
+Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details')->name('highlight');
+Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period')->name('periods');
+Route::get('objects-and-artworks/highlights/periods/{period}', 'highlightsController@byperiod')->name('period');
+Route::get('objects-and-artworks/highlights/themes/', 'highlightsController@theme')->name('themes');
+Route::get('objects-and-artworks/highlights/themes/{theme}', 'highlightsController@bytheme')->name('theme');
+Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual')->name('context');
+Route::get('objects-and-artworks/highlights/context/{section}/', 'highlightsController@pharosSections')->name('context-sections');
+Route::get('objects-and-artworks/highlights/context/{section}/{slug}/', 'highlightsController@associate')->name('context-section-detail');
+Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results/', 'highlightsController@results')->name('highlight-search');
+Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide')->name('audio-guide');
+Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop')->name('audio-stop');
 
+/*
+* Search routing
+*/
 Route::get('search', 'searchController@index');
-// Route::get('search/staff', 'searchController@staff');
-// Route::get('search/news', 'searchController@news');
-// Route::get('search/stubs', 'searchController@stubs');
-// Route::get('search/researchprojects', 'searchController@researchprojects');
-// Route::get('search/galleries', 'searchController@galleries');
-// Route::get('search/collections', 'searchController@collections');
-// Route::get('search/lookthinkdo', 'searchController@lookthinkdo');
-// Route::get('search/pressroom', 'searchController@pressroom');
-// Route::get('search/departments', 'searchController@departments');
-// Route::get('search/directors', 'searchController@directors');
-// Route::get('search/themes', 'searchController@themes');
-// Route::get('search/highlightspages', 'searchController@pharospages');
-// Route::get('search/highlights', 'searchController@highlights');
-// Route::get('search/floor', 'searchController@floor');
-// Route::get('search/gov', 'searchController@governance');
-// Route::get('search/learningfiles', 'searchController@learningfiles');
-// Route::get('search/exhibitions', 'searchController@exhibitions');
-// Route::get('search/instagram', 'searchController@instagram');
-// Route::get('search/audio', 'searchController@audio');
-// Route::get('search/sessions', 'searchController@sessions');
-
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
     'as' => 'search.results'
 ]);
 
-
 /*
  * Route for checking solr up and running
  */
-Route::get('/ping', 'searchController@ping');
+Route::get('/ping', 'searchController@ping')->name('ping');
 
 /*
-Cache clear route
+* Cache clear route
 */
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";
-});
+})->name('cache');
 
 /*
-Catch all route
+* Catch all route
 */
-Route::get('/{section}/{slug}/', 'pagesController@index');
-Route::get('/{section}', 'pagesController@landing');
+Route::get('/{section}/{slug}/', 'pagesController@index')->name('landing-section');
+Route::get('/{section}', 'pagesController@landing')->name('landing');

@@ -32,8 +32,8 @@
   <div class="row">
     @foreach($ltd['data'] as $look)
     <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        <a href="look-think-do/{{ $look['slug']}}"><img class="img-fluid" src="{{ $look['focus_image']['data']['thumbnails'][4]['url']}}"
+      <div class="card h-100">
+        <a href="{{ route('ltd-activity', $look['slug']) }}"><img class="img-fluid" src="{{ $look['focus_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $look['focus_image_alt_text'] }}"
         width="{{ $look['focus_image']['data']['thumbnails'][4]['width'] }}"
         height="{{ $look['focus_image']['data']['thumbnails'][4]['height'] }}"
@@ -41,7 +41,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3>
-              <a href="look-think-do/{{ $look['slug']}}">{{ $look['title_of_work'] }}</a>
+              <a href="{{ route('ltd-activity', $look['slug']) }}">{{ $look['title_of_work'] }}</a>
             </h3>
           </div>
         </div>
