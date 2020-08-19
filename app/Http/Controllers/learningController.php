@@ -183,6 +183,21 @@ class learningController extends Controller
         return $sessions;
     }
 
+    public static function research()
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('research_projects');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[departments_involved][contains]' => 'Learning'
+            )
+        );
+        $research = $api->getData();
+        return $research;
+    }
+
     public function adult($slug)
     {
         $api = $this->getApi();
