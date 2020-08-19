@@ -44,13 +44,11 @@
 
 @section('twitter')
 @if(!empty($tweets))
-<div class="row">
   <div class="container">
   <h3>
     Our Twitter profile
   </h3>
-  @include('includes.social.tweets')
+    @include('includes.social.tweets')
   </div>
-</div>
 @endif
 @endsection
