@@ -167,6 +167,37 @@ class learningController extends Controller
         return $sessions;
     }
 
+
+    public static function adultsessions()
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[subsection][eq]' => 'adult-programming'
+            )
+        );
+        $sessions = $api->getData();
+        return $sessions;
+    }
+
+    public function adult($slug)
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[slug][eq]' => $slug
+          )
+        );
+        $session = $api->getData();
+        return view('learning.adult', compact('session'));
+    }
+
     public function session($slug)
     {
         $api = $this->getApi();
