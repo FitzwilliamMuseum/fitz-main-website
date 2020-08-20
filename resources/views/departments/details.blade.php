@@ -49,8 +49,18 @@
     @inject('departmentsController', 'App\Http\Controllers\departmentsController')
     @php
     $areas = $departmentsController::areas();
+    $blog = $departmentsController::conservationblog();
     @endphp
     @include('includes.structure.areas')
+    @include('includes.structure.cons-blog')
+  @endif
+
+  @if($dept['slug'] == 'hamilton-kerr-institute')
+    @inject('departmentsController', 'App\Http\Controllers\departmentsController')
+    @php
+    $blog = $departmentsController::hkiblog();
+    @endphp
+    @include('includes.structure.cons-blog')
   @endif
 @endsection
 @endforeach

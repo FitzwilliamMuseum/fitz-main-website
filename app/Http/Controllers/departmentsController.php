@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
+use Solarium\Core\Client\Client;
+use Solarium\Exception;
+use Illuminate\Support\Facades\Cache;
+
 
 class departmentsController extends Controller
 {
+  protected $client;
+
   /**
    * Display a listing of the resource.
    *
@@ -15,7 +21,6 @@ class departmentsController extends Controller
    */
   public function index()
   {
-
       $api = new DirectUs;
       $api->setEndpoint('stubs_and_pages');
       $api->setArguments(
@@ -32,7 +37,7 @@ class departmentsController extends Controller
       $api2->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'sort' => 'id',
+            'sort' => 'title',
             'meta' => '*'
         )
       );
@@ -53,7 +58,7 @@ class departmentsController extends Controller
       $departments = $api->getData();
       return view('departments.details', compact('departments'));
   }
-  
+
   public function conservation($slug)
   {
       $api = new DirectUs;
@@ -90,5 +95,43 @@ class departmentsController extends Controller
       )
     );
     return $api->getData();
+  }
+
+
+  public static function conservationblog()
+  {
+    $expiresAt = now()->addMinutes(3600);
+    $key = md5('conservation-blog-posts');
+    if (Cache::has($key)) {
+        $data = Cache::store('file')->get($key);
+    } else {
+        $configSolr = \Config::get('solarium');
+        $client = new Client($configSolr);
+        $query = $client->createSelect();
+        $query->setQuery('contentType:conservationblog title:*');
+        $query->setRows(3);
+        $data = $client->select($query);
+        $data = $data->getDocuments();
+        Cache::store('file')->put($key, $data, $expiresAt);
+    }
+    return $data;
+  }
+  public static function hkiblog()
+  {
+    $expiresAt = now()->addMinutes(3600);
+    $key = md5('hki-blog-posts');
+    if (Cache::has($key)) {
+        $data = Cache::store('file')->get($key);
+    } else {
+        $configSolr = \Config::get('solarium');
+        $client = new Client($configSolr);
+        $query = $client->createSelect();
+        $query->setQuery('contentType:hkiblog.com title:*');
+        $query->setRows(3);
+        $data = $client->select($query);
+        $data = $data->getDocuments();
+        Cache::store('file')->put($key, $data, $expiresAt);
+    }
+    return $data;
   }
 }
