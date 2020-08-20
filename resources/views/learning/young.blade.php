@@ -70,7 +70,6 @@
           </h3>
         </div>
       </div>
-      <a href="{{ $record['url'][0]}}" class="btn btn-dark">Read more</a>
     </div>
 
     </div>
