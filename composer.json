@@ -11,6 +11,7 @@
         "php": "^7.2.5",
         "alaouy/youtube": "^2.2",
         "buzzylab/laradown": "~0.2",
+        "elasticsearch/elasticsearch": "^7.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "gmostafa/php-graphql-client": "^1.4",
@@ -22,6 +23,7 @@
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
         "mews/purifier": "^3.2",
+        "phpclassic/php-shopify": "^1.1",
         "phpfastcache/phpfastcache": "^8.0",
         "raiym/instagram-php-scraper": "^0.9.9",
         "rebing/graphql-laravel": "^5.0",
@@ -30,8 +32,7 @@
         "spatie/laravel-responsecache": "^6.6",
         "symfony/cache": "^5.1",
         "thepinecode/blade-filters": "^0.6.0",
-        "thujohn/twitter": "^2.2",
-        "elasticsearch/elasticsearch": "^7.0"
+        "thujohn/twitter": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
