@@ -40,19 +40,23 @@
 </div>
 
 @if(!empty($records))
-
+<div class="row">
 @foreach($records as $result)
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 search-results">
+<div class="col-md-4 mb-3">
+  <div class="card h-100">
   @if(isset($result['searchImage']))
-    <img src="{{$result['searchImage'][0]}}" class="rounded rounded-circle
-    float-right ml-2" height="150" width="150" alt="Fitzwilliam Museum logo"
+  <div class="embed-responsive embed-responsive-1by1">
+    <img src="{{$result['searchImage'][0]}}" class="img-fluid embed-responsive-item"  alt="Fitzwilliam Museum logo"
     loading="lazy"/>
+  </div>
   @else
-    <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg"
-  class="rounded float-right ml-2" width="150" alt="FitzVirtual Logo" loading="lazy"/>
+    <img src="https://content.fitz.ms/fitz-website/assets/portico.jpg"
+  class="img-fluid responsive-item"  alt="FitzVirtual Logo" loading="lazy"/>
   @endif
+  <div class="card-body ">
+
   <h3>
-    <a href="{{ $result['url'][0]}}">{{ $result['title'][0]}}</a>
+    <a href="{{ $result['url'][0]}}">@markdown($result['title'][0])</a>
   </h3>
   @if(isset($result['pubDate']))
   <h4 class="text-muted">
@@ -61,7 +65,7 @@
   @endif
   <p class="text-justify">
     @if(!empty($result['body'][0]))
-    {{ substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,500) }}...
+      @markdown(substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200))...
     @endif
   </p>
 
@@ -100,7 +104,10 @@
 
   </p>
 </div>
+  </div>
+</div>
 @endforeach
+</div>
 <nav aria-label="Page navigation">
   {{ $paginate->links() }}
 </nav>
