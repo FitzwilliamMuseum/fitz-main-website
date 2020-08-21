@@ -224,7 +224,7 @@
   @if(!empty($shopify))
     @section('shopify')
     <div class="container">
-      <h4>Suggest FME products</h4>
+      <h4>Suggested FME products</h4>
       <div class="row">
         @foreach($shopify as $record)
         <div class="col-md-3 mb-3">
