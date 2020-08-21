@@ -137,7 +137,7 @@
               <h3>
                 <a href="{{ $record['url'][0]  }}">{{ $record['title'][0] }}</a>
               </h3>
-              <p>£{{ $record['price'][0] }}</p>
+              <p>£{{ number_format((float)$record['price'][0], 2, '.', '') }}</p>
 
             </div>
           </div>
