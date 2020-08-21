@@ -904,7 +904,9 @@ class searchController extends Controller
     );
     $shop = new ShopifySDK;
     $shop->config($config);
-    return $shop->Product->get();
+    $lastId = 1;
+
+    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId]);
   }
 
   public function shopify()
@@ -913,6 +915,7 @@ class searchController extends Controller
     $this->client = new Client($configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
+
     $shopify = $this->getShopifyObjects();
     $url = 'https://cambridgecollections.myshopify.com/';
     foreach($shopify as $product)

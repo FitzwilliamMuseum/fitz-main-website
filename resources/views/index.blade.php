@@ -122,7 +122,7 @@
     <h4>Buy something for someone?</h4>
     <div class="row">
       @foreach($shopify as $record)
-      <div class="col-md-4 mb-3">
+      <div class="col-md-3 mb-3">
         <div class="card  h-100">
           @if(!is_null($record['thumbnail']))
             <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['thumbnail'][0]}}"

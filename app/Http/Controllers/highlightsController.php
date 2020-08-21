@@ -84,7 +84,11 @@ class highlightsController extends Controller
 
       $adlib = $this->getElastic()->setParams($params)->getSearch();
       $adlib = $adlib['hits']['hits'];
-      return view('highlights.details', compact('pharos', 'records', 'adlib'));
+
+      $more = new MoreLikeThis;
+      $more->setLimit(4)->setType('shopify')->setQuery($slug);
+      $shopify = $more->getData();
+      return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify'));
     }
 
     public function associate($section, $slug)
