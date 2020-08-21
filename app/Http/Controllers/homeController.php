@@ -121,7 +121,7 @@ class homeController extends Controller
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
     $expiresAt = now()->addMinutes(3600);
-    $key = md5('shopify-api');
+    $key = md5('shopify-api-front');
     if (Cache::has($key)) {
         $shopify = Cache::store('file')->get($key);
     } else {
@@ -129,7 +129,7 @@ class homeController extends Controller
         $client = new Client($configSolr);
         $query = $client->createSelect();
         $query->setQuery('contentType:shopify');
-        $query->setRows(3);
+        $query->setRows(8);
         $call = $client->select($query);
         $shopify = $call->getDocuments();
         Cache::store('file')->put($key, $shopify, $expiresAt);
