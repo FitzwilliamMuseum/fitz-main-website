@@ -10,7 +10,8 @@ use Youtube;
 use Cache;
 use InstagramScraper\Instagram;
 use Phpfastcache\Helper\Psr16Adapter;
-
+use Solarium\Core\Client\Client;
+use Solarium\Exception;
 class homeController extends Controller
 {
   /**
@@ -119,6 +120,20 @@ class homeController extends Controller
       $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
+    $expiresAt = now()->addMinutes(3600);
+    $key = md5('shopify-api');
+    if (Cache::has($key)) {
+        $shopify = Cache::store('file')->get($key);
+    } else {
+        $configSolr = \Config::get('solarium');
+        $client = new Client($configSolr);
+        $query = $client->createSelect();
+        $query->setQuery('contentType:shopify');
+        $query->setRows(3);
+        $call = $client->select($query);
+        $shopify = $call->getDocuments();
+        Cache::store('file')->put($key, $shopify, $expiresAt);
+    }
     // if (Cache::has('cache_insta')) {
     //   $insta = Cache::get('cache_insta');
     // } else {
@@ -134,8 +149,10 @@ class homeController extends Controller
     return view('index', compact(
       'carousel','news', 'research',
       'objects','tweets', 'videoList',
-      'things', 'fundraising'
+      'things', 'fundraising', 'shopify'
       // 'insta'
     ));
   }
+
+
 }

@@ -115,3 +115,36 @@
 @section('youtube-list')
   @include('includes.social.youtubelist')
 @endsection
+
+@if(!empty($shopify))
+  @section('shopify')
+  <div class="container">
+    <h4>Buy something for someone?</h4>
+    <div class="row">
+      @foreach($shopify as $record)
+      <div class="col-md-4 mb-3">
+        <div class="card  h-100">
+          @if(!is_null($record['thumbnail']))
+            <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
+            alt="Featured image for the project: {{ $record['title'][0] }}"
+            loading="lazy"/></a>
+          @else
+            <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+            alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/></a>
+          @endif
+          <div class="card-body h-100">
+            <div class="contents-label mb-3">
+              <h3>
+                <a href="{{ $record['url'][0]  }}">{{ $record['title'][0] }}</a>
+              </h3>
+              <p>£{{ $record['price'][0] }}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      @endforeach
+    </div>
+  </div>
+  @endsection
+@endif

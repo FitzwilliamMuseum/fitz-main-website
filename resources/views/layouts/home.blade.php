@@ -93,6 +93,10 @@
     @yield('youtube-list')
   </div>
 
+  <div class="container-fluid parallax fourth-parallax-home mb-3">
+  </div>
+  @yield('shopify')
+
   @include('includes.structure.share')
 
   @include('includes.structure.footer')

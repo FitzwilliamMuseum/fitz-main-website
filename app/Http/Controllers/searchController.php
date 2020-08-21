@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Cache;
 use Mews\Purifier;
 use App\Directus;
 use InstagramScraper\Instagram;
+use PHPShopify\ShopifySDK;
 
 class searchController extends Controller
 {
@@ -893,4 +894,50 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+
+  public function getShopifyObjects()
+  {
+    $config = array(
+    'ShopUrl' => 'cambridgecollections.myshopify.com',
+    'ApiKey' => env('SHOPIFY_API_KEY'),
+    'Password' => env('SHOPIFY_API_PASSWORD'),
+    );
+    $shop = new ShopifySDK;
+    $shop->config($config);
+    return $shop->Product->get();
+  }
+
+  public function shopify()
+  {
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    $shopify = $this->getShopifyObjects();
+    $url = 'https://cambridgecollections.myshopify.com/';
+    foreach($shopify as $product)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $product['id'];
+      $doc->title = $product['title'];
+      $description = $product['body_html'];
+      $doc->description = strip_tags($description);
+      $doc->body = strip_tags($description);
+      $doc->url = $url . 'product/' . $product['handle'];
+      $doc->slug = $product['handle'];
+      $doc->vendor = $product['vendor'];
+      $doc->thumbnail = $product['image']['src'];
+      $doc->image = $product['image']['src'];
+      $doc->price = $product['variants'][0]['price'];
+      $doc->searchImage = $product['image']['src'];
+      $doc->contentType = 'shopify';
+      $documents[] = $doc;
+    }
+    // dd($documents);
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
 }

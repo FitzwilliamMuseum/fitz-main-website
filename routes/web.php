@@ -100,7 +100,7 @@ Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
     'as' => 'search.results'
 ]);
-
+Route::get('search/shopify', 'searchController@shopify');
 /*
  * Route for checking solr up and running
  */
