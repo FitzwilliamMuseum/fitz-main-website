@@ -49,7 +49,7 @@ class searchController extends Controller
 
       $queryString = \Purifier::clean($request->get('query'), array('HTML.Allowed' => ''));
       $key = md5($queryString . $request->get('page'));
-      $perPage = 20;
+      $perPage = 12;
       $expiresAt = now()->addMinutes(3600);
       $from = ($request->get('page', 1) - 1) * $perPage;
       if (Cache::has($key)) {

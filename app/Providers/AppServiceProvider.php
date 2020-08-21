@@ -112,6 +112,9 @@ class AppServiceProvider extends ServiceProvider
             case 'audioguide':
                 $clean = 'Audio guide content';
                 break;
+            case 'shopify':
+                $clean = 'A shop product';
+                break;
             default:
               $clean = $string;
             break;
