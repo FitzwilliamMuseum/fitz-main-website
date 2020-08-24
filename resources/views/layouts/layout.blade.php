@@ -22,7 +22,7 @@
   @include('includes.structure.head')
 
   @include('includes.structure.beta')
-
+  @include('includes.structure.open')
 
   @hasSection('timeline')
     @include('includes.css.timeline-css')
@@ -32,7 +32,7 @@
     @include('includes.css.photosphere-css')
   @endif
 
-  <div class="container">
+  <div class="container mt-3">
     @include('includes.structure.breadcrumb')
     @yield('content')
     @yield('adlib')

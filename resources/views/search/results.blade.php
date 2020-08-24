@@ -54,20 +54,20 @@
   class="img-fluid responsive-item"  alt="FitzVirtual Logo" loading="lazy"/>
   @endif
   <div class="card-body ">
-
   <h3>
-    <a href="{{ $result['url'][0]}}">@markdown($result['title'][0])</a>
+    @php
+    $title = strip_tags(@markdown($result['title'][0]));
+    @endphp
+    <a href="{{ $result['url'][0]}}">{{ $title  }}</a>
   </h3>
   @if(isset($result['pubDate']))
   <h4 class="text-muted">
     Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}
   </h4>
   @endif
-  <p class="text-justify">
     @if(!empty($result['body'][0]))
       @markdown(substr(strip_tags(htmlspecialchars_decode($result['body'][0])),0,200))...
     @endif
-  </p>
 
   @if(isset($result['mimetype']))
   @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
