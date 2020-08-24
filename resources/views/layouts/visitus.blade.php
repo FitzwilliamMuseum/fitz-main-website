@@ -25,8 +25,8 @@
   @include('includes.structure.head')
 
   @include('includes.structure.beta')
-
-  <div class="container">
+  @include('includes.structure.open')
+  <div class="container mt-3">
     @include('includes.structure.breadcrumb')
 
   </div>

@@ -42,7 +42,6 @@ class searchController extends Controller
    */
   public function results(Request $request)
   {
-
       $this->validate($request, [
           'query' => 'required|max:200|min:3',
       ]);
@@ -275,7 +274,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['gallery_description']);
       $doc->body = strip_tags($profile['gallery_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = $this->url . 'galleries/' . $profile['slug'];
+      $doc->url = $this->url . 'visit-us/galleries/' . $profile['slug'];
       $doc->contentType = 'gallery';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -315,7 +314,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['collection_description']);
       $doc->body = strip_tags($profile['collection_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = $this->url . 'collections/' . $profile['slug'];
+      $doc->url = $this->url . 'about-us/collections/' . $profile['slug'];
       $doc->contentType = 'collection';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -476,7 +475,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['department_description']);
       $doc->body = strip_tags($profile['department_description']);
       $doc->slug = $profile['slug'];
-      $doc->url = $this->url . 'departments/' . $profile['slug'];
+      $doc->url = $this->url . 'about-us/departments/' . $profile['slug'];
       $doc->contentType = 'department';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
@@ -745,7 +744,7 @@ class searchController extends Controller
       $doc->description = strip_tags($profile['exhibition_narrative']);
       $doc->body = strip_tags($profile['exhibition_narrative']);
       $doc->slug = $profile['slug'];
-      $doc->url = $this->url . 'exhibitions/' . $profile['slug'];
+      $doc->url = $this->url . 'visit-us/exhibitions/' . $profile['slug'];
       $doc->contentType = 'exhibitions';
       if(isset($profile['hero_image'])){
         $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];

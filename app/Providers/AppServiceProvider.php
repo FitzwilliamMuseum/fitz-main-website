@@ -32,6 +32,16 @@ class AppServiceProvider extends ServiceProvider
           return sprintf("%.{$precision}f", $bytes / pow(1024, $factor)) . @$size[$factor];
         });
 
+        BladeHelper::directive('fa', function(string $iconName, string $text = null, $classes = '') {
+            if (is_array($classes)) {
+                $classes = join(' ', $classes);
+            }
+
+            $text = $text ?? $iconName;
+
+            return "<i class='fas fa-{$iconName} {$classes}' aria-hidden='true' title='{$text}'></i><span class='sr-only'>{$text}</span>";
+        });
+
         BladeHelper::directive('contentType', function ($string) {
           switch($string) {
             case "pressroom":

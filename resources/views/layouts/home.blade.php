@@ -17,7 +17,7 @@
   @include('includes.structure.head')
 
   @include('includes.structure.beta')
-
+  @include('includes.structure.open')
   <div class="container-fluid parallax parallax-home text-center">
   </div>
 

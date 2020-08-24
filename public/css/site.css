@@ -1,6 +1,6 @@
 
 .parallax {
-  min-height: 450px;
+  min-height: 350px;
   background-attachment: fixed;
   background-size: cover;
   margin-top: 56px!important;
@@ -726,6 +726,10 @@ h3 > a:hover::before {
   visibility: visible;
   transform: scaleX(1);
 }
+
+.free_ticket a {
+  color: white!important;
+}
 .page-link {
   border: none!important;
   color: #000;
@@ -743,4 +747,35 @@ h3 > a:hover::before {
 
 p.small-font {
   font-size: 1rem!important;
+}
+
+a.free_ticket {
+  position: relative;
+  color: #fff;
+  text-decoration: none !important;
+}
+
+a.free_ticket:hover {
+  color: #fff;
+}
+
+a.free_ticket::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a.free_ticket:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+a.free_ticket  {
+  color: white!important;
 }

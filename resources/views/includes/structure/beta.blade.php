@@ -1,4 +1,4 @@
-<div class="container-fluid beta mb-4 pb-1">
+<div class="container-fluid beta pb-1">
   <div class="col-md-12">
     <p class="text-center share">
       <strong>&beta;</strong>: This is a Beta release of our potential new website. We want to co-design
