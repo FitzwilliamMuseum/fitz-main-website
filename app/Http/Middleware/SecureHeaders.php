@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Middleware;
 use Closure;
-
+/*
+@see https://danieldusek.com/enabling-security-headers-for-your-website-with-php-and-laravel.html
+*/
 class SecureHeaders
 {
 
@@ -9,7 +11,7 @@ class SecureHeaders
         'X-Powered-By',
         'Server',
     ];
-    
+
   private function removeUnwantedHeaders($headerList)
     {
         foreach ($headerList as $header){

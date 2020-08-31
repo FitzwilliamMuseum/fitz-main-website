@@ -779,3 +779,24 @@ a.free_ticket:hover::before {
 a.free_ticket  {
   color: white!important;
 }
+
+.twitter__thumbnail {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.twitter__thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.twitter__thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
