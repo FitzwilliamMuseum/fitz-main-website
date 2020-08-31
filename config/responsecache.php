@@ -56,7 +56,7 @@ return [
      *
      * You may use a string or an array here.
      */
-    'cache_tag' => 'redis-beta',
+    'cache_tag' => '',
 
     /*
      * This class is responsible for generating a hash for a request. This hash
