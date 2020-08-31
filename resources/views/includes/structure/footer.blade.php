@@ -51,10 +51,13 @@
             <li>
               <a aria-label="Contact the museum" href="{{ route('landing-section', ['about-us', 'contact-us'])}}">Contact us</a>
             </li>
-          
+
             <li>
               <a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
               aria-label="Modern Slavery Act statement of compliance">Modern Slavery Act Statement</a>
+            </li>
+            <li>
+              <a href="https://museums.cam.ac.uk/termsandconditionsofsale" aria-label="Terms of sale for tickets">Terms of Sale</a>
             </li>
 
           </ul>
