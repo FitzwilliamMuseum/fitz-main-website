@@ -4,7 +4,7 @@ return [
     /*
      * Determine if the response cache middleware should be enabled.
      */
-    'enabled' => env('RESPONSE_CACHE_ENABLED', false),
+    'enabled' => env('RESPONSE_CACHE_ENABLED', true),
 
     /*
      *  The given class will determinate if a request should be cached. The
@@ -56,7 +56,7 @@ return [
      *
      * You may use a string or an array here.
      */
-    'cache_tag' => '',
+    'cache_tag' => 'redis-beta',
 
     /*
      * This class is responsible for generating a hash for a request. This hash
