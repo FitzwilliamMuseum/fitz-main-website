@@ -109,10 +109,11 @@ Route::get('/ping', 'searchController@ping')->name('ping');
 /*
 * Cache clear route
 */
-Route::get('/clear-cache', function() {
-    Artisan::call('cache:clear');
-    return "Cache is cleared";
-})->name('cache');
+Route::get('/clear-cache', [
+    'as' => 'cache-clear',
+    'uses' => 'Controller@clearCache'
+])->middleware('auth.very_basic');
+// Route::get('/clear-cache', ['middleware' => 'auth.very_basic'], 'Controller@clearCache')->name('cache');
 
 /*
 * Catch all route

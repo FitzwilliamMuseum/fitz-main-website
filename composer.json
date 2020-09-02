@@ -23,6 +23,7 @@
         "laravel/ui": "^2.0",
         "laravelcollective/html": "^6.1",
         "mews/purifier": "^3.2",
+        "olssonm/l5-very-basic-auth": "^6.3",
         "phpclassic/php-shopify": "^1.1",
         "phpfastcache/phpfastcache": "^8.0",
         "predis/predis": "^1.1",

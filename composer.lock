@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20429964536991d1a849845e7a4996cf",
+    "content-hash": "73c93ea7fc83fa546e249d085cdf7230",
     "packages": [
         {
             "name": "alaouy/youtube",
@@ -2282,6 +2282,66 @@
                 "php"
             ],
             "time": "2020-07-25T13:18:53+00:00"
+        },
+        {
+            "name": "olssonm/l5-very-basic-auth",
+            "version": "v6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/olssonm/l5-very-basic-auth.git",
+                "reference": "03fa6bf8e0782004ca5dfe7393de4490aef0767d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/olssonm/l5-very-basic-auth/zipball/03fa6bf8e0782004ca5dfe7393de4490aef0767d",
+                "reference": "03fa6bf8e0782004ca5dfe7393de4490aef0767d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.8 || ^6.0 || ^7.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "laravel/helpers": "^1.1",
+                "orchestra/testbench": ">=3.4.0",
+                "phpunit/phpunit": "^7.5 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Olssonm\\VeryBasicAuth\\VeryBasicAuthServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Olssonm\\VeryBasicAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Olsson",
+                    "email": "contact@marcusolsson.me",
+                    "homepage": "https://marcusolsson.me"
+                }
+            ],
+            "description": "Stateless HTTP basic auth without the need for a database. For Laravel 5",
+            "homepage": "https://github.com/olssonm/l5-very-basic-auth",
+            "keywords": [
+                "Authentication",
+                "http basic auth",
+                "laravel 5",
+                "olssonm"
+            ],
+            "time": "2020-03-05T10:10:43+00:00"
         },
         {
             "name": "opis/closure",
