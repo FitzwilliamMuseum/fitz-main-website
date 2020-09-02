@@ -112,7 +112,7 @@ Route::get('/ping', 'searchController@ping')->name('ping');
 Route::get('/clear-cache', [
     'as' => 'cache-clear',
     'uses' => 'Controller@clearCache'
-])->middleware('auth.very_basic');
+])->middleware('auth.very_basic', 'doNotCacheResponse');
 // Route::get('/clear-cache', ['middleware' => 'auth.very_basic'], 'Controller@clearCache')->name('cache');
 
 /*
