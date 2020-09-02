@@ -7,7 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\DirectUs;
-
+use Artisan;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -16,5 +16,11 @@ class Controller extends BaseController
     {
       $directus = new DirectUs;
       return $directus;
+    }
+
+    public function clearCache()
+    {
+      Artisan::call('cache:clear');
+      return "Cache is cleared";
     }
 }

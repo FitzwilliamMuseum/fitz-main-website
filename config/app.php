@@ -177,6 +177,7 @@ return [
 
         Buzzylab\Laradown\MarkdownServiceProvider::class,
         Alaouy\Youtube\YoutubeServiceProvider::class,
+        Olssonm\VeryBasicAuth\VeryBasicAuthServiceProvider::class,
 
     ],
 
