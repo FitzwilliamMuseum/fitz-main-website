@@ -212,7 +212,7 @@
         <div class="col-md-4">
         <div class="card h-100">
           @if(!is_null($record[0][ 'image']))
-            <a href="/objects-and-artworks/highlights/periods/{{ $record[0]['period_assigned'] }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
+            <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned']) }}"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[0]['period_assigned'] }}" loading="lazy"
             width="{{ $record[0]['image']['data']['thumbnails'][4]['width'] }}"
             height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
