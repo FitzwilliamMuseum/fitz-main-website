@@ -976,7 +976,7 @@ class searchController extends Controller
       $description = $product['body_html'];
       $doc->description = strip_tags($description);
       $doc->body = strip_tags($description);
-      $doc->url = $protocol . $url . 'product/' . $product['handle'];
+      $doc->url = $protocol . $url . '/products/' . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
       $doc->thumbnail = $product['image']['src'];
