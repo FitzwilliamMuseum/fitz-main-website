@@ -259,7 +259,7 @@
     <div class="container">
       <h4>Suggested Fitzwilliam prints</h4>
       <div class="row">
-        @foreach($shopify as $record)
+        @foreach($prints as $record)
         <div class="col-md-3 mb-3">
           <div class="card  h-100">
             @if(!is_null($record['thumbnail']))
