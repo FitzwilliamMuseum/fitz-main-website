@@ -96,6 +96,7 @@
     @yield('pharos-pages')
     @yield('twitter')
     @yield('mlt')
+    @yield('shopifyPrints')
     @yield('shopify')
 
 
