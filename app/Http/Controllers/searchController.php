@@ -967,6 +967,7 @@ class searchController extends Controller
 
     $shopify = $this->getShopifyObjectsPrints();
     $url = env('SHOPIFY_FITZ_PRINTS_URL');
+    $protocol = 'https://';
     foreach($shopify as $product)
     {
       $doc = $update->createDocument();
@@ -975,7 +976,7 @@ class searchController extends Controller
       $description = $product['body_html'];
       $doc->description = strip_tags($description);
       $doc->body = strip_tags($description);
-      $doc->url = $url . 'product/' . $product['handle'];
+      $doc->url = $protocol . $url . 'product/' . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
       $doc->thumbnail = $product['image']['src'];
