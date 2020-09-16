@@ -948,8 +948,8 @@ class searchController extends Controller
   {
     $config = array(
     'ShopUrl' => env('SHOPIFY_FITZ_PRINTS_URL'),
-    'ApiKey' => env('SHOPIFY_FITZ_PRINTS__API_KEY'),
-    'Password' => env('SHOPIFY_FITZ_PRINTS__API_PASSWORD'),
+    'ApiKey' => env('SHOPIFY_FITZ_PRINTS_API_KEY'),
+    'Password' => env('SHOPIFY_FITZ_PRINTS_API_PASSWORD'),
     );
     $shop = new ShopifySDK;
     $shop->config($config);
