@@ -125,6 +125,9 @@ class AppServiceProvider extends ServiceProvider
             case 'shopify':
                 $clean = 'A shop product';
                 break;
+            case 'shopifyPrints':
+                $clean = 'A fine art print to own';
+                break;
             default:
               $clean = $string;
             break;

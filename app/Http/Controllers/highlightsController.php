@@ -88,7 +88,11 @@ class highlightsController extends Controller
       $more = new MoreLikeThis;
       $more->setLimit(4)->setType('shopify')->setQuery($slug);
       $shopify = $more->getData();
-      return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify'));
+
+      $pod = new MoreLikeThis;
+      $pod->setLimit(4)->setType('shopifyPrints')->setQuery($slug);
+      $prints = $pod->getData();
+      return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify', 'prints'));
     }
 
     public function associate($section, $slug)
