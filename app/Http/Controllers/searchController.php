@@ -897,8 +897,8 @@ class searchController extends Controller
   public function getShopifyObjects()
   {
     $config = array(
-    'ShopUrl' => 'cambridgecollections.myshopify.com',
-    'ApiKey' => env('SHOPIFY_API_KEY'),
+    'ShopUrl' => env('SHOPIFY_FME_URL'),
+    'ApiKey' => env('SHOPIFY_FME_API_KEY'),
     'Password' => env('SHOPIFY_API_PASSWORD'),
     );
     $shop = new ShopifySDK;
@@ -916,7 +916,9 @@ class searchController extends Controller
     $documents = array();
 
     $shopify = $this->getShopifyObjects();
-    $url = 'https://cambridgecollections.myshopify.com/';
+    $url = env('SHOPIFY_FME_URL');
+    $protocol = env('SHOPIFY_FME_PROTOCOL');
+    $catalogue = env('SHOPIFY_FME_CATALOGUE');
     foreach($shopify as $product)
     {
       $doc = $update->createDocument();
@@ -925,7 +927,7 @@ class searchController extends Controller
       $description = $product['body_html'];
       $doc->description = strip_tags($description);
       $doc->body = strip_tags($description);
-      $doc->url = $url . 'product/' . $product['handle'];
+      $doc->url = $protocol . $url . $catalogue . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
       $doc->thumbnail = $product['image']['src'];
@@ -954,8 +956,7 @@ class searchController extends Controller
     $shop = new ShopifySDK;
     $shop->config($config);
     $lastId = 1;
-
-    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId]);
+    return $shop->Product->get(['limit' => 1000, 'since_id' => $lastId]);
   }
 
   public function shopifyPrints()
@@ -966,8 +967,10 @@ class searchController extends Controller
     $documents = array();
 
     $shopify = $this->getShopifyObjectsPrints();
+
     $url = env('SHOPIFY_FITZ_PRINTS_URL');
-    $protocol = 'https://';
+    $protocol = env('SHOPIFY_FITZ_PRINTS_PROTOCOL');
+    $catalogue = env('SHOPIFY_FITZ_PRINTS_CATALOGUE');
     foreach($shopify as $product)
     {
       $doc = $update->createDocument();
@@ -976,7 +979,7 @@ class searchController extends Controller
       $description = $product['body_html'];
       $doc->description = strip_tags($description);
       $doc->body = strip_tags($description);
-      $doc->url = $protocol . $url . '/products/' . $product['handle'];
+      $doc->url = $protocol . $url . $catalogue . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
       $doc->thumbnail = $product['image']['src'];

@@ -46,19 +46,19 @@
   <div class="card h-100">
   @if(isset($result['searchImage']))
   <div class="embed-responsive embed-responsive-1by1">
-    <img src="{{$result['searchImage'][0]}}" class="img-fluid embed-responsive-item"  alt="Fitzwilliam Museum logo"
-    loading="lazy"/>
+    <a href="{{ $result['url'][0]}}"><img src="{{$result['searchImage'][0]}}" class="img-fluid embed-responsive-item"  alt="Fitzwilliam Museum logo"
+    loading="lazy"/></a>
   </div>
   @else
-    <img src="https://content.fitz.ms/fitz-website/assets/portico.jpg"
-  class="img-fluid responsive-item"  alt="FitzVirtual Logo" loading="lazy"/>
+    <a href="{{ $result['url'][0]}}"><img src="https://content.fitz.ms/fitz-website/assets/portico.jpg"
+  class="img-fluid responsive-item"  alt="FitzVirtual Logo" loading="lazy"/></a>
   @endif
   <div class="card-body ">
   <h3>
     @php
     $title = strip_tags(@markdown($result['title'][0]));
     @endphp
-    <a href="{{ $result['url'][0]}}">{{ $title  }}</a>
+    <a href="{{ $result['url'][0]}}">{{ $title }}</a>
   </h3>
   @if(isset($result['pubDate']))
   <h4 class="text-muted">

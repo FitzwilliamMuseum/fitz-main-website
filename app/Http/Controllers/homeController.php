@@ -12,6 +12,7 @@ use InstagramScraper\Instagram;
 use Phpfastcache\Helper\Psr16Adapter;
 use Solarium\Core\Client\Client;
 use Solarium\Exception;
+
 class homeController extends Controller
 {
   /**
@@ -33,7 +34,6 @@ class homeController extends Controller
       )
     );
     $carousel = $api->getData();
-
 
     $api2 = $this->getApi();
     $api2->setEndpoint('news_articles');
@@ -112,16 +112,19 @@ class homeController extends Controller
       ]);
       Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
     }
+    
     $tweets = array_slice($tweets, 0,3);
-    // dd($tweets);
+
     if (Cache::has('cache_yt')) {
       $videoList = Cache::get('cache_yt');
     } else {
       $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
       Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
     }
+
     $expiresAt = now()->addMinutes(3600);
     $key = md5('shopify-api-front');
+
     if (Cache::has($key)) {
         $shopify = Cache::store('file')->get($key);
     } else {
@@ -129,30 +132,16 @@ class homeController extends Controller
         $client = new Client($configSolr);
         $query = $client->createSelect();
         $query->setQuery('contentType:shopify');
-        $query->setRows(8);
+        $query->setRows(4);
         $call = $client->select($query);
         $shopify = $call->getDocuments();
         Cache::store('file')->put($key, $shopify, $expiresAt);
     }
-    // if (Cache::has('cache_insta')) {
-    //   $insta = Cache::get('cache_insta');
-    // } else {
-    //   $instagram = Instagram::withCredentials(
-    //     env('INSTAGRAM_USER'),
-    //    env('INSTAGRAM_PASS'),
-    //    new Psr16Adapter('Files')
-    //  );
-    //   $instagram->login();
-    //   $insta = $instagram->getMedias('fitzmuseum_uk', 3);
-    //   Cache::put('cache_insta', $insta, $expiresInstagram); // 1 hour
-    // }
+
     return view('index', compact(
       'carousel','news', 'research',
       'objects','tweets', 'videoList',
       'things', 'fundraising', 'shopify'
-      // 'insta'
     ));
   }
-
-
 }
