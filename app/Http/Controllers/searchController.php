@@ -956,7 +956,7 @@ class searchController extends Controller
     $shop = new ShopifySDK;
     $shop->config($config);
     $lastId = 1;
-    return $shop->Product->get(['limit' => 1000, 'since_id' => $lastId]);
+    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId]);
   }
 
   public function shopifyPrints()
