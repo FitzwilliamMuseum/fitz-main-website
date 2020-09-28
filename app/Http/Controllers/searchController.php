@@ -899,7 +899,7 @@ class searchController extends Controller
     $config = array(
     'ShopUrl' => env('SHOPIFY_FME_URL'),
     'ApiKey' => env('SHOPIFY_FME_API_KEY'),
-    'Password' => env('SHOPIFY_API_PASSWORD'),
+    'Password' => env('SHOPIFY_FME_API_PASSWORD'),
     );
     $shop = new ShopifySDK;
     $shop->config($config);
