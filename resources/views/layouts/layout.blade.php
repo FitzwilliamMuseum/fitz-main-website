@@ -34,6 +34,7 @@
 
   <div class="container mt-3">
     @include('includes.structure.breadcrumb')
+    @yield('press-contact')
     @yield('content')
     @yield('adlib')
     @yield('timeline')
