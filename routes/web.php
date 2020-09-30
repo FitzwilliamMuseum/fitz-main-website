@@ -18,7 +18,7 @@ Route::get('/', 'homeController@index')->name('home');
 /*
 About us routes
 */
-Route::get('about-us/directors', 'aboutusController@directors')->name('directors');;
+Route::get('about-us/directors', 'aboutusController@directors')->name('directors');
 Route::get('about-us/directors/{slug}', 'aboutusController@director')->name('director');
 Route::get('about-us/press-room', 'aboutusController@press')->name('press-room');
 Route::get('about-us/governance', 'aboutusController@governance')->name('governance');

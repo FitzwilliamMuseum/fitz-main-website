@@ -42,12 +42,10 @@
     text-align: center;
   }
   .shout {
-    color: white!important;
     font-size: 2.6rem;
     font-weight: bolder;
   }
   .shout-less {
-    color: white!important;
     font-size: 2rem;
   }
   /* .jumbotron {
@@ -331,12 +329,10 @@ body {
 }
 @media screen and (min-width: 440px) {
   .shout {
-    color: white!important;
     font-size: 5rem;
     margin-top:-1rem;
   }
   .shout-less {
-    color: white!important;
     font-size: 4rem;
   }
 }
@@ -433,7 +429,7 @@ body {
   padding-bottom: 10px
 }
 .beta {
-  background-color: #fff;
+  background-color: ##a3c1ad;
   min-height: 50px;
   color: #000;
   font-size: 1.2rem;
@@ -726,7 +722,7 @@ h3 > a:hover::before {
 }
 
 .free_ticket a {
-  color: white!important;
+  color: #000!important;
 }
 .page-link {
   border: none!important;
@@ -746,15 +742,14 @@ h3 > a:hover::before {
 p.small-font {
   font-size: 1rem!important;
 }
-
-a.free_ticket {
+.free_ticket {
   position: relative;
-  color: #fff;
+  color: #000;
   text-decoration: none !important;
 }
 
 a.free_ticket:hover {
-  color: #fff;
+  color: #000;
 }
 
 a.free_ticket::before {
@@ -764,7 +759,7 @@ a.free_ticket::before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #000;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -775,7 +770,7 @@ a.free_ticket:hover::before {
   transform: scaleX(1);
 }
 a.free_ticket  {
-  color: white!important;
+  color: #000!important;
 }
 
 .twitter__thumbnail {

@@ -19,13 +19,13 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
     <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['field_image'])
-    <figure class="figure float-right p-3">
+    <figure class="figure float-right p-3 col-md-4">
       <img src="{{ $project['field_image']['data']['thumbnails']['5']['url'] }}"
       alt="{{ $project['field_image_alt_text'] }}" class="img-fluid" id="stand-out"
       width="400"
       loading="lazy"
       />
-      <figcaption class="figure-caption text-right">{{ $project['field_image_alt_text'] }}</figcaption>
+      <figcaption class="figure-caption text-left">{{ $project['field_image_alt_text'] }}</figcaption>
     </figure>
     @endif
     @markdown($project['article_body'])
