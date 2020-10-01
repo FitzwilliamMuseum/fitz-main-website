@@ -793,3 +793,8 @@ a.free_ticket  {
   width: 100%;
   height: auto;
 }
+img.results_image__thumbnail {
+  width: 348px;
+  height: 348px;
+  object-fit: none;
+}
