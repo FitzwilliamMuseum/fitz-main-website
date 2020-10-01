@@ -123,11 +123,13 @@
     <div class="row">
       @foreach($shopify as $record)
       <div class="col-md-3 mb-3">
-        <div class="card  h-100">
+        <div class="card h-100">
           @if(!is_null($record['thumbnail']))
-            <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
+            <div class="results_image">
+            <a href="{{ $record['url'][0] }}"><img class="img-fluid results_image__thumbnail" src="{{ $record['thumbnail'][0]}}"
             alt="Featured image for the project: {{ $record['title'][0] }}"
             loading="lazy"/></a>
+          </div>
           @else
             <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
             alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/></a>
