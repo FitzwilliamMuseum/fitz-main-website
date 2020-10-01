@@ -46,11 +46,11 @@
       <div class="card  h-100 ">
         @if(!is_null($object['pharos_id']['image']))
         <div class="embed-responsive embed-responsive-4by3">
-          <img class="img-fluid embed-responsive-item" src="{{ $object['pharos_id']['image']['data']['thumbnails'][2]['url'] }}"
+          <img class="img-fluid embed-responsive-item" src="{{ $object['pharos_id']['image']['data']['thumbnails'][4]['url'] }}"
           alt="{{ $object['pharos_id']['image_alt_text'] }}"
           loading="lazy"
-          width="{{ $object['pharos_id']['image']['data']['thumbnails'][2]['width'] }}"
-          height="{{ $object['pharos_id']['image']['data']['thumbnails'][2]['height'] }}"/>
+          width="{{ $object['pharos_id']['image']['data']['thumbnails'][4]['width'] }}"
+          height="{{ $object['pharos_id']['image']['data']['thumbnails'][4]['height'] }}"/>
         </div>
         @endif
         <div class="card-body">
