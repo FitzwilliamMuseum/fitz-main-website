@@ -112,7 +112,7 @@ class homeController extends Controller
       ]);
       Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
     }
-    
+
     $tweets = array_slice($tweets, 0,3);
 
     if (Cache::has('cache_yt')) {
@@ -132,7 +132,7 @@ class homeController extends Controller
         $client = new Client($configSolr);
         $query = $client->createSelect();
         $query->setQuery('contentType:shopify');
-        $query->setRows(4);
+        $query->setRows(3);
         $call = $client->select($query);
         $shopify = $call->getDocuments();
         Cache::store('file')->put($key, $shopify, $expiresAt);

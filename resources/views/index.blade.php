@@ -11,9 +11,6 @@
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', 'The Fitzwilliam Museum')
 
-@section('content')
-  "Discover one of the greatest art collections of the nation"
-@endsection
 
 @section('news')
   @foreach($news['data'] as $project)
@@ -119,10 +116,10 @@
 @if(!empty($shopify))
   @section('shopify')
   <div class="container">
-    <h4>Buy something for someone?</h4>
+    <h4>Gifts from the Fitzwilliam Museum shop</h4>
     <div class="row">
       @foreach($shopify as $record)
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
         <div class="card h-100">
           @if(!is_null($record['thumbnail']))
             <div class="results_image">
