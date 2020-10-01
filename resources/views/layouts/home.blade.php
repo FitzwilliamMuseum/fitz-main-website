@@ -18,11 +18,12 @@
 
   @include('includes.structure.beta')
   @include('includes.structure.open')
+  
   <div class="container-fluid parallax parallax-home text-center">
   </div>
 
   <div class="container mt-3">
-    <h2>What's happening</h2>
+    <h2>Latest news</h2>
     <div class="row">
       @yield('news')
     </div>
@@ -77,13 +78,7 @@
     @yield('twitter')
   </div>
 
-  <!-- <div class="container-fluid parallax third-parallax-home-lower mb-3">
-  </div> -->
 
-  <!-- <div class="container ">
-    <h2>Our Instagram profile</h2>
-    @yield('instagram')
-  </div> -->
 
   <div class="container-fluid parallax fourth-parallax-home mb-3">
   </div>
