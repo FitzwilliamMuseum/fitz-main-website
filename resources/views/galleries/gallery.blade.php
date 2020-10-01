@@ -56,7 +56,7 @@
         <div class="card-body">
           <div class="contents-label mb-3">
             <h3>
-              <a href="{{ route('highlight', [$object['pharos_id']['slug']]) }}">{{ $object['pharos_id']['title'] }}</a>
+              <a href="{{ route('highlight', [$object['pharos_id']['slug']]) }}">@markdown($object['pharos_id']['title'])</a>
             </h3>
           </div>
         </div>
