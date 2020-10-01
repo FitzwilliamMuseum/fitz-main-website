@@ -44,6 +44,7 @@
       Objects and art works</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownObjects">
         <a class="dropdown-item" href="{{ route('objects') }}">An introduction</a>
+        <a class="dropdown-item" href="{{ URL::to('https://beta.fitz.ms/objects-and-artworks/highlights/') }}">Collection highlights</a>
         <a class="dropdown-item" href="{{ URL('https://collection.beta.fitz.ms') }}">Search the collection</a>
         <a class="dropdown-item" href="{{ route('audio-guide') }}">Audio guide</a>
       </div>
