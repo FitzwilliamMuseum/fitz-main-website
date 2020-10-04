@@ -93,6 +93,12 @@ Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop')->name('audio-stop');
 
 /*
+* Social
+*/
+Route::get('/social/instagram', 'socialController@instagram')->name('instagram');
+Route::get('/social/instagram/{slug}/', 'socialController@story')->name('instagram.story');
+
+/*
 * Search routing
 */
 Route::get('search', 'searchController@index');
