@@ -11,6 +11,7 @@ use Mews\Purifier;
 use App\Directus;
 use InstagramScraper\Instagram;
 use PHPShopify\ShopifySDK;
+use Phpfastcache\Helper\Psr16Adapter;
 
 class searchController extends Controller
 {
@@ -764,6 +765,11 @@ class searchController extends Controller
   public function instagram()
   {
     $expires = now()->addMinutes(6000);
+
+    $instagram = new Instagram();
+    $medias = $instagram->getPaginateMedias('fitzmuseum_uk');
+
+    dd($medias);
 
     if (Cache::has('cache_insta_search')) {
       $insta = Cache::get('cache_insta_search');

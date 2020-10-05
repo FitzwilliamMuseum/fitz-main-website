@@ -47,42 +47,42 @@
 
     </div>
 
-    <div class="col-md-12 shadow-sm p-3 mb-3" >
-              <div class="col">{!! clean($instagram['caption']) !!}</div>
+    <div class="col-md-12 shadow-sm p-3 mb-3 insta-wrap" >
+      <div class="col">{!! clean($instagram['caption']) !!}</div>
     </div>
 
 
     @foreach($adlib as $record)
-    <h4>
-      Collections database information
-    </h4>
-    <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
+      <h4>
+        Collections database information
+      </h4>
+      <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
 
-          @include('includes/elements/descriptive')
+        @include('includes/elements/descriptive')
 
-          @include('includes/elements/legal')
+        @include('includes/elements/legal')
 
-          @include('includes/elements/lifecycle')
+        @include('includes/elements/lifecycle')
 
-          @include('includes/elements/measurements')
+        @include('includes/elements/measurements')
 
-          @include('includes/elements/agents-subjects')
+        @include('includes/elements/agents-subjects')
 
-          @include('includes/elements/medium')
+        @include('includes/elements/medium')
 
-          @include('includes/elements/materials')
+        @include('includes/elements/materials')
 
-          @include('includes/elements/techniques')
+        @include('includes/elements/techniques')
 
-          @include('includes/elements/inscriptions')
+        @include('includes/elements/inscriptions')
 
-          @include('includes/elements/department')
+        @include('includes/elements/department')
 
-          @include('includes/elements/identification')
+        @include('includes/elements/identification')
 
-          @include('includes/elements/institutions')
-        </div>
-      @endforeach
+        @include('includes/elements/institutions')
+      </div>
+    @endforeach
 
   @endsection
 @endforeach

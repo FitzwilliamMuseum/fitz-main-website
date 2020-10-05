@@ -798,3 +798,6 @@ img.results_image__thumbnail {
   height: 348px;
   object-fit: none;
 }
+.insta-wrap {
+  word-break: break-all;
+}

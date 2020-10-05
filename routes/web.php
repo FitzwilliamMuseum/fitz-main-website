@@ -95,8 +95,8 @@ Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@sto
 /*
 * Social
 */
-Route::get('/social/instagram', 'socialController@instagram')->name('instagram');
-Route::get('/social/instagram/{slug}/', 'socialController@story')->name('instagram.story');
+Route::get('/conversations/instagram', 'socialController@instagram')->name('instagram');
+Route::get('/conversations/instagram/{slug}/', 'socialController@story')->name('instagram.story');
 
 /*
 * Search routing
