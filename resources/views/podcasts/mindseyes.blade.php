@@ -1,8 +1,8 @@
 @extends('layouts.layout')
-@section('title', 'Our instagram posts')
+@section('title', 'Culture in quarantine: In my mind\'s eye')
 @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
 @section('hero_image_title', 'Springtime by Claude Monet')
-@section('description', 'An archive of our instagram posts')
+@section('description', 'Culture in quarantine - in my mind\'s eye')
 @section('content')
 
 <div class="row">
