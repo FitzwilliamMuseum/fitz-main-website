@@ -86,11 +86,11 @@ class highlightsController extends Controller
       $adlib = $adlib['hits']['hits'];
 
       $more = new MoreLikeThis;
-      $more->setLimit(4)->setType('shopify')->setQuery($slug);
+      $more->setLimit(3)->setType('shopify')->setQuery($slug);
       $shopify = $more->getData();
 
       $pod = new MoreLikeThis;
-      $pod->setLimit(4)->setType('shopifyPrints')->setQuery($slug);
+      $pod->setLimit(3)->setType('shopifyPrints')->setQuery($slug);
       $prints = $pod->getData();
       return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify', 'prints'));
     }

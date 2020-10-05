@@ -227,7 +227,7 @@
             <h4>Suggested FME products</h4>
             <div class="row">
               @foreach($shopify as $record)
-                <div class="col-md-3 mb-3">
+                <div class="col-md-4 mb-3">
                   <div class="card  h-100">
                     @if(!is_null($record['thumbnail']))
                       <div class="results_image">
@@ -264,7 +264,7 @@
                 <h4>Suggested Fitzwilliam prints</h4>
                 <div class="row">
                   @foreach($prints as $record)
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-4 mb-3">
                       <div class="card  h-100">
                         @if(!is_null($record['thumbnail']))
                           <div class="results_image">
