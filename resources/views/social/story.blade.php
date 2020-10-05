@@ -35,7 +35,7 @@
               <h4>
                 Collections database information
               </h4>
-              <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
+              <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
 
                 @include('includes/elements/descriptive')
 

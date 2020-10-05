@@ -801,3 +801,6 @@ img.results_image__thumbnail {
 .insta-wrap {
   word-break: break-all;
 }
+.collections li {
+  list-style: square;
+}
