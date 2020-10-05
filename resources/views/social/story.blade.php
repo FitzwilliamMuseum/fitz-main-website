@@ -39,8 +39,6 @@
 
                 @include('includes/elements/descriptive')
 
-                @include('includes/elements/legal')
-
                 @include('includes/elements/lifecycle')
 
                 @include('includes/elements/measurements')
@@ -59,7 +57,6 @@
 
                 @include('includes/elements/identification')
 
-                @include('includes/elements/institutions')
               </div>
             @endforeach
 
