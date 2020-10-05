@@ -33,15 +33,13 @@
       </div>
     </li>
 
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ URL::to('https://tickets.museums.cam.ac.uk') }}">Tickets</a>
-    </li>
+
     <li class="nav-item active">
       <a class="nav-link" href="{{ route('news') }}">News</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownObjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Objects and art works</a>
+      Collections</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownObjects">
         <a class="dropdown-item" href="{{ route('objects') }}">An introduction</a>
         <a class="dropdown-item" href="{{ URL::to('https://beta.fitz.ms/objects-and-artworks/highlights/') }}">Collection highlights</a>
