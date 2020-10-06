@@ -34,7 +34,8 @@ class socialController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*'
+              'meta' => '*',
+              'sort' => '-date_posted',
           )
         );
         $insta = $api->getData();
