@@ -3,13 +3,26 @@
   <div class="col-md-12 mx-auto">
     <div class="row justify-content-center mb-4">
       <div class="col-md-2 col-sm-2">
-        <a href="http://www.museums.cam.ac.uk"><img class="img-fluid mx-auto " loading="lazy" alt="University of Cambridge Museums logo" src="/images/logos/ucm_logo_black_white.png" /></a>
+        <a href="https://www.museums.cam.ac.uk"><img class="img-fluid mx-auto " loading="lazy" alt="University of Cambridge Museums logo" src="/images/logos/ucm_logo_black_white.png" /></a>
       </div>
       <div class="col-md-2 col-sm-2">
-        <a href="http://www.artscouncil.org.uk/"><img class="img-fluid mx-auto d-block" alt="Arts Council England Logo" src="/images/logos/artscouncil_grant.png" loading="lazy"  /></a>
+        <a href="https://www.artscouncil.org.uk/"><img class="img-fluid mx-auto d-block" alt="Arts Council England Logo" src="/images/logos/artscouncil_grant.png" loading="lazy"  /></a>
       </div>
       <div class="col-md-2 col-sm-2">
         <a href="https://re.ukri.org/"><img class="img-fluid mx-auto d-block" alt="Research England logo" loading="lazy" src="/images/logos/UKRI_RE-Logo_Horiz-RGB.png" /></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sponsor -->
+<div class="container-fluid bg-white p-2 container-fluid bg-white border-cambridge">
+  <div class="col-md-12 mx-auto">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-2 col-sm-2">
+        <a href="https://www.ttpgroup.com/"><img class="img-fluid mx-auto mb-4" loading="lazy" alt="The Technology Partnership logo" src="/images/logos/ttpgroup.jpg" /></a>
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <a href="https://www.brewin.co.uk/"><img class="img-fluid mx-auto d-block mb-4" alt="Brewin Dolphin Logo" src="/images/logos/brewindolphin.jpg" loading="lazy"  /></a>
       </div>
     </div>
   </div>
