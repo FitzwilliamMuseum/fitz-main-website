@@ -98,10 +98,11 @@ Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@sto
 Route::get('/conversations/', 'socialController@index')->name('conversations');
 
 /*
-* Instagram
+*
 */
-Route::get('/conversations/instagram', 'socialController@instagram')->name('instagram');
+Route::get('/conversations/instagram/', 'socialController@instagram')->name('instagram');
 Route::get('/conversations/instagram/{slug}/', 'socialController@story')->name('instagram.story');
+Route::get('/conversations/twitter/', 'socialController@twitter')->name('twitter');
 
 /*
 * podcasts
