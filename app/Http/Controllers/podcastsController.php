@@ -27,6 +27,11 @@ class podcastsController extends Controller
        return new Elastic();
      }
 
+    public function index()
+    {
+      return view('podcasts.index');
+    }
+    
     public function mindseyes()
     {
         $api = $this->getApi();

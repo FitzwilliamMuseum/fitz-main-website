@@ -27,6 +27,11 @@ class socialController extends Controller
        return new Elastic();
      }
 
+    public function index()
+    {
+        return view('social.index');
+    }
+    
     public function instagram()
     {
         $api = $this->getApi();

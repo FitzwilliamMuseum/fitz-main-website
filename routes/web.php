@@ -95,8 +95,18 @@ Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@sto
 /*
 * Social
 */
+Route::get('/conversations/', 'socialController@index')->name('conversations');
+
+/*
+* Instagram
+*/
 Route::get('/conversations/instagram', 'socialController@instagram')->name('instagram');
 Route::get('/conversations/instagram/{slug}/', 'socialController@story')->name('instagram.story');
+
+/*
+* podcasts
+*/
+Route::get('/conversations/podcasts/', 'podcastsController@index')->name('podcasts');
 Route::get('/conversations/podcasts/in-my-minds-eye', 'podcastsController@mindseyes')->name('mindeyes');
 Route::get('/conversations/podcasts/in-my-minds-eye/{slug}/', 'podcastsController@mindseye')->name('mindeyes.story');
 
