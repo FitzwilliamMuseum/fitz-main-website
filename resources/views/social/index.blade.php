@@ -36,5 +36,23 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <a href="{{ route('instagram') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/ejpjb8sxcaa_jdg.jpg?key=directus-large-crop&q=50"
+              alt="Our instagram profile"/></a>
+              <div class="card-body h-100">
+                <div class="contents-label mb-3">
+                  <h3>
+                    <a href="{{ route('twitter') }}">Twitter</a>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+
     @endsection
