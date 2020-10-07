@@ -117,7 +117,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 mb-2 mx-auto">
-          <p class="text-center"><img src="/images/logos/cambridge_university2.svg"  height="48" class="img-fluid mx-auto" /><br/>
+          <p class="text-center"><img src="/images/logos/cambridge_university2.svg"  width="200" class="img-fluid mx-auto" /><br/>
           &copy; 2020 The University of Cambridge</p>
         </div>
       </div>
