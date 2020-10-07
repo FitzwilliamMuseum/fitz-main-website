@@ -52,7 +52,12 @@
 
       <!-- column two -->
       <div class="col-md-5 mt-3">
-
+        <div class="col shadow-sm p-3 mx-auto mb-3">
+          <div class="embed-responsive embed-responsive-21by9">
+            <iframe  src="//html5-player.libsyn.com/embed/episode/id/15913487/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/87A93A/"
+            height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen class="embed-responsive-item"></iframe>
+          </div>
+        </div>
         <div class="col shadow-sm p-3 mx-auto mb-3">
           <img src="{{ $instagram['author_headshot']['data']['full_url'] }}" class="img-fluid"/>
         </div>
