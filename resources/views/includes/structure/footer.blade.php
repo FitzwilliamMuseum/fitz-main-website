@@ -71,7 +71,7 @@
           <h4 class="sr-only">License</h4>
           <ul class="share">
             <li>Content: CC-BY</li>
-            <li>Code: AGPL</li>
+            <li>Code: GPL-V3</li>
           </ul>
         </div>
       </div>

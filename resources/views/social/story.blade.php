@@ -2,9 +2,12 @@
 @foreach($insta['data'] as $instagram)
   @section('description', $instagram['meta_description'])
   @section('title', $instagram['title'])
-  @if(!is_null($instagram['hero_image']))
+  @if(!empty($instagram['hero_image']))
     @section('hero_image', $instagram['hero_image']['data']['full_url'])
     @section('hero_image_title', $instagram['hero_image_alt_text'])
+  @else
+    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+    @section('hero_image_title', "The inside of our Founder's entrance")
   @endif
 
   @section('content')
@@ -25,6 +28,7 @@
 
 
       <!-- Column one -->
+      @if(!empty($instagram['hero_image']))
       <div class="col-md-7 mb-3">
         <div class=" shadow-sm p-3 mb-3 mt-3">
           <figure class="figure">
@@ -71,7 +75,7 @@
 
       </div>
       <!-- End of column one -->
-
+    @endif
 
     </div>
 
