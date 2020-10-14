@@ -4,6 +4,7 @@
 @section('description', 'Culture in quarantine - in my mind\'s eye')
 @section('content')
   <div class="row">
+    @if(!empty($podcasts['data']))
     @foreach($podcasts['data'] as $podcast)
 
       @php
@@ -28,5 +29,6 @@
           </div>
         </div>
       @endforeach
+    @endif
     </div>
   @endsection

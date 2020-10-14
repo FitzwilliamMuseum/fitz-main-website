@@ -67,7 +67,6 @@ class podcastsController extends Controller
         'filter[podcast_series.podcast_series_id][in]' => $ids['data'][0]['id']
       )
     );
-    dump($api-> getCallUrl());
     $podcasts = $api->getData();
     return view('podcasts.series', compact('podcasts'));
   }

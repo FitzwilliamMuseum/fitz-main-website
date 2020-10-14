@@ -25,6 +25,22 @@
 
       <div class="col-md-4 mb-3">
         <div class="card h-100">
+          <a href="{{ route('podcasts') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/cover-podcasts.jpg?key=directus-large-crop&q=50"
+            alt="Podcasts symbol"
+
+            loading="lazy"/></a>
+            <div class="card-body h-100">
+              <div class="contents-label mb-3">
+                <h3>
+                  Our podcast archive
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
           <a href="{{ route('instagram') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/instacover.png?key=directus-large-crop&q=50"
             alt="Our instagram profile"/></a>
             <div class="card-body h-100">
