@@ -18,18 +18,18 @@
       </div>
     </div>
   </div>
-  @foreach($podcasts['data'] as $instagram)
+  @foreach($podcasts['data'] as $podcast)
   <div class="col-md-4 mb-3">
     <div class="card h-100">
-      <a href="{{ route('podcasts.series', $instagram['slug']) }}"><img class="card-img-top img-fluid" src="{{ $instagram['cover_image']['data']['thumbnails'][3]['url']}}"
+      <a href="{{ route('podcasts.series', $podcast['slug']) }}"><img class="card-img-top img-fluid" src="{{ $podcast['cover_image']['data']['thumbnails'][3]['url']}}"
       alt=""
-      width="{{ $instagram['cover_image']['data']['thumbnails'][3]['width'] }}"
-      height="{{ $instagram['cover_image']['data']['thumbnails'][3]['height'] }}"
+      width="{{ $podcast['cover_image']['data']['thumbnails'][3]['width'] }}"
+      height="{{ $podcast['cover_image']['data']['thumbnails'][3]['height'] }}"
       loading="lazy"/></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="{{ route('podcasts.series', $instagram['slug']) }}">{{ $instagram['title'] }}</a>
+            <a href="{{ route('podcasts.series', $podcast['slug']) }}">{{ $podcast['title'] }}</a>
           </h3>
         </div>
       </div>

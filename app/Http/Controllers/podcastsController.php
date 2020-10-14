@@ -64,9 +64,10 @@ class podcastsController extends Controller
       $args = array(
         'fields' => '*.*.*.*',
         'meta' => '*',
-        'filter[podcast_series.id][eq]' => $ids['data'][0]['id']
+        'filter[podcast_series.podcast_series_id][in]' => $ids['data'][0]['id']
       )
     );
+    dump($api-> getCallUrl());
     $podcasts = $api->getData();
     return view('podcasts.series', compact('podcasts'));
   }
