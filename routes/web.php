@@ -108,6 +108,8 @@ Route::get('/conversations/twitter/', 'socialController@twitter')->name('twitter
 * podcasts
 */
 Route::get('/conversations/podcasts/', 'podcastsController@index')->name('podcasts');
+Route::get('/conversations/podcasts/{slug}', 'podcastsController@series')->name('podcasts.series');
+Route::get('/conversations/podcasts/episode/{slug}', 'podcastsController@episode')->name('podcasts.episode');
 Route::get('/conversations/podcasts/in-my-minds-eye', 'podcastsController@mindseyes')->name('mindeyes');
 Route::get('/conversations/podcasts/in-my-minds-eye/{slug}/', 'podcastsController@mindseye')->name('mindeyes.story');
 

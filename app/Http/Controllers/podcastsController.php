@@ -11,67 +11,121 @@ use Elasticsearch\ClientBuilder;
 
 class podcastsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  /**
+  * Display a listing of the resource.
+  *
+  * @return \Illuminate\Http\Response
+  */
 
 
-     public function getApi(){
-       return new DirectUs;
-     }
+  public function getApi(){
+    return new DirectUs;
+  }
 
-     public function getElastic()
-     {
-       return new Elastic();
-     }
+  public function getElastic()
+  {
+    return new Elastic();
+  }
 
-    public function index()
-    {
-      return view('podcasts.index');
-    }
-    
-    public function mindseyes()
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('mindseye');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => '*'
-          )
-        );
-        $mindseyes = $api->getData();
-        return view('podcasts.mindseyes', compact('mindseyes'));
-    }
+  public function index()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('podcast_series');
+    $api->setArguments(
+      $args = array(
+        'fields' => '*.*.*.*',
+        'meta' => '*'
+      )
+    );
+    $podcasts = $api->getData();
+    return view('podcasts.index', compact('podcasts'));
+  }
 
-    public function mindseye($slug)
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('mindseye');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'filter[slug][eq]' => $slug
-          )
-        );
-        $mindseye = $api->getData();
-        $params = [
-          'index' => 'ciim',
-          'size' => 1,
-          'body'  => [
-            'query' => [
-              'match' => [
-                'identifier.accession_number' => strtoupper($mindseye['data'][0]['adlib_id'])
-              ]
-            ]
+  public function getSeriesID($slug)
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('podcast_series');
+    $api->setArguments(
+      $args = array(
+        'fields' => '*.*.*.*',
+        'filter[slug][eq]' => $slug
+      )
+    );
+    $podcasts = $api->getData();
+    return $podcasts;
+  }
+
+  public function series($slug)
+  {
+    $ids = $this->getSeriesID($slug);
+    $api = $this->getApi();
+    $api->setEndpoint('podcast_archive');
+    $api->setArguments(
+      $args = array(
+        'fields' => '*.*.*.*',
+        'meta' => '*',
+        'filter[podcast_series.id][eq]' => $ids['data'][0]['id']
+      )
+    );
+    $podcasts = $api->getData();
+    return view('podcasts.series', compact('podcasts'));
+  }
+
+  public function episode($slug)
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('podcast_archive');
+    $api->setArguments(
+      $args = array(
+        'fields' => '*.*.*.*',
+        'meta' => '*',
+        'filter[slug][eq]' => $slug
+      )
+    );
+    $podcasts = $api->getData();
+    return view('podcasts.episode', compact('podcasts'));
+  }
+
+  public function mindseyes()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('mindseye');
+    $api->setArguments(
+      $args = array(
+        'fields' => '*.*.*.*',
+        'meta' => '*'
+      )
+    );
+    $mindseyes = $api->getData();
+    return view('podcasts.mindseyes', compact('mindseyes'));
+  }
+
+  public function mindseye($slug)
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('mindseye');
+    $api->setArguments(
+      $args = array(
+        'fields' => '*.*.*.*',
+        'meta' => '*',
+        'filter[slug][eq]' => $slug
+      )
+    );
+    $mindseye = $api->getData();
+    $params = [
+      'index' => 'ciim',
+      'size' => 1,
+      'body'  => [
+        'query' => [
+          'match' => [
+            'identifier.accession_number' => strtoupper($mindseye['data'][0]['adlib_id'])
           ]
-        ];
-        $adlib = $this->getElastic()->setParams($params)->getSearch();
-        $adlib = $adlib['hits']['hits'];
-        return view('podcasts.mindseye', compact('mindseye', 'adlib'));
-    }
+        ]
+      ]
+    ];
+    $adlib = $this->getElastic()->setParams($params)->getSearch();
+    $adlib = $adlib['hits']['hits'];
+    return view('podcasts.mindseye', compact('mindseye', 'adlib'));
+  }
 
 }
