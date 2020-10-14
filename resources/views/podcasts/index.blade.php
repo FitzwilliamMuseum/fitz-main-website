@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title', 'Fitzwilliam Museum podcasts')
-@section('cover_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/cover-podcasts.jpg')
+@section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/cover-podcasts.jpg')
 @section('content')
 
 <div class="row">
