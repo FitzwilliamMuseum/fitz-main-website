@@ -923,6 +923,7 @@ class searchController extends Controller
 
     $shopify = $this->getShopifyObjects();
     $url = env('SHOPIFY_FME_URL');
+    $shop = env('SHOPIFY_FME_LIVE_URL');
     $protocol = env('SHOPIFY_FME_PROTOCOL');
     $catalogue = env('SHOPIFY_FME_CATALOGUE');
     foreach($shopify as $product)
@@ -933,7 +934,7 @@ class searchController extends Controller
       $description = $product['body_html'];
       $doc->description = strip_tags($description);
       $doc->body = strip_tags($description);
-      $doc->url = $protocol . $url . $catalogue . $product['handle'];
+      $doc->url = $protocol . $shop . $catalogue . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
       $doc->thumbnail = $product['image']['src'];
