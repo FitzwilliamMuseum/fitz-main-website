@@ -73,15 +73,15 @@
   <div class="container-fluid parallax third-parallax-home mb-3">
   </div>
 
-  <div class="container ">
+  {{-- <div class="container ">
     <h2>Our Twitter profile</h2>
     @yield('twitter')
-  </div>
+  </div> --}}
 
 
 
-  <div class="container-fluid parallax fourth-parallax-home mb-3">
-  </div>
+  {{-- <div class="container-fluid parallax fourth-parallax-home mb-3">
+  </div> --}}
 
   {{-- @yield('shopify') --}}
 
