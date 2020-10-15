@@ -18,7 +18,7 @@
 
   @include('includes.structure.beta')
   @include('includes.structure.open')
-  
+
   <div class="container-fluid parallax parallax-home text-center">
   </div>
 
@@ -83,14 +83,7 @@
   <div class="container-fluid parallax fourth-parallax-home mb-3">
   </div>
 
-  <div class="container ">
-    <h2>Watch us</h2>
-    @yield('youtube-list')
-  </div>
-
-  <div class="container-fluid parallax fourth-parallax-home mb-3">
-  </div>
-  @yield('shopify')
+  {{-- @yield('shopify') --}}
 
   @include('includes.structure.share')
 

@@ -19,8 +19,8 @@
         <a class="dropdown-item" href="{{ route('collections') }}">Collection areas</a>
         <a class="dropdown-item" href="{{ route('departments') }}">Departments</a>
         <a class="dropdown-item" href="{{ route('press-room') }}">Press room</a>
+        <a class="dropdown-item" href="{{ route('news') }}">News</a>
         <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
-
       </div>
     </li>
 
@@ -32,11 +32,7 @@
         <a class="dropdown-item" href="{{ route('galleries') }}">Galleries</a>
       </div>
     </li>
-
-
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ route('news') }}">News</a>
-    </li>
+    
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownObjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Collections</a>
