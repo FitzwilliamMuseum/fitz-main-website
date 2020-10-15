@@ -103,7 +103,7 @@
   @endforeach
 @endsection
 
-@section('twitter')
+{{-- @section('twitter')
   @include('includes.social.tweets')
 @endsection
 
@@ -111,7 +111,7 @@
 
 @section('youtube-list')
   @include('includes.social.youtubelist')
-@endsection
+@endsection --}}
 
 @if(!empty($shopify))
   @section('shopify')
