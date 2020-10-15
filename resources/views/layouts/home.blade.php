@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div class="container-fluid parallax third-parallax-home mb-3">
+  <div class="container-fluid parallax third-parallax-home">
   </div>
 
   {{-- <div class="container ">
