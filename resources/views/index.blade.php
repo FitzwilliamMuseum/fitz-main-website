@@ -2,8 +2,8 @@
 
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title','The founder\'s building entrance ceiling')
-@section('parallax_home', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg?key=directus-large-contain&q=100')
-@section('parallax_two', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg?key=directus-large-contain&q=100')
+@section('parallax_home', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
+@section('parallax_two', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
 @section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/aramesh.jpg')
 @section('parallax_four', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/e1a3159c12ca0f5091e3e9e5000ad4d0-landscape.jpg')
 @section('parallax_three_lower', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/aramesh.jpg')
