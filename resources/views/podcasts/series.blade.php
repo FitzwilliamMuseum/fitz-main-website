@@ -1,6 +1,11 @@
 @extends('layouts.layout')
-@section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
-@section('hero_image_title', 'Springtime by Claude Monet')
+@if(!is_null($podcasts['hero_image']))
+  @section('hero_image',$podcasts['hero_image'] )
+  @section('hero_image_title', $podcasts['hero_image_alt_tag'])
+@else
+  @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
+  @section('hero_image_title', 'Springtime by Claude Monet')
+@endif
 @section('description', 'Culture in quarantine - in my mind\'s eye')
 @section('content')
   <div class="row">
