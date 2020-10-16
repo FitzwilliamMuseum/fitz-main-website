@@ -17,6 +17,10 @@
           <h3>
             In my mind's eye: culture in quarantine podcasts
           </h3>
+          <p>
+            These podcasts were made possible thanks to the support of the
+            Belvedere Trust.
+          </p>
         </div>
       </div>
     </div>
