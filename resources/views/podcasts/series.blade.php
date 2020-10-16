@@ -1,12 +1,12 @@
 @extends('layouts.layout')
-@if(!is_null($podcasts['hero_image']))
-  @section('hero_image',$podcasts['hero_image'] )
-  @section('hero_image_title', $podcasts['hero_image_alt_tag'])
+@if(!is_null($podcasts['data'][0]['podcast_series']))
+  @section('hero_image', $podcasts['data'][0]['podcast_series'][0]['podcast_series_id']['hero_image']['data']['full_url'] )
+  @section('hero_image_title', $podcasts['data'][0]['podcast_series'][0]['podcast_series_id']['hero_image_alt_tag'])
 @else
   @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
   @section('hero_image_title', 'Springtime by Claude Monet')
 @endif
-@section('description', 'Culture in quarantine - in my mind\'s eye')
+@section('description', 'Fitzwilliam Museum Podcasts - an archive')
 @section('content')
   <div class="row">
     @if(!empty($podcasts['data']))
