@@ -1044,4 +1044,43 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function podcastseries()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('podcast_archive');
+    $api->setArguments(
+      $args = array(
+          'limit' => '50',
+          'fields' => 'id,title,slug,cover_image.*'
+      )
+    );
+    $profiles = $api->getData();
+
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-podcast_series';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['title']);
+      $doc->body = strip_tags($profile['title']);
+      $doc->url = $this->url . 'conversations/podcasts/' . $profile['slug'];
+      $doc->slug = $profile['slug'];
+      if(isset($profile['cover_image'])){
+        $doc->thumbnail = $profile['cover_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['cover_image']['data']['full_url'];
+        $doc->searchImage = $profile['cover_image']['data']['thumbnails'][2]['url'];
+      }
+      $doc->contentType = 'podcast_series';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
 }
