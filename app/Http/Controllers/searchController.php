@@ -1047,7 +1047,7 @@ class searchController extends Controller
   public function podcastseries()
   {
     $api = $this->getApi();
-    $api->setEndpoint('podcast_archive');
+    $api->setEndpoint('podcast_series');
     $api->setArguments(
       $args = array(
           'limit' => '50',
