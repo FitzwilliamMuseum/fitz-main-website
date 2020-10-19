@@ -95,53 +95,10 @@ class homeController extends Controller
       )
     );
     $things = $api5->getData();
-    $expiresTwitter = now()->addMinutes(60);
-    $expiresInstagram = now()->addMinutes(600);
-    $expiresYouTube = now()->addMinutes(6000);
-
-    if (Cache::has('cache_twitter')) {
-      $tweets = Cache::get('cache_twitter');
-    } else {
-      $tweets = Twitter::getUserTimeline([
-        'screen_name' => 'fitzmuseum_uk',
-        'count' => 10,
-        'format' => 'object',
-        'tweet_mode' => 'extended',
-        'include_rts' => false,
-        'exclude_replies' => true
-      ]);
-      Cache::put('cache_twitter', $tweets, $expiresTwitter); // 1 hour
-    }
-
-    $tweets = array_slice($tweets, 0,3);
-
-    if (Cache::has('cache_yt')) {
-      $videoList = Cache::get('cache_yt');
-    } else {
-      $videoList = Youtube::listChannelVideos('UCFwhw5uPJWb4wVEU3Y2nScg', 3, 'date');
-      Cache::put('cache_yt', $videoList, $expiresYouTube); // 1 hour
-    }
-
-    $expiresAt = now()->addMinutes(3600);
-    $key = md5('shopify-api-front');
-
-    if (Cache::has($key)) {
-        $shopify = Cache::store('file')->get($key);
-    } else {
-        $configSolr = \Config::get('solarium');
-        $client = new Client($configSolr);
-        $query = $client->createSelect();
-        $query->setQuery('contentType:shopify');
-        $query->setRows(3);
-        $call = $client->select($query);
-        $shopify = $call->getDocuments();
-        Cache::store('file')->put($key, $shopify, $expiresAt);
-    }
 
     return view('index', compact(
       'carousel','news', 'research',
-      'objects','tweets', 'videoList',
-      'things', 'fundraising', 'shopify'
+      'objects', 'things', 'fundraising',
     ));
   }
 }
