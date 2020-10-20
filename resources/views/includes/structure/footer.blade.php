@@ -84,6 +84,8 @@
           <h4 class="sr-only">License</h4>
           <ul class="share">
             <li>Content: CC-BY</li>
+            <li>Metadata: CC0</li>
+            <li>Images: CC-BY-NC-ND</li>
             <li>Code: GPL-V3</li>
           </ul>
         </div>
