@@ -55,7 +55,7 @@
               of Cambridge Museums</a>
             </li>
             <li>
-              <a href="{{ route('landing-section', ['about-us', 'terms-of-use'])}}" aria-label="Website terms and conditions">Website Terms of Use</a>
+              <a href="{{ route('landing-section', ['about-us', 'terms-of-use-of-our-website'])}}" aria-label="Website terms and conditions">Website Terms of Use</a>
             </li>
             <li>
               <a href="{{ route('landing-section', ['about-us', 'privacy-and-cookies'])}}">Cookies, privacy & accessibility</a>
