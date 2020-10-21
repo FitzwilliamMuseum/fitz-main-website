@@ -3,7 +3,7 @@
     <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
 
     <title>The Fitzwilliam Museum - @yield('title')</title>
-    
+
     <meta name="description" content="@yield('description')" />
 @hasSection('keywords')
     <meta name="keywords" content="@yield('keywords')" />
@@ -68,3 +68,10 @@
     "@context":"https://schema.org"}
     </script>
     <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g" async="true"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
+    </script>
