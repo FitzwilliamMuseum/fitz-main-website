@@ -13,7 +13,7 @@
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      About us</a>
+      About</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
         <a class="dropdown-item" href="{{ route('landing', ['about-us']) }}">About the Museum</a>
         <a class="dropdown-item" href="{{ route('collections') }}">Collection areas</a>
@@ -25,14 +25,14 @@
     </li>
 
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVisit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visit us</a>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVisit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visit</a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownVisit">
         <a class="dropdown-item" href="{{ route('visit') }}">Your visit</a>
         <a class="dropdown-item" href="{{ route('exhibitions') }}">Exhibitions</a>
         <a class="dropdown-item" href="{{ route('galleries') }}">Galleries</a>
       </div>
     </li>
-    
+
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownObjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Collections</a>
@@ -49,7 +49,7 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdownLearning">
         <a class="dropdown-item" href="{{ route('landing', ['learning']) }}">Learn with us</a>
         <a class="dropdown-item" href="{{ route('landing-section',['learning','families']) }}">Families</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','young-people']) }}">Young audiences</a>
+        <a class="dropdown-item" href="{{ route('landing-section',['learning','young-people']) }}">Young people</a>
         <a class="dropdown-item" href="{{ route('landing-section',['learning','school-sessions']) }}">Schools</a>
         <a class="dropdown-item" href="{{ route('landing-section',['learning','adult-programming']) }}">Adults</a>
         <a class="dropdown-item" href="{{ route('landing-section',['learning','community-programming']) }}">Communities</a>
@@ -58,7 +58,7 @@
       </div>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="{{ route('landing', ['support-us']) }}">Support us</a>
+      <a class="nav-link" href="{{ route('landing', ['support-us']) }}">Support</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownResearch" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
