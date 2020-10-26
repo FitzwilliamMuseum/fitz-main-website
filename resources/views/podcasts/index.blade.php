@@ -6,13 +6,13 @@
 <div class="row">
   <div class="col-md-4 mb-3">
     <div class="card h-100">
-      <a href=""><img class=" card-img-top img-fluid" src="https://content.fitz.ms/fitz-website/assets/mindseye.jpg?key=directus-medium-contain&q=50"
+      <a href="/conversations/podcasts/in-my-minds-eye"><img class=" card-img-top img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/imme.jpg"
       alt="In My Mind's Eye logo"
       loading="lazy"/></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            In my mind's eye: culture in quarantine podcasts
+            In my mind's eye
           </h3>
         </div>
       </div>

@@ -21,16 +21,13 @@
             height="{{ $podcast['hero_image']['height'] }}"
             />
           </figure>
-          <span class="btn btn-wine m-1 p-2 share">
-            <a href="{{ URL::to( $podcast['hero_image']['data']['full_url'] )  }}" target="_blank"
-            download><i class="fas fa-download mr-2"></i>  Download this image</a>
-          </span>
+
 
         </div>
 
 
 
-
+          @if(!empty($adlib))
             @foreach($adlib as $record)
               <h4>
                 Collections database information
@@ -41,12 +38,11 @@
 
                 @include('includes/elements/lifecycle')
 
-
                 @include('includes/elements/identification-insta')
 
               </div>
             @endforeach
-
+          @endif
       </div>
       <!-- End of column one -->
 
@@ -54,13 +50,17 @@
       <div class="col-md-5 mt-3">
         <div class="col shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-21by9">
-            <iframe  src="//html5-player.libsyn.com/embed/episode/id/15913487/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/87A93A/"
-            height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen class="embed-responsive-item"></iframe>
+            @include('includes/social/libsyn')
           </div>
         </div>
         <div class="col shadow-sm p-3 mx-auto mb-3">
+          {!! $podcast['story'] !!}
+        </div>
+        @if(!empty($podcast['author_headshot']))
+        <div class="col shadow-sm p-3 mx-auto mb-3">
           <img src="{{ $podcast['author_headshot']['data']['full_url'] }}" class="img-fluid"/>
         </div>
+      @endif
 
       </div>
       <!-- End of column two -->
