@@ -1,11 +1,11 @@
 @extends('layouts.layout')
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+@section('hero_image_title', "The inside of our Founder's entrance")
+
 @foreach($mindseye['data'] as $podcast)
   @section('description', $podcast['meta_description'])
   @section('title', $podcast['title'])
-  @if(!is_null($podcast['hero_image']))
-    @section('hero_image', $podcast['hero_image']['data']['full_url'])
-    @section('hero_image_title', $podcast['hero_image_alt_text'])
-  @endif
+
 
   @section('content')
 
