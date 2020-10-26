@@ -808,5 +808,5 @@ ul.text-center.conversation-footer {
   padding-inline-start: 0px!important;
 }
 .libsyn {
-  min-height: 90;
+  min-height: 90px!important;
 }
