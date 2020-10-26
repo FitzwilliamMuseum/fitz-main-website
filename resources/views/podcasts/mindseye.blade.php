@@ -11,6 +11,26 @@
 
 
     <div class="row ">
+
+
+      <!-- column two -->
+      <div class="col-md-5 mt-3">
+        <div class="col shadow-sm p-3 mx-auto mb-3">
+          <div class="embed-responsive embed-responsive-21by9">
+            @include('includes/social/libsyn')
+          </div>
+        </div>
+        <div class="col shadow-sm p-3 mx-auto mb-3">
+          {!! $podcast['story'] !!}
+        </div>
+        @if(!empty($podcast['author_headshot']))
+        <div class="col shadow-sm p-3 mx-auto mb-3">
+          <img src="{{ $podcast['author_headshot']['data']['full_url'] }}" class="img-fluid"/>
+        </div>
+      @endif
+
+      </div>
+      <!-- End of column two -->
       <!-- Column one -->
       <div class="col-md-7 mb-3">
         <div class=" shadow-sm p-3 mb-3 mt-3">
@@ -45,25 +65,6 @@
           @endif
       </div>
       <!-- End of column one -->
-
-      <!-- column two -->
-      <div class="col-md-5 mt-3">
-        <div class="col shadow-sm p-3 mx-auto mb-3">
-          <div class="embed-responsive embed-responsive-21by9">
-            @include('includes/social/libsyn')
-          </div>
-        </div>
-        <div class="col shadow-sm p-3 mx-auto mb-3">
-          {!! $podcast['story'] !!}
-        </div>
-        @if(!empty($podcast['author_headshot']))
-        <div class="col shadow-sm p-3 mx-auto mb-3">
-          <img src="{{ $podcast['author_headshot']['data']['full_url'] }}" class="img-fluid"/>
-        </div>
-      @endif
-
-      </div>
-      <!-- End of column two -->
 
     </div>
 
