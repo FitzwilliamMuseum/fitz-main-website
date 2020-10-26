@@ -14,9 +14,9 @@
 
 
       <!-- column two -->
-      <div class="col-md-5 mt-3">
+      <div class="col-md-7 mt-3">
         <div class="col shadow-sm p-3 mx-auto mb-3">
-          <div class="embed-responsive embed-responsive-21by9">
+          <div class="embed-responsive libsyn">
             @include('includes/social/libsyn')
           </div>
         </div>
@@ -32,7 +32,7 @@
       </div>
       <!-- End of column two -->
       <!-- Column one -->
-      <div class="col-md-7 mb-3">
+      <div class="col-md-5 mb-3">
         <div class=" shadow-sm p-3 mb-3 mt-3">
           <figure class="figure">
             <img src="{{ $podcast['hero_image']['data']['full_url'] }}"

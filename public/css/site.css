@@ -807,3 +807,6 @@ img.results_image__thumbnail {
 ul.text-center.conversation-footer {
   padding-inline-start: 0px!important;
 }
+.libsyn {
+  min-height: 90;
+}
