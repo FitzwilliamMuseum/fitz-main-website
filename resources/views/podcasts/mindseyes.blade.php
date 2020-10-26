@@ -1,8 +1,8 @@
 @extends('layouts.layout')
-@section('title', 'Culture in quarantine: In my mind\'s eye')
-@section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
-@section('hero_image_title', 'Springtime by Claude Monet')
-@section('description', 'In my mind\'s eye')
+@section('title', 'In my mind\'s eye')
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+@section('hero_image_title', "The inside of our Founder's entrance")
+@section('description', 'In my mind\'s eye a new podcast series')
 @section('content')
 
 <div class="row">
@@ -27,7 +27,7 @@
   <div class="col-md-4 mb-3">
     <div class="card h-100">
       <a href="{{ route('podcasts') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/cover-podcasts.jpg?key=directus-large-crop&q=50"
-      alt=""
+      alt=" Cover image for podcasts series"
 
       loading="lazy"/></a>
       <div class="card-body h-100">
