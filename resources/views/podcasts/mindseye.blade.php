@@ -24,22 +24,40 @@
           {!! $podcast['story'] !!}
         </div>
 
-      @if(!empty($podcast['transcript']))
-        <h4>
-          Podcast transcript
-        </h4>
-        <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
-          <p>This transcript was generated using Amazon Speech Recognition.</p>
-          <ol>
-          @foreach ($podcast['transcript'] as $transcript)
-          <li>
-            {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}
-            <strong>{{ $transcript['speaker'] }}</strong>: {{ $transcript['comment'] }}
-          </li>
+        @if(!empty($podcast['transcript']))
+          <h4>
+            Podcast transcript
+          </h4>
+          <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
+            <p>This transcript was generated using Amazon Speech Recognition.</p>
+            <ol>
+              @foreach ($podcast['transcript'] as $transcript)
+                <li>
+                  {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}
+                  <strong>{{ $transcript['speaker'] }}</strong>: {{ $transcript['comment'] }}
+                </li>
+              @endforeach
+            </ol>
+          </div>
+        @endif
+
+        @if(!empty($adlib))
+          @foreach($adlib as $record)
+            <h4>
+              About the object
+            </h4>
+            <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
+
+              @include('includes/elements/descriptive')
+
+              @include('includes/elements/lifecycle')
+
+              @include('includes/elements/identification-insta')
+
+            </div>
           @endforeach
-          </ol>
-        </div>
-      @endif
+        @endif
+
       </div>
       <!-- End of column two -->
 
@@ -71,61 +89,46 @@
           </div>
         @endif
 
+        @if(!empty($podcast['author_bio']))
+          <div class="col shadow-sm p-3 mx-auto mb-3">
+            {!! $podcast['author_bio'] !!}
+          </div>
+        @endif
       </div>
-
-
-
-          @if(!empty($adlib))
-            @foreach($adlib as $record)
-              <h4>
-                Collections database information
-              </h4>
-              <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
-
-                @include('includes/elements/descriptive')
-
-                @include('includes/elements/lifecycle')
-
-                @include('includes/elements/identification-insta')
-
-              </div>
-            @endforeach
-          @endif
-
-
-      </div>
-      <!-- End of column one -->
 
     </div>
+    <!-- End of column one -->
+
+  </div>
 
 
 
-  @endsection
+@endsection
 
-  @if(!empty($suggest))
+@if(!empty($suggest))
   @section('mlt')
-  <div class="container">
-    <h3>Similar podcasts to listen to</h3>
-    <div class="row">
-      @foreach($suggest as $record)
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          @if(!is_null($record['searchImage']))
-            <img class="img-fluid " src="{{ $record['searchImage'][0]}}"
-            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
-          @endif
-          <div class="card-body ">
-            <div class="contents-label mb-3">
-              <h3>
-                <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
-              </h3>
+    <div class="container">
+      <h3>Similar podcasts to listen to</h3>
+      <div class="row">
+        @foreach($suggest as $record)
+          <div class="col-md-4 mb-3">
+            <div class="card h-100">
+              @if(!is_null($record['searchImage']))
+                <img class="img-fluid " src="{{ $record['searchImage'][0]}}"
+                alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+              @endif
+              <div class="card-body ">
+                <div class="contents-label mb-3">
+                  <h3>
+                    <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
+                  </h3>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        @endforeach
       </div>
-      @endforeach
     </div>
-  </div>
   @endsection
-  @endif
+@endif
 @endforeach
