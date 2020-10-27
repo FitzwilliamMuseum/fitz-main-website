@@ -27,8 +27,25 @@
         <div class="col shadow-sm p-3 mx-auto mb-3">
           <img src="{{ $podcast['author_headshot']['data']['full_url'] }}" class="img-fluid"/>
         </div>
-      @endif
 
+
+      @endif
+      @if(!empty($podcast['transcript']))
+        <h4>
+          Podcast transcript
+        </h4>
+        <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
+          <p>This transcript was generated using Amazon Speech Recognition.</p>
+          <ol>
+          @foreach ($podcast['transcript'] as $transcript)
+          <li>
+            {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}
+            <strong>{{ $transcript['speaker'] }}</strong>: {{ $transcript['comment'] }}
+          </li>
+          @endforeach
+          </ol>
+        </div>
+      @endif
       </div>
       <!-- End of column two -->
       <!-- Column one -->
@@ -63,6 +80,8 @@
               </div>
             @endforeach
           @endif
+
+
       </div>
       <!-- End of column one -->
 
