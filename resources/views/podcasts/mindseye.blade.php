@@ -23,13 +23,7 @@
         <div class="col shadow-sm p-3 mx-auto mb-3">
           {!! $podcast['story'] !!}
         </div>
-        @if(!empty($podcast['author_headshot']))
-        <div class="col shadow-sm p-3 mx-auto mb-3">
-          <img src="{{ $podcast['author_headshot']['data']['full_url'] }}" class="img-fluid"/>
-        </div>
 
-
-      @endif
       @if(!empty($podcast['transcript']))
         <h4>
           Podcast transcript
@@ -48,6 +42,7 @@
       @endif
       </div>
       <!-- End of column two -->
+
       <!-- Column one -->
       <div class="col-md-5 mb-3">
         <div class=" shadow-sm p-3 mb-3 mt-3">
@@ -57,10 +52,26 @@
             width="{{ $podcast['hero_image']['width'] }}"
             height="{{ $podcast['hero_image']['height'] }}"
             />
+
           </figure>
-
-
         </div>
+        @if(!empty($podcast['author_headshot']))
+          <div class="col shadow-sm p-3 mx-auto mb-3">
+            <figure class="figure">
+              <img src="{{ $podcast['author_headshot']['data']['full_url'] }}"
+              class="img-fluid"
+              alt="{{ $podcast['author_caption'] }}"
+              />
+              @if(!empty($podcast['author_caption'] ))
+                <figcaption class="figure-caption">
+                  {{ $podcast['author_caption'] }}
+                </figcaption>
+              @endif
+            </figure>
+          </div>
+        @endif
+
+      </div>
 
 
 
