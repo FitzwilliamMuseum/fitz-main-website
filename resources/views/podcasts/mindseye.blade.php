@@ -33,8 +33,8 @@
             <ol>
               @foreach ($podcast['transcript'] as $transcript)
                 <li>
-                  {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}
-                  <strong>{{ $transcript['speaker'] }}</strong>: {{ $transcript['comment'] }}
+                  {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
+                  {{ $transcript['comment'] }}
                 </li>
               @endforeach
             </ol>
