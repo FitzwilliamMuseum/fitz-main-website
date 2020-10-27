@@ -125,7 +125,12 @@ class podcastsController extends Controller
     ];
     $adlib = $this->getElastic()->setParams($params)->getSearch();
     $adlib = $adlib['hits']['hits'];
-    return view('podcasts.mindseye', compact('mindseye', 'adlib'));
+
+    $mlt = new MoreLikeThis;
+    $mlt->setLimit(3)->setType('podcasts')->setQuery($slug);
+    $suggest = $mlt->getData();
+
+    return view('podcasts.mindseye', compact('mindseye', 'adlib', 'suggest'));
   }
 
 }
