@@ -1083,4 +1083,45 @@ class searchController extends Controller
     // this executes the query and returns the result
     $result = $this->client->update($update);
   }
+
+  public function mindseye()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('mindseye');
+    $api->setArguments(
+      $args = array(
+          'limit' => '10',
+          'fields' => 'id,title,story,slug,hero_image.*'
+      )
+    );
+
+    $profiles = $api->getData();
+
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client($configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($profiles['data'] as $profile)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-mindseye';
+      $doc->title = $profile['title'];
+      $doc->description = strip_tags($profile['story']);
+      $doc->body = strip_tags($profile['story']);
+      $doc->url = $this->url . 'conversations/podcasts/in-my-minds-eye/' . $profile['slug'];
+      $doc->slug = $profile['slug'];
+      if(isset($profile['hero_image'])){
+        $doc->thumbnail = $profile['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $profile['hero_image']['data']['full_url'];
+        $doc->searchImage = $profile['hero_image']['data']['thumbnails'][2]['url'];
+      }
+      $doc->contentType = 'podcasts';
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
 }
