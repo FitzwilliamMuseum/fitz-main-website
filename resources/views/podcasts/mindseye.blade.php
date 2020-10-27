@@ -30,16 +30,70 @@
           </h4>
           <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
             <p>This transcript was generated using Amazon Speech Recognition.</p>
+            @php
+            $count = count($podcast['transcript']);
+            $start = array_slice($podcast['transcript'],0,12);
+            if($count > 12) {
+              $end = array_slice($podcast['transcript'],12, $count);
+            }
+            @endphp
+
+            @if($count > 12)
+              <a class="btn btn-dark mx-2 mb-2 collapsed" data-toggle="collapse" href="#transcript"
+              role="button" aria-expanded="false" aria-controls="transcript">
+              <span class="if-collapsed">Show full transcript</span>
+              <span class="if-not-collapsed">Hide full transcript</span>
+              </a>
+              <ol>
+                @foreach ($start as $transcript)
+                  <li>
+                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
+                    {{ $transcript['comment'] }}
+                  </li>
+                @endforeach
+              </ol>
+              <hr/>
+            <div class="collapse" id="transcript">
             <ol>
-              @foreach ($podcast['transcript'] as $transcript)
+              @foreach ($end as $transcript)
                 <li>
                   {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
                   {{ $transcript['comment'] }}
                 </li>
               @endforeach
             </ol>
+            </div>
+            @else
+              <ol>
+                @foreach ($podcast['transcript'] as $transcript)
+                  <li>
+                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
+                    {{ $transcript['comment'] }}
+                  </li>
+                @endforeach
+              </ol>
+            @endif
+
           </div>
         @endif
+
+
+
+      </div>
+      <!-- End of column two -->
+
+      <!-- Column one -->
+      <div class="col-md-5 mb-3">
+        <div class=" shadow-sm p-3 mb-3 mt-3">
+          <figure class="figure">
+            <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
+            class="img-fluid" alt="{{ $podcast['title'] }}" loading="lazy"
+            width="{{ $podcast['hero_image']['width'] }}"
+            height="{{ $podcast['hero_image']['height'] }}"
+            />
+
+          </figure>
+        </div>
 
         @if(!empty($adlib))
           @foreach($adlib as $record)
@@ -58,21 +112,6 @@
           @endforeach
         @endif
 
-      </div>
-      <!-- End of column two -->
-
-      <!-- Column one -->
-      <div class="col-md-5 mb-3">
-        <div class=" shadow-sm p-3 mb-3 mt-3">
-          <figure class="figure">
-            <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
-            class="img-fluid" alt="{{ $podcast['title'] }}" loading="lazy"
-            width="{{ $podcast['hero_image']['width'] }}"
-            height="{{ $podcast['hero_image']['height'] }}"
-            />
-
-          </figure>
-        </div>
         @if(!empty($podcast['author_headshot']))
           <div class="col shadow-sm p-3 mx-auto mb-3">
             <figure class="figure">
