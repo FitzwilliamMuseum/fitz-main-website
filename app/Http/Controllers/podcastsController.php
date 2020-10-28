@@ -93,7 +93,8 @@ class podcastsController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*'
+        'meta' => '*',
+        'filter[publish_time][lte]' => 'now'
       )
     );
     $mindseyes = $api->getData();
