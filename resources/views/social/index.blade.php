@@ -9,14 +9,14 @@
 
     <div class="col-md-4 mb-3">
       <div class="card h-100">
-        <a href="{{ route('mindeyes') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/mindseye.jpg?key=directus-large-crop&q=50"
+        <a href="{{ route('mindeyes') }}"><img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/imme.jpg"
           alt="In my mind's eye podcasts"
 
           loading="lazy"/></a>
           <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3>
-                In my mind's eye: culture in quarantine podcasts
+                In my mind's eye
               </h3>
             </div>
           </div>
