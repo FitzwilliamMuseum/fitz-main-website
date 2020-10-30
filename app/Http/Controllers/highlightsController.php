@@ -374,4 +374,6 @@ class highlightsController extends Controller
         }
         return $result;
     }
+
+
 }
