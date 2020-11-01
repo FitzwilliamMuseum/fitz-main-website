@@ -86,16 +86,21 @@ class podcastsController extends Controller
     return view('podcasts.episode', compact('podcasts'));
   }
 
-  public function mindseyes()
+  public function mindseyes(Request $request)
   {
     $api = $this->getApi();
     $api->setEndpoint('mindseye');
+    $args = array(
+      'fields' => '*.*.*.*',
+      'meta' => '*'
+    );
+    if($request->has('access') && $request['access'] == 'marlay-group') {
+      $args['filter[publish_time][gte]'] = '2020-10-23';
+    } else {
+      $args['filter[publish_time][lte]'] = 'now';
+    }
     $api->setArguments(
-      $args = array(
-        'fields' => '*.*.*.*',
-        'meta' => '*',
-        'filter[publish_time][lte]' => 'now'
-      )
+      $args
     );
     $mindseyes = $api->getData();
     return view('podcasts.mindseyes', compact('mindseyes'));
