@@ -95,7 +95,8 @@ class podcastsController extends Controller
       'meta' => '*',
       'sort' => 'publish_time'
     );
-    if($request->has('access') && $request['access'] == 'marlay-group') {
+    if($request->has('access') && in_array($request['access'],
+    array('marlay-group', 'staff'))) {
       $args['filter[publish_time][gte]'] = '2020-10-23';
     } else {
       $args['filter[publish_time][lte]'] = 'now';
