@@ -92,7 +92,8 @@ class podcastsController extends Controller
     $api->setEndpoint('mindseye');
     $args = array(
       'fields' => '*.*.*.*',
-      'meta' => '*'
+      'meta' => '*',
+      'sort' => 'publish_time'
     );
     if($request->has('access') && $request['access'] == 'marlay-group') {
       $args['filter[publish_time][gte]'] = '2020-10-23';
