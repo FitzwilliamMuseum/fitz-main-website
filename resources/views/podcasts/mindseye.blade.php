@@ -20,6 +20,19 @@
             @include('includes/social/libsyn')
           </div>
         </div>
+
+        @if(!empty($podcast['author_response']))
+          <h4>The artist's response</h4>
+          <div class="col shadow-sm p-3 mx-auto mb-3">
+            <figure class="figure">
+              <img class="img-fluid" src="{{ $podcast['author_response']['data']['thumbnails'][4]['url'] }}" />
+              @if(!empty($podcast['author_response_caption']))
+                <figcaption class="figure-caption">{{ $podcast['author_response_caption'] }}</figcaption>
+              @endif
+            </figure>
+          </div>
+        @endif
+
         <div class="col shadow-sm p-3 mx-auto mb-3">
           {!! $podcast['story'] !!}
         </div>
@@ -29,7 +42,13 @@
             Podcast transcript
           </h4>
           <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
-            <p>This transcript was generated using Amazon Speech Recognition.</p>
+            <p>
+              <em>
+                This transcript was generated using Amazon Speech Recognition;
+              there maybe errors in this text. Please do point any errors that
+              you find out using the feedback widget at the bottom corner of this page.
+              </em>
+            </p>
             @php
             $count = count($podcast['transcript']);
             $start = array_slice($podcast['transcript'],0,12);
@@ -47,7 +66,8 @@
               <ol>
                 @foreach ($start as $transcript)
                   <li>
-                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
+                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
+                    <span class="badge badge-secondary p-2">{{ $transcript['speaker'] }}</span>
                     {{ $transcript['comment'] }}
                   </li>
                 @endforeach
@@ -57,7 +77,8 @@
             <ol>
               @foreach ($end as $transcript)
                 <li>
-                  {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
+                  {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
+                  <span class="badge badge-dark p-2">{{ $transcript['speaker'] }}</span>
                   {{ $transcript['comment'] }}
                 </li>
               @endforeach
@@ -83,7 +104,9 @@
       <!-- End of column two -->
 
       <!-- Column one -->
+
       <div class="col-md-5 mb-3">
+        <h4>Object in focus</h4>
         <div class=" shadow-sm p-3 mb-3 mt-3">
           <figure class="figure">
             <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
