@@ -21,6 +21,13 @@
           </div>
         </div>
 
+        @if(!empty($podcast['author_poem']))
+          <div class="col shadow-sm p-3 mx-auto mb-3">
+            {!! $podcast['author_poem'] !!}
+          </div>
+        @endif
+
+
         @if(!empty($podcast['author_response']))
           <h4>The artist's response</h4>
           <div class="col shadow-sm p-3 mx-auto mb-3">
