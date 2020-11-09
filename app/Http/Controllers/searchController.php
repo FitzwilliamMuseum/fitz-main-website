@@ -1091,7 +1091,8 @@ class searchController extends Controller
     $api->setArguments(
       $args = array(
           'limit' => '10',
-          'fields' => 'id,title,story,slug,hero_image.*'
+          'fields' => 'id,title,story,slug,hero_image.*',
+          'filter[publish_time][gte]' => '2020-10-23'
       )
     );
 
