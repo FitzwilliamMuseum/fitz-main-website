@@ -7,6 +7,14 @@
 @section('keywords', $page['meta_keywords'])
 
   @section('content')
+  @if($page['carousel_associated'][0]['carousels_id'])
+    
+    <div class="container-fluid">
+      <div class="negative-padding">
+        @include('includes.structure.carousel-pages')
+      </div>
+    </div>
+  @endif
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($page['body'])
   </div>
