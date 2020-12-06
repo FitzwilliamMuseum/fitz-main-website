@@ -386,7 +386,8 @@ class highlightsController extends Controller
             'fields' => '*.*.*.*',
             'meta' => '*',
             'limit' => $perPage,
-            'offset' => $offset
+            'offset' => $offset,
+            'sort' => '-publication_date'
         )
       );
       $week = $api->getData();
