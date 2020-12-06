@@ -391,10 +391,10 @@ class highlightsController extends Controller
       );
       $week = $api->getData();
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
-      $total = $pharos['meta']['total_count'];
+      $total = $week['meta']['total_count'];
       $paginator = new LengthAwarePaginator($week, $total, $perPage, $currentPage);
       $paginator->setPath('staff-favourites');
-      return view('highlights.fitz-objects', compact('pharos', 'paginator'));
+      return view('highlights.fitz-objects', compact('week', 'paginator'));
     }
 
     public function fitzobject($slug)
