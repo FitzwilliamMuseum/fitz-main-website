@@ -375,5 +375,42 @@ class highlightsController extends Controller
         return $result;
     }
 
+    public function fitzobjects(Request $request)
+    {
+      $perPage = 12;
+      $offset = ($request->page -1) * $perPage ;
+      $api = $this->getApi();
+      $api->setEndpoint('staff_object_of_the_week');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'limit' => $perPage,
+            'offset' => $offset
+        )
+      );
+      $week = $api->getData();
+      $currentPage = LengthAwarePaginator::resolveCurrentPage();
+      $total = $pharos['meta']['total_count'];
+      $paginator = new LengthAwarePaginator($week, $total, $perPage, $currentPage);
+      $paginator->setPath('staff-favourites');
+      return view('highlights.fitz-objects', compact('pharos', 'paginator'));
+    }
 
+    public function fitzobject($slug)
+    {
+      $api = $this->getApi();
+      $api->setEndpoint('staff_object_of_the_week');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug,
+        )
+      );
+      $week = $api->getData();
+
+
+      return view('highlights.fitz-object', compact('week'));
+    }
 }

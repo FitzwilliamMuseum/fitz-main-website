@@ -93,6 +93,9 @@ Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@deta
 Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results/', 'highlightsController@results')->name('highlight-search');
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide')->name('audio-guide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop')->name('audio-stop');
+Route::get('objects-and-artworks/staff-favourites/', 'highlightsController@fitzobjects')->name('fitz-objects');
+Route::get('objects-and-artworks/staff-favourites/{slug}/', 'highlightsController@fitzobject')->name('fitz-object');
+
 
 /*
 * Social
