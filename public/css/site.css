@@ -5,6 +5,44 @@
   background-size: cover;
   margin-top: 6px!important;
 }
+.human {
+  min-height: 200px;
+}
+
+#coverVideo {
+ 	height:300px;
+    width:100%;
+ 	  position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+ #contentVideo {
+	flex:0;
+	min-height:100%;
+	min-width:100%;
+}
+
+.humancontent {
+  color:white;
+  z-index: 9999;
+  position: absolute;
+}
+h3.hc {
+  font-size: 3rem;
+}
+.btn-btnBook {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: grey;
+}
+button.btn.btn-btnBook a {
+    color: white;
+}
 .absolute-bottom {
   position : absolute;
   bottom   : 0;

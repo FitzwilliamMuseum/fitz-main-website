@@ -22,6 +22,8 @@
   <div class="container-fluid parallax parallax-home text-center">
   </div>
 
+  @include('includes.structure.human')
+
   <div class="container mt-3">
     <h2>Latest news</h2>
     <div class="row">
