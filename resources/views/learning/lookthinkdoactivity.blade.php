@@ -167,6 +167,10 @@
     <!-- End of column two -->
   </div>
 
+ @if($look['padlet_id'])
+   @include('includes.social.padlet')
+ @endif
+ 
   @if($look['youtube_id'])
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <div class="embed-responsive embed-responsive-16by9">
