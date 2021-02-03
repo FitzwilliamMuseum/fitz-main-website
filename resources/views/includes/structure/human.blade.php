@@ -6,7 +6,7 @@
     <h3 class="hc"><a href="https://human-touch.beta.fitz.ms">The Human Touch</a></h3>
     <p class="lead ">Making Art | Leaving Traces</p>
     <button type="button" class="btn btn-btnBook mt-2 mb-2">
-      <a href="https://tickets.museums.cam.ac.uk/overview/thehumantouch">Book now</a>
+      <a href="https://tickets.museums.cam.ac.uk/account/create">Sign up for opening news</a>
     </button>
   </div>
 </div>
