@@ -75,7 +75,7 @@
   <label for="search" class="sr-only">Search: </label>
   <input id="query" name="query" type="text" class="form-control mr-sm-2"
   placeholder="Search our site" required value="{{ old('query') }}" aria-label="Your query">
-  <button type="submit" class="btn btn-outline-light" id="searchButton" aria-label="Submit your search">Search</button>
+  <button type="submit" class="btn btn-outline-light my-2 my-sm-0" id="searchButton" aria-label="Submit your search">Search</button>
 {!! Form::close() !!}
 </div>
 </nav>
