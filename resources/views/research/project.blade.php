@@ -45,7 +45,7 @@
   </div>
   @endif
 
-  @if(!empty()$project['project_team']))
+  @if(!empty($project['project_team']))
   <h4>Project team</h4>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['project_team'])
