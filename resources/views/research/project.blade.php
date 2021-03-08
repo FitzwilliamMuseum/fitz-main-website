@@ -11,9 +11,10 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['project_overview'])
   </div>
+  @if(!@empty ($project['project_principal']))
+
   <h3>Project information</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-
     <ul>
       @if($project['project_principal'])
       <li>Principal Investigator: {{ $project['project_principal']}}</li>
@@ -38,6 +39,7 @@
       @endif
     </ul>
   </div>
+    @endif
   @if($project['publications'])
   <h4>Related publications</h4>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
