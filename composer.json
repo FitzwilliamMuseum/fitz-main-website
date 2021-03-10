@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5|^8.02",
+        "php": "^7.2.5",
         "alaouy/youtube": "^2.2",
         "buzzylab/laradown": "~0.2",
         "conedevelopment/blade-filters": "^0.8.0",
