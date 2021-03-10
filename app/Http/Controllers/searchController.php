@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Solarium\Core\Client\Client;
+use Solarium\Client;
+use Solarium\Core\Client\Adapter\Curl;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Solarium\Exception;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
@@ -15,17 +17,8 @@ use Phpfastcache\Helper\Psr16Adapter;
 
 class searchController extends Controller
 {
-  /**
-   * @var \Solarium\Client
-   */
-  protected $client;
 
   protected $url = 'https://beta.fitz.ms/';
-
-  public function __construct(\Solarium\Client $client)
-  {
-      $this->client = $client;
-  }
 
   /**
    * The index page of the search system
@@ -56,7 +49,7 @@ class searchController extends Controller
           $data = Cache::store('file')->get($key);
       } else {
           $configSolr = \Config::get('solarium');
-          $this->client = new Client($configSolr);
+          $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
           $query = $this->client->createSelect();
           $query->setQuery($queryString);
           $query->setQueryDefaultOperator('AND');
@@ -84,7 +77,7 @@ class searchController extends Controller
   public function ping()
   {
       $configSolr = \Config::get('solarium');
-      $this->client = new Client($configSolr);
+      $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
       $ping = $this->client->createPing();
       try {
           $this->client->ping($ping);
@@ -106,7 +99,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -145,7 +138,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -186,7 +179,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -225,7 +218,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -264,7 +257,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -304,7 +297,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -343,7 +336,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -383,7 +376,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -425,7 +418,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client( new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -465,7 +458,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -504,7 +497,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -542,7 +535,7 @@ class searchController extends Controller
       )
     );
     $profiles = $api->getData();
-    $configSolr = \Config::get('solarium');
+    $configSolr = \Config::get(new Curl(), new EventDispatcher(), 'solarium');
     $this->client = new Client($configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
@@ -583,7 +576,7 @@ class searchController extends Controller
 
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -625,7 +618,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -661,7 +654,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -696,7 +689,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -734,7 +727,7 @@ class searchController extends Controller
     );
     $profiles = $api->getData();
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -779,7 +772,7 @@ class searchController extends Controller
     Cache::put('cache_insta_search', $insta, $expires); // 1 hour
     }
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($insta as $gram)
@@ -816,7 +809,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -856,7 +849,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -917,7 +910,7 @@ class searchController extends Controller
   public function shopify()
   {
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
 
@@ -969,7 +962,7 @@ class searchController extends Controller
   public function shopifyPrints()
   {
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
 
@@ -1017,7 +1010,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -1057,7 +1050,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)
@@ -1099,7 +1092,7 @@ class searchController extends Controller
     $profiles = $api->getData();
 
     $configSolr = \Config::get('solarium');
-    $this->client = new Client($configSolr);
+    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $this->client->createUpdate();
     $documents = array();
     foreach($profiles['data'] as $profile)

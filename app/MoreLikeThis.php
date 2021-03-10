@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Http\Request;
-use Solarium\Core\Client\Client;
+use Solarium\Client;
+use Solarium\Core\Client\Adapter\Curl;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Solarium\Exception;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
@@ -57,7 +59,8 @@ class MoreLikeThis {
         $data = Cache::store('file')->get($key);
     } else {
         $configSolr = \Config::get('solarium');
-        $client = new Client($configSolr);
+        //dd($configSolr);
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $query = $client->createMoreLikeThis();
         $query->setQuery('slug:' . $queryString);
         $query->setMltFields('title,description');
