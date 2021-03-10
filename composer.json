@@ -30,7 +30,7 @@
         "predis/predis": "^1.1",
         "raiym/instagram-php-scraper": "^0.9.9",
         "rebing/graphql-laravel": "^5.0",
-        "solarium/solarium": "6.0.0",
+        "solarium/solarium": "~6.0.0",
         "spatie/laravel-feed": "^3.1.2",
         "spatie/laravel-responsecache": "^6.6",
         "symfony/cache": "^5.1",
