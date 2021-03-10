@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.2.5|8.0.2",
         "alaouy/youtube": "^2.2",
         "buzzylab/laradown": "~0.2",
         "elasticsearch/elasticsearch": "^7.0",
@@ -30,7 +30,7 @@
         "raiym/instagram-php-scraper": "^0.9.9",
         "rebing/graphql-laravel": "^5.0",
         "solarium/solarium": "^5.2",
-        "spatie/laravel-feed": "^2.6",
+        "spatie/laravel-feed": "^3.1.2",
         "spatie/laravel-responsecache": "^6.6",
         "symfony/cache": "^5.1",
         "thepinecode/blade-filters": "^0.6.0",
