@@ -39,37 +39,7 @@
 
           @markdown($look['main_text_description'])
       </div>
-      @foreach($adlib as $record)
-      <h4>
-        Collections database information
-      </h4>
-      <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
-
-            @include('includes/elements/descriptive')
-
-            @include('includes/elements/legal')
-
-            @include('includes/elements/lifecycle')
-
-            @include('includes/elements/measurements')
-
-            @include('includes/elements/agents-subjects')
-
-            @include('includes/elements/medium')
-
-            @include('includes/elements/materials')
-
-            @include('includes/elements/techniques')
-
-            @include('includes/elements/inscriptions')
-
-            @include('includes/elements/department')
-
-            @include('includes/elements/identification')
-
-            @include('includes/elements/institutions')
-          </div>
-        @endforeach
+    
 
 
 
@@ -80,7 +50,7 @@
     <!-- column two -->
     <div class="col-md-5 mt-3">
       <h3>
-        Look at the work
+        Look
       </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3">
 
@@ -91,7 +61,7 @@
         @endif
       </div>
       <h3>
-        Think about this work
+        Think
       </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3">
 
@@ -102,7 +72,7 @@
         @endif
       </div>
       <h3>
-        Do something in response
+        Do
       </h3>
       <div class="col shadow-sm p-3 mx-auto mb-3">
 
