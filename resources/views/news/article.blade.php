@@ -17,7 +17,6 @@
 
   @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
-    <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['field_image'])
     <figure class="figure float-right p-3 col-md-4">
       <img src="{{ $project['field_image']['data']['thumbnails']['5']['url'] }}"
@@ -29,6 +28,7 @@
     </figure>
     @endif
     @markdown($project['article_body'])
+    <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['youtube_playlist_id'])
       @section('youtube-playlist')
       @include('includes.social.youtube-playlist')
