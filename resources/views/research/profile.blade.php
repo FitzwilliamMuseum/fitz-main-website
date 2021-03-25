@@ -21,16 +21,16 @@
         <li>{{ $profile['college_affiliated'] }}</li>
       </ul>
       @endif
-      @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) | isset($profile['githubid']))
+      @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) || isset($profile['githubid']))
       <h4>Research profiles</h4>
       <ul>
-        @if((isset($profile['orcid']))
+        @if(isset($profile['orcid'])
         <li><a href="https://orcid.org/{{$profile['orcid']}}">ORCID</a></li>
         @endif
-        @if((isset($profile['google_scholar_id']))
+        @if(isset($profile['google_scholar_id'])
         <li><a href="https://scholar.google.com/citations?user={{ $profile['google_scholar_id']}}">Google Scholar</a></li>
         @endif
-        @if((isset($profile['githubid']))
+        @if(isset($profile['githubid'])
         <li><a href="https://github.com/{{ $profile['githubid']}}">Github</a></li>
         @endif
       </ul>
