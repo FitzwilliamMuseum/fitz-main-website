@@ -21,7 +21,7 @@
         <li>{{ $profile['college_affiliated'] }}</li>
       </ul>
       @endif
-      @if(isset($profile['orcid']) || isset($profile['google_scholar_id'] | isset($profile['githubid']))
+      @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) | isset($profile['githubid']))
       <h4>Research profiles</h4>
       <ul>
         @if((isset($profile['orcid']))
