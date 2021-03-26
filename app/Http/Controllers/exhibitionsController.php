@@ -73,7 +73,7 @@ class exhibitionsController extends Controller
     $api->setEndpoint('exhibitions');
     $api->setArguments(
       $args = array(
-          'fields' => '*.*.*.*',
+          'fields' => '*.*.*.*.*.*',
           'filter[slug][eq]' => $slug,
           'meta' => '*'
       )

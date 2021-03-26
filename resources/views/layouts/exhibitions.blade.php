@@ -29,6 +29,7 @@
         @include('includes.structure.breadcrumb')
         @yield('content')
   </div>
+    @yield('excarousel')
         @yield('curators')
         @yield('research-funders')
         @yield('current')

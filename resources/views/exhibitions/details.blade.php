@@ -62,7 +62,6 @@
       @endif
     @endsection
 
-    <!-- Start of associated curators block -->
     @if(!empty($coll['associated_curators']))
       @section('curators')
         <div class="container">
@@ -96,7 +95,6 @@
         </div>
       @endsection
     @endif
-    <!-- End of assoociated curators -->
 
     @if(!empty($coll['exhibition_partners'] ))
       @section('research-funders')
@@ -139,7 +137,6 @@
       @endsection
     @endif
 
-    <!-- Associated departments block -->
     @if(!empty($coll['associated_departments']))
       @section('departments')
         <div class="container">
@@ -171,9 +168,91 @@
         </div>
       @endsection
     @endif
-    <!-- end of associated departments block -->
 
-    <!-- Start of associate galleries block -->
+
+    @if(!empty($coll['exhibition_carousel']))
+    @section('excarousel')
+      <style>
+      .exhibition-carousel {
+          color: black!important;
+          position: inherit!important;
+          margin-top: 500px;
+          /* max-width: 100%!important;
+          width:100% !important; */
+      }
+
+      .carousel-control-prev-icon,
+.carousel-control-next-icon {
+
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
+}
+
+
+ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+
+  background: white;
+}
+
+ol.carousel-indicators li.active {
+  background: black;
+}
+      </style>
+        <div class="bd-example mb-3">
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one']['data']['thumbnails'][5]['url'] }}" >
+                <div class="carousel-caption w-100 d-none d-md-block text-black exhibition-carousel">
+                  <h5 class="text-black">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one_alt_text'] }}</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two']['data']['thumbnails'][5]['url'] }}" >
+                <div class="carousel-caption d-none d-md-block text-black exhibition-carousel">
+                  <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}</h5>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three']['data']['thumbnails'][5]['url'] }}" >
+                <div class="carousel-caption  d-none d-md-block text-black exhibition-carousel">
+                  <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}</h5>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+  @endsection
+  @endif
+
     @if(!empty($coll['associated_galleries']))
     @section('galleries')
       <div class="container">
@@ -203,8 +282,7 @@
       </div>
       @endsection
     @endif
-    <!-- end of associated galleries block -->
-
+  
     @section('360')
       @if(!empty($coll['image_360_pano']))
         <div class="container">
