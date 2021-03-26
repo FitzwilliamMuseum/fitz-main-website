@@ -32,6 +32,7 @@
         "rebing/graphql-laravel": "^5.0",
         "solarium/solarium": "~6.0.0",
         "spatie/laravel-feed": "^3.1.2",
+        "spatie/laravel-googletagmanager": "^2.6",
         "spatie/laravel-responsecache": "^6.6",
         "symfony/cache": "^5.1",
         "symfony/http-kernel": "^5.1.5",

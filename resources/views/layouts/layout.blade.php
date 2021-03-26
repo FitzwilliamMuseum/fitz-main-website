@@ -12,8 +12,10 @@
 
     @include('includes.structure.manifest')
     @yield('jsonld')
+    @include('googletagmanager::head')
 </head>
 <body class="doc-body">
+  @include('googletagmanager::body')
 
   @include('includes.structure.accessibility')
 

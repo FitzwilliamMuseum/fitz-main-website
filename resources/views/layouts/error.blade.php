@@ -11,10 +11,12 @@
     @endif
 
     @include('includes.structure.manifest')
+    @include('googletagmanager::head')
 
 </head>
 
 <body class="doc-body">
+  @include('googletagmanager::body')
 
 <!-- Screen reader skip to main -->
 <a class="sr-only sr-only-focusable doc-skip" href="#doc-main-h1">
