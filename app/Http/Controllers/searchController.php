@@ -910,8 +910,12 @@ class searchController extends Controller
   public function shopify()
   {
     $configSolr = \Config::get('solarium');
-    $this->client = new Client(new Curl(), new EventDispatcher(),$configSolr);
-    $update = $this->client->createUpdate();
+    $client = new Client(new Curl(), new EventDispatcher(),$configSolr);
+    $delete = $client->createUpdate();
+    $delete->addDeleteQuery('contentType:shopify');
+    $delete->addCommit();
+    $client->update($delete);
+    $update = $client->createUpdate();
     $documents = array();
 
     $shopify = $this->getShopifyObjects();
@@ -919,8 +923,7 @@ class searchController extends Controller
     $shop = env('SHOPIFY_FME_LIVE_URL');
     $protocol = env('SHOPIFY_FME_PROTOCOL');
     $catalogue = env('SHOPIFY_FME_CATALOGUE');
-    foreach($shopify as $product)
-    {
+    foreach($shopify as $product) {
       $doc = $update->createDocument();
       $doc->id = $product['id'];
       $doc->title = $product['title'];
@@ -937,12 +940,9 @@ class searchController extends Controller
       $doc->contentType = 'shopify';
       $documents[] = $doc;
     }
-    // dd($documents);
-    // add the documents and a commit command to the update query
     $update->addDocuments($documents);
     $update->addCommit();
-    // this executes the query and returns the result
-    $result = $this->client->update($update);
+    return $result = $client->update($update);
   }
 
 
