@@ -116,10 +116,10 @@
     @if(!empty($shopify))
       @section('shopify')
         <div class="container">
-          <h4>Gifts from the Fitzwilliam Museum shop</h4>
+          <h2 class="mt-3">Gifts from the Fitzwilliam Museum shop</h2>
           <div class="row">
             @foreach($shopify as $record)
-              <div class="col-md-4 mb-3">
+              <div class="col-md-3 mb-3">
                 <div class="card h-100">
                   @if(!is_null($record['thumbnail']))
                     <div class="results_image">
@@ -133,9 +133,9 @@
                       @endif
                       <div class="card-body h-100">
                         <div class="contents-label mb-3">
-                          <h3>
+                          <h5>
                             <a href="{{ $record['url'][0]  }}">{{ $record['title'][0] }}</a>
-                          </h3>
+                          </h5>
                           <p>£{{ number_format((float)$record['price'][0], 2, '.', '') }}</p>
 
                         </div>

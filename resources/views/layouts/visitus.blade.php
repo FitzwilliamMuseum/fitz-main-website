@@ -67,6 +67,7 @@
   @include('includes.elements.directions')
 
   @yield('associated_pages')
+  @include('includes.structure.emailsignup')
 
   @include('includes.structure.share')
 

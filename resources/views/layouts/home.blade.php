@@ -79,10 +79,9 @@
 
 
 
-  {{-- <div class="container-fluid parallax fourth-parallax-home mb-3">
-  </div> --}}
 
-  {{-- @yield('shopify') --}}
+  @yield('shopify')
+  @include('includes.structure.emailsignup')
 
   @include('includes.structure.share')
 

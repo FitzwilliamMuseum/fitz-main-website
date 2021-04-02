@@ -12,6 +12,10 @@ use InstagramScraper\Instagram;
 use Phpfastcache\Helper\Psr16Adapter;
 use Solarium\Core\Client\Client;
 use Solarium\Exception;
+use Solarium\Core\Client\Adapter\Curl;
+
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 
 class homeController extends Controller
 {
@@ -95,10 +99,28 @@ class homeController extends Controller
       )
     );
     $things = $api5->getData();
+    $expiresAt = now()->addMinutes(3600);
+    $key = md5('shopify-api-front');
 
+   if (Cache::has($key)) {
+       $shopify = Cache::store('file')->get($key);
+   } else {
+       $configSolr = \Config::get('solarium');
+       $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+       $query = $client->createSelect();
+       $query->setQuery('contentType:shopify AND price:[1 TO *]');
+       $query->setRows(8);
+       $randString = mt_rand();
+
+       $query->addSort('random_'.$randString, $query::SORT_DESC);
+       $call = $client->select($query);
+       $shopify = $call->getDocuments();
+         Cache::store('file')->put($key, $shopify, $expiresAt);
+     }
     return view('index', compact(
       'carousel','news', 'research',
       'objects', 'things', 'fundraising',
+      'shopify'
     ));
   }
 }
