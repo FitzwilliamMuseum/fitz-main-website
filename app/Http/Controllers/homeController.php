@@ -57,9 +57,9 @@ class homeController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'meta' => '*',
-          'sort' => '-id',
+          'sort' => '?',
           'limit' => 3,
-          'filter[featured][eq]' => 'yes'
+          // 'filter[featured][eq]' => 'yes'
       )
     );
     $research = $api3->getData();
@@ -81,9 +81,9 @@ class homeController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'meta' => '*',
-          'sort' => '-id',
+          'sort' => '?',
           'limit' => 3,
-          'filter[featured][eq]' => 'yes'
+          // 'filter[featured][eq]' => 'yes'
       )
     );
     $objects = $api4->getData();
