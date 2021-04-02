@@ -116,7 +116,7 @@
     @if(!empty($shopify))
       @section('shopify')
         <div class="container">
-          <h2 class="mt-3">Gifts from the Fitzwilliam Museum shop</h2>
+          <h2 class="mt-3"><a href="https://curatingcambridge.com">Gifts from the Fitzwilliam Museum shop</a></h2>
           <div class="row">
             @foreach($shopify as $record)
               <div class="col-md-3 mb-3">
