@@ -915,10 +915,12 @@ class searchController extends Controller
     $delete->addDeleteQuery('contentType:shopify');
     $delete->addCommit();
     $client->update($delete);
+
     $update = $client->createUpdate();
     $documents = array();
 
     $shopify = $this->getShopifyObjects();
+    dump($shopify);
     $url = env('SHOPIFY_FME_URL');
     $shop = env('SHOPIFY_FME_LIVE_URL');
     $protocol = env('SHOPIFY_FME_PROTOCOL');
@@ -942,7 +944,7 @@ class searchController extends Controller
     }
     $update->addDocuments($documents);
     $update->addCommit();
-    return $result = $client->update($update);
+    $result = $client->update($update);
   }
 
 
