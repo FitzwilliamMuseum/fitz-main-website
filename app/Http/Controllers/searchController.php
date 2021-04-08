@@ -939,16 +939,18 @@ class searchController extends Controller
       $doc->url = $protocol . $shop . $catalogue . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
-      $doc->thumbnail = $product['image']['src'];
-      $doc->image = $product['image']['src'];
+      if(array_key_exists('image', $product)){
+        $doc->thumbnail = $product['image']['src'];
+        $doc->image = $product['image']['src'];
+        $doc->searchImage = $product['image']['src'];
+      }
       $doc->price = $product['variants'][0]['price'];
-      $doc->searchImage = $product['image']['src'];
       $doc->contentType = 'shopify';
       $documents[] = $doc;
     }
     $update->addDocuments($documents);
     $update->addCommit();
-    $result = $client->update($update);
+    return $result = $client->update($update);
   }
 
 
