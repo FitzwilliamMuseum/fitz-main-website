@@ -948,56 +948,7 @@ class searchController extends Controller
   }
 
 
-  public function getShopifyObjectsPrints()
-  {
-    $config = array(
-    'ShopUrl' => env('SHOPIFY_FITZ_PRINTS_URL'),
-    'ApiKey' => env('SHOPIFY_FITZ_PRINTS_API_KEY'),
-    'Password' => env('SHOPIFY_FITZ_PRINTS_API_PASSWORD'),
-    );
-    $shop = new ShopifySDK;
-    $shop->config($config);
-    $lastId = 1;
-    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId]);
-  }
-
-  public function shopifyPrints()
-  {
-    $configSolr = \Config::get('solarium');
-    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-    $update = $this->client->createUpdate();
-    $documents = array();
-
-    $shopify = $this->getShopifyObjectsPrints();
-
-    $url = env('SHOPIFY_FITZ_PRINTS_URL');
-    $protocol = env('SHOPIFY_FITZ_PRINTS_PROTOCOL');
-    $catalogue = env('SHOPIFY_FITZ_PRINTS_CATALOGUE');
-    foreach($shopify as $product)
-    {
-      $doc = $update->createDocument();
-      $doc->id = $product['id'];
-      $doc->title = $product['title'];
-      $description = $product['body_html'];
-      $doc->description = strip_tags($description);
-      $doc->body = strip_tags($description);
-      $doc->url = $protocol . $url . $catalogue . $product['handle'];
-      $doc->slug = $product['handle'];
-      $doc->vendor = $product['vendor'];
-      $doc->thumbnail = $product['image']['src'];
-      $doc->image = $product['image']['src'];
-      $doc->price = $product['variants'][0]['price'];
-      $doc->searchImage = $product['image']['src'];
-      $doc->contentType = 'shopifyPrints';
-      $documents[] = $doc;
-    }
-    // dd($documents);
-    // add the documents and a commit command to the update query
-    $update->addDocuments($documents);
-    $update->addCommit();
-    // this executes the query and returns the result
-    $result = $this->client->update($update);
-  }
+  
 
   public function podcasts()
   {
