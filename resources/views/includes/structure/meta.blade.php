@@ -67,7 +67,23 @@
     "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
     "@context":"https://schema.org"}
     </script>
-    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g" async="true"></script>
+    <script type="text/javascript">
+
+      var BugHerdConfig = {
+        reporter: {required: "true"},
+        feedback: {
+          "tab_position":"bottom-left",
+     			tab_text: "Report a problem/ give feedback"
+     		}
+      };
+
+      (function (d, t) {
+        var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        bh.type = 'text/javascript';
+        bh.src = '//www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g';
+        s.parentNode.insertBefore(bh, s);
+      })(document, 'script');
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
