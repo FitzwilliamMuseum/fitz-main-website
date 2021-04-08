@@ -261,37 +261,4 @@
             @endsection
           @endif
 
-          @if(!empty($prints))
-            @section('shopifyPrints')
-              <div class="container">
-                <h4>Suggested Fitzwilliam prints</h4>
-                <div class="row">
-                  @foreach($prints as $record)
-                    <div class="col-md-4 mb-3">
-                      <div class="card  h-100">
-                        @if(!is_null($record['thumbnail']))
-                          <div class="results_image">
-                          <a href="{{ $record['url'][0] }}"><img class="results_image__thumbnail img-fluid" src="{{ $record['thumbnail'][0]}}"
-                            alt="Featured image for the project: {{ $record['title'][0] }}"
-                            loading="lazy"/></a>
-                          </div>
-                          @else
-                            <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-                              alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/></a>
-                            @endif
-                            <div class="card-body h-100">
-                              <div class="contents-label mb-3">
-                                <h3>
-                                  <a href="{{ $record['url'][0]  }}">{{ $record['title'][0] }}</a>
-                                </h3>
-                                <p>£{{ number_format((float)$record['price'][0], 2, '.', '') }}</p>
-
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      @endforeach
-                    </div>
-                  </div>
-                @endsection
-              @endif
+        

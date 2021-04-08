@@ -907,20 +907,24 @@ class searchController extends Controller
     return $shop->Product->get(['limit' => 250, 'since_id' => $lastId]);
   }
 
-  public function shopify()
+  public function shopifyRefresh()
   {
     $configSolr = \Config::get('solarium');
     $client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $delete = $client->createUpdate();
     $delete->addDeleteQuery('contentType:shopify');
     $delete->addCommit();
-    $client->update($delete);
+    return $client->update($delete);
+  }
 
+  public function shopify()
+  {
+    $configSolr = \Config::get('solarium');
+    $client = new Client(new Curl(), new EventDispatcher(),$configSolr);
     $update = $client->createUpdate();
     $documents = array();
 
     $shopify = $this->getShopifyObjects();
-    dump($shopify);
     $url = env('SHOPIFY_FME_URL');
     $shop = env('SHOPIFY_FME_LIVE_URL');
     $protocol = env('SHOPIFY_FME_PROTOCOL');
@@ -948,7 +952,7 @@ class searchController extends Controller
   }
 
 
-  
+
 
   public function podcasts()
   {
