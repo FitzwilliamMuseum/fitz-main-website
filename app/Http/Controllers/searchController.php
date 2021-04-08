@@ -939,7 +939,7 @@ class searchController extends Controller
       $doc->url = $protocol . $shop . $catalogue . $product['handle'];
       $doc->slug = $product['handle'];
       $doc->vendor = $product['vendor'];
-      if(array_key_exists('image', $product)){
+      if(array_key_exists('src', $product['image'])){
         $doc->thumbnail = $product['image']['src'];
         $doc->image = $product['image']['src'];
         $doc->searchImage = $product['image']['src'];
