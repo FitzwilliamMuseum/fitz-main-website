@@ -1,6 +1,6 @@
 
 .parallax {
-  min-height: 350px;
+  min-height: 450px;
   background-attachment: fixed;
   background-size: cover;
   margin-top: 0px!important;
@@ -212,6 +212,9 @@ video {
 }
 
 @media only screen and (min-width: 768px) {
+  .logo {
+    margin-top: 100px!important;
+  }
   .cd-top {
     right: 20px;
     bottom: 20px;
