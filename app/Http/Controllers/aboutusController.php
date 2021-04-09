@@ -68,7 +68,8 @@ class aboutusController extends Controller
             'fields' => '*.*.*',
             'limit' => 6,
             'offset' => ($request->page -1) * $perPage ,
-            'meta' => '*'
+            'meta' => '*',
+            'sort' => '-release_date'
         )
       );
       $press = $directus->getData();
