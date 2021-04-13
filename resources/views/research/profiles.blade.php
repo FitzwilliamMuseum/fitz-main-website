@@ -13,8 +13,8 @@
           <div class="embed-responsive embed-responsive-1by1">
               <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
             alt="Profile image for {{ $profile['display_name'] }}"
-            width="{{ $profile['profile_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $profile['profile_image']['data']['thumbnails'][4]['height'] }}"
+            width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
+            height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}"
             loading="lazy"/></a>
           </div>
           @endif

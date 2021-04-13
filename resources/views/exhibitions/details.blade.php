@@ -73,11 +73,11 @@
                 @if(!is_null($curator['staff_profiles_id']['profile_image']))
                 <div class="embed-responsive embed-responsive-1by1">
                   <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}"><img
-                    class="img-fluid embed-responsive-item" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][4]['url']}}"
+                    class="img-fluid embed-responsive-item" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][2]['url']}}"
                   loading="lazy"
                   alt="{{ $curator['staff_profiles_id']['profile_image_alt_text'] }}"
-                  height="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][4]['height'] }}"
-                  width="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][4]['width'] }}"
+                  height="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][2]['height'] }}"
+                  width="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][2]['width'] }}"
                   /></a>
                 </div>
                 @endif
