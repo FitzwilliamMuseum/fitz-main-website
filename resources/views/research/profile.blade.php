@@ -11,19 +11,40 @@
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
       <img class="img-fluid float-right thumb-post" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
       alt="{{ $profile['profile_image_alt_text'] }}" >
+      <h3>
+      @isset($profile['title'])
+      {{ $profile['title'] }}
+      @endisset
+      {{ $profile['display_name'] }}
+      </h3>
       {!! $profile['biography'] !!}
+      @isset($profile['job_title'])
+        <p>
+          Job title: {{ $profile['job_title'] }}
+        </p>
+      @endisset
+      @isset($profile['email_address'])
+        <p>
+        Email: <a href="mailto:{{ $profile['email_address'] }}">{{ $profile['email_address'] }}</a>
+        </p>
+      @endisset
     </div>
     @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) || isset($profile['college_affiliated']))
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-      @if(isset($profile['college_affiliated']))
+      @isset($profile['college_affiliated'])
       <h4>Affiliated college</h4>
       <ul>
         <li>{{ $profile['college_affiliated'] }}</li>
       </ul>
-      @endif
+      @endisset
+
+      @isset($profile['professional_memberships'])
+        <h4>Professional honours and memberships</h4>
+        {!! $profile['professional_memberships'] !!}
+      @endisset
       @if(isset($profile['orcid']) || isset($profile['google_scholar_id']))
       <h4>
-        Research profiles
+        Research and social profiles
       </h4>
       <ul>
 
@@ -42,6 +63,11 @@
         @if(isset($profile['githubid']))
           <li>
             <a href="https://github.com/{{ $profile['githubid']}}">Github</a>
+          </li>
+        @endif
+        @if(isset($profile['twitter_handle']))
+          <li>
+            <a href="https://twitte.com/{{ $profile['twitter_handle']}}">Twitter</a>
           </li>
         @endif
 
