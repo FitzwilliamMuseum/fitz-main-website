@@ -38,6 +38,8 @@ Route::get('research/staff-profiles', 'researchController@profiles')->name('rese
 Route::get('research/staff-profiles/{slug}', 'researchController@profile')->name('research-profile');
 Route::get('research/online-resources/', 'researchController@resources')->name('resources');
 Route::get('research/online-resources/{slug}', 'researchController@resource')->name('resource');
+Route::get('research/opportunities/', 'researchController@opportunities')->name('opportunities');
+Route::get('research/opportunities/{slug}', 'researchController@opportunity')->name('opportunity');
 
 /*
 Visit us Route

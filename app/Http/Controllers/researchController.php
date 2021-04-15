@@ -148,4 +148,32 @@ class researchController extends Controller
       $resources = $api->getData();
       return view('research.resources', compact('resources'));
     }
+
+    public function opportunity(string $slug){
+      $api = $this->getApi();
+      $api->setEndpoint('research_opportunities');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug
+        )
+      );
+      $opps = $api->getData();
+      return view('research.opportunity', compact('opps'));
+    }
+
+    public function opportunities(){
+      $api = $this->getApi();
+      $api->setEndpoint('research_opportunities');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'sort' => 'id'
+        )
+      );
+      $opps = $api->getData();
+      return view('research.opportunities', compact('opps'));
+    }
 }

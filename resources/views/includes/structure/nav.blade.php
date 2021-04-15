@@ -69,6 +69,7 @@
         <a class="dropdown-item" href="{{ route('landing', ['research']) }}">Research at the museum</a>
         <a class="dropdown-item" href="{{ route('research-projects') }}">Research projects</a>
         <a class="dropdown-item" href="{{ route('research-profiles') }}">Researcher profiles</a>
+        <a class="dropdown-item" href="{{ route('opportunities') }}">Research opportunities</a>
         <a class="dropdown-item" href="{{ route('resources') }}">Online resources</a>
       </div>
     </li>
