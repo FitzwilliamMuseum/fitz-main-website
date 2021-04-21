@@ -1,4 +1,4 @@
-# beta.fitz.ms
+# Beta framework for the Fitzwilliam Museum website
 
 This repository contains the code base for a Laravel based front end for a beta version of @fitzwilliammuseum website. The front end is very simple and uses Bootstrap 4.5.2 framework, latest JQuery and various libraries to interface with a headless API provided by our installation of the @directus system, Solr and ElasticSearch endpoints.
 
@@ -10,11 +10,12 @@ Data comes from various systems and API endpoints.
 
 1. Main content - Directus Headless CMS
 2. Search content - SOLR 7.x instance
-3. Collections content - ElasticSearch instance from Knowledge Integration, standard mappings
+3. Collections content - ElasticSearch instance from Knowledge Integration, standard mappings and the nascent API
 4. Twitter - API driven
-5. Shopify - two separate systems queried and indexed daily into SOLR
+5. Shopify - FME systems queried and indexed daily into SOLR
 6. Sketchfab
-7. Google Poly
+7. ~~Google Poly~~ deprecated as of June 2021
+8. Instagram
 
 # Cache
 
