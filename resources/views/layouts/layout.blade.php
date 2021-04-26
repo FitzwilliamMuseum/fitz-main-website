@@ -84,6 +84,7 @@
     @yield('diy')
     @yield('publications')
     @yield('research-projects')
+    @yield('exhibitions-curated')
     @yield('research-funders')
     @yield('themes')
     @yield('collections')

@@ -157,5 +157,39 @@
     @endsection
   @endif
 
+  @if(!empty($profile['exhibitions_curated']))
+    @section('exhibitions-curated')
+    <div class="container">
+      <h3>Associated Exhibitions</h3>
+      <div class="row">
+        @foreach($profile['exhibitions_curated'] as $project)
+          {{-- @dd($project) --}}
+          @if(!is_null($project['exhibition']))
+        <div class="col-md-4 mb-3">
+          <div class="card  h-100 ">
 
+            <div class="embed-responsive embed-responsive-4by3">
+              <a href="{{ route('exhibition', $project['exhibition']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['exhibition']['hero_image']['data']['thumbnails'][4]['url']}}"
+              width="{{ $project['exhibition']['hero_image']['data']['thumbnails'][4]['width'] }}"
+              height="{{ $project['exhibition']['hero_image']['data']['thumbnails'][4]['height'] }}"
+              alt="{{ $project['exhibition']['hero_image_alt_text'] }}"
+              loading="lazy"/></a>
+            </div>
+
+            <div class="card-body">
+              <div class="contents-label mb-3">
+                <h3>
+                  <a href="{{ route('exhibition', $project['exhibition']['slug']) }}">{{ $project['exhibition']['exhibition_title']}}</a>
+                </h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        @endif
+        @endforeach
+      </div>
+    </div>
+    @endsection
+  @endif
 @endforeach
