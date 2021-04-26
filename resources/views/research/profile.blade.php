@@ -123,9 +123,9 @@
     </div>
     @endsection
   @endif
-
   @if(!empty($profile['departments_affiliated']))
-    @section('departments')
+
+    @section('departments-affiliated')
     <div class="container">
       <h3>Associated Departments</h3>
       <div class="row">
