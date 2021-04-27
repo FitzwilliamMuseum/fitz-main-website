@@ -56,11 +56,12 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'filter[exhibition_status][eq]' => 'archived',
-          'meta' => '*'
+          'meta' => '*',
+          'sort' => '-exhibition_end_date',
+          'limit' => 100
       )
     );
     $archive = $api4->getData();
-
     return view('exhibitions.index', compact(
       'current', 'pages', 'archive',
       'future'
