@@ -919,6 +919,3 @@ ul.text-center.conversation-footer {
   transform: fadeIn;
   top: auto
 }
-.carousel-inner {
-  max-height: 500px !important;
-}
