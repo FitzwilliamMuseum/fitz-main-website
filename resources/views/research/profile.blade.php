@@ -9,7 +9,7 @@
 @endif
   @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-      <img class="img-fluid float-right thumb-post" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+      <img class="img-fluid float-right thumb-post rounded p-3" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
       alt="{{ $profile['profile_image_alt_text'] }}" >
       <h3>
       @isset($profile['title'])
@@ -21,6 +21,12 @@
       @isset($profile['job_title'])
         <p>
           Job title: {{ $profile['job_title'] }}
+        </p>
+      @endisset
+
+      @isset($profile['pronouns'])
+        <p>
+          Pronouns: {{ $profile['pronouns'] }}
         </p>
       @endisset
       @isset($profile['email_address'])
@@ -163,7 +169,6 @@
       <h3>Associated Exhibitions</h3>
       <div class="row">
         @foreach($profile['exhibitions_curated'] as $project)
-          {{-- @dd($project) --}}
           @if(!is_null($project['exhibition']))
         <div class="col-md-4 mb-3">
           <div class="card  h-100 ">
