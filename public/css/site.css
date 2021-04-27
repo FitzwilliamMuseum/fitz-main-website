@@ -248,10 +248,7 @@ video {
   max-height:400px;
 }
 
-.carousel-caption {
-  font-weight: bolder;
-  font-size: 1.5rem;
-}
+
 
 #sponsors img {
   margin-bottom: 10px;
@@ -471,10 +468,7 @@ body {
 .white {
   color: white;
 }
-.carousel-pad, .map-box {
-  padding-left: 0px!important;
-  padding-right: 0px!important;
-}
+
 
 .cropped-image img {
   object-fit: cover;
@@ -659,9 +653,7 @@ img.img-fluid.twitter {
   margin-left: -20px !important;
   margin-right: -20px !important;
 }
-.carousel-caption {
-  position: static !important;
-}
+
 
 .pagination, .breadcrumb {
   background-color: #fff !important;
@@ -687,45 +679,6 @@ ul.logos-sponsors li {
 }
 
 
-#carouselPeriods .card {
-  min-height: 380px;
-}
-#carouselContexts .card {
-  min-height: 380px;
-}
-@media (max-width: 768px) {
-  .carousel-inner .carousel-item > div {
-    display: none;
-  }
-  .carousel-inner .carousel-item > div:first-child {
-    display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-/* display 3 */
-@media (min-width: 768px) {
-
-  .carousel-inner .carousel-item-right.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(33.333%);
-  }
-
-  .carousel-inner .carousel-item-left.active,
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-33.333%);
-  }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{
-  transform: translateX(0);
-}
 h3 > a {
   position: relative;
   color: #000;
@@ -965,4 +918,7 @@ ul.text-center.conversation-footer {
   width: 100%;
   transform: fadeIn;
   top: auto
+}
+.carousel-inner {
+  max-height: 500px !important;
 }

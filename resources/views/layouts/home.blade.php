@@ -47,8 +47,6 @@
   <div class="container-fluid parallax second-parallax-home mt-3">
   </div>
 
-
-
   <div class="container mt-3">
     <h2>Collections highlights</h2>
     <div class="row">
@@ -56,11 +54,15 @@
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container-fluid parallax second-parallax-home mt-3"></div>
+
+  <div class="container-fluid ">
     <div class="negative-padding">
       @include('includes.structure.carousel')
     </div>
   </div>
+
+  <div class="container-fluid parallax second-parallax-home mt-3"></div>
 
   <div class="container mt-3">
     <h2>Our research</h2>
@@ -71,12 +73,6 @@
 
   <div class="container-fluid parallax third-parallax-home">
   </div>
-
-  {{-- <div class="container ">
-    <h2>Our Twitter profile</h2>
-    @yield('twitter')
-  </div> --}}
-
 
 
 

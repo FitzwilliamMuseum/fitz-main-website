@@ -8,13 +8,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 <script>
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
 </script>
 
 @hasSection('theme-carousel')
-<script src="/js/carousel-themes.js"></script>
+  <script src="/js/carousel-themes.js"></script>
+  <script>
+  $('.carousel .carousel-item').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i=0;i<minPerSlide;i++) {
+      next=next.next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+
+      next.children(':first-child').clone().appendTo($(this));
+    }
+  });
+</script>
 @endif
 
 <!-- Cookie management -->
@@ -37,28 +56,4 @@ $(function () {
 $('.popover-dismiss').popover({
   trigger: 'focus'
 })
-</script>
-
-
-
-<script>
-
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
 </script>
