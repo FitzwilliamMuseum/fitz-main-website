@@ -43,7 +43,7 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\searchController@exhibitions')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\searchController@audio')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\searchController@sessions')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\searchController@shopifyRefresh')->cron('1 */12 * * */1');
+        $schedule->call('App\Http\Controllers\searchController@shopifyRefresh')->cron('1 */12 * * */3');
         $schedule->call('App\Http\Controllers\searchController@shopify')->cron('5 */12 * * *');
         $schedule->call('App\Http\Controllers\Controller@clearCache')->cron('6 */12 * * */1');
         $schedule->call('App\Http\Controllers\searchController@podcasts')->cron('0 */5 * * *');
