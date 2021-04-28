@@ -22,7 +22,7 @@ class pagesController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug,
             'filter[section][eq]' => $section,
         )
@@ -42,7 +42,7 @@ class pagesController extends Controller
     $api->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'filter[landing_page][null]' => '',
           'filter[section][eq]' => $section,
           'filter[associate_with_landing_page][eq]' => '1'
@@ -55,7 +55,7 @@ class pagesController extends Controller
     $api2->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'filter[landing_page][eq]' => '1',
           'filter[section][eq]' => $section,
       )

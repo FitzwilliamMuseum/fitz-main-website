@@ -28,7 +28,7 @@ class departmentsController extends Controller
             'fields' => '*.*.*',
             'filter[section]' => 'departments',
             'filter[landing_page][eq]' => '1' ,
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $pages = $api->getData();
@@ -38,7 +38,7 @@ class departmentsController extends Controller
         $args = array(
             'fields' => '*.*.*.*',
             'sort' => 'title',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $departments = $api2->getData();

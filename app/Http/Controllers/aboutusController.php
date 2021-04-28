@@ -36,7 +36,7 @@ class aboutusController extends Controller
       $directus->setArguments(
         $args = array(
             'fields' => '*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug
         )
       );
@@ -51,7 +51,7 @@ class aboutusController extends Controller
       $directus->setArguments(
         $args = array(
             'fields' => '*.*.*',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $gov = $directus->getData();
@@ -68,7 +68,7 @@ class aboutusController extends Controller
             'fields' => '*.*.*',
             'limit' => 6,
             'offset' => ($request->page -1) * $perPage ,
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'sort' => '-release_date'
         )
       );

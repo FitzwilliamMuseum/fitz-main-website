@@ -32,7 +32,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'limit' => $perPage,
             'offset' => $offset
         )
@@ -52,7 +52,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug,
         )
       );
@@ -88,8 +88,6 @@ class highlightsController extends Controller
       $more = new MoreLikeThis;
       $more->setLimit(3)->setType('shopify')->setQuery($slug);
       $shopify = $more->getData();
-
-
       return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify'));
     }
 
@@ -100,7 +98,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug,
             'filter[section][eq]' => $section
         )
@@ -120,7 +118,7 @@ class highlightsController extends Controller
       $intro->setArguments(
           $args = array(
               'fields' => '*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[id][eq]' => 9
           )
         );
@@ -132,7 +130,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $pharos = $api->getData();
@@ -142,7 +140,7 @@ class highlightsController extends Controller
       $api2->setArguments(
         $args = array(
           'fields' => 'period_assigned,image.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'limit' => 200
         )
       );
@@ -154,7 +152,7 @@ class highlightsController extends Controller
       $api3->setArguments(
         $args = array(
             'fields' => 'section,hero_image_alt_text,hero_image.*',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $contexts = $api3->getData();
@@ -226,7 +224,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug,
         )
       );
@@ -243,7 +241,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[section][eq]' => $section
         )
       );
@@ -258,7 +256,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => 'section,hero_image.*',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $pharos = $api->getData();
@@ -273,7 +271,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => 'period_assigned,image.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'limit' => 200
         )
       );
@@ -296,7 +294,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[period_assigned][eq]' =>  $query
         )
       );
@@ -307,7 +305,7 @@ class highlightsController extends Controller
       $api2->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][like]' => $period
         )
       );
@@ -322,7 +320,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $pharos = $api->getData();
@@ -337,7 +335,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[themes][contains]' => $theme,
         )
       );
@@ -347,7 +345,7 @@ class highlightsController extends Controller
       $api2->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $theme,
             'limit' => 1
         )
@@ -382,7 +380,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'limit' => $perPage,
             'offset' => $offset,
             'sort' => '-publication_date'
@@ -403,7 +401,7 @@ class highlightsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug,
         )
       );

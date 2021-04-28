@@ -30,7 +30,7 @@ class DirectUs {
 
   protected $_params;
 
-  protected $_meta = 'meta=*';
+  protected $_meta = 'meta=total_count,result_count';
 
   protected $_fields = '*.*.*';
 
@@ -74,6 +74,7 @@ class DirectUs {
   public function getData(){
 
     $url = $this->getDirectUsUrl() . $this->getEndPoint() . $this->buildQuery();
+    // dd($url);
     $key = md5($url);
     $expiresAt = now()->addMinutes(60);
     if (Cache::has($key)) {

@@ -34,7 +34,7 @@ class podcastsController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*'
+        'meta' => 'result_count,total_count,type'
       )
     );
     $podcasts = $api->getData();
@@ -63,7 +63,7 @@ class podcastsController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*',
+        'meta' => 'result_count,total_count,type',
         'filter[podcast_series.podcast_series_id][in]' => $ids['data'][0]['id']
       )
     );
@@ -78,7 +78,7 @@ class podcastsController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*',
+        'meta' => 'result_count,total_count,type',
         'filter[slug][eq]' => $slug
       )
     );
@@ -92,7 +92,7 @@ class podcastsController extends Controller
     $api->setEndpoint('mindseye');
     $args = array(
       'fields' => '*.*.*.*',
-      'meta' => '*',
+      'meta' => 'result_count,total_count,type',
       'sort' => 'publish_time'
     );
     if($request->has('access') && in_array($request['access'],
@@ -115,7 +115,7 @@ class podcastsController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*',
+        'meta' => 'result_count,total_count,type',
         'filter[slug][eq]' => $slug
       )
     );

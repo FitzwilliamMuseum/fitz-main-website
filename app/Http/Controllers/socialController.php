@@ -41,7 +41,7 @@ class socialController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*',
+        'meta' => 'result_count,total_count,type',
         'sort' => '-date_posted',
       )
     );
@@ -56,7 +56,7 @@ class socialController extends Controller
     $api->setArguments(
       $args = array(
         'fields' => '*.*.*.*',
-        'meta' => '*',
+        'meta' => 'result_count,total_count,type',
         'filter[slug][eq]' => $slug
       )
     );

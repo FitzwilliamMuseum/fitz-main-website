@@ -35,7 +35,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*'
+              'meta' => 'result_count,total_count,type'
           )
         );
         $ltd = $api->getData();
@@ -49,7 +49,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[slug][eq]' => $slug
           )
         );
@@ -77,7 +77,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[section][eq]' => 'learning',
               'filter[landing_page][eq]' => '1',
               'filter[slug][eq]' => 'resources'
@@ -90,7 +90,7 @@ class learningController extends Controller
         $api2->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[page_type][eq]' => 'Fact Sheets'
           )
         );
@@ -101,7 +101,7 @@ class learningController extends Controller
         $api3->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[page_type][neq]' => 'Fact Sheets',
               'sort' => '-id'
           )
@@ -118,7 +118,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[slug][eq]' => $slug
           )
         );
@@ -133,7 +133,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*'        )
+              'meta' => 'result_count,total_count,type'        )
         );
         $sessions = $api->getData();
         return $sessions;
@@ -146,7 +146,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*'        )
+              'meta' => 'result_count,total_count,type'        )
         );
         $stories = $api->getData();
         return $stories;
@@ -159,7 +159,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[subsection][eq]' => 'young-people'
             )
         );
@@ -175,7 +175,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[subsection][eq]' => 'adult-programming'
             )
         );
@@ -190,7 +190,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[departments_involved][contains]' => 'Learning'
             )
         );
@@ -205,7 +205,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[slug][eq]' => $slug
           )
         );
@@ -220,7 +220,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[slug][eq]' => $slug
           )
         );
@@ -239,7 +239,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[slug][eq]' => $slug
           )
         );
@@ -258,7 +258,7 @@ class learningController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'sort' => 'last_name',
             'filter[departments_affiliated.department][in]' => 9
         )

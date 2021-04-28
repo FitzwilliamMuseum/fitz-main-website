@@ -23,7 +23,7 @@ class exhibitionsController extends Controller
           'fields' => '*.*.*.*',
           'filter[section]' => 'exhibitions',
           'filter[landing_page][eq]' => '1',
-          'meta' => '*'
+          'meta' => 'result_count,total_count,type'
       )
     );
     $pages = $api->getData();
@@ -34,7 +34,7 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'filter[exhibition_status][eq]' => 'current',
-          'meta' => '*'
+          'meta' => 'result_count,total_count,type'
       )
     );
     $current = $api2->getData();
@@ -45,7 +45,7 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'filter[exhibition_status][eq]' => 'future',
-          'meta' => '*'
+          'meta' => 'result_count,total_count,type'
       )
     );
     $future = $api3->getData();
@@ -56,7 +56,7 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'filter[exhibition_status][eq]' => 'archived',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'sort' => '-exhibition_end_date',
           'limit' => 100
       )
@@ -76,7 +76,7 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*.*.*',
           'filter[slug][eq]' => $slug,
-          'meta' => '*'
+          'meta' => 'result_count,total_count,type'
       )
     );
     $exhibitions = $api->getData();

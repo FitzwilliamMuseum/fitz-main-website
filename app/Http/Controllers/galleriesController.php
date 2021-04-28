@@ -23,7 +23,7 @@ class galleriesController extends Controller
             'fields' => '*.*.*.*',
             'filter[section]' => 'galleries',
             'filter[landing_page][eq]' => '1',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $pages = $api->getData();
@@ -33,7 +33,7 @@ class galleriesController extends Controller
       $api2->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $galleries = $api2->getData();
@@ -49,7 +49,7 @@ class galleriesController extends Controller
         $args = array(
             'fields' => '*.*.*.*',
             'filter[slug]' => $slug,
-            'meta' => '*'
+            'meta' => 'result_count,total_count,type'
         )
       );
       $galleries = $api->getData();

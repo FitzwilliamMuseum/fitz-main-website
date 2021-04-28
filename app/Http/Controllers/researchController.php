@@ -20,7 +20,7 @@ class researchController extends Controller
        $api->setArguments(
          $args = array(
              'fields' => '*.*.*.*',
-             'meta' => '*',
+             'meta' => 'result_count,total_count,type',
              'filter[landing_page][eq]' => '1',
              'filter[section][eq]' => 'research',
          )
@@ -32,7 +32,7 @@ class researchController extends Controller
        $apiRes->setArguments(
          $args = array(
              'fields' => '*.*.*.*',
-             'meta' => '*',
+             'meta' => 'result_count,total_count,type',
              'filter[landing_page][null]' => '',
              'filter[section][eq]' => 'research',
              'filter[associate_with_landing_page][eq]' => '1'
@@ -45,7 +45,7 @@ class researchController extends Controller
        $api2->setArguments(
          $args = array(
              'fields' => '*.*.*',
-             'meta' => '*',
+             'meta' => 'result_count,total_count,type',
              'limit' => '3'
          )
        );
@@ -60,7 +60,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'sort' => 'title'
         )
       );
@@ -76,7 +76,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug
         )
       );
@@ -95,7 +95,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'sort' => 'last_name',
             'filter[research_active][in]' => 'yes'
         )
@@ -111,7 +111,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug
         )
       );
@@ -126,7 +126,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug
         )
       );
@@ -141,7 +141,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'sort' => 'id'
         )
       );
@@ -155,7 +155,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'filter[slug][eq]' => $slug
         )
       );
@@ -169,7 +169,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => '*',
+            'meta' => 'result_count,total_count,type',
             'sort' => 'id'
         )
       );

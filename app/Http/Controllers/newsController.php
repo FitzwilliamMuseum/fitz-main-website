@@ -27,7 +27,7 @@ class newsController extends Controller
     $api->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'sort' => '-id',
           'limit' => $perPage,
           'offset' => $offset
@@ -48,7 +48,7 @@ class newsController extends Controller
     $api->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'filter[slug][eq]' => $slug
       )
     );

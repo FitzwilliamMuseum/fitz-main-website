@@ -15,7 +15,7 @@ class themesController extends Controller
     $api->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'filter[section][eq]' => 'themes',
           'filter[landing_page][eq]' => '1'
       )
@@ -27,7 +27,7 @@ class themesController extends Controller
     $api2->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
       )
     );
     $themes = $api2->getData();
@@ -41,7 +41,7 @@ class themesController extends Controller
     $api->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'filter[slug][eq]' => $slug
       )
     );

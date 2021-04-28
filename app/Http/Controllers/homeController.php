@@ -31,7 +31,7 @@ class homeController extends Controller
     $api->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          'meta' => 'result_count,total_count,type',
           'filter[section][eq]' => 'home',
           'single' => '1',
           'sort' => '-id'
@@ -44,7 +44,7 @@ class homeController extends Controller
     $api2->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          // 'meta' => 'result_count,total_count,type',
           'sort' => '-id',
           'limit' => 3
       )
@@ -56,7 +56,7 @@ class homeController extends Controller
     $api3->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          // 'meta' => 'result_count,total_count,type',
           'sort' => '?',
           'limit' => 3,
           // 'filter[featured][eq]' => 'yes'
@@ -69,7 +69,7 @@ class homeController extends Controller
     $api6->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          // 'meta' => 'result_count,total_count,type',
           'limit' => 3
       )
     );
@@ -80,7 +80,7 @@ class homeController extends Controller
     $api4->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          // 'meta' => 'result_count,total_count,type',
           'sort' => '?',
           'limit' => 3,
           // 'filter[featured][eq]' => 'yes'
@@ -93,7 +93,7 @@ class homeController extends Controller
     $api5->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          'meta' => '*',
+          // 'meta' => 'result_count,total_count,type',
           'sort' => '-id',
           'limit' => 3
       )

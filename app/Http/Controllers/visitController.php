@@ -20,7 +20,7 @@ class visitController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[section][eq]' => 'visit-us',
               'filter[landing_page][null]' => '',
               'filter[associate_with_landing_page][eq]' => '1'
@@ -33,7 +33,7 @@ class visitController extends Controller
         $api2->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'filter[section][eq]' => 'visit-us',
               'filter[landing_page][eq]' => '1',
           )
@@ -45,7 +45,7 @@ class visitController extends Controller
         $api3->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'sort' => '-id',
               'limit' => '3',
           )
@@ -57,7 +57,7 @@ class visitController extends Controller
         $api4->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => '*',
+              'meta' => 'result_count,total_count,type',
               'sort' => 'id',
               '[filter][type][eq]' => 'floor_plan',
           )
