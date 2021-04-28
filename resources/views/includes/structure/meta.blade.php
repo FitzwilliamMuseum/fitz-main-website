@@ -67,7 +67,7 @@
     "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
     "@context":"https://schema.org"}
     </script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
 
       var BugHerdConfig = {
         reporter: {required: "true"},
@@ -83,7 +83,7 @@
         bh.src = '//www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g';
         s.parentNode.insertBefore(bh, s);
       })(document, 'script');
-    </script>
+    </script> --}}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
