@@ -86,31 +86,34 @@ class exhibitionsController extends Controller
       )
     );
     $exhibitions = $api->getData();
-    $params = [
-      'index' => 'ciim',
-      'size' => 9,
-      'body' => [
-        "query" => [
-          "bool" => [
-              "must" => [
-                 [
-                      "match" => [
-                        'exhibitions.admin.id' => $exhibitions['data'][0]['adlib_id_exhibition']
-                      ]
-                 ],
-                 [
-                      "term" => [ "type.base" => 'object']
-                 ],
-                 [
-                      "exists" => ['field' => 'multimedia']
-                 ],
-              ]
-           ]
-        ]
-      ],
-    ];
-    $adlib = $this->getElastic()->setParams($params)->getSearch();
-    $adlib = $adlib['hits']['hits'];
+    $adlib = NULL;
+    if(!is_null($exhibitions['data'][0]['adlib_id_exhibition'])){
+      $params = [
+        'index' => 'ciim',
+        'size' => 9,
+        'body' => [
+          "query" => [
+            "bool" => [
+                "must" => [
+                   [
+                        "match" => [
+                          'exhibitions.admin.id' => $exhibitions['data'][0]['adlib_id_exhibition']
+                        ]
+                   ],
+                   [
+                        "term" => [ "type.base" => 'object']
+                   ],
+                   [
+                        "exists" => ['field' => 'multimedia']
+                   ],
+                ]
+             ]
+          ]
+        ],
+      ];
+      $adlib = $this->getElastic()->setParams($params)->getSearch();
+      $adlib = $adlib['hits']['hits'];
+    }
     $mlt = new MoreLikeThis;
     $mlt->setLimit(3)->setType('exhibitions')->setQuery($slug);
     $records = $mlt->getData();

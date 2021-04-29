@@ -46,6 +46,7 @@
         </ul>
       </div>
     @endif
+    @isset($adlib)
     <h3>Selected objects from the exhibition</h3>
     <div class="row">
     @foreach($adlib as $record)
@@ -84,7 +85,7 @@
             </div>
           </div>
     @endforeach
-
+  @endisset
   </div>
     @if(isset($coll['youtube_id']))
       <h3>
