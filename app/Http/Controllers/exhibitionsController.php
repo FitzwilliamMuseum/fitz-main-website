@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
 use App\MoreLikeThis;
+use App\FitzElastic\Elastic;
 
 class exhibitionsController extends Controller
 {
   public function getApi(){
     $directus = new DirectUs;
     return $directus;
+  }
+
+  public function getElastic()
+  {
+    return new Elastic();
   }
 
   public function index()
@@ -80,10 +86,34 @@ class exhibitionsController extends Controller
       )
     );
     $exhibitions = $api->getData();
-
+    $params = [
+      'index' => 'ciim',
+      'size' => 9,
+      'body' => [
+        "query" => [
+          "bool" => [
+              "must" => [
+                 [
+                      "match" => [
+                        'exhibitions.admin.id' => $exhibitions['data'][0]['adlib_id_exhibition']
+                      ]
+                 ],
+                 [
+                      "term" => [ "type.base" => 'object']
+                 ],
+                 [
+                      "exists" => ['field' => 'multimedia']
+                 ],
+              ]
+           ]
+        ]
+      ],
+    ];
+    $adlib = $this->getElastic()->setParams($params)->getSearch();
+    $adlib = $adlib['hits']['hits'];
     $mlt = new MoreLikeThis;
     $mlt->setLimit(3)->setType('exhibitions')->setQuery($slug);
     $records = $mlt->getData();
-    return view('exhibitions.details', compact('exhibitions', 'records'));
+    return view('exhibitions.details', compact('exhibitions', 'records', 'adlib'));
   }
 }
