@@ -90,7 +90,7 @@ class exhibitionsController extends Controller
     if(!is_null($exhibitions['data'][0]['adlib_id_exhibition'])){
       $params = [
         'index' => 'ciim',
-        'size' => 9,
+        'size' => 3,
         'body' => [
           "query" => [
             "bool" => [
