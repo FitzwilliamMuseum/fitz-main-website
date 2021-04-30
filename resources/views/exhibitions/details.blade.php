@@ -8,6 +8,10 @@
   @section('hero_image_title', $coll['hero_image_alt_text'])
 
   @section('content')
+
+    @if(Carbon\Carbon::parse($coll['exhibition_start_date'])->isPast())
+      @include('includes.structure.tessitura')
+    @endif
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @markdown($coll['exhibition_narrative'])
       @if(isset($coll['exhibition_abstract']))
