@@ -9,9 +9,12 @@
 
   @section('content')
 
-    @if(Carbon\Carbon::parse($coll['exhibition_start_date'])->isPast())
-      @include('includes.structure.tessitura')
-    @endif
+    @isset($coll['tessitura_string'])
+      @if(!Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast() && !Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast())
+        @include('includes.structure.tessitura')
+      @endif
+    @endisset
+
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @markdown($coll['exhibition_narrative'])
       @if(isset($coll['exhibition_abstract']))
