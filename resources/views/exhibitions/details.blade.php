@@ -92,8 +92,8 @@
             </div>
           </div>
     @endforeach
-  @endisset
   </div>
+    @endisset
     @if(isset($coll['youtube_id']))
       <h3>
         Exhibition film

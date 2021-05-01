@@ -73,7 +73,7 @@
         @endif
         @if(isset($profile['twitter_handle']))
           <li>
-            <a href="https://twitte.com/{{ $profile['twitter_handle']}}">Twitter</a>
+            <a href="https://twitter.com/{{ $profile['twitter_handle']}}">Twitter</a>
           </li>
         @endif
 
@@ -85,12 +85,29 @@
 
   @if(!empty($profile['publications']))
     @section('publications')
-    <div class="container">
-        <h4>Publications</h4>
-        <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-          {!! $profile['publications'] !!}
+
+
+      <div class="container">
+        <div class="wrapper center-block">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading active" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h4>Publications</h4>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  {!! $profile['publications'] !!}
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-    </div>
+      </div>
     @endsection
   @endif
 
@@ -102,7 +119,7 @@
       <div class="row">
         @foreach($profile['research_projects'] as $project)
           @if(!is_null($project['research_projects_id']))
-        <div class="col-md-4 mb-3">
+        <div class="col-md-3 mb-3">
           <div class="card  h-100 ">
 
             <div class="embed-responsive embed-responsive-4by3">
