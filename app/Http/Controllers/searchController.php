@@ -903,7 +903,7 @@ class searchController extends Controller
     $shop = new ShopifySDK;
     $shop->config($config);
     $lastId = 1;
-    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId, 'inventory_policy' => 'allow']);
+    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId, 'status' => 'active']);
   }
 
   public function shopifyRefresh()
@@ -948,7 +948,7 @@ class searchController extends Controller
       $doc->price = $product['variants'][0]['price'];
       $doc->contentType = 'shopify';
       $documents[] = $doc;
-    
+
     }
     $update->addDocuments($documents);
     $update->addCommit();
