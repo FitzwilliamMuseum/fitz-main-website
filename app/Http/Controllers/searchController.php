@@ -931,6 +931,7 @@ class searchController extends Controller
     $catalogue = env('SHOPIFY_FME_CATALOGUE');
     foreach($shopify as $product) {
       dump($product);
+      if($product['published_scope'] === 'web'){
       $doc = $update->createDocument();
       $doc->id = $product['id'];
       $doc->title = $product['title'];
@@ -949,6 +950,7 @@ class searchController extends Controller
       $doc->price = $product['variants'][0]['price'];
       $doc->contentType = 'shopify';
       $documents[] = $doc;
+    }
     }
     $update->addDocuments($documents);
     $update->addCommit();
