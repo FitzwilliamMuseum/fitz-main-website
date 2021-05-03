@@ -930,26 +930,25 @@ class searchController extends Controller
     $protocol = env('SHOPIFY_FME_PROTOCOL');
     $catalogue = env('SHOPIFY_FME_CATALOGUE');
     foreach($shopify as $product) {
-      if($product['status'] === 'active'){
-        $doc = $update->createDocument();
-        $doc->id = $product['id'];
-        $doc->title = $product['title'];
-        $description = $product['body_html'];
-        $doc->description = strip_tags($description);
-        $doc->body = strip_tags($description);
-        $doc->url = $protocol . $shop . $catalogue . $product['handle'];
-        $doc->slug = $product['handle'];
-        $doc->vendor = $product['vendor'];
-        if(array_key_exists('image', $product)){
-          // dump($product['image']);
-          $doc->thumbnail = $product['image']['src'];
-          $doc->image = $product['image']['src'];
-          $doc->searchImage = $product['image']['src'];
-        }
-        $doc->price = $product['variants'][0]['price'];
-        $doc->contentType = 'shopify';
-        $documents[] = $doc;
+      dump($product);
+      $doc = $update->createDocument();
+      $doc->id = $product['id'];
+      $doc->title = $product['title'];
+      $description = $product['body_html'];
+      $doc->description = strip_tags($description);
+      $doc->body = strip_tags($description);
+      $doc->url = $protocol . $shop . $catalogue . $product['handle'];
+      $doc->slug = $product['handle'];
+      $doc->vendor = $product['vendor'];
+      if(array_key_exists('image', $product)){
+        // dump($product['image']);
+        $doc->thumbnail = $product['image']['src'];
+        $doc->image = $product['image']['src'];
+        $doc->searchImage = $product['image']['src'];
       }
+      $doc->price = $product['variants'][0]['price'];
+      $doc->contentType = 'shopify';
+      $documents[] = $doc;
     }
     $update->addDocuments($documents);
     $update->addCommit();
