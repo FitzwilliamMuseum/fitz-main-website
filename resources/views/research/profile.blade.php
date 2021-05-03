@@ -35,63 +35,15 @@
         </p>
       @endisset
     </div>
-    @if(isset($profile['orcid']) || isset($profile['google_scholar_id']) || isset($profile['college_affiliated']))
-    <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-      @isset($profile['college_affiliated'])
-      <h4>Affiliated college</h4>
-      <ul>
-        <li>{{ $profile['college_affiliated'] }}</li>
-      </ul>
-      @endisset
-
-      @isset($profile['professional_memberships'])
-        <h4>Professional honours and memberships</h4>
-        {!! $profile['professional_memberships'] !!}
-      @endisset
-      @if(isset($profile['orcid']) || isset($profile['google_scholar_id']))
-      <h4>
-        Research and social profiles
-      </h4>
-      <ul>
-
-        @if(isset($profile['orcid']))
-          <li>
-            <a href="https://orcid.org/{{$profile['orcid']}}">ORCID</a>
-          </li>
-        @endif
-
-        @if(isset($profile['google_scholar_id']))
-          <li>
-            <a href="https://scholar.google.com/citations?user={{ $profile['google_scholar_id']}}">Google Scholar</a>
-          </li>
-        @endif
-
-        @if(isset($profile['githubid']))
-          <li>
-            <a href="https://github.com/{{ $profile['githubid']}}">Github</a>
-          </li>
-        @endif
-        @if(isset($profile['twitter_handle']))
-          <li>
-            <a href="https://twitter.com/{{ $profile['twitter_handle']}}">Twitter</a>
-          </li>
-        @endif
-
-      </ul>
-      @endif
-    </div>
-    @endif
+  
   @endsection
 
   @if(!empty($profile['publications']))
     @section('publications')
-
-
       <div class="container">
         <div class="wrapper center-block">
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
-              <div class="panel-heading active" role="tab" id="headingOne">
+              <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <h4>Publications</h4>
@@ -105,7 +57,85 @@
               </div>
             </div>
 
+          @isset($profile['professional_memberships'])
+            <div class="panel panel-default">
+              <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                    <h4>Professional Memberships</h4>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  {!! $profile['professional_memberships'] !!}
+                </div>
+              </div>
+            </div>
+          @endisset
+          @isset($profile['college_affiliated'])
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                    <h4>Affiliations</h4>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  <ul>
+                    <li>{{ $profile['college_affiliated'] }}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
+        @endisset
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                  <h4>Research and social profiles</h4>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+                <ul>
+
+                  @if(isset($profile['orcid']))
+                    <li>
+                      <a href="https://orcid.org/{{$profile['orcid']}}">ORCID</a>
+                    </li>
+                  @endif
+
+                  @if(isset($profile['google_scholar_id']))
+                    <li>
+                      <a href="https://scholar.google.com/citations?user={{ $profile['google_scholar_id']}}">Google Scholar</a>
+                    </li>
+                  @endif
+
+                  @if(isset($profile['githubid']))
+                    <li>
+                      <a href="https://github.com/{{ $profile['githubid']}}">Github</a>
+                    </li>
+                  @endif
+                  @if(isset($profile['twitter_handle']))
+                    <li>
+                      <a href="https://twitter.com/{{ $profile['twitter_handle']}}">Twitter</a>
+                    </li>
+                  @endif
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     @endsection

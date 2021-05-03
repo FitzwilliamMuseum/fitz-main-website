@@ -57,3 +57,4 @@ $('.popover-dismiss').popover({
   trigger: 'focus'
 })
 </script>
+<script src="/js/panels.js" type="text/javascript"></script>

@@ -919,3 +919,28 @@ ul.text-center.conversation-footer {
   transform: fadeIn;
   top: auto
 }
+@media(max-width:992px){
+ .wrapper{
+  width:100%;
+}
+}
+.panel-heading {
+  background-color: white;
+}
+.panel-title>a, .panel-title>a:active{
+	display:block;
+  color:#000;
+  font-weight:bold;
+	text-decoration:none;
+}
+.panel-heading  a:before {
+   font-family: 'Font Awesome 5 Free';
+   content: "\f077";
+   float: right;
+   transition: all 0.5s;
+}
+.panel-heading.active a:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
