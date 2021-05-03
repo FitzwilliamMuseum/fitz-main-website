@@ -903,7 +903,7 @@ class searchController extends Controller
     $shop = new ShopifySDK;
     $shop->config($config);
     $lastId = 1;
-    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId, 'available_for_sale' => true]);
+    return $shop->Product->get(['limit' => 250, 'since_id' => $lastId, 'inventory_policy' => 'allow']);
   }
 
   public function shopifyRefresh()
@@ -930,7 +930,6 @@ class searchController extends Controller
     $catalogue = env('SHOPIFY_FME_CATALOGUE');
     foreach($shopify as $product) {
       dump($product);
-      if($product['published_scope'] === 'web'){
       $doc = $update->createDocument();
       $doc->id = $product['id'];
       $doc->title = $product['title'];
@@ -949,7 +948,7 @@ class searchController extends Controller
       $doc->price = $product['variants'][0]['price'];
       $doc->contentType = 'shopify';
       $documents[] = $doc;
-  , 'available_for_sale' => true  }
+    
     }
     $update->addDocuments($documents);
     $update->addCommit();
