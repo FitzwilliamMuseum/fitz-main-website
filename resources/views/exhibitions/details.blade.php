@@ -14,6 +14,11 @@
         @include('includes.structure.tessitura')
       @endif
     @endisset
+    @if($coll['tessitura_string'] === NULL)
+      @if(!Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast() && !Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast() && $coll['exhibition_status'] === 'current')
+        @include('includes.structure.general')
+      @endif
+    @endisset
 
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @markdown($coll['exhibition_narrative'])

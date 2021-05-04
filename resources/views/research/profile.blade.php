@@ -4,9 +4,10 @@
   @section('description', $profile['meta_description'])
   @section('title', $profile['display_name'])
   @if(!is_null($profile['hero_image']))
-  @section('hero_image', $profile['hero_image']['data']['full_url'])
-  @section('hero_image_title', $profile['hero_image_alt_text'])
-@endif
+    @section('hero_image', $profile['hero_image']['data']['full_url'])
+    @section('hero_image_title', $profile['hero_image_alt_text'])
+  @endif
+
   @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
       <img class="img-fluid float-right thumb-post rounded p-3" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
@@ -35,11 +36,13 @@
         </p>
       @endisset
     </div>
-  
+
   @endsection
 
   @if(!empty($profile['publications']))
     @section('publications')
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
       <div class="container">
         <div class="wrapper center-block">
             <div class="panel panel-default">
@@ -74,7 +77,6 @@
             </div>
           @endisset
           @isset($profile['college_affiliated'])
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
                 <h4 class="panel-title">
@@ -91,11 +93,12 @@
                 </div>
               </div>
             </div>
-
-          </div>
         @endisset
-
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        @php
+        $social = array('orcid','githubid','google_scholar_id','twitter_handle');
+        @endphp
+        @if(Arr::hasAny($profile,$social))
+          @if(null !== ($profile['orcid']) || null !== ($profile['githubid']) || null !== ($profile['google_scholar_id']) || null !== ($profile['twitter_handle']) )
           <div class="panel panel-default">
             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
               <h4 class="panel-title">
@@ -135,9 +138,11 @@
               </div>
             </div>
           </div>
-        </div>
+          @endif
+        @endisset
         </div>
       </div>
+    </div>
     @endsection
   @endif
 
@@ -176,6 +181,8 @@
     </div>
     @endsection
   @endif
+
+
   @if(!empty($profile['departments_affiliated']))
 
     @section('departments-affiliated')
@@ -244,4 +251,5 @@
     </div>
     @endsection
   @endif
+
 @endforeach
