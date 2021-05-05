@@ -8,6 +8,7 @@
 @endif
   @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-      {{ $opps['description'] }}
+      {!! $opp['description'] !!}
     </div>
+  @endsection
 @endforeach
