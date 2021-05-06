@@ -20,7 +20,6 @@
         <a class="dropdown-item" href="{{ route('departments') }}">Departments</a>
         <a class="dropdown-item" href="{{ route('press-room') }}">Press room</a>
         <a class="dropdown-item" href="{{ route('news') }}">News</a>
-        <a class="dropdown-item" href="{{ URL::to('/objects-and-artworks/image-library/') }}">Image library</a>
       </div>
     </li>
     <li class="nav-item active">
