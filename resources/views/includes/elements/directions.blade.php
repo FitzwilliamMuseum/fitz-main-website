@@ -44,5 +44,19 @@
         </div>
       </div>
     </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            {{ $directions['data']['3']['method']}}
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+          @markdown($directions['data']['3']['directions'])
+        </div>
+      </div>
+    </div>
   </div>
 </div>
