@@ -188,10 +188,8 @@
 
               @include('includes/elements/department')
 
-
               @include('includes/elements/identification')
 
-              @include('includes/elements/institutions')
             </div>
           @endforeach
         @else
@@ -260,5 +258,3 @@
               </div>
             @endsection
           @endif
-
-        
