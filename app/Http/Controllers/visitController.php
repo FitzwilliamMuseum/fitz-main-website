@@ -46,8 +46,7 @@ class visitController extends Controller
           $args = array(
               'fields' => '*.*.*.*',
               'meta' => 'result_count,total_count,type',
-              'sort' => '-id',
-              'limit' => '3',
+              'sort' => '-id'
           )
         );
         $directions = $api3->getData();
