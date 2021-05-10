@@ -1,5 +1,5 @@
 <div class="container mb-3">
-  <h2>Directions to us</h2>
+  <h2 class="mt-3">Directions to us</h2>
   <div class="accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
