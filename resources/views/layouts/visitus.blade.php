@@ -42,6 +42,8 @@
   <div class="container">
         @yield('content')
   </div>
+  
+  @include('includes.elements.directions')
 
   <div class="container-fluid map-box">
     @yield('map')
@@ -64,7 +66,6 @@
     </div>
   </div>
 
-  @include('includes.elements.directions')
 
   @yield('associated_pages')
   @include('includes.structure.emailsignup')
