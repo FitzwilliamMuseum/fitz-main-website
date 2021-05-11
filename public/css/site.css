@@ -100,9 +100,11 @@ footer, .chip-icon {
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #97816224;
-
+  font-size: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 .shadow-sm {
   background-color: white;
@@ -348,9 +350,7 @@ label.cm-app-label {
 .audio-player {
   min-height: 60px;
 }
-body {
-  font-size: 1.1rem;
-}
+
 
 @media screen and (min-width: 441px) {
   .hidden {
