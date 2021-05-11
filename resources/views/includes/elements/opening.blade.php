@@ -1,4 +1,4 @@
-<p>
+<p class="text-center">
   From the 18th May:
   @fa('ticket-alt', 'ticket', 'mr-2') <a class="free_ticket" href="https://tickets.museums.cam.ac.uk/overview/generaladmission">FREE ENTRY- Book a ticket</a><br/>
   Tuesday - Saturday: 10:00 - 17:00 |
