@@ -64,17 +64,17 @@
         <div class="col-md-4 mb-3">
           <div class="card  h-100">
             @if(!is_null( $partner['partner']['partner_logo']))
-              <a href="{{ $partner['partner']['partner_url']}}"><img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
+              <a href="{{ $partner['partner']['partner_url']}}"><img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][5]['url']}}"
               alt="Logo for {{ $partner['partner']['partner_full_name']}}"
-              height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['height'] }}"
-              width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['width'] }}"
+              height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][5]['height'] }}"
+              width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][5]['width'] }}"
               loading="lazy"/></a>
             @else
               <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
               alt="The Fitzwilliam Museum's Gallery 3 roof"
               loading="lazy"/>
             @endif
-            <div class="card-body h-100">
+            <div class="card-body ">
               <div class="contents-label mb-3">
                 <h3>
                   <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
