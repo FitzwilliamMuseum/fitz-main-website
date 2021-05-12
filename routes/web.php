@@ -125,6 +125,8 @@ Route::get('/conversations/podcasts/', 'podcastsController@index')->name('podcas
 Route::get('/conversations/podcasts/{slug}', 'podcastsController@series')->name('podcasts.series');
 Route::get('/conversations/podcasts/episode/{slug}', 'podcastsController@episode')->name('podcasts.episode');
 
+
+Route::get('/events', 'TessituraController@index');
 /*
 * Search routing
 */
