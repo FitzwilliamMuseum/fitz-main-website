@@ -87,9 +87,9 @@ class TessituraController extends Controller
       $client = $this->getClient();
       $payload = array(
         "PerformanceStartDate" => "2021-05-13T00:00:00.0Z",
-        "PerformanceEndDate" =>  "2021-05-31T00:00:00.0Z",
+        "PerformanceEndDate" =>  "2021-06-30T00:00:00.0Z",
         "BusinessUnitId" => 1,
-        "FacilityIds" => "20,21"
+        "FacilityIds" => "19,20,21"
       );
       $response = $client->post($this->getEndpoint() .'TXN/Performances/Search', [
         'auth' => $this->auth,

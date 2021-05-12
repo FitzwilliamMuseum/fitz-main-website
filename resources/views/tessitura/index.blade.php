@@ -23,11 +23,14 @@
             <h5 class="lead">
               {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}
             </h5>
+            <p>{{$production->PerformanceDescription}}</p>
             <p>
               {{ $production->Season->Description }}<br/>
               {{ $production->ZoneMapDescription }}
             </p>
-
+            <p>
+              {!! $production->SalesNotes !!}
+            </p>
           </div>
         </div>
       </div>
