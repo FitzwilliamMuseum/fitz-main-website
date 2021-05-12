@@ -23,14 +23,17 @@
             <h5 class="lead">
               {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}
             </h5>
-            <p>{{$production->PerformanceDescription}}</p>
             <p>
-              {{ $production->Season->Description }}<br/>
+              <span class="lead">{{ $production->Season->Description }}</span>
+                <br/>
               {{ $production->ZoneMapDescription }}
             </p>
             <p>
-              {!! $production->SalesNotes !!}
+              {!! ucfirst(nl2br($production->SalesNotes)) !!}
             </p>
+            @isset($production->Duration)
+              <p>Duration: {{ $production->Duration }} minutes</p>
+            @endisset
           </div>
         </div>
       </div>
