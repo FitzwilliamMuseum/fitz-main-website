@@ -30,6 +30,9 @@
             <h5 class="lead">
               {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}
             </h5>
+            @if($production->PerformanceDescription === 'The Human Touch')
+              <p>This includes general admission</p>
+            @endif
             {{-- <p>
               <span class="lead">{{ $production->Season->Description }}</span>
                 {{-- <br/>
