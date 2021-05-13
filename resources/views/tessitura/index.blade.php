@@ -35,9 +35,9 @@
                 <br/>
               {{ $production->ZoneMapDescription }}
             </p>
-            <p>
+            {{-- <p>
               {!! ucfirst(nl2br($production->SalesNotes)) !!}
-            </p>
+            </p> --}}
             @isset($production->Duration)
               <p>Duration: {{ $production->Duration }} minutes</p>
             @endisset
