@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp;
+use Carbon\Carbon;
 
 class TessituraController extends Controller
 {
@@ -77,8 +78,8 @@ class TessituraController extends Controller
     public function getPerformances() {
       $client = $this->getClient();
       $payload = array(
-        "PerformanceStartDate" => "2021-05-13T00:00:00.0Z",
-        "PerformanceEndDate" =>  "2021-06-13T00:00:00.0Z",
+        "PerformanceStartDate" => Carbon::now(),
+        "PerformanceEndDate" =>  Carbon::now()->addDays(40),
         "BusinessUnitId" => 1,
         "FacilityIds" => "19,20,21,56"
       );
