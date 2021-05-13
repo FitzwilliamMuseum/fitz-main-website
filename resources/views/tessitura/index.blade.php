@@ -15,6 +15,13 @@
 
     <div class="col-md-4 mb-3">
       <div class="card h-100">
+        @if($production->Facility->Id === 21)
+          <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/HT%20Press%20August%201.jpg?key=directus-medium-crop"
+          alt="A stand in image for "/>
+        @else
+        <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
+        alt="A stand in image for "/>
+        @endif
         <div class="card-body ">
           <div class="contents-label mb-3">
             <h3>
