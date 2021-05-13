@@ -86,8 +86,8 @@ class TessituraController extends Controller
     public function getPerformances() {
       $client = $this->getClient();
       $payload = array(
-        "PerformanceStartDate" => "2021-06-13T00:00:00.0Z",
-        "PerformanceEndDate" =>  "2021-06-30T00:00:00.0Z",
+        "PerformanceStartDate" => "2021-05-13T00:00:00.0Z",
+        "PerformanceEndDate" =>  "2021-06-13T00:00:00.0Z",
         "BusinessUnitId" => 1,
         "FacilityIds" => "19,20,21,56"
       );
