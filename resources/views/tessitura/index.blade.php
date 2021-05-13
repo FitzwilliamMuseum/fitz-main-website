@@ -16,10 +16,10 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100">
         @if($production->Facility->Id === 21)
-          <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/HT%20Press%20August%201.jpg?key=directus-medium-crop"
+          <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/HT%20Press%20August%201.jpg?key=directus-medium-crop"
           alt="A stand in image for "/></a>
         @else
-          <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
+          <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
           alt="A stand in image for "/></a>
         @endif
         <div class="card-body ">
