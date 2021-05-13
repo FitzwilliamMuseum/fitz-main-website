@@ -7,13 +7,16 @@ use GuzzleHttp;
 
 class TessituraController extends Controller
 {
-    protected $auth = array('fitzapi:webapi:TNEW_WEB_ADMIN','3!wPvQ$L!WPC6M');
-
-    protected $_endpoint = 'https://fitzwiuk000restprod.tnhs.cloud/tessituraservice/';
+    public function getAuth(){
+      return array(
+        env('TESSITURA_USER_ID') . ':' . env('TESSITURA_MACHINE_NAME') . ':' . env('TESSITURA_LOCATION'),
+        env('TESSITURA_PASSWORD')
+      );
+    }
 
     public function getEndpoint()
     {
-      return $this->_endpoint;
+      return env('TESSITURA_API_URL');
     }
 
     public function decode($json){
@@ -26,24 +29,12 @@ class TessituraController extends Controller
     {
       $productions = $this->getPerformances();
       return view('tessitura.index', compact('productions'));
-      // return array(
-        // $this->getPerfKeywords(),
-        // $this->getPerfTypes(),
-        // $this->getPerfDetail(),
-        // $this->getPerfPrices(),
-        // $this->getPerfSummary(),
-        // $this->getPerformances(),
-        // $this->getProductions(),
-        // $this->getProductionsSummaries(),
-        // $this->getProduction()
-      // );
-
     }
 
     public function getPerfKeywords(){
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() . 'TXN/ProductKeywords?productionElementIds=1484&showAll=true',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
@@ -52,7 +43,7 @@ class TessituraController extends Controller
     {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() . 'ReferenceData/PerformanceTypes/Summary',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
@@ -61,7 +52,7 @@ class TessituraController extends Controller
     {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() . 'TXN/Performances/2050',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
@@ -70,7 +61,7 @@ class TessituraController extends Controller
     {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() .'TXN/Performances/Prices?performanceIds=2050&asOfDateTime=&modeOfSaleId=3&priceTypeId=&expandPerformancePriceType=&includeOnlyBasePrice=&sourceId=',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
@@ -78,7 +69,7 @@ class TessituraController extends Controller
     public function getPerfSummary() {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() .'TXN/Performances/Summary/?performanceIds=38',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
@@ -92,7 +83,7 @@ class TessituraController extends Controller
         "FacilityIds" => "19,20,21,56"
       );
       $response = $client->post($this->getEndpoint() .'TXN/Performances/Search', [
-        'auth' => $this->auth,
+        'auth' => $this->getAuth(),
         'body' => json_encode($payload),
         'headers' => [
           'Content-Type' => 'application/json',
@@ -121,7 +112,7 @@ class TessituraController extends Controller
       }';
       $response = $client->post($this->getEndpoint() .'/TXN/ProductionSeasons/Search', [
         'body' => $payload,
-        'auth' => $this->auth,
+        'auth' => $this->getAuth(),
         'headers' => [
           'Content-Type' => 'application/x-www-form-urlencoded',
         ]
@@ -133,7 +124,7 @@ class TessituraController extends Controller
     {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() . 'TXN/Productions?titleIds=',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return json_decode($response->getBody()->getContents());
     }
@@ -142,7 +133,7 @@ class TessituraController extends Controller
     {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() . 'TXN/Productions/Summary?titleIds=',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
@@ -151,7 +142,7 @@ class TessituraController extends Controller
     {
       $client = $this->getClient();
       $response = $client->get($this->getEndpoint() . 'TXN/Productions/1475',[
-        'auth' => $this->auth
+        'auth' => $this->getAuth()
         ]);
       return dump(json_decode($response->getBody()->getContents()));
     }
