@@ -38,11 +38,8 @@
                 height="{{ $instagram['hero_image']['height'] }}"
                 />
               </figure>
-              <span class="btn btn-wine m-1 p-2 share">
-                <a href="{{ URL::to( $instagram['hero_image']['data']['full_url'] )  }}" target="_blank"
+                <a class="btn btn-wine" href="{{ URL::to( $instagram['hero_image']['data']['full_url'] )  }}" target="_blank"
                 download><i class="fas fa-download mr-2"></i>  Download this image</a>
-              </span>
-
             </div>
 
 
