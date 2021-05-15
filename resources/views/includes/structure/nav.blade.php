@@ -23,7 +23,7 @@
       </div>
     </li>
     <li class="nav-item active">
-      <a class="nav-link" href="{{ route('events') }}">Events and tickets</a>
+      <a class="nav-link" href="{{ route('events') }}">Events</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVisit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visit</a>
@@ -71,6 +71,9 @@
         <a class="dropdown-item" href="{{ route('opportunities') }}">Research opportunities</a>
         <a class="dropdown-item" href="{{ route('resources') }}">Online resources</a>
       </div>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="https://curatingcambridge.com">Shop</a>
     </li>
 </ul>
 {{ \Form::open(['url' => url('search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}

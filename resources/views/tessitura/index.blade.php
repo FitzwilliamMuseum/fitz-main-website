@@ -4,51 +4,47 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('collections')
 <div class="container">
-  <div class="row">
+
+<h2>What would you like to attend?</h2>
+
     @php
+    $types = Arr::pluck($productions, 'FacilityDescription');
+
+    $ids = Arr::pluck($productions, 'Facility');
+    $tags = array_count_values($types);
+
     usort($productions, function($a, $b) {
       return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
     });
     @endphp
-    @foreach($productions as $production)
-      {{-- @dump($production) --}}
 
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        @if($production->Facility->Id === 21)
-          <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/HT%20Press%20August%201.jpg?key=directus-medium-crop"
-          alt="A stand in image for "/></a>
-        @else
-          <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
-          alt="A stand in image for "/></a>
-        @endif
-        <div class="card-body ">
-          <div class="contents-label mb-3">
-            <h3>
-              <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">{{ $production->PerformanceDescription }}</a>
-            </h3>
-            <h5 class="lead">
-              {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}
-            </h5>
-            @if($production->PerformanceDescription === 'The Human Touch')
-              <p>This includes general admission</p>
-            @endif
-            {{-- <p>
-              <span class="lead">{{ $production->Season->Description }}</span>
-                {{-- <br/>
-              {{ $production->ZoneMapDescription }} --}}
-            {{-- </p> --}}
-            {{-- <p>
-              {!! ucfirst(nl2br($production->SalesNotes)) !!}
-            </p> --}}
-            @isset($production->Duration)
-              <p>Duration: {{ $production->Duration }} minutes</p>
-            @endisset
+    <div class="row">
+      @foreach ($tags as $key => $value)
+        @php
+        $filter = $key;
+        $new_array = array_filter($ids, function($var) use ($filter){
+          return ($var->Description == $filter);
+        });
+        $id = array_slice($new_array,0,1);
+        @endphp
+
+        <div class="col-md-3 mb-3">
+          <div class="card h-100">
+
+          <a class="stretched-link" href="/events/{{ Str::slug($key) }}"><img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
+              alt="A stand in image for "/></a>
+            <div class="card-body ">
+              <div class="contents-label mb-3">
+                <h3 class="lead">
+                  <a class="stretched-link" href="/events/{{ Str::slug($key)}}">{{ $key }} ({{ $value }} events)</a>
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      @endforeach
     </div>
-    @endforeach
-  </div>
+
+
 </div>
 @endsection
