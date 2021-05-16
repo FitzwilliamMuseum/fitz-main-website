@@ -6,7 +6,47 @@
 
 
 @section('content')
+<div class="row">
+  <div class="col-md-4 mb-3">
+    <div class="card  h-100">
+      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/RASCHIG_KOLLWITZ, KATHE (1).jpg?key=directus-large-crop" loading="lazy" alt="Exhibition Poster for The Human Touch" width="800" height="600">
+      <div class="card-body h-100">
+        <div class="contents-label mb-3">
+          <h3>
+            <a href="/visit-us/exhibitions">Exhibitions and displays</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-md-4 mb-3">
+    <div class="card  h-100">
+      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600">
+      <div class="card-body h-100">
+        <div class="contents-label mb-3">
+          <h3>
+            <a href="visit-us/galleries">Our galleries</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card  h-100">
+      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Scent from Nature Press 2.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600">
+      <div class="card-body h-100">
+        <div class="contents-label mb-3">
+          <h3>
+            <a href="/events">What's on?</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
   @foreach($pages['data'] as $page)
   @section('description', $page['meta_description'])
   @section('keyword', $page['meta_keywords'])
@@ -61,31 +101,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/RASCHIG_KOLLWITZ, KATHE (1).jpg?key=directus-large-crop" loading="lazy" alt="Exhibition Poster for The Human Touch" width="800" height="600">
-        <div class="card-body h-100">
-          <div class="contents-label mb-3">
-            <h3>
-              <a href="/visit-us/exhibitions">Exhibitions and displays</a>
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600">
-        <div class="card-body h-100">
-          <div class="contents-label mb-3">
-            <h3>
-              <a href="visit-us/galleries">Our galleries</a>
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
     @foreach($associated['data'] as $project)
     <div class="col-md-4 mb-3">
       <div class="card  h-100">

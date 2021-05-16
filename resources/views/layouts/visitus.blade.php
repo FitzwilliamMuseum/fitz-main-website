@@ -32,18 +32,18 @@
     @include('includes.structure.breadcrumb')
 
   </div>
-  <div class="container">
-      @yield('opening-hours')
-  </div>
 
-  <div class="container-fluid parallax parallax-home mt-3">
-  </div>
 
   <div class="container">
         @yield('content')
   </div>
-  
+  <div class="container-fluid parallax parallax-home mt-3">
+  </div>
+
   @include('includes.elements.directions')
+
+  <div class="container-fluid parallax parallax-home mt-3">
+  </div>
 
   <div class="container-fluid map-box">
     @yield('map')
@@ -65,7 +65,8 @@
       </div>
     </div>
   </div>
-
+  <div class="container-fluid parallax parallax-home mt-3 mb-3">
+  </div>
 
   @yield('associated_pages')
   @include('includes.structure.emailsignup')
