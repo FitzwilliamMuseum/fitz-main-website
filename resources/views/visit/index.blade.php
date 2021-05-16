@@ -5,13 +5,6 @@
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 
 
-@section('opening-hours')
-  <h2>When we're open</h2>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-    @include('includes.elements.opening')
-  </div>
-@endsection
-
 @section('content')
 
   @foreach($pages['data'] as $page)
