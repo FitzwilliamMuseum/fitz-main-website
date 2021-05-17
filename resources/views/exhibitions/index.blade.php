@@ -27,6 +27,12 @@
             <h3>
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
+            @if($project['ticketed'] ==1)
+              <p>Ticket and timed entry</p>
+              <a class="btn btn-dark" href="https://tickets.museums.cam.ac.uk/overview/{{ $project['tessitura_string'] }}">Book now</a>
+            @else
+              <p>Included in General admission</p>
+            @endif
           </div>
         </div>
       </div>
