@@ -62,7 +62,18 @@ class visitController extends Controller
           )
         );
         $floors = $api4->getData();
-        return view('visit/index', compact('pages', 'associated', 'directions', 'floors'));
+
+        $api4 = $this->getApi();
+        $api4->setEndpoint('coronavirus_notes');
+        $api4->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => 'id',
+          )
+        );
+        $corona = $api4->getData();
+        return view('visit.index', compact('pages', 'associated', 'directions', 'floors', 'corona'));
     }
 
 }
