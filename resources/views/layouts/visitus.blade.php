@@ -33,9 +33,11 @@
 
   </div>
 
-
   <div class="container">
         @yield('content')
+  </div>
+  <div class="container">
+  @yield('corona')
   </div>
   <div class="container-fluid parallax parallax-home mt-3">
   </div>
