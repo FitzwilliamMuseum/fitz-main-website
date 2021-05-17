@@ -40,7 +40,8 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'filter[exhibition_status][eq]' => 'current',
-          'meta' => 'result_count,total_count,type'
+          'meta' => 'result_count,total_count,type',
+          'sort' => '-ticketed'
       )
     );
     $current = $api2->getData();
