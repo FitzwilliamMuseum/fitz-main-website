@@ -2,17 +2,14 @@
 @section('title','Our events')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
-@section('collections')
+@section('content')
 <div class="container">
 
 <h2>What would you like to attend?</h2>
-
     @php
     $types = Arr::pluck($productions, 'FacilityDescription');
-
     $ids = Arr::pluck($productions, 'Facility');
     $tags = array_count_values($types);
-
     usort($productions, function($a, $b) {
       return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
     });
@@ -36,15 +33,14 @@
             <div class="card-body ">
               <div class="contents-label mb-3">
                 <h3 class="lead">
-                  <a class="stretched-link" href="/events/{{ Str::slug($key)}}">{{ $key }} ({{ $value }} events)</a>
+                  <a class="stretched-link" href="{{ route('events.type', Str::slug($key)) }}" title="Events listing for {{ $key }}">{{ $key }}</a>
                 </h3>
+                <p class="text-info">{{ $value }} events</p>
               </div>
             </div>
           </div>
         </div>
       @endforeach
     </div>
-
-
 </div>
 @endsection
