@@ -36,6 +36,7 @@
                   <a class="stretched-link" href="{{ route('events.type', Str::slug($key)) }}" title="Events listing for {{ $key }}">{{ $key }}</a>
                 </h3>
                 <p class="text-info">{{ $value }} events</p>
+                
               </div>
             </div>
           </div>

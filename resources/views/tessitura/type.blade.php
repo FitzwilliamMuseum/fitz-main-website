@@ -17,7 +17,7 @@ $title = ucwords($title);
     @endphp
     <div class="row">
     @foreach($productions as $production)
-
+      {{-- @dd($production) --}}
 
     <div class="col-md-4 mb-3">
       <div class="card h-100">
@@ -39,6 +39,24 @@ $title = ucwords($title);
             @if($production->PerformanceDescription === 'The Human Touch')
               <p>This includes general admission</p>
             @endif
+
+            @if($production->PerformanceStatusDescription == 'Cancelled')
+              <p class="text-danger text-uppercase">{{ $production->PerformanceStatusDescription }}</p>
+            @endif
+            @php
+$tmp = \App\TessituraApi::getPerfPrices($production->PerformanceId);
+@endphp
+@isset($tmp[0]->Price)
+  @if($tmp[0]->Price > 0 )
+  <p class="text-info">
+  @fa('pound-sign') @fa('ticket-alt')<br/>
+  From £{{ $tmp[0]->Price }}
+  </p>
+@else
+  <p  class="text-info">FREE ENTRY/ Suggested Donation</p>
+@endif
+@endisset
+
             {{-- <p>
               <span class="lead">{{ $production->Season->Description }}</span>
                 {{-- <br/>

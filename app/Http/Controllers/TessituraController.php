@@ -32,13 +32,14 @@ class TessituraController extends Controller
       }
       return $int;
     }
+
     public function index()
     {
       $productions = $this->getApi()->getPerformances();
       return view('tessitura.index', compact('productions'));
     }
 
-    public function type($facility)
+    public function type(string $facility)
     {
       $productions = $this->getApi()->getPerformances($this->translateType($facility));
       return view('tessitura.type', compact('productions', 'facility'));
