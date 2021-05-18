@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'homeController@index')->name('home');
-
 /*
 About us routes
 */
@@ -48,6 +47,9 @@ Route::get('research/opportunities/{slug}', 'researchController@opportunity')->n
 Visit us Route
 */
 Route::get('visit-us/', 'visitController@index')->name('visit');
+Route::get('/galleries', function () {
+    return redirect('visit-us/galleries');
+});
 Route::get('visit-us/galleries', 'galleriesController@index')->name('galleries');
 Route::get('visit-us/galleries/{slug}', 'galleriesController@gallery')->name('gallery');
 Route::get('visit-us/exhibitions/', 'exhibitionsController@index')->name('exhibitions');
