@@ -27,6 +27,20 @@
       @endif
     </div>
 
+    @if(isset($coll['youtube_id']))
+      <h3>
+        Exhibition film
+      </h3>
+      <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
+          loading="lazy"
+          src="https://www.youtube.com/embed/{{$coll['youtube_id']}}" frameborder="0"
+          allowfullscreen></iframe>
+        </div>
+      </div>
+    @endif
+
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
       <h3>Exhibition details</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -99,19 +113,7 @@
     @endforeach
   </div>
     @endisset
-    @if(isset($coll['youtube_id']))
-      <h3>
-        Exhibition film
-      </h3>
-      <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
-          loading="lazy"
-          src="https://www.youtube.com/embed/{{$coll['youtube_id']}}" frameborder="0"
-          allowfullscreen></iframe>
-        </div>
-      </div>
-    @endif
+
   @endsection
 
   @if(!empty($coll['associated_curators']))
