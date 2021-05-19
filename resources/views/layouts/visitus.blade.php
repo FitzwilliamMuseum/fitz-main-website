@@ -47,7 +47,7 @@
   <div class="container-fluid parallax parallax-home mt-3">
   </div>
 
-  <div class="container-fluid map-box">
+  <div class="container-fluid map-box negative-padding">
     @yield('map')
   </div>
 
