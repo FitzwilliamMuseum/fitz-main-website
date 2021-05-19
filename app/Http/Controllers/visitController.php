@@ -73,7 +73,22 @@ class visitController extends Controller
           )
         );
         $corona = $api4->getData();
-        return view('visit.index', compact('pages', 'associated', 'directions', 'floors', 'corona'));
+
+        $api5 = $this->getApi();
+        $api5->setEndpoint('transport');
+        $api5->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => 'id',
+          )
+        );
+        $transport = $api5->getData();
+
+        return view('visit.index', compact(
+          'pages', 'associated', 'directions',
+          'floors', 'corona', 'transport'
+        ));
     }
 
 }

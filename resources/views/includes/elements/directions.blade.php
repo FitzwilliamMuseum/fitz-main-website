@@ -1,5 +1,5 @@
 <div class="container mb-3">
-  <h2 class="mt-3">Directions to us</h2>
+  <h2 class="mt-3">Getting here</h2>
   <div class="accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
@@ -58,5 +58,17 @@
         </div>
       </div>
     </div>
+  </div>
+  <h2 class="mt-3">Directions</h2>
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class="row text-center">
+      @foreach ($transport['data'] as $transport)
+        <div class="col-md-3 mt-3 text-center">
+          <a href="{{ $transport['google_string']}}"><i class="fa fa-{{ $transport['fa_icon']}} fa-5x circle-icon"/></i>
+          <br/>
+          {{ $transport['title'] }}</a>
+        </div>
+      @endforeach
+  </div>
   </div>
 </div>
