@@ -46,7 +46,8 @@ class pagesController extends Controller
         'meta' => 'result_count,total_count,type',
         'filter[landing_page][null]' => '',
         'filter[section][eq]' => $section,
-        'filter[associate_with_landing_page][eq]' => '1'
+        'filter[associate_with_landing_page][eq]' => '1',
+        'sort' => '-id'
       )
     );
     $associated = $api->getData();
@@ -59,9 +60,11 @@ class pagesController extends Controller
         'meta' => 'result_count,total_count,type',
         'filter[landing_page][eq]' => '1',
         'filter[section][eq]' => $section,
+
       )
     );
     $pages = $api2->getData();
+
     if($section == 'learning') {
       $expiresTwitter = now()->addMinutes(60);
 
@@ -96,7 +99,7 @@ class pagesController extends Controller
             'filter[slug][eq]' => $slug,
           )
       );
-      $research = $api->getData();
-      return $research;
+      $pages = $api->getData();
+      return $pages;
   }
 }
