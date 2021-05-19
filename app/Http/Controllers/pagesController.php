@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use App\MoreLikeThis;
 use Twitter;
 use Cache;
+use App\DirectUs;
 
 class pagesController extends Controller
 {
@@ -82,5 +83,20 @@ class pagesController extends Controller
       $tweets = array();
     }
     return view('pages.landing', compact('pages', 'associated', 'tweets'));
+  }
+
+  public static function injectPages(string $section = '', string $slug = '')
+  {
+      $api = new DirectUs;
+      $api->setEndpoint('stubs_and_pages');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*.*',
+            'filter[section][eq]' => $section,
+            'filter[slug][eq]' => $slug,
+          )
+      );
+      $research = $api->getData();
+      return $research;
   }
 }

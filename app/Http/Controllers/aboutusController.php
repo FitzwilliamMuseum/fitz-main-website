@@ -18,7 +18,7 @@ class aboutusController extends Controller
      */
     public function index()
     {
-        return view('aboutus/index');
+        return view('aboutus.index');
     }
 
     public function directors()

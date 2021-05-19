@@ -38,6 +38,13 @@
         </div>
       </div>
       @endforeach
+      @if(Request::is('about-us'))
+        @inject('pagesController', 'App\Http\Controllers\pagesController')
+        @php
+        $comm = $pagesController::injectPages('commercial-services','commercial-services');
+        @endphp
+        @include('includes.structure.cards', $data = $comm)
+      @endif
     </div>
   </div>
 @endsection
