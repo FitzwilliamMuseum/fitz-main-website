@@ -44,8 +44,8 @@ class homeController extends Controller
     $api2->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          // 'meta' => 'result_count,total_count,type',
-          'sort' => '-id',
+          'meta' => 'result_count,total_count,type',
+          'sort' => '-publication_date',
           'limit' => 3
       )
     );
