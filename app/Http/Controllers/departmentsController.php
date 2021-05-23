@@ -126,7 +126,7 @@ class departmentsController extends Controller
         $data = Cache::store('file')->get($key);
     } else {
         $configSolr = \Config::get('solarium');
-        $client = new Client($configSolr);
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $query = $client->createSelect();
         $query->setQuery('contentType:hkiblog.com title:*');
         $query->setRows(3);
