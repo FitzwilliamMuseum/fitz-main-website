@@ -40,7 +40,7 @@ class departmentsController extends Controller
         $args = array(
             'fields' => '*.*.*.*',
             'sort' => 'title',
-            'meta' => 'result_count,total_count,type'
+            'meta' => '*'
         )
       );
       $departments = $api2->getData();
@@ -58,7 +58,16 @@ class departmentsController extends Controller
         )
       );
       $departments = $api->getData();
-      return view('departments.details', compact('departments'));
+      $api2 = new DirectUs;
+      $api2->setEndpoint('staff_profiles');
+      $api2->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'filter[departments_affiliated.department][in]' => $departments['data'][0]['id'],
+        )
+      );
+      $staff = $api2->getData();
+      return view('departments.details', compact('departments', 'staff'));
   }
 
   public function conservation($slug)
