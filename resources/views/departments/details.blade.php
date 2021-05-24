@@ -70,7 +70,7 @@
       <h3>Associated curators</h3>
       <div class="row">
         @foreach($staff['data'] as $curator)
-          <div class="col-md-4 mb-3">
+          <div class="col-md-3 mb-3">
             <div class="card h-100">
               @if(!is_null($curator['profile_image']))
                 <div class="embed-responsive embed-responsive-1by1">
