@@ -90,6 +90,7 @@
     @yield('themes')
     @yield('collections')
     @yield('departments')
+    @yield('curators')
     @yield('galleries')
     @yield('360')
     @yield('youtube')
