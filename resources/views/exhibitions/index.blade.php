@@ -10,9 +10,39 @@
 
 @section('current')
 <div class="container">
-  <h2>Our current exhibitions & displays</h2>
+  <h2>Our current exhibitions</h2>
   <div class="row">
     @foreach($current['data'] as $project)
+    <div class="col-md-4 mb-3">
+      <div class="card  h-100">
+        @if(!is_null($project['hero_image']))
+          <a href="{{ route('exhibition',$project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
+          alt="{{ $project['hero_image_alt_text'] }}"
+          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
+          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
+          /></a>
+        @endif
+        <div class="card-body h-100">
+          <div class="contents-label mb-3">
+            <h3>
+              <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
+            </h3>
+            @if($project['ticketed'] ==1)
+              <p class="text-info">Ticket and timed entry</p>
+              <a class="btn btn-dark" href="https://tickets.museums.cam.ac.uk/overview/{{ $project['tessitura_string'] }}">Book now</a>
+            @else
+              <p class="text-info">Included in General admission</p>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+    @endforeach
+  </div>
+
+  <h2 id="displays">New displays in the galleries</h2>
+  <div class="row" >
+    @foreach($displays['data'] as $project)
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
         @if(!is_null($project['hero_image']))
@@ -102,5 +132,6 @@
     </div>
     @endforeach
   </div>
+  <a class="d-block btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
 </div>
 @endsection

@@ -40,11 +40,25 @@ class exhibitionsController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'filter[exhibition_status][eq]' => 'current',
+          'filter[type][eq]' => 'exhibition',
           'meta' => 'result_count,total_count,type',
           'sort' => '-ticketed'
       )
     );
     $current = $api2->getData();
+
+    $disp = $this->getApi();
+    $disp->setEndpoint('exhibitions');
+    $disp->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'filter[exhibition_status][eq]' => 'current',
+          'filter[type][eq]' => 'display',
+          'meta' => 'result_count,total_count,type',
+          'sort' => '-ticketed'
+      )
+    );
+    $displays = $disp->getData();
 
     $api3 = $this->getApi();
     $api3->setEndpoint('exhibitions');
@@ -65,14 +79,31 @@ class exhibitionsController extends Controller
           'filter[exhibition_status][eq]' => 'archived',
           'meta' => 'result_count,total_count,type',
           'sort' => '-exhibition_end_date',
-          'limit' => 100
+          'limit' => 3
       )
     );
     $archive = $api4->getData();
     return view('exhibitions.index', compact(
       'current', 'pages', 'archive',
-      'future'
+      'future', 'displays'
     ));
+  }
+
+  public function archive()
+  {
+    $api4 = $this->getApi();
+    $api4->setEndpoint('exhibitions');
+    $api4->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'filter[exhibition_status][eq]' => 'archived',
+          'meta' => 'result_count,total_count,type',
+          'sort' => '-exhibition_end_date',
+          'limit' => 100
+      )
+    );
+    $archive = $api4->getData();
+    return view('exhibitions.archives', compact('archive'));
   }
 
   public function details($slug)
