@@ -31,10 +31,11 @@
         @include('includes.structure.breadcrumb')
         @yield('content')
   </div>
-    @yield('excarousel')
+        @yield('excarousel')
         @yield('curators')
         @yield('research-funders')
         @yield('current')
+        @yield('sketchfab')
         @yield('displays')
         @yield('future')
         @yield('archive')

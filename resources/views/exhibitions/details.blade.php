@@ -1,4 +1,4 @@
-@extends('layouts/exhibitions')
+@extends('layouts.exhibitions')
 
 @foreach($exhibitions['data'] as $coll)
   @section('keywords', $coll['meta_keywords'])
@@ -51,6 +51,7 @@
         </div>
       </div>
     @endif
+
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
       <h3>Exhibition details</h3>
@@ -352,5 +353,21 @@
             @endforeach
           </div>
         </div>
+      @endsection
+
+
+      @section('sketchfab')
+        @if(!empty($coll['sketchfab_id']))
+        <div class="container">
+          <h4>3d model of this display or exhibition</h4>
+          <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe title="A 3D  model related to this exhibition" class="embed-responsive-item"
+              src="https://sketchfab.com/models/{{ $coll['sketchfab_id']}}/embed?"
+              frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
+          </div>
+        </div>
+        @endif
       @endsection
     @endif
