@@ -6,7 +6,18 @@
   @section('title', $coll['exhibition_title'])
   @section('hero_image', $coll['hero_image']['data']['full_url'])
   @section('hero_image_title', $coll['hero_image_alt_text'])
-
+  @php
+    switch($coll['type']){
+      case 'exhibition':
+        $type = 'Exhibition';
+      break;
+      case 'display':
+        $type = 'Temporary Display';
+        break;
+      default:
+        $type = 'Exhibition';
+    }
+  @endphp
   @section('content')
 
     @isset($coll['tessitura_string'])
@@ -29,7 +40,7 @@
 
     @if(isset($coll['youtube_id']))
       <h3>
-        Exhibition films
+        {{ $type }} films
       </h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <div class="embed-responsive embed-responsive-16by9">
@@ -54,17 +65,17 @@
 
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
-      <h3>Exhibition details</h3>
+      <h3>{{$type}} details</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @if(isset($coll['exhibition_url']))
             <li>
-              <a href="{{ $coll['exhibition_url']  }}">Exhibition website</a>
+              <a href="{{ $coll['exhibition_url']  }}">{{$type}} website</a>
             </li>
           @endif
           @if(isset($coll['exhibition_start_date']))
             <li>
-              Exhibition run: {{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
+              {{$type}} run: {{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
               {{  Carbon\Carbon::parse($coll['exhibition_end_date'])->format('l dS F Y') }}
             </li>
           @endif
@@ -73,7 +84,7 @@
     @endif
 
     @if(!empty($coll['exhibition_files']))
-      <h3>Exhibition files</h3>
+      <h3>{{$type}}, $iterable, 'value', 'empty')]}} files</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @foreach($coll['exhibition_files'] as $file)
@@ -85,7 +96,7 @@
       </div>
     @endif
     @isset($adlib)
-    <h3>Selected objects from the exhibition</h3>
+    <h3>Selected objects from the {{$type}}</h3>
     <div class="row">
     @foreach($adlib as $record)
 
