@@ -15,7 +15,7 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
   background-image: url(@yield('hero_image'));
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: 50% 30%;
 }
 
 @hasSection('parallax_two')
