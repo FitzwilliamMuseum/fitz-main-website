@@ -29,5 +29,5 @@
   @endif
 </div>
 
-@include('includes/structure/iiif')
+{{-- @include('includes/structure/iiif') --}}
 @endif
