@@ -72,7 +72,6 @@
     @endif
 
 
-
     @if(!empty($records))
     <h3>
       Related to this page

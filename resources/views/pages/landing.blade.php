@@ -9,11 +9,11 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['body'])
   </div>
-  @if($page['vimeo_id'])
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-    @include('includes.social.vimeo')
-  </div>
-  @endif
+    @if($page['vimeo_id'])
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+      @include('includes.social.vimeo')
+    </div>
+    @endif
   @endsection
 @endforeach
 
@@ -41,17 +41,17 @@
       @if(Request::is('about-us'))
         @inject('pagesController', 'App\Http\Controllers\pagesController')
         @php
-        $comm = $pagesController::injectPages('commercial-services','commercial-services');
-        $depart = $pagesController::injectPages('departments','our-departments');
-        $coll = $pagesController::injectPages('about-us','our-collections');
-        $press = $pagesController::injectPages('about-us','press-room');
-
+          $comm = $pagesController::injectPages('commercial-services','commercial-services');
+          $depart = $pagesController::injectPages('departments','our-departments');
+          $coll = $pagesController::injectPages('about-us','our-collections');
+          $press = $pagesController::injectPages('about-us','press-room');
         @endphp
         @include('includes.structure.cards', $data = $comm )
         @include('includes.structure.cards', $data = $depart)
         @include('includes.structure.cards', $data = $coll)
         @include('includes.structure.cards', $data = $press)
       @endif
+
     </div>
   </div>
 @endsection
