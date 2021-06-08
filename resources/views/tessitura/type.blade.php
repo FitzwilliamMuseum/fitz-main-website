@@ -19,7 +19,7 @@ $title = ucwords($title);
       <div class="col-md-3 shadow-sm  mx-auto mb-3 ">
         <div class="card-body">
           <h4>Filter events</h4>
-          @include('includes.elements.date-picker')
+          @include('includes.elements.filters-tessitura')
         </div>
       </div>
       <div class="col-md-9">

@@ -1,5 +1,5 @@
 <div class="position-relative">
-  {{ \Form::open(['url' => url('events/search'),'method' => 'GET', 'class' => ' ml-auto']) }}
+  {{ \Form::open(['url' => url('events/search'),'method' => 'POST', 'class' => ' ml-auto']) }}
   {{ csrf_field() }}
   @if(count($errors))
             <div class="form-group">
