@@ -175,7 +175,7 @@ class TessituraApi {
 
     public function setPerformanceEndDate($date){
       if(!isset($date)){
-        $this->_performanceEndDate = Carbon::now()->addDays(7);
+        $this->_performanceEndDate = Carbon::now();
       } else {
         $this->_performanceEndDate = $date;
       }
