@@ -1,6 +1,6 @@
 @extends('layouts/visitus')
 @section('title', 'Visit us')
-@section('hero_image', 'https://content.fitz.ms/fitz-website/assets/IMG_20191007_193645.jpg?key=directus-large-contain')
+@section('hero_image', 'https://content.fitz.ms/fitz-website/assets/IMG_20191007_193645.jpg')
 @section('hero_image_title', "The Museum's founder's building")
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 @section('description','How to visit the Fitzwilliam Museum in Cambridge')
