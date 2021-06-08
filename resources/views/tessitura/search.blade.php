@@ -1,15 +1,10 @@
 @extends('layouts.layout')
-@php
-$title = str_replace("-", " ", $facility);
-$title = str_replace(array('bookings','FFF', 'fff'),array('Events','Fitz Family First','Fitz Family First'), $title );
-$title = ucwords($title);
-@endphp
-@section('title', $title)
+@section('title','Our events')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
-@section('collections')
+@section('content')
   <div class="container">
-    <h2 class="text-center mb-3">Events in the next 20 days</h2>
+    <h2 class="text-center mb-3">Events meeting your search</h2>
     @php
     usort($productions, function($a, $b) {
       return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
@@ -19,7 +14,7 @@ $title = ucwords($title);
       <div class="col-md-3 shadow-sm  mx-auto mb-3 ">
         <div class="card-body">
           <h4>Filter events</h4>
-          @include('includes.elements.date-picker')
+          @include('includes.elements.filters-tessitura')
         </div>
       </div>
       <div class="col-md-9">

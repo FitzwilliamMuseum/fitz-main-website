@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use ImLiam\BladeHelper\Facades\BladeHelper;
+use App\DirectUs;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,8 +25,42 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-        // Make a custom blade directive:
+
+        BladeHelper::directive('tessitura', function($id){
+          $api = new DirectUs;
+          $api->setEndpoint('tessitura_performances');
+          $api->setArguments(
+            array(
+              'fields' => '*.*.*',
+              'filter[tessitura_id]=' => $id
+            )
+          );
+          $data = $api->getData();
+          if(!empty($data['data'])){
+            $thumbnail = $data['data'][0]['image']['data']['thumbnails'][2]['url'];
+            return $thumbnail;
+          } else {
+            return 'https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop';
+          }
+        });
+
+        BladeHelper::directive('tessituraTitle', function($id){
+          $api = new DirectUs;
+          $api->setEndpoint('tessitura_performances');
+          $api->setArguments(
+            array(
+              'fields' => '*.*.*',
+              'filter[tessitura_id]=' => $id
+            )
+          );
+          $data = $api->getData();
+          if(!empty($data['data'])){
+            return $data['data'][0]['title'];
+          } else {
+            return 'A stand in image for this event';
+          }
+        });
+
         BladeHelper::directive('humansize', function ($bytes, $precision = 2) {
           $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
           $factor = floor((strlen($bytes) - 1) / 3);

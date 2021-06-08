@@ -1,6 +1,6 @@
 
 .parallax {
-  min-height: 400px;
+  min-height: 500px;
   background-attachment: fixed;
   background-size: cover;
   margin-top: 0px!important;
@@ -101,7 +101,7 @@ footer, .chip-icon {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #d3ecf126;
+  background-color: #f7f4f4;
   font-size: 1rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -920,22 +920,30 @@ ul.text-center.conversation-footer {
   top: auto
 }
 @media(max-width:992px){
- .wrapper{
-  width:100%;
-}
+  .wrapper{
+    width:100%;
+  }
 }
 .panel-heading {
   background-color: white;
 }
 .panel-title>a, .panel-title>a:active{
-	display:block;
+  display:block;
   color:#000;
   font-weight:bold;
-	text-decoration:none;
+  text-decoration:none;
 }
 .panel-heading  a:before {
-   font-family: 'Font Awesome 5 Free';
-   content: "\f078";
-   float: right;
-   transition: all 0.9s;
+  font-family: 'Font Awesome 5 Free';
+  content: "\f078";
+  float: right;
+  transition: all 0.9s;
+}
+li.nav-item.active {
+  border-bottom: solid 5px #fff!important;
+}
+
+a.nav-link {
+  color: hsla(0,0%,100%,.5);
+  background-color: transparent;
 }

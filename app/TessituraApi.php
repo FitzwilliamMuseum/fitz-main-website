@@ -109,7 +109,7 @@ class TessituraApi {
     public static function getPerfPrices($productionID)
     {
       $params = array('performanceIds' => $productionID);
-    
+
       $response = self::getClient()->get(
         self::buildUrl(
           'TXN/Performances/Prices?',
@@ -139,13 +139,12 @@ class TessituraApi {
     * @param  string $facilities [description]
     * @return string             [description]
     */
-    public function getPerformances($facilities = '19,20,21,56') {
+    public function getPerformances($facilities = '19,20,21,56,116,86,96,66,76') {
       $payload = array(
         "PerformanceStartDate" => Carbon::now(),
-        "PerformanceEndDate" =>  Carbon::now()->addDays(20),
+        "PerformanceEndDate" =>  Carbon::now()->addDays(40),
         "BusinessUnitId" => 1,
-        "FacilityIds" => $facilities,
-        ""
+        "FacilityIds" => $facilities
       );
       $response = $this->getClient()->post($this->getEndpoint() .'TXN/Performances/Search', [
         'auth' => $this->getAuth(),
@@ -157,6 +156,73 @@ class TessituraApi {
       return json_decode($response->getBody()->getContents());
     }
 
+    protected $_performanceStartDate;
+    protected $_performanceEndDate;
+    protected $_facilities;
+
+    public function setPerformanceStartDate($date){
+      if(!isset($date)){
+        $this->_performanceStartDate = Carbon::now();
+      } else {
+        $this->_performanceStartDate = $date;
+      }
+      return $this->_performanceStartDate;
+    }
+
+    public function getPerformancesEndDate(){
+      return $this->_performanceEndDate;
+    }
+
+    public function setPerformanceEndDate($date){
+      if(!isset($date)){
+        $this->_performanceEndDate = Carbon::now()->addDays(7);
+      } else {
+        $this->_performanceEndDate = $date;
+      }
+      return $this->_performanceEndDate;
+    }
+
+    public function getPerformancesStartDate(){
+      return $this->_performanceStartDate;
+    }
+
+    public function setFacilities($facilities ){
+      switch($facilities){
+        case 'physical':
+          $this->_facilities = '20,21,56,116,86,96,66,76';
+          break;
+        case 'virtual':
+          $this->_facilities = '19';
+          break;
+        default:
+          $this->_facilities = '19,20,21,56,116,86,96,66,76';
+      }
+        return $this->_facilities;
+    }
+
+    public function getFacilties()
+    {
+      return $this->_facilities;
+    }
+
+
+    public function getPerformancesSearch() {
+      $payload = array(
+        "PerformanceStartDate" => $this->getPerformancesStartDate(),
+        "PerformanceEndDate" =>  $this->getPerformancesEndDate(),
+        "BusinessUnitId" => 1,
+        "FacilityIds" => $this->getFacilties(),
+        // "PerformanceTypeIds" => $this->getPerformanceTypeIDs()
+      );
+      $response = $this->getClient()->post($this->getEndpoint() .'TXN/Performances/Search', [
+        'auth' => $this->getAuth(),
+        'body' => json_encode($payload),
+        'headers' => [
+          'Content-Type' => 'application/json',
+        ]
+      ]);
+      return json_decode($response->getBody()->getContents());
+    }
     /**
     * [getProductionSeasons description]
     * @return [type] [description]

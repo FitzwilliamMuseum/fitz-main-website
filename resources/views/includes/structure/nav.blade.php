@@ -1,78 +1,39 @@
 <!-- Nav bars -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+  <a class="navbar-brand">
+    <img src="/images/logos/Fitz_logo_white.png" alt="The Fitzwilliam Museum Logo" height="60" width="" class=" ml-5 mr-5 rounded">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
   aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarText">
   <ul class="navbar-nav mr-auto">
-
-    <li class="nav-item active">
+    <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
     </li>
-
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      About</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
-        <a class="dropdown-item" href="{{ route('landing', ['about-us']) }}">About the Museum</a>
-        <a class="dropdown-item" href="{{ route('collections') }}">Collection areas</a>
-        <a class="dropdown-item" href="{{ route('departments') }}">Departments</a>
-        <a class="dropdown-item" href="{{ route('press-room') }}">Press room</a>
-        <a class="dropdown-item" href="{{ route('news') }}">News</a>
-      </div>
+    <li class="nav-item {{ (request()->is('visit-us')) ? 'active' : '' }}">
+      <a class="nav-link" href="{{ route('visit') }}" >Visit</a>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ route('events') }}">Events</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVisit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visit</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownVisit">
-        <a class="dropdown-item" href="{{ route('visit') }}">Your visit</a>
-        <a class="dropdown-item" href="{{ route('exhibitions') }}">Exhibitions</a>
-        <a class="dropdown-item" href="{{ route('galleries') }}">Galleries</a>
-      </div>
+    <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
+      <a class="nav-link" href="{{ route('events') }}">Events & tickets</a>
     </li>
 
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownObjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Collections</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownObjects">
-        <a class="dropdown-item" href="{{ route('objects') }}">An introduction</a>
-        <a class="dropdown-item" href="{{ URL::to('https://beta.fitz.ms/objects-and-artworks/highlights/') }}">Collection highlights</a>
-        <a class="dropdown-item" href="{{ URL('https://collection.beta.fitz.ms') }}">Search the collection</a>
-        <a class="dropdown-item" href="{{ route('audio-guide') }}">Audio guide</a>
-      </div>
+    <li class="nav-item {{ (Request()->is('objects-and-artworks*')) ? 'active' : '' }}">
+      <a class="nav-link" href="{{ route('objects') }}" >Our Collection</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLearning" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="nav-item {{ (Request()->is('learning')) ? 'active' : '' }}">
+      <a class="nav-link" href="{{ route('landing', ['learning']) }}" >
       Learning</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownLearning">
-        <a class="dropdown-item" href="{{ route('landing', ['learning']) }}">Learn with us</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','families']) }}">Families</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','young-people']) }}">Young people</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','school-sessions']) }}">Schools</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','adult-programming']) }}">Adults</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','community-programming']) }}">Communities</a>
-        <a class="dropdown-item" href="{{ route('landing-section',['learning','group-activities']) }}">Groups</a>
-        <a class="dropdown-item" href="{{ route('learning-resources') }}">Resources</a>
-      </div>
     </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="{{ route('landing', ['support-us']) }}">Support</a>
+    <li class="nav-item {{ (Request()->is('about-us')) ? 'active' : '' }}">
+      <a class="nav-link " href="{{ route('landing', ['about-us']) }}" >
+      About</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownResearch" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Research</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownResearch">
-        <a class="dropdown-item" href="{{ route('landing', ['research']) }}">Research at the museum</a>
-        <a class="dropdown-item" href="{{ route('research-projects') }}">Research projects</a>
-        <a class="dropdown-item" href="{{ route('research-profiles') }}">Researcher profiles</a>
-        <a class="dropdown-item" href="{{ route('opportunities') }}">Research opportunities</a>
-        <a class="dropdown-item" href="{{ route('resources') }}">Online resources</a>
-      </div>
+    <li class="nav-item {{ (Request()->is('research')) ? 'active' : '' }}">
+      <a class="nav-link" href="{{ route('landing', ['research']) }}" >Research</a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item ">
       <a class="nav-link" href="https://curatingcambridge.com">Shop</a>
     </li>
 </ul>
