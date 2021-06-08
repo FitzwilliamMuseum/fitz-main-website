@@ -44,12 +44,12 @@
   <div class="form-group">
     <label for="datefrom" >Date from: </label>
     <input id="datefrom" type="date" class="date col-md-12" name="datefrom" type="text" class="form-control mr-sm-2 mr-2"
-    placeholder="Start date"  value="{{ old('datefrom') }}" aria-label="Your query">
+    placeholder="Start date" value="{{ old('datefrom') }}" aria-label="Your query">
   </div>
   <div class="form-group">
     <label for="dateto" >Date to: </label>
     <input id="dateto" type="date" class="date col-md-12" name="dateto" type="text" class="form-control mr-sm-2 mr-2"
-    placeholder="End date"  value="{{ old('dateto') }}" aria-label="Your query">
+    placeholder="End date" value="{{ old('dateto') }}" aria-label="Your query">
   </div>
   <hr />
 
