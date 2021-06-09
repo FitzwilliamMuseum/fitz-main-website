@@ -48,6 +48,9 @@
                     <h3>
                       <a href="{{ $project['url']}}">{{ $project['title']}}</a>
                     </h3>
+                    @isset($project['sub_title'])
+                      <p class="text-info">{{ $project['sub_title']}}</p>
+                    @endisset
                   </div>
                 </div>
               </div>
@@ -103,15 +106,7 @@
           @endforeach
         @endsection
 
-        {{-- @section('twitter')
-        @include('includes.social.tweets')
-      @endsection
 
-
-
-      @section('youtube-list')
-      @include('includes.social.youtubelist')
-    @endsection --}}
 
     @if(!empty($shopify))
       @section('shopify')
