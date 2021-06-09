@@ -9,7 +9,7 @@ $title = ucwords($title);
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('collections')
   <div class="container">
-    <h2 class="text-center mb-3">Events in the next 20 days</h2>
+    <h2 class="text-center mb-3">Events in the next 30 days</h2>
     @php
     usort($productions, function($a, $b) {
       return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
