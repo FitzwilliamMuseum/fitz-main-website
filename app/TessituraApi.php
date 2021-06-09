@@ -142,7 +142,7 @@ class TessituraApi {
     public function getPerformances($facilities = '19,20,21,56,116,86,96,66,76') {
       $payload = array(
         "PerformanceStartDate" => Carbon::now(),
-        "PerformanceEndDate" =>  Carbon::now()->addDays(40),
+        "PerformanceEndDate" =>  Carbon::now()->addDays(20),
         "BusinessUnitId" => 1,
         "FacilityIds" => $facilities
       );
