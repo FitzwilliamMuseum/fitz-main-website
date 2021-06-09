@@ -41,11 +41,13 @@
       @if(Request::is('about-us'))
         @inject('pagesController', 'App\Http\Controllers\pagesController')
         @php
+          $support = $pagesController::injectPages('support-us','support-us');
           $comm = $pagesController::injectPages('commercial-services','commercial-services');
           $depart = $pagesController::injectPages('departments','our-departments');
           $coll = $pagesController::injectPages('about-us','our-collections');
           $press = $pagesController::injectPages('about-us','press-room');
         @endphp
+        @include('includes.structure.cards', $data = $support )
         @include('includes.structure.cards', $data = $comm )
         @include('includes.structure.cards', $data = $depart)
         @include('includes.structure.cards', $data = $coll)

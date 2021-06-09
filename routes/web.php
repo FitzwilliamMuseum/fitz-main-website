@@ -19,7 +19,7 @@ About us routes
 */
 Route::get('about-us/our-directors', 'aboutusController@directors')->name('directors');
 
-Route::get('about-us/directors', 'aboutusController@directors')->name('directors');
+Route::get('about-us/directors', 'aboutusController@directors')->name('directors-redirect');
 Route::get('about-us/directors/{slug}', 'aboutusController@director')->name('director');
 Route::get('about-us/press-room', 'aboutusController@press')->name('press-room');
 Route::get('about-us/governance', 'aboutusController@governance')->name('governance');
@@ -79,8 +79,8 @@ Route::get('learning/adult-programming/{slug}', 'learningController@adult')->nam
 /*
 Themes routes - are these obsolete?
 */
-Route::get('themes/', 'themesController@index')->name('themes');
-Route::get('themes/{slug}', 'themesController@theme')->name('theme');
+Route::get('themes/', 'themesController@index')->name('themes-deprecated');
+Route::get('themes/{slug}', 'themesController@theme')->name('theme-deprecated');
 
 /*
 * Object and highlight routes
