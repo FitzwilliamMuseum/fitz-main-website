@@ -35,7 +35,7 @@
 
             <div class="col-md-4 mb-3">
               <div class="card h-100">
-                {{-- @dump($id[0]->Id) --}}
+                @dump($id[0]->Id)
                 <a class="stretched-link" href="/events/{{ Str::slug($key) }}"><img class="card-img-top" src="@tessitura($id[0]->Id)"
                   alt="@tessituraTitle($id[0]->Id)"/></a>
                   <div class="card-body ">
