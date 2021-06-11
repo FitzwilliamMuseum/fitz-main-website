@@ -28,7 +28,7 @@
     </figure>
     @endif
     @markdown($project['article_body'])
-    <h3 class="text-muted">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
+    <h3 class="text-muted text-info lead">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['youtube_playlist_id'])
       @section('youtube-playlist')
       @include('includes.social.youtube-playlist')
