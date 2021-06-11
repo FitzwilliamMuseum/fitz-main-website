@@ -128,7 +128,7 @@
                       @endif
                       <div class="card-body h-100">
                         <div class="contents-label mb-3">
-                          <h5>
+                          <h5 class="lead">
                             <a href="{{ $record['url'][0]  }}">{{ $record['title'][0] }}</a>
                           </h5>
                           <p>£{{ number_format((float)$record['price'][0], 2, '.', '') }}</p>

@@ -269,13 +269,13 @@
                   <div class="carousel-item">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two']['data']['thumbnails'][9]['url'] }}" >
                     <div class="carousel-caption d-none d-md-block text-white bg-black exhibition-carousel">
-                      <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}</h5>
+                      <h5 class="lead">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}</h5>
                     </div>
                   </div>
                   <div class="carousel-item active">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three']['data']['thumbnails'][9]['url'] }}" >
                     <div class="carousel-caption  d-none d-md-block text-white bg-black exhibition-carousel">
-                      <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}</h5>
+                      <h5 class="lead">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}</h5>
                     </div>
                   </div>
                 </div>
