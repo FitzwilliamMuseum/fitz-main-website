@@ -27,7 +27,7 @@
 
     </div>
 
-  <h3>Crowdsourced transcription of the audio file</h3>
+  <h3 class="lead">Crowdsourced transcription of the audio file</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
     <figure class="figure float-right p-3">
       <img src="{{ $record['hero_image']['data']['thumbnails']['7']['url']}}"
@@ -48,7 +48,7 @@
     </figure>
     @markdown($record['transcription'])
   </div>
-  <h3>Co-production of this resource</h3>
+  <h3 class="lead">Co-production of this resource</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <img src="https://content.fitz.ms/fitz-website/assets/MP_SQUARE_notype.png?key=directus-medium-crop" class="float-right img-fluid p-2" alt="The MicroPasts logo" width="100" height="100"/>
     <p>
@@ -77,7 +77,7 @@
   @if(!empty($record['associated_pharos_object']))
   @section('pharos-pages')
   <div class="container">
-    <h3>Associated highlight record</h3>
+    <h3 class="lead">Associated highlight record</h3>
     <div class="row">
       @foreach($record['associated_pharos_object'] as $pharosassoc)
       <div class="col-md-4 mb-3">
@@ -91,7 +91,7 @@
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}">{{ $pharosassoc['pharos_id']['title']}}</a></h3>
+              <h3 class="lead"><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}">{{ $pharosassoc['pharos_id']['title']}}</a></h3>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3>Other audio guide stops you might like</h3>
+    <h3 class="lead">Other audio guide stops you might like</h3>
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
@@ -117,7 +117,7 @@
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3>
+              <h3 class="lead">
                 <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
               </h3>
             </div>

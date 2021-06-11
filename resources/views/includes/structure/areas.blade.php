@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Areas of expertise</h3>
+  <h3 class="lead">Areas of expertise</h3>
   <div class="row">
     @foreach($areas['data'] as $project)
     <div class="col-md-4 mb-3">
@@ -13,7 +13,7 @@
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               <a href="/about-us/departments/conservation-and-collections-care/{{$project['slug']}}">{{ $project['title']}}</a>
             </h3>
           </div>

@@ -2,7 +2,7 @@
   @if($id['type'] == 'Online 3D model')
     @section('sketchfab')
     <div class="container">
-      <h3>3D scan</h3>
+      <h3 class="lead">3D scan</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         <div class="embed-responsive embed-responsive-4by3">
           <iframe title="A 3D model of {{ $record['_source']['summary_title'] }}" class="embed-responsive-item"

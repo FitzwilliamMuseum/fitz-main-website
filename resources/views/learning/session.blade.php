@@ -6,7 +6,7 @@
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])
     @section('content')
-    <h3>Session Description</h3>
+    <h3 class="lead">Session Description</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['description'])
     <p>
@@ -14,7 +14,7 @@
        to book, or to discuss your needs.
     </p>
     </div>
-    <h3>Format of the session</h3>
+    <h3 class="lead">Format of the session</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($page['format_session'])
     </div>
@@ -27,7 +27,7 @@
     </div>
     @endif
 
-    <h3>More about this session</h3>
+    <h3 class="lead">More about this session</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       <ul>
         @if(isset($page['key_stages']) && !empty($page['key_stages']))
@@ -65,7 +65,7 @@
     </div>
 
     @if(!empty($page['associated_learning_files']))
-    <h3>Factsheets and related files</h3>
+    <h3 class="lead">Factsheets and related files</h3>
     <div class="row">
 
 
@@ -74,7 +74,7 @@
         <div class="card  h-100">
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3>
+              <h3 class="lead">
                 {{ $file['learning_files_id']['title'] }}
               </h3>
               <ul>
@@ -99,7 +99,7 @@
     @if(!empty($records))
       @section('mlt')
       <div class="container">
-        <h3>Other related schools sessions</h3>
+        <h3 class="lead">Other related schools sessions</h3>
         <div class="row">
           @foreach($records as $record)
           <div class="col-md-4 mb-3">
@@ -114,7 +114,7 @@
               @endif
               <div class="card-body h-100">
                 <div class="contents-label mb-3">
-                  <h3>
+                  <h3 class="lead">
                     <a href="{{ route('school-sessions', $record['slug'][0]) }}">{{ $record['title'][0] }}</a>
                   </h3>
                 </div>

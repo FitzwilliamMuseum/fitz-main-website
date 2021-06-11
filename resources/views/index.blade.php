@@ -22,7 +22,7 @@
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3>
+              <h3 class="lead">
                 <a href="{{ route('article', $project['slug']) }}">{{ $project['article_title']}}</a>
               </h3>
             </div>
@@ -45,7 +45,7 @@
                 @endif
                 <div class="card-body h-100">
                   <div class="contents-label mb-3">
-                    <h3>
+                    <h3 class="lead">
                       <a href="{{ $project['url']}}">{{ $project['title']}}</a>
                     </h3>
                     @isset($project['sub_title'])
@@ -73,7 +73,7 @@
               @endif
               <div class="card-body  h-100">
                 <div class="contents-label mb-3">
-                  <h3>
+                  <h3 class="lead">
                     <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
                   </h3>
                 </div>
@@ -96,7 +96,7 @@
                 @endif
                 <div class="card-body  h-100">
                   <div class="contents-label mb-3">
-                    <h3>
+                    <h3 class="lead">
                       <a href="{{ route('highlight', $theme['slug']) }}">@markdown($theme['title'])</a>
                     </h3>
                   </div>

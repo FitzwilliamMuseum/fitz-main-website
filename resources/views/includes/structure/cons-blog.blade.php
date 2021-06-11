@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Latest related blog posts</h3>
+  <h3 class="lead">Latest related blog posts</h3>
   <div class="row">
     @foreach($blog as $post)
       <div class="col-md-4 mb-3">
@@ -9,7 +9,7 @@
             loading="lazy"/></a>
             <div class="card-body h-100">
               <div class="contents-label mb-3">
-                <h3>
+                <h3 class="lead">
                   <a href="{{ $post['url'][0] }}">{{ $post['title'][0]}}</a>
                 </h3>
                 <p>{{  Carbon\Carbon::parse($post['pubDate'][0])->format('l j F Y') }}</p>

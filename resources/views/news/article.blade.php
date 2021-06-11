@@ -91,7 +91,7 @@
 @section('mlt')
 @if(!empty($records))
 <div class="container">
-<h3>Other recommended articles</h3>
+<h3 class="lead">Other recommended articles</h3>
 <div class="row">
   @foreach($records as $record)
   <div class="col-md-4 mb-3">
@@ -112,7 +112,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h3>
+          <h3 class="lead">
             <a href="{{ route('article', $record['slug'][0]) }}">{{ $record['title'][0] }}</a>
           </h3>
           <h4>

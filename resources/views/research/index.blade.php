@@ -31,7 +31,7 @@
           height="300"
           loading="lazy" /></a>
         <div class="card-body h-100">
-          <h3>
+          <h3 class="lead">
             <a href="{{route('research-profiles')}}">Our active researchers</a>
           </h3>
           </div>
@@ -46,7 +46,7 @@
           height="300"
           loading="lazy" /></a>
         <div class="card-body h-100">
-          <h3>
+          <h3 class="lead">
             <a href="{{route('opportunities')}}">Research opportunities</a>
           </h3>
           </div>
@@ -61,7 +61,7 @@
         height="300"
         loading="lazy" /></a>
       <div class="card-body h-100">
-        <h3>
+        <h3 class="lead">
           <a href="{{route('research-projects')}}">Our research work</a>
         </h3>
         </div>
@@ -77,7 +77,7 @@
       height="300"
       loading="lazy" /></a>
     <div class="card-body h-100">
-      <h3>
+      <h3 class="lead">
         <a href="{{route('resources')}}">Digital resources</a>
       </h3>
       </div>
@@ -95,7 +95,7 @@
             loading="lazy" /></a>
           @endif
         <div class="card-body h-100">
-          <h3>
+          <h3 class="lead">
             <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
           </h3>
           </div>
@@ -123,7 +123,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h3>
+          <h3 class="lead">
             <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
           </h3>
         </div>

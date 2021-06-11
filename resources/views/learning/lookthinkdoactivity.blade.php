@@ -49,7 +49,7 @@
 
         <!-- column two -->
         <div class="col-md-5 mt-3">
-          <h3>
+          <h3 class="lead">
             Look
           </h3>
           <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -60,7 +60,7 @@
               data-target="#lookanswers">Answers</button>
             @endif
           </div>
-          <h3>
+          <h3 class="lead">
             Think
           </h3>
           <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -71,7 +71,7 @@
               data-target="#thinkanswers">Answers</button>
             @endif
           </div>
-          <h3>
+          <h3 class="lead">
             Do
           </h3>
           <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -84,7 +84,7 @@
           </div>
 
           @if(isset($look['adlib_id_number']))
-            <h3>
+            <h3 class="lead">
               Collections record
             </h3>
             <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -112,7 +112,7 @@
                   @endif
                   <div class="card-body h-100">
                     <div class="contents-label mb-3">
-                      <h3>
+                      <h3 class="lead">
                         <a href="{{ route('highlight', $look['associated_pharos'][0]['pharos_id']['slug']) }}">{{ $look['associated_pharos'][0]['pharos_id']['title']}}</a>
                       </h3>
                     </div>
@@ -122,7 +122,7 @@
 
               <!-- Sketchfab include -->
               @if(!empty($look['sketchfab_id']))
-                <h3>3d model</h3>
+                <h3 class="lead">3d model</h3>
                 <div class="col shadow-sm p-3 mx-auto mb-3">
 
                   <div class="col-12 shadow-sm p-3 mx-auto mb-3">

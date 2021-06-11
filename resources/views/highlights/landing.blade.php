@@ -6,7 +6,7 @@
 @section('keywords', 'search,highlights, objects')
 @section('collection-parallax', 'https://api.fitz.ms/mediaLib/pdp/pdp82/P_72_1999_200706_dc2.jpg')
 @section('content')
-<h3>Search our objects and artworks</h3>
+<h3 class="lead">Search our objects and artworks</h3>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 {{ $page }}
 </div>
@@ -79,7 +79,7 @@
 {!! Form::close() !!}
 </div>
 
-<h3>Search our highlights</h3>
+<h3 class="lead">Search our highlights</h3>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3">
   {{ \Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
   <div class="row center-block">
@@ -111,7 +111,7 @@
 
 @section('theme-carousel')
 <div class="container">
-  <h3>Explore highlights by theme</h3>
+  <h3 class="lead">Explore highlights by theme</h3>
   <div class="row mb-2">
   <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
     <div class="carousel-inner row w-100 mx-auto">
@@ -133,7 +133,7 @@
             height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body h-100">
-            <h3>
+            <h3 class="lead">
               <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
             </h3>
           </div>
@@ -152,7 +152,7 @@
             height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body">
-            <h3>
+            <h3 class="lead">
               <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
             </h3>
           </div>
@@ -176,7 +176,7 @@
 
 @section('period-carousel')
 <div class="container">
-  <h3>Explore highlights by period</h3>
+  <h3 class="lead">Explore highlights by period</h3>
   <div class="row mb-2">
   <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
   data-interval="false" data-pause="hover">
@@ -199,7 +199,7 @@
             height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body">
-            <h3>
+            <h3 class="lead">
               <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
             </h3>
           </div>
@@ -218,7 +218,7 @@
             height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body">
-            <h3>
+            <h3 class="lead">
               <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned']) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
             </h3>
           </div>
@@ -242,7 +242,7 @@
 
 @section('context-carousel')
 <div class="container">
-  <h3>Explore object contexts</h3>
+  <h3 class="lead">Explore object contexts</h3>
   <div class="row mb-3">
   <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
   data-interval="false" data-pause="hover">
@@ -265,7 +265,7 @@
             height="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body">
-            <h3>
+            <h3 class="lead">
               <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
             </h3>
           </div>
@@ -284,7 +284,7 @@
             height="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
           @endif
           <div class="card-body">
-            <h3>
+            <h3 class="lead">
               <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
             </h3>
           </div>

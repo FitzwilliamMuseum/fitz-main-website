@@ -54,7 +54,7 @@
   class="img-fluid responsive-item"  alt="FitzVirtual Logo" loading="lazy"/></a>
   @endif
   <div class="card-body ">
-  <h3>
+  <h3 class="lead">
     @php
     $title = strip_tags(@markdown($result['title'][0]));
     @endphp

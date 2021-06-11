@@ -12,7 +12,7 @@
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
       <img class="img-fluid float-right thumb-post rounded p-3" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
       alt="{{ $profile['profile_image_alt_text'] }}" >
-      <h3>
+      <h3 class="lead">
       @isset($profile['title'])
       {{ $profile['title'] }}
       @endisset
@@ -150,7 +150,7 @@
   @if(!empty($profile['research_projects']))
     @section('research-projects')
     <div class="container">
-      <h3>Associated Research Projects</h3>
+      <h3 class="lead">Associated Research Projects</h3>
       <div class="row">
         @foreach($profile['research_projects'] as $project)
           @if(!is_null($project['research_projects_id']))
@@ -167,7 +167,7 @@
 
             <div class="card-body">
               <div class="contents-label mb-3">
-                <h3>
+                <h3 class="lead">
                   <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}">{{ $project['research_projects_id']['title']}}</a>
                 </h3>
               </div>
@@ -187,7 +187,7 @@
 
     @section('departments-affiliated')
     <div class="container">
-      <h3>Associated Departments</h3>
+      <h3 class="lead">Associated Departments</h3>
       <div class="row">
         @foreach($profile['departments_affiliated'] as $project)
         <div class="col-md-4 mb-3">
@@ -203,7 +203,7 @@
             @endif
             <div class="card-body">
               <div class="contents-label mb-3">
-                <h3>
+                <h3 class="lead">
                   <a href="{{ route('department', $project['department']['slug']) }}">{{ $project['department']['title']}}</a>
                 </h3>
               </div>
@@ -220,7 +220,7 @@
   @if(!empty($profile['exhibitions_curated']))
     @section('exhibitions-curated')
     <div class="container">
-      <h3>Associated Exhibitions</h3>
+      <h3 class="lead">Associated Exhibitions</h3>
       <div class="row">
         @foreach($profile['exhibitions_curated'] as $project)
           @if(!is_null($project['exhibition']))
@@ -237,7 +237,7 @@
 
             <div class="card-body">
               <div class="contents-label mb-3">
-                <h3>
+                <h3 class="lead">
                   <a href="{{ route('exhibition', $project['exhibition']['slug']) }}">{{ $project['exhibition']['exhibition_title']}}</a>
                 </h3>
               </div>

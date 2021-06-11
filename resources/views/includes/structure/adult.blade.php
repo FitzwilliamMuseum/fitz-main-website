@@ -1,4 +1,4 @@
-<h3>Creative inspiration, wellbeing and ideas for you at home</h3>
+<h3 class="lead">Creative inspiration, wellbeing and ideas for you at home</h3>
 <div class="row">
   @foreach($sessions['data'] as $session)
   <div class="col-md-4 mb-3">
@@ -15,7 +15,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h3>
+          <h3 class="lead">
             <a href="{{ route('adult-activity', $session['slug']) }}">{{ $session['title'] }}</a>
           </h3>
         </div>

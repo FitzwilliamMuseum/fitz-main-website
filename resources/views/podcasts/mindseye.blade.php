@@ -177,7 +177,7 @@
 @if(!empty($suggest))
   @section('mlt')
     <div class="container">
-      <h3>Similar podcasts to listen to</h3>
+      <h3 class="lead">Similar podcasts to listen to</h3>
       <div class="row">
         @foreach($suggest as $record)
           <div class="col-md-4 mb-3">
@@ -188,7 +188,7 @@
               @endif
               <div class="card-body ">
                 <div class="contents-label mb-3">
-                  <h3>
+                  <h3 class="lead">
                     <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
                   </h3>
                 </div>

@@ -24,7 +24,7 @@
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
             @if($project['ticketed'] ==1)
@@ -54,7 +54,7 @@
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
             @if($project['ticketed'] ==1)
@@ -92,7 +92,7 @@
         <div class="card-body h-100">
 
           <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>
@@ -123,7 +123,7 @@
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
           </div>

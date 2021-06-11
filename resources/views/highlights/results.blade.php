@@ -23,7 +23,7 @@
           <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded float-right" width="200"
           alt="No image was provided"/>
       @endif
-      <h3>
+      <h3 class="lead">
         <a href="{{ $result['url'][0]}}">{{ $result['title'][0] }}</a>
       </h3>
       @if(isset($result['pubDate']))

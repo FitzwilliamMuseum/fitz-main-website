@@ -15,7 +15,7 @@
           @endif
           <div class="card-body">
             <div class="contents-label mb-3">
-              <h3>
+              <h3 class="lead">
                 <a href="{{ route('resource', $project['slug']) }}">{{ $project['title']}}</a>
               </h3>
             </div>

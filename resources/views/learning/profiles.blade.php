@@ -12,7 +12,7 @@
 
           <div class="card-body">
             <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               {{ $profile['display_name'] }}
             </h3>
             <p>

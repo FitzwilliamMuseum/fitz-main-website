@@ -31,7 +31,7 @@
             loading="lazy" /></a>
           @endif
         <div class="card-body h-100">
-          <h3>
+          <h3 class="lead">
             <a href="{{ route('landing-section', [$project['section'], $project['slug']]) }}">{{ $project['title']}}</a>
           </h3>
           </div>
@@ -61,7 +61,7 @@
 @section('twitter')
 @if(!empty($tweets))
   <div class="container">
-  <h3>
+  <h3 class="lead">
     Our Twitter profile
   </h3>
     @include('includes.social.tweets')

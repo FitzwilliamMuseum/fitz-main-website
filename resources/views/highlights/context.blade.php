@@ -18,7 +18,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h3>
+          <h3 class="lead">
             <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a></h3>
         </div>
       </div>

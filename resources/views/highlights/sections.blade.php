@@ -18,7 +18,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h3>
+          <h3 class="lead">
             <a href="/objects-and-artworks/highlights/context/{{ $record['section'] }}/{{ $record['slug']}}">{{ $record['title']}}</a></h3>
         </div>
       </div>

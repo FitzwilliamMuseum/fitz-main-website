@@ -28,7 +28,7 @@
               @endif
               <div class="card-body">
                 <div class="contents-label mb-3">
-                  <h3>
+                  <h3 class="lead">
                     <a href="{{ route('department', $gallery['departments_id']['slug']) }}">{{ $gallery['departments_id']['title']}}</a>
                   </h3>
                 </div>
@@ -60,7 +60,7 @@
             @endif
             <div class="card-body  h-100">
               <div class="contents-label mb-3">
-                <h3>
+                <h3 class="lead">
                   <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
                 </h3>
               </div>

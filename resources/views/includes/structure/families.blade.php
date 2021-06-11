@@ -1,4 +1,4 @@
-<h3>Story telling</h3>
+<h3 class="lead">Story telling</h3>
 <div class="row">
   @foreach($sessions['data'] as $session)
   <div class="col-md-4 mb-3">
@@ -18,7 +18,7 @@
       @endif
       <div class="card-body ">
         <div class="contents-label mb-3">
-          <h3>{{ $session['title'] }}</h3>
+          <h3 class="lead">{{ $session['title'] }}</h3>
         </div>
       </div>
     </div>

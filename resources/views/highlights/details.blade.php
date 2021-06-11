@@ -35,7 +35,7 @@
       </figure>
       @markdown($record['description'])
     </div>
-    <h3>Themes and periods</h3>
+    <h3 class="lead">Themes and periods</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
       @if(isset($record['period_assigned']))
@@ -107,7 +107,7 @@
     @if(!empty($record['associated_pharos_content']))
       @section('pharos-pages')
         <div class="container">
-          <h3>Context</h3>
+          <h3 class="lead">Context</h3>
           <div class="row">
             @foreach($record['associated_pharos_content'] as $pharosassoc)
               <div class="col-md-4 mb-3">
@@ -121,7 +121,7 @@
                     @endif
                     <div class="card-body h-100">
                       <div class="contents-label mb-3">
-                        <h3><a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
+                        <h3 class="lead"><a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
                       </div>
                     </div>
                   </div>
@@ -136,7 +136,7 @@
       @if(!empty($records))
         @section('mlt')
           <div class="container">
-            <h3>Other highlight objects you might like</h3>
+            <h3 class="lead">Other highlight objects you might like</h3>
             <div class="row">
               @foreach($records as $record)
                 <div class="col-md-4 mb-3">
@@ -147,7 +147,7 @@
                       @endif
                       <div class="card-body h-100">
                         <div class="contents-label mb-3">
-                          <h3>
+                          <h3 class="lead">
                             <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}">@markdown($record['title'][0])</a>
                           </h3>
                         </div>
@@ -165,7 +165,7 @@
       @section('adlib')
         @if(!empty($adlib))
           @foreach($adlib as $record)
-            <h3>Data from our collections database</h3>
+            <h3 class="lead">Data from our collections database</h3>
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
               @include('includes/elements/descriptive')
@@ -196,7 +196,7 @@
           @foreach($pharos['data'] as $record)
 
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-              <h3>Further information</h3>
+              <h3 class="lead">Further information</h3>
               <ul>
                 <li>Collections ID: {{$record['adlib_id']}}</li>
                 @if(!is_null($record['place_of_origin']))
@@ -244,7 +244,7 @@
                         @endif
                         <div class="card-body h-100">
                           <div class="contents-label mb-3">
-                            <h3>
+                            <h3 class="lead">
                               <a href="{{ $record['url'][0]  }}">{{ $record['title'][0] }}</a>
                             </h3>
                             <p>£{{ number_format((float)$record['price'][0], 2, '.', '') }}</p>

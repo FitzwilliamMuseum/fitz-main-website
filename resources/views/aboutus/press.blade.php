@@ -29,7 +29,7 @@
         @endif
         <div class="card-body ">
           <div class="contents-label mb-3">
-            <h3>
+            <h3 class="lead">
               <a href="{{ $release['file']['data']['full_url'] }}">{{ $release['title']}}</a>
             </h3>
           </div>

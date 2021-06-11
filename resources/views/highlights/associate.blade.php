@@ -25,7 +25,7 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3>Other pathways and stories you might like</h3>
+    <h3 class="lead">Other pathways and stories you might like</h3>
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">
@@ -37,7 +37,7 @@
           <div class="card-body h-100">
             <div class="contents-label mb-3">
               @if(isset($record['section']))
-                <h3>
+                <h3 class="lead">
                   <a href="/objects-and-artworks/highlights/context/{{ $record['section'][0]}}/{{ $record['slug'][0] }}">{{ $record['title'][0]}}</a>
                 </h3>
               @else

@@ -39,7 +39,7 @@
     </div>
 
     @if(isset($coll['youtube_id']))
-      <h3>
+      <h3 class="lead">
         {{ $type }} films
       </h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -65,7 +65,7 @@
 
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
-      <h3>{{$type}} details</h3>
+      <h3 class="lead">{{$type}} details</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @if(isset($coll['exhibition_url']))
@@ -84,7 +84,7 @@
     @endif
 
     @if(!empty($coll['exhibition_files']))
-      <h3>{{$type}}, $iterable, 'value', 'empty')]}} files</h3>
+      <h3 class="lead">{{$type}}, $iterable, 'value', 'empty')]}} files</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @foreach($coll['exhibition_files'] as $file)
@@ -96,7 +96,7 @@
       </div>
     @endif
     @isset($adlib)
-    <h3>Selected objects from the {{$type}}</h3>
+    <h3 class="lead">Selected objects from the {{$type}}</h3>
     <div class="row">
     @foreach($adlib as $record)
 
@@ -121,7 +121,7 @@
               <div class="card-body ">
 
                 <div class="contents-label mb-3">
-                  <h3>
+                  <h3 class="lead">
                   <a href="{{ env('COLLECTION_URL')}}/id/object/{{ $pris[0] }}">{{ ucfirst($record['_source']['summary_title']) }}</a>
                   </h3>
                   <p>
@@ -142,7 +142,7 @@
   @if(!empty($coll['associated_curators']))
     @section('curators')
       <div class="container">
-        <h3>Associated curators</h3>
+        <h3 class="lead">Associated curators</h3>
         <div class="row">
           @foreach($coll['associated_curators'] as $curator)
             <div class="col-md-4 mb-3">
@@ -160,7 +160,7 @@
                   @endif
                   <div class="card-body">
                     <div class="contents-label mb-3">
-                      <h3>
+                      <h3 class="lead">
                         <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}">{{ $curator['staff_profiles_id']['display_name']}}</a>
                       </h3>
                     </div>
@@ -176,7 +176,7 @@
     @if(!empty($coll['exhibition_partners'] ))
       @section('research-funders')
         <div class="container">
-          <h3>Funders and partners</h3>
+          <h3 class="lead">Funders and partners</h3>
           <div class="row">
             @foreach($coll['exhibition_partners'] as $partner)
               <div class="col-md-4 mb-3">
@@ -198,7 +198,7 @@
                   @endif
                   <div class="card-body">
                     <div class="contents-label mb-3">
-                      <h3>
+                      <h3 class="lead">
                         <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
                       </h3>
                       <p>{{ $partner['partner']['partner_type'][0]}}</p>
@@ -217,7 +217,7 @@
     @if(!empty($coll['associated_departments']))
       @section('departments')
         <div class="container">
-          <h3>Associated departments</h3>
+          <h3 class="lead">Associated departments</h3>
           <div class="row">
             @foreach($coll['associated_departments'] as $gallery)
               <div class="col-md-4 mb-3">
@@ -233,7 +233,7 @@
                     @endif
                     <div class="card-body ">
                       <div class="contents-label mb-3">
-                        <h3>
+                        <h3 class="lead">
                           <a href="/departments/{{ $gallery['departments_id']['slug']}}">{{ $gallery['departments_id']['title']}}</a>
                         </h3>
                       </div>
@@ -251,7 +251,7 @@
         @section('excarousel')
           <div class="container">
 
-            <h3>Selected images</h3>
+            <h3 class="lead">Selected images</h3>
             <div class="bd-example mb-3">
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ol class="carousel-indicators">
@@ -297,7 +297,7 @@
     @if(!empty($coll['associated_galleries']))
       @section('galleries')
         <div class="container">
-          <h3>Associated Galleries</h3>
+          <h3 class="lead">Associated Galleries</h3>
           <div class="row">
             @foreach($coll['associated_galleries'] as $gallery)
               <div class="col-md-4 mb-3">
@@ -311,7 +311,7 @@
                     @endif
                     <div class="card-body h-100">
                       <div class="contents-label mb-3">
-                        <h3>
+                        <h3 class="lead">
                           <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
                         </h3>
                       </div>
@@ -327,7 +327,7 @@
       @section('360')
         @if(!empty($coll['image_360_pano']))
           <div class="container">
-            <h3>360 gallery image</h3>
+            <h3 class="lead">360 gallery image</h3>
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
               <div id="panorama"></div>
             </div>
@@ -341,7 +341,7 @@
     @if(!empty($records))
       @section('mlt')
         <div class="container">
-          <h3>Similar exhibitions from our archives</h3>
+          <h3 class="lead">Similar exhibitions from our archives</h3>
           <div class="row">
             @foreach($records as $record)
               <div class="col-md-4 mb-3">
@@ -354,7 +354,7 @@
                   @endif
                   <div class="card-body ">
                     <div class="contents-label mb-3">
-                      <h3>
+                      <h3 class="lead">
                         <a href="/visit-us/exhibitions/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
                       </h3>
                     </div>

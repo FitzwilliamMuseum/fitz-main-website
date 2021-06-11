@@ -13,7 +13,7 @@
   </div>
   @if(!@empty ($project['project_principal']))
 
-  <h3>Project information</h3>
+  <h3 class="lead">Project information</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <ul>
       @if($project['project_principal'])
@@ -76,7 +76,7 @@
             @endif
             <div class="card-body ">
               <div class="contents-label mb-3">
-                <h3>
+                <h3 class="lead">
                   <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
                 </h3>
                 <p>{{ $partner['partner']['partner_type'][0]}}</p>
@@ -136,7 +136,7 @@
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3>
+              <h3 class="lead">
                 <a href="{{ route('research-project', $record['slug'][0]) }}">{{ $record['title'][0] }}</a>
               </h3>
             </div>

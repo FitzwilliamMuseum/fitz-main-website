@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Our research projects</h3>
+  <h3 class="lead">Our research projects</h3>
   <div class="row">
       @foreach($research['data'] as $project)
       <div class="col-md-4 mb-3">
@@ -12,7 +12,7 @@
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3>
+              <h3 class="lead">
                 <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
               </h3>
             </div>
