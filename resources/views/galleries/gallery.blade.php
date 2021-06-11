@@ -26,7 +26,7 @@
   @endif
 
   @if(isset($gallery['gallery_floor']))
-    <h4>
+    <h4 class="lead">
       Gallery data
     </h4>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
@@ -37,7 +37,7 @@
   @endif
 
   @if(!empty($gallery['star_objects']))
-  <h4>
+  <h4 class="lead">
     Highlight objects
   </h4>
   <div class="row">
@@ -72,7 +72,7 @@
   @if(!empty($gallery['audio_guide']))
     @section('audio-guide')
       <div class="container">
-        <h4>
+        <h4 class="lead">
           Audio description
         </h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
@@ -93,7 +93,7 @@
     @section('360')
       @if(!empty($gallery['image_360_pano']))
         <div class="container">
-          <h4>{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h4>
+          <h4 class="lead">{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h4>
 
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div id="panorama"></div>
@@ -106,7 +106,7 @@
     @section('sketchfab-collection')
       @if(!empty($gallery['sketchfab_id_collection']))
       <div class="container">
-        <h4>3D scans of objects in gallery</h4>
+        <h4 class="lead">3D scans of objects in gallery</h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-4by3">
             <iframe title="A 3D model of {{ $gallery['gallery_name'] }}" class="embed-responsive-item"
@@ -121,7 +121,7 @@
     @section('sketchfab')
       @if(!empty($gallery['sketchfab_sketchup_id']))
       <div class="container">
-        <h4>Sketchup model of this gallery</h4>
+        <h4 class="lead">Sketchup model of this gallery</h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-4by3">
             <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}" class="embed-responsive-item"

@@ -49,7 +49,7 @@
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>Publications</h4>
+                    <h4 class="lead">Publications</h4>
                   </a>
                 </h4>
               </div>
@@ -65,7 +65,7 @@
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>Professional Memberships</h4>
+                    <h4 class="lead">Professional Memberships</h4>
                   </a>
                 </h4>
               </div>
@@ -81,7 +81,7 @@
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>Affiliations</h4>
+                    <h4 class="lead">Affiliations</h4>
                   </a>
                 </h4>
               </div>
@@ -103,7 +103,7 @@
             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                  <h4>Research and social profiles</h4>
+                  <h4 class="lead">Research and social profiles</h4>
                 </a>
               </h4>
             </div>

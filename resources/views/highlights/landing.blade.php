@@ -21,14 +21,14 @@
 
 <div class="row">
   <div class="col">
-    <h4>Visual results</h4>
+    <h4 class="lead">Visual results</h4>
   <div class="form-group form-check ">
     <input type="checkbox" class="form-check-input" id="images" name="images">
     <label class="form-check-label" for="images">Only with images?</label>
   </div>
 </div>
 <div class="col">
-  <h4>Operand for your search</h4>
+  <h4 class="lead">Operand for your search</h4>
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="operator" id="operator" value="AND" checked>
     <label class="form-check-label" for="operator">
@@ -44,7 +44,7 @@
   </div>
 </div>
 <div class="col">
-  <h4>Sort by last update</h4>
+  <h4 class="lead">Sort by last update</h4>
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="sort" id="sort" value="desc" checked>
     <label class="form-check-label" for="sort">

@@ -29,7 +29,7 @@
 
 
         @if(!empty($podcast['author_response']))
-          <h4>The artist's response</h4>
+          <h4 class="lead">The artist's response</h4>
           <div class="col shadow-sm p-3 mx-auto mb-3">
             <figure class="figure">
               <img class="img-fluid" src="{{ $podcast['author_response']['data']['thumbnails'][4]['url'] }}" />
@@ -45,7 +45,7 @@
         </div>
 
         @if(!empty($podcast['transcript']))
-          <h4>
+          <h4 class="lead">
             Podcast transcript
           </h4>
           <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
@@ -113,7 +113,7 @@
       <!-- Column one -->
 
       <div class="col-md-5 mb-3">
-        <h4>Object in focus</h4>
+        <h4 class="lead">Object in focus</h4>
         <div class=" shadow-sm p-3 mb-3 mt-3">
           <figure class="figure">
             <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
@@ -127,7 +127,7 @@
 
         @if(!empty($adlib))
           @foreach($adlib as $record)
-            <h4>
+            <h4 class="lead">
               About the object
             </h4>
             <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">

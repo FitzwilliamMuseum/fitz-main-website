@@ -46,7 +46,7 @@
 
 
             @foreach($adlib as $record)
-              <h4>
+              <h4 class="lead">
                 Collections database information
               </h4>
               <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">

@@ -41,14 +41,14 @@
   </div>
     @endif
   @if($project['publications'])
-  <h4>Related publications</h4>
+  <h4 class="lead">Related publications</h4>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['publications'])
   </div>
   @endif
 
   @if(!empty($project['project_team']))
-  <h4>Project team</h4>
+  <h4 class="lead">Project team</h4>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['project_team'])
   </div>
@@ -58,7 +58,7 @@
 @if(!empty($project['project_partnerships'] ))
   @section('research-funders')
     <div class="container">
-      <h4>Funders and partners</h4>
+      <h4 class="lead">Funders and partners</h4>
       <div class="row">
         @foreach($project['project_partnerships'] as $partner)
         <div class="col-md-4 mb-3">
@@ -93,7 +93,7 @@
   @if(isset($project['outcomes']))
     @section('research-projects')
       <div class="container">
-        <h4>Outcomes of the project</h4>
+        <h4 class="lead">Outcomes of the project</h4>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           @markdown($project['outcomes'])
         </div>
@@ -121,7 +121,7 @@
 @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h4>Other research projects you might like</h4>
+    <h4 class="lead">Other research projects you might like</h4>
     <div class="row">
       @foreach($records as $record)
       <div class="col-md-4 mb-3">

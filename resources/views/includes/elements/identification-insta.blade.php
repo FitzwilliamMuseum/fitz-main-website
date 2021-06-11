@@ -1,4 +1,4 @@
-<h4>Identification number</h4>
+<h4 class="lead">Identification number</h4>
 <ul>
   @foreach($record['_source']['identifier'] as $id)
   @if(array_key_exists('primary', $id))

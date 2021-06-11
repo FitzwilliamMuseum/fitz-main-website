@@ -1,5 +1,5 @@
 @if(array_key_exists('techniques', $record['_source']))
-<h4>Techniques used in production</h4>
+<h4 class="lead">Techniques used in production</h4>
 <ul>
   @foreach($record['_source']['techniques'] as $techniques)
   @if(array_key_exists('reference', $techniques))

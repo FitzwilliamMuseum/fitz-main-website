@@ -97,7 +97,7 @@
             </div>
 
             @if(!empty($look['associated_pharos']))
-              <h4>
+              <h4 class="lead">
                 Highlight record
               </h4>
 
