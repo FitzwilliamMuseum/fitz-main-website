@@ -27,7 +27,7 @@
         <a href="{{ $result['url'][0]}}">{{ $result['title'][0] }}</a>
       </h3>
       @if(isset($result['pubDate']))
-        <h4class="text-muted">
+        <h4 class="lead text-info">
         {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}
       </h4>
       @endif

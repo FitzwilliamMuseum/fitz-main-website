@@ -33,7 +33,7 @@
               <a href="{{ $release['file']['data']['full_url'] }}">{{ $release['title']}}</a>
             </h3>
           </div>
-            <h4><small class="text-muted">{{ $release['release_date']}}</small></h4>
+            <h4 class="lead">{{ $release['release_date']}}</h4>
             <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($release['body'])),0,200) }}...</p>
             <a href="{{ $release['file']['data']['full_url'] }}" class="btn btn-dark">Download file</a>
 

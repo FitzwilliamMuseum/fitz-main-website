@@ -25,8 +25,8 @@
             <h3 class="lead">
               <a href="{{ route('article', $project['slug']) }}">{{ $project['article_title'] }}</a>
             </h3>
-            <h4>
-              <small class="text-muted">{{ Carbon\Carbon::parse($project['publication_date'])->format('l j F Y') }}</small>
+            <h4 class="text-info lead">
+              {{ Carbon\Carbon::parse($project['publication_date'])->format('l j F Y') }}
             </h4>
 
           </div>

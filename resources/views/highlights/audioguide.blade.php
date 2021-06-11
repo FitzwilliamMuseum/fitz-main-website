@@ -21,8 +21,8 @@
           <h3 class="lead">
             <a href="/objects-and-artworks/audio-guide/{{ $record['slug']}}">@markdown($record['title'])</a></h3>
           @if(!empty($record['stop_number']))
-            <h4>
-              <small class="text-muted">Stop number: {{ $record['stop_number']}}</small>
+            <h4 class="lead text-info">
+              Stop number: {{ $record['stop_number']}}
             </h4>
           @endif
         </div>
