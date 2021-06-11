@@ -40,11 +40,11 @@
     @endforeach
   </div>
 
-  <h2 id="displays">New displays in the galleries</h2>
+  <h2 class="lead" id="displays">New displays in the galleries</h2>
   <div class="row" >
     @foreach($displays['data'] as $project)
     <div class="col-md-4 mb-3">
-      <div class="card  h-100">
+      <div class="card h-100">
         @if(!is_null($project['hero_image']))
           <a href="{{ route('exhibition',$project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
           alt="{{ $project['hero_image_alt_text'] }}"
