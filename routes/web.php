@@ -85,6 +85,8 @@ Route::get('themes/{slug}', 'themesController@theme')->name('theme-deprecated');
 /*
 * Object and highlight routes
 */
+Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results', 'highlightsController@results')->name('highlight-search');
+
 Route::get('objects-and-artworks/', 'highlightsController@landing')->name('objects');
 Route::get('objects-and-artworks/highlights', 'highlightsController@index')->name('highlights');
 Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period')->name('periods');
@@ -97,13 +99,10 @@ Route::get('objects-and-artworks/highlights/context/{section}/', 'highlightsCont
 Route::get('objects-and-artworks/highlights/context/{section}/{slug}/', 'highlightsController@associate')->name('context-section-detail');
 Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details')->name('highlight');
 
-Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results/', 'highlightsController@results')->name('highlight-search');
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide')->name('audio-guide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop')->name('audio-stop');
 Route::get('objects-and-artworks/staff-favourites/', 'highlightsController@fitzobjects')->name('fitz-objects');
 Route::get('objects-and-artworks/staff-favourites/{slug}/', 'highlightsController@fitzobject')->name('fitz-object');
-
-
 /*
 * Social
 */

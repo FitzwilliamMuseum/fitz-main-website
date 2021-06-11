@@ -8,8 +8,10 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
-use Solarium\Core\Client\Client;
-
+use Solarium\Client;
+use Solarium\Core\Client\Adapter\Curl;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Solarium\Exception;
 use App\DirectUs;
 use App\MoreLikeThis;
 use Elasticsearch\ClientBuilder;
@@ -183,7 +185,7 @@ class highlightsController extends Controller
             $data = Cache::store('file')->get($key);
         } else {
             $configSolr = \Config::get('solarium');
-            $this->client = new Client($configSolr);
+            $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
             $query = $this->client->createSelect();
             $query->setQuery($queryString . ' contentType:pharos');
             $query->setQueryDefaultOperator('AND');
