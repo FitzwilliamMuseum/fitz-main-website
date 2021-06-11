@@ -64,7 +64,7 @@
   @section('description', $page['meta_description'])
   @section('keyword', $page['meta_keywords'])
   <div class="col-12 shadow-sm p-3 mt-3 mx-auto mb-3">
-    <h2>{{ $page['title']}}</h2>
+    <h2 class="lead">{{ $page['title']}}</h2>
     @markdown($page['body'])
   </div>
   @endforeach

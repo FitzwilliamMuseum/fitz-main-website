@@ -52,7 +52,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2>Floorplans and guides</h2>
+    <h2 class="lead">Floorplans and guides</h2>
     <div class="row">
       <div class="col-md-12 mb-3">
         <div class="card card-body h-100">

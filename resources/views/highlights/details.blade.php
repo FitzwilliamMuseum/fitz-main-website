@@ -85,7 +85,7 @@
     @section('sketchfab-collection')
       @if(!empty($record['sketchfab_id']))
         <div class="container">
-          <h2>3D scan</h2>
+          <h2 class="lead">3D scan</h2>
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div class="embed-responsive embed-responsive-4by3">
               <iframe title="A 3D model of {{ $record['title'] }}" class="embed-responsive-item"

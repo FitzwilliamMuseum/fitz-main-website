@@ -34,7 +34,7 @@
 
   @section('fundraising')
     <div class="container mt-3">
-      <h2><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h2>
+      <h2 class="lead"><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h2>
       <div class="row">
         @foreach($fundraising['data'] as $project)
           <div class="col-md-4 mb-3">

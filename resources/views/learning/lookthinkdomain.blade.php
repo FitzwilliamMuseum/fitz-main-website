@@ -5,7 +5,7 @@
 @section('description', 'A set of exercises for families and learners to do at home')
 @section('keywords', 'schools, monet,millais,art,ramesses III, fitzwilliam')
   @section('content')
-  <h2>
+  <h2 class="lead">
     Look, Think, Do activities
   </h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">

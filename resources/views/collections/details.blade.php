@@ -13,7 +13,7 @@
   @if(!empty($coll['associated_departments']))
     @section('departments')
       <div class="container">
-        <h2>Associated departments</h2>
+        <h2 class="lead">Associated departments</h2>
         <div class="row">
           @foreach($coll['associated_departments'] as $gallery)
           <div class="col-md-4 mb-3">
@@ -44,7 +44,7 @@
   @if(!empty($coll['associated_galleries']))
     @section('galleries')
     <div class="container">
-      <h2>Associated Galleries</h2>
+      <h2 class="lead">Associated Galleries</h2>
       <div class="row">
         @foreach($coll['associated_galleries'] as $gallery)
         <div class="col-md-4 mb-3">

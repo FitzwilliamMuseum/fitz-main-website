@@ -15,7 +15,7 @@
   @if(!empty($dept['associated_galleries']))
     @section('galleries')
     <div class="container">
-      <h2>Associated Galleries</h2>
+      <h2 class="lead">Associated Galleries</h2>
       <div class="row">
         @foreach($dept['associated_galleries'] as $gallery)
         <div class="col-md-4 mb-3">

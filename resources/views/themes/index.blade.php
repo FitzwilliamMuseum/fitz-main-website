@@ -15,7 +15,7 @@
 
 @section('themes')
 <div class="container">
-  <h2>Featured themes</h2>
+  <h2 class="lead">Featured themes</h2>
   <div class="row">
     @foreach($themes['data'] as $theme)
     <div class="col-md-4 mb-3">

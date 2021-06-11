@@ -10,7 +10,7 @@
   @endif
 
   @section('content')
-    <h2>
+    <h2 class="lead">
       {{ $look['title_of_work'] }}
     </h2>
 

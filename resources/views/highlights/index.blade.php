@@ -18,7 +18,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h2>
+          <h2 class="lead">
             <a href="/objects-and-artworks/highlights/{{ $record['slug']}}">@markdown($record['title'])</a>
           </h2>
         </div>

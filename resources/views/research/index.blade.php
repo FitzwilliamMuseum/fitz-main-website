@@ -108,7 +108,7 @@
 
 @section('research-projects')
 <div class="container">
-  <h2>Featured research projects</h2>
+  <h2 class="lead">Featured research projects</h2>
   <div class="row">
 
   @foreach($projects['data'] as $project)

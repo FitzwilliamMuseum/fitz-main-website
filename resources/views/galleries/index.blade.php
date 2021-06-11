@@ -12,7 +12,7 @@
 
 @section('themes')
 <div class="container">
-  <h2>
+  <h2 class="lead">
     Our galleries
   </h2>
   <div class="row">

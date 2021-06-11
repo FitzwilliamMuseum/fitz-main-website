@@ -8,7 +8,7 @@
     @section('hero_image_title', $page['hero_image_alt_text'])
   @endif
   @section('content')
-      <h2>{{ $page['title'] }}</h2>
+      <h2 class="lead">{{ $page['title'] }}</h2>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         @markdown($page['theme_description'])
       </div>

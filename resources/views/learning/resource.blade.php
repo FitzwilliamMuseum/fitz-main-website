@@ -11,7 +11,7 @@
     @markdown($page['body'])
   </div>
 
-  <h2>
+  <h2 class="lead">
     Downloadable resources
   </h2>
   @if(!empty($page['associated_learning_files']))
