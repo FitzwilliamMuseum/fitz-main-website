@@ -1,5 +1,5 @@
 <div class="container mb-3">
-  <h2 class="mt-3">Getting here</h2>
+  <h2 class="mt-3 lead">Getting here</h2>
   <div class="accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
@@ -59,7 +59,7 @@
       </div>
     </div>
   </div>
-  <h2 class="mt-3">Directions</h2>
+  <h2 class="mt-3 lead">Directions</h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <div class="row text-center">
       @foreach ($transport['data'] as $transport)
