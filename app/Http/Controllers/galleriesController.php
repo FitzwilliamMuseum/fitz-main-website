@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
+use App\FitzElastic\Elastic;
 
 class galleriesController extends Controller
 {
@@ -37,7 +38,6 @@ class galleriesController extends Controller
         )
       );
       $galleries = $api2->getData();
-
       return view('galleries.index', compact('galleries', 'pages'));
     }
 
@@ -49,11 +49,37 @@ class galleriesController extends Controller
         $args = array(
             'fields' => '*.*.*.*',
             'filter[slug]' => $slug,
-            'meta' => 'result_count,total_count,type'
+            'meta' => '*'
         )
       );
       $galleries = $api->getData();
-
       return view('galleries.gallery', compact('galleries'));
+    }
+
+    public static function getObjects($prirefs){
+      $elastic = new Elastic();
+      $prirefs = str_replace(',', ' OR ', $prirefs);
+      $params =[
+        'index' => 'ciim',
+        'size' => 4,
+        'body' => [
+          "query" => [
+            "bool" => [
+              "must" => [
+                [
+                  "match" => [
+                    "identifier.priref" => $prirefs
+                  ]
+                ],
+                [
+                  "term" => [ "type.base" => "object"]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ];
+      return $elastic->setParams($params)->getSearch()['hits']['hits'];
+
     }
 }
