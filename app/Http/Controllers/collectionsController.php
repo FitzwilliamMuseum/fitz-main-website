@@ -19,7 +19,8 @@ class collectionsController extends Controller
         $first->setEndpoint('stubs_and_pages');
         $first->setArguments(
           array(
-            'filter[section]=' => 'objects-and-artworks',
+            'filter[section]=' => 'about-us',
+            'filter[slug]=' =>'collections',
             'filter[landing_page]' => '1',
             'fields' => '*.*.*'
           )

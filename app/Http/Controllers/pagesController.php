@@ -67,7 +67,6 @@ class pagesController extends Controller
 
     if($section == 'learning') {
       $expiresTwitter = now()->addMinutes(60);
-
       if (Cache::has('cache_twitter_schools_1')) {
         $tweets = Cache::get('cache_twitter_schools_1');
       } else {

@@ -28,9 +28,10 @@ class departmentsController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*',
-            'filter[section]' => 'departments',
+            'filter[section]' => 'about-us',
+            'filter[slug]' => 'departments',
             'filter[landing_page][eq]' => '1' ,
-            'meta' => 'result_count,total_count,type'
+            'meta' => '*'
         )
       );
       $pages = $api->getData();

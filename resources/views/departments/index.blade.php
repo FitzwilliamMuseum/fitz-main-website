@@ -11,20 +11,20 @@
 @section('departments')
   <div class="container">
     <div class="row">
-      @foreach($departments['data'] as $project)
+      @foreach($departments['data'] as $department)
       <div class="col-md-4 mb-3">
         <div class="card  h-100">
-          @if(!is_null($project['hero_image']))
-            <a href="/about-us/departments/{{$project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="A highlight image for {{ $project['hero_image_alt_text'] }}"
-            height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-            width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
+          @if(!is_null($department['hero_image']))
+            <a href="/about-us/departments/{{$department['slug']}}"><img class="img-fluid" src="{{ $department['hero_image']['data']['thumbnails'][4]['url']}}"
+            alt="A highlight image for {{ $department['hero_image_alt_text'] }}"
+            height="{{ $department['hero_image']['data']['thumbnails'][4]['height'] }}"
+            width="{{ $department['hero_image']['data']['thumbnails'][4]['width'] }}"
             loading="lazy"/></a>
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3 class="lead">
-                <a href="/about-us/departments/{{$project['slug']}}">{{ $project['title']}}</a>
+                <a href="/about-us/departments/{{$department['slug']}}">{{ $department['title']}}</a>
               </h3>
             </div>
           </div>
