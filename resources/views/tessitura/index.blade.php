@@ -5,7 +5,7 @@
 @section('content')
   <div class="container">
 
-    <h2 class="text-center mb-3">What would you like to attend?</h2>
+    <h2 class="text-center mb-3 lead">What would you like to attend?</h2>
     @php
     $types = Arr::pluck($productions, 'FacilityDescription');
     $ids = Arr::pluck($productions, 'Facility');
