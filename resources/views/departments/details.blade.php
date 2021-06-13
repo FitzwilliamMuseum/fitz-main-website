@@ -67,7 +67,7 @@
 @if(!empty($staff))
   @section('curators')
     <div class="container">
-      <h3 class="lead">Associated curators</h3>
+      <h3 class="lead">Associated staff</h3>
       <div class="row">
         @foreach($staff['data'] as $curator)
           <div class="col-md-3 mb-3">
