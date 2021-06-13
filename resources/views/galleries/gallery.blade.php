@@ -74,7 +74,7 @@
     @endphp
     @if(!empty($records))
       <h3 class="lead">
-        Collections datas
+        Collections data
       </h3>
       <div class="row">
         @foreach($records as $record)
