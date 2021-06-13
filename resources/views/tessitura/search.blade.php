@@ -4,7 +4,7 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('content')
   <div class="container">
-    <h2 class="text-center mb-3">Events meeting your search</h2>
+    <h2 class="text-center mb-3 lead">Events meeting your search</h2>
     @php
     usort($productions, function($a, $b) {
       return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
@@ -20,7 +20,6 @@
       <div class="col-md-9">
         <div class="row">
           @foreach($productions as $production)
-
             <div class="col-md-4 mb-3">
               <div class="card h-100">
                 @if($production->Facility->Id === 21)
