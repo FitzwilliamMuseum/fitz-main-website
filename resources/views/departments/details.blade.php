@@ -90,6 +90,9 @@
                   <div class="contents-label mb-3">
                     <h3 class="lead">
                       <a href="{{ route('research-profile', $curator['slug']) }}">{{ $curator['display_name']}}</a>
+                      @isset($curator['job_title'])
+                        <p class="text-info">{{ $curator['job_title']}}</p>
+                      @endisset
                     </h3>
                   </div>
                 </div>
