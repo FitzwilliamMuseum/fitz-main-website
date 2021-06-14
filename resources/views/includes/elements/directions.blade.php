@@ -59,7 +59,7 @@
       </div>
     </div>
   </div>
-  <h2 class="mt-3 lead">Directions</h2>
+  <h2 class="mt-3 lead">Directions via Google Maps</h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <div class="row text-center">
       @foreach ($transport['data'] as $transport)
