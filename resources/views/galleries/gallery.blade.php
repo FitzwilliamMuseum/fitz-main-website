@@ -38,7 +38,7 @@
 
   @if(!empty($gallery['star_objects']))
   <h4 class="lead">
-    Highlight objects
+    Object stories
   </h4>
   <div class="row">
     @foreach($gallery['star_objects'] as $object)
