@@ -48,7 +48,7 @@ class collectionsController extends Controller
         $second->setEndpoint('collections');
         $second->setArguments(
           array(
-            'fields' => '*.*.*.*',
+            'fields' => '*.*.*.*.*',
             'filter[slug]=' => $slug
           )
         );
