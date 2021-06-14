@@ -15,7 +15,7 @@
   @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
       @if(!is_null($profile['profile_image']))
-      <div class="embed-responsive embed-responsive-1by1">
+      <div class="img-fluid float-right p-3">
           <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
         alt="Profile image for {{ $profile['display_name'] }}"
         width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
