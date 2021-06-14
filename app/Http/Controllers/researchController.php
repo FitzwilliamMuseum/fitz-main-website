@@ -39,19 +39,8 @@ class researchController extends Controller
              'filter[associate_with_landing_page][eq]' => '1'
          )
        );
-       $associated = $apiRes->getData();
-
-       $api2 = $this->getApi();
-       $api2->setEndpoint('research_projects');
-       $api2->setArguments(
-         $args = array(
-             'fields' => '*.*.*',
-             'meta' => 'result_count,total_count,type',
-             'limit' => '3'
-         )
-       );
-       $projects = $api2->getData();
-       return view('research.index', compact('projects', 'pages', 'associated'));
+       $associated = $apiRes->getData();      
+       return view('research.index', compact('pages', 'associated'));
      }
 
     public function projects()

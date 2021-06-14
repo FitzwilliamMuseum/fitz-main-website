@@ -105,32 +105,3 @@
     </div>
   </div>
 @endsection
-
-@section('research-projects')
-<div class="container">
-  <h2 class="lead">Featured research projects</h2>
-  <div class="row">
-
-  @foreach($projects['data'] as $project)
-  <div class="col-md-4 mb-3">
-    <div class="card h-100">
-      @if(!is_null($project['hero_image']))
-        <a href="{{ route('research-project', $project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-        alt="{{ $project['hero_image_alt_text'] }}"
-        height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-        width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-        loading="lazy"/></a>
-      @endif
-      <div class="card-body h-100">
-        <div class="contents-label mb-3">
-          <h3 class="lead">
-            <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
-          </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  @endforeach
-  </div>
-</div>
-@endsection
