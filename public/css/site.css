@@ -8,7 +8,10 @@
 .human {
   min-height: 200px;
 }
-
+.no-gutters {
+  margin-right: -14px!important;
+  margin-left: -14px!important;
+}
 #coverVideo {
   height:300px;
   width:100%;

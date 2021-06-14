@@ -5,6 +5,8 @@
 @section('parallax_home', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/old_g3.jpg')
 @section('description','How to visit the Fitzwilliam Museum in Cambridge')
 
+
+
 @section('content')
 <div class="row">
   <div class="col-md-3 mb-3">

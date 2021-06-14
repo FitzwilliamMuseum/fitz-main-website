@@ -32,7 +32,7 @@
     @include('includes.structure.breadcrumb')
 
   </div>
-
+  @include('includes.elements.book')
   <div class="container">
         @yield('content')
   </div>
