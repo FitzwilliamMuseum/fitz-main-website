@@ -39,17 +39,23 @@
   <div class="container">
   @yield('corona')
   </div>
-  <div class="container-fluid parallax parallax-home mt-3">
+
+  <div class="container">
+    <h3 class="lead">
+      Find us
+    </h3>
+  </div>
+
+  <div class="container-fluid map-box negative-padding">
+
+    @yield('map')
   </div>
 
   @include('includes.elements.directions')
 
-  <div class="container-fluid parallax parallax-home mt-3">
-  </div>
 
-  <div class="container-fluid map-box negative-padding">
-    @yield('map')
-  </div>
+
+
 
   <div class="container mt-3">
     <h2 class="lead">Floorplans and guides</h2>
@@ -67,8 +73,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid parallax parallax-home mt-3 mb-3">
-  </div>
+
 
   @yield('associated_pages')
   @include('includes.structure.emailsignup')
