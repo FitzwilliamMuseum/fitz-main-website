@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
+use App\FitzElastic\Elastic;
+
+
 class collectionsController extends Controller
 {
 
@@ -53,4 +56,30 @@ class collectionsController extends Controller
         return view('collections.details', compact('collection'));
     }
 
+    public static function getObjects($prirefs){
+      $elastic = new Elastic();
+      $prirefs = str_replace(',', ' OR ', $prirefs);
+      $params =[
+        'index' => 'ciim',
+        'size' => 6,
+        'body' => [
+          "query" => [
+            "bool" => [
+              "must" => [
+                [
+                  "match" => [
+                    "identifier.priref" => $prirefs
+                  ]
+                ],
+                [
+                  "term" => [ "type.base" => "object"]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ];
+      return $elastic->setParams($params)->getSearch()['hits']['hits'];
+
+    }
 }

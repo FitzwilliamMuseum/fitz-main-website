@@ -61,7 +61,7 @@ class galleriesController extends Controller
       $prirefs = str_replace(',', ' OR ', $prirefs);
       $params =[
         'index' => 'ciim',
-        'size' => 4,
+        'size' => 6,
         'body' => [
           "query" => [
             "bool" => [
