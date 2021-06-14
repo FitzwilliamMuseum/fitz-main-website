@@ -12,6 +12,10 @@
   margin-right: -14px!important;
   margin-left: -14px!important;
 }
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
+}
 #coverVideo {
   height:300px;
   width:100%;

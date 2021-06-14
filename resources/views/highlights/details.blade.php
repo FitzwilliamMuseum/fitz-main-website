@@ -165,7 +165,9 @@
       @section('adlib')
         @if(!empty($adlib))
           @foreach($adlib as $record)
-            <h3 class="lead">Data from our collections database</h3>
+            <h3 class="lead sr-only">Data from our collections database</h3>
+            @include('includes/elements/expander')
+            <div id="expand-more" class="collapse">
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
               @include('includes/elements/descriptive')
@@ -191,6 +193,7 @@
               @include('includes/elements/identification')
 
             </div>
+          </div>
           @endforeach
         @else
           @foreach($pharos['data'] as $record)
