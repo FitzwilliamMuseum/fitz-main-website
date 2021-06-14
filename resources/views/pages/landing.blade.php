@@ -48,7 +48,7 @@
           @inject('pagesController', 'App\Http\Controllers\pagesController')
           @php
           $support = $pagesController::injectPages('support-us','support-us');
-          $comm = $pagesController::injectPages('commercial-services','commercial-services');
+          $comm = $pagesController::injectPages('about-us','commercial-services');
           $depart = $pagesController::injectPages('about-us','departments');
           $coll = $pagesController::injectPages('about-us','collections');
           $press = $pagesController::injectPages('about-us','press-room');
