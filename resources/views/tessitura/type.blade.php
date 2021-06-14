@@ -25,12 +25,15 @@ $title = ucwords($title);
       <div class="col-md-9">
         <div class="row">
           @foreach($productions as $production)
-
+            {{-- @dump($production) --}}
             <div class="col-md-4 mb-3">
               <div class="card h-100">
                 @if($production->Facility->Id === 21)
                   <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="@tessitura($production->ProductionSeason->Id)"
                     alt="A stand in image for "/></a>
+                  @elseif($production->Facility->Id === 56)
+                    <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="@tessitura($production->PerformanceId )"
+                      alt="A stand in image for "/></a>
                   @else
                     <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}"><img class="card-img-top" src="@tessitura($production->ProductionSeason->Id)"
                       alt="A stand in image for "/></a>
