@@ -145,6 +145,8 @@
 
 @isset($productions)
   @section('productions')
+  <div class="container mt-3">
+    <h2 class="lead"><a href="{{ route('events') }}">Upcoming Lectures and virtual events</a></h2>
     <div class="row">
       @php
       $types = Arr::pluck($productions, 'FacilityDescription');
@@ -213,5 +215,6 @@
           </div>
         @endforeach
       </div>
+    </div>
   @endsection
 @endisset

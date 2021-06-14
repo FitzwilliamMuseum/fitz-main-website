@@ -28,10 +28,8 @@
 
   @include('includes.structure.human')
 
-  <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('news') }}">Upcoming Lectures and virtual events</a></h2>
-      @yield('productions')
-  </div>
+  @yield('productions')
+
 
   <div class="container mt-3">
     <h2 class="lead"><a href="{{ route('news') }}">Latest news</a></h2>
