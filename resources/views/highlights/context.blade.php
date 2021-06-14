@@ -9,7 +9,7 @@
 <div class="row">
   @foreach($context as $record)
   <div class="col-md-4 mb-3">
-    <div class="card  h-100">
+    <div class="card h-100">
       @if(!is_null($record[0]['hero_image']))
         <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
         alt="{{ $record[0]['hero_image']['title'] }}" loading="lazy"
@@ -22,7 +22,7 @@
             <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a></h3>
         </div>
       </div>
-      
+
     </div>
   </div>
   @endforeach

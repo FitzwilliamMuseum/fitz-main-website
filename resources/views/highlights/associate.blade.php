@@ -4,7 +4,7 @@
   @section('title')
    @markdown($object['title'])
   @endsection
-  
+
   @section('description', $object['meta_description'])
   @section('keywords', $object['meta_keywords'])
 
@@ -18,6 +18,15 @@
 
   @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    @if(!is_null($object['hero_image']))
+      <figure class="figure float-right p-3">
+        <a href="/objects-and-artworks/highlights/context/{{ $object['section'] }}/{{ $object['slug']}}"><img class="img-fluid" src="{{ $object['hero_image']['data']['thumbnails'][7]['url']}}"
+        alt="{{ $object['hero_image_alt_text'] }}" loading="lazy"
+        width="{{ $object['hero_image']['data']['thumbnails'][7]['width'] }}"
+        height="{{ $object['hero_image']['data']['thumbnails'][7]['height'] }}"/></a>
+        <figcaption class="text-info figure-caption">{{ $object['hero_image_alt_text'] }}</figcaption>
+      </figure>
+    @endif
     @markdown($object['body'])
   </div>
   @endsection
