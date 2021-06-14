@@ -74,7 +74,7 @@
     @endphp
     @if(!empty($records))
       <h3 class="lead">
-        Collections data
+        Selected objects in gallery {{ $gallery['gallery_name'] }}
       </h3>
       <div class="row">
         @foreach($records as $record)
