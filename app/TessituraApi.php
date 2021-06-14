@@ -191,6 +191,12 @@ class TessituraApi {
         case 'physical':
           $this->_facilities = '20,21,56,116,86,96,66,76';
           break;
+        case 'lectures':
+          $this->_facilities = '56';
+          break;
+        case 'lectvirtual':
+          $this->_facilities = '19,56';
+          break;
         case 'virtual':
           $this->_facilities = '19';
           break;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
 
 use Twitter;
 use Youtube;
@@ -13,12 +14,64 @@ use Phpfastcache\Helper\Psr16Adapter;
 use Solarium\Core\Client\Client;
 use Solarium\Exception;
 use Solarium\Core\Client\Adapter\Curl;
+use App\TessituraApi;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 
 class homeController extends Controller
 {
+
+  /**
+   * [getApi description]
+   * @return [type] [description]
+   */
+  public function getTessituraApi(){
+    return new TessituraApi;
+  }
+
+  /**
+   * [translateType description]
+   * @param  string $facility [description]
+   * @return [type]           [description]
+   */
+  public function translateType(string $facility)
+  {
+    switch ($facility) {
+      case 'virtual-bookings':
+      $int = 19;
+      break;
+      case 'general-timed':
+      $int = 20;
+      break;
+      case 'exhibition-timed':
+      $int = 21;
+      break;
+      case 'lecture':
+      $int = 56;
+      break;
+      case 'fff-tours-2pm':
+      $int = 66;
+      break;
+      case 'fff-tours-3pm':
+      $int = 76;
+      break;
+      case 'fff-dragon-dance':
+      $int = 116;
+      break;
+      case 'fff-storytelling-230pm':
+      $int = 86;
+      break;
+      case 'fff-storytelling-330pm':
+      $int = 96;
+      break;
+      default:
+      $int = 20;
+      break;
+    }
+    return $int;
+  }
+
   /**
    * Display a listing of the resource.
    *
@@ -117,10 +170,21 @@ class homeController extends Controller
        $shopify = $call->getDocuments();
          Cache::store('file')->put($key, $shopify, $expiresAt);
      }
+     $keyTess = md5('tessitura-home');
+
+     if (Cache::has($keyTess)) {
+       $productions = Cache::store('file')->get($keyTess);
+     } else {
+       $prods = $this->getTessituraApi();
+       $prods->setPerformanceStartDate(Carbon::now());
+       $prods->setPerformanceEndDate(Carbon::now()->addDays(30));
+       $prods->setFacilities('lectures');
+       $productions = $prods->getPerformancesSearch();
+     }
     return view('index', compact(
       'carousel','news', 'research',
       'objects', 'things', 'fundraising',
-      'shopify'
+      'shopify','productions'
     ));
   }
 }
