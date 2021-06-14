@@ -11,11 +11,11 @@
 <div class="row">
   <div class="col-md-3 mb-3">
     <div class="card  h-100">
-      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/RASCHIG_KOLLWITZ, KATHE (1).jpg?key=directus-large-crop" loading="lazy" alt="Exhibition Poster for The Human Touch" width="800" height="600">
+      <a href="{{route('exhibitions')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/RASCHIG_KOLLWITZ, KATHE (1).jpg?key=directus-large-crop" loading="lazy" alt="Exhibition Poster for The Human Touch" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3 class="lead">
-            <a href="/visit-us/exhibitions">Exhibitions</a>
+            <a href="{{route('exhibitions')}}" class="stretched-link">Exhibitions</a>
           </h3>
         </div>
       </div>
@@ -24,11 +24,11 @@
 
   <div class="col-md-3 mb-3">
     <div class="card  h-100">
-      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600">
+      <a href="{{route('exhibitions')}}#displays" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3 class="lead">
-            <a href="/visit-us/exhibitions#displays" class="stretched-link">New displays</a>
+            <a href="{{route('exhibitions')}}#displays" class="stretched-link">New displays</a>
           </h3>
         </div>
       </div>
@@ -37,11 +37,11 @@
 
   <div class="col-md-3 mb-3">
     <div class="card  h-100">
-      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600">
+      <a href="{{ route('galleries')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3 class="lead">
-            <a href="visit-us/galleries">Our galleries</a>
+            <a href="{{ route('galleries')}}" class="stretched-link">Our galleries</a>
           </h3>
         </div>
       </div>
@@ -50,11 +50,11 @@
 
   <div class="col-md-3 mb-3">
     <div class="card  h-100">
-      <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Scent from Nature Press 2.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600">
+      <a href="{{ route('events')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Scent from Nature Press 2.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3 class="lead">
-            <a href="/events">What's on?</a>
+            <a href="{{ route('events')}}" class="stretched-link">What's on?</a>
           </h3>
         </div>
       </div>
