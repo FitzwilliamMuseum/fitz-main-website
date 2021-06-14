@@ -6,12 +6,23 @@
   @if(!is_null($profile['hero_image']))
     @section('hero_image', $profile['hero_image']['data']['full_url'])
     @section('hero_image_title', $profile['hero_image_alt_text'])
+  @else
+    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
+    @section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
+
   @endif
 
   @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
-      <img class="img-fluid float-right thumb-post rounded p-3" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
-      alt="{{ $profile['profile_image_alt_text'] }}" >
+      @if(!is_null($profile['profile_image']))
+      <div class="embed-responsive embed-responsive-1by1">
+          <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+        alt="Profile image for {{ $profile['display_name'] }}"
+        width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
+        height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}"
+        loading="lazy"/></a>
+      </div>
+      @endif
       <h3 class="lead">
       @isset($profile['title'])
       {{ $profile['title'] }}

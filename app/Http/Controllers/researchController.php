@@ -39,7 +39,7 @@ class researchController extends Controller
              'filter[associate_with_landing_page][eq]' => '1'
          )
        );
-       $associated = $apiRes->getData();      
+       $associated = $apiRes->getData();
        return view('research.index', compact('pages', 'associated'));
      }
 
@@ -101,7 +101,7 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
+            'meta' => '*',
             'filter[slug][eq]' => $slug
         )
       );
