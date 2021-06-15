@@ -34,7 +34,7 @@
       <a class="nav-link" href="{{ route('landing', ['research']) }}" >Research</a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link" href="https://curatingcambridge.com">Shop</a>
+      <a class="nav-link" href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
     </li>
 </ul>
 {{ \Form::open(['url' => url('search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
