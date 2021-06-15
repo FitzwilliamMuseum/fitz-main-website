@@ -53,9 +53,7 @@
       @yield('themes')
     </div>
   </div>
-
-  <div class="container-fluid parallax second-parallax-home mt-3"></div>
-
+  
   <div class="container-fluid ">
     <div class="negative-padding">
       @include('includes.structure.carousel')
