@@ -43,6 +43,11 @@
             @markdown($look['object_metadata'])
 
           </div>
+          @if(isset($look['adlib_id_number']))
+            @foreach($adlib as $record)
+              @include('includes.elements.iiif')
+            @endforeach
+          @endif
 
         </div>
         <!-- End of column one -->
