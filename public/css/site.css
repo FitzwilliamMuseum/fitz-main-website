@@ -115,7 +115,9 @@ body {
 .shadow-sm {
   background-color: white;
 }
-
+.card {
+  border: 0px!important;
+}
 a {
   background-color: transparent;
   color: #731100;
