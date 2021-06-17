@@ -1,4 +1,4 @@
-
+@if(array_key_exists('multimedia',$record['_source']))
 @php
 $con = array();
 foreach ($record['_source']['multimedia'] as $image ){
@@ -26,3 +26,4 @@ foreach ($record['_source']['multimedia'] as $image ){
     @endif
   @endif
 @endforeach
+@endif
