@@ -1,34 +1,22 @@
-@extends('layouts/layout')
-@section('title', 'Look, Think, Do')
-@section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
-@section('hero_image_title', 'Springtime by Claude Monet')
-@section('description', 'A set of exercises for families and learners to do at home')
-@section('keywords', 'schools, monet,millais,art,ramesses III, fitzwilliam')
+@extends('layouts.layout')
+@foreach($pages['data'] as $page)
+  @if(!empty($page['hero_image']))
+    @section('hero_image', $page['hero_image']['data']['full_url'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
+  @else
+    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+    @section('hero_image_title', "The inside of our Founder's entrance")
+  @endif
+  @section('description', $page['meta_description'])
+  @section('keywords', $page['meta_keywords'])
+
   @section('content')
-  <h2 class="lead">
-    Look, Think, Do activities
-  </h2>
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-    <p>
-      These activities have been designed as a starting point for looking, talking and doing together.
-      We will be adding new entries throughout April and May 2020.
-    </p>
-    <p>
-      The Look and Think activities should take 5 -10 minutes.
-    </p>
-    <p>
-      The Do activities might take longer depending on the task and how creative you are feeling!
-    </p>
-    <p>
-      Answers and suggestions about how to find out more at the bottom of each page.
-    </p>
-    <p>
-      Have fun and don't forget to share your creations using #FitzVirtual #LookThinkDo.
-    </p>
-    <p>
-      <a href="https://drive.google.com/file/d/1vGjaXixzXLJ6J__-EqUE0Ah141eyL1Pk/view">Notes for parents and teachers</a>
-    </p>
-  </div>
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+      @markdown($page['body'])
+    </div>
+
+@endforeach
+
   @if(!empty($ltd['data']))
   <div class="row">
     @foreach($ltd['data'] as $look)

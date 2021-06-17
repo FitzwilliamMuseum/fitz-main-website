@@ -40,7 +40,18 @@ class learningController extends Controller
           )
         );
         $ltd = $api->getData();
-        return view('learning.lookthinkdomain', compact('ltd'));
+        $page = $this->getApi();
+        $page->setEndpoint('stubs_and_pages');
+        $page->setArguments(
+          $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => 'look-think-do',
+            'filter[section][eq]' => 'learning',
+          )
+        );
+        $pages = $page->getData();
+        return view('learning.lookthinkdomain', compact('pages','ltd'));
     }
 
     public function lookthinkdoactivity($slug)
