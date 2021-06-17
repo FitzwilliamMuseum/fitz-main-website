@@ -29,7 +29,6 @@
 
   @include('includes.structure.head')
 
-  @include('includes.structure.beta')
   <div class="container">
         @yield('content')
   </div>

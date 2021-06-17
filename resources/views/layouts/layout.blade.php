@@ -22,8 +22,6 @@
   @include('includes.structure.nav')
 
   @include('includes.structure.head')
-
-  @include('includes.structure.beta')
   @include('includes.structure.open')
 
   @hasSection('timeline')

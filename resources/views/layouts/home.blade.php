@@ -13,18 +13,11 @@
 </head>
 <body class="doc-body">
   @include('googletagmanager::body')
-
   @include('includes.structure.accessibility')
-
   @include('includes.structure.nav')
-
   @include('includes.structure.head')
-
-  @include('includes.structure.beta')
   @include('includes.structure.open')
-
   @include('includes.structure.human')
-
   @yield('productions')
 
 
@@ -35,9 +28,7 @@
     </div>
   </div>
 
-  <div class="container-fluid parallax second-parallax-home">
-
-  </div>
+  <div class="container-fluid parallax second-parallax-home"></div>
 
   @yield('fundraising')
   <div class="container-fluid parallax second-parallax-home mt-3">
@@ -53,7 +44,7 @@
       @yield('themes')
     </div>
   </div>
-  
+
   <div class="container-fluid ">
     <div class="negative-padding">
       @include('includes.structure.carousel')
