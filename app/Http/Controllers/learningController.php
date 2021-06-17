@@ -35,6 +35,7 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
+              'filter[publication_date][lte]' => 'now',
               'meta' => 'result_count,total_count,type'
           )
         );
@@ -50,6 +51,7 @@ class learningController extends Controller
           $args = array(
               'fields' => '*.*.*.*',
               'meta' => 'result_count,total_count,type',
+              'filter[publication_date][lte]' => 'now',
               'filter[slug][eq]' => $slug
           )
         );

@@ -29,6 +29,7 @@
       <a href="https://drive.google.com/file/d/1vGjaXixzXLJ6J__-EqUE0Ah141eyL1Pk/view">Notes for parents and teachers</a>
     </p>
   </div>
+  @if(!empty($ltd['data']))
   <div class="row">
     @foreach($ltd['data'] as $look)
     <div class="col-md-4 mb-3">
@@ -49,4 +50,5 @@
     </div>
     @endforeach
   </div>
+  @endif
   @endsection
