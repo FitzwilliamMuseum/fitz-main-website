@@ -146,7 +146,8 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type'        )
+              'meta' => 'result_count,total_count,type'
+            )
         );
         $sessions = $api->getData();
         return $sessions;
@@ -159,11 +160,40 @@ class learningController extends Controller
         $api->setArguments(
           $args = array(
               'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type'        )
+              'meta' => 'result_count,total_count,type'
+            )
         );
         $stories = $api->getData();
         return $stories;
     }
+
+    public function galleryActivities()
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[section][eq]' => 'learning',
+              'filter[slug][eq]' => 'gallery-activities-for-your-visit'
+          )
+        );
+        $pages = $api->getData();
+
+        $api2 = new DirectUs;
+        $api2->setEndpoint('gallery_family_activities');
+        $api2->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '',
+            )
+        );
+
+        $activities = $api2->getData();
+        return view('learning.galleryactivities', compact('activities', 'pages'));
+    }
+
 
     public static function youngpeople()
     {
