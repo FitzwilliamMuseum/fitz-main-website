@@ -8,7 +8,7 @@
   @section('keywords',$project['meta_keywords'])
 
   @if(!empty($project['field_image']))
-    @section('hero_image', $project['hero_image']['data']['thumbnails'][10]['url'])
+    @section('hero_image', $project['field_image']['data']['thumbnails'][10]['url'])
     @section('hero_image_title', $project['field_image_alt_text'])
   @else
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
