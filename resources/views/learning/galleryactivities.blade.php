@@ -32,6 +32,7 @@
               <h3 class="lead">
                 <a class="stretched-link" href="{{ $resource['activity_gdoc_link'] }}">{{ $resource['title'] }}</a>
               </h3>
+              <p class="text-info">{{ $resource['age_group']  }}</p>
             </div>
           </div>
         </div>
