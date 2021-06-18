@@ -1,6 +1,6 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @section('title', 'Our objects and artworks')
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/cupidpsychelarge.jpg')
+@section('hero_image',env('CONTENT_STORE') . 'cupidpsychelarge.jpg' . '?key=banner')
 @section('hero_image_title', 'Cupid and Psyche - del Sallaio')
 @section('description','A search page for our highlight objects')
 @section('keywords', 'search,highlights, objects')

@@ -2,8 +2,13 @@
 
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
-  @section('hero_image', $page['hero_image']['data']['full_url'])
-  @section('hero_image_title', $page['hero_image_alt_text'])
+  @if(!empty($page['hero_image']))
+    @section('hero_image', $page['hero_image']['data']['thumbnails'][10]['url'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
+  @else
+    @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
+    @section('hero_image_title', "The inside of our Founder's entrance")
+  @endif
   @section('meta_description', $page['meta_description'])
   @section('meta_keywords', $page['meta_keywords'])
 

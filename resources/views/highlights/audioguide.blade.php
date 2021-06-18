@@ -1,8 +1,8 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @section('title','Our audio guide')
 @section('description', 'A collection of objects from the collection of the Fitzwilliam Museum')
 @section('keywords', 'museum,highlights,collection,objects')
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+@section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')

@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @foreach($pharos['data'] as $object)
 
   @section('title')
@@ -9,10 +9,10 @@
   @section('keywords', $object['meta_keywords'])
 
   @if(!empty($object['hero_image']))
-    @section('hero_image', $object['hero_image']['data']['full_url'])
+    @section('hero_image', $object['hero_image']['data']['thumbnails'][10]['url'])
     @section('hero_image_title', $object['hero_image_alt_text'])
   @else
-    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+    @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')
     @section('hero_image_title', "The inside of our Founder's entrance")
   @endif
 

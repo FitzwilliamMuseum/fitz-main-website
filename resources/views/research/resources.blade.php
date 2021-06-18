@@ -1,6 +1,6 @@
 @extends('layouts/layout')
 @section('title','Online resources')
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
+@section('hero_image',env('CONTENT_STORE'). 'baroque.jpg')
 @section('hero_image_title', 'A Baroque feasting table by Ivan Day in feast and fast')
 @section('content')
   <div class="row">

@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 
 @foreach($stop['data'] as $record)
   @section('keywords', $record['meta_keywords'])
@@ -6,7 +6,7 @@
   @section('title')
   Audio guide:  @markdown($record['title'])
   @endsection
-  @section('hero_image', $record['hero_image']['data']['full_url'])
+  @section('hero_image', $record['hero_image']['data']['thumbnails'][10]['url'])
   @section('hero_image_title', $record['hero_image_alt_text'])
 
 

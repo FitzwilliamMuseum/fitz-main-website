@@ -4,7 +4,7 @@
   @section('keywords', $coll['meta_keywords'])
   @section('description', $coll['meta_description'])
   @section('title', $coll['exhibition_title'])
-  @section('hero_image', $coll['hero_image']['data']['full_url'])
+  @section('hero_image', $coll['hero_image']['data']['thumbnails'][10]['url'])
   @section('hero_image_title', $coll['hero_image_alt_text'])
   @php
     switch($coll['type']){

@@ -1,13 +1,13 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @section('content')
 @foreach($period['data'] as $detail)
   @section('title')
    @markdown($detail['title'])
   @endsection
-  @section('description', '')
-  @section('keywords', '')
+  @section('description', $detail['meta_description'])
+  @section('keywords', $detail['meta_keywords'])
 
-  @section('hero_image',$detail['hero_image']['data']['full_url'])
+  @section('hero_image',$detail['hero_image']['data']['thumbnails'][10]['url'])
   @section('hero_image_title', $detail['hero_image_alt_text'])
 @endforeach
 

@@ -5,7 +5,7 @@
 @section('keywords', 'gallery,description,360,3d,models')
 
 @foreach($pages['data'] as $page)
-  @section('hero_image', $page['hero_image']['data']['full_url'])
+  @section('hero_image', $page['hero_image']['data']['thumbnails'][10]['url'])
   @section('hero_image_title', $page['hero_image_alt_text'])
   @section('social_thumbnail', $page['hero_image']['data']['full_url'])
 @endforeach

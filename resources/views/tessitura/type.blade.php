@@ -5,7 +5,7 @@ $title = str_replace(array('bookings','FFF', 'fff'),array('Events','Fitz Family 
 $title = ucwords($title);
 @endphp
 @section('title', $title)
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('collections')
   <div class="container">

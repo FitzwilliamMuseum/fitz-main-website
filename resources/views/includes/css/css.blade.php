@@ -14,7 +14,7 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
 <link rel="icon" href="{{ URL::to('/favicon.ico') }}"/>
 <style>
 .head {
-  background-image: url(@yield('hero_image'));
+  background-image: url('@yield('hero_image')');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 30%;

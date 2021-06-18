@@ -3,7 +3,7 @@
   @section('keywords', $coll['meta_keywords'])
   @section('description', $coll['meta_description'])
   @section('title', $coll['collection_name'])
-  @section('hero_image', $coll['hero_image']['data']['full_url'])
+  @section('hero_image', $coll['hero_image']['data']['thumbnails'][10]['url'])
   @section('hero_image_title', $coll['hero_image_alt_text'])
 @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">

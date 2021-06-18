@@ -2,7 +2,7 @@
 
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
-  @section('hero_image', $page['hero_image']['data']['full_url'])
+  @section('hero_image', $page['hero_image']['data']['thumbnails'][10]['url'])
   @section('hero_image_title', $page['hero_image_alt_text'])
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])

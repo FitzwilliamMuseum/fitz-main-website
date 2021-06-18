@@ -4,7 +4,7 @@
   @section('description', $profile['meta_description'])
   @section('title', $profile['display_name'])
   @if(!is_null($profile['hero_image']))
-    @section('hero_image', $profile['hero_image']['data']['full_url'])
+    @section('hero_image', $profile['hero_image']['data']['thumbnails'][10]['url'])
     @section('hero_image_title', $profile['hero_image_alt_text'])
   @else
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
