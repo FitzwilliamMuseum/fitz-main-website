@@ -40,7 +40,7 @@
                   <div class="card-body ">
                     <div class="contents-label mb-3">
                       <h3 class="lead">
-                        <a class="stretched-link" href="{{ route('events.type', Str::slug($key)) }}" title="Events listing for {{ $key }}">{{ str_replace(array('Bookings','FFF', 'Lecture'),array('Events','Fitz Family First', 'Lectures & talks'),$key) }}</a>
+                        <a class="stretched-link" href="{{ route('events.type', Str::slug($key)) }}" title="Events listing for {{ $key }}">{{ str_replace(array('Bookings','FFF', 'Lecture', 'Grove Lodge Garden'),array('Events','Fitz Family First', 'Lectures & talks', 'ADC Outdoor Theatre'),$key) }}</a>
                       </h3>
                       <p class="text-info">{{ $value }} events</p>
                     </div>

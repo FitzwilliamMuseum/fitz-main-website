@@ -139,7 +139,7 @@ class TessituraApi {
     * @param  string $facilities [description]
     * @return string             [description]
     */
-    public function getPerformances($facilities = '19,20,21,56,116,86,96,66,76') {
+    public function getPerformances($facilities = '19,20,21,56,116,86,96,66,76,157') {
       $payload = array(
         "PerformanceStartDate" => Carbon::now(),
         "PerformanceEndDate" =>  Carbon::now()->addDays(30),
@@ -200,8 +200,11 @@ class TessituraApi {
         case 'virtual':
           $this->_facilities = '19';
           break;
+        case 'adc':
+          $this->_facilities = '157';
+          break;
         default:
-          $this->_facilities = '19,20,21,56,116,86,96,66,76';
+          $this->_facilities = '19,20,21,56,116,86,96,66,76,157';
       }
         return $this->_facilities;
     }
@@ -220,6 +223,7 @@ class TessituraApi {
         "FacilityIds" => $this->getFacilties(),
         // "PerformanceTypeIds" => $this->getPerformanceTypeIDs()
       );
+      // dd($payload);
       $response = $this->getClient()->post($this->getEndpoint() .'TXN/Performances/Search', [
         'auth' => $this->getAuth(),
         'body' => json_encode($payload),

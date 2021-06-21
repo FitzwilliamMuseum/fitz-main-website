@@ -49,6 +49,9 @@ class TessituraController extends Controller
         case 'fff-storytelling-330pm':
         $int = 96;
         break;
+        case 'grove-lodge-garden':
+        $int = 157;
+        break;
         default:
         $int = 20;
         break;

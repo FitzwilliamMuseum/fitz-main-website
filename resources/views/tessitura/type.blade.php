@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @php
 $title = str_replace("-", " ", $facility);
-$title = str_replace(array('bookings','FFF', 'fff'),array('Events','Fitz Family First','Fitz Family First'), $title );
+$title = str_replace(array('bookings','FFF', 'fff', 'grove lodge garden'),array('Events','Fitz Family First','Fitz Family First', 'ADC outdoor theatre'), $title );
 $title = ucwords($title);
 @endphp
 @section('title', $title)
