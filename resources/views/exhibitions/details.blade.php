@@ -25,6 +25,11 @@
         @include('includes.structure.tessitura')
       @endif
     @endisset
+    @isset($coll['exhibition_end_date'])
+      @if(Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast())
+        @include('includes.structure.expired')
+      @endif
+    @endisset
     @if($coll['tessitura_string'] === NULL)
       @if(!Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast() && !Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast() && $coll['exhibition_status'] === 'current')
         @include('includes.structure.general')
