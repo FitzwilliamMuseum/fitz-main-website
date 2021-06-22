@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25f1779be5e39224bb60b3c671065173",
+    "content-hash": "6c04b92820b82d420d09542b1700e794",
     "packages": [
         {
             "name": "alaouy/youtube",
@@ -1577,6 +1577,60 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "imagekit/imagekit",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imagekit-developer/imagekit-php.git",
+                "reference": "7102c2ecf62624c57e07ec82be763b3799815e8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imagekit-developer/imagekit-php/zipball/7102c2ecf62624c57e07ec82be763b3799815e8c",
+                "reference": "7102c2ecf62624c57e07ec82be763b3799815e8c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "~6.0 || ~7.0",
+                "php": "^5.3.3 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ImageKit\\": "src/ImageKit/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Imagekit",
+                    "homepage": "https://github.com/imagekit-developer/imagekit-php/graphs/contributors"
+                }
+            ],
+            "description": "PHP library for Imagekit",
+            "homepage": "https://github.com/imagekit-developer/imagekit-php",
+            "keywords": [
+                "image management",
+                "imagekit",
+                "library"
+            ],
+            "support": {
+                "email": "support@imagekit.io",
+                "issues": "https://github.com/imagekit-developer/imagekit-php/issues",
+                "source": "https://github.com/imagekit-developer/imagekit-php/tree/1.2.2"
+            },
+            "time": "2021-01-12T06:32:57+00:00"
         },
         {
             "name": "imliam/laravel-blade-helper",

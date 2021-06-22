@@ -510,6 +510,8 @@ blockquote {
   margin-bottom: 1rem;
   font-family: 'Libre Baskerville', serif;
   padding: 0 1rem;
+  border-left: 2px solid maroon;
+
 }
 
 @media screen and ( max-width: 440px ){
