@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use ImLiam\BladeHelper\Facades\BladeHelper;
 use App\DirectUs;
+use ImageKit\ImageKit;
+
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,25 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        BladeHelper::directive('imgkit', function($image){
+          $imageKit = new ImageKit(
+              env('IMGKIT_PUBLIC_KEY'),
+              env('IMGKIT_PRIVATE_KEY'),
+              env('IMGKIT_ENDPOINT')
+          );
+          $imageURL = $imageKit->url(array(
+            "path" => $image,
+            "transformation" => array(
+              array(
+                "format" => "jpg",
+                "progressive" => true,
+                "effectSharpen" => "-",
+                "effectContrast" => "-"
+              )
+            )
+          ));
+          return $imageURL;
+        });
 
         BladeHelper::directive('tessitura', function($id){
           $api = new DirectUs;
