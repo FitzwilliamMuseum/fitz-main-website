@@ -8,6 +8,12 @@
 .human {
   min-height: 200px;
 }
+.btn-info {
+  background-color: #0f7290!important;
+}
+.text-info {
+  color: #0f7290!important;
+}
 .no-gutters {
   margin-right: -14px!important;
   margin-left: -14px!important;
