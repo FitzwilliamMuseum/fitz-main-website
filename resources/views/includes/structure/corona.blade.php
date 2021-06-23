@@ -2,7 +2,7 @@
     <div class="row">
     @foreach ($corona['data'] as $cor)
       <div class="col-md-6 bg-white mt-3">
-        <img src="{{ $cor['icon']['data']['thumbnails'][5]['url']}}" height="80" class="p-1 float-left" />
+        <img src="{{ $cor['icon']['data']['thumbnails'][5]['url']}}" height="80" class="p-1 float-left" alt="{{ $cor['icon_alt_text'] }}"/>
         {!! $cor['text']!!}
       </div>
     @endforeach

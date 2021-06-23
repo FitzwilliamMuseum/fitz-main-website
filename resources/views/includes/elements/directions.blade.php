@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingThree">
+      <div class="card-header" id="headingFour">
         <button class="btn btn-dark collapsed d-block text-center" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             {{ $directions['data']['3']['method']}}
           </button>
