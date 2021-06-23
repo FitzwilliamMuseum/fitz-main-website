@@ -3,7 +3,7 @@
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
   @if(!empty($page['hero_image']))
-    @section('hero_image', $page['hero_image']['data']['thumbnails'][10]['url'])
+    @section('hero_image', $page['hero_image']['data']['url'])
     @section('hero_image_title', $page['hero_image_alt_text'])
   @else
     @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')

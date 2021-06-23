@@ -3,7 +3,7 @@
   @section('title', $th['title'])
   @section('description', 'A description of the theme related to ' . $th['title'])
   @section('keywords', '')
-  @section('hero_image', $th['hero_image']['data']['thumbnails'][10]['url'])
+  @section('hero_image', $th['hero_image']['data']['url'])
   @section('hero_image_title', $th['hero_image_alt_text'])
   @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">

@@ -8,7 +8,7 @@
     @endphp
     {{ strip_tags($title) }}
   @endsection
-  @section('hero_image', $record['image']['data']['thumbnails'][10]['url'])
+  @section('hero_image', $record['image']['data']['url'])
   @section('hero_image_title', $record['image_alt_text'])
   @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">

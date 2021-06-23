@@ -9,7 +9,7 @@
   @section('keywords', $object['meta_keywords'])
 
   @if(!empty($object['hero_image']))
-    @section('hero_image', $object['hero_image']['data']['thumbnails'][10]['url'])
+    @section('hero_image', $object['hero_image']['data']['url'])
     @section('hero_image_title', $object['hero_image_alt_text'])
   @else
     @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')

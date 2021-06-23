@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @if(!is_null($podcasts['data'][0]['podcast_series']))
-  @section('hero_image', $podcasts['data'][0]['podcast_series'][0]['podcast_series_id']['hero_image']['data']['thumbnails'][10]['url'] )
+  @section('hero_image', $podcasts['data'][0]['podcast_series'][0]['podcast_series_id']['hero_image']['data']['url'] )
   @section('hero_image_title', $podcasts['data'][0]['podcast_series'][0]['podcast_series_id']['hero_image_alt_tag'])
 @else
   @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')

@@ -6,7 +6,7 @@
   @section('title')
   Audio guide:  @markdown($record['title'])
   @endsection
-  @section('hero_image', $record['hero_image']['data']['thumbnails'][10]['url'])
+  @section('hero_image', $record['hero_image']['data']['url'])
   @section('hero_image_title', $record['hero_image_alt_text'])
 
 

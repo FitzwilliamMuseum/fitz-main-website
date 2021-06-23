@@ -3,7 +3,7 @@
   @section('keywords', $project['meta_keywords'])
   @section('description', $project['meta_description'])
   @section('title', $project['title'])
-  @section('hero_image', $project['hero_image']['data']['thumbnails'][10]['url'])
+  @section('hero_image', $project['hero_image']['data']['url'])
   @section('hero_image_title', $project['hero_image_alt_text'])
   @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">

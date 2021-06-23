@@ -4,7 +4,7 @@
   @section('title', $dept['title'])
   @section('keywords', $dept['meta_keywords'])
   @section('description', $dept['meta_description'])
-  @section('hero_image', $dept['hero_image']['data']['thumbnails'][10]['url'])
+  @section('hero_image', $dept['hero_image']['data']['url'])
   @section('hero_image_title', $dept['hero_image_alt_text'])
 
   @section('content')

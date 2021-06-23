@@ -2,7 +2,7 @@
 
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
-  @section('hero_image', $page['hero_image']['data']['thumbnails'][10]['url'])
+  @section('hero_image', $page['hero_image']['data']['url'])
   @section('hero_image_title', $page['hero_image_alt_text'])
   @section('description', 'Educational resources from the Fitzwilliam Museum')
   @section('keywords', 'education,resources,do it yourself, museum, cambridge, egypt,rome, greece')

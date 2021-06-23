@@ -7,7 +7,7 @@
   @section('description', $detail['meta_description'])
   @section('keywords', $detail['meta_keywords'])
 
-  @section('hero_image',$detail['hero_image']['data']['thumbnails'][10]['url'])
+  @section('hero_image',$detail['hero_image']['data']['url'])
   @section('hero_image_title', $detail['hero_image_alt_text'])
 @endforeach
 

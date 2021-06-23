@@ -1,7 +1,7 @@
 @extends('layouts/layout')
 @foreach($res['data'] as $page)
 @section('title', $page['title'])
-@section('hero_image', $page['hero_image']['data']['thumbnails'][10]['url'])
+@section('hero_image', $page['hero_image']['data']['url'])
 @section('hero_image_title', $page['hero_image_alt_text'])
 @section('description', 'A list of files from the Education department of the Fitzwilliam Museum')
 @section('keywords', 'download,resources,painting,greece,rome,egypt,paintings')

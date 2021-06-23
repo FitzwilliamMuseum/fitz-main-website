@@ -5,7 +5,7 @@
   @section('description', 'A Look Think Do page for ' . $look['title_of_work'])
   @section('keywords', 'look,think,do,activity')
   @if(isset($look['focus_image']['data']['full_url']))
-    @section('hero_image', $look['hero_image']['data']['thumbnails'][10]['url'])
+    @section('hero_image', $look['hero_image']['data']['url'])
     @section('hero_image_title', $look['title_of_work'])
   @endif
 
