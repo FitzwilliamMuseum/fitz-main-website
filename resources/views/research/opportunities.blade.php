@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @section('title','Research opportunities')
 @section('hero_image',env('CONTENT_STORE') . 'baroque.jpg')
 @section('hero_image_title', 'A Baroque feasting table by Ivan Day in feast and fast')
