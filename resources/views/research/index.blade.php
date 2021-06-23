@@ -93,10 +93,10 @@
       <div class="col-md-4 mb-3">
         <div class="card h-100">
           @if(!is_null($project['hero_image']))
-            <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="card-img-top" src="{{ $project['hero_image']['data']['thumbnails'][3]['url']}}"
+            <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="card-img-top" src="{{ $project['hero_image']['data']['thumbnails'][5]['url']}}"
             alt="{{ $project['hero_image_alt_text'] }}"
-            width="{{ $project['hero_image']['data']['thumbnails'][3]['height'] }}"
-            height="{{ $project['hero_image']['data']['thumbnails'][3]['width'] }}"
+            width="{{ $project['hero_image']['data']['thumbnails'][5]['height'] }}"
+            height="{{ $project['hero_image']['data']['thumbnails'][5]['width'] }}"
             loading="lazy" /></a>
           @endif
         <div class="card-body h-100">
