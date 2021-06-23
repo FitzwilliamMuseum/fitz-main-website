@@ -16,6 +16,9 @@
 [aria-expanded="true"] > .collapsed {
   display: none;
 }
+.card-header {
+  background-color: white;
+}
 #coverVideo {
   height:300px;
   width:100%;
