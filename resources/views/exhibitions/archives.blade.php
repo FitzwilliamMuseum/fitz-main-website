@@ -3,7 +3,7 @@
 @section('title', 'The Museum\'s previous exhibitions and displays')
 @section('description', 'An archived overview of exhibitions and displays')
 @section('keywords', 'exhibition,archive,displays')
-@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')
+@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('archive')

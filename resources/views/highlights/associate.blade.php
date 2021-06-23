@@ -12,7 +12,7 @@
     @section('hero_image', $object['hero_image']['data']['url'])
     @section('hero_image_title', $object['hero_image_alt_text'])
   @else
-    @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')
+    @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
     @section('hero_image_title', "The inside of our Founder's entrance")
   @endif
 

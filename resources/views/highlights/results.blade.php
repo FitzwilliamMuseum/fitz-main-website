@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title','Search results')
-@section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg' . '?key=banner')
+@section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'Search results from our highlights')
 @section('keywords', 'search,results,collection,highlights,fitzwilliam')
