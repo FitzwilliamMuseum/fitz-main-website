@@ -1,11 +1,8 @@
 @extends('layouts.visitus')
 @section('title', 'Visit us')
-@section('hero_image', env('CONTENT_STORE') . 'wonder.jpg'. '?key=banner')
+@section('hero_image', env('CONTENT_STORE') . 'wonder.jpg')
 @section('hero_image_title', "The Museum's founder's building")
-@section('parallax_home', env('CONTENT_STORE') . 'old_g3.jpg' . '?key=banner')
 @section('description','How to visit the Fitzwilliam Museum in Cambridge')
-
-
 
 @section('content')
 <div class="row">
@@ -23,7 +20,7 @@
   </div>
 
   <div class="col-md-3 mb-3">
-    <div class="card  h-100">
+    <div class="card h-100">
       <a href="{{route('exhibitions')}}#displays" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
@@ -36,7 +33,7 @@
   </div>
 
   <div class="col-md-3 mb-3">
-    <div class="card  h-100">
+    <div class="card h-100">
       <a href="{{ route('galleries')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
@@ -130,7 +127,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3 class="lead">
-              <a href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
+              <a class="stretched-link" href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
             </h3>
           </div>
         </div>
