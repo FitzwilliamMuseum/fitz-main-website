@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('hero_image','https://content.fitz.ms/fitz-website/assets/front.jpg?key=banner')
+@section('hero_image','https://content.fitz.ms/fitz-website/assets/front.jpg')
 @section('hero_image_title','The founder\'s building entrance ceiling')
 @section('parallax_home', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
 @section('parallax_two', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
