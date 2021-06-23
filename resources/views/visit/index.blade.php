@@ -19,14 +19,13 @@
     </div>
   </div>
 
-  <a href="{{route('exhibitions')}}#displays" class="stretched-link"></a>
   <div class="col-md-3 mb-3">
     <div class="card h-100">
       <a href="{{route('exhibitions')}}#displays" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3 class="lead">
-            New displays
+            <a aria-label="New displays link" href="{{route('exhibitions')}}#displays">New displays</a>
           </h3>
         </div>
       </div>
