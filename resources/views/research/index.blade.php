@@ -45,7 +45,7 @@
       <div class="col-md-4 mb-3">
         <div class="card h-100">
           <a href="{{route('opportunities')}}"><img
-            class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/IMG_20191022_152807.jpeg?key=directus-medium-contain"
+            class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/IMG_20191022_152807.jpeg?key=directus-medium-crop"
           alt="Jennifer Wexler"
           width="300"
           height="300"
@@ -60,7 +60,7 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100">
         <a href="{{route('research-projects')}}"><img
-          class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/XRF analysis of an illuminated mss at the Fitz.jpg?key=directus-medium-contain"
+          class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/XRF analysis of an illuminated mss at the Fitz.jpg?key=directus-medium-crop"
         alt="XRF analysis of a manuscript"
         width="300"
         height="300"
@@ -76,7 +76,7 @@
   <div class="col-md-4 mb-3">
     <div class="card h-100">
       <a href="{{route('resources')}}"><img
-        class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/4.-Dormition-of-the-Virgin-Italy-Venice-c.1420-Master-of-the-Murano-Gradual-active-c.1420-1440.jpg?key=directus-large-crop"
+        class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/4.-Dormition-of-the-Virgin-Italy-Venice-c.1420-Master-of-the-Murano-Gradual-active-c.1420-1440.jpg?key=directus-medium-crop"
       alt="A segment of a manuscript"
       width="300"
       height="300"
@@ -93,7 +93,7 @@
       <div class="col-md-4 mb-3">
         <div class="card h-100">
           @if(!is_null($project['hero_image']))
-            <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="card-img-top" src="{{ $project['hero_image']['data']['thumbnails'][5]['url']}}"
+            <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="card-img-top" src="{{ $project['hero_image']['data']['thumbnails'][2]['url']}}"
             alt="{{ $project['hero_image_alt_text'] }}"
             width="300"
             height="300"
