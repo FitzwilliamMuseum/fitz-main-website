@@ -120,7 +120,7 @@
       <div class="row">
         <div class="col-md-6 mb-2 mx-auto">
           <p class="text-center">
-            <a href="https://cam.ac.uk"><img src="/images/logos/cambridge_university2.svg" alt="The University of Cambridge logo" width="200" class="img-fluid mx-auto mb-3" /></a>
+            <a href="https://cam.ac.uk"><img src="/images/logos/cambridge_university2.svg" alt="The University of Cambridge logo" width="200" height="41.59" class="img-fluid mx-auto mb-3" /></a>
             <br/>
           &copy; {{ now()->year }} The University of Cambridge</p>
         </div>
