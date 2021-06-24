@@ -35,7 +35,9 @@
     </div>
     @endforeach
   </div>
-  <nav aria-label="Page navigation">
-    {{ $paginator->links() }}
-  </nav>
+  <div class="container mt-1 p-2 text-center">
+    <nav aria-label="Page navigation" >
+      {{ $paginator->appends(request()->except('page'))->links() }}
+    </nav>
+  </div>
 @endsection
