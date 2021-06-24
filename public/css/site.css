@@ -629,10 +629,7 @@ input#query::placeholder {
 figcaption.figure-caption.text-right {
   font-size: 1rem;
 }
-.table tbody td, .table tbody th {
-  font-size: 1.1rem;
 
-}
 .text-muted {
   color: rgba(0, 0, 0, 0.85)!important;
 }
