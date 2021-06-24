@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title', 'Our directors')
-@section('hero_image',env('CONTENT_STORE') . '1024px-picture_of_sidney_colvin.jpg' . 'key=banner')
+@section('hero_image',env('CONTENT_STORE') . '1024px-picture_of_sidney_colvin.jpg')
 @section('hero_image_title', 'A portrait of Sidney Colvin')
 @section('description', 'A list and timeline of our directors')
 @section('keywords', 'directors,timeline,museum,cambridge,fitzwilliam')
