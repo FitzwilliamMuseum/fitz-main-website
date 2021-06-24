@@ -95,8 +95,8 @@
           @if(!is_null($project['hero_image']))
             <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="card-img-top" src="{{ $project['hero_image']['data']['thumbnails'][5]['url']}}"
             alt="{{ $project['hero_image_alt_text'] }}"
-            width="{{ $project['hero_image']['data']['thumbnails'][5]['height'] }}"
-            height="{{ $project['hero_image']['data']['thumbnails'][5]['width'] }}"
+            width="300"
+            height="300"
             loading="lazy" /></a>
           @endif
         <div class="card-body h-100">
