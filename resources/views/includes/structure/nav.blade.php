@@ -12,7 +12,7 @@
     <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
     </li>
-    <li class="nav-item {{ (request()->is('visit-us')) ? 'active' : '' }}">
+    <li class="nav-item {{ (request()->is('visit-us*')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('visit') }}" >Visit</a>
     </li>
     <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
@@ -22,15 +22,15 @@
     <li class="nav-item {{ (Request()->is('objects-and-artworks*')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('objects') }}" >Our Collection</a>
     </li>
-    <li class="nav-item {{ (Request()->is('learning')) ? 'active' : '' }}">
+    <li class="nav-item {{ (Request()->is('learning*')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('landing', ['learning']) }}" >
       Learning</a>
     </li>
-    <li class="nav-item {{ (Request()->is('about-us')) ? 'active' : '' }}">
+    <li class="nav-item {{ (Request()->is('about-us*')) ? 'active' : '' }}">
       <a class="nav-link " href="{{ route('landing', ['about-us']) }}" >
       About</a>
     </li>
-    <li class="nav-item {{ (Request()->is('research')) ? 'active' : '' }}">
+    <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('landing', ['research']) }}" >Research</a>
     </li>
     <li class="nav-item ">

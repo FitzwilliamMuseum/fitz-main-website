@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use ImLiam\BladeHelper\Facades\BladeHelper;
 use App\DirectUs;
 use ImageKit\ImageKit;
+use Illuminate\Pagination\Paginator;
 
 
 
@@ -28,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
+
         BladeHelper::directive('imgkit', function($image){
           $imageKit = new ImageKit(
               env('IMGKIT_PUBLIC_KEY'),
