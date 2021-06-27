@@ -916,6 +916,17 @@ class searchController extends Controller
     return $client->update($delete);
   }
 
+  public function sessionsRefresh()
+  {
+    $configSolr = \Config::get('solarium');
+    $client = new Client(new Curl(), new EventDispatcher(),$configSolr);
+    $delete = $client->createUpdate();
+    $delete->addDeleteQuery('contentType:schoolsessions');
+    $delete->addCommit();
+    return $client->update($delete);
+  }
+
+
   public function shopify()
   {
     $configSolr = \Config::get('solarium');
