@@ -47,7 +47,18 @@
     @include('includes.structure.learning-blocks')
 
     @include('includes.structure.related-pages')
-      @endsection
+
+  @endsection
 
 
-    @endforeach
+@endforeach
+@section('immunity')
+  @if(Request::is('objects-and-artworks/immunity-from-seizure'))
+    @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
+    @php
+    $data  = $exhibitionsController::injectImmunity();
+    @endphp
+    @include('includes.structure.immunity')
+
+  @endif
+@endsection

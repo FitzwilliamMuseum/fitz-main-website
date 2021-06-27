@@ -1,4 +1,6 @@
 @if(!empty($records))
+@section('associated_pages')
+  <div class="container">
   <h3 class="lead">
     Related to this page
   </h3>
@@ -26,4 +28,6 @@
           </div>
         @endforeach
       </div>
+    </div>
+    @endsection
     @endif

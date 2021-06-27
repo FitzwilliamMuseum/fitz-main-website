@@ -36,9 +36,13 @@
     @include('includes.structure.breadcrumb')
     @yield('press-contact')
     @yield('content')
+
     @yield('adlib')
     @yield('timeline')
   </div>
+
+  @yield('immunity')
+  
   @hasSection('collection-parallax')
     @include('includes.structure.parallax')
   @endif

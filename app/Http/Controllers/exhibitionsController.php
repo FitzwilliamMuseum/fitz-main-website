@@ -147,4 +147,19 @@ class exhibitionsController extends Controller
     $records = $mlt->getData();
     return view('exhibitions.details', compact('exhibitions', 'records', 'adlib'));
   }
+
+  public static function injectImmunity()
+  {
+      $api = new DirectUs;
+      $api->setEndpoint('exhibitions');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[immunity_from_seizure][nnull]' => '',
+          )
+      );
+      $immunity = $api->getData();
+      return $immunity;
+  }
 }
