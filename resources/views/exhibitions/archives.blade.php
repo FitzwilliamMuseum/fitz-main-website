@@ -12,22 +12,27 @@
     Archived exhibitions and displays
   </h2>
   <div class="row">
-    @foreach($archive['data'] as $project)
+    @foreach($archive['data'] as $exhibition)
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
-        @if(!is_null($project['hero_image']))
-          <a href="{{ route('exhibition', $project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-          alt="{{ $project['hero_image_alt_text'] }}"
-          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
+        @if(!is_null($exhibition['hero_image']))
+          <a href="{{ route('exhibition', $exhibition['slug']) }}"><img class="img-fluid" src="{{ $exhibition['hero_image']['data']['thumbnails'][4]['url']}}"
+          alt="{{ $exhibition['hero_image_alt_text'] }}"
+          width="{{ $exhibition['hero_image']['data']['thumbnails'][4]['width'] }}"
+          height="{{ $exhibition['hero_image']['data']['thumbnails'][4]['height'] }}"
           loading='lazy'
           /></a>
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3 class="lead">
-              <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
+              <a href="{{ route('exhibition',{{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
+              {{  Carbon\Carbon::parse($coll['exhibition_end_date'])->format('l dS F Y') }}['slug']) }}">{{ $exhibition['exhibition_title']}}</a>
             </h3>
+            <p class="text-info">
+              {{  Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('l dS F Y') }} to
+              {{  Carbon\Carbon::parse($exhibition['exhibition_end_date'])->format('l dS F Y') }}
+            </p>
           </div>
         </div>
       </div>
