@@ -26,8 +26,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3 class="lead">
-              <a href="{{ route('exhibition',{{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
-              {{  Carbon\Carbon::parse($coll['exhibition_end_date'])->format('l dS F Y') }}['slug']) }}">{{ $exhibition['exhibition_title']}}</a>
+              <a href="{{ route('exhibition',$exhibition['slug']) }}">{{ $exhibition['exhibition_title']}}</a>
             </h3>
             <p class="text-info">
               {{  Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('l dS F Y') }} to
