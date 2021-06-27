@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
   @section('hero_image', $page['hero_image']['data']['url'])

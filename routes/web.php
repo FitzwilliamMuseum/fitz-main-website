@@ -75,7 +75,7 @@ Route::get('learning/school-sessions/{slug}', 'learningController@session')->nam
 Route::get('learning/young-people/{slug}', 'learningController@young')->name('young-people');
 Route::get('learning/contact-us/', 'learningController@profiles')->name('learning-profiles');
 Route::get('learning/adult-programming/{slug}', 'learningController@adult')->name('adult-activity');
-Route::get('learning/gallery-activities/', 'learningController@galleryActivities')->name('gallery-activities');
+// Route::get('learning/gallery-activities/', 'learningController@galleryActivities')->name('gallery-activities');
 Route::get('learning/gallery-activities/{slug}', 'learningController@galleryActivity')->name('gallery-activity');
 
 /*

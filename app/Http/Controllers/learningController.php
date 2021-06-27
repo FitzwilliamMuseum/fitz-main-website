@@ -169,18 +169,6 @@ class learningController extends Controller
 
     public static function galleryActivities()
     {
-        // $api = $this->getApi();
-        // $api->setEndpoint('stubs_and_pages');
-        // $api->setArguments(
-        //   $args = array(
-        //       'fields' => '*.*.*.*',
-        //       'meta' => '*',
-        //       'filter[section][eq]' => 'learning',
-        //       'filter[slug][eq]' => 'gallery-activities-for-your-visit'
-        //   )
-        // );
-        // $pages = $api->getData();
-
         $api2 = new DirectUs;
         $api2->setEndpoint('gallery_family_activities');
         $api2->setArguments(
