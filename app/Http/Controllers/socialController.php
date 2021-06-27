@@ -19,11 +19,6 @@ class socialController extends Controller
   * @return \Illuminate\Http\Response
   */
 
-
-  public function getApi(){
-    return new DirectUs;
-  }
-
   public function getElastic()
   {
     return new Elastic();

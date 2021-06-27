@@ -23,4 +23,9 @@ class Controller extends BaseController
       Artisan::call('cache:clear');
       return "Cache is cleared";
     }
+
+    public function getElastic()
+    {
+      return new Elastic();
+    }
 }

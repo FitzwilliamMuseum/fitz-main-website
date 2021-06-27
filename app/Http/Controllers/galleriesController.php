@@ -10,11 +10,6 @@ use App\FitzElastic\Elastic;
 class galleriesController extends Controller
 {
 
-    public function getApi(){
-      $directus = new DirectUs;
-      return $directus;
-    }
-
     public function index()
     {
       $api = $this->getApi();

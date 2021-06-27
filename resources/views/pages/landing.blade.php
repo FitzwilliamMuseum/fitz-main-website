@@ -61,6 +61,9 @@
           @include('includes.structure.cards', $data = $press)
         @endif
 
+        
+
+
       </div>
     </div>
   @endsection

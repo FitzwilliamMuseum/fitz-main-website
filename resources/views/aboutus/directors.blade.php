@@ -23,7 +23,7 @@
         <tr>
           <td>{{ $director['date_from'] }}</td>
           <td>{{ $director['date_to'] }}</td>
-          <td><a href="/about-us/directors/{{ $director['slug'] }}">{{ $director['display_name'] }}</a></td>
+          <td><a href="{{ route('director',[$director['slug']] ) }}">{{ $director['display_name'] }}</a></td>
         </tr>
         @endforeach
       </tbody>

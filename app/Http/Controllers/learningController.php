@@ -167,19 +167,19 @@ class learningController extends Controller
         return $stories;
     }
 
-    public function galleryActivities()
+    public static function galleryActivities()
     {
-        $api = $this->getApi();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'filter[section][eq]' => 'learning',
-              'filter[slug][eq]' => 'gallery-activities-for-your-visit'
-          )
-        );
-        $pages = $api->getData();
+        // $api = $this->getApi();
+        // $api->setEndpoint('stubs_and_pages');
+        // $api->setArguments(
+        //   $args = array(
+        //       'fields' => '*.*.*.*',
+        //       'meta' => '*',
+        //       'filter[section][eq]' => 'learning',
+        //       'filter[slug][eq]' => 'gallery-activities-for-your-visit'
+        //   )
+        // );
+        // $pages = $api->getData();
 
         $api2 = new DirectUs;
         $api2->setEndpoint('gallery_family_activities');
@@ -191,7 +191,7 @@ class learningController extends Controller
         );
 
         $activities = $api2->getData();
-        return view('learning.galleryactivities', compact('activities', 'pages'));
+        return $activities;
     }
 
 

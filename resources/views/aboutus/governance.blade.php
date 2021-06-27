@@ -1,6 +1,6 @@
 @extends('layouts/layout')
 @section('title','Our Governance Documents')
-@section('hero_image',env('CONTENT_STORE') . 'millais_bridesmaid.jpg' . 'key=banner')
+@section('hero_image',env('CONTENT_STORE') . 'millais_bridesmaid.jpg')
 @section('hero_image_title','Millais\'s Bridesmaid')
 @section('description', 'A list of governance files for the Fitzwilliam Museum')
 @section('keywords', 'fitzwilliam,museum,governance,pdf')

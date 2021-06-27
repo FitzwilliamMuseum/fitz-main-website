@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\DirectUs;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -14,7 +13,6 @@ use Illuminate\Support\Facades\Cache;
 
 class departmentsController extends Controller
 {
-  protected $client;
 
   /**
    * Display a listing of the resource.
@@ -23,7 +21,7 @@ class departmentsController extends Controller
    */
   public function index()
   {
-      $api = new DirectUs;
+      $api = $this->getApi();
       $api->setEndpoint('stubs_and_pages');
       $api->setArguments(
         $args = array(
@@ -35,7 +33,8 @@ class departmentsController extends Controller
         )
       );
       $pages = $api->getData();
-      $api2 = new DirectUs;
+
+      $api2 = $this->getApi();
       $api2->setEndpoint('departments');
       $api2->setArguments(
         $args = array(
@@ -50,7 +49,7 @@ class departmentsController extends Controller
 
   public function details($slug)
   {
-      $api = new DirectUs;
+      $api = $this->getApi();
       $api->setEndpoint('departments');
       $api->setArguments(
         $args = array(
@@ -59,7 +58,8 @@ class departmentsController extends Controller
         )
       );
       $departments = $api->getData();
-      $api2 = new DirectUs;
+
+      $api2 = $this->getApi();
       $api2->setEndpoint('staff_profiles');
       $api2->setArguments(
         $args = array(
@@ -73,7 +73,7 @@ class departmentsController extends Controller
 
   public function conservation($slug)
   {
-      $api = new DirectUs;
+      $api = $this->getApi();
       $api->setEndpoint('conservation_areas');
       $api->setArguments(
         $args = array(
@@ -87,7 +87,7 @@ class departmentsController extends Controller
 
   public static function areas()
   {
-    $api = new DirectUs;
+    $api = $this->getApi();
     $api->setEndpoint('conservation_areas');
     $api->setArguments(
       $args = array(
@@ -96,9 +96,10 @@ class departmentsController extends Controller
     );
     return $api->getData();
   }
+
   public static function areasData($slug)
   {
-    $api = new DirectUs;
+    $api = $this->getApi();
     $api->setEndpoint('conservation_areas');
     $api->setArguments(
       $args = array(
@@ -128,6 +129,7 @@ class departmentsController extends Controller
     }
     return $data;
   }
+
   public static function hkiblog()
   {
     $expiresAt = now()->addMinutes(3600);

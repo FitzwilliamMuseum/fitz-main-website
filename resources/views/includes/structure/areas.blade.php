@@ -14,7 +14,7 @@
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3 class="lead">
-              <a href="/about-us/departments/conservation-and-collections-care/{{$project['slug']}}">{{ $project['title']}}</a>
+              <a class="stretched-link" href="/about-us/departments/conservation-and-collections-care/{{$project['slug']}}">{{ $project['title']}}</a>
             </h3>
           </div>
         </div>

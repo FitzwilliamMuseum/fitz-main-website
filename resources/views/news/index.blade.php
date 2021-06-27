@@ -9,7 +9,7 @@
   <div class="row">
     @foreach($news['data'] as $project)
     <div class="col-md-4 mb-3">
-      <div class="card  h-100">
+      <div class="card h-100">
         @if(!is_null($project['field_image']))
           <a href="{{ route('article', $project['slug']) }}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url'] }}"
           alt="A highlight image for {{ $project['article_title'] }}"

@@ -1,4 +1,3 @@
-<h3 class="lead">Story telling</h3>
 <div class="row">
   @foreach($sessions['data'] as $session)
   <div class="col-md-4 mb-3">

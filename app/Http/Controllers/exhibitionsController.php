@@ -10,10 +10,6 @@ use App\FitzElastic\Elastic;
 
 class exhibitionsController extends Controller
 {
-  public function getApi(){
-    $directus = new DirectUs;
-    return $directus;
-  }
 
   public function getElastic()
   {

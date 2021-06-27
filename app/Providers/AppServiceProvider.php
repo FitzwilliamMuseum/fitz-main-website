@@ -7,8 +7,8 @@ use ImLiam\BladeHelper\Facades\BladeHelper;
 use App\DirectUs;
 use ImageKit\ImageKit;
 use Illuminate\Pagination\Paginator;
-
-
+use Mimey\MimeTypes;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,7 +29,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+
         Paginator::useBootstrap();
+        Paginator::defaultView('pagination::simple-tailwind');
+
+        BladeHelper::directive('mime', function($mime){
+          $mimes = new MimeTypes;
+          return Str::upper($mimes->getExtension($mime)); // otf
+        });
 
         BladeHelper::directive('imgkit', function($image){
           $imageKit = new ImageKit(

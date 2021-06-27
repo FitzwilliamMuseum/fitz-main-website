@@ -20,10 +20,7 @@ use Illuminate\Support\Str;
 
 class highlightsController extends Controller
 {
-    public function getElastic()
-    {
-      return new Elastic();
-    }
+    
 
     public function index(Request $request)
     {

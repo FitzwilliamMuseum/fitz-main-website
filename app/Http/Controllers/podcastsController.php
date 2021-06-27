@@ -18,10 +18,6 @@ class podcastsController extends Controller
   */
 
 
-  public function getApi(){
-    return new DirectUs;
-  }
-
   public function getElastic()
   {
     return new Elastic();

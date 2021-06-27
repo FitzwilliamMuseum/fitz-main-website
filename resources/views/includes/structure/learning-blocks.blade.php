@@ -23,15 +23,43 @@
       @include('includes.structure.young')
     @endif
 
-    @if($page['slug'] === 'families')
+    @if(Request::is('learning/gallery-activities'))
       @inject('learningController', 'App\Http\Controllers\learningController')
       @php
-      $sessions = $learningController::families();
+      $activities = $learningController::galleryActivities();
       @endphp
+      @include('includes.structure.gallery-activities')
+    @endif
+
+    @if(Request::is('learning/tales-from-the-museum'))
+      @inject('learningController', 'App\Http\Controllers\learningController')
+
+    @php
+      $sessions = $learningController::families();
+    @endphp
       @include('includes.structure.families')
     @endif
 
-    @if($page['slug'] === 'about-learning-research')
+
+    @if(Request::is('learning/families'))
+      @inject('pagesController', 'App\Http\Controllers\pagesController')
+      @php
+        $slugs = array(
+          'look-think-do',
+          'gallery-activities',
+          'tales-from-the-museum',
+          'home-activities'
+        );
+      @endphp
+      <div class="row">
+        @foreach($slugs as $slug)
+          @include('includes.structure.cards', $pagesController::injectPages('learning', $slug))
+        @endforeach
+      </div>
+      
+    @endif
+
+    @if(Request::is('learning/about-learning-research'))
       @inject('learningController', 'App\Http\Controllers\learningController')
       @php
       $research = $learningController::research();

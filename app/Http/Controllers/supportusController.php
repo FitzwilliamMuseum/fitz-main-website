@@ -13,7 +13,7 @@ class supportusController extends Controller
      */
     public function index()
     {
-        return view('supportus/index');
+        return view('supportus.index');
     }
 
 }

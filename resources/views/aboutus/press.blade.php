@@ -18,24 +18,28 @@
   <div class="row">
     @foreach($press['data'] as $release)
     <div class="col-md-4 mb-3">
+
       <div class="card h-100">
+
         @if(!is_null($release['hero_image']))
-        <div class="embed-responsive embed-responsive-4by3">
-        <img class="img-fluid embed-responsive-item" src="{{ $release['hero_image']['data']['thumbnails'][2]['url']}}"
-        width="{{ $release['hero_image']['data']['thumbnails'][2]['width'] }}"
-        height="{{ $release['hero_image']['data']['thumbnails'][2]['height'] }}"
-        alt="{{ $release['hero_image_alt_text'] }}" loading="lazy"/>
-        </div>
+          <img class="img-fluid" src="{{ $release['hero_image']['data']['thumbnails'][4]['url']}}"
+          width="{{ $release['hero_image']['data']['thumbnails'][4]['width'] }}"
+          height="{{ $release['hero_image']['data']['thumbnails'][4]['height'] }}"
+          alt="{{ $release['hero_image_alt_text'] }}" loading="lazy"/>
         @endif
         <div class="card-body ">
+
           <div class="contents-label mb-3">
             <h3 class="lead">
-              <a href="{{ $release['file']['data']['full_url'] }}">{{ $release['title']}}</a>
+              <a class="stretched-link" href="{{ $release['file']['data']['full_url'] }}">{{ $release['title']}}</a>
             </h3>
           </div>
-            <h4 class="lead">{{ $release['release_date']}}</h4>
             <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($release['body'])),0,200) }}...</p>
-            <a href="{{ $release['file']['data']['full_url'] }}" class="btn btn-dark">Download file</a>
+            <p class="text-info">
+              {{ Carbon\Carbon::parse($release['release_date'])->format('l j F Y') }}
+            </p>
+            <p> @mime($release['file']['type']) - @humansize($release['file']['filesize'])</p>
+            <a href="{{ $release['file']['data']['full_url'] }}" class="btn d-block btn-dark stretched-link">Download file</a>
 
         </div>
       </div>

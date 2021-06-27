@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\DirectUs;
 use App\FitzElastic\Elastic;
-
 
 class collectionsController extends Controller
 {
@@ -18,7 +16,7 @@ class collectionsController extends Controller
      */
     public function index()
     {
-        $first = new DirectUs;
+        $first = $this->getApi();
         $first->setEndpoint('stubs_and_pages');
         $first->setArguments(
           array(
@@ -30,7 +28,7 @@ class collectionsController extends Controller
         );
         $pages = $first->getData();
 
-        $second = new DirectUs;
+        $second = $this->getApi();
         $second->setEndpoint('collections');
         $second->setArguments(
           array(
@@ -44,7 +42,7 @@ class collectionsController extends Controller
 
     public function details($slug)
     {
-        $second = new DirectUs;
+        $second = $this->getApi();
         $second->setEndpoint('collections');
         $second->setArguments(
           array(
