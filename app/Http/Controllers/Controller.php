@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\DirectUs;
+use App\FitzElastic\Elastic;
 use Artisan;
 class Controller extends BaseController
 {
