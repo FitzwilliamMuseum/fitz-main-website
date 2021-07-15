@@ -17,7 +17,7 @@
 
   @section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
-    @if($project['field_image'])
+    {{-- @if($project['field_image'])
     <figure class="figure float-right p-3 col-md-4">
       <img src="{{ $project['field_image']['data']['thumbnails']['5']['url'] }}"
       alt="{{ $project['field_image_alt_text'] }}" class="img-fluid" id="stand-out"
@@ -26,7 +26,7 @@
       />
       <figcaption class="figure-caption text-left">{{ $project['field_image_alt_text'] }}</figcaption>
     </figure>
-    @endif
+    @endif --}}
     @markdown($project['article_body'])
     <h3 class="text-info lead">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
     @if($project['youtube_playlist_id'])
