@@ -29,3 +29,23 @@
   </div>
 </div>
 </div>
+
+<div class="container">
+<div class="card mb-3 col-md-12 p-3" >
+<h3 class="text-info mt-3 lead">COVID 19 Measures</h3>
+
+<p class="text-info">
+  To protect the health and wellbeing of visitors and staff, many of whom are not
+  yet fully vaccinated, the Fitzwilliam Museum has decided to maintain a number
+  of COVID mitigation measures. These include <strong>strongly encouraging the wearing of
+  face coverings</strong> and social distancing as well as ticketing for admissions, reduced
+  capacity and regular hand sanitising.
+</p>
+<p class="text-info">
+  This reflects industry best practice, visitor sentiment research and guidance
+  from the Association of Leading Visitor Attractions and the University of Cambridge.
+  The Museum and the Museum Café will continue to display the QR code for the
+  NHS Test and Trace App, which visitors are encouraged to use.
+</p>
+</div>
+</div>
