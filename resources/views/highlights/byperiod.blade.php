@@ -4,9 +4,12 @@
   @section('title')
    @markdown($detail['title'])
   @endsection
-  @section('description', $detail['meta_description'])
-  @section('keywords', $detail['meta_keywords'])
-
+  @if(array_key_exists('meta_description', $detail))
+    @section('description', $detail['meta_description'])
+  @endif
+  @if(array_key_exists('meta_keywords', $detail))
+    @section('keywords', $detail['meta_keywords'])
+  @endif
   @section('hero_image',$detail['hero_image']['data']['url'])
   @section('hero_image_title', $detail['hero_image_alt_text'])
 @endforeach
