@@ -144,6 +144,7 @@
         @endif
 
 @isset($productions)
+  @if(!empty($productions))
   @section('productions')
   <div class="container mt-3">
     <h2 class="lead"><a href="{{ route('events') }}">Upcoming Lectures and virtual events</a></h2>
@@ -217,4 +218,5 @@
       </div>
     </div>
   @endsection
+@endif
 @endisset
