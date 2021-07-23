@@ -89,7 +89,7 @@
     @endif
 
     @if(!empty($coll['exhibition_files']))
-      <h3 class="lead">{{$type}}, $iterable, 'value', 'empty')]}} files</h3>
+      <h3 class="lead">{{$type}} files</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @foreach($coll['exhibition_files'] as $file)
