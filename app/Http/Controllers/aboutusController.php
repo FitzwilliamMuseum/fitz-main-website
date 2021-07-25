@@ -52,6 +52,45 @@ class aboutusController extends Controller
     return view('aboutus.director', compact('directors'));
   }
 
+
+  /**
+   * Returns a list of vacancies
+   * @return \Illuminate\Http\Response
+   */
+  public function vacancies()
+  {
+    $directus = $this->getApi();
+    $directus->setEndpoint('vacancies');
+    $directus->setArguments(
+      $args = array(
+        'fields' => '*.*.*',
+        'meta' => '*'
+      )
+    );
+    $vacancies = $directus->getData();
+    return view('aboutus.vacancies', compact('vacancies'));
+  }
+
+  /**
+   * Returns a vacancy
+   * @param  string $slug Page slug to query
+   * @return \Illuminate\Http\Response
+   */
+  public function vacancy(string $slug)
+  {
+    $directus = $this->getApi();
+    $directus->setEndpoint('vacancies');
+    $directus->setArguments(
+      $args = array(
+        'fields' => '*.*.*',
+        'meta' => '*',
+        'filter[slug][eq]' => $slug
+      )
+    );
+    $vacancies = $directus->getData();
+    return view('aboutus.vacancy', compact('vacancies'));
+  }
+
   /**
    * Returns a listing of all governance documents
    * @return \Illuminate\Http\Response

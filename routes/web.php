@@ -23,6 +23,8 @@ Route::get('about-us/directors', 'aboutusController@directors')->name('directors
 Route::get('about-us/directors/{slug}', 'aboutusController@director')->name('director');
 Route::get('about-us/press-room', 'aboutusController@press')->name('press-room');
 Route::get('about-us/governance', 'aboutusController@governance')->name('governance');
+Route::get('about-us/work-for-us', 'aboutusController@vacancies')->name('vacancies');
+Route::get('about-us/work-for-us/details/{slug}', 'aboutusController@vacancy')->name('vacancy');
 
 Route::get('about-us/collections', 'collectionsController@index')->name('collections');
 Route::get('about-us/collections/{slug}/', 'collectionsController@details')->name('collection');

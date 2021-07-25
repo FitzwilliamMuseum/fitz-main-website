@@ -53,15 +53,17 @@
           $depart = $pagesController::injectPages('about-us','departments');
           $coll = $pagesController::injectPages('about-us','collections');
           $press = $pagesController::injectPages('about-us','press-room');
+          $jobs = $pagesController::injectPages('about-us','work-for-us');
           @endphp
           @include('includes.structure.cards', $data = $support )
           @include('includes.structure.cards', $data = $comm )
           @include('includes.structure.cards', $data = $depart)
           @include('includes.structure.cards', $data = $coll)
           @include('includes.structure.cards', $data = $press)
+          @include('includes.structure.cards', $data = $jobs)
         @endif
 
-        
+
 
 
       </div>
