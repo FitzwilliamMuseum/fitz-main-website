@@ -29,6 +29,9 @@
               @if(isset($vacancy['salary_range']))
                 <p class="text-danger">£ {{ $vacancy['salary_range'] }}</p>
               @endif
+              @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
+                @include('includes.structure.jobexpired')
+              @endif
             </div>
           </div>
         </div>
