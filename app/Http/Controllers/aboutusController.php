@@ -64,7 +64,8 @@ class aboutusController extends Controller
     $directus->setArguments(
       $args = array(
         'fields' => '*.*.*',
-        'meta' => '*'
+        'meta' => '*',
+        'sort' => '-expires'
       )
     );
     $vacancies = $directus->getData();
