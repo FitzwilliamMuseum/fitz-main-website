@@ -22,7 +22,7 @@ Route::get('about-us/our-directors', 'aboutusController@directors')->name('direc
 Route::get('about-us/directors', 'aboutusController@directors')->name('directors-redirect');
 Route::get('about-us/directors/{slug}', 'aboutusController@director')->name('director');
 Route::get('about-us/press-room', 'aboutusController@press')->name('press-room');
-Route::get('about-us/governance', 'aboutusController@governance')->name('governance');
+Route::get('about-us/governance-policies-and-reports', 'aboutusController@governance')->name('governance');
 Route::get('about-us/work-for-us', 'aboutusController@vacancies')->name('vacancies');
 Route::get('about-us/work-for-us/details/{slug}', 'aboutusController@vacancy')->name('vacancy');
 

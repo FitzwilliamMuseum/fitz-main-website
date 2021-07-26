@@ -103,7 +103,8 @@ class aboutusController extends Controller
     $directus->setArguments(
       $args = array(
         'fields' => '*.*.*',
-        'meta' => '*'
+        'meta' => '*',
+        'sort' => '-created_on'
       )
     );
     $gov = $directus->getData();
