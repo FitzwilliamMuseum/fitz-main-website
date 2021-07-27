@@ -25,7 +25,6 @@
               </h3>
               <p>@mime($document['file']['type']) - @humansize($document['file']['filesize'])</p>
               <p class="text-info">
-                Posted: {{ Carbon\Carbon::parse($document['created_on'])->format('l j F Y') }}<br/>
                 Document type: {{ ucfirst($document['type']) }}
               </p>
           </div>

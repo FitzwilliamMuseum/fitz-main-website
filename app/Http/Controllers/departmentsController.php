@@ -9,6 +9,7 @@ use Solarium\Core\Client\Adapter\Curl;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Solarium\Exception;
 use Illuminate\Support\Facades\Cache;
+use App\DirectUs;
 
 
 class departmentsController extends Controller
@@ -87,7 +88,7 @@ class departmentsController extends Controller
 
   public static function areas()
   {
-    $api = $this->getApi();
+    $api = new DirectUs();
     $api->setEndpoint('conservation_areas');
     $api->setArguments(
       $args = array(
@@ -99,7 +100,7 @@ class departmentsController extends Controller
 
   public static function areasData($slug)
   {
-    $api = $this->getApi();
+    $api = new DirectUs();
     $api->setEndpoint('conservation_areas');
     $api->setArguments(
       $args = array(

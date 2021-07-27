@@ -104,7 +104,7 @@ class aboutusController extends Controller
       $args = array(
         'fields' => '*.*.*',
         'meta' => '*',
-        'sort' => '-created_on'
+        'sort' => '-title'
       )
     );
     $gov = $directus->getData();
