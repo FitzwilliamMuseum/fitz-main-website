@@ -11,7 +11,7 @@
 {{ $page }}
 </div>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-  {{ \Form::open(['url' => url('https://collection.beta.fitz.ms/search/results'),'method' => 'GET']) }}
+  {{ \Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET']) }}
 <div class="row">
   <div class="form-group col-md-12">
     <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
