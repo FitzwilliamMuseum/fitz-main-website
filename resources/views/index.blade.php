@@ -7,7 +7,7 @@
 @section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/aramesh.jpg')
 @section('parallax_four', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/e1a3159c12ca0f5091e3e9e5000ad4d0-landscape.jpg')
 @section('parallax_three_lower', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/aramesh.jpg')
-@section('description', 'This is the Beta Website for the Fitzwilliam Museum, the University of Cambridge\'s principal museum')
+@section('description', 'Welcome to the Website for the Fitzwilliam Museum, the University of Cambridge\'s principal museum')
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', 'The Fitzwilliam Museum')
 
