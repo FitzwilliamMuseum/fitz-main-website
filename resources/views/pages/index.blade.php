@@ -1,4 +1,9 @@
 @extends('layouts.layout')
+@php
+if(!empty($pages['data']))
+  abort(404);
+}
+@endphp
 @foreach($pages['data']  as $page)
   @section('title', $page['title'])
   @if(!empty($page['hero_image']))
