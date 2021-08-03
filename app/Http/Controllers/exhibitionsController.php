@@ -162,4 +162,19 @@ class exhibitionsController extends Controller
       $immunity = $api->getData();
       return $immunity;
   }
+
+  public static function injectLoanImmunity()
+  {
+      $api = new DirectUs;
+      $api->setEndpoint('incoming_loans');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'filter[immunity_from_seizure][nnull]' => '',
+          )
+      );
+      $immunity = $api->getData();
+      return $immunity;
+  }
 }

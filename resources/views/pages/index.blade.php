@@ -59,6 +59,10 @@
     $data  = $exhibitionsController::injectImmunity();
     @endphp
     @include('includes.structure.immunity')
-
+    @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
+    @php
+    $data  = $exhibitionsController::injectLoanImmunity();
+    @endphp
+    @include('includes.structure.immunity-loans')
   @endif
 @endsection
