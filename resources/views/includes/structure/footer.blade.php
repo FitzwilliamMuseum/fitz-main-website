@@ -2,13 +2,16 @@
 <div class="container-fluid bg-white p-2 container-fluid bg-white border-cambridge">
   <div class="col-md-12 mx-auto">
     <div class="row justify-content-center mb-4">
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-2 col-sm-2 text-center">
         <a href="https://www.museums.cam.ac.uk"><img class="img-fluid mx-auto " loading="lazy" alt="University of Cambridge Museums logo" src="/images/logos/ucm_logo_black_white.png" /></a>
       </div>
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-2 col-sm-2 text-center">
+        <a href="https://www.cambridge.gov.uk/"><img class="img-fluid" loading="lazy" alt="Cambridge City Council logo" src="/images/logos/camcity_logo.png" /></a>
+      </div>
+      <div class="col-md-2 col-sm-2 text-center">
         <a href="https://www.artscouncil.org.uk/"><img class="img-fluid mx-auto d-block" alt="Arts Council England Logo" src="/images/logos/artscouncil_grant.png" loading="lazy"  /></a>
       </div>
-      <div class="col-md-2 col-sm-2">
+      <div class="col-md-2 col-sm-2 text-center">
         <a href="https://re.ukri.org/"><img class="img-fluid mx-auto d-block" alt="Research England logo" loading="lazy" src="/images/logos/UKRI_RE-Logo_Horiz-RGB.png" /></a>
       </div>
     </div>
