@@ -29,7 +29,9 @@ class pagesController extends Controller
       )
     );
     $pages = $api->getData();
-
+    if(empty($pages['data'])){
+      return response()->view('errors.404',[],404);
+    }
     $mlt = new MoreLikeThis;
     $mlt->setLimit(3)->setType('page')->setQuery($slug);
     $records = $mlt->getData();
@@ -64,7 +66,9 @@ class pagesController extends Controller
       )
     );
     $pages = $api2->getData();
-
+    if(empty($pages['data'])){
+      return response()->view('errors.404',[],404);
+    }
     if($section == 'learning') {
       $expiresTwitter = now()->addMinutes(60);
       if (Cache::has('cache_twitter_schools_1')) {
