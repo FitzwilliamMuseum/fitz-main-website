@@ -45,7 +45,7 @@
     </h3>
   </div>
 
-  <div class="container-fluid map-box negative-padding">
+  <div class="container map-box ">
 
     @yield('map')
   </div>
