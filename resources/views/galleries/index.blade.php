@@ -7,7 +7,6 @@
 @foreach($pages['data'] as $page)
   @section('hero_image', $page['hero_image']['data']['url'])
   @section('hero_image_title', $page['hero_image_alt_text'])
-  @section('social_thumbnail', $page['hero_image']['data']['full_url'])
 @endforeach
 
 @section('themes')
