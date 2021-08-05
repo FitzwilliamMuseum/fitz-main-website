@@ -49,6 +49,9 @@ class aboutusController extends Controller
       )
     );
     $directors = $directus->getData();
+    if(empty($directors['data'])){
+      return response()->view('errors.404',[],404);
+    }
     return view('aboutus.director', compact('directors'));
   }
 
@@ -89,6 +92,9 @@ class aboutusController extends Controller
       )
     );
     $vacancies = $directus->getData();
+    if(empty($vacancy['data'])){
+      return response()->view('errors.404',[],404);
+    }
     return view('aboutus.vacancy', compact('vacancies'));
   }
 

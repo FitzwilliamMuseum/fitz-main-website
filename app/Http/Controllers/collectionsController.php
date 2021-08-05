@@ -51,6 +51,9 @@ class collectionsController extends Controller
           )
         );
         $collection = $second->getData();
+        if(empty($collection['data'])){
+          return response()->view('errors.404',[],404);
+        }
         return view('collections.details', compact('collection'));
     }
 

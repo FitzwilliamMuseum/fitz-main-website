@@ -59,7 +59,9 @@ class departmentsController extends Controller
         )
       );
       $departments = $api->getData();
-
+      if(empty($departments['data'])){
+        return response()->view('errors.404',[],404);
+      }
       $api2 = $this->getApi();
       $api2->setEndpoint('staff_profiles');
       $api2->setArguments(

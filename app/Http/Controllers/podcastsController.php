@@ -64,6 +64,9 @@ class podcastsController extends Controller
       )
     );
     $podcasts = $api->getData();
+    if(empty($podcasts['data'])){
+      return response()->view('errors.404',[],404);
+    }
     return view('podcasts.series', compact('podcasts'));
   }
 
@@ -79,6 +82,9 @@ class podcastsController extends Controller
       )
     );
     $podcasts = $api->getData();
+    if(empty($podcasts['data'])){
+      return response()->view('errors.404',[],404);
+    }
     return view('podcasts.episode', compact('podcasts'));
   }
 
@@ -116,6 +122,9 @@ class podcastsController extends Controller
       )
     );
     $mindseye = $api->getData();
+    if(empty($mindseye['data'])){
+      return response()->view('errors.404',[],404);
+    }
     $params = [
       'index' => 'ciim',
       'size' => 1,

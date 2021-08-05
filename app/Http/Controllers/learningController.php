@@ -40,6 +40,9 @@ class learningController extends Controller
           )
         );
         $ltd = $api->getData();
+        if(empty($ltd['data'])){
+          return response()->view('errors.404',[],404);
+        }
         $page = $this->getApi();
         $page->setEndpoint('stubs_and_pages');
         $page->setArguments(

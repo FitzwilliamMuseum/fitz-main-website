@@ -71,7 +71,9 @@ class researchController extends Controller
         )
       );
       $projects = $api->getData();
-
+      if(empty($projects['data'])){
+        return response()->view('errors.404',[],404);
+      }
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('projects')->setQuery($slug);
       $records = $mlt->getData();
@@ -106,6 +108,9 @@ class researchController extends Controller
         )
       );
       $profiles = $api->getData();
+      if(empty($profiles['data'])){
+        return response()->view('errors.404',[],404);
+      }
       return view('research.profile', compact('profiles'));
     }
 
@@ -121,6 +126,9 @@ class researchController extends Controller
         )
       );
       $resources = $api->getData();
+      if(empty($resources['data'])){
+        return response()->view('errors.404',[],404);
+      }
       return view('research.resource', compact('resources'));
     }
 
@@ -150,6 +158,9 @@ class researchController extends Controller
         )
       );
       $opps = $api->getData();
+      if(empty($opps['data'])){
+        return response()->view('errors.404',[],404);
+      }
       return view('research.opportunity', compact('opps'));
     }
 

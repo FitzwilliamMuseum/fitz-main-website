@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 
 class highlightsController extends Controller
 {
-    
+
 
     public function index(Request $request)
     {
@@ -56,6 +56,10 @@ class highlightsController extends Controller
         )
       );
       $pharos = $api->getData();
+
+      if(empty($pharos['data'])){
+        return response()->view('errors.404',[],404);
+      }
       $mlt = new MoreLikeThis;
       $mlt->setLimit(3)->setType('pharos')->setQuery($slug);
       $records = $mlt->getData();

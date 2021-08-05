@@ -18,7 +18,7 @@ use Phpfastcache\Helper\Psr16Adapter;
 class searchController extends Controller
 {
 
-  protected $url = 'https://beta.fitz.ms/';
+  protected $url = 'https://fitzmuseum.cam.ac.uk/';
 
   /**
    * The index page of the search system

@@ -46,6 +46,9 @@ class themesController extends Controller
       )
     );
     $themes = $api->getData();
+    if(empty($themes['data'])){
+      return response()->view('errors.404',[],404);
+    }
     return view('themes.theme', compact('themes'));
   }
 }
