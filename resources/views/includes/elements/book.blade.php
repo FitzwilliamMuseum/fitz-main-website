@@ -9,7 +9,7 @@
           <br/>
           <span class="text-success">Booking essential</span>
         </h2>
-        <a class="btn btn-dark btn-large" href="https://tickets.museums.cam.ac.uk/overview/https://tickets.museums.cam.ac.uk/overview/generaladmissionaugust">Book free entry now</a>
+        <a class="btn btn-dark btn-large" href="https://tickets.museums.cam.ac.uk/overview/generaladmissionaugust">Book free entry now</a>
         <h3 class="text-info mt-3 lead">Find us:</h3>
         <p class="text-info mt-3">The Fitzwilliam Museum,
             Trumpington Street,
