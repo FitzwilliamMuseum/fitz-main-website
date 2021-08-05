@@ -53,7 +53,9 @@ class newsController extends Controller
       )
     );
     $news = $api->getData();
-
+    if(empty($news['data'])){
+      return response()->view('errors.404',[],404);
+    }
     $mlt = new MoreLikeThis;
     $mlt->setLimit(3)->setType('news')->setQuery($slug);
     $records = $mlt->getData();

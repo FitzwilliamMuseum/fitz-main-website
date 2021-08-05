@@ -3,7 +3,7 @@
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/cupidpsychelarge.jpg')
 @section('hero_image_title', 'Cupid and Psyche - del Sallaio')
 @section('content')
-<div class="col-md-12 shadow-sm p-3 mx-auto mb-3 ">
+<div class="col-md-12 shadow-sm p-3 mx-auto mb-3 mt-3">
   <div class="row">
   <div class="col-md-6">
     <figure class="figure">

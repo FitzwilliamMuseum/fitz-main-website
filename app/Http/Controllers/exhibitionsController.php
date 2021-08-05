@@ -114,6 +114,9 @@ class exhibitionsController extends Controller
       )
     );
     $exhibitions = $api->getData();
+    if(empty($exhibitions['data'])){
+      return response()->view('errors.404',[],404);
+    }
     $adlib = NULL;
     if(!is_null($exhibitions['data'][0]['adlib_id_exhibition'])){
       $params = [

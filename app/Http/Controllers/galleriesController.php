@@ -48,6 +48,9 @@ class galleriesController extends Controller
         )
       );
       $galleries = $api->getData();
+      if(empty($galleries['data'])){
+        return response()->view('errors.404',[],404);
+      }
       return view('galleries.gallery', compact('galleries'));
     }
 
