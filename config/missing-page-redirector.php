@@ -39,6 +39,7 @@ return [
       '/learning/groups' => '/learning/group-activities',
       '/learning/schools' => 'learning/school-sessions',
       '/learning/family' => '/learning/families',
+      '/learning/community' => '/learning/community-programming',
       '/aboutus' => '/about-us',
       '/news/welcome-our-two-new-deputy-directors' => '/news/welcome-to-our-two-new-deputy-directors',
       '/news/portrait-giovanni-belzoni-donated-fitzwilliam' => '/news/portrait-of-giovanni-belzoni,-donated-to-the-fitzwilliam',
@@ -51,7 +52,7 @@ return [
       '/news/christmas-fitzwilliam' => '/news/christmas-at-the-fitzwilliam-2015',
       '/news/magnificence-rome' => '/news/magnificence-of-rome',
       '/news/ra250-fitz' => '/news/ra250-at-the-fitz',
-      
+
     ],
 
 ];
