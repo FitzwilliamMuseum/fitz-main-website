@@ -1,6 +1,6 @@
 <div class="container-fluid bg-white p-1">
   <div class="container">
-    <div class="text-center my-2"><a class="text-center btn btn-info text-white" href="https://tickets.museums.cam.ac.uk/overview/generaladmissionjuly">@fa('ticket-alt', 'ticket', 'mr-2')  FREE ENTRY- Book a ticket</a></div>
+    <div class="text-center my-2"><a class="text-center btn btn-info text-white" href="https://tickets.museums.cam.ac.uk/overview/https://tickets.museums.cam.ac.uk/overview/generaladmissionaugust">@fa('ticket-alt', 'ticket', 'mr-2')  FREE ENTRY- Book a ticket</a></div>
 
     <p class="text-center text-black">
       Tuesday - Saturday: 10:00 - 17:00 |
