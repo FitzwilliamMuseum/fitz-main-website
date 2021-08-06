@@ -40,13 +40,14 @@ return [
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
       '/learning/youngpeople/awards' => '/learning/young-people/arts-award',
-      '/learning/adulteducation' => '/learning/adult-education',
+      '/learning/adulteducation' => '/learning/adult-programming',
       '/learning/contact' => '/learning/contact-us',
       '/learning/groups' => '/learning/group-activities',
       '/learning/schools' => 'learning/school-sessions',
       '/learning/family' => '/learning/families',
       '/learning/community' => '/learning/community-programming',
       '/learning/adults' => '/learning/adult-programming',
+      '/learning/families/stories' => '/learning/tales-from-the-museum',
       # Pharos
       '/pharos' => '/objects-and-artworks',
       # News - Most of these urls  are rewritten for clarity of semantics
