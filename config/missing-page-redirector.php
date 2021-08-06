@@ -25,17 +25,34 @@ return [
     'redirects' => [
       # 301 redircts
       # Visiting
-      '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       '/visit' => '/visit-us',
+      '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       # About
       '/aboutus' => '/about-us',
       '/aboutus/history' => '/about-us/history-of-the-building-and-collections',
-      # Collections
       '/collections/ceramics' => '/about-us/collections/ceramics-glass-and-enamels',
       '/collections/' => '/about-us/collections/',
+
+      # Resources
       '/onlineresources' => '/research/online-resources',
+      '/gallery/nightoflonging/' => 'https://nightoflonging.fitzmuseum.cam.ac.uk',
+      '/utc/' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
+      '/colour/explore' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/explore',
+      '/colour' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/',
+      '/gallery/lagrandeguerre/' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk',
+      '/gallery/lagrandeguerre/{url}' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk/{url}',
+      '/gallery/snowcountry' => 'https://snowcountry.fitzmuseum.cam.ac.uk',
+      '/gallery/snowcountry/{url}' => 'https://snowcountry.fitzmuseum.cam.ac.uk/{url}',
+      '/gallery/shahnameh/' => 'https://shahnameh.fitzmuseum.cam.ac.uk/',
+      '/gallery/shahnameh/{url}' => 'https://shahnameh.fitzmuseum.cam.ac.uk/{url}',
+      '/netsuke' => 'https://netsuke.fitzmuseum.cam.ac.uk',
+      '/netsuke/{url}' => 'https://netsuke.fitzmuseum.cam.ac.uk/{url}',
+      '/gallery/papyrus/' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk',
+      '/gallery/papyrus/{url}' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk/{url}',
+      # Events
       '/calendar' => '/events',
       '/calendar/whatson' => '/events',
+      '/events/whatson' => '/events',
       # Learning
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
