@@ -117,7 +117,7 @@ return [
       # Pharos
       '/pharos' => '/objects-and-artworks',
       '/ce-work' => '/objects-and-artworks',
-      
+
       # News - Most of these urls  are rewritten for clarity of semantics
       '/news/inside-macclesfield-psalter' => '/news/inside-the-macclesfield-psalter',
       '/news/easter-fitzwilliam' => '/news/easter-at-the-fitzwilliam',
@@ -270,7 +270,10 @@ return [
       '/news/explore-art-glass-engraving-online-virtual-exhibition' =>  '/news/explore-the-art-of-glass-engraving-online-with-virtual-exhibition',
       '/news/reinvigorated-hang-20th-and-21st-century-art' => '/news/a-reinvigorated-hang-of-20th-and-21st-century-art',
       '/news/rss-news-feeds-now-available-fitzwilliam-museum' => '/news/rss-news-feeds-now-available-from-the-fitzwilliam-museum',
-      '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards'
+      '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards',
+      # Research
+      'conservd' => '/research/projects/conservd',
+      
     ],
 
 ];

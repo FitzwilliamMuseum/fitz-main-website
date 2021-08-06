@@ -22,8 +22,9 @@
       </p>
       <p>
         Please do try using our search engine and see if that can find what you
-        are lookimng for.
+        are looking for.
       </p>
+
   </div>
   </div>
 </div>

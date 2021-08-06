@@ -69,6 +69,27 @@ class searchController extends Controller
       return view('search.results', compact('records', 'number', 'paginate', 'queryString'));
   }
 
+  public static function injectResults( $path )
+  {
+      $path = \Purifier::clean($path, array('HTML.Allowed' => ''));
+      $key = md5($path . '404');
+      $path = str_replace(array('/','-'),array(' ', ' '),$path);
+
+      $expiresAt = now()->addMinutes(3600);
+      if (Cache::has($key)) {
+          $data = Cache::store('file')->get($key);
+      } else {
+          $configSolr = \Config::get('solarium');
+          $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+          $query = $client->createSelect();
+          $query->setQuery($path);
+          $query->setRows(3);
+          $data = $client->select($query);
+          Cache::store('file')->put($key, $data, $expiresAt);
+      }
+      $records = $data->getDocuments();
+      return $records;
+  }
 
   /** Ping function for search
    * @return \Illuminate\Http\JsonResponse
