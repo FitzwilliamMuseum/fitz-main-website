@@ -273,7 +273,7 @@ return [
       '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards',
       # Research
       'conservd' => '/research/projects/conservd',
-      
+      'research/grr' => '/visit-us/galleries/gallery-9'
     ],
 
 ];
