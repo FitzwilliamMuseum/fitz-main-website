@@ -36,9 +36,11 @@ return [
       # Resources
       '/onlineresources' => '/research/online-resources',
       '/gallery/nightoflonging/' => 'https://nightoflonging.fitzmuseum.cam.ac.uk',
+      '/gallery/nightoflonging/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/{url}',
       '/utc/' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
-      '/colour/explore' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/explore',
+      '/utc/{url}' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
       '/colour' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/',
+      '/colour/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/{url}',
       '/gallery/lagrandeguerre/' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk',
       '/gallery/lagrandeguerre/{url}' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk/{url}',
       '/gallery/snowcountry' => 'https://snowcountry.fitzmuseum.cam.ac.uk',
