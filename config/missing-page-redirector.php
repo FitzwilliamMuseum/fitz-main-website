@@ -43,7 +43,7 @@ return [
       '/aboutus/aa' => '/about-us/departments/applied-arts',
       '/aboutus/coins' => '/about-us/departments/coins-and-medals',
       '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
-
+      '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
       #  Collections
       '/collections/prints' => '/about-us/collections/prints',
       '/collections/ceramics' => '/about-us/collections/ceramics-glass-and-enamels',
