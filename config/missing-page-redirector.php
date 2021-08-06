@@ -59,6 +59,8 @@ return [
       '/netsuke/{url}' => 'https://netsuke.fitzmuseum.cam.ac.uk/{url}',
       '/gallery/papyrus/' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk',
       '/gallery/papyrus/{url}' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk/{url}',
+      '/cockerell' => 'https://fitzwilliammuseum.github.io/cockerell/',
+      '/cockerell/{url}' => 'https://fitzwilliammuseum.github.io/cockerell/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson' => '/events',
