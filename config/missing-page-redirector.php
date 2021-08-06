@@ -24,52 +24,81 @@ return [
      */
     'redirects' => [
       # 301 redircts
+
       # Visiting
       '/visit' => '/visit-us',
+      '/visit/cafe' => '/visit-us/shopping-and-eating',
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       # About
       '/aboutus' => '/about-us',
-      '/aboutus/coins' => '/about-us/collections/coins-and-medals',
       '/aboutus/mission' => '/about-us/our-mission',
+      '/aboutus/museumhistory/old' => '/about-us/history-of-the-building-and-collections',
       '/aboutus/history' => '/about-us/history-of-the-building-and-collections',
       '/aboutus/press/pr_archive' => '/about-us/press-room',
+      '/aboutus/today' => '/about-us/the-fitzwilliam-today',
+      '/aboutus/support/marlaygroup' => '/support-us/the-marlay-group',
+      '/aboutus/support/friends/membership' => '/support-us/friends-of-the-fitzwilliam',
+      '/aboutus/pdp' => '/about-us/departments/paintings-drawings-and-prints',
+      '/aboutus/ant' => '/about-us/departments/antiquities',
+      '/aboutus/aa' => '/about-us/departments/applied-arts',
+      '/aboutus/coins' => '/about-us/departments/coins-and-medals',
+      '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
+
+      #  Collections
       '/collections/prints' => '/about-us/collections/prints',
       '/collections/ceramics' => '/about-us/collections/ceramics-glass-and-enamels',
       '/collections/' => '/about-us/collections/',
+      '/collections/greeceandrome' => '/about-us/collections/greece-and-rome',
+      '/collections/drawingsandwatercolours' => '/about-us/collections/watercolours-and-drawings',
+      '/collections/paintings' => '/about-us/collections/paintings',
+
       # exhibitions
+      '/exhibitions' => '/visit-us/exhibitions/',
       '/pastexhibitions' => '/visit-us/exhibitions/archive',
       '/pastexhibitions{url}' => '/visit-us/exhibitions/archive',
       '/pastexhibitions/{url}' => '/visit-us/exhibitions/archive',
       # Resources
       '/onlineresources' => '/research/online-resources',
+        # Night of Longing
       '/gallery/nightoflonging/' => 'https://nightoflonging.fitzmuseum.cam.ac.uk',
       '/gallery/nightoflonging/sfs/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/explore/sex-for-sale/',
       '/gallery/nightoflonging/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/{url}',
       '/gallery/nightoflonging/lovestories/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/explore/love-stories/',
       '/gallery/nightoflonging/furtherreading/{url}' =>  'https://nightoflonging.fitzmuseum.cam.ac.uk/further-reading/',
       '/gallery/nightoflonging/loveletters/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/explore/love-letters/',
+        # Rebinding manuscripts
       '/utc/' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
       '/utc/{url}' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
+        # Colour illuminated
       '/colour' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/',
       '/colour/explore/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/explore/{url}',
       '/colour/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/{url}',
+        # The  great war
       '/gallery/lagrandeguerre/' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk',
       '/gallery/lagrandeguerre/{url}' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk/explore/{url}',
+        #  Snow country
       '/gallery/snowcountry' => 'https://snowcountry.fitzmuseum.cam.ac.uk',
       '/gallery/snowcountry/{url}' => 'https://snowcountry.fitzmuseum.cam.ac.uk/{url}',
+        #  shahnameh
       '/gallery/shahnameh/' => 'https://shahnameh.fitzmuseum.cam.ac.uk/',
       '/gallery/shahnameh/{url}' => 'https://shahnameh.fitzmuseum.cam.ac.uk/{url}',
+        # Netsuke
       '/netsuke' => 'https://netsuke.fitzmuseum.cam.ac.uk',
       '/netsuke/{url}' => 'https://netsuke.fitzmuseum.cam.ac.uk/{url}',
+        # Book of the dead
       '/gallery/papyrus/' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk',
       '/gallery/papyrus/{url}' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk/{url}',
+        # Cockerell
       '/cockerell' => 'https://fitzwilliammuseum.github.io/cockerell/',
       '/cockerell/{url}' => 'https://fitzwilliammuseum.github.io/cockerell/{url}',
+
       # Events
       '/calendar' => '/events',
+      '/calendar/events' => '/events',
       '/calendar/whatson' => '/events',
       '/events/whatson' => '/events',
       '/wo' => '/events',
+
       # Learning
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
@@ -82,8 +111,13 @@ return [
       '/learning/community' => '/learning/community-programming',
       '/learning/adults' => '/learning/adult-programming',
       '/learning/families/stories' => '/learning/tales-from-the-museum',
+      '/work/fitzwilliam-museum-portico' => '/learning/look-think-do/the-fitzwilliam-museum-portico',
+      '/work/{url}' => '/learning/look-think-do/{url}',
+
       # Pharos
       '/pharos' => '/objects-and-artworks',
+      '/ce-work' => '/objects-and-artworks',
+      
       # News - Most of these urls  are rewritten for clarity of semantics
       '/news/inside-macclesfield-psalter' => '/news/inside-the-macclesfield-psalter',
       '/news/easter-fitzwilliam' => '/news/easter-at-the-fitzwilliam',
@@ -235,7 +269,8 @@ return [
       '/news/gold-pineapple-welcomes-visitors-feast-fast-exhibition' => '/news/gold-pineapple-welcomes-visitors-to-feast-&-fast-exhibition',
       '/news/explore-art-glass-engraving-online-virtual-exhibition' =>  '/news/explore-the-art-of-glass-engraving-online-with-virtual-exhibition',
       '/news/reinvigorated-hang-20th-and-21st-century-art' => '/news/a-reinvigorated-hang-of-20th-and-21st-century-art',
-      '/news/rss-news-feeds-now-available-fitzwilliam-museum' => '/news/rss-news-feeds-now-available-from-the-fitzwilliam-museum'
+      '/news/rss-news-feeds-now-available-fitzwilliam-museum' => '/news/rss-news-feeds-now-available-from-the-fitzwilliam-museum',
+      '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards'
     ],
 
 ];
