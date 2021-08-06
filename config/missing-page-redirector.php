@@ -29,8 +29,10 @@ return [
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       # About
       '/aboutus' => '/about-us',
+      '/aboutus/mission' => '/about-us/mission',
       '/aboutus/history' => '/about-us/history-of-the-building-and-collections',
       '/aboutus/press/pr_archive' => '/about-us/press-room',
+      '/collections/prints' => '/about-us/collections/prints',
       '/collections/ceramics' => '/about-us/collections/ceramics-glass-and-enamels',
       '/collections/' => '/about-us/collections/',
       # exhibitions
@@ -65,6 +67,7 @@ return [
       '/calendar' => '/events',
       '/calendar/whatson' => '/events',
       '/events/whatson' => '/events',
+      '/wo' => '/events',
       # Learning
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
