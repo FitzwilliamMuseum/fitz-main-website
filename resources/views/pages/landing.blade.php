@@ -51,7 +51,7 @@
           @php
           $governance = $pagesController::injectPages('about-us','governance-policies-and-reports');
           $support = $pagesController::injectPages('support-us','support-us');
-          $comm = $pagesController::injectPages('about-us','commercial-services');
+          $comm = $pagesController::injectPages('commercial-services','commercial-services');
           $depart = $pagesController::injectPages('about-us','departments');
           $coll = $pagesController::injectPages('about-us','collections');
           $press = $pagesController::injectPages('about-us','press-room');
@@ -59,7 +59,7 @@
           @endphp
           @include('includes.structure.cards', $data = $governance )
           @include('includes.structure.cards', $data = $support )
-          @include('includes.structure.cards', $data = $comm )
+          @include('includes.structure.commercial', $data = $comm )
           @include('includes.structure.cards', $data = $depart)
           @include('includes.structure.cards', $data = $coll)
           @include('includes.structure.cards', $data = $press)
