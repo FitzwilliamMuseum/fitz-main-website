@@ -68,6 +68,14 @@ button.btn.btn-btnBook a {
   margin-top: 30px;
   margin-bottom: 0;
 }
+.steppe {
+  min-height: 600px;
+  background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-compressed.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+}
 
 @media screen and (max-width: 440px) {
   .head {

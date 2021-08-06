@@ -17,15 +17,13 @@
   @include('includes.structure.nav')
   @include('includes.structure.head')
   @include('includes.structure.open')
+
+  @include('includes.structure.steppe')
+
   @yield('productions')
 
 
-  <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('news') }}">Latest news</a></h2>
-    <div class="row">
-      @yield('news')
-    </div>
-  </div>
+
 
   <div class="container-fluid parallax second-parallax-home"></div>
 
@@ -62,8 +60,14 @@
   <div class="container-fluid parallax third-parallax-home">
   </div>
 
-
-
+  <div class="container mt-3">
+    <h2 class="lead"><a href="{{ route('news') }}">Latest news</a></h2>
+    <div class="row">
+      @yield('news')
+    </div>
+  </div>
+  <div class="container-fluid parallax third-parallax-home">
+  </div>
   @yield('shopify')
   @include('includes.structure.emailsignup')
 
