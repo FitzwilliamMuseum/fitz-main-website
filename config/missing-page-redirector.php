@@ -29,6 +29,7 @@ return [
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       # About
       '/aboutus' => '/about-us',
+      '/aboutus/coins' => '/about-us/collections/coins',
       '/aboutus/mission' => '/about-us/our-mission',
       '/aboutus/history' => '/about-us/history-of-the-building-and-collections',
       '/aboutus/press/pr_archive' => '/about-us/press-room',
