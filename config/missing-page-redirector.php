@@ -15,7 +15,7 @@ return [
      */
     'redirect_status_codes' => [
         \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND,
-        \Symfony\Component\HttpFoundation\Response::HTTP_GONE
+        // \Symfony\Component\HttpFoundation\Response::HTTP_GONE
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
       '/news/final-weeks-discoveries' => '/news/final-weeks-of-discoveries',
       '/news/easter-fitzwilliam-2' => '/news/easter-at-the-fitzwilliam-2019',
       '/news/easter-fitz-1' => '/news/easter-at-the-fitz',
-      '/news/our-winter-hours' => ['/',410],
+      // '/news/our-winter-hours' => ['/',410],
       '/news/mannequin-parade-0' => '/news/mannequin-parade',
       '/news/follow-fitz-twitter' => '/news/follow-the-fitz-on-twitter!',
       '/news/award-saving-masterpiece' => '/news/award-for-saving-a-masterpiece',
@@ -93,7 +93,18 @@ return [
       '/news/new-podcast-fitzwilliam-museum' => '/news/new-podcast-from-the-fitzwilliam-museum',
       'news/festival-ideas-fitzwilliam-museum' => 'news/the-festival-of-ideas-at-the-fitzwilliam-museum',
       '/news/bbc-civilisations-and-fitzwilliam'  => '/news/bbc-civilisations-and-the-fitzwilliam',
-      '/news/thomas-hardys-jude-obscure' => '/news/thomas-hardy\'s-jude-the-obscure'
+      '/news/thomas-hardys-jude-obscure' => '/news/thomas-hardy\'s-jude-the-obscure',
+      '/news/virtual-tour-true-nature' => '/news/virtual-tour-of-true-to-nature',
+      '/news/2016-fitzwilliam-museum-bicentenary' => '/news/2016-the-fitzwilliam-museum-bicentenary',
+      '/news/poussin-masterpiece-goes-tour' => '/news/poussin-masterpiece-goes-on-tour',
+      '/news/last-week-silent-partners' => '/news/last-week-of-silent-partners',
+      '/news/verve-returns-fitzwilliam-museum' => '/news/verve-returns-to-the-fitzwilliam-museum',
+      '/news/final-stage-building-works' => '/news/final-stage-of-building-works',
+      '/news/mannequins-x-ray-vision' => '/news/mannequins-with-x-ray-vision',
+      '/news/colouring-competition-grown-ups' => '/news/colouring-competition-for-grown-ups',
+      '/news/co-production-adc-theatre' => '/news/co-production-with-adc-theatre',
+      '/news/co-production-adc' => 'the-fitzwilliam-focuses-on-the-prints-of-whistler'
+
     ],
 
 ];
