@@ -51,6 +51,7 @@ return [
       '/utc/' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
       '/utc/{url}' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
       '/colour' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/',
+      '/colour/explore/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/explore/{url}',
       '/colour/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/{url}',
       '/gallery/lagrandeguerre/' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk',
       '/gallery/lagrandeguerre/{url}' => 'https://la-grande-guerre.fitzmuseum.cam.ac.uk/explore/{url}',
