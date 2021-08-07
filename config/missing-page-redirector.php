@@ -97,6 +97,7 @@ return [
       '/calendar/events' => '/events',
       '/calendar/whatson' => '/events',
       '/events/whatson' => '/events',
+      '/events/events' => '/events',
       '/wo' => '/events',
 
       # Learning
