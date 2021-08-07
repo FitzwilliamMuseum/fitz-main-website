@@ -79,6 +79,9 @@ return [
         #  Snow country
       '/gallery/snowcountry' => 'https://snowcountry.fitzmuseum.cam.ac.uk',
       '/gallery/snowcountry/{url}' => 'https://snowcountry.fitzmuseum.cam.ac.uk/{url}',
+        # vive la difference
+      '/gallery/viveladifference/' => 'https://vive-la-difference.fitzmuseum.cam.ac.uk',
+      '/gallery/viveladifference/{url}' => 'https://vive-la-difference.fitzmuseum.cam.ac.uk/{url}',
         #  shahnameh
       '/gallery/shahnameh/' => 'https://shahnameh.fitzmuseum.cam.ac.uk/',
       '/gallery/shahnameh/{url}' => 'https://shahnameh.fitzmuseum.cam.ac.uk/{url}',
