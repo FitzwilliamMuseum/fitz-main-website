@@ -33,6 +33,10 @@
             @else
               <p class="text-info">Included in General admission</p>
             @endif
+            <p class="text-info">
+              {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
+              {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
+            </p>
           </div>
         </div>
       </div>
@@ -62,6 +66,10 @@
               <a class="btn btn-dark" href="https://tickets.museums.cam.ac.uk/overview/{{ $project['tessitura_string'] }}">Book now</a>
             @else
               <p class="text-info">Included in General admission</p>
+              <p class="text-info">
+                {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
+                {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
+              </p>
             @endif
           </div>
         </div>
@@ -95,6 +103,10 @@
             <h3 class="lead">
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
+            <p class="text-info">
+              {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
+              {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
+            </p>
           </div>
         </div>
       </div>
@@ -126,6 +138,13 @@
             <h3 class="lead">
               <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
             </h3>
+            <p class="text-info">
+              {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
+              {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
+            </p>
+            <span class="badge badge-lg badge-info p-2 d-block">
+              This is now closed
+            </span>
           </div>
         </div>
       </div>
