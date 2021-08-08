@@ -175,11 +175,12 @@ class homeController extends Controller
       $args = array(
           'fields' => '*.*.*.*',
           'meta' => '*',
-          'sort' => '-id',
+          'sort' => '?',
           'limit' => 3
       )
     );
     $things = $api5->getData();
+    
     $expiresAt = now()->addMinutes(3600);
     $key = md5('shopify-api-front');
 
