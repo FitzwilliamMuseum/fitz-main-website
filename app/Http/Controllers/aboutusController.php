@@ -92,7 +92,7 @@ class aboutusController extends Controller
       )
     );
     $vacancies = $directus->getData();
-    if(empty($vacancy['data'])){
+    if(empty($vacancies['data'])){
       return response()->view('errors.404',[],404);
     }
     return view('aboutus.vacancy', compact('vacancies'));

@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @foreach($vacancies['data'] as $vacancy)
 
   @section('title', $vacancy['job_title'])
@@ -20,9 +20,11 @@
     @endif
     @markdown($vacancy['job_description'])
     <p class="text-info lead">Closing date: <strong>{{  Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</strong></p>
+    @isset($vacancy['job_pack'])
     <a href="{{ $vacancy['job_pack']['data']['full_url'] }}" class="btn btn-dark" download>
       Download the job pack
     </a>
+  @endisset
   </div>
   @endsection
 @endforeach
