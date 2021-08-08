@@ -17,11 +17,11 @@
               <h3 class="lead">
                 <a href="{{ route('gallery',[$gallery['slug']]) }}">{{ $gallery['gallery_name'] }}</a>
               </h3>
-              @if($gallery['gallery_status'])
+              {{-- @if($gallery['gallery_status'])
               @foreach($gallery['gallery_status'] as $status)
                 <span class="badge badge-wine mb-1">{{$status}}</span>
               @endforeach
-              @endif
+              @endif --}}
             </div>
           </div>
         </div>
