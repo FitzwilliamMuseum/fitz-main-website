@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 
-use Twitter;
-use Youtube;
+// use Twitter;
+// use Youtube;
 use Cache;
-use InstagramScraper\Instagram;
-use Phpfastcache\Helper\Psr16Adapter;
+
+// use InstagramScraper\Instagram;
+// use Phpfastcache\Helper\Psr16Adapter;
 use Solarium\Core\Client\Client;
 use Solarium\Exception;
 use Solarium\Core\Client\Adapter\Curl;
+
 use App\TessituraApi;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -92,6 +94,32 @@ class homeController extends Controller
     );
     $carousel = $api->getData();
 
+    $galleryAPi = $this->getApi();
+    $galleryAPi->setEndpoint('galleries');
+    $galleryAPi->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => 'result_count,total_count,type',
+          'sort' => '?',
+          'limit' => 3,
+          'filter[gallery_status][eq]' => 'open',
+      )
+    );
+    $galleries = $galleryAPi->getData();
+
+    $exhibitionAPi = $this->getApi();
+    $exhibitionAPi->setEndpoint('exhibitions');
+    $exhibitionAPi->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => 'result_count,total_count,type',
+          'sort' => '?',
+          'limit' => 3,
+          'filter[exhibition_status][eq]' => 'current',
+      )
+    );
+    $exhibitions = $exhibitionAPi->getData();
+
     $api2 = $this->getApi();
     $api2->setEndpoint('news_articles');
     $api2->setArguments(
@@ -109,7 +137,7 @@ class homeController extends Controller
     $api3->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          // 'meta' => 'result_count,total_count,type',
+          'meta' => '*',
           'sort' => '?',
           'limit' => 3,
           // 'filter[featured][eq]' => 'yes'
@@ -122,7 +150,7 @@ class homeController extends Controller
     $api6->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          // 'meta' => 'result_count,total_count,type',
+          'meta' => '*',
           'limit' => 3
       )
     );
@@ -133,7 +161,7 @@ class homeController extends Controller
     $api4->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          // 'meta' => 'result_count,total_count,type',
+          'meta' => '*',
           'sort' => '?',
           'limit' => 3,
           // 'filter[featured][eq]' => 'yes'
@@ -146,7 +174,7 @@ class homeController extends Controller
     $api5->setArguments(
       $args = array(
           'fields' => '*.*.*.*',
-          // 'meta' => 'result_count,total_count,type',
+          'meta' => '*',
           'sort' => '-id',
           'limit' => 3
       )
@@ -168,7 +196,7 @@ class homeController extends Controller
        $query->addSort('random_'.$randString, $query::SORT_DESC);
        $call = $client->select($query);
        $shopify = $call->getDocuments();
-         Cache::store('file')->put($key, $shopify, $expiresAt);
+       Cache::store('file')->put($key, $shopify, $expiresAt);
      }
      $keyTess = md5('tessitura-home');
 
@@ -180,11 +208,14 @@ class homeController extends Controller
        $prods->setPerformanceEndDate(Carbon::now()->addDays(30));
        $prods->setFacilities('lectures');
        $productions = $prods->getPerformancesSearch();
+       Cache::store('file')->put($keyTess, $productions, $expiresAt);
      }
+
     return view('index', compact(
       'carousel','news', 'research',
       'objects', 'things', 'fundraising',
-      'shopify','productions'
+      'shopify','productions', 'galleries',
+      'exhibitions'
     ));
   }
 }

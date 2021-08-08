@@ -34,7 +34,7 @@
 
   @section('fundraising')
     <div class="container mt-3">
-      <h2 class="lead"><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h2>
+      <h2 class="display-5"><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h2>
       <div class="row">
         @foreach($fundraising['data'] as $project)
           <div class="col-md-4 mb-3">
@@ -111,7 +111,7 @@
     @if(!empty($shopify))
       @section('shopify')
         <div class="container">
-          <h2 class="mt-3 lead"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from the Fitzwilliam Museum shop</a></h2>
+          <h2 class="mt-3 display-5"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from the Fitzwilliam Museum shop</a></h2>
           <div class="row">
             @foreach($shopify as $record)
               <div class="col-md-3 mb-3">
@@ -147,7 +147,7 @@
   @if(!empty($productions))
   @section('productions')
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('events') }}">Upcoming Lectures and virtual events</a></h2>
+    <h2 class="display-5"><a href="{{ route('events') }}">Upcoming Lectures and virtual events</a></h2>
     <div class="row">
       @php
       $types = Arr::pluck($productions, 'FacilityDescription');

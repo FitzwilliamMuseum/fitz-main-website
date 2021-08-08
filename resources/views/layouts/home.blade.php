@@ -21,9 +21,11 @@
   @include('includes.structure.steppe')
 
   @yield('productions')
+  @include('includes.structure.exhibitions')
 
+  <div class="container-fluid parallax second-parallax-home"></div>
 
-
+  @include('includes.structure.galleries')
 
   <div class="container-fluid parallax second-parallax-home"></div>
 
@@ -36,7 +38,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{  route('objects') }}">Collections highlights</a></h2>
+    <h2 class="display-5"><a href="{{  route('objects') }}">Collections highlights</a></h2>
     <div class="row">
       @yield('themes')
     </div>
@@ -51,7 +53,7 @@
   <div class="container-fluid parallax second-parallax-home mt-3"></div>
 
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('research') }}">Our research</a></h2>
+    <h2 class="display-5"><a href="{{ route('research') }}">Our research</a></h2>
     <div class="row">
       @yield('research')
     </div>
@@ -61,7 +63,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('news') }}">Latest news</a></h2>
+    <h2 class="display-5"><a href="{{ route('news') }}">Latest news</a></h2>
     <div class="row">
       @yield('news')
     </div>

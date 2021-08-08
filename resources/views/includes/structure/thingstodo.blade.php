@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <h2 class="lead">Things to do</h2>
+  <h2 class="display-5">Things to do</h2>
   <div class="row">
     @foreach($things['data'] as $thing)
     <div class="col-md-4 mb-3">
