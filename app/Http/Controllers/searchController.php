@@ -528,7 +528,7 @@ class searchController extends Controller
       $doc->description = strip_tags($vacancy['job_description']);
       $doc->body = strip_tags($vacancy['job_description']);
       $doc->slug = $vacancy['slug'];
-      $doc->url = $this->url . 'about-us/vacancies/details/' . $vacancy['slug'];
+      $doc->url = $this->url . 'about-us/work-for-us/details/' . $vacancy['slug'];
       $doc->contentType = 'vacancies';
       if(isset($vacancy['hero_image'])){
         $doc->thumbnail = $vacancy['hero_image']['data']['thumbnails'][5]['url'];
