@@ -523,8 +523,8 @@ class searchController extends Controller
     foreach($vacancies['data'] as $vacancy)
     {
       $doc = $update->createDocument();
-      $doc->id = $profile['id'] . '-vacancy';
-      $doc->title = $profile['job_title'];
+      $doc->id = $vacancy['id'] . '-vacancy';
+      $doc->title = $vacancy['job_title'];
       $doc->description = strip_tags($vacancy['job_description']);
       $doc->body = strip_tags($vacancy['job_description']);
       $doc->slug = $vacancy['slug'];
