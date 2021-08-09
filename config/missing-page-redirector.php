@@ -293,6 +293,7 @@ return [
       '/news/reinvigorated-hang-20th-and-21st-century-art' => '/news/a-reinvigorated-hang-of-20th-and-21st-century-art',
       '/news/rss-news-feeds-now-available-fitzwilliam-museum' => '/news/rss-news-feeds-now-available-from-the-fitzwilliam-museum',
       '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards',
+      '/sensualvirtual' => '/news/sensualvirtual',
       # Research
       'conservd' => '/research/projects/conservd',
       'research/grr' => '/visit-us/galleries/gallery-9'
