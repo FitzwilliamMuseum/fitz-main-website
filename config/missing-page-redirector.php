@@ -71,7 +71,6 @@ return [
       '/collections/jewellery' => '/about-us/collections/silver-and-jewellery',
       '/collections/textiles' => '/about-us/collections/textiles-and-fans',
       # exhibitions
-      '/exhibitions' => '/visit-us/exhibitions/',
       '/pastexhibitions' => '/visit-us/exhibitions/archive',
       '/pastexhibitions{url}' => '/visit-us/exhibitions/archive',
       '/pastexhibitions/{url}' => '/visit-us/exhibitions/archive',
