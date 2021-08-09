@@ -18,20 +18,17 @@ Route::get('/', 'homeController@index')->name('home');
 About us routes
 */
 Route::get('about-us/our-directors', 'aboutusController@directors')->name('directors');
-
 Route::get('about-us/directors', 'aboutusController@directors')->name('directors-redirect');
 Route::get('about-us/directors/{slug}', 'aboutusController@director')->name('director');
 Route::get('about-us/press-room', 'aboutusController@press')->name('press-room');
 Route::get('about-us/governance-policies-and-reports', 'aboutusController@governance')->name('governance');
 Route::get('about-us/work-for-us', 'aboutusController@vacancies')->name('vacancies');
 Route::get('about-us/work-for-us/details/{slug}', 'aboutusController@vacancy')->name('vacancy');
-
 Route::get('about-us/collections', 'collectionsController@index')->name('collections');
 Route::get('about-us/collections/{slug}/', 'collectionsController@details')->name('collection');
 Route::get('about-us/departments/', 'departmentsController@index')->name('departments');
 Route::get('about-us/departments/{slug}', 'departmentsController@details')->name('department');
 Route::get('about-us/departments/conservation-and-collections-care/{slug}', 'departmentsController@conservation')->name('conservation-care');
-
 /*
 Research section routes
 */
@@ -44,13 +41,15 @@ Route::get('research/online-resources/', 'researchController@resources')->name('
 Route::get('research/online-resources/{slug}', 'researchController@resource')->name('resource');
 Route::get('research/opportunities/', 'researchController@opportunities')->name('opportunities');
 Route::get('research/opportunities/{slug}', 'researchController@opportunity')->name('opportunity');
-
 /*
 Visit us Route
 */
 Route::get('visit-us/', 'visitController@index')->name('visit');
 Route::get('/galleries', function () {
     return redirect('visit-us/galleries');
+});
+Route::get('/exhibitions', function () {
+    return redirect('visit-us/exhibitions');
 });
 Route::get('visit-us/galleries', 'galleriesController@index')->name('galleries');
 Route::get('visit-us/galleries/{slug}', 'galleriesController@gallery')->name('gallery');
@@ -77,7 +76,6 @@ Route::get('learning/school-sessions/{slug}', 'learningController@session')->nam
 Route::get('learning/young-people/{slug}', 'learningController@young')->name('young-people');
 Route::get('learning/contact-us/', 'learningController@profiles')->name('learning-profiles');
 Route::get('learning/adult-programming/{slug}', 'learningController@adult')->name('adult-activity');
-// Route::get('learning/gallery-activities/', 'learningController@galleryActivities')->name('gallery-activities');
 Route::get('learning/gallery-activities/{slug}', 'learningController@galleryActivity')->name('gallery-activity');
 
 /*
