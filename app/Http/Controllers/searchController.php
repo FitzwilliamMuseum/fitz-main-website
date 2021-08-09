@@ -506,6 +506,44 @@ class searchController extends Controller
     $result = $this->client->update($update);
   }
 
+  public function vacancies()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('vacancies');
+    $api->setArguments(
+      $args = array(
+          'fields' => 'id,job_title,job_description,slug,hero_image.*'
+      )
+    );
+    $vacancies = $api->getData();
+    $configSolr = \Config::get('solarium');
+    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+    $update = $this->client->createUpdate();
+    $documents = array();
+    foreach($vacancies['data'] as $vacancy)
+    {
+      $doc = $update->createDocument();
+      $doc->id = $profile['id'] . '-vacancy';
+      $doc->title = $profile['job_title'];
+      $doc->description = strip_tags($vacancy['job_description']);
+      $doc->body = strip_tags($vacancy['job_description']);
+      $doc->slug = $vacancy['slug'];
+      $doc->url = $this->url . 'about-us/vacancies/details/' . $vacancy['slug'];
+      $doc->contentType = 'vacancies';
+      if(isset($vacancy['hero_image'])){
+        $doc->thumbnail = $vacancy['hero_image']['data']['thumbnails'][5]['url'];
+        $doc->image = $vacancy['hero_image']['data']['full_url'];
+        $doc->searchImage = $vacancy['hero_image']['data']['thumbnails'][2]['url'];
+      }
+      $documents[] = $doc;
+    }
+    // add the documents and a commit command to the update query
+    $update->addDocuments($documents);
+    $update->addCommit();
+    // this executes the query and returns the result
+    $result = $this->client->update($update);
+  }
+
   public function directors()
   {
     $api = $this->getApi();
