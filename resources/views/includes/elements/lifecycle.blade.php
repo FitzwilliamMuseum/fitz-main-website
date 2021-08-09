@@ -28,7 +28,7 @@
       <ul>
         @if(array_key_exists('periods', $record['_source']['lifecycle']['creation'][0]))
           @foreach($record['_source']['lifecycle']['creation'][0]['periods'] as $date)
-            <li><a href="/id/terminology/{{ $date['admin']['id']}}">{{ ucfirst($date['summary_title']) }}</a></li>
+            <li><a href="{{ env('COLLECTION_URL') }}/id/terminology/{{ $date['admin']['id']}}">{{ ucfirst($date['summary_title']) }}</a></li>
           @endforeach
         @endif
 
@@ -41,7 +41,7 @@
             if(array_key_exists('value', $record['_source']['lifecycle']['creation'][0]['date'][0])) {
               $dateTime = $record['_source']['lifecycle']['creation'][0]['date'][0]['value'];
               if($dateTime < 0){
-                $suffix = ' BCE';
+                $suffix = ' BC';
                 $string = abs($dateTime) . '' . $suffix;
               } else {
                 $suffix = 'AD ';
@@ -74,7 +74,7 @@
               @endif
 
               @if(array_key_exists('admin', $maker))
-                <a href="/id/agent/{{ $maker['admin']['id']}}">{{ preg_replace('@\x{FFFD}@u', 'î',($maker['summary_title']))}}</a>
+                <a href="{{ env('COLLECTION_URL') }}/id/agent/{{ $maker['admin']['id']}}">{{ preg_replace('@\x{FFFD}@u', 'î',($maker['summary_title']))}}</a>
               </li>
             @else
               {{ preg_replace('@\x{FFFD}@u', 'î',($maker['summary_title']))}}
