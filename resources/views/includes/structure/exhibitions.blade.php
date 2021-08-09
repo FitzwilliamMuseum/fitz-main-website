@@ -1,5 +1,7 @@
 <div class="container mt-3">
-<h2 class="display-5">Current exhibitions and new displays</h2>
+<h3 class="display-5">
+  <a href="{{ route('exhibitions')}}">Current exhibitions and new displays</a>
+</h3>
 <div class="row">
   @foreach($exhibitions['data'] as $exhibit)
   <div class="col-md-4 mb-3">
