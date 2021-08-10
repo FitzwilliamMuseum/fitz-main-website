@@ -111,7 +111,18 @@ return [
         # Cockerell
       '/cockerell' => 'https://fitzwilliammuseum.github.io/cockerell/',
       '/cockerell/{url}' => 'https://fitzwilliammuseum.github.io/cockerell/{url}',
-
+       # Vani
+      '/gallery/goldenfleece' => 'https://golden-fleece.fitzmuseum.cam.ac.uk',
+      '/gallery/goldenfleece/{url}' => 'https://golden-fleece.fitzmuseum.cam.ac.uk/{url}',
+       # extreme unction
+      '/gallery/paintinginfocus' => 'https://extreme-unction.fitzmuseum.cam.ac.uk/',
+      '/gallery/paintinginfocus/{url}' => 'https://extreme-unction.fitzmuseum.cam.ac.uk/{url}',
+       # Sales catalogues
+      '/dept/coins/library/salescatalogue' => 'https://numismatic-catalogues.fitzmuseum.cam.ac.uk',
+      '/dept/coins/library/salescatalogue/{url}' => 'https://numismatic-catalogues.fitzmuseum.cam.ac.uk/{url}',
+       # miniare
+      '/miniare' => 'https://miniare.fitzmuseum.cam.ac.uk',
+      '/miniare/{url}' => 'https://miniare.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/events' => '/events',
