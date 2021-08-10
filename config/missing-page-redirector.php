@@ -44,6 +44,12 @@ return [
       '/aboutus/coins' => '/about-us/departments/coins-and-medals',
       '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
       '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
+      '/aboutus/jobs' => '/about-us/work-for-us',
+
+      # people
+      '/people' => '/research/staff-profiles',
+      '/users/' => '/research/staff-profiles',
+      '/users/{url}' => '/research/staff-profiles/{url}',
       #  Collections
 
       '/collections/' => '/about-us/collections/',
@@ -74,6 +80,7 @@ return [
       '/pastexhibitions' => '/visit-us/exhibitions/archive',
       '/pastexhibitions{url}' => '/visit-us/exhibitions/archive',
       '/pastexhibitions/{url}' => '/visit-us/exhibitions/archive',
+      '/degas' => '/visit-us/exhibitions/degas-a-passion-for-perfection',
       # Resources
       '/onlineresources' => '/research/online-resources',
         # Night of Longing
@@ -145,6 +152,8 @@ return [
       '/learning/families/stories' => '/learning/tales-from-the-museum',
       '/work/fitzwilliam-museum-portico' => '/learning/look-think-do/the-fitzwilliam-museum-portico',
       '/work/{url}' => '/learning/look-think-do/{url}',
+      '/lookthinkdo/{url}' => '/learning/look-think-do/{url}',
+      '/learning/schoolscolleges/plan-your-visit' => '/learning/plan-your-visit',
 
       # Pharos
       '/pharos' => '/objects-and-artworks',
