@@ -45,6 +45,7 @@ return [
       '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
       '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
       '/aboutus/jobs' => '/about-us/work-for-us',
+      '/support-us/support-us' => '/support-us',
 
       # people
       '/people' => '/research/staff-profiles',
@@ -137,7 +138,7 @@ return [
       '/events/whatson' => '/events',
       '/events/events' => '/events',
       '/wo' => '/events',
-
+      '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
       # Learning
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
@@ -154,11 +155,9 @@ return [
       '/work/{url}' => '/learning/look-think-do/{url}',
       '/lookthinkdo/{url}' => '/learning/look-think-do/{url}',
       '/learning/schoolscolleges/plan-your-visit' => '/learning/plan-your-visit',
-
       # Pharos
       '/pharos' => '/objects-and-artworks',
       '/ce-work' => '/objects-and-artworks',
-
       # News - Most of these urls  are rewritten for clarity of semantics
       '/news/inside-macclesfield-psalter' => '/news/inside-the-macclesfield-psalter',
       '/news/easter-fitzwilliam' => '/news/easter-at-the-fitzwilliam',

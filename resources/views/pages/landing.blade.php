@@ -50,7 +50,7 @@
           @inject('pagesController', 'App\Http\Controllers\pagesController')
           @php
           $governance = $pagesController::injectPages('about-us','governance-policies-and-reports');
-          $support = $pagesController::injectPages('support-us','support-us');
+          // $support = $pagesController::injectPages('support-us','support-us');
           $comm = $pagesController::injectPages('commercial-services','commercial-services');
           $depart = $pagesController::injectPages('about-us','departments');
           $coll = $pagesController::injectPages('about-us','collections');
@@ -58,7 +58,7 @@
           $jobs = $pagesController::injectPages('about-us','work-for-us');
           @endphp
           @include('includes.structure.cards', $data = $governance )
-          @include('includes.structure.cards', $data = $support )
+          {{-- @include('includes.structure.cards', $data = $support ) --}}
           @include('includes.structure.commercial', $data = $comm )
           @include('includes.structure.cards', $data = $depart)
           @include('includes.structure.cards', $data = $coll)

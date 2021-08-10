@@ -30,6 +30,10 @@
       <a class="nav-link " href="{{ route('landing', ['about-us']) }}" >
       About</a>
     </li>
+    <li class="nav-item {{ (Request()->is('support-us*')) ? 'active' : '' }}">
+      <a class="nav-link " href="{{ route('landing', ['support-us']) }}" >
+      Support Us</a>
+    </li>
     <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('landing', ['research']) }}" >Research</a>
     </li>
