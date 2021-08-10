@@ -20,7 +20,7 @@
 
   @include('includes.structure.steppe')
 
-  @yield('productions')
+  {{-- @yield('productions') --}}
   @include('includes.structure.exhibitions')
 
   <div class="container-fluid parallax second-parallax-home"></div>
