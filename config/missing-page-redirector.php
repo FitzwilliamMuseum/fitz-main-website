@@ -131,8 +131,8 @@ return [
         # Cockerell
       '/cockerell' => 'https://cockerel.fitzmuseum.cam.ac.uk',
       '/cockerell/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk{url}',
-      '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.ukpigsty-to-palace/antiquities/',
-      '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.ukdirector-collector/',
+      '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.uk/pigsty-to-palace/antiquities/',
+      '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/',
 
        # Vani
       '/gallery/goldenfleece' => 'https://golden-fleece.fitzmuseum.cam.ac.uk',
