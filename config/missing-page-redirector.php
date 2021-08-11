@@ -129,9 +129,11 @@ return [
       '/gallery/papyrus/' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk',
       '/gallery/papyrus/{url}' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk/{url}',
         # Cockerell
-      '/cockerell' => 'https://fitzwilliammuseum.github.io/cockerell/',
-      '/cockerell/{url}' => 'https://fitzwilliammuseum.github.io/cockerell/{url}',
-      '/cockerell/pigstytopalace/{url}' =>  'https://fitzwilliammuseum.github.io/cockerell/pigsty-to-palace/antiquities/',
+      '/cockerell' => 'https://cockerel.fitzmuseum.cam.ac.uk',
+      '/cockerell/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk{url}',
+      '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.ukpigsty-to-palace/antiquities/',
+      '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.ukdirector-collector/',
+
        # Vani
       '/gallery/goldenfleece' => 'https://golden-fleece.fitzmuseum.cam.ac.uk',
       '/gallery/goldenfleece/{url}' => 'https://golden-fleece.fitzmuseum.cam.ac.uk/{url}',
@@ -148,7 +150,9 @@ return [
       '/calendar' => '/events',
       '/calendar/events' => '/events',
       '/calendar/whatson' => '/events',
+      '/calendar/whatson/{url}' => '/events',
       '/events/whatson' => '/events',
+      '/events/whatson/{url}' => '/events',
       '/events/events' => '/events',
       '/wo' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
