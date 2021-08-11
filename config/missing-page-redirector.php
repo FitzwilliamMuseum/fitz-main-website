@@ -24,9 +24,11 @@ return [
      */
     'redirects' => [
       # 301 redircts
-
+      '/index.html' => '/',
+      '/bicentenary' => '/about-us/the-museums-bicentenary',
       # Visiting
       '/visit' => '/visit-us',
+      '/visit2' => '/visit-us',
       '/visit/cafe' => '/visit-us/shopping-and-eating',
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       # About
@@ -45,15 +47,25 @@ return [
       '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
       '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
       '/aboutus/jobs' => '/about-us/work-for-us',
+      '/jobs/' => '/about-us/work-for-us',
+      '/jobs/{url}' => '/about-us/work-for-us/details/{url}',
       '/support-us/support-us' => '/support-us',
-
+      '/about-us/collections/textiles' => '/about-us/collections/textiles-and-fans',
+      '/about-us/collections/armsarmour' => '/about-us/collections/arms-and-armour',
+      '/depts' => '/about-us/departments',
+      # Press
+      '/pr' => '/about-us/press-room',
+      '/pr/{url}' => '/about-us/press-room',
       # people
       '/people' => '/research/staff-profiles',
       '/users/' => '/research/staff-profiles',
       '/users/{url}' => '/research/staff-profiles/{url}',
-      #  Collections
 
+      #  Collections
+      '/explorer' => '/object-and-artworks',
+      '/explorer/{url}' => '/object-and-artworks',
       '/collections/' => '/about-us/collections/',
+      '/opacdirect/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
       '/collections/greeceandrome' => '/about-us/collections/greece-and-rome',
       '/collections/drawingsandwatercolours' => '/about-us/collections/watercolours-and-drawings',
       '/collections/paintings' => '/about-us/collections/paintings',
@@ -67,7 +79,7 @@ return [
       '/collections/egypt' => '/about-us/collections/egypt',
       '/collections/fineprintedbooks' => '/about-us/collections/fine-printed-books',
       '/collections/furnitureandclocks' =>  'about-us/collections/furniture-and-clocks',
-      '/collections/illuminatedmauscripts' => '/about-us/collections/illuminated-manuscripts',
+      '/collections/illuminatedmanuscripts' => '/about-us/collections/illuminated-manuscripts',
       '/collections/islamicart'=> '/about-us/collections/islamic-art',
       '/collections/kemetandkush'  => '/about-us/collections/kemet-and-kush',
       '/collections/literarymanuscripts' =>  '/about-us/collections/literary-manuscripts',
@@ -119,6 +131,7 @@ return [
         # Cockerell
       '/cockerell' => 'https://fitzwilliammuseum.github.io/cockerell/',
       '/cockerell/{url}' => 'https://fitzwilliammuseum.github.io/cockerell/{url}',
+      '/cockerell/pigstytopalace/{url}' =>  'https://fitzwilliammuseum.github.io/cockerell/pigsty-to-palace/antiquities/',
        # Vani
       '/gallery/goldenfleece' => 'https://golden-fleece.fitzmuseum.cam.ac.uk',
       '/gallery/goldenfleece/{url}' => 'https://golden-fleece.fitzmuseum.cam.ac.uk/{url}',
@@ -148,6 +161,7 @@ return [
       '/learning/groups' => '/learning/group-activities',
       '/learning/schools' => 'learning/school-sessions',
       '/learning/family' => '/learning/families',
+      '/learning/families/gallery-activities' => '/learning/gallery-activities',
       '/learning/community' => '/learning/community-programming',
       '/learning/adults' => '/learning/adult-programming',
       '/learning/families/stories' => '/learning/tales-from-the-museum',
@@ -312,9 +326,19 @@ return [
       '/news/rss-news-feeds-now-available-fitzwilliam-museum' => '/news/rss-news-feeds-now-available-from-the-fitzwilliam-museum',
       '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards',
       '/sensualvirtual' => '/news/sensualvirtual',
+      '/news/david-scrase-15-march-1949-31-october-2020' => '/news/david-scrase',
+
       # Research
-      'conservd' => '/research/projects/conservd',
-      'research/grr' => '/visit-us/galleries/gallery-9'
+      '/conservd' => '/research/projects/conservd',
+      '/research/grr' => '/visit-us/galleries/gallery-9',
+      '/research/mec' => '/research/projects/medieval-european-coinage',
+
+      #visit
+      '/visit/gettinghere' => '/visit-us',
+      '/visit' => '/visit-us',
+      '/visit/{url}' => '/visit-us/{url}',
+
+
     ],
 
 ];
