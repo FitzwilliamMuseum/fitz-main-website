@@ -140,6 +140,9 @@ return [
        # extreme unction
       '/gallery/paintinginfocus' => 'https://extreme-unction.fitzmuseum.cam.ac.uk/',
       '/gallery/paintinginfocus/{url}' => 'https://extreme-unction.fitzmuseum.cam.ac.uk/{url}',
+      # Yoshitoshi
+      '/gallery/yoshitoshi' => 'https://yoshitoshi.fitzmuseum.cam.ac.uk',
+      '/gallery/yoshitoshi/{url}' => 'https://yoshitoshi.fitzmuseum.cam.ac.uk/{url}',
        # Sales catalogues
       '/dept/coins/library/salescatalogue' => 'https://numismatic-catalogues.fitzmuseum.cam.ac.uk',
       '/dept/coins/library/salescatalogue/{url}' => 'https://numismatic-catalogues.fitzmuseum.cam.ac.uk/{url}',
