@@ -4,7 +4,7 @@
 <div class="container-fluid bg-black">
   <div class="text-center text-white p-3">
     <h2 class="display-3 text-white">
-      Gold of the Great Steppe
+      <a class="text-white badge badge-dark" href="{{ route('exhibition', ['gold-of-the-great-steppe']) }}" title="Learn about the exhibition">Gold of the Great Steppe</a>
     </h2>
     <p>Member priority booking open 10th August, general release 16th August</p>
     <a class="btn btn-outline-light" href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=2">Become part of something special, join our friends now</a>
