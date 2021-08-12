@@ -148,6 +148,7 @@ return [
       '/miniare/{url}' => 'https://miniare.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
+      '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
       '/calendar/events' => '/events',
       '/calendar/whatson' => '/events',
       '/calendar/whatson/{url}' => '/events',
@@ -155,7 +156,6 @@ return [
       '/events/whatson/{url}' => '/events',
       '/events/events' => '/events',
       '/wo' => '/events',
-      '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
       # Learning
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
