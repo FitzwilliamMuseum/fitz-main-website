@@ -6,7 +6,7 @@
     <h2 class="display-3 text-white steppe-link">
       <a class="text-white" href="{{ route('exhibition', ['gold-of-the-great-steppe']) }}" title="Learn about the exhibition">Gold of the Great Steppe</a>
     </h2>
-    <p>Member priority booking open 10th August, general release 16th August</p>
+    <p><a href="https://tickets.museums.cam.ac.uk/overview/goldofthegreatsteppe">Book your free tickets today</a></p>
     <a class="btn btn-outline-light" href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=2">Become part of something special, join our friends now</a>
   </div>
 </div>
