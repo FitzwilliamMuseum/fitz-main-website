@@ -386,7 +386,7 @@ label.cm-app-label {
 @media screen and (min-width: 440px) {
   .shout {
     font-size: 5rem;
-    /* margin-top:-1rem; */
+    font-weight: 500;
   }
   .shout-less {
     font-size: 4rem;

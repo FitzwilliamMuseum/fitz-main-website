@@ -46,7 +46,7 @@
   </div>
 
   <div class="col-md-3 mb-3">
-    <div class="card  h-100">
+    <div class="card h-100">
       <a href="{{ route('events')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/Scent from Nature Press 2.jpg?key=directus-large-crop" alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century" loading="lazy" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
@@ -112,22 +112,20 @@
 @section('associated_pages')
 <div class="container">
   <div class="row">
-
-
-    @foreach($associated['data'] as $project)
+    @foreach($associated['data'] as $associate)
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
-        @if(!is_null($project['hero_image']))
-        <a href="{{ $project['section']}}/{{ $project['slug']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-        alt="{{ $project['hero_image_alt_text'] }}"
-        width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-        loading="lazy"/></a>
+        @if(!is_null($associate['hero_image']))
+          <a href="{{ associate['section']}}/{{ $associate['slug']}}"><img class="img-fluid" src="{{ $associate['hero_image']['data']['thumbnails'][4]['url']}}"
+          alt="{{ $associate['hero_image_alt_text'] }}"
+          width="{{ $associate['hero_image']['data']['thumbnails'][4]['width'] }}"
+          height="{{ $associate['hero_image']['data']['thumbnails'][4]['height'] }}"
+          loading="lazy"/></a>
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
             <h3 class="lead">
-              <a class="stretched-link" href="{{ $project['section']}}/{{ $project['slug']}}">{{ $project['title']}}</a>
+              <a class="stretched-link" href="{{ $associate['section']}}/{{ $associate['slug']}}">{{ $associate['title']}}</a>
             </h3>
           </div>
         </div>
@@ -140,9 +138,11 @@
 
 @section('floorplans')
 <ul id="floor-plans">
-@foreach($floors['data'] as $floor)
-  <li><a href="{{$floor['file']['data']['full_url']}}">{{$floor['title']}}</a></li>
-@endforeach
+  @foreach($floors['data'] as $floor)
+  <li>
+    <a href="{{$floor['file']['data']['full_url']}}">{{$floor['title']}}</a>
+  </li>
+  @endforeach
 </ul>
 @endsection
 
