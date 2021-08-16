@@ -40,6 +40,7 @@ return [
       '/aboutus/today' => '/about-us/the-fitzwilliam-today',
       '/aboutus/support/marlaygroup' => '/support-us/the-marlay-group',
       '/aboutus/support/friends/membership' => '/support-us/friends-of-the-fitzwilliam',
+      '/aboutus/support/friends/' => '/support-us/friends-of-the-fitzwilliam',
       '/aboutus/pdp' => '/about-us/departments/paintings-drawings-and-prints',
       '/aboutus/ant' => '/about-us/departments/antiquities',
       '/aboutus/aa' => '/about-us/departments/applied-arts',
