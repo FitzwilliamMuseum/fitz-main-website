@@ -139,7 +139,8 @@ class researchController extends Controller
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
+            'limit' => 100,
+            'meta' => '*',
             'sort' => 'id'
         )
       );
