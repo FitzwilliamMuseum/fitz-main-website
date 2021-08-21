@@ -135,7 +135,11 @@ return [
       '/cockerell/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk{url}',
       '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.uk/pigsty-to-palace/antiquities/',
       '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/',
-
+      # Kunisada
+      '/gallery/kunisada' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
+      '/gallery/kunisada/{url}' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
+      '/gallery/japan' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
+      '/gallery/japan/{url}' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
        # Vani
       '/gallery/goldenfleece' => 'https://golden-fleece.fitzmuseum.cam.ac.uk',
       '/gallery/goldenfleece/{url}' => 'https://golden-fleece.fitzmuseum.cam.ac.uk/{url}',
