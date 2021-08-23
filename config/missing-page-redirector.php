@@ -106,8 +106,8 @@ return [
       '/gallery/nightoflonging/furtherreading/{url}' =>  'https://nightoflonging.fitzmuseum.cam.ac.uk/further-reading/',
       '/gallery/nightoflonging/loveletters/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/explore/love-letters/',
         # Rebinding manuscripts
-      '/utc/' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
-      '/utc/{url}' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
+      '/utc/' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
+      '/utc/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
         # Colour illuminated
       '/colour' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/',
       '/colour/explore/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/explore/{url}',
