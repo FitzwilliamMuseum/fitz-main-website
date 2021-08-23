@@ -155,6 +155,9 @@ return [
        # miniare
       '/miniare' => 'https://miniare.fitzmuseum.cam.ac.uk',
       '/miniare/{url}' => 'https://miniare.fitzmuseum.cam.ac.uk/{url}',
+      # French impressionists
+      '/frenchimpressionists' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/',
+      '/frenchimpressionists/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
