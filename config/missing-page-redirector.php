@@ -158,6 +158,9 @@ return [
       # French impressionists
       '/frenchimpressionists' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/',
       '/frenchimpressionists/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/{url}',
+      # Sheldon
+      '/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
+      '/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
