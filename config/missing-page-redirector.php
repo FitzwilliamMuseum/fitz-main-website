@@ -49,6 +49,7 @@ return [
       '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
       '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
       '/aboutus/jobs' => '/about-us/work-for-us',
+      '/aboutus/conservation/internships' => '/research/opportunities/conservation-internships',
       '/jobs/' => '/about-us/work-for-us',
       '/jobs/{url}' => '/about-us/work-for-us/details/{url}',
       '/support-us/support-us' => '/support-us',
