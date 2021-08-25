@@ -168,6 +168,9 @@ return [
       '/whistler' => 'https://whistler.fitzmuseum.cam.ac.uk/',
       '/gallery/whistler' => 'https://whistler.fitzmuseum.cam.ac.uk/',
       '/gallery/whistler/{url}' => 'https://whistler.fitzmuseum.cam.ac.uk/{url}',
+      # auerbach
+      '/gallery/auerbach' => 'https://auerbach.fitzmuseum.cam.ac.uk/',
+      '/gallery/auerbach/{url}' => 'https://auerbach.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
