@@ -160,8 +160,14 @@ return [
       '/frenchimpressionists' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/',
       '/frenchimpressionists/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/{url}',
       # Sheldon
+      '/gallery/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
+      '/gallery/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
       '/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
       '/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
+      # Whistler
+      '/whistler' => 'https://whistler.fitzmuseum.cam.ac.uk/',
+      '/gallery/whistler' => 'https://whistler.fitzmuseum.cam.ac.uk/',
+      '/gallery/whistler/{url}' => 'https://whistler.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
