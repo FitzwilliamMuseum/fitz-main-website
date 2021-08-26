@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TessituraApi;
 
-class TessituraController extends Controller
+class tessituraController extends Controller
 {
     /**
      * [getApi description]
@@ -59,14 +59,51 @@ class TessituraController extends Controller
       return $int;
     }
 
+
+    public function translateEvent(string $slug)
+    {
+      switch ($slug) {
+        case 'the-fitzwilliam-museum':
+        $int = 37;
+        break;
+        case 'exhibitions':
+        $int = 42;
+        break;
+        case 'talks':
+        $int = 58;
+        break;
+        case 'families':
+        $int = 60;
+        break;
+        case 'young-people':
+        $int = 61;
+        break;
+        case 'blind-and-partially-sighted':
+        $int = 62;
+        break;
+        case 'online-events':
+        $int = 110;
+        break;
+        case 'adult-events':
+        $int = 116;
+        break;
+        default:
+        $int = 37;
+        break;
+      }
+      return $int;
+    }
+
+
     /**
      * [index description]
      * @return [type] [description]
      */
     public function index()
     {
+      $events = $this->getApi()->getEventTypes();
       $productions = $this->getApi()->getPerformances();
-      return view('tessitura.index', compact('productions'));
+      return view('tessitura.index', compact('events','productions'));
     }
 
     /**
@@ -76,7 +113,7 @@ class TessituraController extends Controller
      */
     public function type(string $facility)
     {
-      $productions = $this->getApi()->getPerformances($this->translateType($facility));
+      $productions = $this->getApi()->getPerformances($this->translateEvent($facility));
       return view('tessitura.type', compact('productions', 'facility'));
     }
     /**
@@ -103,4 +140,6 @@ class TessituraController extends Controller
            date("d/m/Y", strtotime('datefrom')) => 'date_format:d/m/Y',
            date("d/m/Y", strtotime('dateto')) => 'date_format:d/m/Y',        ]);
     }
+
+
 }

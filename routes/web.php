@@ -129,12 +129,12 @@ Route::get('/conversations/podcasts/{slug}', 'podcastsController@series')->name(
 Route::get('/conversations/podcasts/episode/{slug}', 'podcastsController@episode')->name('podcasts.episode');
 
 
-Route::get('/events', 'TessituraController@index')->name('events');
+Route::get('/events', 'tessituraController@index')->name('events');
 Route::match(array('GET', 'POST'), 'events/search', [
-    'uses' => 'TessituraController@search',
+    'uses' => 'tessituraController@search',
     'as' => 'tessitura.search'
 ])->name('events-search');
-Route::get('/events/{facility}', 'TessituraController@type')->name('events.type');
+Route::get('/events/{facility}', 'tessituraController@type')->name('events.type');
 
 /*
 * Search routing
