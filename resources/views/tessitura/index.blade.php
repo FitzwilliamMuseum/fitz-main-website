@@ -22,34 +22,27 @@
           @include('includes.elements.filters-tessitura')
         </div>
       </div>
-      <div class="col-md-9">
-        <div class="row">
-          @foreach ($tags as $key => $value)
-            @php
-            $filter = $key;
-            $new_array = array_filter($ids, function($var) use ($filter){
-              return ($var->Description == $filter);
-            });
-            $id = array_slice($new_array,0,1);
-            @endphp
 
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <a class="stretched-link" href="/events/{{ Str::slug($key) }}"><img class="card-img-top" src="@tessitura($id[0]->Id)"
-                  alt="@tessituraTitle($id[0]->Id)"/></a>
-                  <div class="card-body ">
-                    <div class="contents-label mb-3">
-                      <h3 class="lead">
-                        <a class="stretched-link" href="{{ route('events.type', Str::slug($key)) }}" title="Events listing for {{ $key }}">{{ str_replace(array('Bookings','FFF', 'Lecture', 'Grove Lodge Garden'),array('Events','Fitz Family First', 'Lectures & talks', 'ADC Outdoor Theatre'),$key) }}</a>
-                      </h3>
-                      <p class="text-info">{{ $value }} events</p>
+        <div class="col-md-9">
+          <div class="row">
+            @foreach ($events['data'] as $type)
+              <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                  <a class="stretched-link" href="{{ route('events.type', Str::slug($type['title'])) }}"><img class="card-img-top" src="{{ $type['hero_image']['data']['thumbnails'][4]['url'] }}"
+                    alt="{{ $type['title'] }}"/></a>
+                    <div class="card-body ">
+                      <div class="contents-label mb-3">
+                        <h3 class="lead">
+                          <a class="stretched-link" href="{{ route('events.type', Str::slug($type['title'])) }}" title="Events listing for {{ $type['title'] }}">{{  $type['title'] }}</a>
+                        </h3>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            @endforeach
+              @endforeach
+            </div>
           </div>
-        </div>
+
       </div>
     </div>
   @endsection

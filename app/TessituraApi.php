@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp;
 use Carbon\Carbon;
 use Cache;
-
+use App\DirectUs;
 
 class TessituraApi {
 
@@ -140,14 +140,15 @@ class TessituraApi {
       * @param  string $facilities [description]
       * @return string             [description]
       */
-      public function getPerformances($facilities = '19,20,21,56,116,86,96,66,76,157') {
+      public function getPerformances( string $keywordID = '37') {
         $payload = array(
           "PerformanceStartDate" => Carbon::now(),
-          "PerformanceEndDate" =>  Carbon::now()->addDays(30),
+          "PerformanceEndDate" =>  Carbon::now()->addDays(60),
           "BusinessUnitId" => 1,
-          "FacilityIds" => $facilities
+          "FacilityIds" => '19,20,21,56,116,86,96,66,76,157',
+          'KeywordIds' => $keywordID
         );
-        $key = md5($facilities);
+        $key = md5(serialize($payload));
         $expiresAt = now()->addMinutes(60);
         if (Cache::has($key)) {
           $data = Cache::get($key);
@@ -166,7 +167,9 @@ class TessituraApi {
       }
 
       protected $_performanceStartDate;
+
       protected $_performanceEndDate;
+
       protected $_facilities;
 
       public function setPerformanceStartDate($date){
@@ -230,9 +233,8 @@ class TessituraApi {
           "PerformanceEndDate" =>  $this->getPerformancesEndDate(),
           "BusinessUnitId" => 1,
           "FacilityIds" => $this->getFacilties(),
-          // "PerformanceTypeIds" => $this->getPerformanceTypeIDs()
         );
-        $key = md5($this->getFacilties() . 'perfsearch');
+        $key = md5('perfsearch' . serialize($payload));
         $expiresAt = now()->addMinutes(60);
         if (Cache::has($key)) {
           $data = Cache::get($key);
@@ -321,6 +323,18 @@ class TessituraApi {
           Cache::put($key, $data, $expiresAt);
         }
         return $data;
+      }
+
+      public function getEventTypes(){
+        $directus = new DirectUs;
+        $directus->setEndpoint('tessitura_event_types');
+        $directus->setArguments(
+          $args = array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+          )
+        );
+        return $directus->getData();
       }
 
     }
