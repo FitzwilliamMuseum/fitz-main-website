@@ -3,6 +3,7 @@
 @section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('content')
+@section('description', 'The Fitzwilliam Museum runs a rich programme of events')
   <div class="container">
 
     <h2 class="text-center mb-3 lead">What would you like to attend?</h2>
