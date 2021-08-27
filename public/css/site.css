@@ -972,3 +972,6 @@ a.nav-link {
   color: hsla(0,0%,100%,.5);
   background-color: transparent;
 }
+.form-check__event-types {
+  padding-left: 0;
+}
