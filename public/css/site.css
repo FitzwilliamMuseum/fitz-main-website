@@ -893,7 +893,7 @@ a.free_ticket  {
 img.results_image__thumbnail {
   width: 348px;
   height: 348px;
-  object-fit: none;
+  object-fit: cover;
 }
 .insta-wrap {
   word-break: break-all;
