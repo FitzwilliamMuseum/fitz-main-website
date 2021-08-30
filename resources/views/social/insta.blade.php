@@ -16,17 +16,18 @@
               height="{{ $instagram['hero_image']['data']['thumbnails'][5]['height'] }}"
               loading="lazy"/></a>
             @else
-              {{-- <a href="{{ route('instagram.story', $instagram['slug']) }}"> --}}
+              <a href="{{ route('instagram.story', $instagram['slug']) }}">
                 <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                 alt="A stand in image for {{ $instagram['title'] }}"
                 />
-              {{-- </a> --}}
+              </a>
               @endif
               <div class="card-body h-100">
                 <div class="contents-label mb-3">
                   <h3 class="lead">
-                    {{-- <a href="{{ route('instagram.story', $instagram['slug']) }}">{{ $instagram['title'] }}</a> --}}
+                    <a href="{{ route('instagram.story', $instagram['slug']) }}">{{ $instagram['title'] }}</a>
                   </h3>
+                  <p class="text-info">{{ Carbon\Carbon::parse($instagram['date_posted'])->format('l j F Y') }}</p>
                 </div>
               </div>
             </div>
