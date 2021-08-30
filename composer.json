@@ -27,7 +27,7 @@
         "mews/purifier": "^3.2",
         "olssonm/l5-very-basic-auth": "^6.3",
         "phpclassic/php-shopify": "^1.1",
-        "phpfastcache/phpfastcache": "^8.0",
+        "phpfastcache/phpfastcache": "8.0.7",
         "predis/predis": "^1.1",
         "raiym/instagram-php-scraper": "^0.11.1",
         "ralouphie/mimey": "^2.1",
