@@ -40,6 +40,8 @@ return [
       '/aboutus/today' => '/about-us/the-fitzwilliam-today',
       '/aboutus/support/marlaygroup' => '/support-us/the-marlay-group',
       '/aboutus/support/friends/membership' => '/support-us/friends-of-the-fitzwilliam',
+      '/aboutus/support/friends?{url}' => '/support-us/friends-of-the-fitzwilliam',
+      '/aboutus/support/friends' => '/support-us/friends-of-the-fitzwilliam',
       '/aboutus/pdp' => '/about-us/departments/paintings-drawings-and-prints',
       '/aboutus/ant' => '/about-us/departments/antiquities',
       '/aboutus/aa' => '/about-us/departments/applied-arts',
@@ -47,6 +49,7 @@ return [
       '/aboutus/msspb' => '/about-us/departments/manuscripts-and-printed-books',
       '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
       '/aboutus/jobs' => '/about-us/work-for-us',
+      '/aboutus/conservation/internships' => '/research/opportunities/conservation-internships',
       '/jobs/' => '/about-us/work-for-us',
       '/jobs/{url}' => '/about-us/work-for-us/details/{url}',
       '/support-us/support-us' => '/support-us',
@@ -104,8 +107,8 @@ return [
       '/gallery/nightoflonging/furtherreading/{url}' =>  'https://nightoflonging.fitzmuseum.cam.ac.uk/further-reading/',
       '/gallery/nightoflonging/loveletters/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/explore/love-letters/',
         # Rebinding manuscripts
-      '/utc/' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
-      '/utc/{url}' => 'https://https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
+      '/utc/' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
+      '/utc/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
         # Colour illuminated
       '/colour' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/',
       '/colour/explore/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/explore/{url}',
@@ -133,7 +136,11 @@ return [
       '/cockerell/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk{url}',
       '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.uk/pigsty-to-palace/antiquities/',
       '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/',
-
+      # Kunisada
+      '/gallery/kunisada' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
+      '/gallery/kunisada/{url}' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
+      '/gallery/japan' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
+      '/gallery/japan/{url}' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
        # Vani
       '/gallery/goldenfleece' => 'https://golden-fleece.fitzmuseum.cam.ac.uk',
       '/gallery/goldenfleece/{url}' => 'https://golden-fleece.fitzmuseum.cam.ac.uk/{url}',
@@ -149,6 +156,21 @@ return [
        # miniare
       '/miniare' => 'https://miniare.fitzmuseum.cam.ac.uk',
       '/miniare/{url}' => 'https://miniare.fitzmuseum.cam.ac.uk/{url}',
+      # French impressionists
+      '/frenchimpressionists' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/',
+      '/frenchimpressionists/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/{url}',
+      # Sheldon
+      '/gallery/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
+      '/gallery/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
+      '/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
+      '/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
+      # Whistler
+      '/whistler' => 'https://whistler.fitzmuseum.cam.ac.uk/',
+      '/gallery/whistler' => 'https://whistler.fitzmuseum.cam.ac.uk/',
+      '/gallery/whistler/{url}' => 'https://whistler.fitzmuseum.cam.ac.uk/{url}',
+      # auerbach
+      '/gallery/auerbach' => 'https://auerbach.fitzmuseum.cam.ac.uk/',
+      '/gallery/auerbach/{url}' => 'https://auerbach.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
