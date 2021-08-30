@@ -10,6 +10,8 @@ use App\FitzElastic\Elastic;
 use Elasticsearch\ClientBuilder;
 use Twitter;
 use Cache;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 
 class socialController extends Controller
 {
@@ -29,8 +31,10 @@ class socialController extends Controller
     return view('social.index');
   }
 
-  public function instagram()
+  public function instagram(Request $request)
   {
+    $perPage = 12;
+    $offset = ($request->page -1) * $perPage ;
     $api = $this->getApi();
     $api->setEndpoint('on_insta');
     $api->setArguments(
@@ -38,10 +42,16 @@ class socialController extends Controller
         'fields' => '*.*.*.*',
         'meta' => 'result_count,total_count,type',
         'sort' => '-date_posted',
+        'limit' => $perPage,
+        'offset' => $offset
       )
     );
     $insta = $api->getData();
-    return view('social.insta', compact('insta'));
+    $currentPage = LengthAwarePaginator::resolveCurrentPage();
+    $total = $insta['meta']['total_count'];
+    $paginator = new LengthAwarePaginator($insta, $total, $perPage, $currentPage);
+    $paginator->setPath('instagram');
+    return view('social.insta', compact('insta', 'paginator'));
   }
 
   public function story($slug)
