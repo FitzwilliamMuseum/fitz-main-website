@@ -1,5 +1,5 @@
 <div class="position-relative">
-  {{ \Form::open(['url' => url('events/search'),'method' => 'POST', 'class' => ' ml-auto']) }}
+  {{ \Form::open(['url' => url('events/search'),'method' => 'GET', 'class' => ' ml-auto']) }}
   {{ csrf_field() }}
   @if(count($errors))
             <div class="form-group">
@@ -12,21 +12,6 @@
                 </div>
             </div>
         @endif
-  {{-- <h2 class="lead">When?</h2>
-
-  <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-    <label class="btn btn-sm btn-outline-secondary active">
-      <input type="radio" name="when" id="today" autocomplete="off" value="today" > Today
-    </label>
-    <label class="btn btn-sm btn-outline-secondary">
-      <input type="radio" name="when" id="tomorrow" autocomplete="off" value="tomorrow"> Tomorrow
-    </label>
-    <label class="btn btn-sm btn-outline-secondary">
-      <input type="radio" name="when" id="7days" autocomplete="off" value="7_days"> 7 days
-    </label>
-  </div>
-  <hr /> --}}
-
 
   <h2 class="lead">Location</h2>
   <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
@@ -53,25 +38,15 @@
   </div>
   <hr />
 
-  {{-- <h2 class="lead">Event type</h2>
-  <div class="form-check">
-    <input type="checkbox" id="ga" name="types" value="ga">
-    <label for="paid" class="form-check-label" > General admission</label>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" id="linked" name="types" value="linked">
-    <label for="free" class="form-check-label" >Admission + exhibition</label>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" id="families" name="types" value="families">
-    <label for="free" class="form-check-label" >Families</label>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" id="lectures" name="types" value="lectures">
-    <label for="free" class="form-check-label" >Lectures and talks</label>
-  </div>
+  <h2 class="lead">Event type</h2>
+  @foreach ($events['data'] as $type)
+    <div class="form-check form-check__event-types">
+      <input type="checkbox" id="{{Str::slug($type['title'])}}" name="types" value="{{Str::slug($type['title'])}}">
+      <label for="paid" class="form-check-label">{{$type['title']}}</label>
+    </div>
+  @endforeach
 
-  <hr class="mb-3"/> --}}
+  <hr class="mb-3"/>
 
   <button type="submit" class="btn d-block btn-dark" id="searchButton" aria-label="Submit your search">Search</button>
 

@@ -108,13 +108,14 @@ class tessituraController extends Controller
 
     /**
      * [type description]
-     * @param  string $facility [description]
+     * @param  string $slug [description]
      * @return [type]           [description]
      */
-    public function type(string $facility)
+    public function type(string $slug)
     {
-      $productions = $this->getApi()->getPerformances($this->translateEvent($facility));
-      return view('tessitura.type', compact('productions', 'facility'));
+      $events = $this->getApi()->getEventTypes();
+      $productions = $this->getApi()->getPerformances($this->translateEvent($slug));
+      return view('tessitura.type', compact('productions', 'slug',  'events'));
     }
     /**
      * [search description]
@@ -129,7 +130,8 @@ class tessituraController extends Controller
       $prods->setPerformanceEndDate(request('dateto'));
       $prods->setFacilities(request('location'));
       $productions = $prods->getPerformancesSearch();
-      return view('tessitura.search', compact('productions'));
+      $events = $this->getApi()->getEventTypes();
+      return view('tessitura.search', compact('productions', 'events'));
     }
 
     public function validateForm(){

@@ -116,7 +116,7 @@
     <div class="col-md-4 mb-3">
       <div class="card  h-100">
         @if(!is_null($associate['hero_image']))
-          <a href="{{ associate['section']}}/{{ $associate['slug']}}"><img class="img-fluid" src="{{ $associate['hero_image']['data']['thumbnails'][4]['url']}}"
+          <a href="{{ $associate['section']}}/{{ $associate['slug']}}"><img class="img-fluid" src="{{ $associate['hero_image']['data']['thumbnails'][4]['url']}}"
           alt="{{ $associate['hero_image_alt_text'] }}"
           width="{{ $associate['hero_image']['data']['thumbnails'][4]['width'] }}"
           height="{{ $associate['hero_image']['data']['thumbnails'][4]['height'] }}"
