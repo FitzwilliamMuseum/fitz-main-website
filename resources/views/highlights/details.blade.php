@@ -27,11 +27,7 @@
         <span class="btn btn-dark p-2">
           <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
         </span>
-        @if(isset($record['custom_print_url']))
-          <span class="btn btn-wine m-1 p-2 share">
-            <a href="{{ $record['custom_print_url'] }}"><i class="fas fa-shopping-cart"></i> Buy a print</a>
-          </span>
-        @endif
+        
       </figure>
       @markdown($record['description'])
     </div>
