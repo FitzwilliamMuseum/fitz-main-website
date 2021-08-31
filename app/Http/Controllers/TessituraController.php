@@ -109,7 +109,7 @@ class tessituraController extends Controller
     /**
     * [type description]
     * @param  string $slug [description]
-    * @return [type]           [description]
+    * @return [type] [description]
     */
     public function type(string $slug)
     {
