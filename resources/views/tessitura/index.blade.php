@@ -4,6 +4,8 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('content')
 @section('description', 'The Fitzwilliam Museum runs a rich programme of events')
+@section('keywords','events,fitzwilliam')
+
   <div class="container">
 
     <h2 class="text-center mb-3 lead">What would you like to attend?</h2>

@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 @section('title','Our events')
+@section('description', 'A search for talks,exhibitions and events from the Fitzwilliam Museum')
+@section('keywords','events,fitzwilliam')
 @section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('content')
@@ -18,6 +20,7 @@
         </div>
       </div>
       <div class="col-md-9">
+        @if(!empty($productions))
         <div class="row">
           @foreach($productions as $production)
             <div class="col-md-4 mb-3">
@@ -57,15 +60,6 @@
                           <p  class="text-info">FREE ENTRY/ Suggested Donation</p>
                         @endif
                       @endisset
-
-                      {{-- <p>
-                      <span class="lead">{{ $production->Season->Description }}</span>
-                      {{-- <br/>
-                      {{ $production->ZoneMapDescription }} --}}
-                      {{-- </p> --}}
-                      {{-- <p>
-                      {!! ucfirst(nl2br($production->SalesNotes)) !!}
-                    </p> --}}
                     @isset($production->Duration)
                       <p>Duration: {{ $production->Duration }} minutes</p>
                     @endisset
@@ -75,7 +69,14 @@
             </div>
           @endforeach
         </div>
-
+      @else
+        <div class="shadow-sm p-3 mx-auto mb-3">
+          <p>
+            No events found in this category at the moment. Perhaps try extending
+            your time range?
+          </p>
+        </div>
+      @endif
       </div>
     </div>
   </div>

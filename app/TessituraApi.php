@@ -145,7 +145,7 @@ class TessituraApi {
           "PerformanceStartDate" => Carbon::now(),
           "PerformanceEndDate" =>  Carbon::now()->addDays(60),
           "BusinessUnitId" => 1,
-          "FacilityIds" => '19,20,21,56,116,86,96,66,76,157,13',
+          "FacilityIds" => '19,20,21,56,116,86,96,66,76,13',
           'KeywordIds' => $keywordID
         );
         $key = md5(serialize($payload));
@@ -201,22 +201,23 @@ class TessituraApi {
       public function setFacilities($facilities ){
         switch($facilities){
           case 'physical':
-          $this->_facilities = '20,21,56,116,86,96,66,76';
-          break;
+            $this->_facilities = '20,21,56,116,86,96,66,76,13';
+            break;
           case 'lectures':
-          $this->_facilities = '56';
-          break;
+            $this->_facilities = '56';
+            break;
           case 'lectvirtual':
-          $this->_facilities = '19,56';
-          break;
+            $this->_facilities = '19,56';
+            break;
           case 'virtual':
-          $this->_facilities = '19';
-          break;
+            $this->_facilities = '19';
+            break;
           case 'adc':
-          $this->_facilities = '157';
-          break;
+            $this->_facilities = '157';
+            break;
           default:
-          $this->_facilities = '19,20,21,56,116,86,96,66,76,157';
+            $this->_facilities = '19,20,21,56,116,86,96,66,76,157';
+            break;
         }
         return $this->_facilities;
       }
