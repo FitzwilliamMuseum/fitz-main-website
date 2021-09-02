@@ -7,7 +7,7 @@
       <a class="text-white" href="{{ route('exhibition', ['gold-of-the-great-steppe']) }}" title="Learn about the exhibition">Gold of the Great Steppe</a>
     </h2>
     <p><a href="https://tickets.museums.cam.ac.uk/overview/goldofthegreatsteppe" class="text-white">Book your free tickets today</a></p>
-    <a class="btn btn-outline-light" href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=2">Become part of something special, join our friends now</a>
+    <a class="btn btn-outline-light" href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=2">Become part of something special, join our Friends now</a>
   </div>
 </div>
 <style>
