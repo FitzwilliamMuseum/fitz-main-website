@@ -13,6 +13,12 @@
             <{{ $key }}>{{ $metaItem }}</{{ $key }}>
         @endif
     @endforeach
+      <author>
+        <name>The Fitzwilliam Museum</name>
+        <email>press@fitzmuseum.cam.ac.uk</email>
+      </author>
+      <rights>Chancellor, Masters, and Scholars of the University of Cambridge: CC-BY</rights>
+      <generator>Fitzwilliam Museum Digital Magic by DEJP3</generator>
     @foreach($items as $item)
         <entry>
             <title><![CDATA[{{ $item->title }}]]></title>

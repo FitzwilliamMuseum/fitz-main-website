@@ -118,7 +118,7 @@
                 </path>
               </svg>
             </a></span>
-            <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/news/feed') }}"><i class="fas fa-rss ml-1"></i></a>
+            <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/feeds/news/') }}"><i class="fas fa-rss ml-1"></i></a>
           </p>
         </div>
       </div>
