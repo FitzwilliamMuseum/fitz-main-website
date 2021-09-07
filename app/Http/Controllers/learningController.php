@@ -35,7 +35,7 @@ class learningController extends Controller
   public function lookthinkdoactivity(string $slug)
   {
     $ltd = LookThinkDo::find($slug);
-    $adlib = CIIM::findByAccession(ltd['data'][0]['adlib_id_number']);
+    $adlib = CIIM::findByAccession($ltd['data'][0]['adlib_id_number']);
     return view('learning.lookthinkdoactivity', compact('ltd', 'adlib'));
   }
 

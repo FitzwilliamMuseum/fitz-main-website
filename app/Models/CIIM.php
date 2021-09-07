@@ -80,7 +80,7 @@ class CIIM extends Model
    * @param  string $accession The accession number to query by
    * @return array A multidimensional array of collections information
    */
-  public static function findByAccession(string $accession)
+  public static function findByAccession(string $accession = NULL)
   {
     $elastic = new Elastic();
     $params = [
