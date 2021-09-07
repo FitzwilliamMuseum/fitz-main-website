@@ -6,7 +6,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     @foreach($meta as $key => $metaItem)
         @if($key === 'link')
-            <{{ $key }} href="{{ url($metaItem) }}"></{{ $key }}>
+            <{{ $key }} href="{{ url($metaItem) }}" rel="self"></{{ $key }}>
         @elseif($key === 'title')
             <{{ $key }}><![CDATA[{{ $metaItem }}]]></{{ $key }}>
         @else
