@@ -42,7 +42,7 @@ class CIIM extends Model
    * @param  string $exhibitionID the exhibition ID number
    * @return array  A multidimensional array of collections information
    */
-  public static function findByExhibition(string $exhibitionID, int $size = 3)
+  public static function findByExhibition(string $exhibitionID = NULL, int $size = 3)
   {
     $adlib = NULL;
     if(!is_null($exhibitionID)){
