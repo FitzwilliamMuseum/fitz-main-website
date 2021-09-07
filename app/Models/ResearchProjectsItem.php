@@ -42,7 +42,7 @@ class ResearchProjectsItem extends Model implements Feedable
     $items = collect(); // create new collection
     foreach ($news as $key => $value) {
         $instance = new static; // create new NewsItem model class
-        $instance->id = $value->id;
+        $instance->id = route('article', $value->slug);
         $instance->title = $value->title;
         $instance->summary = $value->summary;
         $instance->link = route('research-project', $value->slug);

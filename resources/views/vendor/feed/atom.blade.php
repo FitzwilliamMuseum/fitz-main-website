@@ -39,7 +39,7 @@
             {{-- <category type="html">
                 <![CDATA[{!! $item->category ?? '' !!}]]>
             </category> --}}
-            <updated>{{ $item->updated->toRssString() }}</updated>
+            <updated>{{  date(DATE_ATOM, strtotime($item->updated ))}}</updated>
         </entry>
     @endforeach
 </feed>

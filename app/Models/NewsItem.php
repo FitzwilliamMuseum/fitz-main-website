@@ -47,7 +47,7 @@ class NewsItem extends Model implements Feedable
         // $news[$key]->link = route('article', $value->slug);
         $mod = Carbon::parse($value->modified_on);
         $instance = new static; // create new NewsItem model class
-        $instance->id = $value->id;
+        $instance->id = route('article', $value->slug);
         $instance->title = $value->article_title;
         $instance->summary = $value->article_excerpt;
         $instance->link = route('article', $value->slug);

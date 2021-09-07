@@ -44,7 +44,7 @@ class VacanciesItem extends Model implements Feedable
     foreach ($news as $key => $value) {
         $mod = Carbon::parse($value->modified_on);
         $instance = new static; // create new NewsItem model class
-        $instance->id = $value->id;
+        $instance->id = route('article', $value->slug);
         $instance->title = $value->job_title;
         $instance->summary = $value->meta_description;
         $instance->link = route('vacancy', $value->slug);
