@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'homeController@index')->name('home');
+Route::feeds();
 /*
 About us routes
 */
@@ -62,7 +63,6 @@ Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details')->name
 News routes
 */
 Route::get('news/', 'newsController@index')->name('news');
-Route::get('news/feed/', 'newsController@atom')->name('feed');
 Route::get('news/{slug}/', 'newsController@article')->name('article');
 
 /*
@@ -157,8 +157,8 @@ Route::get('/clear-cache', [
     'as' => 'cache-clear',
     'uses' => 'Controller@clearCache'
 ])->middleware('auth.very_basic', 'doNotCacheResponse');
-// Route::get('/clear-cache', ['middleware' => 'auth.very_basic'], 'Controller@clearCache')->name('cache');
-Route::feeds();
+
+
 /*
 * Catch all route
 */
