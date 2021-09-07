@@ -4,7 +4,7 @@
 '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL
 ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ $meta['link'] }}</title>
+  <title>{{ $meta['title'] }}</title>
   <link href="{{ $meta['link'] }}" rel="self"/>
   <logo>{{ $meta['image']}}</logo>
   <updated>{{ $meta['updated'] }}</updated>
@@ -27,7 +27,7 @@
         <![CDATA[{!! $item->summary !!}]]>
       </summary>
       <content type="html">
-        <![CDATA[{!! $item->content !!}]]>
+        <![CDATA[{!! strip_tags($item->content) !!}]]>
       </content>
       @if($item->__isset('enclosure'))
         <enclosure url="{{ url($item->enclosure) }}" length="{{ $item->enclosureLength }}" type="{{ $item->enclosureType }}" />
