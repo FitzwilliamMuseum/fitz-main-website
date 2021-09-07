@@ -3,6 +3,7 @@
 <head>
 
     @include('includes.structure.meta')
+    <x-feed-links />
 
     @include('includes.css.css')
 
