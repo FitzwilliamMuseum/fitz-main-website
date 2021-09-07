@@ -50,7 +50,7 @@ return [
              * The content type for the feed response.  Set to an empty string to automatically
              * determine the correct value.
              */
-            'contentType' => '',
+            'contentType' => 'atom',
         ],
         'jobs' => [
             /*
