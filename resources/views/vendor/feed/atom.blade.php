@@ -17,19 +17,22 @@
         <entry>
             <title><![CDATA[{{ $item->title }}]]></title>
             <link rel="alternate" href="{{ url($item->link) }}" />
-            <id>{{ url($item->id) }}</id>
+            <id>{{ $item->id }}</id>
             <author>
-                <name> <![CDATA[{{ $item->author }}]]></name>
+                <name><![CDATA[{{ $item->authorName }}]]></name>
             </author>
             <summary type="html">
                 <![CDATA[{!! $item->summary !!}]]>
             </summary>
+            <content type="html">
+              <![CDATA[{!! $item->content !!}]]>
+            </content>
             @if($item->__isset('enclosure'))
               <enclosure url="{{ url($item->enclosure) }}" length="{{ $item->enclosureLength }}" type="{{ $item->enclosureType }}" />
             @endif
-            <category type="html">
+            {{-- <category type="html">
                 <![CDATA[{!! $item->category ?? '' !!}]]>
-            </category>
+            </category> --}}
             <updated>{{ $item->updated->toRssString() }}</updated>
         </entry>
     @endforeach
