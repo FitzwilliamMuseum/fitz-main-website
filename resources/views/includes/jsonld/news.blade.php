@@ -10,12 +10,12 @@
   },
   "datePublished" : "{{ $project['publication_date'] }}",
   @if(isset($project['modified_on']) && !is_null($project['modified_on']))
-  "dateModified" : "{{ $project['modified_on'] }}",
+    "dateModified" : "{{ $project['modified_on'] }}",
   @endif
   @if(isset($project['field_image']))
-  "image" : "{{ $project['field_image']['data']['full_url'] }}",
+    "image" : "{{ $project['field_image']['data']['full_url'] }}",
   @else
-  "image" : "https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop",
+    "image" : "https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop",
   @endif
   "articleBody" : "{{ $project['article_body'] }}",
   "url" : "{{ Request::url() }}",
@@ -28,7 +28,7 @@
     "name" : "The University of Cambridge",
     "logo":{
       "@type":"ImageObject",
-      "url":"https://beta.fitz.ms/images/logos/FV.png"
+      "url":"https://fitzmuseum.cam.ac.uk/images/logos/FV.png"
     }
   }
 }

@@ -13,23 +13,32 @@
             <{{ $key }}>{{ $metaItem }}</{{ $key }}>
         @endif
     @endforeach
+      <author>
+        <name>The Fitzwilliam Museum</name>
+        <email>press@fitzmuseum.cam.ac.uk</email>
+      </author>
+      <rights>Chancellor, Masters, and Scholars of the University of Cambridge: CC-BY</rights>
+      <generator>Fitzwilliam Museum Digital Magic by DEJP3</generator>
     @foreach($items as $item)
         <entry>
             <title><![CDATA[{{ $item->title }}]]></title>
             <link rel="alternate" href="{{ url($item->link) }}" />
-            <id>{{ url($item->id) }}</id>
+            <id>{{ $item->id }}</id>
             <author>
-                <name> <![CDATA[{{ $item->author }}]]></name>
+                <name><![CDATA[{{ $item->authorName }}]]></name>
             </author>
             <summary type="html">
                 <![CDATA[{!! $item->summary !!}]]>
             </summary>
+            <content type="html">
+              <![CDATA[{!! $item->content !!}]]>
+            </content>
             @if($item->__isset('enclosure'))
               <enclosure url="{{ url($item->enclosure) }}" length="{{ $item->enclosureLength }}" type="{{ $item->enclosureType }}" />
             @endif
-            <category type="html">
+            {{-- <category type="html">
                 <![CDATA[{!! $item->category ?? '' !!}]]>
-            </category>
+            </category> --}}
             <updated>{{ $item->updated->toRssString() }}</updated>
         </entry>
     @endforeach

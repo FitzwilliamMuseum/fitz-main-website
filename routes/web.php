@@ -158,7 +158,7 @@ Route::get('/clear-cache', [
     'uses' => 'Controller@clearCache'
 ])->middleware('auth.very_basic', 'doNotCacheResponse');
 // Route::get('/clear-cache', ['middleware' => 'auth.very_basic'], 'Controller@clearCache')->name('cache');
-
+Route::feeds();
 /*
 * Catch all route
 */

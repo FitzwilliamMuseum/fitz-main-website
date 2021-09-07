@@ -22,6 +22,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\SecureHeaders::class,
         \Spatie\MissingPageRedirector\RedirectsMissingPages::class,
+        \App\Http\Middleware\XssClean::class  //Add Middleware XSS
     ];
 
     /**

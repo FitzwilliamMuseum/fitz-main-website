@@ -4,301 +4,111 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\DirectUs;
-use App\MoreLikeThis;
-use App\FitzElastic\Elastic;
-use Elasticsearch\ClientBuilder;
+
+use App\Models\FindMoreLikeThis;
+use App\Models\LookThinkDo;
+use App\Models\Stubs;
+use App\Models\CIIM;
+use App\Models\ResearchProjects;
+use App\Models\LearningPages;
+use App\Models\StoryTelling;
+use App\Models\GalleryFamilyActivities;
 
 class learningController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  /**
+  * Display a listing of the resource.
+  *
+  * @return \Illuminate\Http\Response
+  */
 
-
-     public function getApi(){
-       $directus = new DirectUs;
-       return $directus;
-     }
-
-     public function getElastic()
-     {
-       return new Elastic();
-     }
-
-    public function lookthinkdomain()
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('look_think_do');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'filter[publication_date][lte]' => 'now',
-              'meta' => 'result_count,total_count,type'
-          )
-        );
-        $ltd = $api->getData();
-        if(empty($ltd['data'])){
-          return response()->view('errors.404',[],404);
-        }
-        $page = $this->getApi();
-        $page->setEndpoint('stubs_and_pages');
-        $page->setArguments(
-          $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'filter[slug][eq]' => 'look-think-do',
-            'filter[section][eq]' => 'learning',
-          )
-        );
-        $pages = $page->getData();
-        return view('learning.lookthinkdomain', compact('pages','ltd'));
+  public function lookthinkdomain()
+  {
+    $ltd = LookThinkDo::list();
+    $pages = Stubs::getPage('learning', 'look-think-do');
+    if(empty($ltd['data'])){
+      return response()->view('errors.404',[],404);
     }
+    return view('learning.lookthinkdomain', compact('pages','ltd'));
+  }
 
-    public function lookthinkdoactivity($slug)
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('look_think_do');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[publication_date][lte]' => 'now',
-              'filter[slug][eq]' => $slug
-          )
-        );
-        $ltd = $api->getData();
-        $params = [
-          'index' => 'ciim',
-          'size' => 1,
-          'body'  => [
-            'query' => [
-              'match' => [
-                'identifier.accession_number' => strtoupper($ltd['data'][0]['adlib_id_number'])
-              ]
-            ]
-          ]
-        ];
-        $adlib = $this->getElastic()->setParams($params)->getSearch();
-        $adlib = $adlib['hits']['hits'];
-        return view('learning.lookthinkdoactivity', compact('ltd', 'adlib'));
-    }
+  public function lookthinkdoactivity(string $slug)
+  {
+    $ltd = LookThinkDo::find($slug);
+    $adlib = CIIM::findByAccession(ltd['data'][0]['adlib_id_number']);
+    return view('learning.lookthinkdoactivity', compact('ltd', 'adlib'));
+  }
 
-    public function resources()
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[section][eq]' => 'learning',
-              'filter[landing_page][eq]' => '1',
-              'filter[slug][eq]' => 'resources'
-          )
-        );
-        $pages = $api->getData();
+  public function resources()
+  {
+    $pages = Stubs::getLandingBySlug('learning', 'resources');
+    $res = LearningPages::filterByResource('Fact Sheets');
+    $stages = LearningPages::filterByResourceNotEqual('Fact Sheets');
+    return view('learning.resources', compact('pages', 'res', 'stages'));
+  }
 
-        $api2 = $this->getApi();
-        $api2->setEndpoint('learning_pages');
-        $api2->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[page_type][eq]' => 'Fact Sheets'
-          )
-        );
-        $res = $api2->getData();
+  public function resource(string $slug)
+  {
+    $res = LearningPages::filterBySlug($slug);
+    return view('learning.resource', compact('res'));
+  }
 
-        $api3 = $this->getApi();
-        $api3->setEndpoint('learning_pages');
-        $api3->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[page_type][neq]' => 'Fact Sheets',
-              'sort' => '-id'
-          )
-        );
-        $stages = $api3->getData();
+  public static function schoolsessions()
+  {
+    return SchoolSessions::list();
+  }
 
-        return view('learning.resources', compact('pages', 'res', 'stages'));
-    }
+  public static function families()
+  {
+    return StoryTelling::list();
+  }
 
-    public function resource($slug)
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('learning_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[slug][eq]' => $slug
-          )
-        );
-        $res = $api->getData();
-        return view('learning.resource', compact('res'));
-    }
-
-    public static function schoolsessions()
-    {
-        $api = new DirectUs;
-        $api->setEndpoint('school_sessions');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type'
-            )
-        );
-        $sessions = $api->getData();
-        return $sessions;
-    }
-
-    public static function families()
-    {
-        $api = new DirectUs;
-        $api->setEndpoint('story_telling');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type'
-            )
-        );
-        $stories = $api->getData();
-        return $stories;
-    }
-
-    public static function galleryActivities()
-    {
-        $api2 = new DirectUs;
-        $api2->setEndpoint('gallery_family_activities');
-        $api2->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => '',
-            )
-        );
-
-        $activities = $api2->getData();
-        return $activities;
-    }
+  public static function galleryActivities()
+  {
+    return GalleryFamilyActivities::list();
+  }
 
 
-    public static function youngpeople()
-    {
-        $api = new DirectUs;
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[subsection][eq]' => 'young-people'
-            )
-        );
-        $sessions = $api->getData();
-        return $sessions;
-    }
+  public static function youngpeople()
+  {
+    return Stubs::findBySubSection('young-people');
+  }
 
 
-    public static function adultsessions()
-    {
-        $api = new DirectUs;
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[subsection][eq]' => 'adult-programming'
-            )
-        );
-        $sessions = $api->getData();
-        return $sessions;
-    }
+  public static function adultsessions()
+  {
+    return Stubs::findBySubSection('adult-programming');
+  }
 
-    public static function research()
-    {
-        $api = new DirectUs;
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[departments_involved][contains]' => 'Learning'
-            )
-        );
-        $research = $api->getData();
-        return $research;
-    }
+  public static function research()
+  {
+    return ResearchProjects::findByDepartment('Learning');
+  }
 
-    public function adult($slug)
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[slug][eq]' => $slug
-          )
-        );
-        $session = $api->getData();
-        return view('learning.adult', compact('session'));
-    }
+  public function adult($slug)
+  {
+    $session = Stubs::findBySlug($slug);
+    return view('learning.adult', compact('session'));
+  }
 
-    public function session($slug)
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('school_sessions');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[slug][eq]' => $slug
-          )
-        );
-        $session = $api->getData();
+  public function session($slug)
+  {
+    $session = SchoolSessions::find($slug);
+    $records = FindMoreLikeThis::find($slug, 'schoolsessions');
+    return view('learning.session', compact('session','records'));
+  }
 
-        $mlt = new MoreLikeThis;
-        $mlt->setLimit(3)->setType('schoolsessions')->setQuery($slug);
-        $records = $mlt->getData();
-        return view('learning.session', compact('session','records'));
-    }
+  public function young(string $slug)
+  {
+    $session = Stubs::findBySlug($slug);
+    $records = FindMoreLikeThis::find($slug, 'schoolsessions');
+    return view('learning.young', compact('session','records'));
+  }
 
-    public function young($slug)
-    {
-        $api = $this->getApi();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-          $args = array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[slug][eq]' => $slug
-          )
-        );
-        $session = $api->getData();
-
-        $mlt = new MoreLikeThis;
-        $mlt->setLimit(3)->setType('schoolsessions')->setQuery($slug);
-        $records = $mlt->getData();
-        return view('learning.young', compact('session','records'));
-    }
-
-    public function profiles()
-    {
-      $api = $this->getApi();
-      $api->setEndpoint('staff_profiles');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'last_name',
-            'filter[departments_affiliated.department][in]' => 9
-        )
-      );
-      $profiles = $api->getData();
-      return view('learning.profiles', compact('profiles'));
-    }
+  public function profiles()
+  {
+    $profiles = StaffProfiles::findByDepartment(9);
+    return view('learning.profiles', compact('profiles'));
+  }
 
 }

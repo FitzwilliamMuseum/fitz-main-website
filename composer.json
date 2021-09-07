@@ -33,14 +33,15 @@
         "ralouphie/mimey": "^2.1",
         "rebing/graphql-laravel": "^5.0",
         "solarium/solarium": "~6.0.0",
-        "spatie/laravel-feed": "^3.1.2",
+        "spatie/laravel-feed": "^4.0",
         "spatie/laravel-googletagmanager": "^2.6",
         "spatie/laravel-missing-page-redirector": "^2.7",
         "spatie/laravel-responsecache": "^6.6",
         "spatie/laravel-sitemap": "^6.0",
         "symfony/cache": "^5.1",
         "symfony/http-kernel": "^5.1.5",
-        "thujohn/twitter": "^2.2"
+        "thujohn/twitter": "^2.2",
+        "upthemedia/xss-protection": "^0.0.8"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

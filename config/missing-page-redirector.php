@@ -368,12 +368,12 @@ return [
       '/research/grr' => '/visit-us/galleries/gallery-9',
       '/research/mec' => '/research/projects/medieval-european-coinage',
 
-      #visit
+      #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',
       '/visit/{url}' => '/visit-us/{url}',
-
-
+      # feeds
+      '/news/feed/' => '/feeds/news/'
     ],
 
 ];

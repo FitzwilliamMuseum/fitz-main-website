@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+use App\Models\Transport;
+use App\Models\Directions;
+use App\Models\FloorPlans;
+use App\Models\CoronaVirusNotes;
+
 class visitController extends Controller
 {
   /**
@@ -39,50 +44,11 @@ class visitController extends Controller
       );
       $pages = $api2->getData();
 
-      $api3 = $this->getApi();
-      $api3->setEndpoint('directions');
-      $api3->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => '-id'
-        )
-      );
-      $directions = $api3->getData();
-
-      $api4 = $this->getApi();
-      $api4->setEndpoint('floorplans_guides');
-      $api4->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'id',
-            '[filter][type][eq]' => 'floor_plan',
-        )
-      );
-      $floors = $api4->getData();
-
-      $api4 = $this->getApi();
-      $api4->setEndpoint('coronavirus_notes');
-      $api4->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'sort' => 'id',
-        )
-      );
-      $corona = $api4->getData();
-
-      $api5 = $this->getApi();
-      $api5->setEndpoint('transport');
-      $api5->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'sort' => 'id',
-        )
-      );
-      $transport = $api5->getData();
+    
+      $directions = Directions::list();
+      $floors = FloorPlans::list();
+      $corona = CoronaVirusNotes::list();
+      $transport = Transport::list();
 
       return view('visit.index', compact(
         'pages', 'associated', 'directions',
