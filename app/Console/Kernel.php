@@ -50,6 +50,9 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\solrimportController@mindseye')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@vacancies')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@resources')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\instagramController@instagram')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\twitterController@twitter')->cron('0 */5 * * *');
+
         # Import Jekyll to solr
         $schedule->call('App\Http\Controllers\jekyllController@import')->cron('0 */5 * * *');
         # Clear caches
