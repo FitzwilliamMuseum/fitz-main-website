@@ -61,7 +61,7 @@
                       @php
                       $title = strip_tags(@markdown($result['title'][0]));
                       @endphp
-                      <a href="{{ $result['url'][0]}}">{{ $result['title'][0] }}</a>
+                      <a href="{{ $result['url'][0]}}" class="stretched-link">{{ $result['title'][0] }}</a>
                     </h3>
                   @endif
 
@@ -77,7 +77,7 @@
                       </p>
                     @endif
                   @endif
-
+                  @if(strpos($result['contentType'][0], 'instagram') === false)
                   <p>
                     <span class="badge badge-wine p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
                     @if(isset($result['mimetype']))
@@ -99,7 +99,7 @@
                       @endif
                     @endif
                   </p>
-
+                 @endif
                 </div>
               </div>
 

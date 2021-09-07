@@ -55,35 +55,17 @@
     <!-- Humans text -->
     <link type="text/plain" rel="author" href="{{ URL::to('/humans.txt') }}" />
     <!-- end of humans.txt -->
-    <link href="{{ URL::to('/news/feed') }}" rel="alternate"
-    type="application/atom+xml" title="Latest news from the museum"/>
 
     <script type="application/ld+json">
-    {"publisher":{"@type":"Organization",
-    "logo":{"@type":"ImageObject",
-    "url":"{{ URL::to('/images/logos/FV.png') }}"}},
-    "headline":"The Fitzwilliam Museum","@type":"WebSite","url":"{{ URL::to('/')}}",
-    "name":"The Fitzwilliam Museum",
-    "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
-    "@context":"https://schema.org"}
+      {"publisher":{"@type":"Organization",
+      "logo":{"@type":"ImageObject",
+      "url":"{{ URL::to('/images/logos/FV.png') }}"}},
+      "headline":"The Fitzwilliam Museum","@type":"WebSite","url":"{{ URL::to('/')}}",
+      "name":"The Fitzwilliam Museum",
+      "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
+      "@context":"https://schema.org"}
     </script>
-    {{-- <script type="text/javascript">
 
-      var BugHerdConfig = {
-        reporter: {required: "true"},
-        feedback: {
-          "tab_position":"bottom-left",
-     			tab_text: "Report a problem/ give feedback"
-     		}
-      };
-
-      (function (d, t) {
-        var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        bh.type = 'text/javascript';
-        bh.src = '//www.bugherd.com/sidebarv2.js?apikey=akxmjgmostfy0dnzbyr92g';
-        s.parentNode.insertBefore(bh, s);
-      })(document, 'script');
-    </script> --}}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

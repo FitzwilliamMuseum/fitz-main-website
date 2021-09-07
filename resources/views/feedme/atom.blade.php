@@ -24,4 +24,9 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL
     <link href="{{ route('article', $item['slug']) }}" rel="alternate"  />
   </entry>
   @endforeach
+  <link rel="self" type="application/atom+xml" href="http://www.syfyportal.com/atomFeed.php?page=3"/>
+  <link rel="first" href="http://www.syfyportal.com/atomFeed.php"/>
+  <link rel="next" href="http://www.syfyportal.com/atomFeed.php?page=4"/>
+  <link rel="previous" href="http://www.syfyportal.com/atomFeed.php?page=2"/>
+  <link rel="last" href="http://www.syfyportal.com/atomFeed.php?page=147"/>
 </feed>

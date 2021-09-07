@@ -1,6 +1,6 @@
 @extends('layouts/layout')
 @section('title','News stories')
-@section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
+@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'News stories from the Fitzwilliam Museum, Cambridge University')
 @section('keywords', 'news,stories,museum,cambridge')
@@ -28,7 +28,6 @@
             <h4 class="text-info lead">
               {{ Carbon\Carbon::parse($project['publication_date'])->format('l j F Y') }}
             </h4>
-
           </div>
         </div>
       </div>

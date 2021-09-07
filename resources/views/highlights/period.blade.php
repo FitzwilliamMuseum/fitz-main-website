@@ -9,7 +9,7 @@
 
 
 <div class="row">
-  @foreach($theme as $record)
+  @foreach($periods as $record)
   <div class="col-md-4 mb-3">
     <div class="card  h-100">
       @if(!is_null($record[0][ 'image']))
