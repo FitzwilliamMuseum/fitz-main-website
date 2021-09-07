@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\MoreLikeThis;
+
+use App\Models\StaffProfiles;
+use App\Models\ResearchProjects;
+use App\Models\OnlineResources;
+use App\Models\Stubs;
+use App\Models\ResearchOpportunities;
+use App\Models\FindMoreLikeThis;
 
 class researchController extends Controller
 {
@@ -45,87 +51,39 @@ class researchController extends Controller
 
     public function projects()
     {
-      $api = $this->getApi();
-      $api->setEndpoint('research_projects');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'title'
-        )
-      );
-      $projects = $api->getData();
-
+      $projects = ResearchProjects::list();
       return view('research.projects', compact('projects'));
     }
 
-    public function project($slug)
+    public function project(string $slug)
     {
-      $api = $this->getApi();
-      $api->setEndpoint('research_projects');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $slug
-        )
-      );
-      $projects = $api->getData();
+      $projects = ResearchProjects::find($slug);
+      $records = FindMoreLikeThis::find($slug,'projects');
       if(empty($projects['data'])){
         return response()->view('errors.404',[],404);
       }
-      $mlt = new MoreLikeThis;
-      $mlt->setLimit(3)->setType('projects')->setQuery($slug);
-      $records = $mlt->getData();
+
       return view('research.project', compact('projects', 'records'));
     }
 
     public function profiles()
     {
-      $api = $this->getApi();
-      $api->setEndpoint('staff_profiles');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'last_name',
-            'filter[research_active][in]' => 'yes'
-        )
-      );
-      $profiles = $api->getData();
+      $profiles = StaffProfiles::list();
       return view('research.profiles', compact('profiles'));
     }
 
-    public function profile($slug)
+    public function profile(string $slug)
     {
-      $api = $this->getApi();
-      $api->setEndpoint('staff_profiles');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'filter[slug][eq]' => $slug
-        )
-      );
-      $profiles = $api->getData();
+      $profiles = StaffProfiles::find($slug);
       if(empty($profiles['data'])){
         return response()->view('errors.404',[],404);
       }
       return view('research.profile', compact('profiles'));
     }
 
-    public function resource($slug)
+    public function resource(string $slug)
     {
-      $api = $this->getApi();
-      $api->setEndpoint('online_resources');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $slug
-        )
-      );
-      $resources = $api->getData();
+      $resources = OnlineResources::find($slug);
       if(empty($resources['data'])){
         return response()->view('errors.404',[],404);
       }
@@ -134,31 +92,12 @@ class researchController extends Controller
 
     public function resources()
     {
-      $api = $this->getApi();
-      $api->setEndpoint('online_resources');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'limit' => 100,
-            'meta' => '*',
-            'sort' => 'id'
-        )
-      );
-      $resources = $api->getData();
+      $resources = OnlineResources::list();
       return view('research.resources', compact('resources'));
     }
 
     public function opportunity(string $slug){
-      $api = $this->getApi();
-      $api->setEndpoint('research_opportunities');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $slug
-        )
-      );
-      $opps = $api->getData();
+      $opps = ResearchOpportunities::find($slug);
       if(empty($opps['data'])){
         return response()->view('errors.404',[],404);
       }
@@ -166,16 +105,7 @@ class researchController extends Controller
     }
 
     public function opportunities(){
-      $api = $this->getApi();
-      $api->setEndpoint('research_opportunities');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'id'
-        )
-      );
-      $opps = $api->getData();
+      $opps = ResearchOpportunities::list();
       return view('research.opportunities', compact('opps'));
     }
 }

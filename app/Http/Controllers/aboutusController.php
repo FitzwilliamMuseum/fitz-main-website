@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\Directors;
+use App\Models\Vacancies;
+use App\Models\Governance;
+use App\Models\FindMoreLikeThis;
 
 class aboutusController extends Controller
 {
@@ -26,9 +30,7 @@ class aboutusController extends Controller
    */
   public function directors()
   {
-    $directus = $this->getApi();
-    $directus->setEndpoint('directors');
-    $directors = $directus->getData();
+    $directors = Directors::getDirectors();
     return view('aboutus.directors', compact('directors'));
   }
 
@@ -39,16 +41,7 @@ class aboutusController extends Controller
    */
   public function director(string $slug)
   {
-    $directus = $this->getApi();
-    $directus->setEndpoint('directors');
-    $directus->setArguments(
-      $args = array(
-        'fields' => '*.*.*',
-        'meta' => '*',
-        'filter[slug][eq]' => $slug
-      )
-    );
-    $directors = $directus->getData();
+    $directors = Directors::getDirector($slug);
     if(empty($directors['data'])){
       return response()->view('errors.404',[],404);
     }
@@ -62,16 +55,7 @@ class aboutusController extends Controller
    */
   public function vacancies()
   {
-    $directus = $this->getApi();
-    $directus->setEndpoint('vacancies');
-    $directus->setArguments(
-      $args = array(
-        'fields' => '*.*.*',
-        'meta' => '*',
-        'sort' => '-expires'
-      )
-    );
-    $vacancies = $directus->getData();
+    $vacancies = Vacancies::getVacancies();
     return view('aboutus.vacancies', compact('vacancies'));
   }
 
@@ -82,16 +66,7 @@ class aboutusController extends Controller
    */
   public function vacancy(string $slug)
   {
-    $directus = $this->getApi();
-    $directus->setEndpoint('vacancies');
-    $directus->setArguments(
-      $args = array(
-        'fields' => '*.*.*',
-        'meta' => '*',
-        'filter[slug][eq]' => $slug
-      )
-    );
-    $vacancies = $directus->getData();
+    $vacancies = Vacancies::getVacancy($slug);
     if(empty($vacancies['data'])){
       return response()->view('errors.404',[],404);
     }
@@ -104,16 +79,7 @@ class aboutusController extends Controller
    */
   public function governance()
   {
-    $directus = $this->getApi();
-    $directus->setEndpoint('governance_files');
-    $directus->setArguments(
-      $args = array(
-        'fields' => '*.*.*',
-        'meta' => '*',
-        'sort' => '-title'
-      )
-    );
-    $gov = $directus->getData();
+    $gov = Governance::getGovernance();
     return view('aboutus.governance', compact('gov'));
   }
 
@@ -130,7 +96,7 @@ class aboutusController extends Controller
     $directus->setArguments(
       $args = array(
         'fields' => '*.*.*',
-        'limit' => 6,
+        'limit' => $perPage,
         'offset' => ($request->page -1) * $perPage,
         'meta' => '*',
         'sort' => '-release_date'

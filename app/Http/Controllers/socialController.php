@@ -6,26 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\DirectUs;
 use App\MoreLikeThis;
-use App\FitzElastic\Elastic;
-use Elasticsearch\ClientBuilder;
 use Twitter;
 use Cache;
-use Illuminate\Pagination\LengthAwarePaginator;
-
+use App\Models\Instagram;
+use App\Models\CIIM;
 
 class socialController extends Controller
 {
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-
-  public function getElastic()
-  {
-    return new Elastic();
-  }
-
   public function index()
   {
     return view('social.index');
@@ -33,72 +20,36 @@ class socialController extends Controller
 
   public function instagram(Request $request)
   {
-    $perPage = 12;
-    $offset = ($request->page -1) * $perPage ;
-    $api = $this->getApi();
-    $api->setEndpoint('on_insta');
-    $api->setArguments(
-      $args = array(
-        'fields' => '*.*.*.*',
-        'meta' => 'result_count,total_count,type',
-        'sort' => '-date_posted',
-        'limit' => $perPage,
-        'offset' => $offset
-      )
-    );
-    $insta = $api->getData();
-    $currentPage = LengthAwarePaginator::resolveCurrentPage();
-    $total = $insta['meta']['total_count'];
-    $paginator = new LengthAwarePaginator($insta, $total, $perPage, $currentPage);
-    $paginator->setPath('instagram');
+    $paginator = Instagram::list($request);
+    $insta = $paginator->items();
     return view('social.insta', compact('insta', 'paginator'));
   }
 
   public function story($slug)
   {
-    $api = $this->getApi();
-    $api->setEndpoint('on_insta');
-    $api->setArguments(
-      $args = array(
-        'fields' => '*.*.*.*',
-        'meta' => 'result_count,total_count,type',
-        'filter[slug][eq]' => $slug
-      )
-    );
-    $insta = $api->getData();
-    $params = [
-      'index' => 'ciim',
-      'size' => 1,
-      'body'  => [
-        'query' => [
-          'match' => [
-            'identifier.accession_number' => strtoupper($insta['data'][0]['adlib_id'])
-          ]
-        ]
-      ]
-    ];
-    $adlib = $this->getElastic()->setParams($params)->getSearch();
-    $adlib = $adlib['hits']['hits'];
+    $insta = Instagram::find($slug);
+    $adlib = CIIM::findByAccession($insta['data'][0]['adlib_id']);
     return view('social.story', compact('insta', 'adlib'));
   }
 
   public function twitter()
   {
-    $expiresTwitter = now()->addMinutes(60);
-    if (Cache::has('cache_twitter_social')) {
-      $tweets = Cache::get('cache_twitter');
+    $expiresTwitter = now()->addMinutes(360);
+    if (Cache::has('cache_twitter_social_list')) {
+      $tweets = Cache::get('cache_twitter_social_list');
     } else {
       $tweets = Twitter::getUserTimeline([
         'screen_name' => 'fitzmuseum_uk',
-        'count' => 10,
+        'count' => 36,
         'format' => 'object',
         'tweet_mode' => 'extended',
         'include_rts' => false,
         'exclude_replies' => true
       ]);
-      Cache::put('cache_twitter_social', $tweets, $expiresTwitter); // 1 hour
-      return view('social.twitter', compact('tweets'));
+      Cache::put('cache_twitter_social_list', $tweets, $expiresTwitter); // 1 hour
     }
+    return view('social.twitter', compact('tweets'));
 
   }
+
 }
