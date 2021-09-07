@@ -1,8 +1,10 @@
-# Beta framework for the Fitzwilliam Museum website
+# Framework for the Fitzwilliam Museum website
 
-This repository contains the code base for a Laravel based front end for a beta version of @fitzwilliammuseum website. The front end is very simple and uses Bootstrap 4.5.2 framework, latest JQuery and various libraries to interface with a headless API provided by our installation of the @directus system, Solr and ElasticSearch endpoints.
+This repository contains the code base for a Laravel based front end for the latest version of @fitzwilliammuseum website.
 
-At the moment, it is mostly VC rather than MVC architecture. No database is currently used to power functions as all data is JSON based search and retrieve.
+The front end is very simple and uses Bootstrap latest framework, latest JQuery and various libraries to interface with a headless API provided by our installation of the @directus system, Solr and ElasticSearch endpoints.
+
+The models in this system point at an API rather than a database.  
 
 # Data sources
 
@@ -32,10 +34,6 @@ In production, we use REDIS. Locally use File based caching unless you want to i
 7. nano .env
 8. Fill in variables for your instance (Cache etc)
 9. php artisan serve
-
-# Screenshot
-
-![](docs/screenshots/beta.fitz.ms.png)
 
 # License
 
