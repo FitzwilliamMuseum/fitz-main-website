@@ -18,7 +18,7 @@ class exhibitionsController extends Controller
     $pages    = Stubs::getLanding('exhibitions');
     $current  = Exhibitions::list($status = 'current');
     $displays = Exhibitions::list('current','-ticketed', 'display', 100);
-    $future   = Exhibitions::list('future');
+    $future   = Exhibitions::listFuture('future');
     $archive  = Exhibitions::list($status =  'archived', '-exhibition_end_date', 'exhibition', $limit = 3);
     return view('exhibitions.index', compact(
       'current', 'pages', 'archive',
