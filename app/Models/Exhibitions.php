@@ -23,6 +23,22 @@ class Exhibitions extends Model
       return $api->getData();
     }
 
+    public static function listFuture(string $status = 'future', string $sort = '-ticketed', int $limit = 100 )
+    {
+      $api = new DirectUs;
+      $api->setEndpoint('exhibitions');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'filter[exhibition_status][eq]' => $status,
+            'meta' => '*',
+            'sort' => $sort,
+            'limit' => $limit
+        )
+      );
+      return $api->getData();
+    }
+
     public static function listHome(string $status = 'current', string $sort = '-ticketed', int $limit = 100 )
     {
       $api = new DirectUs;
