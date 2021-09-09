@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Directus;
+use App\DirectUs;
 
 class Governance extends Model
 {
