@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8f3c9d990ad6535ff91d71de5d56ca1",
+    "content-hash": "7cc1593e0d99b38d7bccf45f1dbc114e",
     "packages": [
         {
             "name": "alaouy/youtube",
@@ -1898,16 +1898,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.58.0",
+            "version": "v8.60.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1b819bf99d87bd543a4d4895e5b3350f61ea7a23"
+                "reference": "44f16a31a1d4ac8a51605550d7796e2273984a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1b819bf99d87bd543a4d4895e5b3350f61ea7a23",
-                "reference": "1b819bf99d87bd543a4d4895e5b3350f61ea7a23",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/44f16a31a1d4ac8a51605550d7796e2273984a48",
+                "reference": "44f16a31a1d4ac8a51605550d7796e2273984a48",
                 "shasum": ""
             },
             "require": {
@@ -2062,7 +2062,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-31T13:55:57+00:00"
+            "time": "2021-09-08T13:37:21+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3444,87 +3444,23 @@
             "time": "2021-06-15T17:13:09+00:00"
         },
         {
-            "name": "phpfastcache/couchdb",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPSocialNetwork/couchdb-client.git",
-                "reference": "4d4978b6825445f301d358f0a4117664d25bc5b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPSocialNetwork/couchdb-client/zipball/4d4978b6825445f301d358f0a4117664d25bc5b0",
-                "reference": "4d4978b6825445f301d358f0a4117664d25bc5b0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "conflict": {
-                "doctrine/couchdb": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\CouchDB": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Lukas Kahwe Smith",
-                    "email": "smith@pooteeweet.org"
-                },
-                {
-                    "name": "Georges.L",
-                    "email": "contact@geolim4.com"
-                }
-            ],
-            "description": "CouchDB Client (PhpFastCache fork)",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "couchdb",
-                "persistence"
-            ],
-            "support": {
-                "source": "https://github.com/PHPSocialNetwork/couchdb-client/tree/master"
-            },
-            "time": "2017-04-21T18:52:02+00:00"
-        },
-        {
             "name": "phpfastcache/phpfastcache",
-            "version": "8.0.7",
+            "version": "8.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPSocialNetwork/phpfastcache.git",
-                "reference": "60f7124532d29d273c989603bdfec891a3e71948"
+                "reference": "c413ffd8185564db3d670e20f9135497be9ebe85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/60f7124532d29d273c989603bdfec891a3e71948",
-                "reference": "60f7124532d29d273c989603bdfec891a3e71948",
+                "url": "https://api.github.com/repos/PHPSocialNetwork/phpfastcache/zipball/c413ffd8185564db3d670e20f9135497be9ebe85",
+                "reference": "c413ffd8185564db3d670e20f9135497be9ebe85",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "php": ">=7.3",
-                "phpfastcache/couchdb": "^1.0",
                 "psr/cache": "~1.0.0",
                 "psr/simple-cache": "~1.0.0"
             },
@@ -3538,6 +3474,7 @@
             "suggest": {
                 "ext-apc": "*",
                 "ext-couchbase": "*",
+                "ext-couchbase_v3": "*",
                 "ext-intl": "*",
                 "ext-leveldb": "*",
                 "ext-memcache": "*",
@@ -3546,10 +3483,10 @@
                 "ext-sqlite": "*",
                 "ext-wincache": "*",
                 "ext-xcache": "*",
-                "mongodb/mongodb": "^1.1",
+                "mongodb/mongodb": "^1.9",
                 "phpfastcache/couchdb": "~1.0.0",
                 "phpfastcache/phpssdb": "~1.0.0",
-                "predis/predis": "~1.1.0"
+                "predis/predis": "^1.1"
             },
             "type": "library",
             "autoload": {
@@ -3610,7 +3547,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPSocialNetwork/phpfastcache/issues",
-                "source": "https://github.com/PHPSocialNetwork/phpfastcache/tree/8.0.7"
+                "source": "https://github.com/PHPSocialNetwork/phpfastcache/tree/8.0.8"
             },
             "funding": [
                 {
@@ -3622,7 +3559,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-08-12T11:46:36+00:00"
+            "time": "2021-08-18T01:26:03+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -4343,50 +4280,6 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
-            "name": "ralouphie/mimey",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ralouphie/mimey.git",
-                "reference": "8f74e6da73f9df7bd965e4e123f3d8fb9acb89ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ralouphie/mimey/zipball/8f74e6da73f9df7bd965e4e123f3d8fb9acb89ba",
-                "reference": "8f74e6da73f9df7bd965e4e123f3d8fb9acb89ba",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.4|^7.0"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "^1.1",
-                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Mimey\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ralph Khattar",
-                    "email": "ralph.khattar@gmail.com"
-                }
-            ],
-            "description": "PHP package for converting file extensions to MIME types and vice versa.",
-            "support": {
-                "issues": "https://github.com/ralouphie/mimey/issues",
-                "source": "https://github.com/ralouphie/mimey/tree/develop"
-            },
-            "time": "2019-03-08T08:49:03+00:00"
-        },
-        {
             "name": "ramsey/collection",
             "version": "1.2.1",
             "source": {
@@ -4766,16 +4659,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.50.0",
+            "version": "3.50.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "8af217555d92a81d8d4d76f86c221decc74e0d5d"
+                "reference": "ae3394a495e44486896cbbe17ad1d98569018508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/8af217555d92a81d8d4d76f86c221decc74e0d5d",
-                "reference": "8af217555d92a81d8d4d76f86c221decc74e0d5d",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/ae3394a495e44486896cbbe17ad1d98569018508",
+                "reference": "ae3394a495e44486896cbbe17ad1d98569018508",
                 "shasum": ""
             },
             "require": {
@@ -4819,8 +4712,7 @@
                 "webpage"
             ],
             "support": {
-                "issues": "https://github.com/spatie/browsershot/issues",
-                "source": "https://github.com/spatie/browsershot/tree/3.50.0"
+                "source": "https://github.com/spatie/browsershot/tree/3.50.1"
             },
             "funding": [
                 {
@@ -4828,7 +4720,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-22T19:58:45+00:00"
+            "time": "2021-08-27T08:45:53+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -8787,6 +8679,54 @@
                 }
             ],
             "time": "2020-07-02T05:49:25+00:00"
+        },
+        {
+            "name": "xantios/mimey",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Xantios/mimey.git",
+                "reference": "8cb6f0c29b8eadde38777ed947847f4253c00b60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Xantios/mimey/zipball/8cb6f0c29b8eadde38777ed947847f4253c00b60",
+                "reference": "8cb6f0c29b8eadde38777ed947847f4253c00b60",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mimey\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xantios Krugor",
+                    "email": "git@xantios.nl"
+                },
+                {
+                    "name": "Ralph Khattar",
+                    "email": "ralph.khattar@gmail.com"
+                }
+            ],
+            "description": "PHP package for converting file extensions to MIME types and vice versa.",
+            "support": {
+                "issues": "https://github.com/Xantios/mimey/issues",
+                "source": "https://github.com/Xantios/mimey/tree/v2.2.0"
+            },
+            "time": "2021-06-12T14:33:14+00:00"
         }
     ],
     "packages-dev": [
@@ -9055,21 +8995,21 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "89c6201c74db25fa759ff16e78a4d8f32547770e"
+                "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/89c6201c74db25fa759ff16e78a4d8f32547770e",
-                "reference": "89c6201c74db25fa759ff16e78a4d8f32547770e",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/271d384d216e5e5c468a6b28feedf95d49f83b35",
+                "reference": "271d384d216e5e5c468a6b28feedf95d49f83b35",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0",
-                "psr/container": "^1.0",
+                "psr/container": "^1.0 || ^2.0",
                 "symfony/deprecation-contracts": "^2.2"
             },
             "conflict": {
@@ -9089,7 +9029,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "v1.15-dev"
+                    "dev-main": "v1.16-dev"
                 }
             },
             "autoload": {
@@ -9114,9 +9054,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.15.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.16.0"
             },
-            "time": "2021-07-06T20:39:40+00:00"
+            "time": "2021-09-06T14:53:37+00:00"
         },
         {
             "name": "filp/whoops",
@@ -11114,7 +11054,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2.5"
+        "php": "^7.2.5 | ^8.0.3"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.2.5 | ^8.0.3",
         "alaouy/youtube": "^2.2",
         "buzzylab/laradown": "~0.2",
         "conedevelopment/blade-filters": "^0.8.0",
@@ -27,10 +27,9 @@
         "mews/purifier": "^3.2",
         "olssonm/l5-very-basic-auth": "^6.3",
         "phpclassic/php-shopify": "^1.1",
-        "phpfastcache/phpfastcache": "8.0.7",
+        "phpfastcache/phpfastcache": "8.0.8",
         "predis/predis": "^1.1",
         "raiym/instagram-php-scraper": "^0.11.1",
-        "ralouphie/mimey": "^2.1",
         "rebing/graphql-laravel": "^5.0",
         "solarium/solarium": "~6.0.0",
         "spatie/laravel-feed": "^4.0",
@@ -41,7 +40,8 @@
         "symfony/cache": "^5.1",
         "symfony/http-kernel": "^5.1.5",
         "thujohn/twitter": "^2.2",
-        "upthemedia/xss-protection": "^0.0.8"
+        "upthemedia/xss-protection": "^0.0.8",
+        "xantios/mimey": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
