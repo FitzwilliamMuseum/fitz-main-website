@@ -1,4 +1,5 @@
 <script>
+@if(\Route::current()->getName() == 'visit')
 window.addEventListener('LaravelMaps:MapInitialized', function (event) {
   var geojsonFeature = {
     "type": "FeatureCollection",
@@ -316,4 +317,11 @@ window.addEventListener('LaravelMaps:MapInitialized', function (event) {
   L.geoJSON(geojsonFeature).addTo(map);
   map.scrollWheelZoom.disable();
 });
+@else
+window.addEventListener('LaravelMaps:MapInitialized', function (event) {
+  var element = event.detail.element;
+  var map = event.detail.map;
+  map.scrollWheelZoom.disable();
+});
+@endif
 </script>
