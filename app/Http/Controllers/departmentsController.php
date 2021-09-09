@@ -13,6 +13,7 @@ use App\DirectUs;
 use App\Models\Stubs;
 use App\Models\Departments;
 use App\Models\StaffProfiles;
+use App\Models\ConservationAreas;
 
 class departmentsController extends Controller
 {
