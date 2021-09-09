@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Models;
-use App\Directus;
+
+use App\DirectUs;
 
 class StaffProfiles extends Model
 {
     public static function list()
     {
-      $api = new DirectUs();
+      $api = new DirectUs;
       $api->setEndpoint('staff_profiles');
       $api->setArguments(
         $args = array(
@@ -22,7 +23,7 @@ class StaffProfiles extends Model
 
     public static function find($slug)
     {
-      $api = new DirectUs();
+      $api = new DirectUs;
       $api->setEndpoint('staff_profiles');
       $api->setArguments(
         $args = array(
@@ -36,7 +37,7 @@ class StaffProfiles extends Model
 
     public static function findByDepartment(int $department)
     {
-      $api = new DirectUs();
+      $api = new DirectUs;
       $api->setEndpoint('staff_profiles');
       $api->setArguments(
         $args = array(
