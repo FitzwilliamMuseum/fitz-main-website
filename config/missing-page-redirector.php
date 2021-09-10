@@ -172,8 +172,8 @@ return [
       '/gallery/auerbach' => 'https://auerbach.fitzmuseum.cam.ac.uk/',
       '/gallery/auerbach/{url}' => 'https://auerbach.fitzmuseum.cam.ac.uk/{url}',
       # Treasured
-      '/gallery/treasuredpossesions' => 'https://treasured-possessions.fitzmuseum.cam.ac.uk',
-      '/gallery/treasuredpossesions/{url}' => 'https://treasured-possessions.fitzmuseum.cam.ac.uk/{url}',
+      '/gallery/treasuredpossessions' => 'https://treasured-possessions.fitzmuseum.cam.ac.uk',
+      '/gallery/treasuredpossessions/{url}' => 'https://treasured-possessions.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
