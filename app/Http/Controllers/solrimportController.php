@@ -55,7 +55,7 @@ class solrimportController extends Controller
       'news',
       'article',
       array('slug'),
-      array('title' => 'title', 'content' => 'article_body', 'image' => 'field_image')
+      array('title' => 'article_title', 'content' => 'article_body', 'image' => 'field_image')
     );
   }
 
