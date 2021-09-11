@@ -174,6 +174,11 @@ return [
       # Treasured
       '/gallery/treasuredpossessions' => 'https://treasured-possessions.fitzmuseum.cam.ac.uk',
       '/gallery/treasuredpossessions/{url}' => 'https://treasured-possessions.fitzmuseum.cam.ac.uk/{url}',
+      # madonnas
+      '/madonnasandmiracles/' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk',
+      '/madonnasandmiracles/curatorschoice' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/curators-choice',
+      '/madonnasandmiracles/audioandfilm' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/audio-and-film',
+      '/madonnasandmiracles/{url}' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
