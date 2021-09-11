@@ -65,8 +65,8 @@ return [
       '/users/{url}' => '/research/staff-profiles/{url}',
 
       #  Collections
-      '/explorer' => '/object-and-artworks',
-      '/explorer/{url}' => '/object-and-artworks',
+      '/explorer' => '/objects-and-artworks',
+      '/explorer/{url}' => '/objects-and-artworks',
       '/collections/' => '/about-us/collections/',
       '/opacdirect/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
       '/collections/greeceandrome' => '/about-us/collections/greece-and-rome',
