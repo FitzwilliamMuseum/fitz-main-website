@@ -23,7 +23,7 @@ class jekyllController extends Controller
     'book-of-the-dead',
     'snowcountry',
     'nightoflonging',
-    'treasuredpossessions',
+    'treasured-possessions',
     'madonnas-and-miracles',
     'clark'
   );
@@ -38,7 +38,7 @@ class jekyllController extends Controller
 
   public function import(){
     foreach($this->_subdomains as $subdomain) {
-     $jekyll  = new JekyllImporter();
+     $jekyll  = new JekyllImporter;
      $jekyll->setUrl($this->buildUrl($subdomain));
      $jekyll->import($subdomain);
     }

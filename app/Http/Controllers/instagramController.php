@@ -50,6 +50,7 @@ class instagramController extends Controller
       $doc->searchImage = 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/insta.png';
       $documents[] = $doc;
     }
+    dump($documents);
     $update->addDocuments($documents);
     $update->addCommit();
     $result = $this->client->update($update);
