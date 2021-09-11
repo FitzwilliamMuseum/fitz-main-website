@@ -22,7 +22,10 @@ class jekyllController extends Controller
     'kunisada-and-kabuki',
     'book-of-the-dead',
     'snowcountry',
-    'nightoflonging'
+    'nightoflonging',
+    'treasuredpossessions',
+    'madonnas-and-miracles',
+    'clark'
   );
 
   protected $_baseurl = '.fitzmuseum.cam.ac.uk/data.json';
