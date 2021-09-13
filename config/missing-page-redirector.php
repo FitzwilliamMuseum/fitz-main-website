@@ -179,6 +179,9 @@ return [
       '/madonnasandmiracles/curatorschoice' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/curators-choice',
       '/madonnasandmiracles/audioandfilm' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/audio-and-film',
       '/madonnasandmiracles/{url}' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/{url}',
+      # Afrocombs
+      '/gallery/afrocombs' => 'https://afrocombs.fitzmuseum.cam.ac.uk',
+      '/gallery/afrocombs/{url}' => 'https://afrocombs.fitzmuseum.cam.ac.uk/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',

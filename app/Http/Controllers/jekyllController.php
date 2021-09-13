@@ -25,7 +25,9 @@ class jekyllController extends Controller
     'nightoflonging',
     'treasured-possessions',
     'madonnas-and-miracles',
-    'clark'
+    'clark',
+    'beyondthelabel',
+    'afrocombs'
   );
 
   protected $_baseurl = '.fitzmuseum.cam.ac.uk/data.json';
