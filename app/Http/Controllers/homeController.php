@@ -13,7 +13,7 @@ use App\Models\ResearchProjects;
 use App\Models\FundRaising;
 use App\Models\Highlights;
 use App\Models\ThingsToDo;
-use App\Models\EventsTessitura;
+// use App\Models\EventsTessitura;
 use App\Models\Shopify;
 
 
@@ -35,7 +35,7 @@ class homeController extends Controller
     $fundraising = FundRaising::list(3);
     $objects     = Highlights::homeList();
     $things      = ThingsToDo::list();
-    $productions = EventsTessitura::list();
+    // $productions = EventsTessitura::list();
     $shopify     = Shopify::list();
 
     return view('index', compact(
