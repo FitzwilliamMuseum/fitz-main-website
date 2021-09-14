@@ -41,7 +41,7 @@ class homeController extends Controller
     return view('index', compact(
       'carousel','news', 'research',
       'objects', 'things', 'fundraising',
-      'shopify','productions', 'galleries',
+      'shopify', 'galleries',
       'exhibitions'
     ));
   }
