@@ -28,7 +28,11 @@ class JekyllImporter {
   public function getData(){
     $url = $this->getUrl();
     $response = Http::get($url);
+    dump($response->status());
     $data = $response->json();
+    if($url === 'https://beyondthelabel.fitzmuseum.cam.ac.uk/data.json'){
+      dump($response->json());
+    }
     return $data;
   }
 
