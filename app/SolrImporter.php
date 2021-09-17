@@ -17,8 +17,8 @@ class SolrImporter {
   public function import($data, $contentType, $table, $route, $params, $mapping)
   {
       $configSolr = \Config::get('solarium');
-      $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-      $update = $this->client->createUpdate();
+      $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+      $update = $client->createUpdate();
       $documents = array();
       foreach($data as $record)
       {
@@ -81,7 +81,7 @@ class SolrImporter {
       }
       $update->addDocuments($documents);
       $update->addCommit();
-      return $this->client->update($update);
+      return $client->update($update);
   }
 
   public function getShopifyObjects()
@@ -105,8 +105,8 @@ class SolrImporter {
     $protocol = env('SHOPIFY_FME_PROTOCOL');
     $catalogue = env('SHOPIFY_FME_CATALOGUE');
     $configSolr = \Config::get('solarium');
-    $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-    $update = $this->client->createUpdate();
+    $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+    $update = $client->createUpdate();
     foreach($shopify as $product) {
       $doc = $update->createDocument();
       $doc->id = $product['id'];
