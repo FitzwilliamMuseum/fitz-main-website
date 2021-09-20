@@ -51,6 +51,7 @@ return [
       '/aboutus/jobs' => '/about-us/work-for-us',
       '/aboutus/conservation/internships' => '/research/opportunities/conservation-internships',
       '/jobs/' => '/about-us/work-for-us',
+      '/about/administration.html' => '/about-us/governance',
       '/jobs/{url}' => '/about-us/work-for-us/details/{url}',
       '/support-us/support-us' => '/support-us',
       '/about-us/collections/textiles' => '/about-us/collections/textiles-and-fans',
