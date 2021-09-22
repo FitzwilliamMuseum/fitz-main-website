@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d97d27606bf329436595b297d9b3fee",
+    "content-hash": "bfe1dd2c216b0913223df0edc4829b87",
     "packages": [
         {
             "name": "alaouy/youtube",
@@ -1124,6 +1124,37 @@
             "time": "2020-10-22T13:48:01+00:00"
         },
         {
+            "name": "fitzwilliammuseum/maps",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fitzwilliammuseum/maps.git",
+                "reference": "4164d606c53ec670e48813fbbfec05d35c2b00c5"
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Fitzwilliammuseum\\Maps\\MapsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fitzwilliammuseum\\Maps\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Maps for your Laravel application",
+            "time": "2021-09-10T11:50:41+00:00"
+        },
+        {
             "name": "fruitcake/laravel-cors",
             "version": "v2.0.4",
             "source": {
@@ -1264,82 +1295,6 @@
                 "source": "https://github.com/mghoneimy/php-graphql-client/tree/v1.13"
             },
             "time": "2021-08-10T12:39:57+00:00"
-        },
-        {
-            "name": "gonoware/laravel-maps",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/gonoware/laravel-maps.git",
-                "reference": "303476aa5a3833b59566bdba31d3a318512eb87e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/gonoware%2Flaravel-maps/repository/archive.zip?sha=303476aa5a3833b59566bdba31d3a318512eb87e",
-                "reference": "303476aa5a3833b59566bdba31d3a318512eb87e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^6.0|^7.0|^8.0",
-                "php": "^7.2|^7.2.5"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0|^1.3.1",
-                "phpunit/phpunit": "^8.0|^8.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "GoNoWare\\Maps\\MapsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GoNoWare\\Maps\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuel Mutschlechner",
-                    "email": "em@gonoware.com"
-                },
-                {
-                    "name": "Benedikt Tuschter",
-                    "email": "bt@gonoware.com"
-                }
-            ],
-            "description": "Maps for your Laravel application",
-            "homepage": "https://gitlab.com/gonoware/laravel-maps",
-            "keywords": [
-                "OpenStreetMap",
-                "bing",
-                "bingmaps",
-                "gonoware",
-                "google",
-                "googlemaps",
-                "laravel",
-                "mapkit",
-                "mapkitjs",
-                "mapquest",
-                "maps",
-                "osm",
-                "yandex",
-                "yandexmaps"
-            ],
-            "support": {
-                "issues": "https://gitlab.com/gonoware/laravel-maps/issues",
-                "source": "https://gitlab.com/gonoware/laravel-maps"
-            },
-            "time": "2020-11-17T21:53:31+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2551,29 +2506,28 @@
         },
         {
             "name": "league/glide",
-            "version": "2.0.x-dev",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/glide.git",
-                "reference": "e84ef237030817ab6034b2c17173dd3352a971e1"
+                "reference": "ae5e26700573cb678919d28e425a8b87bc71c546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/glide/zipball/e84ef237030817ab6034b2c17173dd3352a971e1",
-                "reference": "e84ef237030817ab6034b2c17173dd3352a971e1",
+                "url": "https://api.github.com/repos/thephpleague/glide/zipball/ae5e26700573cb678919d28e425a8b87bc71c546",
+                "reference": "ae5e26700573cb678919d28e425a8b87bc71c546",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/psr7": "^1.1",
-                "intervention/image": "^2.1",
+                "intervention/image": "^2.4",
                 "league/flysystem": "^1.0",
-                "php": "^5.4 | ^7.0",
-                "symfony/http-foundation": "^2.3|^3.0|^4.0|^5.0"
+                "php": "^7.2|^8.0",
+                "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/php-token-stream": "^1.4",
-                "phpunit/phpunit": "~4.4"
+                "mockery/mockery": "^1.3.3",
+                "phpunit/php-token-stream": "^3.1|^4.0",
+                "phpunit/phpunit": "^8.5|^9.0"
             },
             "type": "library",
             "extra": {
@@ -2611,9 +2565,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/glide/issues",
-                "source": "https://github.com/thephpleague/glide/tree/2.0"
+                "source": "https://github.com/thephpleague/glide/tree/1.7.0"
             },
-            "time": "2020-03-06T21:33:29+00:00"
+            "time": "2020-11-05T17:34:03+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -4791,24 +4745,24 @@
         },
         {
             "name": "spatie/image",
-            "version": "2.1.0",
+            "version": "1.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image.git",
-                "reference": "bf5afcac04b24d9973e62e7ca63519e2f21a2d62"
+                "reference": "63a963d0200fb26f2564bf7201fc7272d9b22933"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/bf5afcac04b24d9973e62e7ca63519e2f21a2d62",
-                "reference": "bf5afcac04b24d9973e62e7ca63519e2f21a2d62",
+                "url": "https://api.github.com/repos/spatie/image/zipball/63a963d0200fb26f2564bf7201fc7272d9b22933",
+                "reference": "63a963d0200fb26f2564bf7201fc7272d9b22933",
                 "shasum": ""
             },
             "require": {
                 "ext-exif": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "league/glide": "^2.0",
-                "php": "^8.0",
+                "league/glide": "^1.6",
+                "php": "^7.2|^8.0",
                 "spatie/image-optimizer": "^1.1",
                 "spatie/temporary-directory": "^1.0|^2.0",
                 "symfony/process": "^3.0|^4.0|^5.0"
@@ -4844,7 +4798,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image/issues",
-                "source": "https://github.com/spatie/image/tree/2.1.0"
+                "source": "https://github.com/spatie/image/tree/1.10.5"
             },
             "funding": [
                 {
@@ -4856,7 +4810,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-15T14:38:03+00:00"
+            "time": "2021-04-07T08:42:24+00:00"
         },
         {
             "name": "spatie/image-optimizer",
