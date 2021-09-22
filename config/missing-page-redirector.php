@@ -132,6 +132,9 @@ return [
         # Book of the dead
       '/gallery/papyrus/' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk',
       '/gallery/papyrus/{url}' => 'https://book-of-the-dead.fitzmuseum.cam.ac.uk/{url}',
+      # Death on the nile
+      '/gallery/deathonthenile' => 'https://egyptiancoffins.org/deathonthenile',
+      '/gallery/deathonthenile/{url}' => 'https://egyptiancoffins.org/deathonthenile/{url}',
         # Cockerell
       '/cockerell' => 'https://cockerel.fitzmuseum.cam.ac.uk',
       '/cockerell/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk{url}',
