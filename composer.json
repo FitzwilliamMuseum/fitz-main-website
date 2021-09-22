@@ -48,7 +48,7 @@
         "thujohn/twitter": "^2.2",
         "upthemedia/xss-protection": "^0.0.8",
         "xantios/mimey": "^2.2",
-        "fitzwilliammuseum/maps": "*"
+        "fitzwilliammuseum/maps": "master"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
