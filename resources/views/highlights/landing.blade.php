@@ -129,9 +129,7 @@
           @if(!is_null($record['hero_image']))
             <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/">
               <img class="card-img-top" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"
-            width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/>
+            alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/>
           </a>
           @endif
           <div class="card-body h-100">
@@ -149,9 +147,7 @@
         <div class="card">
           @if(!is_null($record['hero_image']))
             <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/"><img class="img-fluid" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"
-            width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/></a>
           @endif
           <div class="card-body">
             <h3 class="lead">
@@ -196,9 +192,7 @@
         <div class="card h-100 ">
           @if(!is_null($record[0]['image']))
             <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[0]['period_assigned'] }}" loading="lazy"
-            width="{{ $record[0]['image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
           @endif
           <div class="card-body">
             <h3 class="lead">
@@ -215,9 +209,7 @@
         <div class="card h-100">
           @if(!is_null($record[0][ 'image']))
             <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned']) }}"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[0]['period_assigned'] }}" loading="lazy"
-            width="{{ $record[0]['image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record[0]['image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
           @endif
           <div class="card-body">
             <h3 class="lead">
@@ -262,9 +254,7 @@
         <div class="card h-100 ">
           @if(!is_null($record[0]['hero_image']))
             <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"
-            width="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
           @endif
           <div class="card-body">
             <h3 class="lead">
@@ -281,9 +271,7 @@
         <div class="card h-100">
           @if(!is_null($record[0]['hero_image']))
             <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"
-            width="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+            alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
           @endif
           <div class="card-body">
             <h3 class="lead">
