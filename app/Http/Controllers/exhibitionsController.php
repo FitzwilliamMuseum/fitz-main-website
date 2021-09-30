@@ -9,6 +9,7 @@ use App\Models\Exhibitions;
 use App\Models\Stubs;
 use App\Models\FindMoreLikeThis;
 use App\Models\CIIM;
+use App\Models\PodcastArchive;
 
 class exhibitionsController extends Controller
 {
@@ -37,10 +38,14 @@ class exhibitionsController extends Controller
     $exhibitions = Exhibitions::find($slug);
     $adlib = CIIM::findByExhibition($exhibitions['data'][0]['adlib_id_exhibition']);
     $records = FindMoreLikeThis::find($slug, 'exhibitions');
+    $podcasts = NULL;
+    if(!empty($exhibitions['data'][0]['podcasts'] )){
+      $podcasts = PodcastArchive::find($exhibitions['data'][0]['podcasts'][0]['podcast_series_id']['id']);
+    }
     if(empty($exhibitions['data'])){
       return response()->view('errors.404',[],404);
     }
-    return view('exhibitions.details', compact('exhibitions', 'records', 'adlib'));
+    return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts'));
   }
 
   public static function injectImmunity()
