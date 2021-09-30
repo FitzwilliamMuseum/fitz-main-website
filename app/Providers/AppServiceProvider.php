@@ -124,7 +124,7 @@ class AppServiceProvider extends ServiceProvider
             case "pharos":
               $clean = 'A collection highlight';
             break;
-            case "pharospages":
+            case "pharos-pages":
               $clean = 'Pharos information';
             break;
             case "gallery":
