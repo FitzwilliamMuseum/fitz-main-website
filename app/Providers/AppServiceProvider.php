@@ -202,6 +202,9 @@ class AppServiceProvider extends ServiceProvider
             case 'research-resource':
                 $clean = 'Research/exhibition resource';
                 break;
+            case 'resources':
+                $clean = 'Research/exhibition resource';
+                break;
             default:
               $clean = $string;
             break;
