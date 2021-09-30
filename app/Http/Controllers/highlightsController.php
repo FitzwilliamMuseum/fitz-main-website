@@ -44,7 +44,7 @@ class highlightsController extends Controller
       if(empty($pharos['data'])){
         return response()->view('errors.404',[],404);
       }
-      $records = FindMoreLikeThis::find($slug, 'pharos');
+      $records = FindMoreLikeThis::find($slug, '"pharos"');
       $adlib = CIIM::findByAccession(Str::upper($pharos['data'][0]['adlib_id']));
       $shopify = FindMoreLikeThis::find($slug, 'shopify');
       return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify'));
