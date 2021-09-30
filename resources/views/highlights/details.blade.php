@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.highlights')
 @foreach($pharos['data'] as $record)
   @section('keywords', $record['meta_keywords'])
   @section('description', $record['meta_description'])
@@ -11,24 +11,19 @@
   @section('hero_image', $record['image']['data']['url'])
   @section('hero_image_title', $record['image_alt_text'])
   @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-      <figure class="figure float-right p-3">
-        <img src="{{ $record['image']['data']['thumbnails']['7']['url']}}"
+    <div class="text-center">
+      <figure class="figure">
+        <img src="{{ $record['image']['data']['url']}}"
         alt="{{ $record['image_alt_text'] }}" class="img-fluid"
         loading="lazy"
-        height="{{ $record['image']['data']['thumbnails']['7']['height'] }}"
-        width="{{ $record['image']['data']['thumbnails']['7']['width'] }}"
+        height="{{ $record['image']['height'] }}"
+        width="{{ $record['image']['width'] }}"
         />
         <figcaption class="figure-caption text-right">{{$record['image_alt_text']}}</figcaption>
-        <span class="btn btn-wine m-1 p-2 share">
-          <a href="{{ URL::to( $record['image']['data']['full_url'] ) }}"
-          download><i class="fas fa-download mr-2"></i>  Download image</a>
-        </span>
-        <span class="btn btn-dark p-2">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
-        </span>
-        
       </figure>
+    </div>
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+
       @markdown($record['description'])
     </div>
     <h3 class="lead">Themes and periods</h3>
@@ -224,7 +219,7 @@
       @if(!empty($shopify))
         @section('shopify')
           <div class="container">
-            <h4 class="lead">Suggested FME products</h4>
+            <h4 class="lead">Suggested Curating Cambridge products</h4>
             <div class="row">
               @foreach($shopify as $record)
                 <div class="col-md-4 mb-3">
