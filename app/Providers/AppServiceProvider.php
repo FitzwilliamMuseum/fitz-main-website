@@ -118,7 +118,7 @@ class AppServiceProvider extends ServiceProvider
             case "news":
               $clean = 'A news article';
             break;
-            case "page":
+            case "pages":
               $clean = 'A page or article';
             break;
             case "pharos":
@@ -133,7 +133,7 @@ class AppServiceProvider extends ServiceProvider
             case "department":
               $clean = 'Department information';
             break;
-            case "director":
+            case "directors":
               $clean = 'A director\'s profile';
             break;
             case "staffProfile":
@@ -189,6 +189,9 @@ class AppServiceProvider extends ServiceProvider
                 break;
             case 'audioguide':
                 $clean = 'Audio guide content';
+                break;
+            case 'podcasts':
+                $clean = 'Podcasts and audio';
                 break;
             case 'shopify':
                 $clean = 'A shop product';

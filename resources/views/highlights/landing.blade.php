@@ -127,10 +127,12 @@
         <div class="col-md-4">
         <div class="card h-100">
           @if(!is_null($record['hero_image']))
-            <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/"><img class="img-fluid" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
+            <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/">
+              <img class="card-img-top" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"
             width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+            height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/>
+          </a>
           @endif
           <div class="card-body h-100">
             <h3 class="lead">
@@ -243,7 +245,7 @@
 @section('context-carousel')
 <div class="container-fluid p-5 bg-white">
   <h3 class="lead">Explore object contexts</h3>
-  <div class="row mb-3">
+  <div class="row">
   <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
   data-interval="false" data-pause="hover">
     <div class="carousel-inner row w-100 mx-auto">
