@@ -29,7 +29,7 @@ class solrimportController extends Controller
     $solr = new SolrImporter();
     return $solr->import(
       $data['data'],
-      'staff',
+      'staffProfile',
       'staffProfile',
       'research-profile',
       array('slug'),
@@ -74,7 +74,7 @@ class solrimportController extends Controller
     return $solr->import(
       $data['data'],
       'pages',
-      'page',
+      'pages',
       'landing-section',
       array('section','slug'),
       array('title' => 'title', 'content' => 'body')
@@ -96,7 +96,7 @@ class solrimportController extends Controller
     return $solr->import(
       $data['data'],
       'research-projects',
-      'projects',
+      'research-projects',
       'research-project',
       array('slug'),
       array('title' => 'title', 'content' => 'project_overview')
