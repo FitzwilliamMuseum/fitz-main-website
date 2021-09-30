@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title', 'Our objects and artworks')
-@section('hero_image',env('CONTENT_STORE') . 'cupidpsychelarge.jpg')
+@section('hero_image',env('CONTENT_STORE') . 'large_PD_8_1979_1_201709_mfj22_dc2.jpg')
 @section('hero_image_title', 'Cupid and Psyche - del Sallaio')
 @section('description','A search page for our highlight objects')
 @section('keywords', 'search,highlights, objects')
