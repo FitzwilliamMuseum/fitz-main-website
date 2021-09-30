@@ -53,7 +53,7 @@ class highlightsController extends Controller
     public function associate($section, $slug)
     {
       $pharos = HighlightPages::list($slug, $section);
-      $records = FindMoreLikeThis::find($slug, 'pharospages');
+      $records = FindMoreLikeThis::find($slug, '"pharos-pages"');
       return view('highlights.associate', compact('pharos', 'records'));
     }
 

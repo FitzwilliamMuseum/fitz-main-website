@@ -51,6 +51,9 @@ class SolrImporter {
             $doc->searchImage = $record[$image]['data']['thumbnails'][2]['url'];
           }
         }
+        if(isset($record['section'])){
+          $doc->section = $record['section'];
+        }
         if(isset($record['keystages'])){
           $doc->keystages = implode(',', $record['keystages']);
         }

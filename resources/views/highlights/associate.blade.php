@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.highlights')
 @foreach($pharos['data'] as $object)
 
   @section('title')
@@ -17,16 +17,18 @@
   @endif
 
   @section('content')
-  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @if(!is_null($object['hero_image']))
-      <figure class="figure float-right p-3">
-        <a href="/objects-and-artworks/highlights/context/{{ $object['section'] }}/{{ $object['slug']}}"><img class="img-fluid" src="{{ $object['hero_image']['data']['thumbnails'][7]['url']}}"
+      <div class="text-center">
+      <figure class="figure ">
+        <a href="/objects-and-artworks/highlights/context/{{ $object['section'] }}/{{ $object['slug']}}"><img class="img-fluid" src="{{ $object['hero_image']['data']['url']}}"
         alt="{{ $object['hero_image_alt_text'] }}" loading="lazy"
-        width="{{ $object['hero_image']['data']['thumbnails'][7]['width'] }}"
-        height="{{ $object['hero_image']['data']['thumbnails'][7]['height'] }}"/></a>
+        width="{{ $object['hero_image']['width'] }}"
+        height="{{ $object['hero_image']['height'] }}"/></a>
         <figcaption class="text-info figure-caption">{{ $object['hero_image_alt_text'] }}</figcaption>
       </figure>
+    </div>
     @endif
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($object['body'])
   </div>
   @endsection
