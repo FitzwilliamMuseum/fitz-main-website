@@ -110,7 +110,7 @@
 @endsection
 
 @section('theme-carousel')
-<div class="container-fluid p-5 bg-white">
+<div class="container-fluid py-2 bg-white">
   <h3 class="lead">Explore highlights by theme</h3>
   <div class="row mb-2">
   <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
@@ -173,7 +173,7 @@
 @endsection
 
 @section('period-carousel')
-<div class="container-fluid p-5 bg-white">
+<div class="container-fluid py-2 bg-white">
   <h3 class="lead">Explore highlights by period</h3>
   <div class="row mb-2">
   <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
@@ -235,7 +235,7 @@
 @endsection
 
 @section('context-carousel')
-<div class="container-fluid p-5 bg-white">
+<div class="container-fluid py-2 bg-white">
   <h3 class="lead">Explore object contexts</h3>
   <div class="row">
   <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
