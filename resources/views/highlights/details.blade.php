@@ -133,13 +133,13 @@
                 <div class="col-md-4 mb-3">
                   <div class="card  h-100">
                     @if(!is_null($record['smallimage']))
-                      <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
+                      <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
                         alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
                       @endif
                       <div class="card-body h-100">
                         <div class="contents-label mb-3">
                           <h3 class="lead">
-                            <a href="/objects-and-artworks/highlights/{{ $record['slug'][0] }}">@markdown($record['title'][0])</a>
+                            <a href="{{ $record['url'][0] }}">@markdown($record['title'][0])</a>
                           </h3>
                         </div>
                       </div>
