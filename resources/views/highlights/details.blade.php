@@ -2,12 +2,7 @@
 @foreach($pharos['data'] as $record)
   @section('keywords', $record['meta_keywords'])
   @section('description', $record['meta_description'])
-  @section('title')
-    @php
-      $title = markdown($record['title']);
-    @endphp
-    {{ strip_tags($title) }}
-  @endsection
+  @section('title', $record['title'])
   @section('hero_image', $record['image']['data']['url'])
   @section('hero_image_title', $record['image_alt_text'])
   @section('content')
