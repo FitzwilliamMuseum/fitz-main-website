@@ -46,6 +46,7 @@
     @yield('adlib')
     @yield('timeline')
   </div>
+  @yield('collection-search')
 
   @yield('immunity')
 
