@@ -1,13 +1,8 @@
 @extends('layouts.highlights')
 @foreach($pharos['data'] as $object)
-
-  @section('title')
-   @markdown($object['title'])
-  @endsection
-
+  @section('title', $object['title'])
   @section('description', $object['meta_description'])
   @section('keywords', $object['meta_keywords'])
-
   @if(!empty($object['hero_image']))
     @section('hero_image', $object['hero_image']['data']['url'])
     @section('hero_image_title', $object['hero_image_alt_text'])
