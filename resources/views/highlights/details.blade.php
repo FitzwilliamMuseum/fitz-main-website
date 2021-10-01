@@ -22,17 +22,16 @@
         <figcaption class="figure-caption text-right">{{$record['image_alt_text']}}</figcaption>
       </figure>
     </div>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-
+    <div class="p-3 mx-auto mb-3">
       @markdown($record['description'])
     </div>
+
     <h3 class="lead">Themes and periods</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
       @if(isset($record['period_assigned']))
         <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record['period_assigned'],'-') }}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
       @endif
-
       @if(isset($record['themes']))
         @foreach($record['themes'] as $th)
           <a href="/objects-and-artworks/highlights/themes/{{$th}}" class="btn btn-dark mr-2 mt-2">{{str_replace('-',' ',$th)}}</a>

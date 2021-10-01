@@ -36,7 +36,10 @@ class exhibitionsController extends Controller
   public function details($slug)
   {
     $exhibitions = Exhibitions::find($slug);
-    $adlib = CIIM::findByExhibition($exhibitions['data'][0]['adlib_id_exhibition']);
+    $adlib = NULL;
+    if(!empty($exhibitions['data'])){
+      $adlib = CIIM::findByExhibition($exhibitions['data'][0]['adlib_id_exhibition']);
+    }
     $records = FindMoreLikeThis::find($slug, 'exhibitions');
     $podcasts = NULL;
     if(!empty($exhibitions['data'][0]['podcasts'] )){
