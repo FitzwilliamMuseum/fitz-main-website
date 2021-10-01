@@ -97,7 +97,7 @@
     @if(!empty($record['associated_pharos_content']))
       @section('pharos-pages')
         <div class="container">
-          <h3 class="lead">Context</h3>
+          <h3 class="lead">Stories, Contexts and Themes</h3>
           <div class="row">
             @foreach($record['associated_pharos_content'] as $pharosassoc)
               <div class="col-md-4 mb-3">
@@ -217,7 +217,7 @@
 
       @if(!empty($shopify))
         @section('shopify')
-          <div class="container">
+          <div class="container py-3">
             <h4 class="lead">Suggested Curating Cambridge products</h4>
             <div class="row">
               @foreach($shopify as $record)

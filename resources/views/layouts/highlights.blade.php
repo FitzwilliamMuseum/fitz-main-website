@@ -56,7 +56,9 @@
     @yield('map')
   </div>
   @endif
+  <div class="container-fluid bg-gbdo">
     @yield('associated_pages')
+  </div>
 
     @hasSection('cons-areas')
       @yield('cons-areas')
@@ -65,8 +67,10 @@
     @yield('sketchfab-collection')
     @yield('sketchfab')
     @yield('audio-guide')
-    @yield('pharos-pages')
-    @yield('mlt')
+    <div class="container-fluid bg-gdbo py-3">
+      @yield('pharos-pages')
+      @yield('mlt')
+    </div>
     @yield('shopify')
 
   @include('includes.structure.emailsignup')
