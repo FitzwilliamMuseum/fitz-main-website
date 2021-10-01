@@ -162,7 +162,7 @@
           @foreach($coll['associated_curators'] as $curator)
             <x-image-card :altTag="$curator['staff_profiles_id']['display_name']" :title="$curator['staff_profiles_id']['display_name']"
             :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'" :params="array('slug' => $curator['staff_profiles_id']['slug'])" />
-          @endforeach
+            @endforeach
           </div>
         </div>
       @endsection
@@ -214,10 +214,28 @@
         <div class="container">
           <h3>Associated departments</h3>
           <div class="row">
-            @foreach($coll['associated_departments'] as $department)
-            <x-image-card :altTag="$department['departments_id']['hero_image_alt_text']" :title="$department['departments_id']['title']"
-            :image="$department['departments_id']['hero_image']" :route="'department'" :params="array('slug' => $department['departments_id']['slug'])" />
-            @endforeach
+            @foreach($coll['associated_departments'] as $gallery)
+              <div class="col-md-4 mb-3">
+                <div class="card  h-100">
+                  @if(!is_null($gallery['departments_id']['hero_image']))
+                    <div class="embed-responsive embed-responsive-4by3">
+                      <a href="{{ route('department', $gallery['departments_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
+                        loading="lazy" alt="Highlight image for {{ gallery['departments_id']['hero_image_alt_text'] }}"
+                        height="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
+                        width="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
+                        /></a>
+                      </div>
+                    @endif
+                    <div class="card-body ">
+                      <div class="contents-label mb-3">
+                        <h3>
+                          <a href="/departments/{{ $gallery['departments_id']['slug']}}">{{ $gallery['departments_id']['title']}}</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
             </div>
           </div>
         @endsection
@@ -277,9 +295,25 @@
           <h3>Associated Galleries</h3>
           <div class="row">
             @foreach($coll['associated_galleries'] as $gallery)
-              <x-image-card :altTag="$gallery['departments_id']['hero_image_alt_text']" :title="$gallery['departments_id']['title']"
-              :image="$gallery['departments_id']['hero_image']" :route="'department'" :params="array('slug' => $gallery['departments_id']['slug'])" />
-            @endforeach
+              <div class="col-md-4 mb-3">
+                <div class="card  h-100">
+                  @if(!is_null($gallery['galleries_id']['hero_image']))
+                    <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}"><img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
+                      alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
+                      height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
+                      width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
+                      /></a>
+                    @endif
+                    <div class="card-body h-100">
+                      <div class="contents-label mb-3">
+                        <h3>
+                          <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
             </div>
           </div>
         @endsection
