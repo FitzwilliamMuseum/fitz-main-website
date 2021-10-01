@@ -130,6 +130,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
 .shadow-sm {
   background-color: white;
 }
@@ -528,8 +531,6 @@ blockquote {
   margin-bottom: 1rem;
   font-family: 'Libre Baskerville', serif;
   padding: 0 1rem;
-  border-left: 2px solid maroon;
-
 }
 
 @media screen and ( max-width: 440px ){
