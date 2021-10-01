@@ -5,12 +5,13 @@
 @section('description','A search page for our highlight objects')
 @section('keywords', 'search,highlights, objects')
 @section('collection-parallax', 'https://api.fitz.ms/mediaLib/pdp/pdp82/P_72_1999_200706_dc2.jpg')
-@section('content')
-<h3 class="lead">Search our objects and artworks</h3>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3">
+@section('collection-search')
+<div class="container-fluid bg-gdbo">
+  <div class="container py-3 ">
+<div class="mx-auto mb-3">
 {{ $page }}
 </div>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3">
+<div class="p-3 mx-auto mb-3 bg-white">
   {{ \Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET']) }}
 <div class="row">
   <div class="form-group col-md-12">
@@ -26,9 +27,13 @@
     <input type="checkbox" class="form-check-input" id="images" name="images">
     <label class="form-check-label" for="images">Only with images?</label>
   </div>
+  <div class="form-group form-check ">
+    <input type="checkbox" class="form-check-input" id="iiif" name="iiif">
+    <label class="form-check-label" for="iiif">Deep zoom enabled (IIIF)?</label>
+  </div>
 </div>
 <div class="col">
-  <h4 class="lead">Operand for your search</h4>
+  <h4 class="lead">Operator</h4>
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="operator" id="operator" value="AND" checked>
     <label class="form-check-label" for="operator">
@@ -80,7 +85,7 @@
 </div>
 
 <h3 class="lead">Search our highlights</h3>
-<div class="col-12 shadow-sm p-3 mx-auto mb-3">
+<div class="col-12 shadow-sm p-3 mx-auto">
   {{ \Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
   <div class="row center-block">
     <div class="col-lg-12 center-block searchform">
@@ -106,7 +111,8 @@
   @endif
   {!! Form::close() !!}
 </div>
-
+</div>
+</div>
 @endsection
 
 @section('theme-carousel')
