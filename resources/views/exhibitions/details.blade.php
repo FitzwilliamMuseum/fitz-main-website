@@ -279,26 +279,7 @@
             @foreach($coll['associated_galleries'] as $gallery)
               <x-image-card :altTag="$gallery['departments_id']['hero_image_alt_text']" :title="$gallery['departments_id']['title']"
               :image="$gallery['departments_id']['hero_image']" :route="'department'" :params="array('slug' => $gallery['departments_id']['slug'])" />
-              @endforeach
-              <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                  @if(!is_null($gallery['galleries_id']['hero_image']))
-                    <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}"><img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
-                      alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
-                      height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-                      width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-                      /></a>
-                    @endif
-                    <div class="card-body h-100">
-                      <div class="contents-label mb-3">
-                        <h3>
-                          <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              @endforeach
+            @endforeach
             </div>
           </div>
         @endsection
