@@ -27,7 +27,32 @@
     @markdown($object['body'])
   </div>
   @endsection
-
+  @if(!empty($highlights))
+    @section('highlight')
+      <div class="container">
+        <h3 class="lead">Other highlight objects you might like</h3>
+        <div class="row">
+          @foreach($highlights as $record)
+            <div class="col-md-4 mb-3">
+              <div class="card  h-100">
+                @if(!is_null($record['smallimage']))
+                  <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
+                    alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
+                  @endif
+                  <div class="card-body h-100">
+                    <div class="contents-label mb-3">
+                      <h3 class="lead">
+                        <a href="{{ $record['url'][0] }}" class="stretched-link">{{ $record['title'][0] }}</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      @endsection
+    @endif
   @if(!empty($records))
   @section('mlt')
   <div class="container">

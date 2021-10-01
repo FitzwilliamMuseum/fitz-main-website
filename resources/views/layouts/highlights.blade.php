@@ -69,6 +69,7 @@
     @yield('audio-guide')
     <div class="container-fluid bg-gdbo py-3">
       @yield('pharos-pages')
+      @yield('highlight')
       @yield('mlt')
     </div>
     @yield('shopify')

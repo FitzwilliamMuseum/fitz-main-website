@@ -54,7 +54,8 @@ class highlightsController extends Controller
     {
       $pharos = HighlightPages::list($slug, $section);
       $records = FindMoreLikeThis::find($slug, '"pharos-pages"');
-      return view('highlights.associate', compact('pharos', 'records'));
+      $highlights = FindMoreLikeThis::find($slug, 'highlights');
+      return view('highlights.associate', compact('pharos', 'records', 'highlights'));
     }
 
     public function landing()
