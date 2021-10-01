@@ -184,8 +184,8 @@ class solrimportController extends Controller
     $solr = new SolrImporter();
     return $solr->import(
       $data['data'],
-      'pharos',
-      'pharos',
+      'highlights',
+      'highlights',
       'highlight',
       array('slug'),
       array('title' => 'title', 'content' => 'description', 'image' => 'image')
