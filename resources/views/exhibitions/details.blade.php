@@ -44,36 +44,17 @@
     </div>
 
     @if(!empty($podcasts))
-      <h3 class="lead">Audio and labels</h3>
+      <h3>Audio and labels</h3>
       <div class="row">
       @foreach($podcasts['data'] as $podcast)
-        @php
-        $title = $podcast['podcast_series'][0]['podcast_series_id']['title'];
-        @endphp
-        @section('title', $title )
-
-        <div class="col-md-4 mb-3">
-          <div class="card h-100">
-              <a href="{{ route('podcasts.episode', $podcast['slug']) }}"><img class="img-fluid" src="{{ $podcast['hero_image']['data']['thumbnails'][4]['url']}}"
-              alt="{{ $podcast['hero_image_alt_tag'] }}"
-              width="{{ $podcast['hero_image']['data']['thumbnails'][4]['width'] }}"
-              height="{{ $podcast['hero_image']['data']['thumbnails'][4]['height'] }}"
-              loading="lazy"/></a>
-              <div class="card-body h-100">
-                <div class="contents-label mb-3">
-                  <h3 class="lead">
-                    <a href="{{ route('podcasts.episode', $podcast['slug']) }}">{{ $podcast['title'] }}</a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        @endforeach
+        <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['podcast_series'][0]['podcast_series_id']['title']"
+        :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="array('slug' => $podcast['slug'])" />
+      @endforeach
       </div>
     @endif
 
     @if(isset($coll['youtube_id']))
-      <h3 class="lead">
+      <h3>
         {{ $type }} films
       </h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -99,7 +80,7 @@
 
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
-      <h3 class="lead">{{$type}} details</h3>
+      <h3>{{$type}} details</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @if(isset($coll['exhibition_url']))
@@ -118,7 +99,7 @@
     @endif
 
     @if(!empty($coll['exhibition_files']))
-      <h3 class="lead">{{$type}} files</h3>
+      <h3>{{$type}} files</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @foreach($coll['exhibition_files'] as $file)
@@ -130,7 +111,7 @@
       </div>
     @endif
     @isset($adlib)
-    <h3 class="lead">Selected objects from the {{$type}}</h3>
+    <h3>Selected objects from the {{$type}}</h3>
     <div class="row">
     @foreach($adlib as $record)
 
@@ -155,7 +136,7 @@
               <div class="card-body ">
 
                 <div class="contents-label mb-3">
-                  <h3 class="lead">
+                  <h3>
                   <a href="{{ env('COLLECTION_URL')}}/id/object/{{ $pris[0] }}">{{ ucfirst($record['_source']['summary_title']) }}</a>
                   </h3>
                   <p>
@@ -176,32 +157,12 @@
   @if(!empty($coll['associated_curators']))
     @section('curators')
       <div class="container">
-        <h3 class="lead">Associated curators</h3>
+        <h3>Associated curators</h3>
         <div class="row">
           @foreach($coll['associated_curators'] as $curator)
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                @if(!is_null($curator['staff_profiles_id']['profile_image']))
-                  <div class="embed-responsive embed-responsive-1by1">
-                    <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}"><img
-                      class="img-fluid embed-responsive-item" src="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][2]['url']}}"
-                      loading="lazy"
-                      alt="{{ $curator['staff_profiles_id']['profile_image_alt_text'] }}"
-                      height="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][2]['height'] }}"
-                      width="{{ $curator['staff_profiles_id']['profile_image']['data']['thumbnails'][2]['width'] }}"
-                      /></a>
-                    </div>
-                  @endif
-                  <div class="card-body">
-                    <div class="contents-label mb-3">
-                      <h3 class="lead">
-                        <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}">{{ $curator['staff_profiles_id']['display_name']}}</a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            @endforeach
+            <x-image-card :altTag="$curator['staff_profiles_id']['display_name']" :title="$curator['staff_profiles_id']['display_name']"
+            :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'" :params="array('slug' => $curator['staff_profiles_id']['slug'])" />
+          @endforeach
           </div>
         </div>
       @endsection
@@ -210,7 +171,7 @@
     @if(!empty($coll['exhibition_partners'] ))
       @section('research-funders')
         <div class="container">
-          <h3 class="lead">Funders and partners</h3>
+          <h3>Funders and partners</h3>
           <div class="row">
             @foreach($coll['exhibition_partners'] as $partner)
               <div class="col-md-4 mb-3">
@@ -232,7 +193,7 @@
                   @endif
                   <div class="card-body">
                     <div class="contents-label mb-3">
-                      <h3 class="lead">
+                      <h3>
                         <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
                       </h3>
                       <p>{{ $partner['partner']['partner_type'][0]}}</p>
@@ -251,30 +212,12 @@
     @if(!empty($coll['associated_departments']))
       @section('departments')
         <div class="container">
-          <h3 class="lead">Associated departments</h3>
+          <h3>Associated departments</h3>
           <div class="row">
-            @foreach($coll['associated_departments'] as $gallery)
-              <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                  @if(!is_null($gallery['departments_id']['hero_image']))
-                    <div class="embed-responsive embed-responsive-4by3">
-                      <a href="{{ route('department', $gallery['departments_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-                        loading="lazy" alt="Highlight image for {{ gallery['departments_id']['hero_image_alt_text'] }}"
-                        height="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-                        width="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-                        /></a>
-                      </div>
-                    @endif
-                    <div class="card-body ">
-                      <div class="contents-label mb-3">
-                        <h3 class="lead">
-                          <a href="/departments/{{ $gallery['departments_id']['slug']}}">{{ $gallery['departments_id']['title']}}</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              @endforeach
+            @foreach($coll['associated_departments'] as $department)
+            <x-image-card :altTag="$department['departments_id']['hero_image_alt_text']" :title="$department['departments_id']['title']"
+            :image="$department['departments_id']['hero_image']" :route="'department'" :params="array('slug' => $department['departments_id']['slug'])" />
+            @endforeach
             </div>
           </div>
         @endsection
@@ -285,7 +228,7 @@
         @section('excarousel')
           <div class="container">
 
-            <h3 class="lead">Selected images</h3>
+            <h3>Selected images</h3>
             <div class="bd-example mb-3">
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ol class="carousel-indicators">
@@ -303,13 +246,13 @@
                   <div class="carousel-item">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two']['data']['thumbnails'][9]['url'] }}" >
                     <div class="carousel-caption d-none d-md-block text-white bg-black exhibition-carousel">
-                      <h5 class="lead">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}</h5>
+                      <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}</h5>
                     </div>
                   </div>
                   <div class="carousel-item active">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three']['data']['thumbnails'][9]['url'] }}" >
                     <div class="carousel-caption  d-none d-md-block text-white bg-black exhibition-carousel">
-                      <h5 class="lead">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}</h5>
+                      <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}</h5>
                     </div>
                   </div>
                 </div>
@@ -331,9 +274,12 @@
     @if(!empty($coll['associated_galleries']))
       @section('galleries')
         <div class="container">
-          <h3 class="lead">Associated Galleries</h3>
+          <h3>Associated Galleries</h3>
           <div class="row">
             @foreach($coll['associated_galleries'] as $gallery)
+              <x-image-card :altTag="$gallery['departments_id']['hero_image_alt_text']" :title="$gallery['departments_id']['title']"
+              :image="$gallery['departments_id']['hero_image']" :route="'department'" :params="array('slug' => $gallery['departments_id']['slug'])" />
+              @endforeach
               <div class="col-md-4 mb-3">
                 <div class="card  h-100">
                   @if(!is_null($gallery['galleries_id']['hero_image']))
@@ -345,7 +291,7 @@
                     @endif
                     <div class="card-body h-100">
                       <div class="contents-label mb-3">
-                        <h3 class="lead">
+                        <h3>
                           <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
                         </h3>
                       </div>
@@ -361,7 +307,7 @@
       @section('360')
         @if(!empty($coll['image_360_pano']))
           <div class="container">
-            <h3 class="lead">360 gallery image</h3>
+            <h3>360 gallery image</h3>
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
               <div id="panorama"></div>
             </div>
@@ -375,7 +321,7 @@
     @if(!empty($records))
       @section('mlt')
         <div class="container">
-          <h3 class="lead">Similar exhibitions from our archives</h3>
+          <h3>Similar exhibitions from our archives</h3>
           <div class="row">
             @foreach($records as $record)
               <div class="col-md-4 mb-3">
@@ -388,7 +334,7 @@
                   @endif
                   <div class="card-body ">
                     <div class="contents-label mb-3">
-                      <h3 class="lead">
+                      <h3>
                         <a href="/visit-us/exhibitions/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
                       </h3>
                     </div>
@@ -404,7 +350,7 @@
       @section('sketchfab')
         @if(!empty($coll['sketchfab_id']))
         <div class="container">
-          <h4 class="lead">3d model of this display or exhibition</h4>
+          <h4>3d model of this display or exhibition</h4>
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div class="embed-responsive embed-responsive-4by3">
               <iframe title="A 3D  model related to this exhibition" class="embed-responsive-item"
