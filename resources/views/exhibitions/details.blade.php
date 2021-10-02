@@ -44,13 +44,19 @@
     </div>
 
     @if(!empty($podcasts))
-      <h3>Audio and labels</h3>
-      <div class="row">
-      @foreach($podcasts['data'] as $podcast)
-        <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['podcast_series'][0]['podcast_series_id']['title']"
-        :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="array('slug' => $podcast['slug'])" />
-      @endforeach
-      </div>
+      @section('exhibitionAudio')
+        <div class="container-fluid bg-gdbo py-2 mb-2">
+          <div class="container">
+            <h3>Audio and labels</h3>
+            <div class="row">
+            @foreach($podcasts['data'] as $podcast)
+              <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['title']"
+              :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="array('slug' => $podcast['slug'])" />
+            @endforeach
+            </div>
+          </div>
+        </div>
+      @endsection
     @endif
 
     @if(isset($coll['youtube_id']))
@@ -291,29 +297,31 @@
 
     @if(!empty($coll['associated_galleries']))
       @section('galleries')
-        <div class="container">
-          <h3>Associated Galleries</h3>
-          <div class="row">
-            @foreach($coll['associated_galleries'] as $gallery)
-              <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                  @if(!is_null($gallery['galleries_id']['hero_image']))
-                    <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}"><img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
-                      alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
-                      height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-                      width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-                      /></a>
-                    @endif
-                    <div class="card-body h-100">
-                      <div class="contents-label mb-3">
-                        <h3>
-                          <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
-                        </h3>
+        <div class="container-fluid bg-dark text-white py-2 mb-2">
+          <div class="container">
+            <h3>Associated Galleries</h3>
+            <div class="row">
+              @foreach($coll['associated_galleries'] as $gallery)
+                <div class="col-md-4 mb-3">
+                  <div class="card  h-100">
+                    @if(!is_null($gallery['galleries_id']['hero_image']))
+                      <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}"><img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
+                        alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
+                        height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
+                        width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
+                        /></a>
+                      @endif
+                      <div class="card-body h-100">
+                        <div class="contents-label mb-3">
+                          <h3>
+                            <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
+                          </h3>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              @endforeach
+                @endforeach
+              </div>
             </div>
           </div>
         @endsection
