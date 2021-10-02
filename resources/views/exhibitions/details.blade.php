@@ -236,8 +236,8 @@
                     @endif
                     <div class="card-body ">
                       <div class="contents-label mb-3">
-                        <h3>
-                          <a href="/departments/{{ $gallery['departments_id']['slug']}}">{{ $gallery['departments_id']['title']}}</a>
+                        <h3 class="lead">
+                          <a href="/departments/{{ $gallery['departments_id']['slug']}}" class="stretched-link">{{ $gallery['departments_id']['title']}}</a>
                         </h3>
                       </div>
                     </div>
@@ -253,7 +253,6 @@
       @if(!empty($coll['exhibition_carousel']))
         @section('excarousel')
           <div class="container">
-
             <h3 class="lead">Selected images</h3>
             <div class="bd-example mb-3">
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -315,8 +314,8 @@
                       @endif
                       <div class="card-body h-100">
                         <div class="contents-label mb-3">
-                          <h3>
-                            <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
+                          <h3 class="lead">
+                            <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}" class="stretched-link">{{ $gallery['galleries_id']['gallery_name']}}</a>
                           </h3>
                         </div>
                       </div>
@@ -359,8 +358,8 @@
                   @endif
                   <div class="card-body ">
                     <div class="contents-label mb-3">
-                      <h3>
-                        <a href="/visit-us/exhibitions/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
+                      <h3 class="lead">
+                        <a href="/visit-us/exhibitions/{{ $record['slug'][0] }}" class="stretched-link">{{ $record['title'][0] }}</a>
                       </h3>
                     </div>
                   </div>
