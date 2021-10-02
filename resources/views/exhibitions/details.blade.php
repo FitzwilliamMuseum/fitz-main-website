@@ -47,7 +47,7 @@
       @section('exhibitionAudio')
         <div class="container-fluid bg-gdbo py-2 mb-2">
           <div class="container">
-            <h3>Audio and labels</h3>
+            <h3 class="lead">Audio and labels</h3>
             <div class="row">
             @foreach($podcasts['data'] as $podcast)
               <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['title']"
@@ -60,7 +60,7 @@
     @endif
 
     @if(isset($coll['youtube_id']))
-      <h3>
+      <h3 class="lead">
         {{ $type }} films
       </h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -86,7 +86,7 @@
 
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
-      <h3>{{$type}} details</h3>
+      <h3 class="lead">{{$type}} details</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @if(isset($coll['exhibition_url']))
@@ -105,7 +105,7 @@
     @endif
 
     @if(!empty($coll['exhibition_files']))
-      <h3>{{$type}} files</h3>
+      <h3 class="lead">{{$type}} files</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @foreach($coll['exhibition_files'] as $file)
@@ -117,16 +117,14 @@
       </div>
     @endif
     @isset($adlib)
-    <h3>Selected objects from the {{$type}}</h3>
+    <h3 class="lead">Selected objects from the {{$type}}</h3>
     <div class="row">
     @foreach($adlib as $record)
-
           @php
           $pris = Arr::pluck($record['_source']['identifier'],'priref');
           $pris = array_filter($pris);
           $pris= Arr::flatten($pris);
           @endphp
-
           <div class="col-md-4 mb-3">
             <div class="card h-100">
               <div class="results_image">
@@ -142,8 +140,8 @@
               <div class="card-body ">
 
                 <div class="contents-label mb-3">
-                  <h3>
-                  <a href="{{ env('COLLECTION_URL')}}/id/object/{{ $pris[0] }}">{{ ucfirst($record['_source']['summary_title']) }}</a>
+                  <h3 class="lead">
+                  <a href="{{ env('COLLECTION_URL')}}/id/object/{{ $pris[0] }}" class="stretched-link">{{ ucfirst($record['_source']['summary_title']) }}</a>
                   </h3>
                   <p>
                     @if(array_key_exists('department', $record['_source']))
