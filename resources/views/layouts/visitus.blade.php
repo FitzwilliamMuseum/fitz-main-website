@@ -28,16 +28,19 @@
   @include('includes.structure.head')
 
   @include('includes.structure.open')
+
   <div class="container mt-3">
     @include('includes.structure.breadcrumb')
+  </div>
 
-  </div>
   @include('includes.elements.book')
+
   <div class="container">
-        @yield('content')
+      @yield('content')
   </div>
+
   <div class="container">
-  @yield('corona')
+    @yield('corona')
   </div>
 
   <div class="container">
@@ -47,29 +50,20 @@
   </div>
 
   <div class="container map-box ">
-
     @yield('map')
   </div>
 
   @include('includes.elements.directions')
 
-
-
-
-
   <div class="container mt-3">
     <h2 class="lead">Floorplans and guides</h2>
     <div class="row">
       <div class="col-md-12 mb-3">
-        <div class="card card-body h-100">
           <div class="container h-100">
-
-            <div class="contents-label mb-3">
+            <div class="contents-label mb-3 text-center">
               @yield('floorplans')
             </div>
           </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -77,9 +71,7 @@
 
   @yield('associated_pages')
   @include('includes.structure.emailsignup')
-
   @include('includes.structure.share')
-
   @include('includes.structure.footer')
   @include('includes.structure.modal')
   @include('includes.scripts.javascript')

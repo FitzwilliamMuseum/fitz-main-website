@@ -1,3 +1,4 @@
+<div class="container-fluid bg-grey py-3">
 <div class="container mb-3">
   <h2 class="mt-3 lead">Getting here</h2>
   <div class="accordion" id="accordionExample">
@@ -64,4 +65,5 @@
       @endforeach
   </div>
   </div>
+</div>
 </div>
