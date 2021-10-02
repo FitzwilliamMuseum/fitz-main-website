@@ -39,11 +39,9 @@
       @yield('content')
   </div>
 
-  <div class="container">
     @yield('corona')
-  </div>
 
-  <div class="container">
+  <div class="container py-2">
     <h3 class="lead">
       Find us
     </h3>
