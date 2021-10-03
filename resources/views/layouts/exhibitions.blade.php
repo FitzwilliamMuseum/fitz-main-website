@@ -11,7 +11,7 @@
     @include('googletagmanager::head')
 
 </head>
-<body class="doc-body">
+<body class="doc-body bg-pastel">
   @include('googletagmanager::body')
 
   @include('includes.structure.accessibility')
