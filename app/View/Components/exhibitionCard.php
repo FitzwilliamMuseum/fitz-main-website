@@ -17,7 +17,7 @@ class exhibitionCard extends Component
     public $endDate;
     public $ticketed;
     public $status;
-    public $tessitura_string;
+    public $tessitura;
     /**
      * Create a new component instance.
      *
@@ -27,7 +27,7 @@ class exhibitionCard extends Component
       string $route, array $params, string $title,
       string $altTag = NULL, array $image = NULL,
       $startDate = NULL, $endDate = NULL, $ticketed  = NULL,
-      $status = 'current', $tessitura_string = NULL
+      $status = 'current', $tessitura = NULL
       )
     {
         $this->route = $route;
@@ -39,7 +39,7 @@ class exhibitionCard extends Component
         $this->endDate = $endDate;
         $this->ticketed = $ticketed;
         $this->status = $status;
-        $this->tessitura_string = $tessitura_string;
+        $this->tessitura = $tessitura;
     }
 
     /**
