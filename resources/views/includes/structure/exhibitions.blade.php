@@ -14,7 +14,8 @@
     :endDate="$current['exhibition_end_date']"
     :status="'current'"
     :ticketed="$current['ticketed']"
-    />  
+    :tessitura="$current['tessitura_string']"
+    />
   @endforeach
 </div>
 </div>
