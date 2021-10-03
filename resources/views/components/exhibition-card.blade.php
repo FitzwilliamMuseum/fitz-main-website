@@ -21,6 +21,21 @@
             {{ $title }}
           </a>
         </h3>
+        @if($status === 'current' && $ticketed ==1)
+          <p class="text-info">Ticket and timed entry</p>
+          <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura_string }}">Book now</a>
+        @elseif($status === 'current')
+          <p class="text-info">Included in General admission</p>
+        @endif
+        <p class="text-info">
+          {{  Carbon\Carbon::parse($startDate)->format('l dS F Y') }} to
+          {{  Carbon\Carbon::parse($endDate)->format('l dS F Y') }}
+        </p>
+        @if($status === 'archived')
+        <span class="badge badge-lg badge-info p-2 d-block">
+          This is now closed
+        </span>
+        @endif
       </div>
     </div>
   </div>

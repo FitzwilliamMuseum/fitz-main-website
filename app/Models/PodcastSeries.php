@@ -13,7 +13,8 @@ class PodcastSeries extends Model
       $api->setArguments(
         $args = array(
           'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type'
+          'meta' => '*',
+          'sort' => '-id'
         )
       );
       return $api->getData();

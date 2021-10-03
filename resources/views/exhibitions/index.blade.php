@@ -1,5 +1,4 @@
 @extends('layouts.exhibitions')
-
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
   @section('description', $page['meta_description'])
@@ -9,148 +8,92 @@
 @endforeach
 
 @section('current')
-<div class="container">
-  <h2 class="lead">Our current exhibitions</h2>
-  <div class="row">
-    @foreach($current['data'] as $project)
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        @if(!is_null($project['hero_image']))
-          <a href="{{ route('exhibition',$project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
-          alt="{{ $project['hero_image_alt_text'] }}"
-          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-          /></a>
-        @endif
-        <div class="card-body h-100">
-          <div class="contents-label mb-3">
-            <h3 class="lead">
-              <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
-            </h3>
-            @if($project['ticketed'] ==1)
-              <p class="text-info">Ticket and timed entry</p>
-              <a class="btn btn-dark" href="https://tickets.museums.cam.ac.uk/overview/{{ $project['tessitura_string'] }}">Book now</a>
-            @else
-              <p class="text-info">Included in General admission</p>
-            @endif
-            <p class="text-info">
-              {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
-              {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
-            </p>
-          </div>
-        </div>
+  <div class="container-fluid py-3 bg-gdbo">
+    <div class="container">
+      <h2 class="lead">Our current exhibitions</h2>
+      <div class="row">
+        @foreach($current['data'] as $current)
+          <x-exhibition-card
+          :altTag="$current['hero_image_alt_text']"
+          :title="$current['exhibition_title']"
+          :image="$current['hero_image']"
+          :route="'exhibition'"
+          :params="[$current['slug']]"
+          :startDate="$current['exhibition_start_date']"
+          :endDate="$current['exhibition_end_date']"
+          :status="'current'"
+          :ticketed="$current['ticketed']"
+          />
+        @endforeach
       </div>
-    </div>
-    @endforeach
-  </div>
 
-  <h2 class="lead" id="displays">New displays in the galleries</h2>
-  <div class="row" >
-    @foreach($displays['data'] as $project)
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        @if(!is_null($project['hero_image']))
-          <a href="{{ route('exhibition',$project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
-          alt="{{ $project['hero_image_alt_text'] }}"
-          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-          /></a>
-        @endif
-        <div class="card-body h-100">
-          <div class="contents-label mb-3">
-            <h3 class="lead">
-              <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
-            </h3>
-            @if($project['ticketed'] ==1)
-              <p class="text-info">Ticket and timed entry</p>
-              <a class="btn btn-dark" href="https://tickets.museums.cam.ac.uk/overview/{{ $project['tessitura_string'] }}">Book now</a>
-            @else
-              <p class="text-info">Included in General admission</p>
-              <p class="text-info">
-                {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
-                {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
-              </p>
-            @endif
-          </div>
-        </div>
+      <h2 class="lead" id="displays">New displays in the galleries</h2>
+      <div class="row" >
+        @foreach($displays['data'] as $display)
+          <x-exhibition-card
+          :altTag="$display['hero_image_alt_text']"
+          :title="$display['exhibition_title']"
+          :image="$display['hero_image']"
+          :route="'exhibition'"
+          :params="[$display['slug']]"
+          :startDate="$display['exhibition_start_date']"
+          :endDate="$display['exhibition_end_date']"
+          :status="'current'"
+          :ticketed="$display['ticketed']"
+          />
+        @endforeach
       </div>
     </div>
-    @endforeach
   </div>
-</div>
 @endsection
-
-
 
 @section('future')
-<div class="container">
-  <h2 class="lead">Our forthcoming exhibitions and displays</h2>
-  <div class="row">
-    @foreach($future['data'] as $project)
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        @if(!is_null($project['hero_image']))
-          <a href="{{ route('exhibition',$project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-          loading="lazy"
-          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-          alt="{{ $project['hero_image_alt_text'] }}"
-          /></a>
-        @endif
-        <div class="card-body h-100">
+  <div class="container-fluid py-3 bg-grey">
 
-          <div class="contents-label mb-3">
-            <h3 class="lead">
-              <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
-            </h3>
-            <p class="text-info">
-              {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
-              {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
-            </p>
-          </div>
+    <div class="container">
+      <h2 class="lead">Our forthcoming exhibitions and displays</h2>
+      <div class="row">
+        @foreach($future['data'] as $future)
+          <x-exhibition-card
+          :altTag="$future['hero_image_alt_text']"
+          :title="$future['exhibition_title']"
+          :image="$future['hero_image']"
+          :route="'exhibition'"
+          :params="[$future['slug']]"
+          :startDate="$future['exhibition_start_date']"
+          :endDate="$future['exhibition_end_date']"
+          :status="'future'"
+          :ticketed="$future['ticketed']"
+          />
+          @endforeach
         </div>
       </div>
     </div>
-    @endforeach
-  </div>
-</div>
-@endsection
+  @endsection
 
 @section('archive')
-<div class="container">
-  <h2 class="lead">
-    Archived exhibitions and displays
-  </h2>
-  <div class="row">
-    @foreach($archive['data'] as $project)
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        @if(!is_null($project['hero_image']))
-          <a href="{{ route('exhibition', $project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-          alt="{{ $project['hero_image_alt_text'] }}"
-          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"
-          loading='lazy'
-          /></a>
-        @endif
-        <div class="card-body h-100">
-          <div class="contents-label mb-3">
-            <h3 class="lead">
-              <a href="{{ route('exhibition',$project['slug']) }}">{{ $project['exhibition_title']}}</a>
-            </h3>
-            <p class="text-info">
-              {{  Carbon\Carbon::parse($project['exhibition_start_date'])->format('l dS F Y') }} to
-              {{  Carbon\Carbon::parse($project['exhibition_end_date'])->format('l dS F Y') }}
-            </p>
-            <span class="badge badge-lg badge-info p-2 d-block">
-              This is now closed
-            </span>
-          </div>
+  <div class="container-fluid py-3 bg-pastel">
+
+    <div class="container">
+      <h2 class="lead">
+        Archived exhibitions and displays
+      </h2>
+      <div class="row">
+        @foreach($archive['data'] as $archived)
+          <x-exhibition-card
+          :altTag="$archived['hero_image_alt_text']"
+          :title="$archived['exhibition_title']"
+          :image="$archived['hero_image']"
+          :route="'exhibition'"
+          :params="[$archived['slug']]"
+          :startDate="$archived['exhibition_start_date']"
+          :endDate="$archived['exhibition_end_date']"
+          :status="'archived'"
+          :ticketed="$archived['ticketed']"
+          />
+          @endforeach
         </div>
+        <a class="d-block btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
       </div>
     </div>
-    @endforeach
-  </div>
-  <a class="d-block btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
-</div>
 @endsection

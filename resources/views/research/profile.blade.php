@@ -9,11 +9,10 @@
   @else
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
     @section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
-
   @endif
 
   @section('content')
-    <div class="col-md-12 shadow-sm p-3 mx-auto mb-3">
+    <div class=" mb-3">
       @if(!is_null($profile['profile_image']))
       <div class="img-fluid float-right p-3">
           <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
@@ -53,7 +52,6 @@
   @if(!empty($profile['publications']))
     @section('publications')
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
       <div class="container">
         <div class="wrapper center-block">
             <div class="panel panel-default">
@@ -160,69 +158,29 @@
 
   @if(!empty($profile['research_projects']))
     @section('research-projects')
-    <div class="container">
-      <h3 class="lead">Associated Research Projects</h3>
-      <div class="row">
-        @foreach($profile['research_projects'] as $project)
-          @if(!is_null($project['research_projects_id']))
-        <div class="col-md-3 mb-3">
-          <div class="card  h-100 ">
-
-            <div class="embed-responsive embed-responsive-4by3">
-              <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-              width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-              height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-              alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
-              loading="lazy"/></a>
-            </div>
-
-            <div class="card-body">
-              <div class="contents-label mb-3">
-                <h3 class="lead">
-                  <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}">{{ $project['research_projects_id']['title']}}</a>
-                </h3>
-              </div>
-            </div>
-
-          </div>
+    <div class="container-fluid bg-gdbo py-3">
+      <div class="container">
+        <h3 class="lead">Associated Research Projects</h3>
+        <div class="row">
+          @foreach($profile['research_projects'] as $project)
+            <x-image-card :altTag="$project['research_projects_id']['hero_image_alt_text'] " :title="$project['research_projects_id']['title']"  :image="$project['research_projects_id']['hero_image']" :route="'research-project'" :params="[$project['research_projects_id']['slug']]" />
+          @endforeach
         </div>
-        @endif
-        @endforeach
       </div>
     </div>
     @endsection
   @endif
 
-
   @if(!empty($profile['departments_affiliated']))
-
     @section('departments-affiliated')
-    <div class="container">
-      <h3 class="lead">Associated Departments</h3>
-      <div class="row">
-        @foreach($profile['departments_affiliated'] as $project)
-        <div class="col-md-4 mb-3">
-          <div class="card  h-100 ">
-            @if(!is_null($project['department']['hero_image']))
-            <div class="embed-responsive embed-responsive-4by3">
-              <a href="{{ route('department', $project['department']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['department']['hero_image']['data']['thumbnails'][4]['url']}}"
-              alt="{{ $project['department']['hero_image_alt_text'] }}"
-              height="{{ $project['department']['hero_image']['data']['thumbnails'][4]['height'] }}"
-              width="{{ $project['department']['hero_image']['data']['thumbnails'][4]['width'] }}"
-              loading="lazy"/></a>
-            </div>
-            @endif
-            <div class="card-body">
-              <div class="contents-label mb-3">
-                <h3 class="lead">
-                  <a href="{{ route('department', $project['department']['slug']) }}">{{ $project['department']['title']}}</a>
-                </h3>
-              </div>
-            </div>
-          </div>
-
+    <div class="container-fluid bg-grey py-3">
+      <div class="container">
+        <h3 class="lead">Associated Departments</h3>
+        <div class="row">
+          @foreach($profile['departments_affiliated'] as $department)
+            <x-image-card :altTag="$department['department']['hero_image_alt_text'] " :title="$department['department']['title']"  :image="$department['department']['hero_image']" :route="'department'" :params="[$department['department']['slug']]" />
+          @endforeach
         </div>
-        @endforeach
       </div>
     </div>
     @endsection
@@ -233,30 +191,8 @@
     <div class="container">
       <h3 class="lead">Associated Exhibitions</h3>
       <div class="row">
-        @foreach($profile['exhibitions_curated'] as $project)
-          @if(!is_null($project['exhibition']))
-        <div class="col-md-4 mb-3">
-          <div class="card  h-100 ">
-
-            <div class="embed-responsive embed-responsive-4by3">
-              <a href="{{ route('exhibition', $project['exhibition']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['exhibition']['hero_image']['data']['thumbnails'][4]['url']}}"
-              width="{{ $project['exhibition']['hero_image']['data']['thumbnails'][4]['width'] }}"
-              height="{{ $project['exhibition']['hero_image']['data']['thumbnails'][4]['height'] }}"
-              alt="{{ $project['exhibition']['hero_image_alt_text'] }}"
-              loading="lazy"/></a>
-            </div>
-
-            <div class="card-body">
-              <div class="contents-label mb-3">
-                <h3 class="lead">
-                  <a href="{{ route('exhibition', $project['exhibition']['slug']) }}">{{ $project['exhibition']['exhibition_title']}}</a>
-                </h3>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        @endif
+        @foreach($profile['exhibitions_curated'] as $exhibition)
+          <x-image-card :altTag="$exhibition['exhibition']['hero_image_alt_text'] " :title="$exhibition['exhibition']['exhibition_title']"  :image="$exhibition['exhibition']['hero_image']" :route="'exhibition'" :params="[$exhibition['exhibition']['slug']]" />
         @endforeach
       </div>
     </div>

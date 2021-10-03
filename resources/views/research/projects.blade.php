@@ -2,27 +2,11 @@
 @section('title','Research projects')
 @section('hero_image',env('CONTENT_STORE') . 'baroque.jpg')
 @section('hero_image_title', 'A Baroque feasting table by Ivan Day in feast and fast')
-
+@section('description', 'An overview of Fitzwilliam Museum research projects')
 @section('content')
   <div class="row">
-      @foreach($projects['data'] as $project)
-      <div class="col-md-4 mb-3">
-        <div class="card h-100 ">
-          @if(!is_null($project['hero_image']))
-          <a href="{{ route('research-project', $project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-          alt="{{ $project['hero_image_alt_text']}}" loading="lazy"
-          width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead">
-                <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
-              </h3>
-            </div>
-            </div>
-          </div>
-        </div>
-      @endforeach
+    @foreach($projects['data'] as $project)
+      <x-image-card :altTag="$project['hero_image_alt_text'] " :title="$project['title']"  :image="$project['hero_image']" :route="'research-project'" :params="[$project['slug']]" />
+    @endforeach
   </div>
 @endsection

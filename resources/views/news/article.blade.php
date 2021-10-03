@@ -103,9 +103,6 @@
           <h3 class="lead">
             <a href="{{ route('article', $record['slug'][0]) }}">{{ $record['title'][0] }}</a>
           </h3>
-          {{-- <h4 class="text-info lead">
-            {{  Carbon\Carbon::parse($record['pubDate'][0])->format('l j F Y') }}
-          </h4> --}}
         </div>
       </div>
     </div>

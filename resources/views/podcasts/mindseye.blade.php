@@ -8,11 +8,7 @@
 
 
   @section('content')
-
-
     <div class="row ">
-
-
       <!-- column two -->
       <div class="col-md-7 mt-3">
         <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -20,14 +16,11 @@
             @include('includes/social/libsyn')
           </div>
         </div>
-
         @if(!empty($podcast['author_poem']))
           <div class="col shadow-sm p-3 mx-auto mb-3">
             {!! $podcast['author_poem'] !!}
           </div>
         @endif
-
-
         @if(!empty($podcast['author_response']))
           <h4 class="lead">The artist's response</h4>
           <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -52,8 +45,8 @@
             <p>
               <em>
                 This transcript was generated using Amazon Speech Recognition;
-              there maybe errors in this text. Please do point any errors that
-              you find out using the feedback widget at the bottom corner of this page.
+                there maybe errors in this text. Please do point any errors that
+                you find out using the feedback widget at the bottom corner of this page.
               </em>
             </p>
             @php

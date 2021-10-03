@@ -60,29 +60,12 @@
         <h4 class="lead">Funders and partners</h4>
         <div class="row">
           @foreach($project['project_partnerships'] as $partner)
-            <div class="col-md-4 mb-3">
-              <div class="card  h-100">
-                @if(!is_null( $partner['partner']['partner_logo']))
-                  <a href="{{ $partner['partner']['partner_url']}}"><img class="img-fluid" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][5]['url']}}"
-                    alt="Logo for {{ $partner['partner']['partner_full_name']}}"
-                    height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][5]['height'] }}"
-                    width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][5]['width'] }}"
-                    loading="lazy"/></a>
-                  @else
-                    <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-                    alt="The Fitzwilliam Museum's Gallery 3 roof"
-                    loading="lazy"/>
-                  @endif
-                  <div class="card-body ">
-                    <div class="contents-label mb-3">
-                      <h3 class="lead">
-                        <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
-                      </h3>
-                      <p>{{ $partner['partner']['partner_type'][0]}}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <x-partner-card
+            :altTag="$partner['partner']['partner_full_name']"
+            :title="$partner['partner']['partner_full_name']"
+            :image="$partner['partner']['partner_logo']"
+            :url="$partner['partner']['partner_url']"
+            />
             @endforeach
           </div>
         </div>

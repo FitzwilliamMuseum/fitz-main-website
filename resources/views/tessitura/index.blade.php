@@ -29,19 +29,7 @@
         <div class="col-md-9">
           <div class="row">
             @foreach ($events['data'] as $type)
-              <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                  <a class="stretched-link" href="{{ route('events.type', Str::slug($type['title'])) }}"><img class="card-img-top" src="{{ $type['hero_image']['data']['thumbnails'][4]['url'] }}"
-                    alt="{{ $type['title'] }}"/></a>
-                    <div class="card-body ">
-                      <div class="contents-label mb-3">
-                        <h3 class="lead">
-                          <a class="stretched-link" href="{{ route('events.type', Str::slug($type['title'])) }}" title="Events listing for {{ $type['title'] }}">{{  $type['title'] }}</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <x-image-card :altTag="$type['title']" :title="$type['title']"  :image="$type['hero_image']" :route="'events.type'" :params="[Str::slug($type['title'])]" />
               @endforeach
             </div>
           </div>

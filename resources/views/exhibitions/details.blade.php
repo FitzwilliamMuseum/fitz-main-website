@@ -160,13 +160,18 @@
 
   @if(!empty($coll['associated_curators']))
     @section('curators')
-      <div class="container-fluid bg-grey py-2 mb-2">
+      <div class="container-fluid bg-grey py-3">
         <div class="container">
           <h3 class="lead">Associated curators</h3>
           <div class="row">
             @foreach($coll['associated_curators'] as $curator)
-              <x-image-card :altTag="$curator['staff_profiles_id']['display_name']" :title="$curator['staff_profiles_id']['display_name']"
-              :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'" :params="array('slug' => $curator['staff_profiles_id']['slug'])" />
+              <x-image-card
+              :altTag="$curator['staff_profiles_id']['display_name']"
+              :title="$curator['staff_profiles_id']['display_name']"
+              :image="$curator['staff_profiles_id']['profile_image']"
+              :route="'research-profile'"
+              :params="[$curator['staff_profiles_id']['slug']]"
+              />
               @endforeach
             </div>
           </div>
@@ -180,35 +185,13 @@
           <h3 class="lead">Funders and partners</h3>
           <div class="row">
             @foreach($coll['exhibition_partners'] as $partner)
-              <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                  @if(!is_null( $partner['partner']['partner_logo']))
-                    <div class="embed-responsive embed-responsive-4by3">
-                      <img class="img-fluid embed-responsive-item" src="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['url']}}"
-                      alt="Logo for {{ $partner['partner']['partner_full_name']}}"
-                      height="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['height'] }}"
-                      width="{{ $partner['partner']['partner_logo']['data']['thumbnails'][4]['width'] }}"
-                      loading="lazy"/>
-                    </div>
-                  @else
-                    <div class="embed-responsive embed-responsive-4by3">
-                      <img class="img-fluid embed-responsive-item" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-                      alt="The Fitzwilliam Museum's Gallery 3 roof"
-                      loading="lazy"/>
-                    </div>
-                  @endif
-                  <div class="card-body">
-                    <div class="contents-label mb-3">
-                      <h3>
-                        <a href="{{ $partner['partner']['partner_url']}}">{{ $partner['partner']['partner_full_name']}}</a>
-                      </h3>
-                      <p>{{ $partner['partner']['partner_type'][0]}}</p>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
+              <x-partner-card
+              :altTag="$partner['partner']['partner_full_name']"
+              :title="$partner['partner']['partner_full_name']"
+              :image="$partner['partner']['partner_logo']"
+              :url="$partner['partner']['partner_url']"
+              :params="[$partner['partner']['slug']]"
+              />
             @endforeach
           </div>
         </div>
@@ -220,28 +203,15 @@
         <div class="container">
           <h3 class="lead">Associated departments</h3>
           <div class="row">
-            @foreach($coll['associated_departments'] as $gallery)
-              <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                  @if(!is_null($gallery['departments_id']['hero_image']))
-                    <div class="embed-responsive embed-responsive-4by3">
-                      <a href="{{ route('department', $gallery['departments_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-                        loading="lazy" alt="Highlight image for {{ gallery['departments_id']['hero_image_alt_text'] }}"
-                        height="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-                        width="{{ $gallery['departments_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-                        /></a>
-                      </div>
-                    @endif
-                    <div class="card-body ">
-                      <div class="contents-label mb-3">
-                        <h3 class="lead">
-                          <a href="/departments/{{ $gallery['departments_id']['slug']}}" class="stretched-link">{{ $gallery['departments_id']['title']}}</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              @endforeach
+            @foreach($coll['associated_departments'] as $department)
+              <x-image-card
+              :altTag="$department['departments_id']['hero_image_alt_text']"
+              :title="$department['departments_id']['title']"
+              :image="$department['departments_id']['hero_image']"
+              :route="'department'"
+              :params="[$department['departments_id']['slug']]"
+              />
+            @endforeach
             </div>
           </div>
         @endsection
@@ -301,24 +271,13 @@
             <h3 class="lead">Associated Galleries</h3>
             <div class="row">
               @foreach($coll['associated_galleries'] as $gallery)
-                <div class="col-md-4 mb-3">
-                  <div class="card  h-100">
-                    @if(!is_null($gallery['galleries_id']['hero_image']))
-                      <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}"><img class="img-fluid" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}" loading="lazy"
-                        alt="A highlight image of {{ $gallery['galleries_id']['hero_image_alt_text'] }}"
-                        height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-                        width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-                        /></a>
-                      @endif
-                      <div class="card-body h-100">
-                        <div class="contents-label mb-3">
-                          <h3 class="lead">
-                            <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}" class="stretched-link">{{ $gallery['galleries_id']['gallery_name']}}</a>
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <x-image-card
+                :altTag="$gallery['galleries_id']['hero_image_alt_text']"
+                :title="$gallery['galleries_id']['gallery_name']"
+                :image="$gallery['galleries_id']['hero_image']"
+                :route="'gallery'"
+                :params="[$gallery['galleries_id']['slug']]"
+                />
                 @endforeach
               </div>
             </div>
@@ -337,7 +296,6 @@
           @section('360_image', $coll['image_360_pano']['data']['full_url']))
         @endif
       @endsection
-
     @endforeach
 
     @if(!empty($records))

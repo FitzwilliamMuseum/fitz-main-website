@@ -15,23 +15,7 @@
       $title = $podcast['podcast_series'][0]['podcast_series_id']['title'];
       @endphp
       @section('title', $title )
-
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-            <a href="{{ route('podcasts.episode', $podcast['slug']) }}"><img class="img-fluid" src="{{ $podcast['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $podcast['hero_image_alt_tag'] }}"
-            width="{{ $podcast['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $podcast['hero_image']['data']['thumbnails'][4]['height'] }}"
-            loading="lazy"/></a>
-            <div class="card-body h-100">
-              <div class="contents-label mb-3">
-                <h3 class="lead">
-                  <a href="{{ route('podcasts.episode', $podcast['slug']) }}">{{ $podcast['title'] }}</a>
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
+      <x-image-card :altTag="$podcast['hero_image_alt_tag'] " :title="$podcast['title']"  :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="[$podcast['slug']]" />
       @endforeach
     @endif
     </div>

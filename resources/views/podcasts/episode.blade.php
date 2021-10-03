@@ -8,8 +8,6 @@
   @endif
 
   @section('content')
-
-
     <div class="row ">
       <!-- Column one -->
       <div class="col-md-7 mb-3">
@@ -21,8 +19,6 @@
             height="{{ $podcast['hero_image']['height'] }}"
             />
           </figure>
-      
-
         </div>
       </div>
       <!-- End of column one -->
@@ -32,7 +28,6 @@
         <div class="col shadow-sm p-3 mx-auto mb-3">
           {{ $podcast['description'] }}
         </div>
-
         <div class="col shadow-sm p-3 mx-auto mb-3">
           <div class="plyr">
             <div class="embed-responsive  audio-player">
@@ -44,10 +39,6 @@
           </div>
       </div>
       <!-- End of column two -->
-
     </div>
-
-
-
   @endsection
 @endforeach

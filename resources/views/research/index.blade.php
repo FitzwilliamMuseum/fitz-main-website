@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-
 @foreach($pages['data'] as $page)
   @section('title', $page['title'])
   @if(!empty($page['hero_image']))
@@ -11,22 +10,11 @@
   @endif
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])
-
-  {{-- @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-      @markdown($page['body'])
-    </div>
-  @endsection --}}
 @endforeach
 
 @section('associated_pages')
-
-
-
   <div class="container">
-
     <div class="row">
-
       <div class="col-md-4 mb-3">
 
         <div class="card h-100">

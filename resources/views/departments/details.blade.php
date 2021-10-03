@@ -8,7 +8,7 @@
   @section('hero_image_title', $dept['hero_image_alt_text'])
 
   @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class=" p-3 mx-auto mb-3">
       @markdown($dept['department_description'])
       @isset($dept['email_address'])
         <p class="text-info">
