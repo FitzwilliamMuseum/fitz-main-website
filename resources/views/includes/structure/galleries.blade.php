@@ -1,11 +1,11 @@
 <div class="container mt-3">
-  <h2 class="display-5">
+  <h2 class="lead">
     Discover our galleries
   </h2>
   <div class="row">
     @foreach($galleries['data'] as $gallery)
       <div class="col-md-4 mb-3">
-        <div class="card  h-100">
+        <div class="card card-fitz h-100">
           @if(!is_null($gallery['hero_image']))
             <a href="{{ route('gallery',[$gallery['slug']]) }}"><img class="img-fluid" src="{{ $gallery['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="A highlight image for {{ $gallery['gallery_name'] }}" loading="lazy"
