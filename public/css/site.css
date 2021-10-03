@@ -987,11 +987,11 @@ a.nav-link {
 }
 .card-fitz:hover {
   opacity: 0.8;
-  -webkit-transform:scale(1.05);
-  -moz-transform:scale(1.05);
-  -ms-transform:scale(1.05);
-  -o-transform:scale(1.05);
-  transform:scale(1.07);
+  -webkit-transform:scale(1.02);
+  -moz-transform:scale(1.02);
+  -ms-transform:scale(1.02);
+  -o-transform:scale(1.02);
+  transform:scale(1.02);
 }
 
 .card-fitz:hover{
