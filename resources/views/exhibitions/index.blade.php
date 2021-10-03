@@ -23,6 +23,7 @@
           :endDate="$current['exhibition_end_date']"
           :status="'current'"
           :ticketed="$current['ticketed']"
+          :tessitura="$current['tessitura_string']"
           />
         @endforeach
       </div>
@@ -40,6 +41,8 @@
           :endDate="$display['exhibition_end_date']"
           :status="'current'"
           :ticketed="$display['ticketed']"
+          :tessitura="$current['tessitura_string']"
+
           />
         @endforeach
       </div>
@@ -64,6 +67,8 @@
           :endDate="$future['exhibition_end_date']"
           :status="'future'"
           :ticketed="$future['ticketed']"
+          :tessitura="$current['tessitura_string']"
+
           />
           @endforeach
         </div>
@@ -90,6 +95,8 @@
           :endDate="$archived['exhibition_end_date']"
           :status="'archived'"
           :ticketed="$archived['ticketed']"
+          :tessitura="$current['tessitura_string']"
+
           />
           @endforeach
         </div>
