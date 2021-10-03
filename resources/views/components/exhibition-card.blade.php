@@ -21,7 +21,7 @@
             {{ $title }}
           </a>
         </h3>
-        @if($status === 'current' && $ticketed === true)
+        @if($status === 'current' && $ticketed === true && !is_null($tessitura_string))
           <p class="text-info">Ticket and timed entry</p>
           <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura_string }}">Book now</a>
         @elseif($status === 'current')
