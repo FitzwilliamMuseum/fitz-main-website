@@ -985,3 +985,22 @@ a.nav-link {
 .bg-pastel {
   background-color: #9cc2cb24;
 }
+.card-fitz:hover {
+  opacity: 0.8;
+  -webkit-transform:scale(1.05);
+  -moz-transform:scale(1.05);
+  -ms-transform:scale(1.05);
+  -o-transform:scale(1.05);
+  transform:scale(1.07);
+}
+
+.card-fitz:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  /*box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);*/
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
