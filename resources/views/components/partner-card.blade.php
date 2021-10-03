@@ -21,6 +21,9 @@
             {{ $title }}
           </a>
         </h3>
+        @isset($subtitle)
+          <p class="text-info">{{ $subtitle }}</p>
+        @endisset
       </div>
     </div>
   </div>

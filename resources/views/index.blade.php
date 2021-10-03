@@ -13,22 +13,14 @@
 
 
 @section('news')
-  @foreach($news['data'] as $project)
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100">
-        @if(!is_null($project['field_image']))
-          <a href="{{ route('article', $project['slug']) }}"><img class="img-fluid" src="{{ $project['field_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $project['field_image_alt_text'] }}" /></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead">
-                <a href="{{ route('article', $project['slug']) }}">{{ $project['article_title']}}</a>
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
+  @foreach($news['data'] as $news)
+    <x-image-card
+    :altTag="$news['field_image_alt_text']"
+    :title="$news['article_title']"
+    :image="$news['field_image']"
+    :route="'article'"
+    :params="[$news['slug']]"
+    />
     @endforeach
   @endsection
 
@@ -36,25 +28,14 @@
     <div class="container mt-3">
       <h2 class="display-5"><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h2>
       <div class="row">
-        @foreach($fundraising['data'] as $project)
-          <div class="col-md-4 mb-3">
-            <div class="card  h-100">
-              @if(!is_null($project['hero_image']))
-                <a href="{{ $project['url']}}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-                  alt="{{ $project['hero_image_alt_text'] }}" /></a>
-                @endif
-                <div class="card-body h-100">
-                  <div class="contents-label mb-3">
-                    <h3 class="lead">
-                      <a href="{{ $project['url']}}">{{ $project['title']}}</a>
-                    </h3>
-                    @isset($project['sub_title'])
-                      <p class="text-info">{{ $project['sub_title']}}</p>
-                    @endisset
-                  </div>
-                </div>
-              </div>
-            </div>
+        @foreach($fundraising['data'] as $donate)
+          <x-partner-card
+          :altTag="$donate['hero_image_alt_text']"
+          :title="$donate['title']"
+          :subtitle="$donate['sub_title']"
+          :image="$donate['hero_image']"
+          :url="$donate['url']"
+          />
           @endforeach
         </div>
       </div>
@@ -63,46 +44,26 @@
 
     @section('research')
       @foreach($research['data'] as $project)
-        <div class="col-md-4 mb-3">
-          <div class="card h-100">
-            @if(!is_null($project['hero_image']))
-              <a href="{{ route('research-project', $project['slug']) }}"><img class="img-fluid" src="{{ $project['hero_image']['data']['thumbnails'][4]['url']}}"
-                alt="{{ $project['hero_image_alt_text'] }}" loading="lazy"
-                width="{{ $project['hero_image']['data']['thumbnails'][4]['width'] }}"
-                height="{{ $project['hero_image']['data']['thumbnails'][4]['height'] }}" /></a>
-              @endif
-              <div class="card-body  h-100">
-                <div class="contents-label mb-3">
-                  <h3 class="lead">
-                    <a href="{{ route('research-project', $project['slug']) }}">{{ $project['title']}}</a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
+        <x-image-card
+        :altTag="$project['hero_image_alt_text']"
+        :title="$project['title']"
+        :image="$project['hero_image']"
+        :route="'research-project'"
+        :params="[$project['slug']]"
+        />
+
         @endforeach
       @endsection
 
       @section('themes')
         @foreach($objects['data'] as $theme)
-          <div class="col-md-4 mb-3">
-            <div class="card h-100">
-              @if(!is_null($theme['image']))
-                <a href="{{ route('highlight', $theme['slug']) }}"><img class="img-fluid" src="{{ $theme['image']['data']['thumbnails'][4]['url']}}"
-                  alt="{{ $theme['image_alt_text'] }}"
-                  loading="lazy"
-                  height="{{ $theme['image']['data']['thumbnails'][4]['height'] }}"
-                  width="{{ $theme['image']['data']['thumbnails'][4]['width'] }}"/></a>
-                @endif
-                <div class="card-body  h-100">
-                  <div class="contents-label mb-3">
-                    <h3 class="lead">
-                      <a href="{{ route('highlight', $theme['slug']) }}">@markdown($theme['title'])</a>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <x-image-card
+          :altTag="$theme['image_alt_text']"
+          :title="$theme['title']"
+          :image="$theme['image']"
+          :route="'highlight'"
+          :params="[$theme['slug']]"
+          />
           @endforeach
         @endsection
 
@@ -111,7 +72,7 @@
     @if(!empty($shopify))
       @section('shopify')
         <div class="container">
-          <h2 class="mt-3 display-5"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from the Fitzwilliam Museum shop</a></h2>
+          <h2 class="mt-3 lead"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from Curating Cambridge</a></h2>
           <div class="row">
             @foreach($shopify as $record)
               <div class="col-md-3 mb-3">
