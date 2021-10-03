@@ -114,24 +114,7 @@
   <div class="container">
     <div class="row">
       @foreach($associated['data'] as $associate)
-      <div class="col-md-4 mb-3">
-        <div class="card  h-100">
-          @if(!is_null($associate['hero_image']))
-            <a href="{{ $associate['section']}}/{{ $associate['slug']}}"><img class="img-fluid" src="{{ $associate['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $associate['hero_image_alt_text'] }}"
-            width="{{ $associate['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $associate['hero_image']['data']['thumbnails'][4]['height'] }}"
-            loading="lazy"/></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead">
-                <a class="stretched-link" href="{{ $associate['section']}}/{{ $associate['slug']}}">{{ $associate['title']}}</a>
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
+        <x-image-card :altTag="$associate['hero_image_alt_text'] " :title="$associate['title']"  :image="$associate['hero_image']" :route="'landing-section'" :params="[$associate['section'],$associate['slug']]" />
       @endforeach
     </div>
   </div>
