@@ -95,23 +95,13 @@
           <h3 class="lead">Stories, Contexts and Themes</h3>
           <div class="row">
             @foreach($record['associated_pharos_content'] as $pharosassoc)
-              <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                  @if(!is_null($pharosassoc['pharos_pages_id']['hero_image']))
-                    <a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}"><img class="img-fluid" src="{{ $pharosassoc['pharos_pages_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-                      alt="{{ $pharosassoc['pharos_pages_id']['hero_image_alt_text'] }}"
-                      loading="lazy"/></a>
-                    @else
-                      <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  />
-                    @endif
-                    <div class="card-body h-100">
-                      <div class="contents-label mb-3">
-                        <h3 class="lead"><a href="/objects-and-artworks/highlights/context/{{ $pharosassoc['pharos_pages_id']['section']}}/{{ $pharosassoc['pharos_pages_id']['slug']}}">{{ $pharosassoc['pharos_pages_id']['title']}}</a></h3>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
+              <x-image-card
+              :image="$pharosassoc['pharos_pages_id']['hero_image']"
+              :altTag="$pharosassoc['pharos_pages_id']['hero_image_alt_text']"
+              :route="'context-section-detail'"
+              :params="[$pharosassoc['pharos_pages_id']['section'],$pharosassoc['pharos_pages_id']['slug']]"
+              :title="$pharosassoc['pharos_pages_id']['title']"
+              />
               @endforeach
             </div>
           </div>
@@ -124,22 +114,8 @@
             <h3 class="lead">Other highlight objects you might like</h3>
             <div class="row">
               @foreach($records as $record)
-                <div class="col-md-4 mb-3">
-                  <div class="card  h-100">
-                    @if(!is_null($record['smallimage']))
-                      <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
-                        alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
-                      @endif
-                      <div class="card-body h-100">
-                        <div class="contents-label mb-3">
-                          <h3 class="lead">
-                            <a href="{{ $record['url'][0] }}">@markdown($record['title'][0])</a>
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                @endforeach
+                <x-solr-card :result="$record" />
+              @endforeach
               </div>
             </div>
           @endsection

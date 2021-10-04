@@ -8,22 +8,13 @@
 @section('content')
 <div class="row">
   @foreach($pharos['data'] as $record)
-  <div class="col-md-4 mb-3">
-    <div class="card  h-100">
-      @if(!is_null($record['hero_image']))
-        <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/"><img class="img-fluid" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-        alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"
-        width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
-      @endif
-      <div class="card-body h-100">
-        <div class="contents-label mb-3">
-          <h3 class="lead">
-            <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a></h3>
-        </div>
-      </div>
-    </div>
-  </div>
+    <x-image-card
+    :image="$record['hero_image']"
+    :altTag="$record['hero_image']['title']"
+    :route="'theme'"
+    :params="[$record['slug']]"
+    :title="ucfirst(str_replace('-',' ', $record['title']))"
+    />
   @endforeach
 </div>
 @endsection

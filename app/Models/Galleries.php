@@ -13,7 +13,7 @@ class Galleries extends Model
       $api->setArguments(
         $args = array(
             'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
+            'meta' => '*',
             'limit' => $limit,
             'sort' => $sort
         )

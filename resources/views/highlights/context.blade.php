@@ -8,23 +8,13 @@
 @section('content')
 <div class="row">
   @foreach($context as $record)
-  <div class="col-md-4 mb-3">
-    <div class="card h-100">
-      @if(!is_null($record[0]['hero_image']))
-        <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
-        alt="{{ $record[0]['hero_image']['title'] }}" loading="lazy"
-        width="{{ $record[0]['hero_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ $record[0]['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
-      @endif
-      <div class="card-body h-100">
-        <div class="contents-label mb-3">
-          <h3 class="lead">
-            <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a></h3>
-        </div>
-      </div>
-
-    </div>
-  </div>
+    <x-image-card
+    :image="$record[0]['hero_image']"
+    :route="'context-sections'"
+    :title="ucfirst(str_replace('-',' ', $record[0]['section']))"
+    :altTag="$record[0]['hero_image']['title']"
+    :params="[$record[0]['section']]"
+    />
   @endforeach
 </div>
 @endsection

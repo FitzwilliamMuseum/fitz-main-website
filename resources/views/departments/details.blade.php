@@ -23,26 +23,8 @@
       <h2 class="lead">Associated Galleries</h2>
       <div class="row">
         @foreach($dept['associated_galleries'] as $gallery)
-        <div class="col-md-4 mb-3">
-          <div class="card h-100">
-            @if(!is_null($gallery['galleries_id']['hero_image']))
-            <div class="embed-responsive embed-responsive-4by3">
-            <a href="/visit-us/galleries/{{ $gallery['galleries_id']['slug']}}"><img class="img-fluid embed-responsive-item" src="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $gallery['galleries_id']['hero_image_alt_text'] }}" loading="lazy"
-            width="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $gallery['galleries_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-            /></a>
-          </div>
-            @endif
-            <div class="card-body ">
-              <div class="contents-label mb-3">
-                <h3 class="lead">
-                  <a href="/visit-us/galleries/{{ $gallery['galleries_id']['slug']}}">{{ $gallery['galleries_id']['gallery_name']}}</a>
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
+          <x-image-card :altTag="$gallery['galleries_id']['hero_image_alt_text']" :title="$gallery['galleries_id']['gallery_name']"
+          :image="$gallery['galleries_id']['hero_image']" :route="'gallery'" :params="array('slug' => $gallery['galleries_id']['slug'])" />
         @endforeach
       </div>
     </div>
@@ -75,34 +57,8 @@
       <h3 class="lead">Associated staff</h3>
       <div class="row">
         @foreach($staff['data'] as $curator)
-          <div class="col-md-3 mb-3">
-            <div class="card h-100">
-              @if(!is_null($curator['profile_image']))
-                <div class="embed-responsive embed-responsive-1by1">
-                  <a href="{{ route('research-profile', $curator['slug']) }}"><img
-                    class="img-fluid embed-responsive-item" src="{{ $curator['profile_image']['data']['thumbnails'][2]['url']}}"
-                    loading="lazy"
-                    alt="{{ $curator['profile_image_alt_text'] }}"
-                    height="{{ $curator['profile_image']['data']['thumbnails'][2]['height'] }}"
-                    width="{{ $curator['profile_image']['data']['thumbnails'][2]['width'] }}"
-                    /></a>
-                  </div>
-                @else
-                  <a href="{{ route('research-profile', $curator['slug']) }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-                  alt="A stand in image "/></a>
-                @endif
-                <div class="card-body">
-                  <div class="contents-label mb-3">
-                    <h3 class="lead">
-                      <a href="{{ route('research-profile', $curator['slug']) }}">{{ $curator['display_name']}}</a>
-                      @isset($curator['job_title'])
-                        <p class="text-info">{{ $curator['job_title']}}</p>
-                      @endisset
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <x-image-card :altTag="$curator['profile_image_alt_text']" :title="$curator['display_name']"
+          :image="$curator['profile_image']" :route="'research-profile'" :params="array('slug' => $curator['slug'])" />
           @endforeach
         </div>
       </div>

@@ -304,23 +304,7 @@
           <h3 class="lead">Similar exhibitions from our archives</h3>
           <div class="row">
             @foreach($records as $record)
-              <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                  @if(!is_null($record['smallimage']))
-                    <div class="embed-responsive embed-responsive-4by3">
-                      <img class="img-fluid embed-responsive-item" src="{{ $record['smallimage'][0]}}"
-                      alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
-                    </div>
-                  @endif
-                  <div class="card-body ">
-                    <div class="contents-label mb-3">
-                      <h3 class="lead">
-                        <a href="/visit-us/exhibitions/{{ $record['slug'][0] }}" class="stretched-link">{{ $record['title'][0] }}</a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <x-solr-card :result="$record" />
             @endforeach
           </div>
         </div>

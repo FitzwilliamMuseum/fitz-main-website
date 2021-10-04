@@ -48,6 +48,7 @@
     @yield('timeline')
     </div>
   </div>
+  @yield('audioGuide')
   @yield('collection-search')
 
   @yield('immunity')

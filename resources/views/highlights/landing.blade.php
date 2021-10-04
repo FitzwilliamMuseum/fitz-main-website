@@ -131,7 +131,7 @@
       @foreach($first as $record)
       <div class="carousel-item  active">
         <div class="col-md-4">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           @if(!is_null($record['hero_image']))
             <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/">
               <img class="card-img-top" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
@@ -150,7 +150,7 @@
       @foreach($rest as $record)
       <div class="carousel-item">
         <div class="col-md-4">
-        <div class="card">
+        <div class="card card-fitz">
           @if(!is_null($record['hero_image']))
             <a href="/objects-and-artworks/highlights/themes/{{ $record['slug'] }}/"><img class="img-fluid" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/></a>
@@ -195,7 +195,7 @@
       @foreach($first as $record)
       <div class="carousel-item active">
         <div class="col-md-4 ">
-        <div class="card h-100 ">
+        <div class="card card-fitz h-100 ">
           @if(!is_null($record[0]['image']))
             <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned'],'-') }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
@@ -212,7 +212,7 @@
       @foreach($rest as $record)
       <div class="carousel-item">
         <div class="col-md-4">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           @if(!is_null($record[0][ 'image']))
             <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record[0]['period_assigned']) }}"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
@@ -257,7 +257,7 @@
       @foreach($first as $record)
       <div class="carousel-item active">
         <div class="col-md-4 ">
-        <div class="card h-100 ">
+        <div class="card card-fitz h-100 ">
           @if(!is_null($record[0]['hero_image']))
             <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
@@ -274,7 +274,7 @@
       @foreach($rest as $record)
       <div class="carousel-item">
         <div class="col-md-4">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           @if(!is_null($record[0]['hero_image']))
             <a href="/objects-and-artworks/highlights/context/{{ $record[0]['section'] }}/"><img class="img-fluid" src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
             alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>

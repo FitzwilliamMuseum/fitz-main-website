@@ -33,21 +33,7 @@
         <h3 class="lead">Other highlight objects you might like</h3>
         <div class="row">
           @foreach($highlights as $record)
-            <div class="col-md-4 mb-3">
-              <div class="card  h-100">
-                @if(!is_null($record['smallimage']))
-                  <a href="{{ $record['url'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
-                    alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
-                  @endif
-                  <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                      <h3 class="lead">
-                        <a href="{{ $record['url'][0] }}" class="stretched-link">{{ $record['title'][0] }}</a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <x-solr-card :result="$record" />
             @endforeach
           </div>
         </div>
@@ -59,30 +45,10 @@
     <h3 class="lead">Other pathways and stories you might like</h3>
     <div class="row">
       @foreach($records as $record)
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          @if(!is_null($record['image']))
-            <a href="/objects-and-artworks/highlights/context/{{ $record['section'][0]}}/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['smallimage'][0]}}"
-            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              @if(isset($record['section']))
-                <h3 class="lead">
-                  <a href="/objects-and-artworks/highlights/context/{{ $record['section'][0]}}/{{ $record['slug'][0] }}">{{ $record['title'][0]}}</a>
-                </h3>
-              @else
-                <a href="/objects-and-artworks/highlights/context/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
-              @endif
-            </h3>
+      <x-solr-card :result="$record" />
 
-          </div>
-        </div>
-      </div>
-
+      @endforeach
     </div>
-    @endforeach
-  </div>
 </div>
   @endsection
 @endif

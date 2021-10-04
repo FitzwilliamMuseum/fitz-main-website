@@ -41,26 +41,13 @@
   </h4>
   <div class="row">
     @foreach($gallery['star_objects'] as $object)
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100 ">
-        @if(!is_null($object['pharos_id']['image']))
-        <div class="embed-responsive embed-responsive-4by3">
-          <img class="img-fluid embed-responsive-item" src="{{ $object['pharos_id']['image']['data']['thumbnails'][4]['url'] }}"
-          alt="{{ $object['pharos_id']['image_alt_text'] }}"
-          loading="lazy"
-          width="{{ $object['pharos_id']['image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $object['pharos_id']['image']['data']['thumbnails'][4]['height'] }}"/>
-        </div>
-        @endif
-        <div class="card-body">
-          <div class="contents-label mb-3">
-            <h3 class="lead">
-              <a href="{{ route('highlight', [$object['pharos_id']['slug']]) }}">@markdown($object['pharos_id']['title'])</a>
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
+      <x-image-card
+      :image="$object['pharos_id']['image']"
+      :altTag="$object['pharos_id']['image_alt_text']"
+      :route="'highlight'"
+      :params="[$object['pharos_id']['slug']]"
+      :title="$object['pharos_id']['title']"
+      />
     @endforeach
   </div>
   @endif
@@ -114,8 +101,6 @@
       @endif
   @endisset
   @endsection
-
-
 
   @if(!empty($gallery['audio_guide']))
     @section('audio-guide')
@@ -180,5 +165,4 @@
       </div>
       @endif
     @endsection
-
 @endforeach

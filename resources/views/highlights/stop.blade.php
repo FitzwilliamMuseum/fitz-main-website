@@ -80,23 +80,13 @@
     <h3 class="lead">Associated highlight record</h3>
     <div class="row">
       @foreach($record['associated_pharos_object'] as $pharosassoc)
-      <div class="col-md-4 mb-3">
-        <div class="card  h-100">
-          @if(!is_null($pharosassoc['pharos_id']['image']))
-            <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}"><img class="img-fluid" src="{{ $pharosassoc['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $pharosassoc['pharos_id']['image_alt_text'] }}"
-            loading="lazy"/></a>
-          @else
-            <a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}"><img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fvlogo.jpg" class="rounded img-fluid"  /></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead"><a href="/objects-and-artworks/highlights/{{ $pharosassoc['pharos_id']['slug']}}">{{ $pharosassoc['pharos_id']['title']}}</a></h3>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        <x-image-card
+        :image="$pharosassoc['pharos_id']['image']"
+        :altTag="$pharosassoc['pharos_id']['image_alt_text']"
+        :params="[$pharosassoc['pharos_id']['slug']]"
+        :route="'highlight'"
+        :title="$pharosassoc['pharos_id']['title']"
+        />
       @endforeach
     </div>
   </div>
@@ -109,21 +99,7 @@
     <h3 class="lead">Other audio guide stops you might like</h3>
     <div class="row">
       @foreach($records as $record)
-      <div class="col-md-4 mb-3">
-        <div class="card  h-100">
-          @if(!is_null($record['searchImage']))
-            <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}"><img class="img-fluid" src="{{ $record['searchImage'][0]}}"
-            alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead">
-                <a href="/objects-and-artworks/audio-guide/{{ $record['slug'][0] }}">{{ $record['title'][0] }}</a>
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
+        <x-solr-card :result="$record" />
       @endforeach
     </div>
   </div>

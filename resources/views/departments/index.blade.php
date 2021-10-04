@@ -11,7 +11,13 @@
   <div class="container">
     <div class="row">
       @foreach($departments['data'] as $department)
-        <x-image-card :altTag="$department['hero_image_alt_text'] " :title="$department['title']"  :image="$department['hero_image']" :route="'department'" :params="[$department['slug']]" />
+        <x-image-card
+        :altTag="$department['hero_image_alt_text'] "
+        :title="$department['title']"
+        :image="$department['hero_image']"
+        :route="'department'"
+        :params="[$department['slug']]"
+        />
       @endforeach
     </div>
   </div>

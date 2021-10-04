@@ -83,7 +83,7 @@ class highlightsController extends Controller
 
         $queryString = \Purifier::clean($request->get('query'), array('HTML.Allowed' => ''));
         $key = md5($queryString . ' contentType:pharos'. $request->get('page'));
-        $perPage = 20;
+        $perPage = 24;
         $expiresAt = now()->addMinutes(3600);
         $from = ($request->get('page', 1) - 1) * $perPage;
         if (Cache::has($key)) {

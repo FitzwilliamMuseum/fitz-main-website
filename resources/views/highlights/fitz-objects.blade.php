@@ -8,22 +8,13 @@
 @section('content')
 <div class="row">
   @foreach($week['data'] as $record)
-  <div class="col-md-4 mb-3">
-    <div class="card  h-100">
-      @if(!is_null($record['hero_image']))
-        <a href="/objects-and-artworks/staff-favourites/{{ $record['slug']}}"><img class="img-fluid" src="{{ $record['hero_image']['data']['thumbnails'][4]['url']}}"
-        alt="{{ $record['hero_image_alt_text'] }}" loading="lazy"
-        width="{{ $record['hero_image']['data']['thumbnails'][4]['width'] }}"
-        height="{{ $record['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
-      @endif
-      <div class="card-body h-100">
-        <div class="contents-label mb-3">
-          <h3 class="lead">
-            <a class="extended-link" href="/objects-and-artworks/staff-favourites/{{ $record['slug']}}">{{ $record['title'] }}</a></h3>
-        </div>
-      </div>
-    </div>
-  </div>
+    <x-image-card
+    :image="$record['hero_image']"
+    :altTag="$record['hero_image_alt_text']"
+    :route="'fitz-object'"
+    :params="[$record['slug']]"
+    :title="$record['title']"
+    />
   @endforeach
 </div>
 <nav aria-label="Page navigation">
