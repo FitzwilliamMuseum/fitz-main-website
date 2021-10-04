@@ -2,9 +2,15 @@
 @section('keywords', 'labels,cases')
 @section('description', 'Labels for the Odundo show ' . $title)
 @section('title', 'Labels for ' . $title)
-@section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/2019-8034.15_odundo-pot_2.jpg')
-@section('hero_image_title', '2019,8034.15 Odundo Pot 2')
-
+@section('hero_image', $labels['data'][0]['object_labels'][0]['mo_labels_id']['cover_image']['data']['url'])
+@section('hero_image_title', 'An image representing this case\'s content')
+@section('content')
+  <div class="bg-white p-3">
+    <blockquote class="blockquote">
+      {!! $labels['data'][0]['object_labels'][0]['mo_labels_id']['description'] !!}
+    </blockquote>
+  </div>
+@endsection
 @section('exhibitionlabels')
 <div class="container-fluid py-3">
   <div class="container">
