@@ -41,7 +41,7 @@ class Stubs extends Model
         $args = array(
           'fields' => '*.*.*.*',
           'meta' => 'result_count,total_count,type',
-          'filter[subsection][eq]' => 'young-people'
+          'filter[subsection][eq]' => $subsection
         )
       );
       return $api->getData();

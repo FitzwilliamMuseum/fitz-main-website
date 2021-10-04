@@ -79,12 +79,6 @@ Route::get('learning/adult-programming/{slug}', 'learningController@adult')->nam
 Route::get('learning/gallery-activities/{slug}', 'learningController@galleryActivity')->name('gallery-activity');
 
 /*
-Themes routes - are these obsolete?
-*/
-Route::get('themes/', 'themesController@index')->name('themes-deprecated');
-Route::get('themes/{slug}', 'themesController@theme')->name('theme-deprecated');
-
-/*
 * Object and highlight routes
 */
 Route::match(array('GET','POST'),'objects-and-artworks/highlights/search/results', 'highlightsController@results')->name('highlight-search');

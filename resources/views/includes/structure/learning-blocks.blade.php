@@ -56,7 +56,7 @@
           @include('includes.structure.cards', $pagesController::injectPages('learning', $slug))
         @endforeach
       </div>
-      
+
     @endif
 
     @if(Request::is('learning/about-learning-research'))

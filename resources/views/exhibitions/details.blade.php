@@ -166,7 +166,6 @@
           <div class="row">
             @foreach($coll['associated_curators'] as $curator)
               <x-image-card
-
               :altTag="$curator['staff_profiles_id']['display_name']"
               :title="$curator['staff_profiles_id']['display_name']"
               :image="$curator['staff_profiles_id']['profile_image']"
