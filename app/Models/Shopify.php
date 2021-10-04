@@ -22,7 +22,7 @@ class Shopify extends Model
       $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
       $query = $client->createSelect();
       $query->setQuery('contentType:shopify AND price:[1 TO *]');
-      $query->setRows(4);
+      $query->setRows(3);
       $randString = mt_rand();
 
       $query->addSort('random_' . $randString, $query::SORT_DESC);
