@@ -51,7 +51,7 @@
             <div class="row">
             @foreach($podcasts['data'] as $podcast)
               <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['title']"
-              :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="array('slug' => $podcast['slug'])" />
+              :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="[$podcast['slug']]" />
             @endforeach
             </div>
           </div>
@@ -166,6 +166,7 @@
           <div class="row">
             @foreach($coll['associated_curators'] as $curator)
               <x-image-card
+
               :altTag="$curator['staff_profiles_id']['display_name']"
               :title="$curator['staff_profiles_id']['display_name']"
               :image="$curator['staff_profiles_id']['profile_image']"
@@ -190,7 +191,6 @@
               :title="$partner['partner']['partner_full_name']"
               :image="$partner['partner']['partner_logo']"
               :url="$partner['partner']['partner_url']"
-              :params="[$partner['partner']['slug']]"
               />
             @endforeach
           </div>
