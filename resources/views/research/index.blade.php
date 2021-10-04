@@ -17,7 +17,7 @@
     <div class="row">
 
       <div class="col-md-4 mb-3">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           <a href="{{route('research-profiles')}}">
             <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/img_20191219_184304_832.jpeg?key=directus-medium-contain"
             alt="Eye of the minotaur" loading="lazy" />
@@ -33,7 +33,7 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           <a href="{{route('opportunities')}}">
             <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/IMG_20191022_152807.jpeg?key=directus-medium-crop"
             alt="Jennifer Wexler" loading="lazy" />
@@ -49,14 +49,14 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           <a href="{{route('research-projects')}}">
             <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/XRF analysis of an illuminated mss at the Fitz.jpg?key=directus-medium-crop"
             alt="XRF analysis of a manuscript" loading="lazy" />
           </a>
           <div class="card-body h-100">
             <h3 class="lead" >
-              <a href="{{route('research-projects')}}" class="stretched-link">>
+              <a href="{{route('research-projects')}}" class="stretched-link">
                 Our research work
               </a>
             </h3>
@@ -65,7 +65,7 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <div class="card h-100">
+        <div class="card card-fitz h-100">
           <a href="{{route('resources')}}">
             <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/4.-Dormition-of-the-Virgin-Italy-Venice-c.1420-Master-of-the-Murano-Gradual-active-c.1420-1440.jpg?key=directus-medium-crop"
             alt="A segment of a manuscript" loading="lazy" />
