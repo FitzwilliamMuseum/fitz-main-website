@@ -82,31 +82,7 @@
 <h3 class="lead">Other recommended articles</h3>
 <div class="row">
   @foreach($records as $record)
-  <div class="col-md-4 mb-3">
-    <div class="card h-100">
-      @if(!is_null($record['thumbnail']))
-        <a href="{{ route('article', $record['slug'][0]) }}"><img class="img-fluid" src="{{ $record['thumbnail'][0]}}" alt="A highlight image for {{ $record['title'][0] }}"
-        height="600"
-        width="800"
-        loading="lazy"
-        /></a>
-      @else
-        <a href="{{ route('article', $record['slug'][0]) }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-        alt="No image was provided for {{ $record['title'][0] }}"
-        loading="lazy"
-        height="600"
-        width="800"
-        /></a>
-      @endif
-      <div class="card-body h-100">
-        <div class="contents-label mb-3">
-          <h3 class="lead">
-            <a href="{{ route('article', $record['slug'][0]) }}">{{ $record['title'][0] }}</a>
-          </h3>
-        </div>
-      </div>
-    </div>
-  </div>
+    <x-solr-card :result="$record" />
   @endforeach
 </div>
 </div>

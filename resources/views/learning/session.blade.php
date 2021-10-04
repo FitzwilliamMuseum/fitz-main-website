@@ -71,7 +71,7 @@
 
       @foreach($page['associated_learning_files'] as $file)
       <div class="col-md-4 mb-3">
-        <div class="card  h-100">
+        <div class="card card-fitz h-100">
           <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3 class="lead">
@@ -95,32 +95,15 @@
     </div>
     @endif
     @endsection
-
     @if(!empty($records))
       @section('mlt')
       <div class="container">
         <h3 class="lead">Other related schools sessions</h3>
         <div class="row">
           @foreach($records as $record)
-          <div class="col-md-4 mb-3">
-            <div class="card  h-100">
-              @if(!is_null($record['thumbnail']))
-                <a href="{{ route('school-sessions', $record['slug'][0]) }}"><img class="img-fluid" src="{{ $record['thumbnail'][0]}}"
-                alt="Featured image for the session: {{ $record['title'][0] }}"
-                loading="lazy"/></a>
-              @else
-                <a href="{{ route('school-sessions', $record['slug'][0]) }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
-                alt="The Fitzwilliam Museum's gallery 3 roof" loading="lazy"/></a>
-              @endif
-              <div class="card-body h-100">
-                <div class="contents-label mb-3">
-                  <h3 class="lead">
-                    <a href="{{ route('school-sessions', $record['slug'][0]) }}">{{ $record['title'][0] }}</a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
+            <x-solr-card
+              :result="$record"
+            />
           @endforeach
         </div>
       </div>

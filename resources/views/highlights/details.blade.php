@@ -25,11 +25,11 @@
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
       @if(isset($record['period_assigned']))
-        <a href="/objects-and-artworks/highlights/periods/{{ Str::slug($record['period_assigned'],'-') }}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
+        <a href="{{ route('period', [Str::slug($record['period_assigned'],'-')]) }}" class="btn btn-dark mr-2 mt-2">{{$record['period_assigned']}}</a>
       @endif
       @if(isset($record['themes']))
         @foreach($record['themes'] as $th)
-          <a href="/objects-and-artworks/highlights/themes/{{$th}}" class="btn btn-dark mr-2 mt-2">{{str_replace('-',' ',$th)}}</a>
+          <a href="{{route('theme', [$th]) }}" class="btn btn-dark mr-2 mt-2">{{str_replace('-',' ',$th)}}</a>
         @endforeach
       @endif
     </div>

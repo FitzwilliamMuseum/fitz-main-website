@@ -18,25 +18,13 @@
     <h2 class="lead">Factsheets by topic</h2>
     <div class="row">
       @foreach($res['data'] as $resource)
-      <div class="col-md-4 mb-3">
-        <div class="card  h-100">
-          @if(!is_null($resource['hero_image']))
-            <a href="{{ route('learning-resource', $resource['slug']) }}"><img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="A highlight image for {{ $resource['title'] }}"
-            width="{{ $resource['hero_image']['data']['thumbnails'][4]['width'] }}"
-            height="{{ $resource['hero_image']['data']['thumbnails'][4]['height'] }}"
-            loading="lazy"/></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead">
-                <a href="{{ route('learning-resource', $resource['slug']) }}">{{ $resource['title'] }}</a>
-              </h3>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        <x-image-card
+        :image="$resource['hero_image']"
+        :route="'learning-resource'"
+        :params="[$resource['slug']]"
+        :title="$resource['title']"
+        :altTag="$resource['hero_image_alt_text']"
+        />
       @endforeach
     </div>
   </div>
@@ -47,25 +35,13 @@
     <h2 class="lead">DIY and Into Action</h2>
     <div class="row">
       @foreach($stages['data'] as $resource)
-      <div class="col-md-4 mb-3">
-        <div class="card  h-100">
-          @if(!is_null($resource['hero_image']))
-            <a href="{{ route('learning-resource', $resource['slug']) }}"><img class="img-fluid" src="{{ $resource['hero_image']['data']['thumbnails'][4]['url']}}"
-            alt="{{ $resource['hero_image_alt_text'] }}"
-            height="{{ $resource['hero_image']['data']['thumbnails'][4]['height'] }}"
-            width="{{ $resource['hero_image']['data']['thumbnails'][4]['width'] }}"
-            loading="lazy"/></a>
-          @endif
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3 class="lead">
-                <a href="{{ route('learning-resource', $resource['slug']) }}">{{ $resource['title']}}</a>
-              </h3>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        <x-image-card
+        :image="$resource['hero_image']"
+        :route="'learning-resource'"
+        :params="[$resource['slug']]"
+        :title="$resource['title']"
+        :altTag="$resource['hero_image_alt_text']"
+        />
       @endforeach
     </div>
   </div>

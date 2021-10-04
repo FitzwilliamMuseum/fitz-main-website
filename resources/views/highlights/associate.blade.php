@@ -30,7 +30,9 @@
   @if(!empty($highlights))
     @section('highlight')
       <div class="container">
-        <h3 class="lead">Other highlight objects you might like</h3>
+        <h3 class="lead">
+          Other highlight objects you might like
+        </h3>
         <div class="row">
           @foreach($highlights as $record)
             <x-solr-card :result="$record" />
@@ -42,7 +44,9 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3 class="lead">Other pathways and stories you might like</h3>
+    <h3 class="lead">
+      Other pathways and stories you might like
+    </h3>
     <div class="row">
       @foreach($records as $record)
       <x-solr-card :result="$record" />

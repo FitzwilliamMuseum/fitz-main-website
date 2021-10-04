@@ -95,7 +95,7 @@ class learningController extends Controller
   public function session($slug)
   {
     $session = SchoolSessions::find($slug);
-    $records = FindMoreLikeThis::find($slug, 'schoolsessions');
+    $records = FindMoreLikeThis::find($slug, 'school_sessions');
     return view('learning.session', compact('session','records'));
   }
 
