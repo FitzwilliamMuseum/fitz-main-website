@@ -4,27 +4,14 @@
 <div class="container">
   <h3 class="lead">Associated Research Projects</h3>
   <div class="row">
-    @foreach($area['associated_research'] as $project)
-    <div class="col-md-4 mb-3">
-      <div class="card  h-100 ">
-        @if(!is_null($project['research_projects_id']['hero_image']))
-        <div class="embed-responsive embed-responsive-4by3">
-          <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['url']}}"
-          width="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['width'] }}"
-          height="{{ $project['research_projects_id']['hero_image']['data']['thumbnails'][4]['height'] }}"
-          alt="{{ $project['research_projects_id']['hero_image_alt_text'] }}"
-          loading="lazy"/></a>
-        </div>
-        @endif
-        <div class="card-body">
-          <div class="contents-label mb-3">
-            <h3 class="lead">
-              <a href="{{ route('research-project', $project['research_projects_id']['slug']) }}">{{ $project['research_projects_id']['title']}}</a>
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
+    @foreach($area['associated_research'] as $area)
+      <x-image-card
+      :image="$area['research_projects_id']['hero_image']"
+      :altTag="$area['research_projects_id']['hero_image']['hero_image_alt_text']"
+      :route="'research-project'"
+      :params="[$area['research_projects_id']['slug']]"
+      :title="$area['research_projects_id']['title']"
+      />
     @endforeach
   </div>
 </div>

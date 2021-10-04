@@ -10,6 +10,8 @@ use App\Models\Stubs;
 use App\Models\FindMoreLikeThis;
 use App\Models\CIIM;
 use App\Models\PodcastArchive;
+use App\Models\Cases;
+use App\Models\Labels;
 
 class exhibitionsController extends Controller
 {
@@ -45,10 +47,24 @@ class exhibitionsController extends Controller
     if(!empty($exhibitions['data'][0]['podcasts'] )){
       $podcasts = PodcastArchive::find($exhibitions['data'][0]['podcasts'][0]['podcast_series_id']['id']);
     }
+    $cases = Cases::find($exhibitions['data'][0]['id']);
     if(empty($exhibitions['data'])){
       return response()->view('errors.404',[],404);
     }
-    return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts'));
+    return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases'));
+  }
+
+  public function labels(Request $request)
+  {
+    $labels = Labels::list($request->segment(5));
+    $title = str_replace('-',' ', $request->segment(5));
+    return view('exhibitions.labels', compact('labels', 'title'));
+  }
+
+  public function label($slug)
+  {
+    $labels = Labels::find($slug);
+    return view('exhibitions.label', compact('labels'));
   }
 
   public static function injectImmunity()
