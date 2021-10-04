@@ -67,6 +67,12 @@ class exhibitionsController extends Controller
     return view('exhibitions.label', compact('labels'));
   }
 
+  public function cases($slug)
+  {
+    $cases = Cases::find($slug);
+    return view('exhibitions.cases', compact('cases'));
+  }
+
   public static function injectImmunity()
   {
     return Exhibitions::immunity();

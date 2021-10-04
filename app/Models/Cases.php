@@ -25,7 +25,7 @@ class Cases extends Model
     return $api->getData();
   }
 
-  public static function find(string $id)
+  public static function find($slug)
   {
     $api = new DirectUs;
     $api->setEndpoint('mo_labels');
@@ -34,8 +34,7 @@ class Cases extends Model
           'fields' => '*.*.*.*',
           'meta' => '*',
           'sort' => 'id',
-          'filter[related_exhibition.exhibitions_id][in]' => $id
-
+          'filter[related_exhibition.exhibitions_id.slug][eq]' => $slug
       )
     );
     return $api->getData();

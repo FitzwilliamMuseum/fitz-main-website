@@ -59,6 +59,7 @@ Route::get('visit-us/exhibitions/archive', 'exhibitionsController@archive')->nam
 Route::get('visit-us/exhibitions/future', 'exhibitionsController@future')->name('future');
 Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details')->name('exhibition');
 Route::get('visit-us/exhibitions/{exhibition}/cases/{slug}', 'exhibitionsController@labels')->name('exhibition.labels');
+Route::get('visit-us/exhibitions/{exhibition}/cases/', 'exhibitionsController@cases')->name('exhibition.cases');
 Route::get('visit-us/exhibitions/labels/{slug}', 'exhibitionsController@label')->name('exhibition.label');
 
 /*
