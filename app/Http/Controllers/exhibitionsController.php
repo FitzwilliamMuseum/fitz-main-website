@@ -47,7 +47,7 @@ class exhibitionsController extends Controller
     if(!empty($exhibitions['data'][0]['podcasts'] )){
       $podcasts = PodcastArchive::find($exhibitions['data'][0]['podcasts'][0]['podcast_series_id']['id']);
     }
-    $cases = Cases::find($exhibitions['data'][0]['id']);
+    $cases = Cases::list($exhibitions['data'][0]['id']);
     if(empty($exhibitions['data'])){
       return response()->view('errors.404',[],404);
     }

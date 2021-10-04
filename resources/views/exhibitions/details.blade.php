@@ -69,7 +69,7 @@
       @section('exhibitionAudio')
         <div class="container-fluid bg-gdbo py-2 mb-2">
           <div class="container">
-            <h3 class="lead">Audio and labels</h3>
+            <h3 class="lead">Audio</h3>
             <div class="row">
             @foreach($podcasts['data'] as $podcast)
               <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['title']"

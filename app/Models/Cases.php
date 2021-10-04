@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cache;
 
 class Cases extends Model
 {
-  public static function list()
+  public static function list($id)
   {
     $api = new DirectUs;
     $api->setEndpoint('mo_labels');
@@ -19,7 +19,8 @@ class Cases extends Model
       $args = array(
           'fields' => '*.*.*.*',
           'meta' => '*',
-          'sort' => '-title',
+          'sort' => 'id',
+          'filter[related_exhibition.exhibitions_id][eq]' => $id
       )
     );
     return $api->getData();
