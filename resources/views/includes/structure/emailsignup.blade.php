@@ -1,4 +1,4 @@
-<div class="container-fluid justify-content-center bg-white mt-3 p-3">
+<div class="container-fluid justify-content-center bg-white p-3">
   <div class="col-md-12 mx-auto">
     <div class="col-md-6 mx-auto">
       <div class="btn-sign rounded-left rounded-right">
