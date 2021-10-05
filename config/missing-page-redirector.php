@@ -31,6 +31,7 @@ return [
       '/visit2' => '/visit-us',
       '/visit/cafe' => '/visit-us/shopping-and-eating',
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
+      '/visit-us/exhibitions/labels' => '/visit-us/exhibitions/',
       # About
       '/aboutus' => '/about-us',
       '/aboutus/mission' => '/about-us/our-mission',
