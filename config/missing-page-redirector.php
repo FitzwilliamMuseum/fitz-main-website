@@ -29,11 +29,14 @@ return [
       # Visiting
       '/visit' => '/visit-us',
       '/visit2' => '/visit-us',
+      '/visit/shop' => 'https://curatingcambridge.co.uk',
       '/visit/cafe' => '/visit-us/shopping-and-eating',
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       '/visit-us/exhibitions/labels' => '/visit-us/exhibitions/',
+      '/visit/closuresandupdates' => '/visit-us/gallery-closures-and-collection-updates',
       # About
       '/aboutus' => '/about-us',
+      '/aboutus/imagelibrary' => '/commercial-services/image-library',
       '/aboutus/mission' => '/about-us/our-mission',
       '/aboutus/museumhistory/old' => '/about-us/history-of-the-building-and-collections',
       '/aboutus/history' => '/about-us/history-of-the-building-and-collections',
@@ -109,6 +112,9 @@ return [
       '/gallery/nightoflonging/furtherreading/{url}' =>  'https://nightoflonging.fitzmuseum.cam.ac.uk/further-reading/',
       '/gallery/nightoflonging/loveletters/{url}' => 'https://nightoflonging.fitzmuseum.cam.ac.uk/explore/love-letters/',
         # Rebinding manuscripts
+      '/gallery/utc' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
+      '/gallery/utc/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
+        # Colour illuminated
       '/utc/' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/',
       '/utc/{url}' => 'https://colour-illuminated.fitzmuseum.cam.ac.uk/rebinding/{url}',
         # Colour illuminated

@@ -14,6 +14,7 @@ use App\Models\LearningPages;
 use App\Models\StoryTelling;
 use App\Models\GalleryFamilyActivities;
 use App\Models\SchoolSessions;
+use App\Models\StaffProfiles;
 
 class learningController extends Controller
 {
