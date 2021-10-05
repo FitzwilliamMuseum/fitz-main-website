@@ -1,9 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 @foreach($period['data'] as $detail)
-  @section('title')
-   @markdown($detail['title'])
-  @endsection
+  @section('title', $detail['title'])
   @if(array_key_exists('meta_description', $detail))
     @section('description', $detail['meta_description'])
   @endif

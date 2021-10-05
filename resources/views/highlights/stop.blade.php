@@ -3,15 +3,10 @@
 @foreach($stop['data'] as $record)
   @section('keywords', $record['meta_keywords'])
   @section('description', $record['meta_description'])
-  @section('title')
-  Audio guide:  @markdown($record['title'])
-  @endsection
+  @section('title', 'Audio guide: ' . $record['title'])
   @section('hero_image', $record['hero_image']['data']['url'])
   @section('hero_image_title', $record['hero_image_alt_text'])
-
-
   @section('content')
-
   <h2 class="lead">Audio guide stop: {{ $record['stop_number'] }}</h2>
 
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
