@@ -16,6 +16,7 @@
           :params="[$record['slug']]"
           :stop="$record['stop_number']"
           :title="$record['title']"
+          :altTag="$record['hero_image_alt_text']"
           />
         @endforeach
       </div>
