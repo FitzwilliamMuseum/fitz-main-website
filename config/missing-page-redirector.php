@@ -188,7 +188,7 @@ return [
       '/gallery/afrocombs/{url}' => 'https://afrocombs.fitzmuseum.cam.ac.uk/{url}',
       # Things of beauty
       '/thingsofbeautygrowing' => 'https://thingsofbeautygrowing.fitzmuseum.cam.ac.uk',
-      '/thingsofbeautygrowing/{url}' => 'https://thingsofbeautygrowing.fitzmuseum.cam.ac.uk/{url}',
+      '/thingsofbeautygrowing/{url}' => 'https://thingsofbeautygrowing.fitzmuseum.cam.ac.uk/explore/{url}',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
