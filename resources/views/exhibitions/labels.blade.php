@@ -27,4 +27,9 @@
     </div>
   </div>
 </div>
+<div class="container mt-1 p-2 text-center">
+  <nav aria-label="Page navigation" >
+    {{ $paginator->links('includes.structure.case-pagination')->withPath('/boom/case-')}}
+  </nav>
+</div>
 @endsection

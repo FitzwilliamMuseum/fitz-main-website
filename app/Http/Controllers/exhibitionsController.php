@@ -58,10 +58,11 @@ class exhibitionsController extends Controller
   {
     $labels = Labels::list($request->segment(5));
     $title = str_replace('-',' ', $request->segment(5));
-    return view('exhibitions.labels', compact('labels', 'title'));
+    $paginator = Cases::paginator($request);
+    return view('exhibitions.labels', compact('labels', 'title', 'paginator'));
   }
 
-  public function label($slug)
+  public function label(Request $request, string $slug)
   {
     $labels = Labels::find($slug);
     return view('exhibitions.label', compact('labels'));
@@ -70,6 +71,7 @@ class exhibitionsController extends Controller
   public function cases($slug)
   {
     $cases = Cases::find($slug);
+
     return view('exhibitions.cases', compact('cases'));
   }
 

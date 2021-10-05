@@ -26,6 +26,28 @@ class Cases extends Model
     return $api->getData();
   }
 
+  public static function paginator(Request $request)
+  {
+    $page = str_replace('case-', '',$request->segment(5));
+    $perPage = 1;
+    $offset = ($request->page -1) * $perPage ;
+    $api = new DirectUs;
+    $api->setEndpoint('mo_labels');
+    $api->setArguments(
+      $args = array(
+          'fields' => '*.*.*.*',
+          'meta' => '*',
+          'limit' => $perPage,
+          'offset' => $offset,
+          'sort' => 'id',
+      )
+    );
+    $cases = $api->getData();
+    $total = $cases['meta']['total_count'];
+    $paginator = new LengthAwarePaginator($cases, $total, $perPage, $page);
+    return $paginator;
+  }
+
   public static function find($slug)
   {
     $api = new DirectUs;
