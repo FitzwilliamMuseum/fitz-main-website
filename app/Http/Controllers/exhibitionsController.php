@@ -65,7 +65,8 @@ class exhibitionsController extends Controller
   public function label(Request $request, string $slug)
   {
     $labels = Labels::find($slug);
-    return view('exhibitions.label', compact('labels'));
+    $records = FindMoreLikeThis::find($slug, 'highlights');
+    return view('exhibitions.label', compact('labels', 'records'));
   }
 
   public function cases($slug)
