@@ -29,7 +29,8 @@ class jekyllController extends Controller
     'beyondthelabel',
     'afrocombs',
     'inspire2020',
-    'sevenheadsofgogmagog'
+    'sevenheadsofgogmagog',
+    'thingsofbeautygrowing'
   );
 
   protected $_baseurl = '.fitzmuseum.cam.ac.uk/data.json';
