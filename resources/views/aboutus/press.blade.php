@@ -19,7 +19,7 @@
     @foreach($press['data'] as $release)
     <div class="col-md-4 mb-3">
 
-      <div class="card h-100">
+      <div class="card card-fitz h-100">
 
         @if(!is_null($release['hero_image']))
           <img class="img-fluid" src="{{ $release['hero_image']['data']['thumbnails'][4]['url']}}"

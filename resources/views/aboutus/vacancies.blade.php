@@ -11,7 +11,7 @@
     <div class="row">
       @foreach($vacancies['data'] as $vacancy)
       <div class="col-md-4 mb-3">
-        <div class="card  h-100">
+        <div class="card  card-fitz h-100">
           @if(!is_null($vacancy['hero_image']))
             <a href="{{ route('vacancy', $vacancy['slug'])}}"><img class="img-fluid"
               src="{{ $vacancy['hero_image']['data']['thumbnails'][4]['url']}}"
