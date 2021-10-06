@@ -392,7 +392,7 @@ return [
       '/conservd' => '/research/projects/conservd',
       '/research/grr' => '/visit-us/galleries/gallery-9',
       '/research/mec' => '/research/projects/medieval-european-coinage',
-
+      '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',
