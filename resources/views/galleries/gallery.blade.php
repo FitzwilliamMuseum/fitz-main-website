@@ -101,7 +101,7 @@
             <div id="panorama"></div>
           </div>
         </div>
-        @section('360_image', $gallery['image_360_pano']['data']['full_url']))
+        @section('360_image', $gallery['image_360_pano']['data']['full_url'])
       @endif
     @endsection
 
