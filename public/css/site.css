@@ -892,7 +892,7 @@ a.free_ticket  {
   height: auto;
 }
 img.results_image__thumbnail {
-  width: 348px;
+  width: 100%;
   object-fit: cover;
 }
 .insta-wrap {
