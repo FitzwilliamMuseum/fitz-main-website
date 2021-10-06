@@ -14,7 +14,7 @@
 .steppe {
   min-height: 400px;
   background-color: black;
-  background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-compressed-smaller.jpg');
+  background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-knife-sheath.jpg');
   background-repeat:no-repeat;
 background-size:contain;
 background-position:center;
