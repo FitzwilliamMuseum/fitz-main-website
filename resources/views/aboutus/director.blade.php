@@ -10,11 +10,9 @@
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
       @if(!is_null($director['hero_image']))
         <figure class="figure">
-          <img src="{{ $director['hero_image']['data']['thumbnails']['5']['url'] }}"
+          <img src="{{ $director['hero_image']['data']['url'] }}"
           alt="{{$director['hero_image_alt_text']}}" class="img-fluid "
-          width="{{ $director['hero_image']['data']['thumbnails']['5']['width'] }}"
-          height="{{ $director['hero_image']['data']['thumbnails']['5']['height'] }}"
-          loading="lazy"
+          loading="lazy"  class="img-fluid"
           />
           <figcaption class="figure-caption text-right">{{$director['hero_image_alt_text']}}</figcaption>
         </figure>
