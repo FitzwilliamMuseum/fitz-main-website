@@ -8,7 +8,13 @@
 @section('content')
   <div class="row">
       @foreach($profiles['data'] as $profile)
-        <x-image-card :altTag="$profile['profile_image_alt_text'] " :title="$profile['display_name']"  :image="$profile['profile_image']" :route="'research-profile'" :params="[$profile['slug']]" />
+        <x-image-card
+        :altTag="$profile['profile_image_alt_text']"
+        :title="$profile['display_name']"
+        :image="$profile['profile_image']"
+        :route="'research-profile'"
+        :params="[$profile['slug']]"
+        />
       @endforeach
   </div>
 @endsection

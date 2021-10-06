@@ -12,7 +12,8 @@
   @endif
 
   @section('content')
-    <div class=" mb-3">
+    <div class="bg-white p-3">
+    <div class="mb-3">
       @if(!is_null($profile['profile_image']))
       <div class="img-fluid float-right p-3">
           <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
@@ -46,7 +47,7 @@
         </p>
       @endisset
     </div>
-
+</div>
   @endsection
 
   @if(!empty($profile['publications']))
@@ -152,6 +153,7 @@
         </div>
       </div>
     </div>
+
     @endsection
   @endif
 
@@ -178,7 +180,13 @@
         <h3 class="lead">Associated Departments</h3>
         <div class="row">
           @foreach($profile['departments_affiliated'] as $department)
-            <x-image-card :altTag="$department['department']['hero_image_alt_text'] " :title="$department['department']['title']"  :image="$department['department']['hero_image']" :route="'department'" :params="[$department['department']['slug']]" />
+            <x-image-card
+            :altTag="$department['department']['hero_image_alt_text']"
+            :title="$department['department']['title']"
+            :image="$department['department']['hero_image']"
+            :route="'department'"
+            :params="[$department['department']['slug']]"
+            />
           @endforeach
         </div>
       </div>
@@ -188,14 +196,22 @@
 
   @if(!empty($profile['exhibitions_curated']))
     @section('exhibitions-curated')
+    <div class="container-fluid bg-pastel p-3">
     <div class="container">
       <h3 class="lead">Associated Exhibitions</h3>
       <div class="row">
         @foreach($profile['exhibitions_curated'] as $exhibition)
-          <x-image-card :altTag="$exhibition['exhibition']['hero_image_alt_text'] " :title="$exhibition['exhibition']['exhibition_title']"  :image="$exhibition['exhibition']['hero_image']" :route="'exhibition'" :params="[$exhibition['exhibition']['slug']]" />
+          <x-image-card
+          :altTag="$exhibition['exhibition']['hero_image_alt_text']"
+          :title="$exhibition['exhibition']['exhibition_title']"
+          :image="$exhibition['exhibition']['hero_image']"
+          :route="'exhibition'"
+          :params="[$exhibition['exhibition']['slug']]"
+          />
         @endforeach
       </div>
     </div>
+  </div>
     @endsection
   @endif
 
