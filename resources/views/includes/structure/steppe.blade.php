@@ -12,11 +12,12 @@
 </div>
 <style>
 .steppe {
-  min-height: 600px;
-  background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-compressed.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  min-height: 400px;
+  background-color: black;
+  background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-compressed-smaller.jpg');
+  background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
 }
 .steppe-link {
   border-bottom: 2px solid currentColor;
