@@ -35,7 +35,7 @@
 
   @include('includes.elements.book')
 
-  <div class="container">
+  <div class="container-fluid py-3 bg-dark">
       @yield('content')
   </div>
 

@@ -26,10 +26,10 @@
   </div>
 </div>
 
-<div class="container-fluid bg-gdbo">
+<div class="container-fluid bg-gdbo py-3 ">
 
   <div class="container">
-    <div class="mb-3 col-md-12 p-3" >
+    <div class="col-md-12 p-3 bg-white">
     <h3 class="text-black mt-3 lead">COVID 19 Measures</h3>
 
     <p class="text-black">

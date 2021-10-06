@@ -1,6 +1,6 @@
 <div class="container-fluid py-3 bg-pastel">
   <div class="container">
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class="col-12 shadow-sm p-3 mx-auto">
       <div class="row">
         @foreach ($corona['data'] as $cor)
           <div class="col-md-6 mt-3">
