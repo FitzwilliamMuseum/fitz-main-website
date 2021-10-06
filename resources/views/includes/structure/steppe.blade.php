@@ -16,8 +16,13 @@
   background-color: black;
   background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-knife-sheath.jpg');
   background-repeat:no-repeat;
-background-size:contain;
-background-position:center;
+  background-size:contain;
+  background-position:center;
+}
+@media screen and (max-width: 440px) {
+  .steppe {
+    min-height: 200px;
+  }
 }
 .steppe-link {
   border-bottom: 2px solid currentColor;
