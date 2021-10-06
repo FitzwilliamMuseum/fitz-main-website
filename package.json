@@ -26,7 +26,7 @@
         "ssri": ">=8.0.1",
         "vue-template-compiler": "^2.6.12",
         "websocket-extensions": ">=0.1.4",
-        "url-parse": ">=1.5.0",
+        "url-parse": ">=1.5.2",
         "postcss": ">=8.2.10",
         "nth-check": ">=2.0.1"
     }
