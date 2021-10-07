@@ -20,6 +20,9 @@
             width="{{ $vacancy['hero_image']['data']['thumbnails'][4]['width'] }}"
             loading="lazy"/></a>
           @endif
+          @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
+            @include('includes.structure.jobexpired')
+          @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
               <h3 class="lead">
@@ -29,9 +32,7 @@
               @if(isset($vacancy['salary_range']))
                 <p class="text-danger">£ {{ $vacancy['salary_range'] }}</p>
               @endif
-              @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
-                @include('includes.structure.jobexpired')
-              @endif
+
             </div>
           </div>
         </div>

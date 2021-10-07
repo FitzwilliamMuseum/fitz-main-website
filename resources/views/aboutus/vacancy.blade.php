@@ -18,6 +18,9 @@
     @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
       @include('includes.structure.jobexpired')
     @endif
+    @if(isset($vacancy['salary_range']))
+      <p class="text-danger">£ {{ $vacancy['salary_range'] }}</p>
+    @endif
     @markdown($vacancy['job_description'])
     <p class="text-info lead">Closing date: <strong>{{  Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</strong></p>
     @isset($vacancy['job_pack'])
