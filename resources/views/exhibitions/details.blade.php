@@ -249,9 +249,12 @@
                   <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
                   <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+                  @if(array_key_exists('image_four_alt_text',$coll['exhibition_carousel'][0]['carousels_id']))
+                    <li data-target="#carouselExampleCaptions" data-slide-to="3" class=""></li>
+                  @endif
                 </ol>
                 <div class="carousel-inner">
-                  <div class="carousel-item">
+                  <div class="carousel-item active">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one']['data']['thumbnails'][9]['url'] }}" >
                     <div class="carousel-caption w-100 d-none d-md-block text-white bg-black exhibition-carousel">
                       <h5 class="text-black">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one_alt_text'] }}</h5>
@@ -263,12 +266,20 @@
                       <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_two_alt_text'] }}</h5>
                     </div>
                   </div>
-                  <div class="carousel-item active">
+                  <div class="carousel-item ">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three']['data']['thumbnails'][9]['url'] }}" >
                     <div class="carousel-caption  d-none d-md-block text-white bg-black exhibition-carousel">
                       <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_three_alt_text'] }}</h5>
                     </div>
                   </div>
+                  @if(array_key_exists('image_four_alt_text',$coll['exhibition_carousel'][0]['carousels_id']))
+                  <div class="carousel-item ">
+                    <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_four_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_four']['data']['thumbnails'][9]['url'] }}" >
+                    <div class="carousel-caption  d-none d-md-block text-white bg-black exhibition-carousel">
+                      <h5>{{ $coll['exhibition_carousel'][0]['carousels_id']['image_four_alt_text'] }}</h5>
+                    </div>
+                  </div>
+                  @endif
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
