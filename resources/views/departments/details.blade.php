@@ -53,7 +53,7 @@
   @endif
 @endsection
 
-@if(!empty($staff))
+@if(!empty($staff['data']))
   @section('curators')
     <div class="container">
       <h3 class="lead">Associated staff</h3>
