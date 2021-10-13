@@ -4,7 +4,7 @@
       <a href="{{ $url }}">
         <img class="card-img-top" src="{{ $image['data']['thumbnails'][3]['url']}}"
         alt="{{ $altTag }}"
-        loading="lazy" />
+        loading="lazy" width="{{ $image['data']['thumbnails'][3]['width'] }}"/>
       </a>
     @else
       <a href="{{ $url }}">
