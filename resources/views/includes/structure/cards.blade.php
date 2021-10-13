@@ -7,7 +7,8 @@
 <div class="col-md-{{$card}} mb-3">
   <div class="card h-100 ">
     @if(!is_null($data['hero_image']))
-      <a href="{{ route('landing-section', [$data['section'],$data['slug']]) }}"><img class="img-fluid" src="{{ $data['hero_image']['data']['thumbnails'][2]['url']}}"
+      <a href="{{ route('landing-section', [$data['section'],$data['slug']]) }}">
+        <img class="card-img-top" src="{{ $data['hero_image']['data']['thumbnails'][2]['url']}}"
       alt="{{ $data['hero_image_alt_text']}}" loading="lazy"
       width="{{ $data['hero_image']['data']['thumbnails'][2]['width'] }}"/></a>
     @endif
