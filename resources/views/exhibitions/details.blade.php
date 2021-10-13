@@ -203,6 +203,7 @@
 
     @if(!empty($coll['exhibition_partners'] ))
       @section('research-funders')
+      <div class="container-fluid py-3">
         <div class="container">
           <h3 class="lead">Funders and partners</h3>
           <div class="row">
@@ -216,6 +217,7 @@
             @endforeach
           </div>
         </div>
+      </div>
       @endsection
     @endif
 
