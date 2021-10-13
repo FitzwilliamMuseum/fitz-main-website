@@ -14,10 +14,10 @@
         height="{{ $record['image']['height'] }}"
         width="{{ $record['image']['width'] }}"
         />
-        <figcaption class="figure-caption text-right">{{$record['image_alt_text']}}</figcaption>
+        <figcaption class="figure-caption text-info text-right">{{$record['image_alt_text']}}</figcaption>
       </figure>
     </div>
-    <div class="p-3 mx-auto mb-3">
+    <div class="p-3 mx-auto mb-3 shadow-sm">
       @markdown($record['description'])
     </div>
 

@@ -39,12 +39,16 @@
 
   <div class="container mt-3">
     @include('includes.structure.breadcrumb')
+  </div>
+  <div class="container-fluid bg-white py-3">
+    <div class="container">
     @yield('press-contact')
     @yield('content')
 
     @yield('adlib')
     @yield('timeline')
-  </div>
+    </div>
+ </div>
 
 
   @hasSection('collection-parallax')
