@@ -22,7 +22,7 @@ class exhibitionsController extends Controller
     $current  = Exhibitions::list($status = 'current');
     $displays = Exhibitions::list('current','-ticketed', 'display', 100);
     $future   = Exhibitions::listFuture('future');
-    $archive  = Exhibitions::list($status =  'archived', '-exhibition_end_date', 'exhibition', $limit = 3);
+    $archive  = Exhibitions::archive('archived', '-exhibition_end_date', $limit = 3);
     return view('exhibitions.index', compact(
       'current', 'pages', 'archive',
       'future', 'displays'

@@ -15,7 +15,7 @@ class Exhibitions extends Model
             'fields' => '*.*.*.*',
             'filter[exhibition_status][eq]' => $status,
             'filter[type][eq]' => $type,
-            'meta' => 'result_count,total_count,type',
+            'meta' => '*',
             'sort' => $sort,
             'limit' => $limit
         )
