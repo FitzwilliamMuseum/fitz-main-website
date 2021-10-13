@@ -8,9 +8,11 @@
   @section('hero_image_title', $dept['hero_image_alt_text'])
 
   @section('content')
+  <div class="shadow-sm">
     <div class="p-3 mx-auto mb-3">
       @markdown($dept['body'])
     </div>
+  </div>
   @endsection
   @if(Route::currentRouteName() == 'conservation-care')
       @inject('departmentsController', 'App\Http\Controllers\departmentsController')

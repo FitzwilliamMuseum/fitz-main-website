@@ -7,10 +7,9 @@
 <div class="col-md-{{$card}} mb-3">
   <div class="card h-100 ">
     @if(!is_null($data['hero_image']))
-      <a href="{{ route('landing-section', [$data['section'],$data['slug']]) }}"><img class="img-fluid" src="{{ $data['hero_image']['data']['thumbnails'][4]['url']}}"
+      <a href="{{ route('landing-section', [$data['section'],$data['slug']]) }}"><img class="img-fluid" src="{{ $data['hero_image']['data']['thumbnails'][2]['url']}}"
       alt="{{ $data['hero_image_alt_text']}}" loading="lazy"
-      width="{{ $data['hero_image']['data']['thumbnails'][4]['width'] }}"
-      height="{{ $data['hero_image']['data']['thumbnails'][4]['height'] }}"/></a>
+      width="{{ $data['hero_image']['data']['thumbnails'][2]['width'] }}"/></a>
     @endif
     <div class="card-body h-100">
       <div class="contents-label mb-3">

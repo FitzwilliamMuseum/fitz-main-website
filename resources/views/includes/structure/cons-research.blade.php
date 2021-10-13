@@ -7,7 +7,7 @@
     @foreach($area['associated_research'] as $area)
       <x-image-card
       :image="$area['research_projects_id']['hero_image']"
-      :altTag="$area['research_projects_id']['hero_image']['hero_image_alt_text']"
+      :altTag="$area['research_projects_id']['hero_image_alt_text']"
       :route="'research-project'"
       :params="[$area['research_projects_id']['slug']]"
       :title="$area['research_projects_id']['title']"
