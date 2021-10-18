@@ -31,10 +31,10 @@ class podcastsController extends Controller
   {
     $ids = PodcastSeries::getSeriesID($slug);
     $podcasts = PodcastArchive::find($ids['data'][0]['id']);
-    if(empty($podcasts['data'])){
+    if(empty($ids['data'])){
       return response()->view('errors.404',[],404);
     }
-    return view('podcasts.series', compact('podcasts'));
+    return view('podcasts.series', compact('podcasts', 'ids'));
   }
 
   public function episode($slug)
