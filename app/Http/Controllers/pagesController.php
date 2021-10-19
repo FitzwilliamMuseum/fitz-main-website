@@ -18,7 +18,7 @@ class pagesController extends Controller
   public function index($section, $slug)
   {
     $pages = Stubs::getPage($section, $slug);
-    $records = FindMoreLikeThis::find($slug, 'page');
+    $records = FindMoreLikeThis::find($slug, 'pages');
     if(empty($pages['data'])){
       return response()->view('errors.404',[],404);
     }
