@@ -6,6 +6,13 @@
 @section('description', 'The Fitzwilliam Museum runs a rich programme of events')
 @section('keywords','events,fitzwilliam')
 
+<div class="alert alert-info mb-3 text-center">
+  For assistance with booking and ticketing enquiries, please contact us.<br />
+  @fa('envelope'): <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a> @fa('phone'): +44 (0)1223 333 320
+  <br />
+  Available 10:00 - 17:00 Tuesday to Saturday, 12:00 - 17:00 Sunday, closed Monday.
+
+</div>
   <div class="container">
 
     <h2 class="text-center mb-3 lead">What would you like to attend?</h2>

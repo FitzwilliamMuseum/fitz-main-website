@@ -10,6 +10,7 @@
 @endif
     <!-- Canonical link -->
     <link rel="canonical" href="{{ URL::current() }}" />
+    <link rel="shortcut icon" href="{{secure_url('/')}}favicon.ico">
 
     <!-- Open graph -->
     <meta property="og:locale" content="{{ app()->getLocale() }}" />
@@ -64,12 +65,4 @@
       "name":"The Fitzwilliam Museum",
       "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
       "@context":"https://schema.org"}
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
     </script>
