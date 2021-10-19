@@ -76,7 +76,7 @@ class DirectUs {
     $url = $this->getDirectUsUrl() . $this->getEndPoint() . $this->buildQuery();
     // dd($url);
     $key = md5($url);
-    $expiresAt = now()->addMinutes(60);
+    $expiresAt = now()->addMinutes(20);
     if (Cache::has($key)) {
       $data = Cache::get($key);
     } else {

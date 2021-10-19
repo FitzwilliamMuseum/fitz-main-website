@@ -313,7 +313,7 @@ class TessituraApi {
       public function getProduction(string $id = '')
       {
         $key = md5($id . 'production');
-        $expiresAt = now()->addMinutes(60);
+        $expiresAt = now()->addMinutes(20);
         if (Cache::has($key)) {
           $data = Cache::get($key);
         } else {
