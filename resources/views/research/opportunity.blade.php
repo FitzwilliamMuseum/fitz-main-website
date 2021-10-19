@@ -7,7 +7,7 @@
     @section('hero_image_title', $opp['hero_image_alt_text'])
   @endif
   @section('content')
-    <div class="p-3 mx-auto mb-3">
+    <div class="shadow-sm p-3 mx-auto mb-3">
       {!! $opp['description'] !!}
     </div>
   @endsection
