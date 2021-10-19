@@ -42,7 +42,9 @@
           Trumpington Street,<br/>
           Cambridge<br/>
           CB2 1RB<br/>
-          Tel: +44 (0)1223 332900<br />
+          Switchboard: +44 (0)1223 332 900<br />
+          Box office: +44 (0)1223 333 230<br/>
+          <a href="mailto:tickets@fitzmuseum.cam.ac.uk">tickets@fitzmuseum.cam.ac.uk</a></br>
           What3Words: <span class="w3w"><a
             href="https://map.what3words.com/lofts.puzzle.given"
             aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
