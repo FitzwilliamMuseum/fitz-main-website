@@ -171,13 +171,13 @@
           <div class="col-md-4 mb-3">
             <div class="card h-100">
               @if(!is_null($record['searchImage']))
-                <img class="img-fluid " src="{{ $record['searchImage'][0]}}"
-                alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+                <a href="{{ $record['url'][0] }}"><img class="card-img-top " src="{{ $record['searchImage'][0]}}"
+                alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
               @endif
               <div class="card-body ">
                 <div class="contents-label mb-3">
                   <h3 class="lead">
-                    <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
+                    <a href="{{ $record['url'][0] }}" class="stretched-link">{{ $record['title'][0] }}</a>
                   </h3>
                 </div>
               </div>
