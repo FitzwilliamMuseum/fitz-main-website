@@ -50,3 +50,10 @@ $('.popover-dismiss').popover({
 })
 </script>
 <script src="/js/panels.js" type="text/javascript"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
+</script>
