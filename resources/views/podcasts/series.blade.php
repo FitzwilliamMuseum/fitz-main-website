@@ -67,3 +67,30 @@
       </div>
     @endsection
   @endif
+
+  @if(!empty($suggest))
+    @section('mlt')
+      <div class="container">
+        <h3 class="lead">Other podcast series you might like</h3>
+        <div class="row">
+          @foreach($suggest as $record)
+            <div class="col-md-4 mb-3">
+              <div class="card h-100">
+                @if(!is_null($record['searchImage']))
+                  <a href="{{ $record['url'][0] }}"><img class="card-img-top " src="{{ $record['searchImage'][0]}}"
+                  alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/></a>
+                @endif
+                <div class="card-body ">
+                  <div class="contents-label mb-3">
+                    <h3 class="lead">
+                      <a href="{{ $record['url'][0] }}" class="stretched-link">{{ $record['title'][0] }}</a>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </div>
+    @endsection
+  @endif

@@ -35,8 +35,8 @@ class podcastsController extends Controller
       return response()->view('errors.404',[],404);
     }
     $podcasts = PodcastArchive::find($ids['data'][0]['id']);
-
-    return view('podcasts.series', compact('podcasts', 'ids'));
+    $suggest = FindMoreLikeThis::find($slug, 'podcast_series');
+    return view('podcasts.series', compact('podcasts', 'ids', 'suggest'));
   }
 
   public function episode($slug)
