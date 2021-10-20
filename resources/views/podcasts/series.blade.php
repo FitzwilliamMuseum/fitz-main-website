@@ -29,7 +29,7 @@
   @if(!empty($ids['data'][0]['partners']))
     @section('research-funders')
       <div class="container">
-        <h4 class="lead">Funders and partners</h4>
+        <h4 class="lead">Partners</h4>
         <div class="row">
           @foreach($ids['data'][0]['partners'] as $partner)
             <x-partner-card
