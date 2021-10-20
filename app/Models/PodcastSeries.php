@@ -12,7 +12,7 @@ class PodcastSeries extends Model
       $api->setEndpoint('podcast_series');
       $api->setArguments(
         $args = array(
-          'fields' => '*.*.*.*',
+          'fields' => '*.*.*.*.*.*',
           'meta' => '*',
           'sort' => '-id'
         )

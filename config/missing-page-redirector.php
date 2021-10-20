@@ -398,7 +398,9 @@ return [
       '/visit' => '/visit-us',
       '/visit/{url}' => '/visit-us/{url}',
       # feeds
-      '/news/feed/' => '/feeds/news/'
+      '/news/feed/' => '/feeds/news/',
+      # podcasts
+      '/conversations/podcasts/episode' => '/conversations/podcasts/'
     ],
 
 ];

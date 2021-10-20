@@ -12,6 +12,7 @@ use App\Models\CIIM;
 use App\Models\MindsEye;
 use App\Models\PodcastSeries;
 use App\Models\PodcastArchive;
+use App\Models\AssociatedPeople;
 
 class podcastsController extends Controller
 {
@@ -30,10 +31,11 @@ class podcastsController extends Controller
   public function series($slug)
   {
     $ids = PodcastSeries::getSeriesID($slug);
-    $podcasts = PodcastArchive::find($ids['data'][0]['id']);
     if(empty($ids['data'])){
       return response()->view('errors.404',[],404);
     }
+    $podcasts = PodcastArchive::find($ids['data'][0]['id']);
+
     return view('podcasts.series', compact('podcasts', 'ids'));
   }
 
@@ -43,7 +45,11 @@ class podcastsController extends Controller
     if(empty($podcasts['data'])){
       return response()->view('errors.404',[],404);
     }
-    return view('podcasts.episode', compact('podcasts'));
+    $adlib = CIIM::findByAccession($podcasts['data'][0]['adlib_id']);
+
+    $suggest = FindMoreLikeThis::find($slug, 'podcasts');
+
+    return view('podcasts.episode', compact('podcasts', 'suggest', 'adlib'));
   }
 
   public function mindseyes(Request $request)
@@ -63,4 +69,20 @@ class podcastsController extends Controller
     return view('podcasts.mindseye', compact('mindseye', 'adlib', 'suggest'));
   }
 
+  public function presenter(string $slug)
+  {
+    $profiles = AssociatedPeople::find($slug);
+    if(empty($profiles['data'])){
+      return response()->view('errors.404',[],404);
+    }
+    return view('podcasts.presenter', compact('profiles'));
+  }
+  public function presenters()
+  {
+    $profiles = AssociatedPeople::list();
+    if(empty($profiles['data'])){
+      return response()->view('errors.404',[],404);
+    }
+    return view('podcasts.presenters', compact('profiles'));
+  }
 }

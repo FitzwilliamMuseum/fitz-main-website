@@ -99,6 +99,8 @@
     @yield('exhibitions-curated')
     @yield('departments-affiliated')
     @yield('research-funders')
+    @yield('presenters')
+
     @yield('themes')
     @yield('collections')
     @yield('departments')
@@ -112,10 +114,12 @@
     @yield('sketchfab')
     @yield('audio-guide')
     @yield('pharos-pages')
+    @yield('podcast-object')
     @yield('twitter')
     @yield('mlt')
     @yield('shopifyPrints')
     @yield('shopify')
+
 
   @include('includes.structure.emailsignup')
   @include('includes.structure.share')
