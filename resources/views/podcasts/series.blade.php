@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @if(!is_null($ids['data']))
+  @section('title', $ids['data'][0]['title'])
   @section('hero_image', $ids['data'][0]['hero_image']['data']['url'] )
   @section('hero_image_title', $ids['data'][0]['hero_image_alt_tag'])
 @else
@@ -16,10 +17,6 @@
   <div class="row">
     @if(!empty($podcasts['data']))
     @foreach($podcasts['data'] as $podcast)
-      @php
-      $title = $podcast['podcast_series'][0]['podcast_series_id']['title'];
-      @endphp
-      @section('title', $title )
       <x-image-card :altTag="$podcast['hero_image_alt_tag'] " :title="$podcast['title']"  :image="$podcast['hero_image']" :route="'podcasts.episode'" :params="[$podcast['slug']]" />
       @endforeach
     @endif
