@@ -13,8 +13,8 @@ class PodcastArchive extends Model
       $api->setArguments(
         $args = array(
           'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type',
-          'filter[podcast_series.podcast_series_id][in]' => $id
+          'meta' => '*',
+          'filter[podcast_series.podcast_series_id][in]' => $id,
         )
       );
       return $api->getData();
@@ -27,7 +27,7 @@ class PodcastArchive extends Model
       $api->setArguments(
         $args = array(
           'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type',
+          'meta' => '*',
           'filter[slug][eq]' => $slug
         )
       );

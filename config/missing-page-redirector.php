@@ -34,6 +34,8 @@ return [
       '/visit/access' => '/visit-us/accessibility-and-our-facilities',
       '/visit-us/exhibitions/labels' => '/visit-us/exhibitions/',
       '/visit/closuresandupdates' => '/visit-us/gallery-closures-and-collection-updates',
+      '/friends' => '/support-us/friends-of-the-fitzwilliam',
+      '/support/friends' => '/support-us/friends-of-the-fitzwilliam',
       # About
       '/aboutus' => '/about-us',
       '/aboutus/imagelibrary' => '/commercial-services/image-library',

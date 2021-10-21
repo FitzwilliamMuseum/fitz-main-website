@@ -46,9 +46,7 @@ class podcastsController extends Controller
       return response()->view('errors.404',[],404);
     }
     $adlib = CIIM::findByAccession($podcasts['data'][0]['adlib_id']);
-
     $suggest = FindMoreLikeThis::find($slug, 'podcasts');
-
     return view('podcasts.episode', compact('podcasts', 'suggest', 'adlib'));
   }
 
