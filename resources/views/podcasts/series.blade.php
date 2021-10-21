@@ -14,6 +14,17 @@
     @markdown($ids['data'][0]['description'])
   </div>
   @endisset
+
+  @if($podcasts['data']['youtube_id'])
+  <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" title="A YouTube video related to this podcast series"
+      src="https://www.youtube.com/embed/{{$podcasts['data']['youtube_id']}}" frameborder="0"
+      allowfullscreen></iframe>
+    </div>
+  </div>
+  @endif
+
   @if(!empty($podcasts['data']))
     <h4 class="lead">Episodes</h4>
     <div class="row">
@@ -30,6 +41,8 @@
     </div>
   @endif
   @endsection
+
+
 
   @if(!empty($ids['data'][0]['partners']))
     @section('research-funders')
