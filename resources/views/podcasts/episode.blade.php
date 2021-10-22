@@ -25,7 +25,7 @@
       <!-- column two -->
       <div class="col-md-5 mt-3">
         <div class="col shadow-sm p-3 mx-auto mb-3">
-          {{ $podcast['description'] }}
+          @markdown($podcast['description'])
         </div>
         <div class="col shadow-sm p-3 mx-auto mb-3">
           <div class="plyr">
