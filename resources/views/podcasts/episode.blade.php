@@ -38,6 +38,7 @@
         <div class="col shadow-sm p-3 mx-auto mb-3">
           @markdown($podcast['description'])
         </div>
+        @isset($podcast['mp3_id'] )
         <div class="col shadow-sm p-3 mx-auto mb-3">
           <div class="plyr">
             <div class="embed-responsive  audio-player">
@@ -47,6 +48,7 @@
               </div>
             </div>
           </div>
+        @endisset
       </div>
       <!-- End of column two -->
     </div>
