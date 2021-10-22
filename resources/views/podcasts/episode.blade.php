@@ -2,21 +2,32 @@
 @foreach($podcasts['data'] as $podcast)
   @section('description', $podcast['meta_description'])
   @section('title', $podcast['title'])
-  @if(!is_null($podcast['hero_image']))
+  @isset($podcast['banner_image']))
+    @section('hero_image', $podcast['banner_image']['data']['full_url'])
+    @section('hero_image_title', $podcast['title'])
+    @else
     @section('hero_image', $podcast['hero_image']['data']['full_url'])
     @section('hero_image_title', $podcast['hero_image_alt_tag'])
-  @endif
+  @endisset
   @section('content')
     <div class="row ">
       <!-- Column one -->
       <div class="col-md-7 mb-3">
         <div class=" shadow-sm p-3 mb-3 mt-3">
           <figure class="figure">
+            @isset($podcast['focus_object_image'])
+              <img src="{{ $podcast['focus_object_image']['data']['full_url'] }}"
+              class="img-fluid" alt="{{ $podcast['focus_object_image_alt_text'] }}" loading="lazy"
+              width="{{ $podcast['focus_object_image']['width'] }}"
+              height="{{ $podcast['focus_object_image']['height'] }}"
+              />
+            @else
             <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
             class="img-fluid" alt="{{ $podcast['title'] }}" loading="lazy"
             width="{{ $podcast['hero_image']['width'] }}"
             height="{{ $podcast['hero_image']['height'] }}"
             />
+            @endisset
           </figure>
         </div>
       </div>
