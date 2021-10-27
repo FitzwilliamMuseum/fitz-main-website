@@ -6,6 +6,7 @@ use GuzzleHttp;
 use Carbon\Carbon;
 use Cache;
 use App\DirectUs;
+use App\Models\TessituraFacilities;
 
 class TessituraApi {
 
@@ -141,12 +142,14 @@ class TessituraApi {
       * @return string             [description]
       */
       public function getPerformances( string $keywordID = '37') {
+        $facilities = TessituraFacilities::listIds();
+
         $payload = array(
           "PerformanceStartDate" => Carbon::now(),
           "PerformanceEndDate" =>  Carbon::now()->addDays(60),
           "BusinessUnitId" => 1,
-          "FacilityIds" => '19,20,21,56,116,86,96,66,76,13,208',
-          'KeywordIds' => '116'
+          "FacilityIds" => (string)implode(',',array_column($facilities, 'facility_id')),
+          'KeywordIds' => $keywordID
         );
         $key = md5(serialize($payload));
         $expiresAt = now()->addMinutes(60);
