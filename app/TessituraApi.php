@@ -145,8 +145,8 @@ class TessituraApi {
           "PerformanceStartDate" => Carbon::now(),
           "PerformanceEndDate" =>  Carbon::now()->addDays(60),
           "BusinessUnitId" => 1,
-          "FacilityIds" => '19,20,21,56,116,86,96,66,76,13',
-          'KeywordIds' => $keywordID
+          "FacilityIds" => '19,20,21,56,116,86,96,66,76,13,208',
+          'KeywordIds' => '116'
         );
         $key = md5(serialize($payload));
         $expiresAt = now()->addMinutes(60);
