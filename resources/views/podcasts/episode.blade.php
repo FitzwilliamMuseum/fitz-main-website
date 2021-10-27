@@ -42,7 +42,7 @@
         $today_date = \Carbon\Carbon::now();
         @endphp
 
-        @if ($today_date->diffInDays($podcast['publication_date'], false) < 0)
+        @if ($today_date->diffInDays($podcast['publication_date'], false) <= 0)
           @isset($podcast['mp3_id'])
           <div class="col shadow-sm p-3 mx-auto mb-3">
             <div class="plyr">
