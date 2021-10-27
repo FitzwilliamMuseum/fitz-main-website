@@ -38,17 +38,32 @@
         <div class="col shadow-sm p-3 mx-auto mb-3">
           @markdown($podcast['description'])
         </div>
-        @isset($podcast['mp3_id'] )
-        <div class="col shadow-sm p-3 mx-auto mb-3">
-          <div class="plyr">
-            <div class="embed-responsive  audio-player">
-              <audio id="player" controls class="embed-responsive-item">
-                <source src="{{ $podcast['mp3_id'] }}" type="audio/mp3">
-              </audio>
+        @php
+        $today_date = \Carbon\Carbon::now();
+        @endphp
+
+        @if ($today_date->diffInDays($podcast['publication_date'], false) < 0)
+          @isset($podcast['mp3_id'])
+          <div class="col shadow-sm p-3 mx-auto mb-3">
+            <div class="plyr">
+              <div class="embed-responsive  audio-player">
+                <audio id="player" controls class="embed-responsive-item">
+                  <source src="{{ $podcast['mp3_id'] }}" type="audio/mp3">
+                </audio>
+                </div>
               </div>
             </div>
+          @endisset
+
+          @isset($podcast['podcast_id'])
+          <div class="col shadow-sm p-3 mx-auto mb-3">
+            <div class="embed-responsive libsyn">
+              @include('includes/social/libsyn')
+            </div>
           </div>
-        @endisset
+          @endisset
+        @endif
+
       </div>
       <!-- End of column two -->
     </div>
