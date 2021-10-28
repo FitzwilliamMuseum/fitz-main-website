@@ -2,7 +2,7 @@
 @foreach($podcasts['data'] as $podcast)
   @section('description', $podcast['meta_description'])
   @section('title', $podcast['title'])
-  @isset($podcast['banner_image']))
+  @isset($podcast['banner_image'])
     @section('hero_image', $podcast['banner_image']['data']['full_url'])
     @section('hero_image_title', $podcast['title'])
     @else

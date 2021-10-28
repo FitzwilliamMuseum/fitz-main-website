@@ -20,22 +20,22 @@
     </li>
 
     <li class="nav-item {{ (Request()->is('objects-and-artworks*')) ? 'active' : '' }}">
-      <a class="nav-link" href="{{ route('objects') }}" >Our Collection</a>
+      <a class="nav-link" href="{{ route('objects') }}">Our Collection</a>
     </li>
     <li class="nav-item {{ (Request()->is('learning*')) ? 'active' : '' }}">
-      <a class="nav-link" href="{{ route('landing', ['learning']) }}" >
+      <a class="nav-link" href="{{ route('landing', ['learning']) }}">
       Learning</a>
     </li>
     <li class="nav-item {{ (Request()->is('about-us*')) ? 'active' : '' }}">
-      <a class="nav-link " href="{{ route('landing', ['about-us']) }}" >
+      <a class="nav-link " href="{{ route('landing', ['about-us']) }}">
       About</a>
     </li>
     <li class="nav-item {{ (Request()->is('support-us*')) ? 'active' : '' }}">
-      <a class="nav-link " href="{{ route('landing', ['support-us']) }}" >
+      <a class="nav-link " href="{{ route('landing', ['support-us']) }}">
       Support Us</a>
     </li>
     <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
-      <a class="nav-link" href="{{ route('landing', ['research']) }}" >Research</a>
+      <a class="nav-link" href="{{ route('landing', ['research']) }}">Research</a>
     </li>
     <li class="nav-item ">
       <a class="nav-link" href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
