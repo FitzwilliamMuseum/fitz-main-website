@@ -389,7 +389,8 @@ return [
       '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards',
       '/sensualvirtual' => '/news/sensualvirtual',
       '/news/david-scrase-15-march-1949-31-october-2020' => '/news/david-scrase',
-
+      # Files
+      '/sites/default/files/Graphite.pdf' => 'https://content.fitz.ms/fitz-website/assets/Graphite.pdf',
       # Research
       '/conservd' => '/research/projects/conservd',
       '/research/grr' => '/visit-us/galleries/gallery-9',
