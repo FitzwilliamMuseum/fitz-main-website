@@ -258,7 +258,7 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img class="d-block w-100" alt="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one_alt_text'] }}" src="{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one']['data']['thumbnails'][9]['url'] }}" >
-                    <div class="carousel-caption w-100 d-none d-md-block text-white bg-black exhibition-carousel">
+                    <div class="carousel-caption d-none d-md-block text-white bg-black exhibition-carousel">
                       <h5 class="text-black">{{ $coll['exhibition_carousel'][0]['carousels_id']['image_one_alt_text'] }}</h5>
                     </div>
                   </div>
