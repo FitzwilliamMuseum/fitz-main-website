@@ -533,6 +533,8 @@ blockquote {
   margin-bottom: 1rem;
   font-family: 'Libre Baskerville', serif;
   padding: 0 1rem;
+  font-weight:400; 
+  font-style:italic;
 }
 
 @media screen and ( max-width: 440px ){
