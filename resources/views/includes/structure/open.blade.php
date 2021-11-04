@@ -2,7 +2,7 @@
 <div class="container-fluid bg-maroon text-white p-1">
   <div class="container">
     <div class="text-center my-2">
-      <a class="text-center btn btn-outline-light text-white" href="https://tickets.museums.cam.ac.uk/overview/generaladmission">
+      <a class="text-center btn btn-outline-light" href="https://tickets.museums.cam.ac.uk/overview/generaladmission">
         @fa('ticket-alt', 'ticket', 'mr-2')  Visiting us? Booking required - Free Entry
       </a>
     </div>
