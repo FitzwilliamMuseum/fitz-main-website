@@ -52,9 +52,10 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\solrimportController@resources')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\instagramController@instagram')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\twitterController@twitter')->cron('0 */5 * * *');
-
         # Import Jekyll to solr
         $schedule->call('App\Http\Controllers\jekyllController@import')->cron('0 */5 * * *');
+        # Import Wordpress to solr
+        $schedule->call('App\Http\Controllers\wordpressController@import')->cron('0 */9 * * *');
         # Clear caches
         $schedule->call('App\Http\Controllers\Controller@clearCache')->cron('6 */12 * * */1');
         # Clear sessions/shopify
