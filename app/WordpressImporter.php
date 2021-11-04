@@ -51,7 +51,7 @@ class WordpressImporter {
         if(isset($wordpressPage["_embedded"])){
           $doc->thumbnail = $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['thumbnail']['source_url'];
           $doc->image =  $wordpressPage["_embedded"]["wp:featuredmedia"][0]["source_url"];
-          $doc->searchImage =  $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['medium_large']['source_url'];
+          $doc->searchImage =  $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['thumbnail']['source_url'];
         }
         $documents[] = $doc;
       }
