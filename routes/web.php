@@ -25,6 +25,8 @@ Route::get('about-us/press-room', 'aboutusController@press')->name('press-room')
 Route::get('about-us/governance-policies-and-reports', 'aboutusController@governance')->name('governance');
 Route::get('about-us/work-for-us', 'aboutusController@vacancies')->name('vacancies');
 Route::get('about-us/work-for-us/details/{slug}', 'aboutusController@vacancy')->name('vacancy');
+Route::get('about-us/work-for-us/archive/', 'aboutusController@archiveVacancies')->name('vacancy.archive');
+
 Route::get('about-us/collections', 'collectionsController@index')->name('collections');
 Route::get('about-us/collections/{slug}/', 'collectionsController@details')->name('collection');
 Route::get('about-us/departments/', 'departmentsController@index')->name('departments');

@@ -12,7 +12,23 @@ class Vacancies extends Model
         $args = array(
           'fields' => '*.*.*',
           'meta' => '*',
-          'sort' => '-expires'
+          'sort' => '-expires',
+          'filter[expires][gte]' => 'now'
+        )
+      );
+      return collect($directus->getData());
+    }
+
+
+    public static function getArchived(){
+      $directus = new Directus();
+      $directus->setEndpoint('vacancies');
+      $directus->setArguments(
+        $args = array(
+          'fields' => '*.*.*',
+          'meta' => '*',
+          'sort' => '-expires',
+          'filter[expires][lte]' => 'now'
         )
       );
       return collect($directus->getData());

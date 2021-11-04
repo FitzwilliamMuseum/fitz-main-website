@@ -60,6 +60,15 @@ class aboutusController extends Controller
   }
 
   /**
+   * Returns a list of vacancies
+   * @return \Illuminate\Http\Response
+   */
+  public function archiveVacancies()
+  {
+    $vacancies = Vacancies::getArchived();
+    return view('aboutus.archived', compact('vacancies'));
+  }
+  /**
    * Returns a vacancy
    * @param  string $slug Page slug to query
    * @return \Illuminate\Http\Response

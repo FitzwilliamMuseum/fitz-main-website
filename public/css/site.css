@@ -124,6 +124,9 @@ footer, .chip-icon {
 .bg-fade {
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(163, 193, 173));
 }
+.bg-maroon {
+  background-color: maroon !important;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -533,7 +536,7 @@ blockquote {
   margin-bottom: 1rem;
   font-family: 'Libre Baskerville', serif;
   padding: 0 1rem;
-  font-weight:400; 
+  font-weight:400;
   font-style:italic;
 }
 
@@ -824,7 +827,7 @@ h5 > a:hover::before {
 }
 
 .free_ticket a {
-  color: #000!important;
+  color: #fff!important;
 }
 .page-link {
   border: none!important;
@@ -846,12 +849,12 @@ p.small-font {
 }
 .free_ticket {
   position: relative;
-  color: #000;
-  text-decoration: none !important;
+  color: #fff;
+  text-decoration: underline !important;
 }
 
 a.free_ticket:hover {
-  color: #000;
+  color: #fff;
 }
 
 a.free_ticket::before {
@@ -872,7 +875,7 @@ a.free_ticket:hover::before {
   transform: scaleX(1);
 }
 a.free_ticket  {
-  color: #000!important;
+  color: #fff!important;
 }
 
 .twitter__thumbnail {
