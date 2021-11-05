@@ -7,14 +7,16 @@
             <span class="text-white">Schools at the Fitz</span>
           </h2>
           <p class="text-white mt-3">
-            During the pandemic we've been hard at building new resources for
-            schools to use.
+            During the pandemic we have been hard at work, designing, creating and
+            building new resources for schools to use.
           </p>
           <p class="text-white" >
             Try our new activities - discover amazing artworks, browse for ideas,
             watch films about our collection, or book a session with us for your school.
+            All of these are now on a new website that we have made, have a look, tell us
+            what you think.
           </p>
-    
+
             <a class="text-center btn btn-outline-light" href="http://schools.fitz.ms">
               What will you discover today? Let's find out!
             </a>
