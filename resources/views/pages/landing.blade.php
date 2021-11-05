@@ -12,7 +12,7 @@
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])
   @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+    <div class="col-12 shadow-sm p-3 mx-auto  ">
       @markdown($page['body'])
     </div>
     @if($page['vimeo_id'])
@@ -24,6 +24,9 @@
 @endforeach
 
 @section('associated_pages')
+  @if(Request::is('learning'))
+    @include('includes.elements.schools-project')
+  @endif
   <div class="container">
     <div class="row">
       @foreach($associated['data'] as $project)

@@ -43,7 +43,7 @@ class WordpressSchoolsImporter {
         $doc = $update->createDocument();
         $doc->id = md5($wordpressPage['id']) . '-wordpress-' . $subdomain;
         $doc->title = strip_tags($wordpressPage['title']['rendered']);
-        $doc->description = str_replace(array("\r", "\n"), '', strip_tags($wordpressPage['excerpt']['rendered']));
+        $doc->description = strip_tags($wordpressPage['title']['rendered']);
         $doc->body = str_replace(array("\r", "\n"), '',strip_tags($wordpressPage['content']['rendered']));
         $doc->slug = $wordpressPage['slug'];
         $doc->url = $wordpressPage['link'];
