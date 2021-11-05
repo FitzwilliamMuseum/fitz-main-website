@@ -10,7 +10,7 @@
 @endif
     <!-- Canonical link -->
     <link rel="canonical" href="{{ URL::current() }}" />
-    <link rel="shortcut icon" href="{{secure_url('/')}}favicon.ico">
+    <link rel="shortcut icon" href="{{secure_url('/')}}/favicon.ico">
 
     <!-- Open graph -->
     <meta property="og:locale" content="{{ app()->getLocale() }}" />
