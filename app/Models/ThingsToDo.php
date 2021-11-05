@@ -27,6 +27,7 @@ class ThingsToDo extends Model
         $args = array(
             'fields' => '*.*.*.*',
             'meta' => '*',
+            'sort' => 'title',
             'limit' => $limit
         )
       );
