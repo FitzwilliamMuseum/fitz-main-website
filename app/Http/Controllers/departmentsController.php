@@ -14,6 +14,7 @@ use App\Models\Stubs;
 use App\Models\Departments;
 use App\Models\StaffProfiles;
 use App\Models\ConservationAreas;
+use App\Models\ConservationBlog;
 
 class departmentsController extends Controller
 {
@@ -64,13 +65,7 @@ class departmentsController extends Controller
     if (Cache::has($key)) {
       $data = Cache::store('file')->get($key);
     } else {
-      $configSolr = \Config::get('solarium');
-      $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-      $query = $client->createSelect();
-      $query->setQuery('contentType:conservationblog title:*');
-      $query->setRows(3);
-      $data = $client->select($query);
-      $data = $data->getDocuments();
+      $data = ConservationBlog::list();
       Cache::store('file')->put($key, $data, $expiresAt);
     }
     return $data;
