@@ -15,7 +15,7 @@
               <br />
               Box office open 10:00 - 17:00 Tuesday - Saturday, 12:00 - 17:00 Sunday. Closed Monday.
               <br/>
-              @fa('phone') +44 (0)1223 333 230 @fa('envelope') <a href="tickets@museums.cam.ac.uk" class="text-white">tickets@museums.cam.ac.uk</a>
+              @fa('phone') +44 (0)1223 333 230 @fa('envelope') <a href="mailto:tickets@museums.cam.ac.uk" class="text-white">tickets@museums.cam.ac.uk</a>
           </p>
         </div>
       </div>
