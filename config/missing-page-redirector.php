@@ -66,6 +66,12 @@ return [
       '/about-us/collections/textiles' => '/about-us/collections/textiles-and-fans',
       '/about-us/collections/armsarmour' => '/about-us/collections/arms-and-armour',
       '/depts' => '/about-us/departments',
+      '/dept/coins/emc/' => 'https://emc.fitzmuseum.cam.ac.uk',
+      '/dept/coins/emc/emc_search.php' => 'https://emc.fitzmuseum.cam.ac.uk/search',
+      '/dept/coins/emc/emc_intro.html' => 'https://emc.fitzmuseum.cam.ac.uk/about',
+      '/dept/coins/emc/emc_single.html' => '/research/the-importance-of-single-finds',
+      '/dept/coins/emc/emc_record.html' => 'https://emc.fitzmuseum.cam.ac.uk/contact',
+      '/dept/coins/emc/emc_findspot.html' => 'https://emc.fitzmuseum.cam.ac.uk',
       '/coins' => '/about-us/departments/coins-and-medals',
       '/coins/opac' => 'https://data.fitzmuseum.cam.ac.uk',
       # Press
@@ -429,7 +435,7 @@ return [
       '/research/mec' => '/research/projects/medieval-european-coinage',
       '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
       '/research/workingwithschools' => '/learning/working-with-teachers-and-students',
-      
+
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',
