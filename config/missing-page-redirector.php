@@ -72,8 +72,12 @@ return [
       '/dept/coins/emc/emc_single.html' => '/research/the-importance-of-single-finds',
       '/dept/coins/emc/emc_record.html' => 'https://emc.fitzmuseum.cam.ac.uk/contact',
       '/dept/coins/emc/emc_findspot.html' => 'https://emc.fitzmuseum.cam.ac.uk',
+      '/dept/coins/visitingscholars/' => '/research/visiting-scholars-coins-and-medals',
       '/coins' => '/about-us/departments/coins-and-medals',
       '/coins/opac' => 'https://data.fitzmuseum.cam.ac.uk',
+      '/dept/coins/opac' => 'https://data.fitzmuseum.cam.ac.uk',
+      '/dept/aa/opac' => 'https://data.fitzmuseum.cam.ac.uk',
+      # Press
       # Press
       '/pr' => '/about-us/press-room',
       '/pr/{url}' => '/about-us/press-room',

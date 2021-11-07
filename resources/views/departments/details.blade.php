@@ -44,13 +44,6 @@
     @include('includes.structure.cons-blog')
   @endif
 
-  @if($dept['slug'] == 'hamilton-kerr-institute')
-    @inject('departmentsController', 'App\Http\Controllers\departmentsController')
-    @php
-    $blog = $departmentsController::hkiblog();
-    @endphp
-    @include('includes.structure.cons-blog')
-  @endif
 @endsection
 
 @if(!empty($staff['data']))
