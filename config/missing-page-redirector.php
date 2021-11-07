@@ -38,6 +38,8 @@ return [
       '/support/friends' => '/support-us/friends-of-the-fitzwilliam',
       # About
       '/aboutus' => '/about-us',
+      '/aboutus/review' => '/about-us/governance-policies-and-reports',
+      '/about/rnuseumhistory.html' => '/about-us/history-of-the-building-and-collections',
       '/aboutus/imagelibrary' => '/commercial-services/image-library',
       '/aboutus/mission' => '/about-us/our-mission',
       '/aboutus/museumhistory/old' => '/about-us/history-of-the-building-and-collections',
@@ -56,6 +58,7 @@ return [
       '/aboutus/founding' => '/about-us/founding-the-fitzwilliam',
       '/aboutus/jobs' => '/about-us/work-for-us',
       '/aboutus/conservation/internships' => '/research/opportunities/conservation-internships',
+      '/aboutus/ifs' => '/objects-and-artworks/immunity-from-seizure',
       '/jobs/' => '/about-us/work-for-us',
       '/about/administration.html' => '/about-us/governance',
       '/jobs/{url}' => '/about-us/work-for-us/details/{url}',
@@ -63,6 +66,8 @@ return [
       '/about-us/collections/textiles' => '/about-us/collections/textiles-and-fans',
       '/about-us/collections/armsarmour' => '/about-us/collections/arms-and-armour',
       '/depts' => '/about-us/departments',
+      '/coins' => '/about-us/departments/coins-and-medals',
+      '/coins/opac' => 'https://data.fitzmuseum.cam.ac.uk',
       # Press
       '/pr' => '/about-us/press-room',
       '/pr/{url}' => '/about-us/press-room',
@@ -99,6 +104,17 @@ return [
       '/collections/sculpture' => '/about-us/collections/sculpture-ivories-and-woodwork',
       '/collections/jewellery' => '/about-us/collections/silver-and-jewellery',
       '/collections/textiles' => '/about-us/collections/textiles-and-fans',
+      '/collections/music' => '/about-us/collections/music',
+      '/collections/paintings/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
+      '/collections/armsarmour/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
+      '/collections/ceramics/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
+      '/collections/islamicart/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
+      '/collections/egypt/collectionhistory/hanbury_waddington' => '/objects-and-artworks/highlights/context/patrons-donors-collectors/barnard-hanbury-and-george-waddington',
+      '/collections/egypt/collectionhistory/petrie' => '/objects-and-artworks/highlights/context/patrons-donors-collectors/william-matthew-flinders-petrie',
+      '/emc' => 'https://emc.fitzmuseum.cam.ac.uk',
+      '/emc/{url}' => 'https://emc.fitzmuseum.cam.ac.uk',
+      '/coins/emc' => 'https://emc.fitzmuseum.cam.ac.uk',
+      '/coins/emc/{url}' => 'https://emc.fitzmuseum.cam.ac.uk',
       # exhibitions
       '/pastexhibitions' => '/visit-us/exhibitions/archive',
       '/pastexhibitions{url}' => '/visit-us/exhibitions/archive',
@@ -149,6 +165,7 @@ return [
       '/cockerell/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk{url}',
       '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.uk/pigsty-to-palace/antiquities/',
       '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/',
+      '/gallery/cockerell/directorcollector/manuscripts.html' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/illuminated-manuscripts/',
       # Kunisada
       '/gallery/kunisada' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
       '/gallery/kunisada/{url}' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
@@ -191,8 +208,11 @@ return [
       '/madonnasandmiracles/' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk',
       '/madonnasandmiracles/curatorschoice' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/curators-choice',
       '/madonnasandmiracles/audioandfilm' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/audio-and-film',
+      '/madonnasandmiracles/discover/{url}' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/discover/{url}',
       '/madonnasandmiracles/{url}' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/{url}',
+
       # Afrocombs
+      '/gallery/afrocombs/combs/timeline.html' => 'https://afrocombs.fitzmuseum.cam.ac.uk/combs/timeline',
       '/gallery/afrocombs' => 'https://afrocombs.fitzmuseum.cam.ac.uk',
       '/gallery/afrocombs/{url}' => 'https://afrocombs.fitzmuseum.cam.ac.uk/{url}',
       # Things of beauty
@@ -208,6 +228,10 @@ return [
       '/events/whatson/{url}' => '/events',
       '/events/events' => '/events',
       '/wo' => '/events',
+      '/contact' => '/about-us/contact-us',
+      '/opac' => 'https://data.fitzmuseum.cam.ac.uk',
+      '/opac/{url?}' => 'https://data.fitzmuseum.cam.ac.uk',
+      '/opac/search/{url?}' => 'https://data.fitzmuseum.cam.ac.uk',
       # Learning
       '/learningresources' => '/learning/resources',
       '/learning/youngpeople' => 'learning/young-people',
@@ -229,11 +253,18 @@ return [
       '/work/bridget-riley-shadowplay' => '/learning/look-think-do/shadowplay',
       '/work/sky-study-shaft-sunlight' => '/learning/look-think-do/sky-study-with-a-shaft-of-sunlight',
       '/work/{url}' => '/learning/look-think-do/{url}',
+      '/learning/look-think-do/bust-antinous' => '/learning/look-think-do/bust-of-antinous',
+      '/learning/look-think-do/coffin-set-pakepu' => '/learning/look-think-do/the-coffin-set-of-pakepu',
+      '/learning/look-think-do/about' => '/learning/look-think-do/',
       '/lookthinkdo/{url}' => '/learning/look-think-do/{url}',
       '/learning/schoolscolleges/plan-your-visit' => '/learning/plan-your-visit',
       # Pharos
       '/pharos' => '/objects-and-artworks',
       '/ce-work' => '/objects-and-artworks',
+      '/pharos/index_front.html' => '/objects-and-artworks',
+      '/pharos/collection_pages/middle_pages/' => '/objects-and-artworks/highlights/periods/middle-ages',
+      '/pharos/collection_pages/middle_pages/{url?}' => '/objects-and-artworks/highlights/periods/middle-ages/{url}',
+
       # News - Most of these urls  are rewritten for clarity of semantics
       '/news/inside-macclesfield-psalter' => '/news/inside-the-macclesfield-psalter',
       '/news/easter-fitzwilliam' => '/news/easter-at-the-fitzwilliam',
@@ -389,6 +420,7 @@ return [
       '/news/fitzwilliam-museum-masterpieces-2020-edition-greetings-cards' => '/news/fitzwilliam-museum-masterpieces-2020-edition-of-greetings-cards',
       '/sensualvirtual' => '/news/sensualvirtual',
       '/news/david-scrase-15-march-1949-31-october-2020' => '/news/david-scrase',
+      '/news/heritage-science-investment-unveil-secrets-cambridge-university-collections' => '/news/heritage-science-investment-to-unveil-secrets-of-cambridge-university-collections',
       # Files
       '/sites/default/files/Graphite.pdf' => 'https://content.fitz.ms/fitz-website/assets/Graphite.pdf',
       # Research
@@ -396,6 +428,8 @@ return [
       '/research/grr' => '/visit-us/galleries/gallery-9',
       '/research/mec' => '/research/projects/medieval-european-coinage',
       '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
+      '/research/workingwithschools' => '/learning/working-with-teachers-and-students',
+      
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',
