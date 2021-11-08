@@ -108,6 +108,7 @@ return [
       '/collections/islamicart'=> '/about-us/collections/islamic-art',
       '/collections/kemetandkush'  => '/about-us/collections/kemet-and-kush',
       '/collections/literarymanuscripts' =>  '/about-us/collections/literary-manuscripts',
+      '/collections/literarymssandautographs' =>  '/about-us/collections/literary-manuscripts',
       '/collections/nubiaandsudan' =>  '/about-us/collections/nubia-and-sudan',
       '/collections/paintings' => '/about-us/collections/paintings',
       '/collections/prints' => '/about-us/collections/prints',
@@ -176,6 +177,7 @@ return [
       '/cockerell/pigstytopalace/{url}' =>  'https://cockerel.fitzmuseum.cam.ac.uk/pigsty-to-palace/antiquities/',
       '/cockerell/directorcollector/{url}' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/',
       '/gallery/cockerell/directorcollector/manuscripts.html' => 'https://cockerel.fitzmuseum.cam.ac.uk/director-collector/illuminated-manuscripts/',
+      '/gallery/cockerell/macclesfieldpsalter.html' => 'https://cockerel.fitzmuseum.cam.ac.uk/macclesfield-psalter/',
       # Kunisada
       '/gallery/kunisada' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
       '/gallery/kunisada/{url}' => 'https://kunisada-and-kabuki.fitzmuseum.cam.ac.uk',
@@ -199,6 +201,10 @@ return [
       # French impressionists
       '/frenchimpressionists' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/',
       '/frenchimpressionists/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/{url}',
+      '/frenchimpressionists/renoir/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/artists/renoir',
+      '/frenchimpressionists/degas/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/artists/degas',
+
+
       # Sheldon
       '/gallery/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
       '/gallery/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
@@ -222,6 +228,7 @@ return [
       '/madonnasandmiracles/{url}' => 'https://madonnas-and-miracles.fitzmuseum.cam.ac.uk/{url}',
 
       # Afrocombs
+      '/research/africancombs' => 'https://afrocombs.fitzmuseum.cam.ac.uk/',
       '/gallery/afrocombs/combs/timeline.html' => 'https://afrocombs.fitzmuseum.cam.ac.uk/combs/timeline',
       '/gallery/afrocombs' => 'https://afrocombs.fitzmuseum.cam.ac.uk',
       '/gallery/afrocombs/{url}' => 'https://afrocombs.fitzmuseum.cam.ac.uk/{url}',
