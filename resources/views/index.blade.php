@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('hero_image','https://content.fitz.ms/fitz-website/assets/gallery_26_odundo.jpg')
+@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/mens-boat_lion_202109_mfj22_dc1-1-.jpg')
 @section('hero_image_title','The founder\'s building entrance ceiling')
 @section('parallax_home', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
 @section('parallax_two', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
