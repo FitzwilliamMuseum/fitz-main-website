@@ -237,6 +237,7 @@ return [
       '/gallery/chinesevases' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
       '/gallery/chinesevases/{url}' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
       '/gallery/chinesevases/conserving_art/{url?}' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
+      '/gallery/chinesevases/conserving_art' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
