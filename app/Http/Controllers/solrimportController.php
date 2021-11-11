@@ -7,6 +7,7 @@ use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Solarium\Exception;
+use Illuminate\Support\Str;
 
 use Mews\Purifier;
 use App\Directus;
@@ -564,6 +565,28 @@ class solrimportController extends Controller
       'resources',
       'resource',
       array('slug'),
+      array('title'=> 'title', 'content' => 'description')
+    );
+  }
+
+  public function longform()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('long_form');
+    $api->setArguments(
+      $args = array(
+        'limit' => '200',
+        'fields' => 'id,title,description,hero_image.*',
+      )
+    );
+    $data = $api->getData();
+    $solr = new SolrImporter();
+    return $solr->import(
+      $data['data'],
+      'longForm',
+      'longForm',
+      'resource',
+      array(Str::slug('title','-')),
       array('title'=> 'title', 'content' => 'description')
     );
   }
