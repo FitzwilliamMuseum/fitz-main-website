@@ -216,3 +216,16 @@
   @endif
 
 @endforeach
+
+@if(!empty($similar))
+  @section('mlt')
+    <div class="container py-3">
+      <h4 class="lead">Researchers with similar profiles</h4>
+      <div class="row">
+        @foreach($similar as $record)
+          <x-solr-card :result="$record" />
+        @endforeach
+      </div>
+    </div>
+  @endsection
+@endif

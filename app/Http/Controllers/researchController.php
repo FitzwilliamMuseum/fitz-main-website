@@ -78,7 +78,8 @@ class researchController extends Controller
       if(empty($profiles['data'])){
         return response()->view('errors.404',[],404);
       }
-      return view('research.profile', compact('profiles'));
+      $similar = FindMoreLikeThis::find($slug, 'staffProfile');
+      return view('research.profile', compact('profiles', 'similar'));
     }
 
     public function resource(string $slug)
