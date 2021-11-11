@@ -203,8 +203,6 @@ return [
       '/frenchimpressionists/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/{url}',
       '/frenchimpressionists/renoir/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/artists/renoir',
       '/frenchimpressionists/degas/{url}' => 'https://french-impressionists.fitzmuseum.cam.ac.uk/artists/degas',
-
-
       # Sheldon
       '/gallery/sheldon' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/',
       '/gallery/sheldon/{url}' => 'https://weaving-stories.fitzmuseum.cam.ac.uk/{url}',
@@ -235,6 +233,10 @@ return [
       # Things of beauty
       '/thingsofbeautygrowing' => 'https://thingsofbeautygrowing.fitzmuseum.cam.ac.uk',
       '/thingsofbeautygrowing/{url}' => 'https://thingsofbeautygrowing.fitzmuseum.cam.ac.uk/explore/{url}',
+      # Chinese vases
+      '/gallery/chinesevases' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
+      '/gallery/chinesevases/{url}' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
+      '/gallery/chinesevases/conserving_art/{url?}' => 'https://stories.fitzmuseum.cam.ac.uk/kangxi-vases-conservation/',
       # Events
       '/calendar' => '/events',
       '/calendar/whatson/gold-great-steppe' => '/visit-us/exhibitions/gold-of-the-great-steppe',
