@@ -63,6 +63,9 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\solrimportController@sessionsRefresh')->cron('1 */12 * * */3');
         # Sitemap generation
         $schedule->command('sitemap:generate')->daily();
+        # Long form
+        $schedule->call('App\Http\Controllers\solrimportController@longform')->weekly();
+
     }
 
     /**
