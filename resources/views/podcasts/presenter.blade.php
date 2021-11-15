@@ -16,9 +16,9 @@
       loading="lazy"/></a>
     </div>
     @endif
-    @if(!empty($profile['biography']))
+    @if(!empty(['biography']))
       <div class="bg-white p-3">
-        {!! $profile['biography'] !!}
+        @markdown($profile['biography'])
       </div>
     @endif
   @endsection
