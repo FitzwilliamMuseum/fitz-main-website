@@ -50,6 +50,7 @@
   </div>
 @endsection
 
+@if(!empty($future['data'] ))
 @section('future')
   <div class="container-fluid py-3 bg-grey">
 
@@ -75,6 +76,7 @@
       </div>
     </div>
   @endsection
+@endif
 
 @section('archive')
   <div class="container-fluid py-3 bg-pastel">
