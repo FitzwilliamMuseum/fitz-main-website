@@ -102,6 +102,8 @@ return [
       '/collections/coinsandmedals' => '/about-us/collections/coins-and-medals',
       '/collections/cyprus' => '/about-us/collections/cyprus',
       '/collections/egypt' => '/about-us/collections/egypt',
+      '/collections/egypt/collectionhistory/belzoni' => '/objects-and-artworks/highlights/context/patrons-donors-collectors/the-great-belzoni-1778-1823',
+      '/collections/egypt/collectionhistory/green' => '/objects-and-artworks/highlights/context/patrons-donors-collectors/frederick-william-green',
       '/collections/fineprintedbooks' => '/about-us/collections/fine-printed-books',
       '/collections/furnitureandclocks' =>  'about-us/collections/furniture-and-clocks',
       '/collections/illuminatedmanuscripts' => '/about-us/collections/illuminated-manuscripts',
@@ -122,6 +124,7 @@ return [
       '/collections/islamicart/{url}' => 'https://data.fitzmuseum.cam.ac.uk/id/object/{url}',
       '/collections/egypt/collectionhistory/hanbury_waddington' => '/objects-and-artworks/highlights/context/patrons-donors-collectors/barnard-hanbury-and-george-waddington',
       '/collections/egypt/collectionhistory/petrie' => '/objects-and-artworks/highlights/context/patrons-donors-collectors/william-matthew-flinders-petrie',
+      '/objects-and-artworks/highlights/search' => '/objects-and-artworks/',
       '/emc' => 'https://emc.fitzmuseum.cam.ac.uk',
       '/emc/{url}' => 'https://emc.fitzmuseum.cam.ac.uk',
       '/coins/emc' => 'https://emc.fitzmuseum.cam.ac.uk',
@@ -245,6 +248,7 @@ return [
       '/calendar/whatson' => '/events',
       '/calendar/whatson/{url}' => '/events',
       '/events/whatson' => '/events',
+      '/whatson' => '/events',
       '/events/whatson/{url}' => '/events',
       '/events/events' => '/events',
       '/wo' => '/events',
@@ -449,7 +453,6 @@ return [
       '/research/mec' => '/research/projects/medieval-european-coinage',
       '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
       '/research/workingwithschools' => '/learning/working-with-teachers-and-students',
-
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',
