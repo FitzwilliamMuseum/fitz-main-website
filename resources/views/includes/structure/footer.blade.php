@@ -25,7 +25,7 @@
         <a href="https://www.ttpgroup.com/"><img class="img-fluid mx-auto mb-4" loading="lazy" alt="The Technology Partnership logo" src="/images/logos/ttpgroup.jpg" /></a>
       </div>
       <div class="col-md-2 col-sm-2">
-        <a href="https://www.brewin.co.uk/"><img class="img-fluid mx-auto d-block mb-4" alt="Brewin Dolphin Logo" src="/images/logos/brewindolphin.jpg" loading="lazy"  /></a>
+        <a href="https://www.brewin.co.uk/individuals/our-offices/cambridge"><img class="img-fluid mx-auto d-block mb-4" alt="Brewin Dolphin Logo" src="/images/logos/brewin-dolphin.jpg" loading="lazy"  /></a>
       </div>
     </div>
   </div>
