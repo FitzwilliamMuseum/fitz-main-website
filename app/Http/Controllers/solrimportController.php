@@ -498,7 +498,7 @@ class solrimportController extends Controller
       'podcasts',
       'podcasts.episode',
       array('slug'),
-      array('title' => 'title', 'content' => 'story')
+      array('title' => 'title', 'content' => 'description')
     );
   }
 
