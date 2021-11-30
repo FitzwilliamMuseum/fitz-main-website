@@ -9,6 +9,7 @@ use App\Models\Transport;
 use App\Models\Directions;
 use App\Models\FloorPlans;
 use App\Models\CoronaVirusNotes;
+use App\Models\VisitUsComponents;
 
 class visitController extends Controller
 {
@@ -44,15 +45,16 @@ class visitController extends Controller
       );
       $pages = $api2->getData();
 
-    
+
       $directions = Directions::list();
       $floors = FloorPlans::list();
       $corona = CoronaVirusNotes::list();
       $transport = Transport::list();
-
+      $measures = VisitUsComponents::find(1);
       return view('visit.index', compact(
         'pages', 'associated', 'directions',
-        'floors', 'corona', 'transport'
+        'floors', 'corona', 'transport',
+        'measures'
       ));
   }
 }
