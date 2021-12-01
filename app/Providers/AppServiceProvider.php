@@ -9,6 +9,7 @@ use ImageKit\ImageKit;
 use Illuminate\Pagination\Paginator;
 use Mimey\MimeTypes;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,8 +30,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
+        URL::forceScheme('https');
         Paginator::useBootstrap();
         Paginator::defaultView('pagination::simple-tailwind');
 
