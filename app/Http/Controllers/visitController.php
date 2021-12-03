@@ -50,7 +50,7 @@ class visitController extends Controller
       $floors = FloorPlans::list();
       $corona = CoronaVirusNotes::list();
       $transport = Transport::list();
-      $measures = VisitUsComponents::find(1);
+      $measures = VisitUsComponents::find(2);
       return view('visit.index', compact(
         'pages', 'associated', 'directions',
         'floors', 'corona', 'transport',
