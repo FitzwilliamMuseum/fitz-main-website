@@ -65,6 +65,7 @@
         </div>
       @endsection
     @endif
+
     @if(!empty($podcasts))
       @section('exhibitionAudio')
         <div class="container-fluid bg-gdbo py-2 mb-2">
@@ -81,7 +82,7 @@
       @endsection
     @endif
 
-    @if(isset($coll['youtube_id']))
+    @if(isset($coll['youtube_id']) && $coll['youtube_id']!= '' )
       <h3 class="lead">
         {{ $type }} films
       </h3>
@@ -95,7 +96,7 @@
       </div>
     @endif
 
-    @if(isset($coll['youtube_secondary_id']))
+    @if(isset($coll['youtube_secondary_id']) && $coll['youtube_secondary_id']!= '' )
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
@@ -106,6 +107,18 @@
       </div>
     @endif
 
+    @if(isset($coll['youtube_playlist_id']))
+      <h3 class="lead">
+        {{ $type }} films - a playlist
+      </h3>
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" title="A YouTube video playlist from the Fitzwilliam Museum"
+            src="https://www.youtube.com/embed/videoseries?list={{$coll['youtube_playlist_id']}}" frameborder="0"
+            allowfullscreen></iframe>
+          </div>
+        </div>
+    @endif
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
       <h3 class="lead">{{$type}} details</h3>
