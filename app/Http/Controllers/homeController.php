@@ -13,7 +13,7 @@ use App\Models\ResearchProjects;
 use App\Models\FundRaising;
 use App\Models\Highlights;
 use App\Models\ThingsToDo;
-// use App\Models\EventsTessitura;
+use App\Models\HomePage;
 use App\Models\Shopify;
 
 
@@ -27,6 +27,7 @@ class homeController extends Controller
    */
   public function index()
   {
+    $settings    = HomePage::find();
     $carousel    = Carousels::findBySection('home');
     $galleries   = Galleries::list(3,'?');
     $exhibitions = Exhibitions::listHome('current', '?', 3);
@@ -35,14 +36,13 @@ class homeController extends Controller
     $fundraising = FundRaising::list(3);
     $objects     = Highlights::homeList();
     $things      = ThingsToDo::list();
-    // $productions = EventsTessitura::list();
     $shopify     = Shopify::list();
 
-    return view('index', compact(
+    return view('home.index', compact(
       'carousel','news', 'research',
       'objects', 'things', 'fundraising',
       'shopify', 'galleries',
-      'exhibitions'
+      'exhibitions', 'settings'
     ));
   }
 }

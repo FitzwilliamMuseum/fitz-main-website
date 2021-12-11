@@ -23,56 +23,17 @@
 
     @hasSection('parallax_two')
     .second-parallax-home {
-      min-height: 200px;
+      min-height: 400px;
       background-image: url(@yield('parallax_two'));
       background-repeat: no-repeat;
       background-size: cover;
     }
     @endif
 
-    @hasSection('collection-parallax')
-    .parallax-collection {
-      min-height: 200px;
-      background-image: url(@yield('collection-parallax'));
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    @endif
-
-    @hasSection('parallax_three')
-    .third-parallax-home {
-      min-height: 200px;
-      background-image: url(@yield('parallax_three'));
-      background-repeat: no-repeat;
-      background-size: cover;
-
-    }
-    @endif
-
-    @hasSection('parallax_three_lower')
-    .third-parallax-home-lower {
-      min-height: 200px;
-      background-image: url(@yield('parallax_three'));
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: bottom;
-
-    }
-    @endif
-
-    @hasSection('parallax_four')
-    .fourth-parallax-home {
-      min-height: 200px;
-      background-image: url(@yield('parallax_four'));
-      background-repeat: no-repeat;
-      background-size: cover;
-
-    }
-    @endif
 
     @hasSection('parallax_home')
     .parallax-home {
-      min-height: 200px;
+      min-height: 400px;
       background-image: url(@yield('parallax_home'));
       background-repeat: no-repeat;
       background-size: cover;

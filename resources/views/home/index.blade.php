@@ -1,15 +1,11 @@
 @extends('layouts.home')
-
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/mens-boat_lion_202109_mfj22_dc1-1-.jpg')
-@section('hero_image_title','The founder\'s building entrance ceiling')
-@section('parallax_home', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
-@section('parallax_two', 'https://content.fitz.ms/fitz-website/assets/10.1.m.15_f7r_3_201811_amt49_mas.jpg')
-@section('parallax_three', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/aramesh.jpg')
-@section('parallax_four', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/e1a3159c12ca0f5091e3e9e5000ad4d0-landscape.jpg')
-@section('parallax_three_lower', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/aramesh.jpg')
-@section('description', 'Welcome to the Website for the Fitzwilliam Museum, the University of Cambridge\'s principal museum')
+@section('hero_image_title', $settings['hero_image_alt_text'])
+@section('parallax_home', $settings['parallax_one']['data']['full_url'])
+@section('parallax_two', $settings['parallax_two']['data']['full_url'])
+@section('description', $settings['meta_description'])
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
-@section('title', 'The Fitzwilliam Museum')
+@section('title', $settings['title'])
 
 
 @section('news')

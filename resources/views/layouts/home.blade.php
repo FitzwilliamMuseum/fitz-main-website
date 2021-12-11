@@ -23,14 +23,14 @@
   {{-- @yield('productions') --}}
   @include('includes.structure.exhibitions')
 
-  <div class="container-fluid parallax second-parallax-home"></div>
+  <div class="container-fluid parallax parallax-home"></div>
 
   @include('includes.structure.galleries')
 
-  <div class="container-fluid parallax second-parallax-home"></div>
+  <div class="container-fluid parallax parallax-home"></div>
 
   @yield('fundraising')
-  <div class="container-fluid parallax second-parallax-home mt-3">
+  <div class="container-fluid parallax parallax-home mt-3">
   </div>
   @include('includes.structure.thingstodo')
 
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div class="container-fluid parallax third-parallax-home">
+  <div class="container-fluid parallax second-parallax-home">
   </div>
 
   <div class="container mt-3">
@@ -68,7 +68,7 @@
       @yield('news')
     </div>
   </div>
-  <div class="container-fluid parallax third-parallax-home">
+  <div class="container-fluid parallax second-parallax-home">
   </div>
   <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')
