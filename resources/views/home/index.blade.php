@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/mens-boat_lion_202109_mfj22_dc1-1-.jpg')
+@section('hero_image',$settings['hero_image']['data']['full_url'])
 @section('hero_image_title', $settings['hero_image_alt_text'])
 @section('parallax_home', $settings['parallax_one']['data']['full_url'])
 @section('parallax_two', $settings['parallax_two']['data']['full_url'])
