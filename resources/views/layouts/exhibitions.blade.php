@@ -15,12 +15,8 @@
   @include('googletagmanager::body')
 
   @include('includes.structure.accessibility')
-
   @include('includes.structure.nav')
-
-
   @include('includes.structure.head')
-
   @include('includes.structure.open')
 
     @hasSection('360')
