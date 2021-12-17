@@ -69,9 +69,9 @@
               </p>
               @php
               $count = count($podcast['transcript']);
-              $start = array_slice($podcast['transcript'],0,12);
-              if($count > 12) {
-                $end = array_slice($podcast['transcript'],12, $count);
+              $start = array_slice($podcast['transcript'],0,2);
+              if($count > 2) {
+                $end = array_slice($podcast['transcript'],2, $count);
               }
               @endphp
 
