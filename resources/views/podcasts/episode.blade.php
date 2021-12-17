@@ -55,66 +55,7 @@
             </div>
           @endisset
 
-          @if(!empty($podcast['transcript']))
-            <h4 class="lead">
-              Podcast transcript
-            </h4>
-            <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
-              <p>
-                <em>
-                  This transcript was generated using Amazon Speech Recognition;
-                  there maybe errors in this text. Please do point any errors that
-                  you find out using the feedback widget at the bottom corner of this page.
-                </em>
-              </p>
-              @php
-              $count = count($podcast['transcript']);
-              $start = array_slice($podcast['transcript'],0,2);
-              if($count > 2) {
-                $end = array_slice($podcast['transcript'],2, $count);
-              }
-              @endphp
 
-              @if($count > 12)
-                <a class="btn btn-dark mx-2 mb-2 collapsed" data-toggle="collapse" href="#transcript"
-                role="button" aria-expanded="false" aria-controls="transcript">
-                <span class="if-collapsed">Show full transcript</span>
-                <span class="if-not-collapsed">Hide full transcript</span>
-                </a>
-                <ol>
-                  @foreach ($start as $transcript)
-                    <li>
-                      {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
-                      <span class="badge badge-secondary p-2">{{ $transcript['speaker'] }}</span>
-                      {{ $transcript['comment'] }}
-                    </li>
-                  @endforeach
-                </ol>
-                <hr/>
-              <div class="collapse" id="transcript">
-              <ol>
-                @foreach ($end as $transcript)
-                  <li>
-                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
-                    <span class="badge badge-dark p-2">{{ $transcript['speaker'] }}</span>
-                    {{ $transcript['comment'] }}
-                  </li>
-                @endforeach
-              </ol>
-              </div>
-              @else
-                <ol>
-                  @foreach ($podcast['transcript'] as $transcript)
-                    <li>
-                      {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
-                      {{ $transcript['comment'] }}
-                    </li>
-                  @endforeach
-                </ol>
-              @endif
-
-            </div>
-          @endif
 
           @isset($podcast['podcast_id'])
           <div class="col shadow-sm p-3 mx-auto mb-3">
@@ -125,6 +66,66 @@
           @endisset
         @endif
 
+        @if(!empty($podcast['transcript']))
+          <h4 class="lead">
+            Podcast transcript
+          </h4>
+          <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
+            <p>
+              <em>
+                This transcript was generated using Amazon Speech Recognition;
+                there maybe errors in this text. Please do point any errors that
+                you find out using the feedback widget at the bottom corner of this page.
+              </em>
+            </p>
+            @php
+            $count = count($podcast['transcript']);
+            $start = array_slice($podcast['transcript'],0,1);
+            if($count > 2) {
+              $end = array_slice($podcast['transcript'],1, $count);
+            }
+            @endphp
+
+            @if($count > 12)
+              <a class="btn btn-dark mx-2 mb-2 collapsed" data-toggle="collapse" href="#transcript"
+              role="button" aria-expanded="false" aria-controls="transcript">
+              <span class="if-collapsed">Show full transcript</span>
+              <span class="if-not-collapsed">Hide full transcript</span>
+              </a>
+              <ol>
+                @foreach ($start as $transcript)
+                  <li>
+                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
+                    <span class="badge badge-secondary p-2">{{ $transcript['speaker'] }}</span>
+                    {{ $transcript['comment'] }}
+                  </li>
+                @endforeach
+              </ol>
+              <hr/>
+            <div class="collapse" id="transcript">
+            <ol>
+              @foreach ($end as $transcript)
+                <li>
+                  {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
+                  <span class="badge badge-dark p-2">{{ $transcript['speaker'] }}</span>
+                  {{ $transcript['comment'] }}
+                </li>
+              @endforeach
+            </ol>
+            </div>
+            @else
+              <ol>
+                @foreach ($podcast['transcript'] as $transcript)
+                  <li>
+                    {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}: <strong>{{ $transcript['speaker'] }}</strong><br/>
+                    {{ $transcript['comment'] }}
+                  </li>
+                @endforeach
+              </ol>
+            @endif
+
+          </div>
+        @endif
       </div>
       <!-- End of column two -->
     </div>
