@@ -8,10 +8,7 @@
     </div>
 
     <p class="text-center text-black">
-      Tuesday - Saturday: 10:00 - 17:00 |
-      Sundays and Bank Holiday Mondays: 12:00 - 17:00 |   Box office closed Mondays
-      <br />
-      Closed 24th December to 27th December 2021 and 31st December 2021 to 1st January 2022 inclusive
+      @include('includes.structure.opening-hours')
       @fa('door-closed', 'closed') <a class="free_ticket" href="{{ URL::to('/visit-us/gallery-closures-and-collection-updates') }}" >Gallery closures and collection updates</a>
     </p>
   </div>

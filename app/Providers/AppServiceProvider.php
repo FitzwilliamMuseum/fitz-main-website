@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         URL::forceScheme('https');
         Paginator::useBootstrap();
         Paginator::defaultView('pagination::simple-tailwind');
-
+        view()->composer('includes.structure.opening-hours', \App\Http\Composers\OpeningHours::class);
         BladeHelper::directive('mime', function($mime){
           $mimes = new MimeTypes;
           return Str::upper($mimes->getExtension($mime)); // otf
