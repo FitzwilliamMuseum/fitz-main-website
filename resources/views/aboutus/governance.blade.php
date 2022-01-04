@@ -5,17 +5,84 @@
 @section('description', 'A list of governance files for the Fitzwilliam Museum')
 @section('keywords', 'fitzwilliam,museum,governance,pdf')
 @section('content')
+
+  <h2>Mission</h2>
   <div class="row">
+    @foreach($mission['data'] as $document)
+    <x-governance-card
+    :file="$document['file']"
+    :type="$document['type']"
+    :image="$document['hero_image']"
+    :altTag="$document['hero_image_alt_text']"
+    :title="$document['title']"
+    />
+    @endforeach
+  </div>
 
-    @foreach($gov['data'] as $document)
-      <x-governance-card
-      :file="$document['file']"
-      :type="$document['type']"
-      :image="$document['hero_image']"
-      :altTag="$document['hero_image_alt_text']"
-      :title="$document['title']"
-      />
-        @endforeach
+<h2>Policies</h2>
+<div class="row">
+  @foreach($policy['data'] as $document)
+  <x-governance-card
+  :file="$document['file']"
+  :type="$document['type']"
+  :image="$document['hero_image']"
+  :altTag="$document['hero_image_alt_text']"
+  :title="$document['title']"
+  />
+  @endforeach
+</div>
 
-      </div>
-    @endsection
+<h2>Strategies</h2>
+<div class="row">
+  @foreach($strategy['data'] as $document)
+  <x-governance-card
+  :file="$document['file']"
+  :type="$document['type']"
+  :image="$document['hero_image']"
+  :altTag="$document['hero_image_alt_text']"
+  :title="$document['title']"
+  />
+  @endforeach
+</div>
+
+<h2>Reviews</h2>
+<div class="row">
+  @foreach($review['data'] as $document)
+  <x-governance-card
+  :file="$document['file']"
+  :type="$document['type']"
+  :image="$document['hero_image']"
+  :altTag="$document['hero_image_alt_text']"
+  :title="$document['title']"
+  />
+  @endforeach
+</div>
+
+<h2>Reports</h2>
+<div class="row">
+  @foreach($report['data'] as $document)
+  <x-governance-card
+  :file="$document['file']"
+  :type="$document['type']"
+  :image="$document['hero_image']"
+  :altTag="$document['hero_image_alt_text']"
+  :title="$document['title']"
+  />
+  @endforeach
+</div>
+
+
+
+<h2>Education Report</h2>
+<div class="row">
+  @foreach($education['data'] as $document)
+  <x-governance-card
+  :file="$document['file']"
+  :type="$document['type']"
+  :image="$document['hero_image']"
+  :altTag="$document['hero_image_alt_text']"
+  :title="$document['title']"
+  />
+  @endforeach
+</div>
+@endsection
