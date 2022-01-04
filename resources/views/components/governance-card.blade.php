@@ -1,10 +1,10 @@
 <div class="col-md-4 mb-3">
   <div class="card card-fitz h-100">
-    @isset($file['data']['thumbnails'])
+    @isset($image['data']['thumbnails'])
       <a href="{{ $file['data']['full_url'] }}">
-        <img class="card-img-top" src="{{ $image['data']['thumbnails'][2]['url']}}"
+        <img class="card-img-top" src="{{ $image['data']['thumbnails'][4]['url']}}"
         alt="{{ $altTag }}"
-        width="{{ $file['data']['thumbnails'][2]['width'] }}"
+        width="{{ $image['data']['thumbnails'][4]['width'] }}"
         loading="lazy" />
       </a>
     @else
@@ -16,7 +16,7 @@
     @endisset
     <div class="card-body h-100">
       <div class="contents-label mb-3">
-        <h3 class="lead">
+        <h3>
           <a href="{{ $file['data']['full_url'] }}" class="stretched-link">
             {{ $title }}
           </a>
