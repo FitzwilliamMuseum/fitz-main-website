@@ -31,7 +31,7 @@ class homeController extends Controller
     $carousel    = Carousels::findBySection('home');
     $galleries   = Galleries::list(3,'?');
     $exhibitions = Exhibitions::listHome('current', '?', 3);
-    $news        = NewsArticles::list('-publication_date',3);
+    $news        = NewsArticles::feature('-publication_date',3);
     $research    = ResearchProjects::list('?', 3);
     $fundraising = FundRaising::list(3);
     $objects     = Highlights::homeList();

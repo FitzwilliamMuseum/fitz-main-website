@@ -27,6 +27,22 @@ class NewsArticles extends Model
       return $api->getData();
     }
 
+    public static function feature(string $sort = '-publication_date', int $limit = 3)
+    {
+      $api = new DirectUs;
+      $api->setEndpoint('news_articles');
+      $api->setArguments(
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => 'result_count,total_count,type',
+            'sort' => $sort,
+            'limit' => $limit,
+            'filter[feature_front_page][eq]' => 'yes'
+        )
+      );
+      return $api->getData();
+    }
+
     public static function paginateNews(request $request)
     {
       $perPage = 12;
