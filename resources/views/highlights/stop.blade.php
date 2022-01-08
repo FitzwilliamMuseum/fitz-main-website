@@ -22,7 +22,7 @@
 
     </div>
 
-  <h3 class="lead">Crowdsourced transcription of the audio file</h3>
+  <h3>Crowdsourced transcription of the audio file</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
     <figure class="figure float-right p-3">
       <img src="{{ $record['hero_image']['data']['thumbnails']['7']['url']}}"
@@ -43,7 +43,7 @@
     </figure>
     @markdown($record['transcription'])
   </div>
-  <h3 class="lead">Co-production of this resource</h3>
+  <h3>Co-production of this resource</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <img src="https://content.fitz.ms/fitz-website/assets/MP_SQUARE_notype.png?key=directus-medium-crop" class="float-right img-fluid p-2" alt="The MicroPasts logo" width="100" height="100"/>
     <p>
@@ -72,7 +72,7 @@
   @if(!empty($record['associated_pharos_object']))
   @section('pharos-pages')
   <div class="container">
-    <h3 class="lead">Associated highlight record</h3>
+    <h3>Associated highlight record</h3>
     <div class="row">
       @foreach($record['associated_pharos_object'] as $pharosassoc)
         <x-image-card
@@ -91,7 +91,7 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3 class="lead">Other audio guide stops you might like</h3>
+    <h3>Other audio guide stops you might like</h3>
     <div class="row">
       @foreach($records as $record)
         <x-solr-card :result="$record" />

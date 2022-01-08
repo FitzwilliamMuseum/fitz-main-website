@@ -9,7 +9,7 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['description'])
   </div>
-  <h3 class="lead">Project information</h3>
+  <h3>Project information</h3>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3">
     <ul>
       @if($project['project_url'])

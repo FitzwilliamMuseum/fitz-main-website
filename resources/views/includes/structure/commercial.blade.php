@@ -15,7 +15,7 @@
     @endif
     <div class="card-body h-100">
       <div class="contents-label mb-3">
-        <h3 class="lead">
+        <h3>
           <a class="stretched-link" href="{{ route('landing', [$data['section']]) }}">{{ $data['title']}}</a>
         </h3>
       </div>

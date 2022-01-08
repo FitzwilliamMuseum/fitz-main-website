@@ -1,4 +1,4 @@
-<h3 class="lead">Creative inspiration, wellbeing and ideas for you at home</h3>
+<h3>Creative inspiration, wellbeing and ideas for you at home</h3>
 <div class="row">
   @foreach($sessions['data'] as $session)
     <x-image-card

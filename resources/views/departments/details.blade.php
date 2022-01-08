@@ -49,7 +49,7 @@
 @if(!empty($staff['data']))
   @section('curators')
     <div class="container">
-      <h3 class="lead">Associated staff</h3>
+      <h3>Associated staff</h3>
       <div class="row">
         @foreach($staff['data'] as $curator)
           <x-image-card :altTag="$curator['profile_image_alt_text']" :title="$curator['display_name']"

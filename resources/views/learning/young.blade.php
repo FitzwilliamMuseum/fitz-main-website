@@ -48,7 +48,7 @@
 
 
     @if(!empty($records))
-    <h3 class="lead">
+    <h3>
       Related to this page
     </h3>
     <div class="row">

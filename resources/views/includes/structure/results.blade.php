@@ -10,7 +10,7 @@
               class="card-img-top"  alt="FitzVirtual Logo" loading="lazy"/></a>
             @endif
             <div class="card-body ">
-              <h3 class="lead">
+              <h3>
                 @php
                 $title = strip_tags(@markdown($result['title'][0]));
                 @endphp

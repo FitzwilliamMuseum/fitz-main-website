@@ -66,7 +66,7 @@
                   @elseif (strpos($result['contentType'][0], 'twitter') !== false)
                     A twitter post
                   @else
-                    <h3 class="lead">
+                    <h3>
                       @php
                       $title = strip_tags(@markdown($result['title'][0]));
                       @endphp

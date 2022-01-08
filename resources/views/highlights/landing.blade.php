@@ -84,7 +84,7 @@
         {!! Form::close() !!}
       </div>
 
-      <h3 class="lead">Search our highlights</h3>
+      <h3>Search our highlights</h3>
       <div class="col-12 shadow-sm p-3 mx-auto">
         {{ \Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
         <div class="row center-block">
@@ -117,7 +117,7 @@
 
 @section('theme-carousel')
   <div class="container-fluid py-2 bg-white">
-    <h3 class="lead">Explore highlights by theme</h3>
+    <h3>Explore highlights by theme</h3>
     <div class="row mb-2">
       <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
         <div class="carousel-inner row w-100 mx-auto">
@@ -139,7 +139,7 @@
                     </a>
                   @endif
                   <div class="card-body h-100">
-                    <h3 class="lead">
+                    <h3>
                       <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
                     </h3>
                   </div>
@@ -156,7 +156,7 @@
                       alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/></a>
                     @endif
                     <div class="card-body">
-                      <h3 class="lead">
+                      <h3>
                         <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
                       </h3>
                     </div>
@@ -180,7 +180,7 @@
 
   @section('period-carousel')
     <div class="container-fluid py-2 bg-white">
-      <h3 class="lead">Explore highlights by period</h3>
+      <h3>Explore highlights by period</h3>
       <div class="row mb-2">
         <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
         data-interval="false" data-pause="hover">
@@ -201,7 +201,7 @@
                       alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
                     @endif
                     <div class="card-body">
-                      <h3 class="lead">
+                      <h3>
                         <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
                       </h3>
                     </div>
@@ -220,7 +220,7 @@
                       </a>
                     @endif
                     <div class="card-body">
-                      <h3 class="lead">
+                      <h3>
                         <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
                       </h3>
                     </div>
@@ -244,7 +244,7 @@
 
   @section('context-carousel')
     <div class="container-fluid py-2 bg-white">
-      <h3 class="lead">Explore object contexts</h3>
+      <h3>Explore object contexts</h3>
       <div class="row">
         <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
         data-interval="false" data-pause="hover">
@@ -265,7 +265,7 @@
                       alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
                     @endif
                     <div class="card-body">
-                      <h3 class="lead">
+                      <h3>
                         <a href="{{ route('context-sections',[$record[0]['section']]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
                       </h3>
                     </div>
@@ -284,7 +284,7 @@
                       </a>
                     @endif
                     <div class="card-body">
-                      <h3 class="lead">
+                      <h3>
                         <a href="{{ route('context-sections',[$record[0]['section']]) }}">
                           {!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}
                         </a>

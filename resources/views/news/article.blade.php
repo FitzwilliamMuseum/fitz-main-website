@@ -79,7 +79,7 @@
 @section('mlt')
 @if(!empty($records))
 <div class="container">
-<h3 class="lead">Other recommended articles</h3>
+<h3>Other recommended articles</h3>
 <div class="row">
   @foreach($records as $record)
     <x-solr-card :result="$record" />

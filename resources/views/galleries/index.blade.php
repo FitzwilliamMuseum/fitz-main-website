@@ -8,9 +8,6 @@
 @endforeach
 @section('themes')
 <div class="container">
-  <h2 class="lead">
-    Our galleries
-  </h2>
   <div class="row">
     @foreach($galleries['data'] as $gallery)
       <x-gallery-card

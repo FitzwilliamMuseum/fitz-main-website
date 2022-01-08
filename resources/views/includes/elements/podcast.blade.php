@@ -5,10 +5,9 @@
         <div class="embed-responsive audio-player">
           <audio id="player" controls class="embed-responsive-item">
             <source src="{{ $podcast['mp3_id'] }}" type="audio/mp3">
-            </audio>
-          </div>
+          </audio>
         </div>
       </div>
-
     </div>
   </div>
+</div>

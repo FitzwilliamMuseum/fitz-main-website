@@ -30,7 +30,7 @@
 @if(!empty($records))
   @section('mlt')
     <div class="container">
-      <h3 class="lead">Other highlight objects in our collection you might like</h3>
+      <h3>Other highlight objects in our collection you might like</h3>
       <div class="row">
         @foreach($records as $record)
           <x-solr-card :result="$record" />

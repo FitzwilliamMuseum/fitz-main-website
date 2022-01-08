@@ -1,4 +1,4 @@
-<h3 class="lead">Our Schools sessions</h3>
+<h3>Our Schools sessions</h3>
 <div class="row">
   @foreach($sessions['data'] as $session)
   <div class="col-md-4 mb-3">
@@ -15,7 +15,7 @@
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
-          <h3 class="lead">
+          <h3>
             <a href="{{ route('school-sessions', $session['slug']) }}">{{ $session['title'] }}</a>
           </h3>
           @if(isset($session['key_stages']))

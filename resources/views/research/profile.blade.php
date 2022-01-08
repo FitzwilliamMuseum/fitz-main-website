@@ -23,7 +23,7 @@
         loading="lazy"/></a>
       </div>
       @endif
-      <h3 class="lead">
+      <h3>
       @isset($profile['title'])
       {{ $profile['title'] }}
       @endisset
@@ -59,7 +59,7 @@
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h4 class="lead">Publications</h4>
+                    <h4>Publications</h4>
                   </a>
                 </h4>
               </div>
@@ -75,7 +75,7 @@
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                    <h4 class="lead">Professional Memberships</h4>
+                    <h4>Professional Memberships</h4>
                   </a>
                 </h4>
               </div>
@@ -91,7 +91,7 @@
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                    <h4 class="lead">Affiliations</h4>
+                    <h4>Affiliations</h4>
                   </a>
                 </h4>
               </div>
@@ -113,7 +113,7 @@
             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                  <h4 class="lead">Research and social profiles</h4>
+                  <h4>Research and social profiles</h4>
                 </a>
               </h4>
             </div>
@@ -162,7 +162,9 @@
     @section('research-projects')
     <div class="container-fluid bg-gdbo py-3">
       <div class="container">
-        <h3 class="lead">Associated Research Projects</h3>
+        <h3>
+          Associated Research Projects
+        </h3>
         <div class="row">
           @foreach($profile['research_projects'] as $project)
             <x-image-card :altTag="$project['research_projects_id']['hero_image_alt_text'] " :title="$project['research_projects_id']['title']"  :image="$project['research_projects_id']['hero_image']" :route="'research-project'" :params="[$project['research_projects_id']['slug']]" />
@@ -177,7 +179,9 @@
     @section('departments-affiliated')
     <div class="container-fluid bg-grey py-3">
       <div class="container">
-        <h3 class="lead">Associated Departments</h3>
+        <h3>
+          Associated Departments
+        </h3>
         <div class="row">
           @foreach($profile['departments_affiliated'] as $department)
             <x-image-card
@@ -198,7 +202,9 @@
     @section('exhibitions-curated')
     <div class="container-fluid bg-pastel p-3">
     <div class="container">
-      <h3 class="lead">Associated Exhibitions</h3>
+      <h3>
+        Associated Exhibitions
+      </h3>
       <div class="row">
         @foreach($profile['exhibitions_curated'] as $exhibition)
           <x-image-card
@@ -220,7 +226,7 @@
 @if(!empty($similar))
   @section('mlt')
     <div class="container py-3">
-      <h4 class="lead">Researchers with similar profiles</h4>
+      <h4>Researchers with similar profiles</h4>
       <div class="row">
         @foreach($similar as $record)
           <x-solr-card :result="$record" />

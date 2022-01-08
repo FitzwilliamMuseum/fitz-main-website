@@ -57,3 +57,7 @@ $('.popover-dismiss').popover({
   gtag('js', new Date());
   gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
 </script>
+@hasSection('map')
+  @mapscripts
+  @include('includes.scripts.mapjs')
+@endif

@@ -15,7 +15,7 @@
     @endisset
     <div class="card-body h-100">
       <div class="contents-label mb-3">
-        <h3 class="lead">
+        <h3>
           <a href="{{ $result['url'][0] }}" class="stretched-link">
             {{ $result['title'][0] }}
           </a>

@@ -2,7 +2,7 @@
 @if(!empty($area['associated_research']))
 @section('research-projects')
 <div class="container">
-  <h3 class="lead">Associated Research Projects</h3>
+  <h3>Associated Research Projects</h3>
   <div class="row">
     @foreach($area['associated_research'] as $area)
       <x-image-card

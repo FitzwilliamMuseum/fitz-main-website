@@ -35,7 +35,7 @@
     @yield('corona')
 
   <div class="container py-2">
-    <h3 class="lead">
+    <h3>
       Find us
     </h3>
   </div>
@@ -62,14 +62,9 @@
 
   @yield('associated_pages')
   @include('includes.structure.emailsignup')
-  @include('includes.structure.share')
   @include('includes.structure.footer')
-  @include('includes.structure.modal')
   @include('includes.scripts.javascript')
-  @hasSection('map')
-    @mapscripts
-    @include('includes.scripts.mapjs')
-  @endif
+
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <div class="container">
-<h3 class="lead">Incoming loan due diligence</h3>
+<h3>Incoming loan due diligence</h3>
 <div class="container shadow-sm p-3 mb-3">
   <p>Lists of objects proposed for protection under Part 6 of the Tribunals, Courts and Enforcement Act 2007 (protection of cultural objects on loan).</p>
 </div>
@@ -19,7 +19,7 @@
         @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
-            <h3 class="lead">
+            <h3>
               <a class="stretched-link" href="{{ $immunity['immunity_from_seizure']['data']['full_url'] }}">{{ $immunity['title']}}</a>
             </h3>
             <p class="text-info">@mime($immunity['immunity_from_seizure']['type']) @humansize($immunity['immunity_from_seizure']['filesize'])</p>

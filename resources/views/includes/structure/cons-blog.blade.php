@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 class="lead">Latest blog posts</h3>
+  <h3>Latest blog posts</h3>
   <div class="row">
     @foreach($blog as $post)
       <x-wordpress-card

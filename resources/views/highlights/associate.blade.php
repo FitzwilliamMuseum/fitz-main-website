@@ -30,7 +30,7 @@
   @if(!empty($highlights))
     @section('highlight')
       <div class="container">
-        <h3 class="lead">
+        <h3>
           Other highlight objects you might like
         </h3>
         <div class="row">
@@ -44,7 +44,7 @@
   @if(!empty($records))
   @section('mlt')
   <div class="container">
-    <h3 class="lead">
+    <h3>
       Other pathways and stories you might like
     </h3>
     <div class="row">

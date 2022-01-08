@@ -21,7 +21,7 @@
       <div class="card card-body h-100">
         <div class="container h-100">
           <div class="contents-label mb-3">
-            <h3 class="lead">
+            <h3>
               {{ $file['learning_files_id']['title'] }}
             </h3>
             <ul>

@@ -34,7 +34,7 @@
                     @endif
                     <div class="card-body ">
                       <div class="contents-label mb-3">
-                        <h3 class="lead">
+                        <h3>
                           <a class="stretched-link" href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">{{ $production->PerformanceDescription }}</a>
                         </h3>
                         <h5 class="lead">

@@ -70,7 +70,7 @@
       @section('exhibitionAudio')
         <div class="container-fluid bg-gdbo py-2 mb-2">
           <div class="container">
-            <h3 class="lead">Audio</h3>
+            <h3>Audio</h3>
             <div class="row">
             @foreach($podcasts['data'] as $podcast)
               <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['title']"
@@ -83,7 +83,7 @@
     @endif
 
     @if(isset($coll['youtube_id']) && $coll['youtube_id']!= '' )
-      <h3 class="lead">
+      <h3>
         {{ $type }} films
       </h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -108,7 +108,7 @@
     @endif
 
     @if(isset($coll['youtube_playlist_id']))
-      <h3 class="lead">
+      <h3>
         {{ $type }} films - a playlist
       </h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -121,7 +121,7 @@
     @endif
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
-      <h3 class="lead">{{$type}} details</h3>
+      <h3>{{$type}} details</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @if(isset($coll['exhibition_url']))
@@ -140,7 +140,7 @@
     @endif
 
     @if(!empty($coll['exhibition_files']))
-      <h3 class="lead">{{$type}} files</h3>
+      <h3>{{$type}} files</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <ul>
           @foreach($coll['exhibition_files'] as $file)
@@ -152,7 +152,7 @@
       </div>
     @endif
     @isset($adlib)
-    <h3 class="lead">Selected objects from the {{$type}}</h3>
+    <h3>Selected objects from the {{$type}}</h3>
     <div class="row">
     @foreach($adlib as $record)
           @php
@@ -175,7 +175,7 @@
               <div class="card-body ">
 
                 <div class="contents-label mb-3">
-                  <h3 class="lead">
+                  <h3>
                   <a href="{{ env('COLLECTION_URL')}}/id/object/{{ $pris[0] }}" class="stretched-link">{{ ucfirst($record['_source']['summary_title']) }}</a>
                   </h3>
                   <p>
@@ -197,7 +197,7 @@
     @section('curators')
       <div class="container-fluid bg-grey py-3">
         <div class="container">
-          <h3 class="lead">Associated curators</h3>
+          <h3>Associated curators</h3>
           <div class="row">
             @foreach($coll['associated_curators'] as $curator)
               <x-image-card
@@ -218,7 +218,7 @@
       @section('research-funders')
       <div class="container-fluid py-3">
         <div class="container">
-          <h3 class="lead">Funders and partners</h3>
+          <h3>Funders and partners</h3>
           <div class="row">
             @foreach($coll['exhibition_partners'] as $partner)
               <x-partner-card
@@ -237,7 +237,7 @@
     @if(!empty($coll['associated_departments']))
       @section('departments')
         <div class="container">
-          <h3 class="lead">Associated departments</h3>
+          <h3>Associated departments</h3>
           <div class="row">
             @foreach($coll['associated_departments'] as $department)
               <x-image-card
@@ -257,7 +257,7 @@
       @if(!empty($coll['exhibition_carousel']))
         @section('excarousel')
           <div class="container">
-            <h3 class="lead">Selected images</h3>
+            <h3>Selected images</h3>
             <div class="bd-example mb-3">
               <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ol class="carousel-indicators">
@@ -315,7 +315,7 @@
       @section('galleries')
         <div class="container-fluid bg-dark text-white py-2 mb-2">
           <div class="container">
-            <h3 class="lead">Associated Galleries</h3>
+            <h3>Associated Galleries</h3>
             <div class="row">
               @foreach($coll['associated_galleries'] as $gallery)
                 <x-image-card
@@ -335,7 +335,7 @@
       @section('360')
         @if(!empty($coll['image_360_pano']))
           <div class="container">
-            <h3 class="lead">360 gallery image</h3>
+            <h3>360 gallery image</h3>
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
               <div id="panorama"></div>
             </div>
@@ -348,7 +348,7 @@
     @if(!empty($records))
       @section('mlt')
         <div class="container">
-          <h3 class="lead">Similar exhibitions from our archives</h3>
+          <h3>Similar exhibitions from our archives</h3>
           <div class="row">
             @foreach($records as $record)
               <x-solr-card :result="$record" />

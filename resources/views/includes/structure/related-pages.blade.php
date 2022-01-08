@@ -1,7 +1,7 @@
 @if(!empty($records))
 @section('associated_pages')
   <div class="container">
-  <h3 class="lead">
+  <h3>
     Related to this page
   </h3>
 
@@ -18,7 +18,7 @@
               @endif
               <div class="card-body h-100">
                 <div class="contents-label mb-3">
-                  <h3 class="lead">
+                  <h3>
                     <a href="{{ $record['url'][0]}}">{{ $record['title'][0] }}</a>
                   </h3>
                 </div>

@@ -1,5 +1,5 @@
 <div class="container mt-3">
-<h3 class="lead">
+<h3>
   <a href="{{ route('exhibitions')}}">Current exhibitions and new displays</a>
 </h3>
 <div class="row">

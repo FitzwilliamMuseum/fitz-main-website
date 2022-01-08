@@ -135,8 +135,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+h3, h2 {
+  font-family: 'PT Sans', sans-serif;
+}
 h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
 }
 .shadow-sm {
   background-color: white;
@@ -1009,4 +1012,11 @@ a.nav-link {
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+}
+.alert__jobs {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.btn {
+  border-radius: 0;
 }

@@ -122,12 +122,7 @@
 
 
   @include('includes.structure.emailsignup')
-  @include('includes.structure.share')
-
   @include('includes.structure.footer')
-
-  @include('includes.structure.modal')
-
   @hasSection('lookanswers')
     @yield('lookanswers')
   @endif

@@ -14,7 +14,7 @@
 
   @if(array_key_exists('multimedia', $record['_source']))
   @if(!empty(array_slice($record['_source']['multimedia'],1)))
-  <h3 class="lead">Alternative views</h3>
+  <h3>Alternative views</h3>
   <div class="row ">
       @foreach(array_slice($record['_source']['multimedia'],1) as $media)
       <div class="col-md-4 mt-3">

@@ -30,7 +30,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        URL::forceScheme('https');
+        if (!$this->app->isLocal()){
+          URL::forceScheme('https');
+        }
         Paginator::useBootstrap();
         Paginator::defaultView('pagination::simple-tailwind');
         view()->composer('includes.structure.opening-hours', \App\Http\Composers\OpeningHours::class);

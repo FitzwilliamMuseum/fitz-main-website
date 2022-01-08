@@ -7,7 +7,7 @@
       @endif
         <div class="card-body h-100">
           <div class="contents-label mb-3">
-            <h3 class="lead">
+            <h3>
               <a href="{{ $datum['url']}}">{{ $datum['title']}}</a>
             </h3>
             @isset($datum['sub_title'])

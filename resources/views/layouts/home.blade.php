@@ -5,9 +5,7 @@
   @include('includes.structure.meta')
   <x-feed-links />
   @include('includes.css.css')
-
   @include('includes.structure.manifest')
-
   @include('googletagmanager::head')
 
 </head>
@@ -38,7 +36,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{  route('objects') }}">Collections highlights</a></h2>
+    <h2><a href="{{  route('objects') }}">Collections highlights</a></h2>
     <div class="row">
       @yield('themes')
     </div>
@@ -53,7 +51,7 @@
   <div class="container-fluid parallax second-parallax-home mt-3"></div>
 
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('research') }}">Our research</a></h2>
+    <h2><a href="{{ route('research') }}">Our research</a></h2>
     <div class="row">
       @yield('research')
     </div>
@@ -63,7 +61,7 @@
   </div>
 
   <div class="container mt-3">
-    <h2 class="lead"><a href="{{ route('news') }}">Latest news</a></h2>
+    <h2><a href="{{ route('news') }}">Latest news</a></h2>
     <div class="row">
       @yield('news')
     </div>
@@ -74,11 +72,7 @@
     @yield('shopify')
   </div>
   @include('includes.structure.emailsignup')
-
-  @include('includes.structure.share')
-
   @include('includes.structure.footer')
-  @include('includes.structure.modal')
   @include('includes.scripts.javascript')
 
 </body>

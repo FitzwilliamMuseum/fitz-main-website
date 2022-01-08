@@ -43,9 +43,6 @@
         @yield('360')
         @yield('mlt')
   @include('includes.structure.emailsignup')
-
-  @include('includes.structure.share')
-
   @include('includes.structure.footer')
   @include('includes.structure.modal')
   @include('includes.scripts.javascript')

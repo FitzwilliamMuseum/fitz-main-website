@@ -18,7 +18,7 @@
     @endphp
     @if(!empty($records))
       <div class="container">
-      <h3 class="lead">
+      <h3>
         Related objects
       </h3>
       <div class="row">
@@ -80,7 +80,7 @@
               @endif
               <div class="card-body">
                 <div class="contents-label mb-3">
-                  <h3 class="lead">
+                  <h3>
                     <a href="{{ route('department', $gallery['departments_id']['slug']) }}">{{ $gallery['departments_id']['title']}}</a>
                   </h3>
                 </div>
@@ -112,7 +112,7 @@
             @endif
             <div class="card-body  h-100">
               <div class="contents-label mb-3">
-                <h3 class="lead">
+                <h3>
                   <a href="{{ route('gallery', $gallery['galleries_id']['slug']) }}">{{ $gallery['galleries_id']['gallery_name']}}</a>
                 </h3>
               </div>
@@ -129,7 +129,7 @@
 @if(!empty($coll['curators']))
   @section('curators')
     <div class="container">
-      <h3 class="lead">Associated staff</h3>
+      <h3>Associated staff</h3>
       <div class="row">
         @foreach($coll['curators'] as $curator)
           <div class="col-md-3 mb-3">
@@ -150,7 +150,7 @@
                 @endif
                 <div class="card-body">
                   <div class="contents-label mb-3">
-                    <h3 class="lead">
+                    <h3>
                       <a href="{{ route('research-profile', $curator['staff_profiles_id']['slug']) }}">{{ $curator['staff_profiles_id']['display_name']}}</a>
                     </h3>
                   </div>

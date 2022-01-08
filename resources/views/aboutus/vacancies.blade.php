@@ -24,7 +24,7 @@
           @endif
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3 class="lead">
+              <h3>
                 <a href="{{ route('vacancy', $vacancy['slug'])}}">{{ $vacancy['job_title']}}</a>
               </h3>
               <p class="text-info">Closing Date: {{ Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</p>

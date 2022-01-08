@@ -21,7 +21,7 @@
       @markdown($record['description'])
     </div>
 
-    <h3 class="lead">Themes and periods</h3>
+    <h3>Themes and periods</h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
 
       @if(isset($record['period_assigned']))
@@ -92,7 +92,7 @@
     @if(!empty($record['associated_pharos_content']))
       @section('pharos-pages')
         <div class="container">
-          <h3 class="lead">Stories, Contexts and Themes</h3>
+          <h3>Stories, Contexts and Themes</h3>
           <div class="row">
             @foreach($record['associated_pharos_content'] as $pharosassoc)
               <x-image-card
@@ -111,7 +111,7 @@
       @if(!empty($records))
         @section('mlt')
           <div class="container">
-            <h3 class="lead">Other highlight objects you might like</h3>
+            <h3>Other highlight objects you might like</h3>
             <div class="row">
               @foreach($records as $record)
                 <x-solr-card :result="$record" />
@@ -160,7 +160,7 @@
           @foreach($pharos['data'] as $record)
 
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-              <h3 class="lead">Further information</h3>
+              <h3>Further information</h3>
               <ul>
                 <li>Collections ID: {{$record['adlib_id']}}</li>
                 @if(!is_null($record['place_of_origin']))

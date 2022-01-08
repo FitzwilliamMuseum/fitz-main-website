@@ -23,7 +23,7 @@
             alt="Eye of the minotaur" loading="lazy" />
           </a>
           <div class="card-body h-100">
-            <h3 class="lead">
+            <h3>
               <a href="{{route('research-profiles')}}" class="stretched-link">
                 Our active researchers
               </a>
@@ -39,7 +39,7 @@
             alt="Jennifer Wexler" loading="lazy" />
           </a>
           <div class="card-body h-100">
-            <h3 class="lead">
+            <h3>
               <a href="{{route('opportunities')}}" class="stretched-link">
                 Research opportunities
               </a>
@@ -71,7 +71,7 @@
             alt="A segment of a manuscript" loading="lazy" />
           </a>
           <div class="card-body h-100">
-            <h3 class="lead">
+            <h3>
               <a href="{{route('resources')}}">Digital resources</a>
             </h3>
           </div>

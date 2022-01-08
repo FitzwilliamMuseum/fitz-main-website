@@ -79,7 +79,6 @@
     @yield('shopify')
 
   @include('includes.structure.emailsignup')
-  @include('includes.structure.share')
 
   @include('includes.structure.footer')
 

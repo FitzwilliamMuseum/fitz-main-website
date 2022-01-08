@@ -38,13 +38,13 @@
       <div class="col-md-3 offset-md-2 mt-2 mb-2 mr-2">
         <h4 class="sr-only">Contact us</h4>
         <p class="small-font">
-          The Fitzwilliam Museum,<br/>
-          Trumpington Street,<br/>
+          The Fitzwilliam Museum<br/>
+          Trumpington Street<br/>
           Cambridge<br/>
           CB2 1RB<br/>
           Switchboard: +44 (0)1223 332 900<br />
           Box office: +44 (0)1223 333 230<br/>
-          <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a></br>
+          <i class="fas fa-ticket-alt mr-1" aria-hidden="true" title="ticket"></i> <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a></br>
           What3Words: <span class="w3w"><a
             href="https://map.what3words.com/lofts.puzzle.given"
             aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
@@ -103,24 +103,24 @@
         <div class="col-md-6  mx-auto">
           <h4 class="sr-only">Join our conversations</h4>
           <p class="share text-center">
-            <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK"><i class="fab fa-twitter  p-2"></i></a>
-            <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk"><i class="fab fa-instagram   p-2"></i></a>
-            <a aria-label="Fitzwilliam Museum facebook account" href="https://www.facebook.com/fitzwilliammuseum/"><i class="fab fa-facebook  p-2"></i></a>
-            <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/beta.fitz.ms"><i
-              class="fab fa-github  p-2"></i></a>
-
-              <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg"><i
-                class="fab fa-youtube  p-2"></i></a>
-                <span ><a aria-label="Fitzwilliam Museum github account" href="https://www.sketchfab.com/fitzwilliammuseum/">
-                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="17" height="17"
-                  viewBox="0 0 50 58" style="fill:#000;">
-                  <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z
-                  M24,38.805l-10-6.25V20.664l10,6.458V38.805z M14.367,18.484L25,11.819l10.633,6.665L25,25.149L14.367,
-                  18.484z M36,32.555l-10,6.25V27.122l10-6.458V32.555z">
-                </path>
-              </svg>
-            </a></span>
-            <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/feeds/news/') }}"><i class="fas fa-rss ml-1"></i></a>
+            <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
+              <i class="fab fa-twitter fa-3x p-2"></i>
+            </a>
+            <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
+              <i class="fab fa-instagram fa-3x p-2"></i>
+            </a>
+            <a aria-label="Fitzwilliam Museum facebook account" href="https://www.facebook.com/fitzwilliammuseum/">
+              <i class="fab fa-facebook fa-3x p-2"></i>
+            </a>
+            <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/beta.fitz.ms">
+              <i class="fab fa-github fa-3x p-2"></i>
+            </a>
+            <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
+              <i class="fab fa-youtube fa-3x p-2"></i>
+            </a>
+            <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/feeds/news/') }}">
+              <i class="fas fa-rss fa-3x ml-1"></i>
+            </a>
           </p>
         </div>
       </div>

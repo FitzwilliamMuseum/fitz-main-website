@@ -59,7 +59,7 @@
     // @dd($records);
     @endphp
     @if(!empty($records))
-      <h3 class="lead">
+      <h3>
         Selected objects in gallery {{ $gallery['gallery_name'] }}
       </h3>
       <div class="row">

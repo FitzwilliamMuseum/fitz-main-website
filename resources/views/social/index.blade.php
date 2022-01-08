@@ -15,7 +15,7 @@
           loading="lazy"/></a>
           <div class="card-body h-100">
             <div class="contents-label mb-3">
-              <h3 class="lead">
+              <h3>
                 In my mind's eye
               </h3>
             </div>
@@ -31,7 +31,7 @@
             loading="lazy"/></a>
             <div class="card-body h-100">
               <div class="contents-label mb-3">
-                <h3 class="lead">
+                <h3>
                   Our podcast archive
                 </h3>
               </div>
@@ -45,7 +45,7 @@
             alt="Our instagram profile"/></a>
             <div class="card-body h-100">
               <div class="contents-label mb-3">
-                <h3 class="lead">
+                <h3>
                   <a href="{{ route('instagram') }}">Instagram</a>
                 </h3>
               </div>
@@ -59,7 +59,7 @@
               alt="Our instagram profile"/></a>
               <div class="card-body h-100">
                 <div class="contents-label mb-3">
-                  <h3 class="lead">
+                  <h3>
                     <a href="{{ route('twitter') }}">Twitter</a>
                   </h3>
                 </div>

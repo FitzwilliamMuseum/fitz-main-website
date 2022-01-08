@@ -25,7 +25,7 @@
         @endif
         <div class="card-body ">
           <div class="contents-label mb-3">
-            <h3 class="lead">
+            <h3>
               <a href="{{ route('collection', $collection['slug']) }}">{{ $collection['collection_name']}}</a>
             </h3>
           </div>

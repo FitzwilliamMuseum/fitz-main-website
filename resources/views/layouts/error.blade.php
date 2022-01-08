@@ -6,42 +6,18 @@
     <x-feed-links />
 
     @include('includes.css.css')
-
-    @hasSection('map')
-      @mapstyles
-    @endif
-
     @include('includes.structure.manifest')
     @include('googletagmanager::head')
-
 </head>
-
 <body class="doc-body">
   @include('googletagmanager::body')
   @include('includes.structure.accessibility')
   @include('includes.structure.nav')
   @include('includes.structure.head')
-
   <div class="container">
         @yield('content')
   </div>
-
-
   @include('includes.structure.footer')
-  @include('includes.structure.modal')
   @include('includes.scripts.javascript')
-
-  @hasSection('360')
-    @include('includes.scripts.photosphere-js')
-  @endif
-
-  @hasSection('map')
-    @include(includes.scripts.mapjs)
-  @endif
-
-  @hasSection('timeline')
-    @include('includes.scripts.timeline-js')
-  @endif
-
 </body>
 </html>

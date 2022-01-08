@@ -1,6 +1,6 @@
 <div class="container mt-3">
-  <h2 class="lead">
-    Discover our galleries
+  <h2>
+    <a href="{{ route('galleries') }}">Discover our galleries</a>
   </h2>
   <div class="row">
     @foreach($galleries['data'] as $gallery)
