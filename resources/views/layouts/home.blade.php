@@ -18,7 +18,6 @@
 
   @include('includes.structure.steppe')
 
-  {{-- @yield('productions') --}}
   @include('includes.structure.exhibitions')
 
   <div class="container-fluid parallax parallax-home"></div>
