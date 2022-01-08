@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <h3>
+  <h2>
     <a href="{{route('things')}}">Things to do</a>
   </h3>
   <div class="row">
