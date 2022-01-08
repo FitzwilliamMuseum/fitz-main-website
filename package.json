@@ -19,6 +19,7 @@
         "lodash": "^4.17.21",
         "node-forge": ">=0.10.0",
         "nth-check": ">=2.0.1",
+        "object-path": ">=0.11.8",
         "popper.js": "^1.12",
         "postcss": ">=8.2.10",
         "resolve-url-loader": "^2.3.2",
