@@ -1023,3 +1023,6 @@ a.nav-link {
 .form-control {
     border-radius: 0;
 }
+a.text-center.btn.btn-outline-light.btn__book {
+    border: 4px solid white;
+}
