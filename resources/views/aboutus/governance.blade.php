@@ -70,10 +70,19 @@
   />
   @endforeach
 </div>
-
-
-
-<h2>Education Report</h2>
+<h2>Research policies and strategy</h2>
+<div class="row">
+  @foreach($research['data'] as $document)
+  <x-governance-card
+  :file="$document['file']"
+  :type="$document['type']"
+  :image="$document['hero_image']"
+  :altTag="$document['hero_image_alt_text']"
+  :title="$document['title']"
+  />
+  @endforeach
+</div>
+<h2>Education Reports</h2>
 <div class="row">
   @foreach($education['data'] as $document)
   <x-governance-card

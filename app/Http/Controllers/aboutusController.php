@@ -88,13 +88,19 @@ class aboutusController extends Controller
    */
   public function governance()
   {
-    $policy = Governance::getGovernanceByType('Policy');
-    $strategy = Governance::getGovernanceByType('Strategy');
-    $review = Governance::getGovernanceByType('Review');
-    $report = Governance::getGovernanceByType('Report');
-    $mission = Governance::getGovernanceByType('Mission');
+    $policy    = Governance::getGovernanceByType('Policy');
+    $strategy  = Governance::getGovernanceByType('Strategy');
+    $review    = Governance::getGovernanceByType('Review');
+    $report    = Governance::getGovernanceByType('Report');
+    $mission   = Governance::getGovernanceByType('Mission');
     $education = Governance::getGovernanceByType('Education Report');
-    return view('aboutus.governance', compact('policy', 'strategy', 'review', 'report', 'mission', 'education'));
+    $research  = Governance::getGovernanceByType('Research');
+    return view('aboutus.governance', compact(
+      'policy', 'strategy', 'review',
+      'report', 'mission', 'education',
+      'research'
+      )
+    );
   }
 
   /**
