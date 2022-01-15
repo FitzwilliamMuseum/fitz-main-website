@@ -11,6 +11,7 @@ use App\Models\Directors;
 use App\Models\Vacancies;
 use App\Models\Governance;
 use App\Models\FindMoreLikeThis;
+use App\Models\StaffProfiles;
 
 class aboutusController extends Controller
 {
@@ -128,5 +129,11 @@ class aboutusController extends Controller
     $paginator = new LengthAwarePaginator($press, $total, $perPage, $currentPage);
     $paginator->setPath('press-room');
     return view('aboutus.press', compact('press','paginator'));
+  }
+
+  public function staff(Request $request){
+    $paginator = StaffProfiles::allstaff($request);
+    return view('aboutus.staff', compact('paginator'));
+
   }
 }

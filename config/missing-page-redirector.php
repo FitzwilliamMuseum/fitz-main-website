@@ -455,6 +455,7 @@ return [
       '/research/workingwithschools' => '/learning/working-with-teachers-and-students',
       '/research/staff-profiles' => '/research/active-researchers',
       '/research/staff-profiles/{url}' => '/about-us/our-staff/profile/{url}',
+      '/about-us/our-staff/profile/' => '/about-us/our-staff',
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',

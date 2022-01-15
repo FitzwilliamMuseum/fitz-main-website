@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use App\DirectUs;
 
 class StaffProfiles extends Model
@@ -19,6 +23,33 @@ class StaffProfiles extends Model
         )
       );
       return $api->getData();
+    }
+
+    public static function allstaff(Request $request){
+      $perPage = 24;
+      $directus = new DirectUs;
+      if($request->page > 1){
+        $offset = ($request->page -1) * $perPage;
+      } else {
+        $offset = 0;
+      }
+      $directus->setEndpoint('staff_profiles');
+      $directus->setArguments(
+        $args = array(
+          'fields' => '*.*.*',
+          'limit' => $perPage,
+          'offset' => $offset,
+          'meta' => '*',
+          'sort' => 'last_name',
+          'filter[status][in]'  => 'published'
+        )
+      );
+      $staff = $directus->getData();
+      $currentPage = LengthAwarePaginator::resolveCurrentPage();
+      $total = $staff['meta']['status_count']['published'];
+      $paginator = new LengthAwarePaginator($staff, $total, $perPage, $currentPage);
+      $paginator->setPath(route('about.our.staff'));
+      return $paginator;
     }
 
     public static function find($slug)

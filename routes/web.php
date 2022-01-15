@@ -32,6 +32,7 @@ Route::get('about-us/collections/{slug}/', 'collectionsController@details')->nam
 Route::get('about-us/departments/', 'departmentsController@index')->name('departments');
 Route::get('about-us/departments/{slug}', 'departmentsController@details')->name('department');
 Route::get('about-us/departments/conservation-and-collections-care/{slug}', 'departmentsController@conservation')->name('conservation-care');
+Route::get('about-us/our-staff', 'aboutusController@staff')->name('about.our.staff');
 
 /*
 Things to do
