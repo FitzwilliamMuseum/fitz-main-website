@@ -141,6 +141,9 @@ class AppServiceProvider extends ServiceProvider
             case "staffProfile":
               $clean = 'A staff research profile';
             break;
+            case "affilateProfile":
+              $clean = 'An affiliate researcher profile';
+            break;
             case "projects":
               $clean = 'A research project\'s details';
             break;

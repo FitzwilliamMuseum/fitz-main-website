@@ -38,6 +38,28 @@ class solrimportController extends Controller
     );
   }
 
+  public function affiliates()
+  {
+    $api = $this->getApi();
+    $api->setEndpoint('affiliate_researchers');
+    $api->setArguments(
+      $args = array(
+        'limit' => '500',
+        'fields' => 'id,display_name,biography,slug,profile_image.*'
+      )
+    );
+    $data = $api->getData();
+    $solr = new SolrImporter();
+    return $solr->import(
+      $data['data'],
+      'affilateProfile',
+      'affilateProfile',
+      'research-affilate',
+      array('slug'),
+      array('title' => 'display_name', 'content' => 'biography', 'image' => 'profile_image')
+    );
+  }
+
   public function news()
   {
     $api = $this->getApi();

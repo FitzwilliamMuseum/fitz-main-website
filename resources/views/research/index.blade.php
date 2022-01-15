@@ -78,6 +78,20 @@
         </div>
       </div>
 
+      <div class="col-md-4 mb-3">
+        <div class="card card-fitz h-100">
+          <a href="{{route('research-affiliates')}}">
+            <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/25th_november_131_2000x1000.jpg?key=directus-medium-crop"
+            alt="A segment of a manuscript" loading="lazy" />
+          </a>
+          <div class="card-body h-100">
+            <h3>
+              <a href="{{route('research-affiliates')}}">Affiliated Researchers</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+
     @foreach($associated['data'] as $project)
       <x-image-card
         :image="$project['hero_image']"

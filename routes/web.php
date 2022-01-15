@@ -46,6 +46,8 @@ Route::get('research/projects/', 'researchController@projects')->name('research-
 Route::get('research/projects/{slug}/', 'researchController@project')->name('research-project');
 Route::get('research/staff-profiles', 'researchController@profiles')->name('research-profiles');
 Route::get('research/staff-profiles/{slug}', 'researchController@profile')->name('research-profile');
+Route::get('research/affiliates', 'researchController@affiliates')->name('research-affiliates');
+Route::get('research/affiliates/{slug}', 'researchController@affilate')->name('research-affilate');
 Route::get('research/online-resources/', 'researchController@resources')->name('resources');
 Route::get('research/online-resources/{slug}', 'researchController@resource')->name('resource');
 Route::get('research/opportunities/', 'researchController@opportunities')->name('opportunities');

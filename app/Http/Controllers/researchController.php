@@ -11,6 +11,7 @@ use App\Models\OnlineResources;
 use App\Models\Stubs;
 use App\Models\ResearchOpportunities;
 use App\Models\FindMoreLikeThis;
+use App\Models\AffiliateResearchers;
 
 class researchController extends Controller
 {
@@ -70,6 +71,22 @@ class researchController extends Controller
     {
       $profiles = StaffProfiles::list();
       return view('research.profiles', compact('profiles'));
+    }
+
+    public function affilate(string $slug)
+    {
+      $profiles = AffiliateResearchers::find($slug);
+      if(empty($profiles['data'])){
+        return response()->view('errors.404',[],404);
+      }
+      $similar = FindMoreLikeThis::find($slug, 'affilate');
+      return view('research.affiliate', compact('profiles', 'similar'));
+    }
+
+    public function affiliates()
+    {
+      $profiles = AffiliateResearchers::list();
+      return view('research.affiliates', compact('profiles'));
     }
 
     public function profile(string $slug)

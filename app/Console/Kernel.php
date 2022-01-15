@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
         # Import to search
         $schedule->call('App\Http\Controllers\solrimportController@staff')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrimportController@affilates')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@stubs')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@news')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@directors')->cron('0 */5 * * *');
