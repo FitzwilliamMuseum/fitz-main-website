@@ -453,6 +453,8 @@ return [
       '/research/mec' => '/research/projects/medieval-european-coinage',
       '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
       '/research/workingwithschools' => '/learning/working-with-teachers-and-students',
+      '/research/staff-profiles' => '/research/active-researchers',
+      '/research/staff-profiles/{url}' => '/about-us/our-staff/profile/{url}',
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',
