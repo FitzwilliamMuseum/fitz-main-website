@@ -48,6 +48,21 @@
         @include('includes.structure.cards', $data = $depart)
         @include('includes.structure.cards', $data = $coll)
         @include('includes.structure.cards', $data = $press)
+        <div class="col-md-4 mb-3">
+          <div class="card card-fitz h-100">
+            <a href="{{route('about.our.staff')}}">
+              <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/img_20191219_184304_832.jpeg?key=directus-medium-contain"
+              alt="Eye of the minotaur" loading="lazy" />
+            </a>
+            <div class="card-body h-100">
+              <h3>
+                <a href="{{route('about.our.staff')}}" class="stretched-link">
+                  Our staff
+                </a>
+              </h3>
+            </div>
+          </div>
+        </div>
         @include('includes.structure.cards', $data = $jobs)
         @include('includes.structure.cards', $data =  $research)
       @endif
