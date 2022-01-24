@@ -41,6 +41,7 @@
           $coll = $pagesController::injectPages('about-us','collections');
           $press = $pagesController::injectPages('about-us','press-room');
           $jobs = $pagesController::injectPages('about-us','work-for-us');
+          $research = $pagesController::injectPages('research','research-and-impact');
         @endphp
         @include('includes.structure.cards', $data = $governance )
         @include('includes.structure.commercial', $data = $comm )
@@ -48,6 +49,7 @@
         @include('includes.structure.cards', $data = $coll)
         @include('includes.structure.cards', $data = $press)
         @include('includes.structure.cards', $data = $jobs)
+        @include('includes.structure.cards', $data =  $research)
       @endif
       </div>
     </div>

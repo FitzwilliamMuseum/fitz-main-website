@@ -25,6 +25,8 @@ return [
     'redirects' => [
       # 301 redircts
       '/index.html' => '/',
+      '/research/research-and-impact' => '/research',
+
       '/bicentenary' => '/about-us/the-museums-bicentenary',
       # Visiting
       '/visit' => '/visit-us',
@@ -449,6 +451,7 @@ return [
       '/sites/default/files/Graphite.pdf' => 'https://content.fitz.ms/fitz-website/assets/Graphite.pdf',
       # Research
       '/conservd' => '/research/projects/conservd',
+      '/research/research-and-impact' => '/research',
       '/research/grr' => '/visit-us/galleries/gallery-9',
       '/research/mec' => '/research/projects/medieval-european-coinage',
       '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
@@ -456,6 +459,7 @@ return [
       '/research/staff-profiles' => '/research/active-researchers',
       '/research/staff-profiles/{url}' => '/about-us/our-staff/profile/{url}',
       '/about-us/our-staff/profile/' => '/about-us/our-staff',
+
       #  visit
       '/visit/gettinghere' => '/visit-us',
       '/visit' => '/visit-us',

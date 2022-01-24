@@ -43,6 +43,7 @@ Things to do
 Research section routes
 */
 Route::get('research/', 'researchController@index')->name('research');
+Route::get('research/research-and-impact', 'researchController@index')->name('research-impact');
 Route::get('research/projects/', 'researchController@projects')->name('research-projects');
 Route::get('research/projects/{slug}/', 'researchController@project')->name('research-project');
 Route::get('research/active-researchers', 'researchController@profiles')->name('research-profiles');

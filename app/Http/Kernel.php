@@ -24,6 +24,8 @@ class Kernel extends HttpKernel
         \Spatie\MissingPageRedirector\RedirectsMissingPages::class,
         \App\Http\Middleware\XssClean::class,  //Add Middleware XSS
         \Spatie\GoogleTagManager\GoogleTagManagerMiddleware::class,
+        \App\Http\Middleware\XFrameHeadersMiddleware::class,
+        \App\Http\Middleware\SecureHeadersMiddleware::class,
 
     ];
 
