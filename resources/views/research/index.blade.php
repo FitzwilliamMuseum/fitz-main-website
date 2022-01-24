@@ -11,7 +11,11 @@
   @section('description', $page['meta_description'])
   @section('keywords', $page['meta_keywords'])
 @endforeach
-
+@section('content')
+<div class="col-12 shadow-sm p-3 mx-auto  ">
+  @markdown($page['body'])
+</div>
+@endsection
 @section('associated_pages')
   <div class="container">
     <div class="row">
