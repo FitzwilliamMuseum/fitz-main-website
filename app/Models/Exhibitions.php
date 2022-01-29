@@ -94,6 +94,7 @@ class Exhibitions extends Model
             'fields' => '*.*.*.*',
             'meta' => '*',
             'filter[immunity_from_seizure][nnull]' => '',
+            'sort' => '-exhibition_end_date'
           )
       );
       return $api->getData();
@@ -108,6 +109,7 @@ class Exhibitions extends Model
             'fields' => '*.*.*.*',
             'meta' => '*',
             'filter[immunity_from_seizure][nnull]' => '',
+            'sort' => '-id'
           )
       );
       return $api->getData();
