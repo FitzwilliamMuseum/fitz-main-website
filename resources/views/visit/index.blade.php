@@ -8,7 +8,7 @@
 <div class="row">
   <div class="col-md-3 mb-3">
     <div class="card card-fitz h-100">
-      <a href="{{route('exhibitions')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/GOTGS-deer.jpg?key=directus-medium-crop" loading="lazy" alt="Gold of the Great Steppes" width="800" height="600"></a>
+      <a href="{{route('exhibitions')}}" class="stretched-link"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/C.7-1986_201810_adn21_dc1.jpg?key=directus-medium-crop" loading="lazy" alt="Magdalene Odundo vessel" width="800" height="600"></a>
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3 class="lead">
