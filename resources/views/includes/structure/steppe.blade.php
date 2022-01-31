@@ -1,8 +1,8 @@
 @php
 $today = \Carbon\Carbon::now()->toDateString();
-$enddate = \Carbon\Carbon::createFromFormat('m/d/Y', '30/01/2020');
+$enddate = \Carbon\Carbon::createFromFormat('m/d/Y', '30/01/2022');
 @endphp
-@if($enddate->gt($today))
+@if($enddate->lt($today))
 <div class="container-fluid steppe p-3">
 
 </div>
