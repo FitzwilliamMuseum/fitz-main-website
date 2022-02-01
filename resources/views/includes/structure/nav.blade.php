@@ -41,7 +41,7 @@
       <a class="nav-link" href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
     </li>
 </ul>
-{{ \Form::open(['url' => url(env('APP_URL') . '/search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
+{{ \Form::open(['url' => url('/search/results'),'method' => 'GET', 'class' => 'form-inline ml-auto']) }}
   <label for="search" class="sr-only">Search: </label>
   <input id="query" name="query" type="text" class="form-control mr-sm-2"
   placeholder="Search our site" required value="{{ old('query') }}" aria-label="Your query">
