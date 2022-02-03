@@ -76,7 +76,7 @@
               aria-label="Modern Slavery Act statement of compliance">Modern Slavery Act Statement</a>
             </li>
             <li>
-              <a href="https://museums.cam.ac.uk/termsandconditionsofsale" aria-label="Terms of sale for tickets">Terms of Sale</a>
+              <a href="{{ route('landing-section', ['about-us', 'terms-of-sale'])}}" aria-label="Terms of sale for tickets">Terms of Sale</a>
             </li>
 
           </ul>
