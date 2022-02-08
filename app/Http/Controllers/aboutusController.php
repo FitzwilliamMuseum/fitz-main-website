@@ -12,6 +12,7 @@ use App\Models\Vacancies;
 use App\Models\Governance;
 use App\Models\FindMoreLikeThis;
 use App\Models\StaffProfiles;
+use App\Models\PressTerms;
 
 class aboutusController extends Controller
 {
@@ -135,5 +136,10 @@ class aboutusController extends Controller
     $paginator = StaffProfiles::allstaff($request);
     return view('aboutus.staff', compact('paginator'));
 
+  }
+
+  public function hockneyTerms(){
+    $terms = PressTerms::list();
+    return view('aboutus.hockney', compact('terms'));
   }
 }

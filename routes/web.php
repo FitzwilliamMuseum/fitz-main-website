@@ -26,6 +26,8 @@ Route::get('about-us/governance-policies-and-reports', 'aboutusController@govern
 Route::get('about-us/work-for-us', 'aboutusController@vacancies')->name('vacancies');
 Route::get('about-us/work-for-us/details/{slug}', 'aboutusController@vacancy')->name('vacancy');
 Route::get('about-us/work-for-us/archive/', 'aboutusController@archiveVacancies')->name('vacancy.archive');
+Route::get('about-us/terms/hockney/', 'aboutusController@hockneyTerms')->name('press.hockney');
+
 
 Route::get('about-us/collections', 'collectionsController@index')->name('collections');
 Route::get('about-us/collections/{slug}/', 'collectionsController@details')->name('collection');
