@@ -1,5 +1,5 @@
 @if(in_array(Route::currentRouteName(), ['home', 'events', 'visit', 'exhibitions']))
-<div class="container-fluid bg-maroon text-white p-1">
+<div class="container-fluid bg-dark text-white p-1">
   <div class="container">
     <div class="text-center my-2">
       <a class="text-center btn btn-outline-light btn__book" href="https://tickets.museums.cam.ac.uk/overview/generaladmission">

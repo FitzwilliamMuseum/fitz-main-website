@@ -13,6 +13,7 @@
                 <p class="text-center text-white hockney-subtitle">The Art and Technology of Depiction</p>
                 <p class="text-center text-white py-1 hockney-dates">15 March – 29 August 2022</p>
             </div>
+
         </div>
     </div>
 </div>
