@@ -24,7 +24,7 @@
           :status="'current'"
           :ticketed="$current['ticketed']"
           :tessitura="$current['tessitura_string']"
-          />
+          :copyright="$current['copyright_text']"></x-exhibition-card>
         @endforeach
       </div>
 
@@ -41,9 +41,8 @@
           :endDate="$display['exhibition_end_date']"
           :status="'current'"
           :ticketed="$display['ticketed']"
-          :tessitura="$current['tessitura_string']"
-
-          />
+          :tessitura="$display['tessitura_string']"
+          :copyright="$display['copyright_text']"></x-exhibition-card>
         @endforeach
       </div>
     </div>
@@ -58,6 +57,7 @@
       <h2 class="lead">Our forthcoming exhibitions and displays</h2>
       <div class="row">
         @foreach($future['data'] as $future)
+
           <x-exhibition-card
           :altTag="$future['hero_image_alt_text']"
           :title="$future['exhibition_title']"
@@ -68,9 +68,8 @@
           :endDate="$future['exhibition_end_date']"
           :status="'future'"
           :ticketed="$future['ticketed']"
-          :tessitura="$current['tessitura_string']"
-
-          />
+          :tessitura="$future['tessitura_string']"
+          :copyright="$future['copyright_text']"></x-exhibition-card>
           @endforeach
         </div>
       </div>
@@ -98,8 +97,7 @@
           :status="'archived'"
           :ticketed="$archived['ticketed']"
           :tessitura="$current['tessitura_string']"
-
-          />
+          :copyright="$current['copyright_text']"></x-exhibition-card>
           @endforeach
         </div>
         <a class="d-block btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>

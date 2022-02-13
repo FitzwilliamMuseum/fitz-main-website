@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class exhibitionCard extends Component
@@ -18,17 +19,27 @@ class exhibitionCard extends Component
     public $ticketed;
     public $status;
     public $tessitura;
+    public $copyright;
+
     /**
-     * Create a new component instance.
-     *
-     * @return void
+     * @param string $route
+     * @param array $params
+     * @param string $title
+     * @param string|NULL $altTag
+     * @param array|NULL $image
+     * @param $startDate
+     * @param $endDate
+     * @param $ticketed
+     * @param string $status
+     * @param $tessitura
+     * @param string|null $copyright;
      */
     public function __construct(
-      string $route, array $params, string $title,
-      string $altTag = NULL, array $image = NULL,
-      $startDate = NULL, $endDate = NULL, $ticketed  = NULL,
-      $status = 'current', $tessitura = NULL
-      )
+        string $route, array $params, string $title,
+        string $altTag = NULL, array $image = NULL,
+               $startDate = NULL, $endDate = NULL, $ticketed = NULL,
+        string $status = 'current', $tessitura = NULL, string $copyright = NULL
+    )
     {
         $this->route = $route;
         $this->params = $params;
@@ -40,14 +51,15 @@ class exhibitionCard extends Component
         $this->ticketed = $ticketed;
         $this->status = $status;
         $this->tessitura = $tessitura;
+        $this->copyright = $copyright;
     }
 
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.exhibition-card');
     }
