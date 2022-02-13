@@ -16,7 +16,15 @@
 
   @include('includes.structure.accessibility')
   @include('includes.structure.nav')
-  @include('includes.structure.head')
+  @if(
+    (Request::is('visit-us/exhibitions/hockneys-eye-the-art-and-technology-of-depiction')
+    ||
+    Request::is('visit-us/exhibitions')
+    )) &&
+      @include('includes.structure.hockney-header')
+  @else
+    @include('includes.structure.head')
+  @endif
   @include('includes.structure.open')
 
     @hasSection('360')

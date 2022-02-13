@@ -22,7 +22,7 @@
 
   @section('fundraising')
     <div class="container mt-3">
-      <h2><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h2>
+      <h3><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h3>
       <div class="row">
         @foreach($fundraising['data'] as $donate)
           <x-partner-card
@@ -66,7 +66,7 @@
         @if(!empty($shopify))
           @section('shopify')
             <div class="container">
-              <h2 class="mt-3 lead"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from Curating Cambridge</a></h2>
+              <h3 class="mt-3 lead"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from Curating Cambridge</a></h3>
               <div class="row">
                 @foreach($shopify as $record)
                   <x-shopify-card :result="$record" />
