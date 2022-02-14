@@ -15,7 +15,7 @@
         "glob-parent": ">=5.1.2",
         "is-svg": ">=4.2.2",
         "jquery": "^3.6.0",
-        "laravel-mix": "^6.0.39",
+        "laravel-mix": "^6.0.42",
         "lodash": "^4.17.21",
         "node-forge": ">=0.10.0",
         "nth-check": ">=2.0.1",
