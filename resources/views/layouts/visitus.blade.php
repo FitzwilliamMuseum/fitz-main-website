@@ -18,8 +18,11 @@
   @include('includes.structure.accessibility')
   @include('includes.structure.nav')
 
-  @include('includes.structure.head')
-
+  @if (\Carbon\Carbon::now()->diffInHours('2022-02-14 09:30:00', false) <= 0)
+      @include('includes.structure.hockney-header')
+  @else
+      @include('includes.structure.head')
+  @endif
   @include('includes.structure.open')
 
   <div class="container mt-3">
