@@ -74,8 +74,7 @@
             <p>
               <em>
                 This transcript was generated using Amazon Speech Recognition;
-                there maybe errors in this text. Please do point any errors that
-                you find out using the feedback widget at the bottom corner of this page.
+                there maybe errors in this text.
               </em>
             </p>
             @php
