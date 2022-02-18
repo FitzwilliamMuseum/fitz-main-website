@@ -14,7 +14,7 @@
 <div class="col-12 shadow-sm py-3 mx-auto mt-4">
   <div class="col-md-6">
   <form method="GET" class="form" action="https://pages.wordfly.com/fitzwilliammuseum/pages/Subscribe/" target="_blank">
-    <label for="wordfly-email">Subscribe to our list</label>
+    <label for="wordfly-email">Add your address to get access to official images for the exhibition</label>
     <input type="email" id="wordfly-email" name="email" placeholder="Email Address" required class="form-control "/>
     <button class="my-2 btn btn-dark">Submit your email</button>
   </form>
