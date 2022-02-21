@@ -259,7 +259,7 @@
           <div class="container-fluid bg-white py-2">
           <div class="container">
             <div class="bd-example mb-3">
-              <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="5000">
+              <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="10000">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                   <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
