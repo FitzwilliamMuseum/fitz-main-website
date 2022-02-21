@@ -1153,7 +1153,7 @@ ul.logos-sponsors li {
 
     .hockney_header {
         min-height: 40vh;
-        background-color: #179d41;
+        background-color: #2a9941;
     }
 
     .hockney_top_banner {
@@ -1170,4 +1170,13 @@ ul.logos-sponsors li {
     .hockney__link a:hover,.hockney__link a:visited,.hockney__link a:focus {
         text-decoration: none;
         color: white;
+    }
+
+    .hockney__link {
+      background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg');
+      min-height: 400px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
     }
