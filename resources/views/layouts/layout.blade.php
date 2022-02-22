@@ -27,7 +27,11 @@
 
   @include('includes.structure.nav')
 
-  @include('includes.structure.head')
+  @if(Request::is('about-us/terms/hockney')) 
+   @include('includes.structure.hockney-header')
+  @else
+      @include('includes.structure.head')
+  @endif
   @include('includes.structure.open')
 
   @hasSection('timeline')

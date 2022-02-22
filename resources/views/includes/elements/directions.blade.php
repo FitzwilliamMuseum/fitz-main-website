@@ -1,7 +1,7 @@
 <div class="container-fluid bg-grey py-3">
     <div class="container mb-3">
-        <h2 class="mt-3 lead">Getting here</h2>
-        <div class="accordion" id="accordionExample">
+        <h3 class="mt-3">Getting here</h3>
+        <div class="accordion" id="accordionDirections">
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <button class="btn btn-dark d-block text-center" type="button" data-toggle="collapse"
@@ -11,7 +11,7 @@
                 </div>
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                     data-parent="#accordionExample">
+                     data-parent="#accordionDirections">
                     <div class="card-body">
                         @markdown($directions['data']['0']['directions'])
                     </div>
@@ -24,7 +24,7 @@
                         {{ $directions['data']['1']['method']}}
                     </button>
                 </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionDirections">
                     <div class="card-body">
                         @markdown($directions['data']['1']['directions'])
                     </div>
@@ -37,7 +37,7 @@
                         {{ $directions['data']['2']['method']}}
                     </button>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDirections">
                     <div class="card-body">
                         @markdown($directions['data']['2']['directions'])
                     </div>
@@ -50,14 +50,14 @@
                         {{ $directions['data']['3']['method']}}
                     </button>
                 </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionDirections">
                     <div class="card-body">
                         @markdown($directions['data']['3']['directions'])
                     </div>
                 </div>
             </div>
         </div>
-        <h2 class="mt-3 lead">Directions via Google Maps</h2>
+        <h3 class="mt-3">Directions via Google Maps</h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div class="row text-center">
                 @foreach ($transport['data'] as $transport)
