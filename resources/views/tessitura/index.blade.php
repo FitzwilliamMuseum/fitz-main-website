@@ -16,8 +16,7 @@
 
     </div>
     <div class="container">
-
-        <h2 class="text-center mb-3">What would you like to attend?</h2>
+        <h3 class="text-center mb-2">What would you like to attend?</h3>
         @php
             use Illuminate\Support\Arr;
             $types = Arr::pluck($productions, 'FacilityDescription');
@@ -31,7 +30,7 @@
         <div class="row">
             <div class="card col-md-3 shadow-sm  mx-auto mb-3 ">
                 <div class="card-body">
-                    <h2 class="align-self-center">Filter events</h2>
+                    <h3 class="align-self-center">Filter events</h3>
                     @include('includes.elements.filters-tessitura')
                 </div>
             </div>
@@ -43,8 +42,7 @@
                             :title="$type['title']"
                             :image="$type['hero_image']"
                             :route="'events.type'"
-                            :params="[Str::slug($type['title'])]"
-                        />
+                            :params="[Str::slug($type['title'])]"></x-image-card>
                     @endforeach
                 </div>
             </div>
