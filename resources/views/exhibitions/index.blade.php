@@ -86,7 +86,6 @@
       </h2>
       <div class="row">
         @foreach($archive['data'] as $archived)
-          @dd
           <x-exhibition-card
           :altTag="$archived['hero_image_alt_text']"
           :title="$archived['exhibition_title']"
