@@ -86,6 +86,7 @@
       </h2>
       <div class="row">
         @foreach($archive['data'] as $archived)
+          @dd
           <x-exhibition-card
           :altTag="$archived['hero_image_alt_text']"
           :title="$archived['exhibition_title']"
@@ -96,8 +97,8 @@
           :endDate="$archived['exhibition_end_date']"
           :status="'archived'"
           :ticketed="$archived['ticketed']"
-          :tessitura="$current['tessitura_string']"
-          :copyright="$current['copyright_text']"></x-exhibition-card>
+          :tessitura="$archived['tessitura_string']"
+          :copyright="$archived['copyright_text']"></x-exhibition-card>
           @endforeach
         </div>
         <a class="d-block btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
