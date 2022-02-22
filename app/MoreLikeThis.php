@@ -2,64 +2,98 @@
 
 namespace App;
 
-use Illuminate\Http\Request;
+use Config;
+use Psr\SimpleCache\InvalidArgumentException;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
+use Solarium\Core\Query\DocumentInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Solarium\Exception;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
-use Mews\Purifier;
 
 class MoreLikeThis {
 
-  protected $_query;
+    /**
+     * @var string
+     */
+  protected string $_query;
 
-  public function setQuery($query) {
+    /**
+     * @param string $query
+     * @return $this
+     */
+  public function setQuery(string $query): MoreLikeThis
+  {
     $this->_query = $query;
     return $this;
   }
 
-  public function getQuery()
+    /**
+     * @return string
+     */
+  public function getQuery(): string
   {
     return $this->_query;
   }
 
-  protected $_type;
+    /**
+     * @var string
+     */
+  protected string $_type;
 
-  public function setType($type) {
+    /**
+     * @param string $type
+     * @return $this
+     */
+  public function setType(string $type): MoreLikeThis
+  {
     $this->_type = $type;
     return $this;
   }
 
-  public function getType()
+    /**
+     * @return string
+     */
+  public function getType(): string
   {
     return $this->_type;
   }
 
-  protected $_limit = 3;
+    /**
+     * @var int
+     */
+  protected int $_limit = 3;
 
-  public function setLimit($limit) {
+    /**
+     * @param int $limit
+     * @return $this
+     */
+  public function setLimit(int $limit): MoreLikeThis
+  {
     $this->_limit = $limit;
     return $this;
   }
 
-  public function getLimit()
+    /**
+     * @return int
+     */
+  public function getLimit(): int
   {
     return $this->_limit;
   }
 
-  public function getData()
+    /**
+     * @return DocumentInterface[]
+     * @throws InvalidArgumentException
+     */
+  public function getData(): array
   {
     $queryString = $this->getQuery();
-    #\Purifier::clean($this->getQuery(), array('HTML.Allowed' => ''));
     $key = md5($queryString . 'mlt' . $this->getLimit() . $this->getType());
     $expiresAt = now()->addMinutes(3600);
     if (Cache::has($key)) {
         $data = Cache::store('file')->get($key);
     } else {
-        $configSolr = \Config::get('solarium');
-        //dd($configSolr);
+        $configSolr = Config::get('solarium');
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $query = $client->createMoreLikeThis();
         $query->setQuery('slug:' . $queryString);
@@ -73,8 +107,7 @@ class MoreLikeThis {
         $data = $client->select($query);
         Cache::store('file')->put($key, $data, $expiresAt);
     }
-    $records = $data->getDocuments();
-    return $records;
+    return $data->getDocuments();
   }
 
 }

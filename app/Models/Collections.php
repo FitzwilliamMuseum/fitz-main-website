@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\DirectUs;
 
 class Collections extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     */
+    public static function list(): array
     {
       $api = new DirectUs();
       $api->setEndpoint('collections');
@@ -21,7 +23,12 @@ class Collections extends Model
       return $api->getData();
     }
 
-    public static function find(string $slug){
+    /**
+     * @param string $slug
+     * @return array
+     */
+    public static function find(string $slug): array
+    {
       $api = new DirectUs();
       $api->setEndpoint('collections');
       $api->setArguments(

@@ -1,64 +1,84 @@
 <?php
 
 namespace App\Models;
+
 use App\DirectUs;
 use Carbon\Carbon;
-
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
 class ExhibitionsItem extends Model implements Feedable
 {
-  public function toFeedItem(): FeedItem
-  {
-      return FeedItem::create([
-          'id' => $this->id,
-          'title' => $this->title,
-          'summary' => $this->summary,
-          'updated' => $this->updated_at,
-          'content' => $this->body,
-          'link' => $this->link,
-          'authorName' => $this->authorName,
-      ]);
-  }
+    private mixed $summary;
+    /**
+     * @var mixed|string
+     */
+    private mixed $authorName;
+    private mixed $body;
+    private mixed $id;
+    private mixed $title;
+    private mixed $link;
+    private mixed $updated_at;
 
-  public static function feedNews()
-  {
-    $api = new DirectUs;
-    $api->setEndpoint('exhibitions');
-    $api->setArguments(
-      $args = array(
-          'fields' => '*.*.*.*',
-          'fields' => 'id,exhibition_title,exhibition_narrative,meta_description,slug,modified_on',
-          'sort' => '-id',
-          'limit' => 20,
-      )
-    );
-    $news = $api->getData()['data'];
-    $news = collect($news)->map(function ($item) {
-      return (object) $item;
-    });
-    $items = collect(); // create new collection
-
-    foreach ($news as $key => $value) {
-        $mod = Carbon::parse($value->modified_on);
-        $instance = new static; // create new NewsItem model class
-        $instance->id = $value->id;
-        $instance->title = $value->exhibition_title;
-        $instance->summary = $value->meta_description;
-        $instance->link = route('exhibition', $value->slug);
-        $instance->updated_at = $mod;
-        $instance->body = $value->exhibition_narrative;
-        $instance->authorName = 'The Fitzwilliam Museum';
-        $instance->exists = true; // tell this model is already exists, forcely
-        $items[$key] = $instance; // assign this model to the collection
+    /**
+     * @return Collection
+     */
+    public static function getFeedItems(): Collection
+    {
+        return self::feedNews();
     }
-    return $items;
-  }
 
-  public static function getFeedItems()
-  {
-    return self::feedNews();
-  }
+    /**
+     * @return Collection
+     */
+    public static function feedNews(): Collection
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('exhibitions');
+        $api->setArguments(
+            array(
+                'fields' => 'id,exhibition_title,exhibition_narrative,meta_description,slug,modified_on',
+                'sort' => '-id',
+                'limit' => 20,
+            )
+        );
+        $news = $api->getData()['data'];
+        $news = collect($news)->map(function ($item) {
+            return (object)$item;
+        });
+        $items = collect(); // create new collection
+
+        foreach ($news as $key => $value) {
+            $mod = Carbon::parse($value->modified_on);
+            $instance = new static; // create new NewsItem model class
+            $instance->id = $value->id;
+            $instance->title = $value->exhibition_title;
+            $instance->summary = $value->meta_description;
+            $instance->link = route('exhibition', $value->slug);
+            $instance->updated_at = $mod;
+            $instance->body = $value->exhibition_narrative;
+            $instance->authorName = 'The Fitzwilliam Museum';
+            $instance->exists = true;
+            $items[$key] = $instance;
+        }
+        return $items;
+    }
+
+    /**
+     * @return FeedItem
+     */
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->title,
+            'summary' => $this->summary,
+            'updated' => $this->updated_at,
+            'content' => $this->body,
+            'link' => $this->link,
+            'authorName' => $this->authorName,
+        ]);
+    }
 }

@@ -2,71 +2,83 @@
 
 namespace App;
 
-use Illuminate\Http\Request;
+use Config;
 use Illuminate\Support\Facades\Http;
-use Carbon\Carbon;
-use App\JekyllImporter;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
+use Solarium\Core\Query\Result\ResultInterface;
+use Solarium\QueryType\Update\Result;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Solarium\Exception;
 
-class JekyllImporter {
+class JekyllImporter
+{
 
-  protected  $_url;
+    /**
+     * @var string
+     */
+    protected string $_url;
 
-  public function setUrl($url){
-    $this->_url = $url;
-    return $this;
-  }
-
-  public function getUrl()
-  {
-    return $this->_url;
-  }
-
-  public function getData(){
-    $url = $this->getUrl();
-    $response = Http::get($url);
-    dump($response->status());
-    $data = $response->json();
-    if($url === 'https://beyondthelabel.fitzmuseum.cam.ac.uk/data.json'){
-      dump($response->json());
+    /**
+     * @param string $subdomain
+     * @return Result|ResultInterface
+     */
+    public function import(string $subdomain): Result|ResultInterface
+    {
+        return $this->solrImport($this->getData(), $subdomain);
     }
-    return $data;
-  }
 
-  public function solrImport($data, $subdomain)
-  {
-      $configSolr = \Config::get('solarium');
-      $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-      $update = $this->client->createUpdate();
-      $documents = array();
-      foreach($data as $jekyllPage)
-      {
-        $doc = $update->createDocument();
-        $doc->id = md5($jekyllPage['title']) . '-jekyll-' . $subdomain;
-        $doc->title = $jekyllPage['title'];
-        $doc->description = $jekyllPage['summary'];
-        $doc->body = $jekyllPage['content'];
-        $doc->slug = $jekyllPage['slug'];
-        $doc->url = $jekyllPage['url'];
-        $doc->contentType = 'research-resource';
-        if(isset($jekyllPage['image'])){
-          $doc->thumbnail = $jekyllPage['thumbnail'];
-          $doc->image =  $jekyllPage['image'];
-          $doc->searchImage =  $jekyllPage['thumbnail'];
+    public function solrImport($data, $subdomain): Result|ResultInterface
+    {
+        $configSolr = Config::get('solarium');
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+        $update = $client->createUpdate();
+        $documents = array();
+        foreach ($data as $jekyllPage) {
+            $doc = $update->createDocument();
+            $doc->id = md5($jekyllPage['title']) . '-jekyll-' . $subdomain;
+            $doc->title = $jekyllPage['title'];
+            $doc->description = $jekyllPage['summary'];
+            $doc->body = $jekyllPage['content'];
+            $doc->slug = $jekyllPage['slug'];
+            $doc->url = $jekyllPage['url'];
+            $doc->contentType = 'research-resource';
+            if (isset($jekyllPage['image'])) {
+                $doc->thumbnail = $jekyllPage['thumbnail'];
+                $doc->image = $jekyllPage['image'];
+                $doc->searchImage = $jekyllPage['thumbnail'];
+            }
+            $documents[] = $doc;
         }
-        $documents[] = $doc;
-      }
-      $update->addDocuments($documents);
-      $update->addCommit();
-      return $this->client->update($update);
-  }
+        $update->addDocuments($documents);
+        $update->addCommit();
+        return $client->update($update);
+    }
 
-  public function import($subdomain)
-  {
-    $data = $this->getData();
-    return $this->solrImport($data, $subdomain);
-  }
+    /**
+     * @return array|mixed
+     */
+    public function getData(): mixed
+    {
+        $url = $this->getUrl();
+        $response = Http::get($url);
+        return $response->json();
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->_url;
+    }
+
+    /**
+     * @param string $url
+     * @return $this
+     */
+    public function setUrl(string $url): static
+    {
+        $this->_url = $url;
+        return $this;
+    }
 }

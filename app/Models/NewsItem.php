@@ -5,11 +5,44 @@ use App\DirectUs;
 use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
 class NewsItem extends Model implements Feedable
 {
+    /**
+     * @var mixed
+     */
+    private mixed $body;
+    /**
+     * @var mixed
+     */
+    private mixed $link;
+    /**
+     * @var mixed
+     */
+    private mixed $updated_at;
+    /**
+     * @var mixed|string
+     */
+    private mixed $authorName;
+    /**
+     * @var mixed|string
+     */
+    private mixed $id;
+    /**
+     * @var mixed
+     */
+    private mixed $title;
+    /**
+     * @var mixed
+     */
+    private mixed $summary;
+
+    /**
+     * @return FeedItem
+     */
   public function toFeedItem(): FeedItem
   {
       return FeedItem::create([
@@ -23,17 +56,19 @@ class NewsItem extends Model implements Feedable
       ]);
   }
 
-  public static function feedItems()
+    /**
+     * @return Collection
+     */
+  public static function feedItems(): Collection
   {
     $api = new DirectUs;
     $api->setEndpoint('news_articles');
     $api->setArguments(
-      $args = array(
-          'fields' => '*.*.*.*',
-          'fields' => 'id,article_title,article_excerpt,article_body,slug,modified_on',
-          'sort' => '-id',
-          'limit' => 20,
-      )
+        array(
+            'fields' => 'id,article_title,article_excerpt,article_body,slug,modified_on',
+            'sort' => '-id',
+            'limit' => 20,
+        )
     );
     $news = $api->getData()['data'];
     $news = collect($news)->map(function ($item) {
@@ -54,14 +89,16 @@ class NewsItem extends Model implements Feedable
         $instance->updated_at = $mod;
         $instance->body = $value->article_body;
         $instance->authorName = 'The Fitzwilliam Museum';
-        $instance->exists = true; // tell this model is already exists, forcely
-        $items[$key] = $instance; // assign this model to the collection
+        $instance->exists = true;
+        $items[$key] = $instance;
     }
-    // dd($items);
     return $items;
   }
 
-  public static function getFeedItems()
+    /**
+     * @return Collection
+     */
+  public static function getFeedItems(): Collection
   {
     return self::feedItems();
   }

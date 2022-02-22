@@ -2,128 +2,164 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-
-use App\Models\StaffProfiles;
-use App\Models\ResearchProjects;
-use App\Models\OnlineResources;
-use App\Models\Stubs;
-use App\Models\ResearchOpportunities;
-use App\Models\FindMoreLikeThis;
 use App\Models\AffiliateResearchers;
+use App\Models\FindMoreLikeThis;
+use App\Models\OnlineResources;
+use App\Models\ResearchOpportunities;
+use App\Models\ResearchProjects;
+use App\Models\StaffProfiles;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
+use Psr\SimpleCache\InvalidArgumentException;
 
 class researchController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-
-     public function index()
-     {
-       $api = $this->getApi();
-       $api->setEndpoint('stubs_and_pages');
-       $api->setArguments(
-         $args = array(
-             'fields' => '*.*.*.*',
-             'meta' => 'result_count,total_count,type',
-             'filter[landing_page][eq]' => '1',
-             'filter[section][eq]' => 'research',
-         )
-       );
-       $pages = $api->getData();
-
-       $apiRes = $this->getApi();
-       $apiRes->setEndpoint('stubs_and_pages');
-       $apiRes->setArguments(
-         $args = array(
-             'fields' => '*.*.*.*',
-             'meta' => 'result_count,total_count,type',
-             'filter[landing_page][null]' => '',
-             'filter[section][eq]' => 'research',
-             'filter[associate_with_landing_page][eq]' => '1'
-         )
-       );
-       $associated = $apiRes->getData();
-       return view('research.index', compact('pages', 'associated'));
-     }
-
-    public function projects()
+    public function index(): View
     {
-      $projects = ResearchProjects::list();
-      return view('research.projects', compact('projects'));
+        $api = $this->getApi();
+        $api->setEndpoint('stubs_and_pages');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[landing_page][eq]' => '1',
+                'filter[section][eq]' => 'research',
+            )
+        );
+        $pages = $api->getData();
+
+        $apiRes = $this->getApi();
+        $apiRes->setEndpoint('stubs_and_pages');
+        $apiRes->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[landing_page][null]' => '',
+                'filter[section][eq]' => 'research',
+                'filter[associate_with_landing_page][eq]' => '1'
+            )
+        );
+        $associated = $apiRes->getData();
+        return view('research.index', compact('pages', 'associated'));
     }
 
-    public function project(string $slug)
+    /**
+     * @return View
+     */
+    public function projects(): View
     {
-      $projects = ResearchProjects::find($slug);
-      $records = FindMoreLikeThis::find($slug,'projects');
-      if(empty($projects['data'])){
-        return response()->view('errors.404',[],404);
-      }
-
-      return view('research.project', compact('projects', 'records'));
+        $projects = ResearchProjects::list();
+        return view('research.projects', compact('projects'));
     }
 
-    public function profiles()
+    /**
+     * @param string $slug
+     * @return View|Response
+     * @throws InvalidArgumentException
+     */
+    public function project(string $slug): View|Response
     {
-      $profiles = StaffProfiles::list();
-      return view('research.profiles', compact('profiles'));
+        $projects = ResearchProjects::find($slug);
+        $records = FindMoreLikeThis::find($slug, 'projects');
+        if (empty($projects['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+
+        return view('research.project', compact('projects', 'records'));
     }
 
-    public function affilate(string $slug)
+    /**
+     * @return View
+     */
+    public function profiles(): View
     {
-      $profiles = AffiliateResearchers::find($slug);
-      if(empty($profiles['data'])){
-        return response()->view('errors.404',[],404);
-      }
-      $similar = FindMoreLikeThis::find($slug, 'affilate');
-      return view('research.affiliate', compact('profiles', 'similar'));
+        $profiles = StaffProfiles::list();
+        return view('research.profiles', compact('profiles'));
     }
 
-    public function affiliates()
+    /**
+     * @param string $slug
+     * @return View|Response
+     * @throws InvalidArgumentException
+     */
+    public function affiliate(string $slug): View|Response
     {
-      $profiles = AffiliateResearchers::list();
-      return view('research.affiliates', compact('profiles'));
+        $profiles = AffiliateResearchers::find($slug);
+        if (empty($profiles['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        $similar = FindMoreLikeThis::find($slug, 'affiliate');
+        return view('research.affiliate', compact('profiles', 'similar'));
     }
 
-    public function profile(string $slug)
+    /**
+     * @return View
+     */
+    public function affiliates(): View
     {
-      $profiles = StaffProfiles::find($slug);
-      if(empty($profiles['data'])){
-        return response()->view('errors.404',[],404);
-      }
-      $similar = FindMoreLikeThis::find($slug, 'staffProfile');
-      return view('research.profile', compact('profiles', 'similar'));
+        $profiles = AffiliateResearchers::list();
+        return view('research.affiliates', compact('profiles'));
     }
 
-    public function resource(string $slug)
+    /**
+     * @param string $slug
+     * @return View|Response
+     * @throws InvalidArgumentException
+     */
+    public function profile(string $slug): View|Response
     {
-      $resources = OnlineResources::find($slug);
-      if(empty($resources['data'])){
-        return response()->view('errors.404',[],404);
-      }
-      return view('research.resource', compact('resources'));
+        $profiles = StaffProfiles::find($slug);
+        if (empty($profiles['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        $similar = FindMoreLikeThis::find($slug, 'staffProfile');
+        return view('research.profile', compact('profiles', 'similar'));
     }
 
-    public function resources()
+    /**
+     * @param string $slug
+     * @return View|Response
+     */
+    public function resource(string $slug): View|Response
     {
-      $resources = OnlineResources::list();
-      return view('research.resources', compact('resources'));
+        $resources = OnlineResources::find($slug);
+        if (empty($resources['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        return view('research.resource', compact('resources'));
     }
 
-    public function opportunity(string $slug){
-      $opps = ResearchOpportunities::find($slug);
-      if(empty($opps['data'])){
-        return response()->view('errors.404',[],404);
-      }
-      return view('research.opportunity', compact('opps'));
+    /**
+     * @return View
+     */
+    public function resources(): View
+    {
+        $resources = OnlineResources::list();
+        return view('research.resources', compact('resources'));
     }
 
-    public function opportunities(){
-      $opps = ResearchOpportunities::list();
-      return view('research.opportunities', compact('opps'));
+    /**
+     * @param string $slug
+     * @return View|Response
+     */
+    public function opportunity(string $slug): View|Response
+    {
+        $opportunities = ResearchOpportunities::find($slug);
+        if (empty($opportunities['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        return view('research.opportunity', compact('opportunities'));
+    }
+
+    /**
+     * @return View
+     */
+    public function opportunities(): View
+    {
+        $opportunities = ResearchOpportunities::list();
+        return view('research.opportunities', compact('opportunities'));
     }
 }

@@ -6,17 +6,21 @@ use App\DirectUs;
 
 class VisitUsComponents extends Model
 {
-    public static function find($id)
+    /**
+     * @param int $id
+     * @return array
+     */
+    public static function find(int $id): array
     {
       $api = new Directus;
       $api->setEndpoint('visit_us_components');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'sort' => 'id',
-            'filter[id][eq]' => $id
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => 'id',
+              'filter[id][eq]' => $id
+          )
       );
       return $api->getData();
     }

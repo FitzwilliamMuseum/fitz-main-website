@@ -6,18 +6,17 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')
-<div class="row">
-  @foreach($pharos['data'] as $record)
-    <x-image-card
-    :params="[$record['slug']]"
-    :route="'highlight'"
-    :image="$record['image']"
-    :altTag="$record['image_alt_text']"
-    :title="$record['title']"
-    />
-  @endforeach
-</div>
-<nav aria-label="Page navigation">
-  {{ $paginator->links() }}
-</nav>
+    <div class="row">
+        @foreach($pharos['data'] as $record)
+            <x-image-card
+                :params="[$record['slug']]"
+                :route="'highlight'"
+                :image="$record['image']"
+                :altTag="$record['image_alt_text']"
+                :title="$record['title']"></x-image-card>
+        @endforeach
+    </div>
+    <nav aria-label="Page navigation">
+        {{ $paginator->links() }}
+    </nav>
 @endsection

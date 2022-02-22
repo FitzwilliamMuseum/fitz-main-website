@@ -6,16 +6,19 @@ use App\DirectUs;
 
 class TessituraEventTypes extends Model
 {
-  public static function listIds()
-  {
-    $api = new DirectUs;
-    $api->setEndpoint('tessitura_event_types');
-    $api->setArguments(
-      $args = array(
-          'fields' => 'event_id',
-          'meta' => '*'
-        )
-    );
-    return $api->getData()['data'];
-  }
+    /**
+     * @return array
+     */
+    public static function listIds(): array
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('tessitura_event_types');
+        $api->setArguments(
+            array(
+                'fields' => 'event_id',
+                'meta' => '*'
+            )
+        );
+        return $api->getData()['data'];
+    }
 }

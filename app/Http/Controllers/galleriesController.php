@@ -2,33 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-
+use App\Models\CIIM;
 use App\Models\Galleries;
 use App\Models\Stubs;
-use App\Models\CIIM;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 
 class galleriesController extends Controller
 {
-
-  public function index()
-  {
-    $pages = Stubs::getLanding('galleries');
-    $galleries = Galleries::list();
-    return view('galleries.index', compact('galleries', 'pages'));
-  }
-
-  public function gallery($slug)
-  {
-    $galleries = Galleries::find($slug);
-    if(empty($galleries['data'])){
-      return response()->view('errors.404',[],404);
+    /**
+     * @return View
+     */
+    public function index(): View
+    {
+        $pages = Stubs::getLanding('galleries');
+        $galleries = Galleries::list();
+        return view('galleries.index', compact('galleries', 'pages'));
     }
-    return view('galleries.gallery', compact('galleries'));
-  }
 
-  public static function getObjects(string $prirefs){
-    return CIIM::findByPriRefs($prirefs);
-  }
+    /**
+     * @param string $slug
+     * @return View|Response
+     */
+    public function gallery(string $slug): View|Response
+    {
+        $galleries = Galleries::find($slug);
+        if (empty($galleries['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        return view('galleries.gallery', compact('galleries'));
+    }
+
+    /**
+     * @param string $prirefs
+     * @return array
+     */
+    public static function getObjects(string $prirefs): array
+    {
+        return CIIM::findByPriRefs($prirefs);
+    }
 }

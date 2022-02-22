@@ -7,15 +7,14 @@
 @section('content')
 
 
-<div class="row">
-  @foreach($periods as $record)
-    <x-image-card
-    :image="$record[0]['image']"
-    :route="'period'"
-    :title="$record[0]['period_assigned']"
-    :altTag="$record[0]['image']['title']"
-    :params="[Str::slug($record[0]['period_assigned'],'-')]"
-    />
-  @endforeach
-</div>
+    <div class="row">
+        @foreach($periods as $record)
+            <x-image-card
+                :image="$record[0]['image']"
+                :route="'period'"
+                :title="$record[0]['period_assigned']"
+                :altTag="$record[0]['image']['title']"
+                :params="[Str::slug($record[0]['period_assigned'],'-')]"></x-image-card>
+        @endforeach
+    </div>
 @endsection

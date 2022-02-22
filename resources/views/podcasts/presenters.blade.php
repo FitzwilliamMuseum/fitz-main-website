@@ -13,8 +13,7 @@
             :title="$presenter['display_name']"
             :image="$presenter['profile_image']"
             :route="'podcast.presenter'"
-            :params="[$presenter['slug']]"
-            />
+            :params="[$presenter['slug']]"></x-image-card>
           @endforeach
         </div>
       </div>

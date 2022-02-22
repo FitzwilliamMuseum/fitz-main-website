@@ -16,7 +16,7 @@
             All of these are now on a new website that we have made, have a look, tell us
             what you think.
           </p>
-            <a class="text-center btn btn-outline-light" href="http://schools.fitz.ms">
+            <a class="text-center btn btn-outline-light" href="http://schools.fitzmuseum.cam.ac.uk">
               What will you discover today? Let's find out!
             </a>
         </div>

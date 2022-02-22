@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
   <div class="py-3">
-  <h3 class="lead py-3">Browse through the cases</h3>
+  <h3 class="py-3">Browse through the cases</h3>
     <nav role="navigation" aria-label="Pagination Navigation" class="flex justify-between text-center">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())

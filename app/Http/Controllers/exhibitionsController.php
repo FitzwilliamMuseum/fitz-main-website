@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Exhibitions;
@@ -14,14 +12,31 @@ use App\Models\PodcastArchive;
 use App\Models\Cases;
 use App\Models\Labels;
 use Illuminate\Http\Response;
+use Psr\SimpleCache\InvalidArgumentException;
 
 class exhibitionsController extends Controller
 {
 
     /**
-     * @return Application|Factory|View
+     * @return array
      */
-    public function index()
+    public static function injectImmunity(): array
+    {
+        return Exhibitions::immunity();
+    }
+
+    /**
+     * @return array
+     */
+    public static function injectLoanImmunity(): array
+    {
+        return Exhibitions::loanImmunity();
+    }
+
+    /**
+     * @return View
+     */
+    public function index(): View
     {
         $pages = Stubs::getLanding('exhibitions');
         $current = Exhibitions::list();
@@ -35,9 +50,9 @@ class exhibitionsController extends Controller
     }
 
     /**
-     * @return Application|Factory|View
+     * @return View
      */
-    public function archive()
+    public function archive(): View
     {
         $archive = Exhibitions::archive('archived', '-exhibition_end_date');
         return view('exhibitions.archives', compact('archive'));
@@ -45,9 +60,10 @@ class exhibitionsController extends Controller
 
     /**
      * @param string $slug
-     * @return Application|Factory|View|Response
+     * @return View|Response
+     * @throws InvalidArgumentException
      */
-    public function details(string $slug)
+    public function details(string $slug): View|Response
     {
         $exhibitions = Exhibitions::find($slug);
         $adlib = NULL;
@@ -69,7 +85,11 @@ class exhibitionsController extends Controller
         return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases'));
     }
 
-    public function labels(Request $request)
+    /**
+     * @param Request $request
+     * @return View
+     */
+    public function labels(Request $request): View
     {
         $labels = Labels::list($request->segment(5));
         $title = str_replace('-', ' ', $request->segment(5));
@@ -79,9 +99,10 @@ class exhibitionsController extends Controller
 
     /**
      * @param string $slug
-     * @return Application|Factory|View
+     * @return View
+     * @throws InvalidArgumentException
      */
-    public function label(string $slug)
+    public function label(string $slug) : View
     {
         $labels = Labels::find($slug);
         $records = FindMoreLikeThis::find($slug, 'highlights');
@@ -97,21 +118,5 @@ class exhibitionsController extends Controller
         $cases = Cases::find($slug);
 
         return view('exhibitions.cases', compact('cases'));
-    }
-
-    /**
-     * @return array
-     */
-    public static function injectImmunity(): array
-    {
-        return Exhibitions::immunity();
-    }
-
-    /**
-     * @return array
-     */
-    public static function injectLoanImmunity(): array
-    {
-        return Exhibitions::loanImmunity();
     }
 }

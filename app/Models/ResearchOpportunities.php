@@ -6,30 +6,38 @@ use App\DirectUs;
 
 class ResearchOpportunities extends Model
 {
-    public static function list()
+
+    /**
+     * @return array
+     */
+    public static function list(): array
     {
       $api = new DirectUs();
       $api->setEndpoint('research_opportunities');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'id'
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => 'result_count,total_count,type',
+              'sort' => 'id'
+          )
       );
       return $api->getData();
     }
 
-    public static function find(string $slug)
+    /**
+     * @param string $slug
+     * @return array
+     */
+    public static function find(string $slug): array
     {
       $api = new DirectUs();
       $api->setEndpoint('research_opportunities');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $slug
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => 'result_count,total_count,type',
+              'filter[slug][eq]' => $slug
+          )
       );
       return $api->getData();
     }

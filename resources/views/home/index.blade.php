@@ -15,8 +15,7 @@
     :title="$news['article_title']"
     :image="$news['field_image']"
     :route="'article'"
-    :params="[$news['slug']]"
-    />
+    :params="[$news['slug']]"></x-image-card>
     @endforeach
   @endsection
 
@@ -30,8 +29,7 @@
           :title="$donate['title']"
           :subtitle="$donate['sub_title']"
           :image="$donate['hero_image']"
-          :url="$donate['url']"
-          />
+          :url="$donate['url']"></x-partner-card>
           @endforeach
         </div>
       </div>
@@ -45,9 +43,7 @@
         :title="$project['title']"
         :image="$project['hero_image']"
         :route="'research-project'"
-        :params="[$project['slug']]"
-        />
-
+        :params="[$project['slug']]"></x-image-card>
         @endforeach
       @endsection
 
@@ -58,18 +54,17 @@
           :title="$theme['title']"
           :image="$theme['image']"
           :route="'highlight'"
-          :params="[$theme['slug']]"
-          />
+          :params="[$theme['slug']]"></x-image-card>
           @endforeach
         @endsection
 
         @if(!empty($shopify))
           @section('shopify')
             <div class="container">
-              <h3 class="mt-3 lead"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from Curating Cambridge</a></h3>
+              <h3 class="mt-3"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from Curating Cambridge</a></h3>
               <div class="row">
                 @foreach($shopify as $record)
-                  <x-shopify-card :result="$record" />
+                  <x-shopify-card :result="$record"></x-shopify-card>
                 @endforeach
               </div>
             </div>

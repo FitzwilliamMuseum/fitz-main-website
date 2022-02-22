@@ -6,56 +6,71 @@ use App\DirectUs;
 
 class HighlightThemes extends Model
 {
-    public static function list(){
+    /**
+     * @return array
+     */
+    public static function list(): array
+    {
       $api = new DirectUs;
       $api->setEndpoint('pharos_themes');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*',
-            'meta' => 'result_count,total_count,type'
-        )
+          array(
+              'fields' => '*.*.*',
+              'meta' => 'result_count,total_count,type'
+          )
       );
       return $api->getData();
     }
 
-    public static function find(string $theme)
+    /**
+     * @param string $theme
+     * @return array
+     */
+    public static function find(string $theme):array
     {
       $api = new DirectUs;
       $api->setEndpoint('pharos');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[themes][contains]' => $theme,
-        )
+          array(
+              'fields' => '*.*.*',
+              'meta' => 'result_count,total_count,type',
+              'filter[themes][contains]' => $theme,
+          )
       );
       return $api->getData();
     }
 
-    public static function getDetails(string $theme)
+    /**
+     * @param string $theme
+     * @return array
+     */
+    public static function getDetails(string $theme): array
     {
       $api = new DirectUs;
       $api->setEndpoint('pharos_themes');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $theme,
-            'limit' => 1
-        )
+          array(
+              'fields' => '*.*.*.*.*.*',
+              'meta' => 'result_count,total_count,type',
+              'filter[slug][eq]' => $theme,
+              'limit' => 1
+          )
       );
       return $api->getData();
     }
 
-    public static function getThemes()
+    /**
+     * @return array
+     */
+    public static function getThemes(): array
     {
       $api = new DirectUs;
       $api->setEndpoint('pharos_themes');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*',
-            'meta' => 'result_count,total_count,type'
-        )
+          array(
+              'fields' => '*.*.*',
+              'meta' => 'result_count,total_count,type'
+          )
       );
       return $api->getData();
     }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\View\Components;
-
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class wordpressCard extends Component
@@ -10,12 +10,13 @@ class wordpressCard extends Component
     public $title;
     public $image;
     public $url;
+
     /**
-     * Create a new component instance.
-     *
-     * @return void
+     * @param string $title
+     * @param string|NULL $image
+     * @param string|NULL $url
      */
-    public function __construct( string $title, string $image = NULL, string $url = NULL)
+    public function __construct(string $title, string $image = NULL, string $url = NULL)
     {
         $this->title = $title;
         $this->image = $image;
@@ -23,11 +24,9 @@ class wordpressCard extends Component
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.wordpress-card');
     }

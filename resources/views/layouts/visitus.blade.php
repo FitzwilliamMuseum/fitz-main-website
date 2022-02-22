@@ -17,12 +17,7 @@
   @include('googletagmanager::body')
   @include('includes.structure.accessibility')
   @include('includes.structure.nav')
-
-  @if (\Carbon\Carbon::now()->diffInHours('2022-02-14 09:30:00', false) <= 0)
-      @include('includes.structure.hockney-header')
-  @else
-      @include('includes.structure.head')
-  @endif
+  @include('includes.structure.head')
   @include('includes.structure.open')
 
   <div class="container mt-3">
@@ -50,7 +45,7 @@
   @include('includes.elements.directions')
 
   <div class="container mt-3">
-    <h2 class="lead">Floorplans and guides</h2>
+    <h2>Floorplans and guides</h2>
     <div class="row">
       <div class="col-md-12 mb-3">
           <div class="container h-100">

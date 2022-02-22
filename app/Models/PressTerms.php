@@ -6,7 +6,10 @@ use App\DirectUs;
 
 class PressTerms extends Model
 {
-  public static function list()
+    /**
+     * @return array
+     */
+  public static function list(): array
   {
     $api = new DirectUs;
     $api->setEndpoint('press_terms');

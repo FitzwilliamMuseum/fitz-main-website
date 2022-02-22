@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class audioguideCard extends Component
@@ -13,6 +14,7 @@ class audioguideCard extends Component
     public $image;
     public $route;
     public $stop;
+
     /**
      * Create a new component instance.
      *
@@ -29,11 +31,9 @@ class audioguideCard extends Component
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.audioguide-card');
     }

@@ -9,9 +9,9 @@
 @section('archive')
 <div class="container-fluid bg-grey py-3">
   <div class="container">
-    <h2 class="lead">
+    <h3>
       Archived exhibitions and displays
-    </h2>
+    </h3>
     <div class="row">
       @foreach($archive['data'] as $archived)
         <x-exhibition-card
@@ -23,8 +23,7 @@
         :startDate="$archived['exhibition_start_date']"
         :endDate="$archived['exhibition_end_date']"
         :status="'archived'"
-        :ticketed="$archived['ticketed']"
-        />
+        :ticketed="$archived['ticketed']"></x-exhibition-card>
       @endforeach
     </div>
   </div>

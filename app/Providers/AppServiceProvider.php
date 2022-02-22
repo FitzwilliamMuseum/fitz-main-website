@@ -41,13 +41,14 @@ class AppServiceProvider extends ServiceProvider
           return Str::upper($mimes->getExtension($mime)); // otf
         });
 
+
         BladeHelper::directive('imgkit', function($image){
           $imageKit = new ImageKit(
               env('IMGKIT_PUBLIC_KEY'),
               env('IMGKIT_PRIVATE_KEY'),
               env('IMGKIT_ENDPOINT')
           );
-          $imageURL = $imageKit->url(array(
+          return $imageKit->url(array(
             "path" => $image,
             "transformation" => array(
               array(
@@ -58,7 +59,6 @@ class AppServiceProvider extends ServiceProvider
               )
             )
           ));
-          return $imageURL;
         });
 
         BladeHelper::directive('tessitura', function($id){
@@ -72,8 +72,7 @@ class AppServiceProvider extends ServiceProvider
           );
           $data = $api->getData();
           if(!empty($data['data'])){
-            $thumbnail = $data['data'][0]['image']['data']['thumbnails'][2]['url'];
-            return $thumbnail;
+              return $data['data'][0]['image']['data']['thumbnails'][2]['url'];
           } else {
             return 'https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop';
           }
@@ -204,13 +203,11 @@ class AppServiceProvider extends ServiceProvider
             case 'shopifyPrints':
                 $clean = 'A fine art print to own';
                 break;
-            case 'research-resource':
+              case 'resources':
+              case 'research-resource':
                 $clean = 'Research/exhibition resource';
                 break;
-            case 'resources':
-                $clean = 'Research/exhibition resource';
-                break;
-            default:
+              default:
               $clean = $string;
             break;
           }

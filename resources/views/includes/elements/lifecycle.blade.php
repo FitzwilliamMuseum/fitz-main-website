@@ -1,7 +1,7 @@
 @if(array_key_exists('lifecycle',$record['_source'] ))
 
   @if(array_key_exists('acquisition', $record['_source']['lifecycle']))
-    <h4 class="lead">Acquisition and important dates</h4>
+    <h3>Acquisition and important dates</h3>
     <ul>
       @foreach($record['_source']['lifecycle']['acquisition'] as $acquistion)
         @if(array_key_exists('method', $acquistion))
@@ -17,7 +17,7 @@
   @if(array_key_exists('creation', $record['_source']['lifecycle']))
     @if(array_key_exists('date', $record['_source']['lifecycle']['creation'][0]))
 
-      <h4 class="lead">Dating</h4>
+      <h3>Dating</h3>
 
       @if(array_key_exists('note',$record['_source']['lifecycle']['creation'][0]))
         @foreach($record['_source']['lifecycle']['creation'][0]['note'] as $note)
@@ -62,7 +62,7 @@
 
   @if(array_key_exists('creation', $record['_source']['lifecycle']))
     @if(array_key_exists('maker',$record['_source']['lifecycle']['creation'][0]))
-      <h4 class="lead">Maker(s)</h4>
+      <h3>Maker(s)</h3>
       <ul>
         @foreach($record['_source']['lifecycle']['creation'][0]['maker'] as $maker)
           @if(array_key_exists('@link', $maker))
@@ -90,7 +90,7 @@
       @endforeach
     </ul>
     @if(array_key_exists('note', $record['_source']['lifecycle']['creation'][0]))
-    <h4 class="lead">Note</h4>
+    <h3>Note</h3>
     @foreach($record['_source']['lifecycle']['creation'][0]['note'] as $note)
     <p>
       {{ ucfirst($note['value']) }}
@@ -101,7 +101,7 @@
 
 
   @if(array_key_exists('places', $record['_source']['lifecycle']['creation'][0]))
-    <h4 class="lead">Place(s) associated</h4>
+    <h3>Place(s) associated</h3>
     <ul>
       @foreach($record['_source']['lifecycle']['creation'][0]['places'] as $place)
         <li>{{ preg_replace('@\x{FFFD}@u', 'î', $place['summary_title']) }}</li>

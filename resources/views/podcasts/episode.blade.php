@@ -55,8 +55,6 @@
             </div>
           @endisset
 
-
-
           @isset($podcast['podcast_id'])
           <div class="col shadow-sm p-3 mx-auto mb-3">
             <div class="embed-responsive libsyn">
@@ -67,9 +65,9 @@
         @endif
 
         @if(!empty($podcast['transcript']))
-          <h4 class="lead">
+          <h3>
             Podcast transcript
-          </h4>
+          </h3>
           <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
             <p>
               <em>
@@ -136,9 +134,9 @@
     @foreach($adlib as $record)
       <div class="container-fluid py-3 bg-gdbo">
         <div class="container">
-      <h4 class="lead">
+      <h3>
         About the object
-      </h4>
+      </h3>
       <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
 
         @include('includes/elements/descriptive')
@@ -157,7 +155,9 @@
   @if(!empty($podcast['presenters']))
     @section('presenters')
       <div class="container">
-        <h4 class="lead">Presenters</h4>
+        <h3 >
+            Presenters
+        </h3>
         <div class="row">
           @foreach($podcast['presenters'] as $presenter)
             <x-image-card
@@ -165,8 +165,7 @@
             :title="$presenter['associated_people_id']['display_name']"
             :image="$presenter['associated_people_id']['profile_image']"
             :route="'podcast.presenter'"
-            :params="[$presenter['associated_people_id']['slug']]"
-            />
+            :params="[$presenter['associated_people_id']['slug']]"></x-image-card>
           @endforeach
         </div>
       </div>
@@ -176,15 +175,16 @@
   @if(!empty($podcast['partners']))
     @section('research-funders')
       <div class="container">
-        <h4 class="lead">Partners</h4>
+        <h3>
+            Partners
+        </h3>
         <div class="row">
           @foreach($podcast['partners'] as $partner)
             <x-partner-card
             :altTag="$partner['partner_organisations_id']['partner_full_name']"
             :title="$partner['partner_organisations_id']['partner_full_name']"
             :image="$partner['partner_organisations_id']['partner_logo']"
-            :url="$partner['partner_organisations_id']['partner_url']"
-            />
+            :url="$partner['partner_organisations_id']['partner_url']"></x-partner-card>
           @endforeach
         </div>
       </div>

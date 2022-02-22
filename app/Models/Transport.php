@@ -6,16 +6,19 @@ use App\DirectUs;
 
 class Transport extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     */
+    public static function list(): array
     {
       $api = new Directus;
       $api->setEndpoint('transport');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'sort' => 'id',
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => 'id',
+          )
       );
       return $api->getData();
     }

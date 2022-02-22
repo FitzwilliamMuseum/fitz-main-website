@@ -2,27 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use App\Models\Stubs;
 use App\Models\Themes;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 
 class themesController extends Controller
 {
 
-  public function index()
-  {
-    $pages = Stubs::getLanding('themes');
-    $themes = Themes::list();
-    return view('themes.index', compact('themes', 'pages'));
-  }
-
-  public function theme($slug)
-  {
-    $themes = Themes::details($slug);
-    if(empty($themes['data'])){
-      return response()->view('errors.404',[],404);
+    /**
+     * @return View
+     */
+    public function index(): View
+    {
+        $pages = Stubs::getLanding('themes');
+        $themes = Themes::list();
+        return view('themes.index', compact('themes', 'pages'));
     }
-    return view('themes.theme', compact('themes'));
-  }
+
+    /**
+     * @param string $slug
+     * @return View|Response
+     */
+    public function theme(string $slug): View|Response
+    {
+        $themes = Themes::details($slug);
+        if (empty($themes['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        return view('themes.theme', compact('themes'));
+    }
 }

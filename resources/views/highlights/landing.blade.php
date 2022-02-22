@@ -6,304 +6,313 @@
 @section('keywords', 'search,highlights, objects')
 @section('collection-parallax', 'https://api.fitz.ms/mediaLib/pdp/pdp82/P_72_1999_200706_dc2.jpg')
 @section('collection-search')
-  <div class="container-fluid bg-gdbo">
-    <div class="container py-3 ">
-      <div class="mx-auto mb-3">
-        {{ $page }}
-      </div>
-      <div class="p-3 mx-auto mb-3 bg-white">
-        {{ \Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET']) }}
-        <div class="row">
-          <div class="form-group col-md-12">
-            <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
-            placeholder="Search our collection" required value="{{ old('query') }}">
-          </div>
-        </div>
+    <div class="container-fluid bg-gdbo">
+        <div class="container py-3 ">
+            <div class="mx-auto mb-3">
+                {{ $page }}
+            </div>
+            <div class="p-3 mx-auto mb-3 bg-white">
+                {{ Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET']) }}
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
+                               placeholder="Search our collection" required value="{{ old('query') }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>Visual results</h3>
+                        <div class="form-group form-check ">
+                            <input type="checkbox" class="form-check-input" id="images" name="images">
+                            <label class="form-check-label" for="images">Only with images?</label>
+                        </div>
+                        <div class="form-group form-check ">
+                            <input type="checkbox" class="form-check-input" id="iiif" name="iiif">
+                            <label class="form-check-label" for="iiif">Deep zoom enabled (IIIF)?</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3>Operator</h3>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operator" id="operator" value="AND"
+                                   checked>
+                            <label class="form-check-label" for="operator">
+                                AND
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="operator" id="operator" value="OR">
+                            <label class="form-check-label" for="operator">
+                                OR
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3>Sort by last update</h3>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sort" id="sort" value="desc" checked>
+                            <label class="form-check-label" for="sort">
+                                Descending
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sort" id="sort" value="asc">
+                            <label class="form-check-label" for="sort">
+                                Ascending
+                            </label>
+                        </div>
+                    </div>
 
-        <div class="row">
-          <div class="col">
-            <h4 class="lead">Visual results</h4>
-            <div class="form-group form-check ">
-              <input type="checkbox" class="form-check-input" id="images" name="images">
-              <label class="form-check-label" for="images">Only with images?</label>
-            </div>
-            <div class="form-group form-check ">
-              <input type="checkbox" class="form-check-input" id="iiif" name="iiif">
-              <label class="form-check-label" for="iiif">Deep zoom enabled (IIIF)?</label>
-            </div>
-          </div>
-          <div class="col">
-            <h4 class="lead">Operator</h4>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="operator" id="operator" value="AND" checked>
-              <label class="form-check-label" for="operator">
-                AND
-              </label>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </div>
+                </div>
+                @if(count($errors))
+                    <div class="form-group">
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+                {!! Form::close() !!}
             </div>
 
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="operator" id="operator" value="OR" >
-              <label class="form-check-label" for="operator">
-                OR
-              </label>
-            </div>
-          </div>
-          <div class="col">
-            <h4 class="lead">Sort by last update</h4>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="sort" id="sort" value="desc" checked>
-              <label class="form-check-label" for="sort">
-                Descending
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="sort" id="sort" value="asc" >
-              <label class="form-check-label" for="sort">
-                Ascending
-              </label>
-            </div>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-dark">Submit</button>
-          </div>
-        </div>
-        @if(count($errors))
-          <div class="form-group">
-            <div class="alert alert-danger">
-              <ul>
-                @foreach($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-        @endif
-        {!! Form::close() !!}
-      </div>
-
-      <h3>Search our highlights</h3>
-      <div class="col-12 shadow-sm p-3 mx-auto">
-        {{ \Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
-        <div class="row center-block">
-          <div class="col-lg-12 center-block searchform">
-            <div class="input-group mr-3">
-              <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
-              placeholder="Search our highlight objects" required value="{{ old('query') }}&contentType:pharos">
-              <span class="input-group-btn">
+            <h3>Search our highlights</h3>
+            <div class="col-12 shadow-sm p-3 mx-auto">
+                {{ Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
+                <div class="row center-block">
+                    <div class="col-lg-12 center-block searchform">
+                        <div class="input-group mr-3">
+                            <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
+                                   placeholder="Search our highlight objects" required
+                                   value="{{ old('query') }}&contentType:pharos">
+                            <span class="input-group-btn">
                 <button class="btn btn-dark" type="submit">Search...</button>
               </span>
+                        </div>
+                    </div>
+                </div>
+                @if(count($errors))
+                    <div class="form-group">
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+                {!! Form::close() !!}
             </div>
-          </div>
         </div>
-        @if(count($errors))
-          <div class="form-group">
-            <div class="alert alert-danger">
-              <ul>
-                @foreach($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-            </div>
-          </div>
-        @endif
-        {!! Form::close() !!}
-      </div>
     </div>
-  </div>
 @endsection
 
 @section('theme-carousel')
-  <div class="container-fluid py-2 bg-white">
-    <h3>Explore highlights by theme</h3>
-    <div class="row mb-2">
-      <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
-        <div class="carousel-inner row w-100 mx-auto">
-          @php
-          $slides = $pharos['data'];
-          $count = sizeof($slides);
-          $first = array_slice($slides,0,1);
-          $rest = array_slice($slides, 1, $count);
-          @endphp
+    <div class="container-fluid py-2 bg-white">
+        <h3>Explore highlights by theme</h3>
+        <div class="row mb-2">
+            <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner row w-100 mx-auto">
+                    @php
+                        $slides = $pharos['data'];
+                        $count = sizeof($slides);
+                        $first = array_slice($slides,0,1);
+                        $rest = array_slice($slides, 1, $count)
+                    @endphp
 
-          @foreach($first as $record)
-            <div class="carousel-item  active">
-              <div class="col-md-4">
-                <div class="card card-fitz h-100">
-                  @if(!is_null($record['hero_image']))
-                    <a href="{{ route('theme', [$record['slug']]) }}">
-                      <img class="card-img-top" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-                      alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/>
-                    </a>
-                  @endif
-                  <div class="card-body h-100">
-                    <h3>
-                      <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
-                    </h3>
-                  </div>
+                    @foreach($first as $record)
+                        <div class="carousel-item  active">
+                            <div class="col-md-4">
+                                <div class="card card-fitz h-100">
+                                    @if(!is_null($record['hero_image']))
+                                        <a href="{{ route('theme', [$record['slug']]) }}">
+                                            <img class="card-img-top"
+                                                 src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
+                                                 alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/>
+                                        </a>
+                                    @endif
+                                    <div class="card-body h-100">
+                                        <h3>
+                                            <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach($rest as $record)
+                        <div class="carousel-item">
+                            <div class="col-md-4">
+                                <div class="card card-fitz">
+                                    @if(!is_null($record['hero_image']))
+                                        <a href="{{ route('theme', [$record['slug']]) }}"><img class="img-fluid"
+                                                                                               src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
+                                                                                               alt="{{ $record[ 'hero_image']['title'] }}"
+                                                                                               loading="lazy"/></a>
+                                    @endif
+                                    <div class="card-body">
+                                        <h3>
+                                            <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-              </div>
+                <a class="carousel-control-prev" href="#carouselThemes" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselThemes" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-          @endforeach
-          @foreach($rest as $record)
-            <div class="carousel-item">
-              <div class="col-md-4">
-                <div class="card card-fitz">
-                  @if(!is_null($record['hero_image']))
-                    <a href="{{ route('theme', [$record['slug']]) }}"><img class="img-fluid" src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-                      alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/></a>
-                    @endif
-                    <div class="card-body">
-                      <h3>
-                        <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            @endforeach
-          </div>
-          <a class="carousel-control-prev" href="#carouselThemes" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselThemes" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
-      </div>
     </div>
-  @endsection
+@endsection
 
-  @section('period-carousel')
+@section('period-carousel')
     <div class="container-fluid py-2 bg-white">
-      <h3>Explore highlights by period</h3>
-      <div class="row mb-2">
-        <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
-        data-interval="false" data-pause="hover">
-        <div class="carousel-inner row w-100 mx-auto">
-          @php
-          $slides = $periods;
-          $count = sizeof($slides);
-          $first = array_slice($slides,0,1);
-          $rest = array_slice($slides, 1, $count);
-          @endphp
+        <h3>Explore highlights by period</h3>
+        <div class="row mb-2">
+            <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
+                 data-interval="false" data-pause="hover">
+                <div class="carousel-inner row w-100 mx-auto">
+                    @php
+                        $slides = $periods;
+                        $count = sizeof($slides);
+                        $first = array_slice($slides,0,1);
+                        $rest = array_slice($slides, 1, $count)
+                    @endphp
 
-          @foreach($first as $record)
-            <div class="carousel-item active">
-              <div class="col-md-4 ">
-                <div class="card card-fitz h-100 ">
-                  @if(!is_null($record[0]['image']))
-                    <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}/"><img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-                      alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
-                    @endif
-                    <div class="card-body">
-                      <h3>
-                        <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
-                      </h3>
-                    </div>
-                  </div>
+                    @foreach($first as $record)
+                        <div class="carousel-item active">
+                            <div class="col-md-4 ">
+                                <div class="card card-fitz h-100 ">
+                                    @if(!is_null($record[0]['image']))
+                                        <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}/"><img
+                                                class="img-fluid"
+                                                src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
+                                                alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
+                                    @endif
+                                    <div class="card-body">
+                                        <h3>
+                                            <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach($rest as $record)
+                        <div class="carousel-item">
+                            <div class="col-md-4">
+                                <div class="card card-fitz h-100">
+                                    @if(!is_null($record[0][ 'image']))
+                                        <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">
+                                            <img class="img-fluid"
+                                                 src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
+                                                 alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/>
+                                        </a>
+                                    @endif
+                                    <div class="card-body">
+                                        <h3>
+                                            <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-              </div>
-            @endforeach
-            @foreach($rest as $record)
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <div class="card card-fitz h-100">
-                    @if(!is_null($record[0][ 'image']))
-                      <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">
-                        <img class="img-fluid" src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-                        alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/>
-                      </a>
-                    @endif
-                    <div class="card-body">
-                      <h3>
-                        <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            @endforeach
-          </div>
-          <a class="carousel-control-prev" href="#carouselPeriods" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselPeriods" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+                <a class="carousel-control-prev" href="#carouselPeriods" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselPeriods" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
-  @endsection
+@endsection
 
-  @section('context-carousel')
+@section('context-carousel')
     <div class="container-fluid py-2 bg-white">
-      <h3>Explore object contexts</h3>
-      <div class="row">
-        <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
-        data-interval="false" data-pause="hover">
-        <div class="carousel-inner row w-100 mx-auto">
-          @php
-          $slides = $context;
-          $count = sizeof($slides);
-          $first = array_slice($slides,0,1);
-          $rest = array_slice($slides, 1, $count);
-          @endphp
+        <h3>Explore object contexts</h3>
+        <div class="row">
+            <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
+                 data-interval="false" data-pause="hover">
+                <div class="carousel-inner row w-100 mx-auto">
+                    @php
+                        $slides = $context;
+                        $count = sizeof($slides);
+                        $first = array_slice($slides,0,1);
+                        $rest = array_slice($slides, 1, $count)
+                    @endphp
 
-          @foreach($first as $record)
-            <div class="carousel-item active">
-              <div class="col-md-4 ">
-                <div class="card card-fitz h-100 ">
-                  @if(!is_null($record[0]['hero_image']))
-                    <a href="{{ route('context-sections',[$record[0]['section']]) }}"><img class="img-fluid" src="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['url']}}"
-                      alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
-                    @endif
-                    <div class="card-body">
-                      <h3>
-                        <a href="{{ route('context-sections',[$record[0]['section']]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
-                      </h3>
-                    </div>
-                  </div>
+                    @foreach($first as $record)
+                        <div class="carousel-item active">
+                            <div class="col-md-4 ">
+                                <div class="card card-fitz h-100 ">
+                                    @if(!is_null($record[0]['hero_image']))
+                                        <a href="{{ route('context-sections',[$record[0]['section']]) }}"><img
+                                                class="img-fluid"
+                                                src="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['url']}}"
+                                                alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
+                                    @endif
+                                    <div class="card-body">
+                                        <h3>
+                                            <a href="{{ route('context-sections',[$record[0]['section']]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach($rest as $record)
+                        <div class="carousel-item">
+                            <div class="col-md-4">
+                                <div class="card card-fitz h-100">
+                                    @if(!is_null($record[0]['hero_image']))
+                                        <a href="{{ route('context-sections',[$record[0]['section']]) }}">
+                                            <img class="img-fluid"
+                                                 src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
+                                                 alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/>
+                                        </a>
+                                    @endif
+                                    <div class="card-body">
+                                        <h3>
+                                            <a href="{{ route('context-sections',[$record[0]['section']]) }}">
+                                                {!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}
+                                            </a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-              </div>
-            @endforeach
-            @foreach($rest as $record)
-              <div class="carousel-item">
-                <div class="col-md-4">
-                  <div class="card card-fitz h-100">
-                    @if(!is_null($record[0]['hero_image']))
-                      <a href="{{ route('context-sections',[$record[0]['section']]) }}">
-                        <img class="img-fluid" src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
-                        alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/>
-                      </a>
-                    @endif
-                    <div class="card-body">
-                      <h3>
-                        <a href="{{ route('context-sections',[$record[0]['section']]) }}">
-                          {!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}
-                        </a>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            @endforeach
-          </div>
-          <a class="carousel-control-prev" href="#carouselContexts" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselContexts" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+                <a class="carousel-control-prev" href="#carouselContexts" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselContexts" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
-  @endsection
+@endsection

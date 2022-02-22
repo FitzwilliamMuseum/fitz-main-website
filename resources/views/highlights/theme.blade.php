@@ -6,15 +6,14 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')
-<div class="row">
-  @foreach($pharos['data'] as $record)
-    <x-image-card
-    :image="$record['hero_image']"
-    :altTag="$record['hero_image']['title']"
-    :route="'theme'"
-    :params="[$record['slug']]"
-    :title="ucfirst(str_replace('-',' ', $record['title']))"
-    />
-  @endforeach
-</div>
+    <div class="row">
+        @foreach($pharos['data'] as $record)
+            <x-image-card
+                :image="$record['hero_image']"
+                :altTag="$record['hero_image']['title']"
+                :route="'theme'"
+                :params="[$record['slug']]"
+                :title="ucfirst(str_replace('-',' ', $record['title']))"></x-image-card>
+        @endforeach
+    </div>
 @endsection

@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Http\Controllers;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param Schedule $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -55,7 +55,7 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\twitterController@twitter')->cron('0 */5 * * *');
         # Import Jekyll to solr
         $schedule->call('App\Http\Controllers\jekyllController@import')->cron('0 */5 * * *');
-        # Import Wordpress to solr
+        # Import WordPress to solr
         $schedule->call('App\Http\Controllers\wordpressController@import')->cron('0 */9 * * *');
         # Clear caches
         $schedule->call('App\Http\Controllers\Controller@clearCache')->cron('6 */12 * * */1');

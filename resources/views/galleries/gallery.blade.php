@@ -25,9 +25,9 @@
   @endif
 
   @if(isset($gallery['gallery_floor']))
-    <h4 class="lead">
+    <h3>
       Gallery data
-    </h4>
+    </h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
       <ul>
         <li>{{ $gallery['gallery_floor'] }}</li>
@@ -36,9 +36,9 @@
   @endif
 
   @if(!empty($gallery['star_objects']))
-  <h4 class="lead">
+  <h3>
     Object stories
-  </h4>
+  </h3>
   <div class="row">
     @foreach($gallery['star_objects'] as $object)
       <x-image-card
@@ -74,9 +74,9 @@
   @if(!empty($gallery['audio_guide']))
     @section('audio-guide')
       <div class="container">
-        <h4 class="lead">
+        <h3>
           Audio description
-        </h4>
+        </h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="shadow-sm p-3 mx-auto mb-3">
             <div class="plyr">
@@ -95,7 +95,7 @@
     @section('360')
       @if(!empty($gallery['image_360_pano']))
         <div class="container">
-          <h4 class="lead">{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h4>
+          <h3>{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h3>
 
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div id="panorama"></div>
@@ -108,12 +108,12 @@
     @section('sketchfab-collection')
       @if(!empty($gallery['sketchfab_id_collection']))
       <div class="container">
-        <h4 class="lead">3D scans of objects in gallery</h4>
+        <h3>3D scans of objects in gallery</h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-4by3">
             <iframe title="A 3D model of {{ $gallery['gallery_name'] }}" class="embed-responsive-item"
             src="https://sketchfab.com/playlists/embed?collection={{ $gallery['sketchfab_id_collection']}}"
-            frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+             allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
           </div>
         </div>
       </div>
@@ -123,12 +123,12 @@
     @section('sketchfab')
       @if(!empty($gallery['sketchfab_sketchup_id']))
       <div class="container">
-        <h4 class="lead">Sketchup model of this gallery</h4>
+        <h3>Sketchup model of this gallery</h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="embed-responsive embed-responsive-4by3">
             <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}" class="embed-responsive-item"
             src="https://sketchfab.com/models/{{ $gallery['sketchfab_sketchup_id']}}/embed?"
-            frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+             allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
           </div>
         </div>
       </div>

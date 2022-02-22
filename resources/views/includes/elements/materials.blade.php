@@ -1,5 +1,5 @@
 @if(array_key_exists('materials', $record['_source']))
-<h4 class="lead">Materials used in production</h4>
+<h3>Materials used in production</h3>
 <ul>
   @foreach($record['_source']['materials'] as $material)
     @foreach($material as $mat)

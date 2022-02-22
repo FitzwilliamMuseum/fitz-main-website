@@ -1,8 +1,10 @@
+<!-- This was used for the Steppe gold banner and is now obsolete -->
 @php
-$today = \Carbon\Carbon::now()->toDateString();
-$enddate = \Carbon\Carbon::createFromFormat('m/d/Y', '30/01/2022');
+use Carbon\Carbon;
+$today = Carbon::now()->toDateString();
+$endDate = Carbon::createFromFormat('m/d/Y', '30/01/2022');
 @endphp
-@if($enddate->lt($today))
+@if($endDate->lt($today))
 <div class="container-fluid steppe p-3">
 
 </div>

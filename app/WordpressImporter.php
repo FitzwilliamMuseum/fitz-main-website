@@ -2,68 +2,88 @@
 
 namespace App;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
-use Carbon\Carbon;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
+use Solarium\Core\Query\Result\ResultInterface;
+use Solarium\QueryType\Update\Result;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Solarium\Exception;
 
-class WordpressImporter {
+class WordpressImporter
+{
 
-  protected  $_url;
+    /** @var string */
+    protected string $_url;
 
-  public function setUrl($url){
-    $this->_url = $url;
-    return $this;
-  }
+    /**
+     * @param string $subdomain
+     * @return ResultInterface|Result
+     */
+    public function import(string $subdomain): Result|ResultInterface
+    {
+        $data = $this->getData();
+        return $this->solrImport($data, $subdomain);
+    }
 
-  public function getUrl()
-  {
-    return $this->_url;
-  }
+    /**
+     * @return array
+     */
+    public function getData(): array
+    {
+        $url = $this->getUrl();
+        $response = Http::get($url);
+        return $response->json();
+    }
 
-  public function getData(){
-    $url = $this->getUrl();
-    $response = Http::get($url);
-    dump($response->status());
-    $data = $response->json();
-    return $data;
-  }
+    /**]
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->_url;
+    }
 
-  public function solrImport($data, $subdomain)
-  {
-      $configSolr = \Config::get('solarium');
-      $this->client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-      $update = $this->client->createUpdate();
-      $documents = array();
-      foreach($data as $wordpressPage)
-      {
-        $doc = $update->createDocument();
-        $doc->id = md5($wordpressPage['id']) . '-wordpress-' . $subdomain;
-        $doc->title = strip_tags($wordpressPage['title']['rendered']);
-        $doc->description = str_replace(array("\r", "\n"), '', strip_tags($wordpressPage['excerpt']['rendered']));
-        $doc->body = str_replace(array("\r", "\n"), '',strip_tags($wordpressPage['content']['rendered']));
-        $doc->slug = $wordpressPage['slug'];
-        $doc->url = $wordpressPage['link'];
-        $doc->contentType = 'research-resource';
-        if(isset($wordpressPage["_embedded"])){
-          $doc->thumbnail = $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['thumbnail']['source_url'];
-          $doc->image =  $wordpressPage["_embedded"]["wp:featuredmedia"][0]["source_url"];
-          $doc->searchImage =  $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['thumbnail']['source_url'];
+    /**
+     * @param string $url
+     * @return $this
+     */
+    public function setUrl(string $url): WordpressImporter
+    {
+        $this->_url = $url;
+        return $this;
+    }
+
+    /**
+     * @param array $data
+     * @param string $subdomain
+     * @return ResultInterface|Result
+     */
+    public function solrImport(array $data, string $subdomain): Result|ResultInterface
+    {
+        $configSolr = Config::get('solarium');
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+        $update = $client->createUpdate();
+        $documents = array();
+        foreach ($data as $wordpressPage) {
+            $doc = $update->createDocument();
+            $doc->id = md5($wordpressPage['id']) . '-wordpress-' . $subdomain;
+            $doc->title = strip_tags($wordpressPage['title']['rendered']);
+            $doc->description = str_replace(array("\r", "\n"), '', strip_tags($wordpressPage['excerpt']['rendered']));
+            $doc->body = str_replace(array("\r", "\n"), '', strip_tags($wordpressPage['content']['rendered']));
+            $doc->slug = $wordpressPage['slug'];
+            $doc->url = $wordpressPage['link'];
+            $doc->contentType = 'research-resource';
+            if (isset($wordpressPage["_embedded"])) {
+                $doc->thumbnail = $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['thumbnail']['source_url'];
+                $doc->image = $wordpressPage["_embedded"]["wp:featuredmedia"][0]["source_url"];
+                $doc->searchImage = $wordpressPage["_embedded"]["wp:featuredmedia"][0]["media_details"]['sizes']['thumbnail']['source_url'];
+            }
+            $documents[] = $doc;
         }
-        $documents[] = $doc;
-      }
 
-      $update->addDocuments($documents);
-      $update->addCommit();
-      return $this->client->update($update);
-  }
-
-  public function import($subdomain)
-  {
-    $data = $this->getData();
-    return $this->solrImport($data, $subdomain);
-  }
+        $update->addDocuments($documents);
+        $update->addCommit();
+        return $client->update($update);
+    }
 }

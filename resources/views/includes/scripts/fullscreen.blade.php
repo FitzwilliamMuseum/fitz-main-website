@@ -1,15 +1,15 @@
 <script type="text/javascript">
 $(function() {
-    var bg = $('.head');
+    const bg = $('.head');
     $('#fullscreen-btn').click(function () {
       goFullScreen(bg.attr('style', "background-image:url('@yield('hero_image')')"));
     });
 });
 function goFullScreen(image){
 
-        var elem = document.getElementsByClassName("head");
+    const elem = document.getElementsByClassName("head");
 
-        if(elem.requestFullscreen){
+    if(elem.requestFullscreen){
             elem.requestFullscreen();
         }
         else if(elem.mozRequestFullScreen){

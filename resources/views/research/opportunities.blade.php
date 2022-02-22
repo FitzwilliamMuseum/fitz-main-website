@@ -4,10 +4,10 @@
 @section('hero_image_title', 'A Baroque feasting table by Ivan Day in feast and fast')
 @section('description', 'An overview of available research opportunities')
 @section('content')
-  @if(count($opps['data']) > 0)
+  @if(count($opportunities['data']) > 0)
     <div class="row">
-      @foreach($opps['data'] as $opp)
-        <x-image-card :altTag="$opp['hero_image_alt_text'] " :title="$opp['title']"  :image="$opp['hero_image']" :route="'opportunity'" :params="[$opp['slug']]" />
+      @foreach($opportunities['data'] as $opp)
+        <x-image-card :altTag="$opp['hero_image_alt_text'] " :title="$opp['title']"  :image="$opp['hero_image']" :route="'opportunity'" :params="[$opp['slug']]"></x-image-card>
       @endforeach
     </div>
     @else
@@ -15,5 +15,4 @@
         <p>We currently have no opportunities available.</p>
       </div>
     @endif
-  </div>
 @endsection

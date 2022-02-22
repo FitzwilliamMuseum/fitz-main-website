@@ -2,15 +2,15 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class shopifyCard extends Component
 {
     public $result;
+
     /**
-     * Create a new component instance.
-     *
-     * @return void
+     * @param $result
      */
     public function __construct($result)
     {
@@ -18,11 +18,9 @@ class shopifyCard extends Component
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.shopify-card');
     }

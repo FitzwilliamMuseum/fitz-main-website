@@ -31,7 +31,7 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" title="A YouTube video related to this story"
-      src="https://www.youtube.com/embed/{{$project['youtube_id']}}" frameborder="0"
+      src="https://www.youtube.com/embed/{{$project['youtube_id']}}"
       allowfullscreen></iframe>
     </div>
   </div>
@@ -42,7 +42,7 @@
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" title="A Vimeo Video related to this story"
-      src="https://player.vimeo.com/video/{{$project['vimeo_id']}}" frameborder="0"
+      src="https://player.vimeo.com/video/{{$project['vimeo_id']}}"
       allowfullscreen></iframe>
     </div>
   </div>
@@ -56,7 +56,7 @@
       <div class="embed-responsive embed-responsive-4by3">
         <iframe title="A 3D model related to this story" class="embed-responsive-item"
         src="https://sketchfab.com/models/{{ $project['sketchfab_id']}}/embed?"
-        frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+         allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@
   @section('height-test')
     <script>
       $("#stand-out").on("load", function(){
-        var height = $(this).height();
+        let height = $(this).height();
         console.log(height);
         $('.article').css('min-height', height + 100);
       });
@@ -82,7 +82,7 @@
 <h3>Other recommended articles</h3>
 <div class="row">
   @foreach($records as $record)
-    <x-solr-card :result="$record" />
+    <x-solr-card :result="$record"></x-solr-card>
   @endforeach
 </div>
 </div>

@@ -5,70 +5,70 @@
 
 @section('content')
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <a href="{{ route('mindeyes') }}"><img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/imme.jpg"
-          alt="In my mind's eye podcasts"
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <a href="{{ route('mindeyes') }}"><img class="img-fluid"
+                                                       src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/imme.jpg"
+                                                       alt="In my mind's eye podcasts"
 
-          loading="lazy"/></a>
-          <div class="card-body h-100">
-            <div class="contents-label mb-3">
-              <h3>
-                In my mind's eye
-              </h3>
+                                                       loading="lazy"/></a>
+                <div class="card-body h-100">
+                    <div class="contents-label mb-3">
+                        <h3>
+                            In my mind's eye
+                        </h3>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          <a href="{{ route('podcasts') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/cover-podcasts.jpg?key=directus-large-crop&q=50"
-            alt="Podcasts symbol"
-
-            loading="lazy"/></a>
-            <div class="card-body h-100">
-              <div class="contents-label mb-3">
-                <h3>
-                  Our podcast archive
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          <a href="{{ route('instagram') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/instacover.png?key=directus-large-crop&q=50"
-            alt="Our instagram profile"/></a>
-            <div class="card-body h-100">
-              <div class="contents-label mb-3">
-                <h3>
-                  <a href="{{ route('instagram') }}">Instagram</a>
-                </h3>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="col-md-4 mb-3">
-          <div class="card h-100">
-            <a href="{{ route('instagram') }}"><img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/ejpjb8sxcaa_jdg.jpg?key=directus-large-crop&q=50"
-              alt="Our instagram profile"/></a>
-              <div class="card-body h-100">
-                <div class="contents-label mb-3">
-                  <h3>
-                    <a href="{{ route('twitter') }}">Twitter</a>
-                  </h3>
+            <div class="card h-100">
+                <a href="{{ route('podcasts') }}"><img class="img-fluid"
+                                                       src="https://content.fitz.ms/fitz-website/assets/cover-podcasts.jpg?key=directus-large-crop&q=50"
+                                                       alt="Podcasts symbol"
+
+                                                       loading="lazy"/></a>
+                <div class="card-body h-100">
+                    <div class="contents-label mb-3">
+                        <h3>
+                            Our podcast archive
+                        </h3>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
 
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <a href="{{ route('instagram') }}"><img class="img-fluid"
+                                                        src="https://content.fitz.ms/fitz-website/assets/instacover.png?key=directus-large-crop&q=50"
+                                                        alt="Our instagram profile"/></a>
+                <div class="card-body h-100">
+                    <div class="contents-label mb-3">
+                        <h3>
+                            <a href="{{ route('instagram') }}">Instagram</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-    @endsection
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <a href="{{ route('instagram') }}"><img class="img-fluid"
+                                                        src="https://content.fitz.ms/fitz-website/assets/ejpjb8sxcaa_jdg.jpg?key=directus-large-crop&q=50"
+                                                        alt="Our instagram profile"/></a>
+                <div class="card-body h-100">
+                    <div class="contents-label mb-3">
+                        <h3>
+                            <a href="{{ route('twitter') }}">Twitter</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

@@ -6,29 +6,36 @@ use App\DirectUs;
 
 class PodcastSeries extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     */
+    public static function list(): array
     {
       $api = new DirectUs;
       $api->setEndpoint('podcast_series');
       $api->setArguments(
-        $args = array(
-          'fields' => '*.*.*.*.*.*',
-          'meta' => '*',
-          'sort' => '-id'
-        )
+          array(
+            'fields' => '*.*.*.*.*.*',
+            'meta' => '*',
+            'sort' => '-id'
+          )
       );
       return $api->getData();
     }
 
-    public static function getSeriesID($slug)
+    /**
+     * @param string $slug Slug
+     * @return array
+     */
+    public static function getSeriesID(string $slug): array
     {
       $api = new DirectUs;
       $api->setEndpoint('podcast_series');
       $api->setArguments(
-        $args = array(
-          'fields' => '*.*.*.*',
-          'filter[slug][eq]' => $slug
-        )
+          array(
+            'fields' => '*.*.*.*',
+            'filter[slug][eq]' => $slug
+          )
       );
       return $api->getData();
     }

@@ -6,15 +6,18 @@ use App\DirectUs;
 
 class StoryTelling extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     */
+    public static function list():array
     {
       $api = new DirectUs;
       $api->setEndpoint('story_telling');
       $api->setArguments(
-        $args = array(
-          'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type'
-        )
+          array(
+            'fields' => '*.*.*.*',
+            'meta' => 'result_count,total_count,type'
+          )
       );
       return $api->getData();
     }

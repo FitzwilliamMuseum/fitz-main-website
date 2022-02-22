@@ -6,46 +6,58 @@ use App\DirectUs;
 
 class LearningPages extends Model
 {
-    public static function filterByResource(string $resource)
+    /**
+     * @param string $resource
+     * @return array
+     */
+    public static function filterByResource(string $resource): array
     {
       $api = new DirectUs;
       $api->setEndpoint('learning_pages');
       $api->setArguments(
-        $args = array(
-          'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type',
-          'filter[page_type][eq]' => $resource,
-          'sort' => '-id'
-        )
+          array(
+            'fields' => '*.*.*.*',
+            'meta' => 'result_count,total_count,type',
+            'filter[page_type][eq]' => $resource,
+            'sort' => '-id'
+          )
       );
       return $api->getData();
     }
 
-    public static function filterByResourceNotEqual(string $resource)
+    /**
+     * @param string $resource
+     * @return array
+     */
+    public static function filterByResourceNotEqual(string $resource): array
     {
       $api = new DirectUs;
       $api->setEndpoint('learning_pages');
       $api->setArguments(
-        $args = array(
-          'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type',
-          'filter[page_type][neq]' => $resource,
-          'sort' => '-id'
-        )
+          array(
+            'fields' => '*.*.*.*',
+            'meta' => 'result_count,total_count,type',
+            'filter[page_type][neq]' => $resource,
+            'sort' => '-id'
+          )
       );
       return $api->getData();
     }
 
-    public static function filterBySlug(string $slug)
+    /**
+     * @param string $slug
+     * @return array
+     */
+    public static function filterBySlug(string $slug): array
     {
       $api = new DirectUs;
       $api->setEndpoint('learning_pages');
       $api->setArguments(
-        $args = array(
-          'fields' => '*.*.*.*',
-          'meta' => 'result_count,total_count,type',
-          'filter[slug][eq]' => $slug
-        )
+          array(
+            'fields' => '*.*.*.*',
+            'meta' => 'result_count,total_count,type',
+            'filter[slug][eq]' => $slug
+          )
       );
       return $api->getData();
     }

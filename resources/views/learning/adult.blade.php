@@ -17,7 +17,7 @@
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" title="A Vimeo video related to {{ $page['title'] }}"
-          src="https://player.vimeo.com/video/{{$page['vimeo_id']}}" frameborder="0"
+          src="https://player.vimeo.com/video/{{$page['vimeo_id']}}"
           allowfullscreen></iframe>
         </div>
       </div>
@@ -31,7 +31,7 @@
       <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" title="A YouTube video related to {{ $page['title'] }}"
-          src="https://www.youtube.com/embed/{{ $page['youtube_id'] }}" frameborder="0"
+          src="https://www.youtube.com/embed/{{ $page['youtube_id'] }}"
           allowfullscreen></iframe>
         </div>
       </div>

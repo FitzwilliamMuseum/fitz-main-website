@@ -3,30 +3,40 @@
 namespace App\Models;
 
 use App\TessituraApi;
-use Cache;
+use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
+use GuzzleHttp\Exception\GuzzleException;
+use JetBrains\PhpStorm\Pure;
+use Psr\SimpleCache\InvalidArgumentException;
 
 class EventsTessitura extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     * @throws GuzzleException|InvalidArgumentException
+     */
+    public static function list(): array
     {
-      $expiresAt = now()->addMinutes(3600);
-      $keyTess = md5('tessitura-home');
-      if (Cache::has($keyTess)) {
-        $productions = Cache::store('file')->get($keyTess);
-      } else {
-        $productions = (new self)->getTessituraApi();
-        $productions->setPerformanceStartDate(Carbon::now());
-        $productions->setPerformanceEndDate(Carbon::now()->addDays(30));
-        $productions->setFacilities('lectures');
-        $productions = $productions->getPerformancesSearch();
-        Cache::store('file')->put($keyTess, $productions, $expiresAt);
-      }
-      return $productions;
+        $expiresAt = now()->addMinutes(3600);
+        $keyTess = md5('tessitura-home');
+        if (Cache::has($keyTess)) {
+            $productions = Cache::store('file')->get($keyTess);
+        } else {
+            $productions = (new self)->getTessituraApi();
+            $productions->setPerformanceStartDate(Carbon::now());
+            $productions->setPerformanceEndDate(Carbon::now()->addDays(30));
+            $productions->setFacilities('lectures');
+            $productions = $productions->getPerformancesSearch();
+            Cache::store('file')->put($keyTess, $productions, $expiresAt);
+        }
+        return $productions;
     }
 
-    public function getTessituraApi()
+    /**
+     * @return TessituraApi
+     */
+    #[Pure] public function getTessituraApi(): TessituraApi
     {
-      return new TessituraApi;
+        return new TessituraApi;
     }
 }

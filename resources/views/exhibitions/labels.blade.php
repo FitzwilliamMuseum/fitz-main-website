@@ -5,31 +5,31 @@
 @section('hero_image', $labels['data'][0]['object_labels'][0]['mo_labels_id']['cover_image']['data']['url'])
 @section('hero_image_title', 'An image representing this case\'s content')
 @section('content')
-  <div class="bg-white p-3">
-    <blockquote class="blockquote">
-      {!! $labels['data'][0]['object_labels'][0]['mo_labels_id']['description'] !!}
-    </blockquote>
-  </div>
+    <div class="bg-white p-3">
+        <blockquote class="blockquote">
+            {!! $labels['data'][0]['object_labels'][0]['mo_labels_id']['description'] !!}
+        </blockquote>
+    </div>
 @endsection
 @section('exhibitionlabels')
-<div class="container-fluid py-3">
-  <div class="container">
-    <div class="row">
-    @foreach($labels['data'] as $label)
-      <x-image-card
-      :image="$label['hero_image']"
-      :altTag="$label['hero_image_alt_title']"
-      :route="'exhibition.label'"
-      :params="[$label['slug']]"
-      :title="$label['title']"
-      />
-    @endforeach
+    <div class="container-fluid py-3">
+        <div class="container">
+            <div class="row">
+                @foreach($labels['data'] as $label)
+                    <x-image-card
+                        :image="$label['hero_image']"
+                        :altTag="$label['hero_image_alt_title']"
+                        :route="'exhibition.label'"
+                        :params="[$label['slug']]"
+                        :title="$label['title']"
+                    />
+                @endforeach
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<div class="container mt-1 p-2 text-center">
-  <nav aria-label="Page navigation" >
-    {{ $paginator->links('includes.structure.case-pagination')->withPath('/boom/case-')}}
-  </nav>
-</div>
+    <div class="container mt-1 p-2 text-center">
+        <nav aria-label="Page navigation">
+            {{ $paginator->links('includes.structure.case-pagination')->withPath('/boom/case-')}}
+        </nav>
+    </div>
 @endsection

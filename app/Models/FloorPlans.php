@@ -6,18 +6,21 @@ use App\DirectUs;
 
 class FloorPlans extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     */
+    public static function list(): array
     {
-      $api = new Directus;
-      $api->setEndpoint('floorplans_guides');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'id',
-            '[filter][type][eq]' => 'floor_plan',
-        )
-      );
-      return $api->getData();
+        $api = new Directus;
+        $api->setEndpoint('floorplans_guides');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'sort' => 'id',
+                '[filter][type][eq]' => 'floor_plan',
+            )
+        );
+        return $api->getData();
     }
 }

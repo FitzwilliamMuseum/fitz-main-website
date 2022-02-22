@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<? xml version = "1.0" encoding = "utf-8"?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+      prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
 <head>
 
     @include('includes.structure.meta')
@@ -8,111 +9,111 @@
     @include('includes.css.css')
 
     @hasSection('map')
-      @mapstyles
+        @mapstyles
     @endif
 
     @include('includes.structure.manifest')
 
     @yield('jsonld')
 
-    <x-feed-links />
+    <x-feed-links/>
 
     @include('googletagmanager::head')
 
 </head>
 <body class="doc-body bg-pastel">
-  @include('googletagmanager::body')
+@include('googletagmanager::body')
 
-  @include('includes.structure.accessibility')
+@include('includes.structure.accessibility')
 
-  @include('includes.structure.nav')
+@include('includes.structure.nav')
 
-  @include('includes.structure.highlight')
+@include('includes.structure.highlight')
 
-  @hasSection('timeline')
+@hasSection('timeline')
     @include('includes.css.timeline-css')
-  @endif
+@endif
 
-  @hasSection('360')
+@hasSection('360')
     @include('includes.css.photosphere-css')
-  @endif
+@endif
 
-  <div class="container mt-3">
+<div class="container mt-3">
     @include('includes.structure.breadcrumb')
-  </div>
-  <div class="container-fluid bg-white py-3">
+</div>
+<div class="container-fluid bg-white py-3">
     <div class="container">
-    @yield('press-contact')
-    @yield('content')
+        @yield('press-contact')
+        @yield('content')
 
-    @yield('adlib')
-    @yield('timeline')
+        @yield('adlib')
+        @yield('timeline')
     </div>
- </div>
+</div>
 
 
-  @hasSection('collection-parallax')
+@hasSection('collection-parallax')
     @include('includes.structure.parallax')
-  @endif
+@endif
 
-  @hasSection('map')
-  <div class="container-fluid map-box mb-3">
-    @yield('map')
-  </div>
-  @endif
-  <div class="container-fluid bg-gbdo">
-    @yield('associated_pages')
-  </div>
-
-    @hasSection('cons-areas')
-      @yield('cons-areas')
-    @endif
-
-    @yield('sketchfab-collection')
-    @yield('sketchfab')
-    @yield('audio-guide')
-    <div class="container-fluid bg-gdbo py-3">
-      @yield('pharos-pages')
-      @yield('highlight')
-      @yield('mlt')
+@hasSection('map')
+    <div class="container-fluid map-box mb-3">
+        @yield('map')
     </div>
-    @yield('shopify')
+@endif
+<div class="container-fluid bg-gbdo">
+    @yield('associated_pages')
+</div>
 
-  @include('includes.structure.emailsignup')
+@hasSection('cons-areas')
+    @yield('cons-areas')
+@endif
 
-  @include('includes.structure.footer')
+@yield('sketchfab-collection')
+@yield('sketchfab')
+@yield('audio-guide')
+<div class="container-fluid bg-gdbo py-3">
+    @yield('pharos-pages')
+    @yield('highlight')
+    @yield('mlt')
+</div>
+@yield('shopify')
 
-  @include('includes.structure.modal')
+@include('includes.structure.emailsignup')
 
-  @hasSection('lookanswers')
+@include('includes.structure.footer')
+
+@include('includes.structure.modal')
+
+@hasSection('lookanswers')
     @yield('lookanswers')
-  @endif
+@endif
 
-  @hasSection('thinkanswers')
+@hasSection('thinkanswers')
     @yield('thinkanswers')
-  @endif
+@endif
 
-  @hasSection('doanswers')
+@hasSection('doanswers')
     @yield('doanswers')
-  @endif
+@endif
 
-  @include('includes.scripts.javascript')
+@include('includes.scripts.javascript')
 
-  @hasSection('360')
+@hasSection('360')
     @include('includes.scripts.photosphere-js')
-  @endif
+@endif
 
-  @hasSection('map')
+@hasSection('map')
     @mapscripts
     @include('includes.scripts.mapjs')
-  @endif
+@endif
 
-  @hasSection('timeline')
+@hasSection('timeline')
     @include('includes.scripts.timeline-js')
-  @endif
+@endif
 
-  @hasSection('datepicker')
+@hasSection('datepicker')
     @yield('datepicker')
-  @endif
+@endif
 </body>
 </html>

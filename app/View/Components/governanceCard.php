@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class governanceCard extends Component
@@ -11,10 +12,13 @@ class governanceCard extends Component
     public $image;
     public $file;
     public $type;
+
     /**
-     * Create a new component instance.
-     *
-     * @return void
+     * @param string $title
+     * @param string|NULL $altTag
+     * @param array|NULL $image
+     * @param $file
+     * @param $type
      */
     public function __construct(string $title, string $altTag = NULL, array $image = NULL, $file = NULL, $type = NULL)
     {
@@ -25,12 +29,13 @@ class governanceCard extends Component
         $this->file = $file;
         $this->type = $type;
     }
+
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.governance-card');
     }

@@ -26,7 +26,7 @@
 
 
       {!! $profile['biography'] !!}
-      
+
 
       @isset($profile['pronouns'])
         <p>
@@ -49,11 +49,11 @@
         <div class="wrapper center-block">
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
-                <h4 class="panel-title">
+                <h3 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>Publications</h4>
+                    <h3>Publications</h3>
                   </a>
-                </h4>
+                </h3>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
@@ -65,11 +65,11 @@
           @isset($profile['professional_memberships'])
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
-                <h4 class="panel-title">
+                <h3 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>Professional Memberships</h4>
+                    <h3>Professional Memberships</h3>
                   </a>
-                </h4>
+                </h3>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
@@ -81,11 +81,11 @@
           @isset($profile['college_affiliated'])
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
-                <h4 class="panel-title">
+                <h3 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                    <h4>Affiliations</h4>
+                    <h3>Affiliations</h3>
                   </a>
-                </h4>
+                </h3>
               </div>
               <div id="collapseThree" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
@@ -103,11 +103,11 @@
           @if(null !== ($profile['orcid']) || null !== ($profile['githubid']) || null !== ($profile['google_scholar_id']) || null !== ($profile['twitter_handle']) )
           <div class="panel panel-default">
             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
-              <h4 class="panel-title">
+              <h3 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                  <h4>Research and social profiles</h4>
+                  <h3>Research and social profiles</h3>
                 </a>
-              </h4>
+              </h3>
             </div>
             <div id="collapseFour" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel" aria-labelledby="headingFour">
               <div class="panel-body">
@@ -218,7 +218,7 @@
 @if(!empty($similar))
   @section('mlt')
     <div class="container py-3">
-      <h4>Researchers with similar profiles</h4>
+      <h3>Researchers with similar profiles</h3>
       <div class="row">
         @foreach($similar as $record)
           <x-solr-card :result="$record" />

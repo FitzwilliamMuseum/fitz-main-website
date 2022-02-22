@@ -64,7 +64,12 @@
         @include('includes.structure.cards', $data =  $research)
       @endif
       @foreach($associated['data'] as $project)
-        <x-image-card :altTag="$project['hero_image_alt_text'] " :title="$project['title']"  :image="$project['hero_image']" :route="'landing-section'" :params="[$project['section'], $project['slug']]" />
+        <x-image-card
+            :altTag="$project['hero_image_alt_text']"
+            :title="$project['title']"
+            :image="$project['hero_image']"
+            :route="'landing-section'"
+            :params="[$project['section'], $project['slug']]"></x-image-card>
       @endforeach
 
       </div>

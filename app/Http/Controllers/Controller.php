@@ -2,32 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\DirectUs;
+use App\FitzElastic\Elastic;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use App\DirectUs;
-use App\FitzElastic\Elastic;
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
+use JetBrains\PhpStorm\Pure;
 
 class Controller extends BaseController
 {
-  use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-  public function getApi()
-  {
-    $directus = new DirectUs;
-    return $directus;
-  }
+    /**
+     * @return DirectUs
+     */
+    #[Pure] public function getApi(): DirectUs
+    {
+        return new DirectUs;
+    }
 
-  public function clearCache()
-  {
-    Artisan::call('cache:clear');
-    return "Cache is cleared";
-  }
+    /**
+     * @return string
+     */
+    public function clearCache(): string
+    {
+        Artisan::call('cache:clear');
+        return "Cache is cleared";
+    }
 
-  public function getElastic()
-  {
-    return new Elastic();
-  }
+    /**
+     * @return Elastic
+     */
+    #[Pure] public function getElastic(): Elastic
+    {
+        return new Elastic();
+    }
 }

@@ -6,30 +6,35 @@ use App\DirectUs;
 
 class ThingsToDo extends Model
 {
-    public static function list(){
+    /**
+     * @return array
+     */
+    public static function list(): array
+    {
       $api = new DirectUs;
       $api->setEndpoint('things_to_do');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'sort' => '?',
-            'limit' => 3
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => '?',
+              'limit' => 3
+          )
       );
       return $api->getData();
     }
 
-    public static function listAll($limit = 100){
+    public static function listAll($limit = 100): array
+    {
       $api = new DirectUs;
       $api->setEndpoint('things_to_do');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'sort' => 'title',
-            'limit' => $limit
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'sort' => 'title',
+              'limit' => $limit
+          )
       );
       return $api->getData();
     }

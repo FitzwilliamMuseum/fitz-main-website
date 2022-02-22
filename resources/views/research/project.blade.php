@@ -40,14 +40,14 @@
       </div>
     @endif
     @if($project['publications'])
-      <h4 class="lead">Related publications</h4>
+      <h3>Related publications</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         @markdown($project['publications'])
       </div>
     @endif
 
     @if(!empty($project['project_team']))
-      <h4 class="lead">Project team</h4>
+      <h3>Project team</h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         @markdown($project['project_team'])
       </div>
@@ -57,15 +57,14 @@
   @if(!empty($project['project_partnerships'] ))
     @section('research-funders')
       <div class="container">
-        <h4 class="lead">Funders and partners</h4>
+        <h3>Funders and partners</h3>
         <div class="row">
           @foreach($project['project_partnerships'] as $partner)
             <x-partner-card
             :altTag="$partner['partner']['partner_full_name']"
             :title="$partner['partner']['partner_full_name']"
             :image="$partner['partner']['partner_logo']"
-            :url="$partner['partner']['partner_url']"
-            />
+            :url="$partner['partner']['partner_url']"></x-partner-card>
             @endforeach
           </div>
         </div>
@@ -75,7 +74,7 @@
     @if(isset($project['outcomes']))
       @section('research-projects')
         <div class="container">
-          <h4 class="lead">Outcomes of the project</h4>
+          <h3>Outcomes of the project</h3>
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             @markdown($project['outcomes'])
           </div>
@@ -89,7 +88,7 @@
           <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
             <div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" title="A YouTube video related to this story"
-              src="https://www.youtube.com/embed/{{$project['youtube_id']}}" frameborder="0"
+              src="https://www.youtube.com/embed/{{$project['youtube_id']}}"
               allowfullscreen></iframe>
             </div>
           </div>
@@ -103,10 +102,10 @@
   @if(!empty($records))
     @section('mlt')
       <div class="container">
-        <h4 class="lead">Other research projects you might like</h4>
+        <h3>Other research projects you might like</h3>
         <div class="row">
           @foreach($records as $record)
-            <x-solr-card :result="$record" />
+            <x-solr-card :result="$record"></x-solr-card>
           @endforeach
         </div>
       </div>

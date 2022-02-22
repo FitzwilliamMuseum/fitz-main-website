@@ -3,10 +3,15 @@
 namespace App\Models;
 
 use App\DirectUs;
+use Illuminate\Http\Request;
 
 class Podcasting extends Model
 {
-  public static function list(Request $request)
+    /**
+     * @param Request $request
+     * @return array
+     */
+  public static function list(Request $request):array
   {
     $api = new DirectUs;
     $api->setEndpoint('mindseye');
@@ -27,16 +32,20 @@ class Podcasting extends Model
     return $api->getData();
   }
 
-  public static function find(string $slug)
+    /**
+     * @param string $slug
+     * @return array
+     */
+  public static function find(string $slug): array
   {
     $api = new DirectUs;
     $api->setEndpoint('podcasting');
     $api->setArguments(
-      $args = array(
-          'fields' => '*.*.*.*.*',
-          'meta' => '*',
-          'filter[slug][eq]' => $slug,
-      )
+        array(
+            'fields' => '*.*.*.*.*',
+            'meta' => '*',
+            'filter[slug][eq]' => $slug,
+        )
     );
     return $api->getData();
   }

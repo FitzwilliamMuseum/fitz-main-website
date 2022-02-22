@@ -1,9 +1,9 @@
 @if(array_key_exists('lifecycle',$record['_source'] ))
 
   @if(array_key_exists('places', $record['_source']['lifecycle']['creation'][0]))
-    <h3 class="lead collection">
+    <h3 class="collection">
       Place(s) associated
-    </h4>
+    </h3>
     <ul class="entities">
       @php
       $coord =  array();
@@ -64,7 +64,7 @@
   @endif
   @if(array_key_exists('collection', $record['_source']['lifecycle']))
     @if(array_key_exists('places', $record['_source']['lifecycle']['collection'][0]))
-      <h3 class="lead collection">
+      <h3 class="collection">
         Find spot
       </h3>
       <ul class="entities">

@@ -6,15 +6,14 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')
-<div class="row">
-  @foreach($pharos['data'] as $record)
-    <x-image-card
-    :image="$record['hero_image']"
-    :route="'context-section-detail'"
-    :title="$record['title']"
-    :altTag="$record['hero_image_alt_text']"
-    :params="[$record['section'],$record['slug']]"
-    />
-  @endforeach
-</div>
+    <div class="row">
+        @foreach($pharos['data'] as $record)
+            <x-image-card
+                :image="$record['hero_image']"
+                :route="'context-section-detail'"
+                :title="$record['title']"
+                :altTag="$record['hero_image_alt_text']"
+                :params="[$record['section'],$record['slug']]"></x-image-card>
+        @endforeach
+    </div>
 @endsection

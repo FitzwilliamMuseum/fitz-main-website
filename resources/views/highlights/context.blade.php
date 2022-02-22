@@ -6,15 +6,14 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('content')
-<div class="row">
-  @foreach($context as $record)
-    <x-image-card
-    :image="$record[0]['hero_image']"
-    :route="'context-sections'"
-    :title="ucfirst(str_replace('-',' ', $record[0]['section']))"
-    :altTag="$record[0]['hero_image']['title']"
-    :params="[$record[0]['section']]"
-    />
-  @endforeach
-</div>
+    <div class="row">
+        @foreach($context as $record)
+            <x-image-card
+                :image="$record[0]['hero_image']"
+                :route="'context-sections'"
+                :title="ucfirst(str_replace('-',' ', $record[0]['section']))"
+                :altTag="$record[0]['hero_image']['title']"
+                :params="[$record[0]['section']]"></x-image-card>
+        @endforeach
+    </div>
 @endsection

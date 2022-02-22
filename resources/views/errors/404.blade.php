@@ -7,7 +7,7 @@
   <div class="row">
   <div class="col-md-4">
     <figure class="figure">
-      <img class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/searle_cat.jpg" />
+      <img alt="An image of a very grumpy cat" class="img-fluid" src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/searle_cat.jpg" />
     </figure>
   </div>
   <div class="col-md-8">
@@ -38,7 +38,7 @@
 $records = $searchController::injectResults(Request::path());
 @endphp
 @if(!empty($records))
-<h2 class="lead">Suggested pages</h2>
+<h2>Suggested pages</h2>
 @include('includes.structure.results')
 @endif
 @endsection

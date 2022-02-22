@@ -5,28 +5,28 @@
       <img class="d-block w-100" src="{{ $carousel['data']['image_one']['data']['thumbnails'][9]['url']}}"
       alt="{{ $carousel['data']['image_one_alt_text'] }}" loading="lazy" />
       <div class="carousel-caption d-none d-md-block bg-black p-3">
-        <h5 class="lead">{{ $carousel['data']['image_one_alt_text'] }}</h5>
+        <h5>{{ $carousel['data']['image_one_alt_text'] }}</h5>
       </div>
     </div>
     <div class="carousel-item" >
       <img class="d-block w-100" src="{{ $carousel['data']['image_two']['data']['thumbnails'][9]['url']}}"
       alt="{{ $carousel['data']['image_two_alt_text']}}" />
       <div class="carousel-caption d-none d-md-block bg-black p-3">
-        <h5 class="lead">{{ $carousel['data']['image_two_alt_text']}}</h5>
+        <h5>{{ $carousel['data']['image_two_alt_text']}}</h5>
       </div>
     </div>
     <div class="carousel-item" >
       <img class="d-block w-100" src="{{ $carousel['data']['image_three']['data']['thumbnails'][9]['url']}}"
       alt="{{ $carousel['data']['image_three_alt_text'] }}"  />
       <div class="carousel-caption d-none d-md-block bg-black p-3">
-        <h5 class="lead">{{ $carousel['data']['image_three_alt_text'] }}</h5>
+        <h5>{{ $carousel['data']['image_three_alt_text'] }}</h5>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{ $carousel['data']['image_four']['data']['thumbnails'][9]['url']}}"
       alt="{{ $carousel['data']['image_four_alt_text'] }}" />
       <div class="carousel-caption d-none d-md-block bg-black p-3">
-        <h5 class="lead">{{ $carousel['data']['image_four_alt_text'] }}</h5>
+        <h5>{{ $carousel['data']['image_four_alt_text'] }}</h5>
       </div>
     </div>
   </div>

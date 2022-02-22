@@ -5,15 +5,14 @@
 @section('description', 'Discover things to do online with the Fitzwilliam Museum, Cambridge University')
 @section('keywords', 'activities,stories,museum,cambridge')
 @section('content')
-  <div class="row">
-    @foreach($thingstodo['data'] as $things)
-      <x-partner-card
-      :altTag="$things['hero_image_alt_text'] "
-      :title="$things['title']"
-      :subtitle="$things['body']"
-      :image="$things['hero_image']"
-      :url="$things['url']"
-      />
-    @endforeach
-  </div>
+    <div class="row">
+        @foreach($thingstodo['data'] as $things)
+            <x-partner-card
+                :altTag="$things['hero_image_alt_text'] "
+                :title="$things['title']"
+                :subtitle="$things['body']"
+                :image="$things['hero_image']"
+                :url="$things['url']"></x-partner-card>
+        @endforeach
+    </div>
 @endsection

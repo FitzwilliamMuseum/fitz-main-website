@@ -17,11 +17,11 @@
                 <a href="{{ $result['url'][0]}}">{{ $title }}</a>
               </h3>
               @if(isset($result['pubDate']))
-                <h4 class="text-info lead">
+                <h3 class="text-info lead">
                   Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}
-                </h4>
+                </h3>
               @endif
-              
+
 
               @if(isset($result['mimetype']))
                 @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))

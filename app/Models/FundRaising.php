@@ -6,16 +6,20 @@ use App\DirectUs;
 
 class FundRaising extends Model
 {
-    public static function list(int $limit = 3)
+    /**
+     * @param int $limit
+     * @return array
+     */
+    public static function list(int $limit = 3): array
     {
       $api = new DirectUs;
       $api->setEndpoint('fundraising');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'limit' => 3
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'limit' => $limit
+          )
       );
       return $api->getData();
     }

@@ -2,36 +2,42 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\DirectUs;
+use Illuminate\Database\Eloquent\Model;
 
 class Themes extends Model
 {
-    public static function list()
+    /**
+     * @return array
+     */
+    public static function list(): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('themes');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-        )
-      );
-      return $api->getData();
+        $api = new DirectUs();
+        $api->setEndpoint('themes');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => '*',
+            )
+        );
+        return $api->getData();
     }
 
-    public static function details(string $slug)
+    /**
+     * @param string $slug
+     * @return array
+     */
+    public static function details(string $slug): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('themes');
-      $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $slug
-        )
-      );
-      return $api->getData();
+        $api = new DirectUs();
+        $api->setEndpoint('themes');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[slug][eq]' => $slug
+            )
+        );
+        return $api->getData();
     }
 }

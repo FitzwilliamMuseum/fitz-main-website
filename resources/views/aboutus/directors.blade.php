@@ -5,7 +5,7 @@
 @section('description', 'A list and timeline of our directors')
 @section('keywords', 'directors,timeline,museum,cambridge,fitzwilliam')
 @section('content')
-  <h2 class="lead">
+  <h2>
     Our directors
   </h2>
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
@@ -33,7 +33,7 @@
 @endsection
 
 @section('timeline')
-<h2 class="lead">Our Directors - a timeline</h2>
+<h2>Our Directors - a timeline</h2>
 <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
   <section class="cd-horizontal-timeline">
   	<div class="timeline">
@@ -58,14 +58,14 @@
   	<div class="events-content">
   		<ol>
         <li data-date="01/01/1800" class="selected">
-  				<h2 class="lead">{{$directors['data']['0']['display_name']}}</h2>
+  				<h2>{{$directors['data']['0']['display_name']}}</h2>
   				@if(!is_null($directors['data']['0']['biography']))
           @markdown($directors['data']['0']['biography'])
           @endif
   			</li>
         @foreach($directors['data'] as $director)
   			<li data-date="01/01/{{$director['date_from']}}">
-  				<h2 class="lead">{{$director['display_name']}}</h2>
+  				<h2>{{$director['display_name']}}</h2>
           @if(!is_null($director['biography']))
           @markdown($director['biography'])
           @endif

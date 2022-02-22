@@ -20,16 +20,12 @@
           </h3>
           @if(isset($session['key_stages']))
           <p>
-            Key stages:
-            @php
-            echo implode(',',$session['key_stages']);
-            @endphp
+            Key stages: {{ implode(',',$session['key_stages']}}
           </p>
           @endif
         </div>
       </div>
     </div>
   </div>
-
   @endforeach
 </div>

@@ -59,7 +59,7 @@
             alt="XRF analysis of a manuscript" loading="lazy" />
           </a>
           <div class="card-body h-100">
-            <h3 class="lead" >
+            <h3>
               <a href="{{route('research-projects')}}" class="stretched-link">
                 Our research work
               </a>
@@ -102,8 +102,7 @@
         :route="'landing-section'"
         :altTag="$project['hero_image_alt_text']"
         :title="$project['title']"
-        :params="[$project['section'],$project['slug']]"
-      />
+        :params="[$project['section'],$project['slug']]"></x-image-card>
 
     @endforeach
   </div>

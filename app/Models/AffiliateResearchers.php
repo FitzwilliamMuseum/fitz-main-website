@@ -6,43 +6,55 @@ use App\DirectUs;
 
 class AffiliateResearchers extends Model
 {
-    public static function list()
+    /**
+     * Return a list of affiliate researchers
+     * @returns array
+     */
+    public static function list(): array
     {
       $api = new DirectUs;
       $api->setEndpoint('affiliate_researchers');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'sort' => 'last_name'
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => 'result_count,total_count,type',
+              'sort' => 'last_name'
+          )
       );
       return $api->getData();
     }
 
-    public static function find($slug)
+    /**
+     * @param string $slug
+     * @return array
+     */
+    public static function find(string $slug): array
     {
       $api = new DirectUs;
       $api->setEndpoint('affiliate_researchers');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'meta' => '*',
-            'filter[slug][eq]' => $slug
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'meta' => '*',
+              'filter[slug][eq]' => $slug
+          )
       );
       return $api->getData();
     }
-
-    public static function findByDepartment(int $department)
+    /**
+     * Return a list of affiliate researchers for a department
+     * @param int $department The department ID number
+     * @returns array
+     */
+    public static function findByDepartment(int $department): array
     {
       $api = new DirectUs;
       $api->setEndpoint('affiliate_researchers');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*',
-            'filter[departments_affiliated.department][in]' => $department,
-        )
+          array(
+              'fields' => '*.*.*.*',
+              'filter[departments_affiliated.department][in]' => $department,
+          )
       );
       return $api->getData();
     }

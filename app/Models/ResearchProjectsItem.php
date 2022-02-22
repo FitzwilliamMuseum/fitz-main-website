@@ -5,11 +5,24 @@ use App\DirectUs;
 use Carbon\Carbon;
 
 // use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
 class ResearchProjectsItem extends Model implements Feedable
 {
+    private Carbon $updated_at;
+    private string  $body;
+    private string $summary;
+    private string $link;
+    private string $id;
+    private string $authorName;
+    private string $title;
+    private bool $exists;
+
+    /**
+     * @return FeedItem
+     */
   public function toFeedItem(): FeedItem
   {
       return FeedItem::create([
@@ -23,17 +36,19 @@ class ResearchProjectsItem extends Model implements Feedable
       ]);
   }
 
-  public static function feedItems()
+    /**
+     * @return Collection
+     */
+  public static function feedItems(): Collection
   {
     $api = new DirectUs;
     $api->setEndpoint('research_projects');
     $api->setArguments(
-      $args = array(
-          'fields' => '*.*.*.*',
-          'fields' => 'id,title,summary,project_overview,slug,created_on',
-          'sort' => '-created_on',
-          'limit' => 20,
-      )
+        array(
+            'fields' => 'id,title,summary,project_overview,slug,created_on',
+            'sort' => '-created_on',
+            'limit' => 20,
+        )
     );
     $news = $api->getData();
     $news = collect($news['data'])->map(function ($item) {
@@ -49,13 +64,13 @@ class ResearchProjectsItem extends Model implements Feedable
         $instance->updated_at = Carbon::parse($value->created_on);
         $instance->body = $value->project_overview;
         $instance->authorName = 'The Fitzwilliam Museum';
-        $instance->exists = true; // tell this model is already exists, forcely
-        $items[$key] = $instance; // assign this model to the collection
+        $instance->exists = true;
+        $items[$key] = $instance;
     }
     return $items;
   }
 
-  public static function getFeedItems()
+  public static function getFeedItems(): Collection
   {
     return self::feedItems();
   }

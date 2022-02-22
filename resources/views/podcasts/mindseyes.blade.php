@@ -6,7 +6,12 @@
 @section('content')
 <div class="row">
   @foreach($mindseyes['data'] as $podcast)
-    <x-image-card :altTag="$podcast['hero_image_alt_text'] " :title="$podcast['title']"  :image="$podcast['hero_image']" :route="'mindeyes.story'" :params="[$podcast['slug']]" />
+    <x-image-card
+        :altTag="$podcast['hero_image_alt_text']"
+        :title="$podcast['title']"
+        :image="$podcast['hero_image']"
+        :route="'mindeyes.story'"
+        :params="[$podcast['slug']]"></x-image-card>
   @endforeach
 </div>
 @endsection

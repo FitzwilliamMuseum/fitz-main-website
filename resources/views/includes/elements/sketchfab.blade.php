@@ -7,7 +7,7 @@
         <div class="embed-responsive embed-responsive-4by3">
           <iframe title="A 3D model of {{ $record['_source']['summary_title'] }}" class="embed-responsive-item"
           src="https://sketchfab.com/models/{{ $id['value']}}/embed?"
-          frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+           allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>
       </div>
     </div>

@@ -6,21 +6,20 @@ use App\DirectUs;
 
 class HighlightPeriods extends Model
 {
-    public static function list()
-    {
-
-    }
-
-    public static function find(string $period)
+    /**
+     * @param string $period
+     * @return array
+     */
+    public static function find(string $period): array
     {
       $api = new DirectUs;
       $api->setEndpoint('pharos_periods');
       $api->setArguments(
-        $args = array(
-            'fields' => '*.*.*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][like]' => $period
-        )
+          array(
+              'fields' => '*.*.*.*.*.*',
+              'meta' => 'result_count,total_count,type',
+              'filter[slug][like]' => $period
+          )
       );
       return $api->getData();
     }

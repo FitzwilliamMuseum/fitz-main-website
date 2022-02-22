@@ -2,29 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 use App\Models\Stubs;
 use App\Models\Collections;
-use App\Models\FindMoreLikeThis;
 use App\Models\CIIM;
 
 class collectionsController extends Controller
 {
 
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function index()
+    /**
+     * @return View
+     */
+  public function index(): View
   {
     $pages = Stubs::getLandingBySlug('about-us', 'collections');
     $collections = Collections::list();
     return view('collections.index', compact('collections', 'pages'));
   }
 
-  public function details(string $slug)
+    /**
+     * @param string $slug
+     * @return View|Response
+     */
+  public function details(string $slug): View|Response
   {
     $collection = Collections::find($slug);
     if(empty($collection['data'])){
@@ -33,7 +34,12 @@ class collectionsController extends Controller
     return view('collections.details', compact('collection'));
   }
 
-  public static function getObjects(string $prirefs){
+    /**
+     * @param string $prirefs
+     * @return array
+     */
+  public static function getObjects(string $prirefs): array
+  {
     return CIIM::findByPriRefs($prirefs);
   }
 }
