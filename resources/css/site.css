@@ -1061,7 +1061,6 @@ a.text-center.btn.btn-outline-light.btn__book {
     bottom: 0;
     right: 0;
 }
-
 .hockney-title {
     font-size: 3.3rem;
 }
@@ -1087,7 +1086,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 .hockney_top_banner {
     min-height: 40vh;
     margin-top: 60px;
-    background-color: #2a9941;
+    background-color: #179d41;
 }
 
 .hockney__link a {
@@ -1095,13 +1094,24 @@ a.text-center.btn.btn-outline-light.btn__book {
     color: white;
 }
 
-.hockney__link a:hover, .hockney__link a:visited, .hockney__link a:focus {
+.hockney__link a:hover,.hockney__link a:visited,.hockney__link a:focus {
     text-decoration: none;
     color: white;
 }
 
 .hockney__link {
+    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg');
     min-height: 400px;
-    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg') no-repeat center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
+}
+.carousel-caption {
+    position: initial;
+}
+
+
+.carousel-control-prev, .carousel-control-next {
+    color: black;
 }
