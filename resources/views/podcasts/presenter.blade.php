@@ -8,8 +8,8 @@
 
   @section('content')
     @if(!is_null($profile['profile_image']))
-    <div class="text-center p-3">
-        <a href="{{ route('podcast.presenter', $profile['slug']) }}"><img class="img-fluid embed-responsive-item" src="{{ $profile['profile_image']['data']['url']}}"
+    <div class="text-center">
+        <a href="{{ route('podcast.presenter', $profile['slug']) }}"><img class="img-fluid mb-3" src="{{ $profile['profile_image']['data']['url']}}"
       alt="Profile image for {{ $profile['display_name'] }}"
       width="100%"
       {{-- height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}" --}}
