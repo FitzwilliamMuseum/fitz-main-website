@@ -17,7 +17,7 @@
 <div class="container">
   <div class="row">
     @foreach($press['data'] as $release)
-        <x-pressCard :release="$release" />
+        <x-press-card :release="$release" />
     @endforeach
   </div>
   <nav aria-label="Page navigation">
