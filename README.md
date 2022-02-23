@@ -2,7 +2,7 @@
 
 This repository contains the code base for a Laravel based front end for the latest version of @fitzwilliammuseum website.
 
-The front end is very simple and uses Bootstrap latest framework, latest JQuery and various libraries to interface with a headless API provided by our installation of the @directus system, Solr and ElasticSearch endpoints.
+The front end is very simple and uses Bootstrap latest framework, latest JQuery and various libraries to interface with a headless API provided by our installation of the @directus 8 system, Solr and ElasticSearch endpoints.
 
 The models in this system point at an API rather than a database.  
 
@@ -25,7 +25,7 @@ In production, we use REDIS. Locally use File based caching unless you want to i
 
 # installation
 
-1. Install php 7+ on your development environment
+1. Install php 8.1 into your environment
 2. Install composer
 3. git clone https://github.com/FitzwilliamMuseum/beta.fitz.ms
 4. cd beta.fitz.ms
