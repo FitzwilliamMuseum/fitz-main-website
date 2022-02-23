@@ -12,7 +12,6 @@
         <a href="{{ route('podcast.presenter', $profile['slug']) }}"><img class="img-fluid mb-3" src="{{ $profile['profile_image']['data']['url']}}"
       alt="Profile image for {{ $profile['display_name'] }}"
       width="100%"
-      {{-- height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}" --}}
       loading="lazy"/></a>
     </div>
     @endif
