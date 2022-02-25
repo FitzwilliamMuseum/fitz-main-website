@@ -1107,6 +1107,11 @@ a.text-center.btn.btn-outline-light.btn__book {
     background-position: center;
     background-size: contain;
 }
+.hockney__link__href {
+    display: block;
+    height: 100%;
+    width:100%;
+}
 .carousel-caption {
     position: initial;
 }

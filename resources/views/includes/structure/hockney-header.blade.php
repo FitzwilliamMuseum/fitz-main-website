@@ -9,14 +9,31 @@
                         alt="Self portrait of David Hockney"
                     /></a>
             </div>
-               <div class="col-md-7 hockney__link">
+
+            <div class="col-md-7 hockney__link">
                 <a href="{{ route('exhibition',['hockneys-eye-the-art-and-technology-of-depiction']) }}"
-                   title="Exhibition details">
-                    <p class="text-center sr-only text-white py-3 hockney-title">Hockney's Eye</p>
-                    <p class="sr-only text-center text-white hockney-subtitle">The Art and Technology of Depiction</p>
-                    <p class="sr-only text-center text-white py-1 hockney-dates">15 March – 29 August 2022</p>
-                  </a>
+                   title="Exhibition details" class="hockney__link__href"> </a>
+                <p class="text-center sr-only text-white py-3 hockney-title">Hockney's Eye</p>
+                <p class="sr-only text-center text-white hockney-subtitle">The Art and Technology of Depiction</p>
+                <p class="sr-only text-center text-white py-1 hockney-dates">15 March – 29 August 2022</p>
             </div>
+
         </div>
     </div>
 </div>
+<script>
+    const hockney = document.querySelector(".hockney__link");
+    const mainLink = hockney.querySelector(".hockney__link__href");
+    const clickableElements = Array.from(hockney.querySelectorAll("a"));
+    clickableElements.forEach((ele) =>
+        ele.addEventListener("click", (e) => e.stopPropagation())
+    );
+
+    function handleClick(event) {
+        const noTextSelected = !window.getSelection().toString();
+
+        if (noTextSelected) {
+            mainLink.click();
+        }
+    }
+</script>
