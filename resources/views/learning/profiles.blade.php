@@ -7,7 +7,7 @@
 @section('content')
   <div class="row">
     @foreach($profiles['data'] as $profile)
-      <x-learningProfileCard :profile="$profile"/>
+      <x-learning-profile-card :profile="$profile"/>
     @endforeach
   </div>
 @endsection
