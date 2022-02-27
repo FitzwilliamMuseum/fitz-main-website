@@ -20,7 +20,7 @@
           </h3>
           @if(isset($session['key_stages']))
           <p>
-            Key stages: {{ implode(',',$session['key_stages']}}
+            Key stages: {{ implode(',',$session['key_stages'])}}
           </p>
           @endif
         </div>
