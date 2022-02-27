@@ -151,6 +151,3 @@
     </ul>
 @endsection
 
-@section('corona')
-    @include('includes.structure.corona')
-@endsection
