@@ -4,7 +4,7 @@
             <div class="text-center my-2">
                 <a class="text-center btn btn-outline-light btn__book"
                    href="https://tickets.museums.cam.ac.uk/overview/generaladmission">
-                    @fa('ticket-alt', 'ticket', 'mr-2') Visiting us? Booking required - Free Entry
+                    @fa('ticket-alt', 'ticket', 'mr-2') Visiting us? Book Free Entry
                 </a>
             </div>
 
