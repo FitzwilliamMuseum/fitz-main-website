@@ -5,12 +5,15 @@
                 <div class="card-body">
                     <h2 class="display-4">
                         <span class="text-white">Free to visit</span>
-                        <br/>
-                        <span class="text-white">Booking essential</span>
                     </h2>
                     <a class="btn btn-info btn-large"
-                       href="https://tickets.museums.cam.ac.uk/overview/generaladmission">Book free entry now</a>
+                       href="https://tickets.museums.cam.ac.uk/overview/generaladmission">Book your ticket in
+                        advance</a>
                     <h3 class="text-white mt-3">Booking and ticketing assistance</h3>
+                    <p class="text-white mt-3">
+                        Save time on arrival by booking in advance. Walk up tickets are also available, but you may have
+                        to queue during busy periods
+                    </p>
                     <p class="text-white mt-3">
                         For assistance with booking, or for ticket enquiries, please contact us.
                         <br/>
@@ -23,7 +26,7 @@
             </div>
             <div class="col-md-4">
                 <img src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
-                     class="card-img-top" width="369" height="369" alt="Human touch">
+                     class="card-img-top" width="369" height="369" alt="The interior roof of the Founder's Entrance">
             </div>
         </div>
     </div>
