@@ -52,7 +52,7 @@
         <h3>Fact sheets and related files</h3>
         <div class="row">
             @foreach($page['associated_learning_files'] as $file)
-                <x-learningFileCard :file="$file"></x-learningFileCard>
+                <x-learning-file-card :file="$file"></x-learning-file-card>
             @endforeach
         </div>
     @endif
