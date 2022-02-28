@@ -1,5 +1,7 @@
 # Framework for the Fitzwilliam Museum website
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6304361.svg)](https://doi.org/10.5281/zenodo.6304361)
+
 This repository contains the code base for a Laravel based front end for the latest version of @fitzwilliammuseum website.
 
 The front end is very simple and uses Bootstrap latest framework, latest JQuery and various libraries to interface with a headless API provided by our installation of the @directus 8 system, Solr and ElasticSearch endpoints.
