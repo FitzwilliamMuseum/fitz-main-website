@@ -23,7 +23,7 @@
                 @if(!empty($productions))
                     <div class="row">
                         @foreach($productions as $production)
-                            <x-tessituraProductionCard :production="$production"></x-tessituraProductionCard>
+                            <x-tessitura-production-card :production="$production"></x-tessitura-production-card>
                         @endforeach
                     </div>
                 @else
