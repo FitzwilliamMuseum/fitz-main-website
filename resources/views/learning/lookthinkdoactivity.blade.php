@@ -10,10 +10,6 @@
 @endif
 
 @section('content')
-    <h2>
-        {{ $look['title_of_work'] }}
-    </h2>
-
     <div class="row ">
         <!-- Column one -->
         <div class="col-md-7 mb-3">
