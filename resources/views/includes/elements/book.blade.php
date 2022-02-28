@@ -31,13 +31,13 @@
         </div>
     </div>
 </div>
-@if(!empty($measures['data']))
-    <div class="container-fluid bg-gdbo py-3 ">
-        <div class="container">
-            <div class="col-md-12 p-3 bg-white">
-                <h3 class="text-black mt-3">{{ $measures['data'][0]['title']}}</h3>
-                @markdown($measures['data'][0]['text'])
-            </div>
-        </div>
-    </div>
-@endif
+{{--@if(!empty($measures['data']))--}}
+{{--    <div class="container-fluid bg-gdbo py-3 ">--}}
+{{--        <div class="container">--}}
+{{--            <div class="col-md-12 p-3 bg-white">--}}
+{{--                <h3 class="text-black mt-3">{{ $measures['data'][0]['title']}}</h3>--}}
+{{--                @markdown($measures['data'][0]['text'])--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--@endif--}}

@@ -31,7 +31,7 @@
     @yield('content')
 </div>
 
-@yield('corona')
+{{--@yield('corona')--}}
 
 <div class="container py-2">
     <h3>
