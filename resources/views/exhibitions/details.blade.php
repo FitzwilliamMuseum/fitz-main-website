@@ -377,3 +377,7 @@
         <x-exhibition-files :files="$coll['exhibition_files']" />
     @endif
 @endsection
+
+@section('exhibition-thanks')
+    <x-exhibition-thanks :exhibition="$coll" />
+@endsection
