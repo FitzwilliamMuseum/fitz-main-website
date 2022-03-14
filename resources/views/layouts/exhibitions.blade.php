@@ -41,7 +41,6 @@
 @yield('exhibition-labels')
 @yield('exhibitionAudio')
 @yield('excarousel')
-@yield('exhibition-thanks')
 
 @yield('curators')
 @yield('research-funders')
@@ -52,6 +51,8 @@
 @yield('archive')
 @yield('galleries')
 @yield('departments')
+@yield('exhibition-thanks')
+
 @yield('360')
 @yield('mlt')
 @include('includes.structure.emailsignup')
