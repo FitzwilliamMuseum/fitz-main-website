@@ -17,7 +17,7 @@
               :title="$collection['collection_name']"
               :image="$collection['hero_image']"
               :route="'collection'"
-              :params="[$collection['collection_name']]"></x-image-card>
+              :params="[$collection['slug']]"></x-image-card>
     @endforeach
   </div>
 </div>
