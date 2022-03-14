@@ -7,7 +7,7 @@
 @section('hero_image', $coll['hero_image']['data']['url'])
 @section('hero_image_title', $coll['hero_image_alt_text'])
 @php
-    $type=match($coll['type']){'exhibition'=>'Exhibition','display'=>'Temporary Display',default=>'Exhibition',};
+    $type=match($coll['type']){'exhibition'=>'Exhibition','display'=>'Temporary Display',default=>'Exhibition',}
 @endphp
 @section('content')
 
@@ -33,6 +33,26 @@
             @markdown($coll['exhibition_abstract'])
         @endif
     </div>
+
+    @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
+        <h3>{{$type}} details</h3>
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+            <ul>
+                @if(isset($coll['exhibition_url']))
+                    <li>
+                        <a href="{{ $coll['exhibition_url']  }}">{{$type}} website</a>
+                    </li>
+                @endif
+                @if(isset($coll['exhibition_start_date']))
+                    <li>
+                        {{$type}} run: {{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
+                        {{  Carbon\Carbon::parse($coll['exhibition_end_date'])->format('l dS F Y') }}
+                    </li>
+                @endif
+            </ul>
+        </div>
+    @endif
+
     @if(!empty($cases['data']))
 @section('exhibitionCaseCards')
     <div class="container-fluid bg-pastel py-3">
@@ -82,7 +102,7 @@
         <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
                     loading="lazy"
-                    src="https://www.youtube.com/embed/{{$coll['youtube_id']}}" frameborder="0"
+                    src="https://www.youtube.com/embed/{{$coll['youtube_id']}}"
                     allowfullscreen></iframe>
         </div>
     </div>
@@ -107,30 +127,12 @@
         <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" title="A YouTube video playlist from the Fitzwilliam Museum"
                     src="https://www.youtube.com/embed/videoseries?list={{$coll['youtube_playlist_id']}}"
-                    frameborder="0"
                     allowfullscreen></iframe>
         </div>
     </div>
 @endif
 
-@if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
-    <h3>{{$type}} details</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <ul>
-            @if(isset($coll['exhibition_url']))
-                <li>
-                    <a href="{{ $coll['exhibition_url']  }}">{{$type}} website</a>
-                </li>
-            @endif
-            @if(isset($coll['exhibition_start_date']))
-                <li>
-                    {{$type}} run: {{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
-                    {{  Carbon\Carbon::parse($coll['exhibition_end_date'])->format('l dS F Y') }}
-                </li>
-            @endif
-        </ul>
-    </div>
-@endif
+
 
 
 @isset($adlib)
@@ -363,7 +365,7 @@
                 <div class="embed-responsive embed-responsive-4by3">
                     <iframe title="A 3D  model related to this exhibition" class="embed-responsive-item"
                             src="https://sketchfab.com/models/{{ $coll['sketchfab_id']}}/embed?"
-                            frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
+                            allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
                             webkitallowfullscreen="true"></iframe>
                 </div>
             </div>
@@ -374,10 +376,10 @@
 
 @section('exhibitions-files')
     @if(!empty($coll['exhibition_files']))
-        <x-exhibition-files :files="$coll['exhibition_files']" />
+        <x-exhibition-files :files="$coll['exhibition_files']"/>
     @endif
 @endsection
 
 @section('exhibition-thanks')
-    <x-exhibition-thanks :exhibition="$coll" />
+    <x-exhibition-thanks :exhibition="$coll"/>
 @endsection

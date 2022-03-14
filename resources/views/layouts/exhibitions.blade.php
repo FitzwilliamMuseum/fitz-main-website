@@ -52,7 +52,6 @@
 @yield('galleries')
 @yield('departments')
 @yield('exhibition-thanks')
-
 @yield('360')
 @yield('mlt')
 @include('includes.structure.emailsignup')
