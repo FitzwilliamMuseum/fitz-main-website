@@ -36,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         Paginator::defaultView('pagination::simple-tailwind');
         view()->composer('includes.structure.opening-hours', \App\Http\Composers\OpeningHours::class);
+        view()->composer('includes.structure.open', \App\Http\Composers\BookingLink::class);
+
         BladeHelper::directive('mime', function($mime){
           $mimes = new MimeTypes;
           return Str::upper($mimes->getExtension($mime)); // otf
