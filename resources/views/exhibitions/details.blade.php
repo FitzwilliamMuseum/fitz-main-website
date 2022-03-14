@@ -132,18 +132,7 @@
     </div>
 @endif
 
-@if(!empty($coll['exhibition_files']))
-    <h3>{{$type}} files</h3>
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <ul>
-            @foreach($coll['exhibition_files'] as $file)
-                <li>
-                    <a href="{{ $file['directus_files_id']['data']['full_url'] }}">{{ $file['directus_files_id']['title'] }}</a>
-                </li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
 @isset($adlib)
     <h3>Selected objects from the {{$type}}</h3>
     <div class="row">
@@ -231,6 +220,7 @@
     </div>
 @endsection
 @endif
+
 
 @if(!empty($coll['associated_departments']))
 @section('departments')
@@ -381,3 +371,9 @@
     @endif
 @endsection
 @endif
+
+@section('exhibitions-files')
+    @if(!empty($coll['exhibition_files']))
+        <x-exhibition-files :files="$coll['exhibition_files']" />
+    @endif
+@endsection

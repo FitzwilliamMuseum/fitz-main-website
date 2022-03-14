@@ -36,6 +36,7 @@
     @include('includes.structure.breadcrumb')
     @yield('content')
 </div>
+@yield('exhibitions-files')
 @yield('exhibitionCaseCards')
 @yield('exhibition-labels')
 @yield('exhibitionAudio')
