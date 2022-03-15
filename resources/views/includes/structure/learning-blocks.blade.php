@@ -14,6 +14,14 @@
     @include('includes.structure.sessions')
 @endif
 
+@if($page['slug'] === 'community-sessions')
+    @inject('learningController', 'App\Http\Controllers\learningController')
+    @php
+        $sessions = $learningController::communitysessions()
+    @endphp
+    @include('includes.structure.sessions')
+@endif
+
 @if($page['slug'] === 'young-people')
     @inject('learningController', 'App\Http\Controllers\learningController')
     @php

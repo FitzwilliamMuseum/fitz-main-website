@@ -109,6 +109,14 @@ class learningController extends Controller
     /**
      * @return array
      */
+    public static function communitysessions(): array
+    {
+        return Stubs::findBySubSection('community-programming');
+    }
+
+    /**
+     * @return array
+     */
     public static function research(): array
     {
         return ResearchProjects::findByDepartment();
