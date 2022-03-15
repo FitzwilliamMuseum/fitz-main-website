@@ -19,7 +19,7 @@
     @php
         $sessions = $learningController::communitysessions()
     @endphp
-    @include('includes.structure.sessions')
+    @include('includes.structure.community')
 @endif
 
 @if($page['slug'] === 'young-people')

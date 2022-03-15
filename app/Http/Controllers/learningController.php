@@ -140,10 +140,21 @@ class learningController extends Controller
     public function session($slug): View
     {
         $session = SchoolSessions::find($slug);
-        $records = FindMoreLikeThis::find($slug, 'school_sessions');
+        $records = FindMoreLikeThis::find($slug, 'pages');
         return view('learning.session', compact('session', 'records'));
     }
 
+    /**
+     * @param $slug
+     * @return View
+     * @throws InvalidArgumentException
+     */
+    public function community($slug): View
+    {
+        $pages = Stubs::findBySlug($slug);
+        $records = FindMoreLikeThis::find($slug, 'school_sessions');
+        return view('learning.community', compact('pages', 'records'));
+    }
     /**
      * @param string $slug
      * @return View

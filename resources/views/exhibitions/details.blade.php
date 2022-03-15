@@ -7,7 +7,7 @@
 @section('hero_image', $coll['hero_image']['data']['url'])
 @section('hero_image_title', $coll['hero_image_alt_text'])
 @php
-    $type=match($coll['type']){'exhibition'=>'Exhibition','display'=>'Temporary Display',default=>'Exhibition',}
+    $type = match($coll['type']){'exhibition'=>'Exhibition','display'=>'Temporary Display',default=>'Exhibition'}
 @endphp
 @section('content')
 

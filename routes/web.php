@@ -90,6 +90,8 @@ Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactiv
 Route::get('learning/resources/', 'learningController@resources')->name('learning-resources');
 Route::get('learning/resources/{slug}', 'learningController@resource')->name('learning-resource');
 Route::get('learning/school-sessions/{slug}', 'learningController@session')->name('school-sessions');
+Route::get('learning/community-programming/{slug}', 'learningController@community')->name('community-programming');
+
 Route::get('learning/young-people/{slug}', 'learningController@young')->name('young-people');
 Route::get('learning/contact-us/', 'learningController@profiles')->name('learning-profiles');
 Route::get('learning/adult-programming/{slug}', 'learningController@adult')->name('adult-activity');
