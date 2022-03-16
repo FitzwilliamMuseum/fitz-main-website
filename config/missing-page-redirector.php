@@ -14,7 +14,7 @@ return [
     /*
      * By default the package will only redirect 404s. If you want to redirect on other
      * response codes, just add them to the array. Leave the array empty to redirect
-     * always no matter what the response code.
+     * always no matter what the response codes.
      */
     'redirect_status_codes' => [
         Response::HTTP_NOT_FOUND,
@@ -117,7 +117,6 @@ return [
         '/collections/literarymanuscripts' => '/about-us/collections/literary-manuscripts',
         '/collections/literarymssandautographs' => '/about-us/collections/literary-manuscripts',
         '/collections/nubiaandsudan' => '/about-us/collections/nubia-and-sudan',
-        '/collections/paintings' => '/about-us/collections/paintings',
         '/collections/prints' => '/about-us/collections/prints',
         '/collections/sculpture' => '/about-us/collections/sculpture-ivories-and-woodwork',
         '/collections/jewellery' => '/about-us/collections/silver-and-jewellery',
@@ -454,7 +453,6 @@ return [
         '/sites/default/files/Graphite.pdf' => 'https://content.fitz.ms/fitz-website/assets/Graphite.pdf',
         # Research
         '/conservd' => '/research/projects/conservd',
-        '/research/research-and-impact' => '/research',
         '/research/grr' => '/visit-us/galleries/gallery-9',
         '/research/mec' => '/research/projects/medieval-european-coinage',
         '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
@@ -462,10 +460,10 @@ return [
         '/research/staff-profiles' => '/research/active-researchers',
         '/research/staff-profiles/{url}' => '/about-us/our-staff/profile/{url}',
         '/about-us/our-staff/profile/' => '/about-us/our-staff',
-
+        '/about-us/our-staff/profile/jana-mokrisova' => 'https://www.classics.cam.ac.uk/directory/dr-jana-mokrisova',
+        '/about-us/our-staff/profile/melanie-pitkin' => '/research/affiliates/melanie-pitkin',
         #  visit
         '/visit/gettinghere' => '/visit-us',
-        '/visit' => '/visit-us',
         '/visit/{url}' => '/visit-us/{url}',
         # feeds
         '/news/feed/' => '/feeds/news/',
