@@ -1124,3 +1124,6 @@ a.text-center.btn.btn-outline-light.btn__book {
 .btn-hockney.disabled,.btn-hockney:disabled{color:#fff;background-color:#299942;border-color:#299942}
 .btn-hockney:not(:disabled):not(.disabled):active,.btn-hockney:not(:disabled):not(.disabled).active,.show>.btn-hockney.dropdown-toggle{color:#fff;background-color:#299942;border-color:#299942}
 .btn-hockney:not(:disabled):not(.disabled):active:focus,.btn-hockney:not(:disabled):not(.disabled).active:focus,.show>.btn-hockney.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+.star_rating {
+    font-size: 1.5rem;
+}
