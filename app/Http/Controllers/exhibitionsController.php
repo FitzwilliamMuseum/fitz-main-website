@@ -84,7 +84,6 @@ class exhibitionsController extends Controller
         if (empty($exhibitions['data'])) {
             return response()->view('errors.404', [], 404);
         }
-        $shopify = SolrSearch::injectResults($exhibitions['data'][0]['exhibition_title'], 'shopify');
         return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases'));
     }
 
