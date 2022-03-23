@@ -177,11 +177,11 @@
         <div class="row">
           @foreach($profile['departments_affiliated'] as $department)
             <x-image-card
-            :altTag="$department['department']['hero_image_alt_text']"
-            :title="$department['department']['title']"
-            :image="$department['department']['hero_image']"
+            :altTag="$department['departments_id']['hero_image_alt_text']"
+            :title="$department['departments_id']['title']"
+            :image="$department['departments_id']['hero_image']"
             :route="'department'"
-            :params="[$department['department']['slug']]"
+            :params="[$department['departments_id']['slug']]"
             />
           @endforeach
         </div>
