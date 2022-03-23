@@ -108,7 +108,7 @@ class Exhibitions extends Model
           array(
               'fields' => '*.*.*.*.*.*',
               'filter[slug][eq]' => $slug,
-              'meta' => 'result_count,total_count,type'
+              'meta' => '*'
           )
       );
       return $api->getData();

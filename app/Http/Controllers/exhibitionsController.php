@@ -10,7 +10,9 @@ use App\Models\FindMoreLikeThis;
 use App\Models\CIIM;
 use App\Models\PodcastArchive;
 use App\Models\Cases;
+use App\Models\AssociatedPeople;
 use App\Models\Labels;
+use App\Models\SolrSearch;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
 
@@ -82,6 +84,7 @@ class exhibitionsController extends Controller
         if (empty($exhibitions['data'])) {
             return response()->view('errors.404', [], 404);
         }
+        $shopify = SolrSearch::injectResults($exhibitions['data'][0]['exhibition_title'], 'shopify');
         return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases'));
     }
 
@@ -118,5 +121,18 @@ class exhibitionsController extends Controller
         $cases = Cases::find($slug);
 
         return view('exhibitions.cases', compact('cases'));
+    }
+
+    /**
+     * @param string $slug
+     * @return View
+     */
+    public function externals(string $slug): View
+    {
+        $external = AssociatedPeople::find($slug);
+        if (empty($external['data'])) {
+            return response()->view('errors.404', [], 404);
+        }
+        return view('exhibitions.externals', compact('external'));
     }
 }

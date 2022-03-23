@@ -186,7 +186,7 @@
 @section('curators')
     <div class="container-fluid bg-grey py-3">
         <div class="container">
-            <h3>Associated curators</h3>
+            <h3>Curators and experts behind this exhibition</h3>
             <div class="row">
                 @foreach($coll['associated_curators'] as $curator)
                     <x-image-card
@@ -197,6 +197,14 @@
                         :params="[$curator['staff_profiles_id']['slug']]"
                     />
                 @endforeach
+                    @foreach($coll['external_curators'] as $curator)
+                            <x-image-card
+                                :altTag="$curator['associated_people_id']['display_name']"
+                                :title="$curator['associated_people_id']['display_name']"
+                                :image="$curator['associated_people_id']['profile_image']"
+                                :route="'exhibition-externals'"
+                                :params="[$curator['associated_people_id']['slug']]"></x-image-card>
+                    @endforeach
             </div>
         </div>
     </div>
