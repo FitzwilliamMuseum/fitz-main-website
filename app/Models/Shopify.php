@@ -5,6 +5,9 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cache;
+use PHPShopify\Exception\ApiException;
+use PHPShopify\Exception\CurlException;
+use PHPShopify\ShopifySDK;
 use Psr\SimpleCache\InvalidArgumentException;
 use Solarium\Core\Client\Adapter\Curl;
 use Solarium\Core\Client\Client;
@@ -37,5 +40,23 @@ class Shopify extends Model
             Cache::store('file')->put($key, $shopify, $expiresAt);
         }
         return $shopify;
+    }
+
+    /**
+     * @param string $ids
+     * @return array|false[]
+     * @throws ApiException
+     * @throws CurlException
+     */
+    public static function getShopifyCollection(string $ids)
+    {
+        $config = array(
+            'ShopUrl' => env('SHOPIFY_FME_URL'),
+            'ApiKey' => env('SHOPIFY_FME_API_KEY'),
+            'Password' => env('SHOPIFY_FME_API_PASSWORD'),
+        );
+        $shop = new ShopifySDK;
+        $shop->config($config);
+        return $shop->Product->get(['limit' => 3, 'status' => 'active','ids' => $ids]);
     }
 }

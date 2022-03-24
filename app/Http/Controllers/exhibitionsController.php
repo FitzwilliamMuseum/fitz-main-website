@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shopify;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Exhibitions;
@@ -75,16 +76,20 @@ class exhibitionsController extends Controller
         $records = FindMoreLikeThis::find($slug, 'exhibitions');
         $podcasts = NULL;
         $cases = NULL;
+        $products = NULL;
         if (!empty($exhibitions['data'][0]['podcasts'])) {
             $podcasts = PodcastArchive::find($exhibitions['data'][0]['podcasts'][0]['podcast_series_id']['id']);
         }
         if (!empty($exhibitions['data'][0]['id'])) {
             $cases = Cases::list($exhibitions['data'][0]['id']);
         }
+        if (!empty($exhibitions['data'][0]['fme_product_ids'])) {
+            $products = Shopify::getShopifyCollection($exhibitions['data'][0]['fme_product_ids']);
+        }
         if (empty($exhibitions['data'])) {
             return response()->view('errors.404', [], 404);
         }
-        return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases'));
+        return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases', 'products'));
     }
 
     /**
