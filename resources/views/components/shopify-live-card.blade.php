@@ -1,4 +1,3 @@
-@dd($result)
 <div class="col-md-4 mb-3">
     <div class="card card-fitz h-100">
         <a href="https://curatingcambridge.co.uk/products/{{ $result['handle'] }}">
