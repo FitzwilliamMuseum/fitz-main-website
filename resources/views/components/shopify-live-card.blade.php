@@ -1,10 +1,11 @@
+@dd($result)
 <div class="col-md-4 mb-3">
     <div class="card card-fitz h-100">
-            <a href="https://curatingcambridge.co.uk/collections/hockneys-eye/products/{{ $result['handle'] }}">
-                <img class="card-img-top" src="{{ $result['image']['src']}}"
-                     alt="A product image depicting {{ $result['image']['src'] }}"
-                     loading="lazy"/>
-            </a>
+        <a href="https://curatingcambridge.co.uk/products/{{ $result['handle'] }}">
+            <img class="card-img-top" src="{{ $result['image']['src']}}"
+                 alt="A product image depicting {{ $result['image']['src'] }}"
+                 loading="lazy"/>
+        </a>
 
         <div class="card-body h-100">
             <div class="contents-label mb-3">
