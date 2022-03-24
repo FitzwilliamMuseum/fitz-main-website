@@ -182,7 +182,7 @@
 
 @endsection
 
-@if(!empty($coll['associated_curators']))
+@if(!empty($coll['associated_curators']) || !empty($coll['external_curators']))
 @section('curators')
     <div class="container-fluid bg-grey py-3">
         <div class="container">
