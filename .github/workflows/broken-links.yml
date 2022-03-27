@@ -16,6 +16,7 @@ jobs:
   check-site-for-broken-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: harrisonpim/broken-link-checker@0.1.2
+      - uses: harrisonpim/broken-link-checker@0.2.1
         with:
           sitemap: https://fitzmuseum.cam.ac.uk/sitemap.xml
+          allowList: ["https://tickets.museums.cam.ac.uk/account/create"]
