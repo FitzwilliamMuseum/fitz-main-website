@@ -19,4 +19,4 @@ jobs:
       - uses: harrisonpim/broken-link-checker@0.2.1
         with:
           sitemap: https://fitzmuseum.cam.ac.uk/sitemap.xml
-          allowList: '["https://tickets.museums.cam.ac.uk/account/create","https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"]'
+          allowList: '["https://tickets.museums.cam.ac.uk/account/create","https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking","https://cubc.org.uk"]'
