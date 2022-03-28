@@ -8,7 +8,9 @@ use App\Models\OnlineResources;
 use App\Models\ResearchOpportunities;
 use App\Models\ResearchProjects;
 use App\Models\StaffProfiles;
+use App\Models\ExternalCurators;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
 
@@ -161,5 +163,15 @@ class researchController extends Controller
     {
         $opportunities = ResearchOpportunities::list();
         return view('research.opportunities', compact('opportunities'));
+    }
+
+    /**
+     * @param Request $request
+     * @return View
+     */
+    public function externalCurators(Request $request): view
+    {
+        $curators = ExternalCurators::list($request);
+        return view('research.external-curators', compact('curators'));
     }
 }
