@@ -149,4 +149,21 @@ class Exhibitions extends Model
       );
       return $api->getData();
     }
+
+    /**
+     * @param int $slug
+     * @return array
+     */
+    public static function findByExternals(int $curator): array
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('exhibitions_associated_people');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'filter[associated_people_id][in]' => $curator,
+            )
+        );
+        return $api->getData();
+    }
 }

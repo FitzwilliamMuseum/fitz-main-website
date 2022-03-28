@@ -134,9 +134,11 @@ class exhibitionsController extends Controller
     public function externals(string $slug): View
     {
         $external = AssociatedPeople::find($slug);
+
         if (empty($external['data'])) {
             return response()->view('errors.404', [], 404);
         }
-        return view('exhibitions.externals', compact('external'));
+        $exhibitions = Exhibitions::findByExternals($external['data'][0]['id'])['data'];
+        return view('exhibitions.externals', compact('external', 'exhibitions'));
     }
 }

@@ -39,3 +39,22 @@
 @endsection
 @endif
 @endforeach
+@section('exhibitions-curated')
+    <div class="container-fluid bg-pastel p-3">
+        <div class="container">
+            <h3>
+                Associated Exhibitions
+            </h3>
+            <div class="row">
+                @foreach($exhibitions as $exhibition)
+                    <x-image-card
+                        :altTag="$exhibition['exhibitions_id']['hero_image_alt_text']"
+                        :title="$exhibition['exhibitions_id']['exhibition_title']"
+                        :image="$exhibition['exhibitions_id']['hero_image']"
+                        :route="'exhibition'"
+                        :params="[$exhibition['exhibitions_id']['slug']]"></x-image-card>
+                @endforeach
+            </div>
+        </div>
+    </div>
+@endsection
