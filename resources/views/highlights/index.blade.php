@@ -17,6 +17,6 @@
         @endforeach
     </div>
     <nav aria-label="Page navigation">
-        {{ $paginator->links() }}
+        {{ $paginator->appends(request()->except('page'))->links() }}
     </nav>
 @endsection
