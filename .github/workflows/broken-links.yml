@@ -4,13 +4,13 @@ on:
     - cron: "0 0 * * 0"
     # every Sunday at midnight
     # see https://crontab.guru/#0_0_*_*_0
-  workflow_dispatch: 
-    inputs: 
-      logLevel: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
         default: warning
         description: "Log level"
         required: true
-      tags: 
+      tags:
        description: 'Run manually'
 jobs:
   check-site-for-broken-links:
@@ -19,4 +19,4 @@ jobs:
       - uses: harrisonpim/broken-link-checker@0.2.1
         with:
           sitemap: https://fitzmuseum.cam.ac.uk/sitemap.xml
-          allowList: '["https://tickets.museums.cam.ac.uk/account/create"]'
+          allowList: '["https://tickets.museums.cam.ac.uk/account/create","https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"]'
