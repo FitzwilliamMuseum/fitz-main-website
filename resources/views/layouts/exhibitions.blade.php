@@ -21,8 +21,11 @@
   (Request::is('visit-us/exhibitions/hockneys-eye-the-art-and-technology-of-depiction')
   ||
   Request::is('visit-us/exhibitions')
-  )) &&
+  ))
 @include('includes.structure.hockney-header')
+@elseif(Request::is('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870'))
+    @include('includes.structure.ttn-header')
+
 @else
     @include('includes.structure.head')
 @endif
