@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\DirectUs;
 use App\Models\CoronaVirusNotes;
 use App\Models\Directions;
 use App\Models\FloorPlans;

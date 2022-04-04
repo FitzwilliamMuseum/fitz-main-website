@@ -136,6 +136,23 @@
                         :route="'landing-section'"
                         :params="[$associate['section'],$associate['slug']]"></x-image-card>
                 @endforeach
+                    <div class="col-md-4 mb-3">
+                        <div class="card card-fitz h-100">
+                            <a href="https://fitzmuseum.cam.ac.uk/visit-us/frequently-asked-questions">
+                                <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/saturday_4th_april_139 SMALL.jpg?key=directus-medium-crop" alt="Visitor in Gallery 5" width="300" loading="lazy">
+                            </a>
+                            <div class="card-body h-100">
+                                <div class="contents-label mb-3">
+                                    <h3>
+                                        <a href="https://fitzmuseum.cam.ac.uk/visit-us/frequently-asked-questions" class="stretched-link">
+                                            Frequently Asked Questions
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>
