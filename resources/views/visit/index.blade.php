@@ -128,14 +128,7 @@
     <div class="container-fluid py-4 bg-grey">
         <div class="container">
             <div class="row">
-                @foreach($associated['data'] as $associate)
-                    <x-image-card
-                        :altTag="$associate['hero_image_alt_text']"
-                        :title="$associate['title']"
-                        :image="$associate['hero_image']"
-                        :route="'landing-section'"
-                        :params="[$associate['section'],$associate['slug']]"></x-image-card>
-                @endforeach
+
                     <div class="col-md-4 mb-3">
                         <div class="card card-fitz h-100">
                             <a href="https://fitzmuseum.cam.ac.uk/visit-us/frequently-asked-questions">
@@ -152,7 +145,14 @@
                             </div>
                         </div>
                     </div>
-
+                @foreach($associated['data'] as $associate)
+                    <x-image-card
+                        :altTag="$associate['hero_image_alt_text']"
+                        :title="$associate['title']"
+                        :image="$associate['hero_image']"
+                        :route="'landing-section'"
+                        :params="[$associate['section'],$associate['slug']]"></x-image-card>
+                @endforeach
             </div>
         </div>
     </div>
