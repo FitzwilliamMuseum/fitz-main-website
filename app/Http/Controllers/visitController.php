@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\DirectUs;
 use App\Models\CoronaVirusNotes;
 use App\Models\Directions;
 use App\Models\FloorPlans;
 use App\Models\Transport;
+use App\Models\Faqs;
 use App\Models\VisitUsComponents;
 use Illuminate\Contracts\View\View;
 
@@ -50,5 +52,16 @@ class visitController extends Controller
             'floors', 'corona', 'transport',
             'measures'
         ));
+    }
+
+    /**
+     * @return View
+     */
+    public function faqs(): View
+    {
+        $booking = Faqs::list('booking');
+        $hse = Faqs::list('hse');
+        $visiting = Faqs::list('visit');
+        return view('visit.faqs', compact('visiting', 'hse', 'booking'));
     }
 }

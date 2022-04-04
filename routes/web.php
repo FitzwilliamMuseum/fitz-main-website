@@ -63,6 +63,8 @@ Route::get('research/opportunities/{slug}', 'researchController@opportunity')->n
 Visit us Route
 */
 Route::get('visit-us/', 'visitController@index')->name('visit');
+Route::get( 'visit-us/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
+
 Route::get('/galleries', function () {
     return redirect('visit-us/galleries');
 });
