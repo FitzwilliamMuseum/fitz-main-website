@@ -13,6 +13,7 @@ use App\Models\PodcastArchive;
 use App\Models\Cases;
 use App\Models\AssociatedPeople;
 use App\Models\Labels;
+use App\Models\TtnBios;
 use App\Models\SolrSearch;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -140,5 +141,17 @@ class exhibitionsController extends Controller
         }
         $exhibitions = Exhibitions::findByExternals($external['data'][0]['id'])['data'];
         return view('exhibitions.externals', compact('external', 'exhibitions'));
+    }
+
+    public function ttnArtists()
+    {
+        $artists = TtnBios::list()['data'];
+        return view('exhibitions.ttn-artists', compact('artists'));
+    }
+
+    public function ttnArtist(string $slug)
+    {
+        $artists = TtnBios::find($slug)['data'];
+        return view('exhibitions.ttn-artist', compact('artists'));
     }
 }

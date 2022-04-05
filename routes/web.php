@@ -63,7 +63,7 @@ Route::get('research/opportunities/{slug}', 'researchController@opportunity')->n
 Visit us Route
 */
 Route::get('visit-us/', 'visitController@index')->name('visit');
-Route::get( 'visit-us/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
+Route::get('visit-us/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
 
 Route::get('/galleries', function () {
     return redirect('visit-us/galleries');
@@ -80,6 +80,8 @@ Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details')->name
 Route::get('visit-us/exhibitions/{exhibition}/cases/{slug}', 'exhibitionsController@labels')->name('exhibition.labels');
 Route::get('visit-us/exhibitions/{exhibition}/cases/', 'exhibitionsController@cases')->name('exhibition.cases');
 Route::get('visit-us/exhibitions/labels/{slug}', 'exhibitionsController@label')->name('exhibition.label');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists', 'exhibitionsController@ttnArtists')->name('exhibition.ttn.artists');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists/{slug}', 'exhibitionsController@ttnArtist')->name('exhibition.ttn.artist');
 
 /*
 News routes
