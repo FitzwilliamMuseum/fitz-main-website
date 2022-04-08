@@ -1,6 +1,6 @@
 @section('title', $label['title'])
 
-<div>
+<div data-src="{{$label['image']['data']['url']}}">
     @if(!empty($label['image']))
         <img class="img-fluid" src="{{$label['image']['data']['url']}}"
              alt="{{ $label['alt_text'] }}"
