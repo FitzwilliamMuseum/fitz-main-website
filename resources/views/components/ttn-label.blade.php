@@ -52,7 +52,7 @@
         [
         'lat' => $label['lat'],
         'lng' => $label['lng'],
-        'zoom' => 6,
+        'zoom' => 12,
         'minZoom' => 6,
         'maxZoom' => 18,
         'markers' => [
