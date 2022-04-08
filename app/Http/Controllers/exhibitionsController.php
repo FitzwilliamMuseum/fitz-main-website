@@ -14,6 +14,7 @@ use App\Models\Cases;
 use App\Models\AssociatedPeople;
 use App\Models\Labels;
 use App\Models\TtnBios;
+use App\Models\TtnLabels;
 use App\Models\SolrSearch;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -143,15 +144,40 @@ class exhibitionsController extends Controller
         return view('exhibitions.externals', compact('external', 'exhibitions'));
     }
 
-    public function ttnArtists()
+    /**
+     * @return View
+     */
+    public function ttnArtists(): View
     {
         $artists = TtnBios::list()['data'];
         return view('exhibitions.ttn-artists', compact('artists'));
     }
 
-    public function ttnArtist(string $slug)
+    /**
+     * @return View
+     */
+    public function ttnArtist(string $slug): View
     {
         $artists = TtnBios::find($slug)['data'];
         return view('exhibitions.ttn-artist', compact('artists'));
+    }
+
+    /**
+     * @return View
+     */
+    public function ttnLabels(): View
+    {
+        $labels = TtnLabels::list()['data'];
+        return view('exhibitions.ttn-labels', compact('labels'));
+    }
+
+    /**
+     * @param string $slug
+     * @return View
+     */
+    public function ttnLabel(string $slug): View
+    {
+        $label = TtnLabels::find($slug)['data'];
+        return view('exhibitions.ttn-label', compact('label'));
     }
 }

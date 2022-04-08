@@ -37,6 +37,8 @@
 
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')
+</div>
+<div class="container mt-3">
     @yield('content')
 </div>
 @yield('exhibitions-files')
