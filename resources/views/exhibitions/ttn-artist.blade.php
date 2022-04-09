@@ -5,13 +5,13 @@
     <x-ttn-artist-detail :artist="$artists"/>
 @endsection
 
-@if(!empty($records))
+@if(!empty($works))
 @section('mlt')
     <div class="container">
-        <h3>Other highlight objects in our collection you might like</h3>
+        <h3>Associated paintings in this exhibition</h3>
         <div class="row">
-            @foreach($records as $record)
-                <x-solr-card :result="$record"/>
+            @foreach($works as $label)
+                <x-ttn-labels :labels="$label"/>
             @endforeach
         </div>
     </div>

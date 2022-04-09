@@ -15,7 +15,6 @@ use App\Models\AssociatedPeople;
 use App\Models\Labels;
 use App\Models\TtnBios;
 use App\Models\TtnLabels;
-use App\Models\SolrSearch;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
 
@@ -111,7 +110,7 @@ class exhibitionsController extends Controller
      * @return View
      * @throws InvalidArgumentException
      */
-    public function label(string $slug) : View
+    public function label(string $slug): View
     {
         $labels = Labels::find($slug);
         $records = FindMoreLikeThis::find($slug, 'highlights');
@@ -131,9 +130,9 @@ class exhibitionsController extends Controller
 
     /**
      * @param string $slug
-     * @return View
+     * @return Response
      */
-    public function externals(string $slug): View
+    public function externals(string $slug): View|Response
     {
         $external = AssociatedPeople::find($slug);
 
@@ -159,7 +158,8 @@ class exhibitionsController extends Controller
     public function ttnArtist(string $slug): View
     {
         $artists = TtnBios::find($slug)['data'];
-        return view('exhibitions.ttn-artist', compact('artists'));
+        $works = TtnLabels::byArtist($artists[0]['id'])['data'];
+        return view('exhibitions.ttn-artist', compact('artists', 'works'));
     }
 
     /**
@@ -180,4 +180,45 @@ class exhibitionsController extends Controller
         $label = TtnLabels::find($slug)['data'];
         return view('exhibitions.ttn-label', compact('label'));
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function ttnGeoJson()
+    {
+        $labels = TtnLabels::list()['data'];
+        $geoJson = array(
+            'type' => 'FeatureCollection',
+            'features' => array()
+        );
+
+        foreach ($labels as $label) {
+            if (isset($label['lng'])) {
+                $feature = array(
+                    'id' => $label['id'],
+                    'type' => 'Feature',
+                    'geometry' => array(
+                        'type' => 'Point',
+                        # Pass Longitude and Latitude Columns here
+                        'coordinates' => array($label['lng'], $label['lat'])
+                    ),
+                    # Pass other attribute columns here
+                    'properties' => array(
+                        'title' => $label['title'],
+                        'artist' => $label['artist']['display_name'] ?? 'Not known',
+                        'slug' => $label['slug'],
+                        'image' => $label ['image']['data']['thumbnails'][7]['url']
+                    )
+                );
+                $geoJson['features'][] = $feature;
+            }
+        }
+        return response()->json($geoJson);
+    }
+
+    public function ttnMap(): View
+    {
+        return view('exhibitions.ttn-map');
+    }
+
 }

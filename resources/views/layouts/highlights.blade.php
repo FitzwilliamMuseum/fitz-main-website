@@ -42,7 +42,7 @@
     @include('includes.structure.breadcrumb')
 </div>
 <div class="container-fluid bg-white py-3">
-    <div class="container">
+    <div class="container bg-white">
         @yield('press-contact')
         @yield('content')
 
@@ -61,9 +61,11 @@
         @yield('map')
     </div>
 @endif
+@hasSection('associated_pages')
 <div class="container-fluid bg-gbdo">
     @yield('associated_pages')
 </div>
+@endif
 
 @hasSection('cons-areas')
     @yield('cons-areas')
@@ -72,6 +74,7 @@
 @yield('sketchfab-collection')
 @yield('sketchfab')
 @yield('audio-guide')
+
 <div class="container-fluid bg-gdbo py-3">
     @yield('pharos-pages')
     @yield('highlight')

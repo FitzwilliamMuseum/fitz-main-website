@@ -18,6 +18,7 @@ class TtnLabels extends Model
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
                 'sort' => 'display_id_number',
+                'limit' => 150
             )
         );
         return $api->getData();
@@ -36,6 +37,24 @@ class TtnLabels extends Model
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
                 'filter[slug][eq]' => $slug
+            )
+        );
+        return $api->getData();
+    }
+
+    /**
+     * @param int $id
+     * @return array
+     */
+    public static function byArtist(int $id): array
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('ttn_labels');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*.*.*',
+                'meta' => '*',
+                'filter[artist][eq]' => $id
             )
         );
         return $api->getData();
