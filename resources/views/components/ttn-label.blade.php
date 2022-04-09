@@ -10,11 +10,15 @@
     <h2 class="py-2">
         {{ $label['display_id_number'] }}: <em>{{ $label['title'] }}</em>
     </h2>
+        @if(isset($label['room_number']))
+        <p>
+            Room: {{$label['room_number']}}  {{ ucfirst($label['display_wall']) }} wall
+        </p>
+        @endif
     <p>
         {{ $label['artist']['display_name'] }}<br/>
         {{ $label['artist']['place_of_birth']}} {{$label['artist']['year_of_birth']}}
         - {{$label['artist']['year_of_death']}} {{ $label['artist']['place_of_death']}}
-
     </p>
     <p>
         @if(!empty($label['accession_number'] ))
@@ -49,21 +53,22 @@
 @section('map')
     <div class="container p-3">
         @map(
-        [
-        'lat' => $label['lat'],
-        'lng' => $label['lng'],
-        'zoom' => 12,
-        'minZoom' => 6,
-        'maxZoom' => 18,
-        'markers' => [
-        [
-        'title' => 'Place depicted',
-        'lat' => $label['lat'],
-        'lng' => $label['lng'],
-        'popup' => 'Place depicted',
-        ],
-        ],
-        ])
+            [
+            'lat' => $label['lat'],
+            'lng' => $label['lng'],
+            'zoom' => 12,
+            'minZoom' => 6,
+            'maxZoom' => 18,
+                'markers' => [
+                    [
+                    'title' => 'Place depicted',
+                    'lat' => $label['lat'],
+                    'lng' => $label['lng'],
+                    'popup' => 'Place depicted',
+                    ],
+                ],
+            ]
+        )
     </div>
 @endsection
 @endif

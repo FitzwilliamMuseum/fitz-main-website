@@ -22,8 +22,8 @@
                         {{ $labels['title'] }}
                     </a>
                 </h3>
-               <p>
-                   {{$labels['artist']['display_name']}}
+               <p class="text-info">
+                   {{$labels['artist']['display_name'] ?? 'Anon'}}
                </p>
             </div>
         </div>
