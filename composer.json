@@ -16,16 +16,20 @@
     ],
     "require": {
         "php": "^8.0|^8.1",
+        "ext-intl": "*",
+        "ext-json": "*",
         "alaouy/youtube": "^2.2",
         "buzzylab/laradown": "~0.2",
         "conedevelopment/blade-filters": "^0.8.0",
         "elasticsearch/elasticsearch": "^7.0",
         "fideloper/proxy": "^4.2",
+        "fitzwilliammuseum/maps": "master",
         "fruitcake/laravel-cors": "^2.0.3",
         "gmostafa/php-graphql-client": "^1.4",
         "guzzlehttp/guzzle": "^7.3",
         "imagekit/imagekit": "^1.2",
         "imliam/laravel-blade-helper": "^1.3",
+        "jmikola/geojson": "^1.0",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.2",
@@ -47,10 +51,7 @@
         "symfony/http-kernel": "^5.1.5",
         "thujohn/twitter": "^2.2",
         "upthemedia/xss-protection": "^0.0.8",
-        "xantios/mimey": "^2.2",
-        "fitzwilliammuseum/maps": "master",
-        "ext-json": "*",
-        "ext-intl": "*"
+        "xantios/mimey": "^2.2"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",

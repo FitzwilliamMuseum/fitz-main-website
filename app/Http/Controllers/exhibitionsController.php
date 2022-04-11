@@ -159,7 +159,9 @@ class exhibitionsController extends Controller
     {
         $artists = TtnBios::find($slug)['data'];
         $works = TtnLabels::byArtist($artists[0]['id'])['data'];
-        return view('exhibitions.ttn-artist', compact('artists', 'works'));
+        $records = FindMoreLikeThis::find($slug, 'ttnArtists');
+
+        return view('exhibitions.ttn-artist', compact('artists', 'works','records'));
     }
 
     /**

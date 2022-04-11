@@ -80,6 +80,7 @@
     @yield('highlight')
     @yield('mlt')
 </div>
+@yield('artistsSimilar')
 @yield('shopify')
 
 @include('includes.structure.emailsignup')

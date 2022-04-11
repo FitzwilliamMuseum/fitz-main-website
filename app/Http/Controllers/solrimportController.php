@@ -686,7 +686,7 @@ class solrimportController extends Controller
             'ttn_artists',
             'exhibition.ttn.artist',
             array('slug'),
-            array('title' => 'display_name', 'content' => 'biography')
+            array('title' => 'display_name', 'content' => 'biography','image' => 'image')
         );
     }
 

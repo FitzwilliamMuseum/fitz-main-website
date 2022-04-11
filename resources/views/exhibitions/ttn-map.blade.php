@@ -1,17 +1,12 @@
 @extends('layouts.fullscreen-map')
 @section('map')
+    <div id="info" class="leaflet-control">
+        <h1>True to Nature</h1>
+        <p>
+            This page shows locations, where depicted, for places shown.
+        </p>
+    </div>
     <div id="map"></div>
 
 
-    <div class="container p-3">
-        @map(
-        [
-        'lat' => 48.9891693,
-        'lng' => 2.3197111,
-        'zoom' => 4,
-        'minZoom' => 6,
-        'maxZoom' => 18,
-        ]
-        )
-    </div>
 @endsection
