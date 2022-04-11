@@ -558,6 +558,8 @@ class solrimportController extends Controller
 
     /**
      * @return ResultInterface|Result
+     * @throws \PHPShopify\Exception\ApiException
+     * @throws \PHPShopify\Exception\CurlException
      */
     public function shopify()
     {
@@ -695,7 +697,7 @@ class solrimportController extends Controller
         $api->setArguments(
             array(
                 'limit' => '200',
-                'fields' => 'id,display_name,biography,slug,image.*',
+                'fields' => 'id,title,slug,image.*',
             )
         );
         $data = $api->getData();
