@@ -12,6 +12,19 @@
             padding: 0px;
             margin: 0px;
         }
+        #info {
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 200px;
+            max-width: 600px;
+            left:95%;
+            margin-left: -300px;
+            margin-top: 40%;
+            padding: 20px;
+            border-radius: 5px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 <body class="doc-body">
@@ -19,7 +32,6 @@
 @yield('content')
 @hasSection('map')
     @yield('map')
-
 @endif
 <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -32,7 +44,7 @@
     var map = new L.Map('map', {
         center: new L.LatLng(43.8135614,4.3232393),
         zoom: 5,
-        minZoom: 5,
+        minZoom: 0,
         maxZoom: 11
     });
     $.getJSON("/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/geojson", function (data) {
@@ -67,6 +79,7 @@
             "<img src='" + feature.properties.image + "'/>"
             + "</a>"
             , {
+                maxHeight: "200px",
                 maxWidth: "auto"
             }
         );
@@ -76,7 +89,7 @@
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         subdomains: 'abcd',
         minZoom: 0,
-        maxZoom: 18,
+        maxZoom: 11,
         ext: 'png'
     });
     map.on('popupopen', function(e) {

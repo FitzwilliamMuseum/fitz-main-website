@@ -708,7 +708,7 @@ class solrimportController extends Controller
             'ttn_labels',
             'exhibition.ttn.label',
             array('slug'),
-            array('title' => 'title', 'content' => 'title')
+            array('title' => 'title', 'content' => 'title','image' => 'image')
         );
     }
 

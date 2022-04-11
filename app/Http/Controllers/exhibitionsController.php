@@ -178,7 +178,8 @@ class exhibitionsController extends Controller
     public function ttnLabel(string $slug): View
     {
         $label = TtnLabels::find($slug)['data'];
-        return view('exhibitions.ttn-label', compact('label'));
+        $records = FindMoreLikeThis::find($slug, 'ttnLabels');
+        return view('exhibitions.ttn-label', compact('label', 'records'));
     }
 
     /**
