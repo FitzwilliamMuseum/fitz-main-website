@@ -666,6 +666,50 @@ class solrimportController extends Controller
         );
     }
 
+    public function ttnArtists()
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('ttn_artists');
+        $api->setArguments(
+            array(
+                'limit' => '200',
+                'fields' => 'id,display_name,biography,slug,image.*',
+            )
+        );
+        $data = $api->getData();
+        $solr = new SolrImporter();
+        return $solr->import(
+            $data['data'],
+            'ttnArtists',
+            'ttn_artists',
+            'exhibition.ttn.artist',
+            array('slug'),
+            array('title' => 'display_name', 'content' => 'biography')
+        );
+    }
+
+    public function ttnLabels()
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('ttn_labels');
+        $api->setArguments(
+            array(
+                'limit' => '200',
+                'fields' => 'id,display_name,biography,slug,image.*',
+            )
+        );
+        $data = $api->getData();
+        $solr = new SolrImporter();
+        return $solr->import(
+            $data['data'],
+            'ttnLabels',
+            'ttn_labels',
+            'exhibition.ttn.label',
+            array('slug'),
+            array('title' => 'title', 'content' => 'title')
+        );
+    }
+
     /**
      * @return ResultInterface|Result
      */
