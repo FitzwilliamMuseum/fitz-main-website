@@ -12,7 +12,7 @@ var controls =
     'settings', // Settings menu
     'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
 ];
-const player = new Plyr('.player', { controls });
+const player = new Plyr('#player', { controls });
 
 // Expose player so it can be used from the console
 window.player = player;

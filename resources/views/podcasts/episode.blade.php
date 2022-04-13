@@ -218,3 +218,11 @@
     </div>
 @endsection
 @endif
+
+@section('plyr-css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.css" rel="stylesheet" media="screen">
+@endsection
+@section('plyr-js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.10/plyr.min.js"></script>
+    <script defer type="text/javascript" src="/js/plyr-controls.js"></script>
+@endsection
