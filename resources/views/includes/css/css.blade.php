@@ -9,6 +9,7 @@ integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeV
 @hasSection('audio-guide')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.css" rel="stylesheet" media="screen">
 @endif
+@yield('plyr-css')
 <style>
 .head {
   background-image: url('@yield('hero_image')');
