@@ -1,6 +1,7 @@
 # Framework for the Fitzwilliam Museum website
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6304361.svg)](https://doi.org/10.5281/zenodo.6304361)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6304361.svg)](https://doi.org/10.5281/zenodo.6304361)[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0002--0246--2335-green.svg)](http://orcid.org/0000-0002-0246-2335)
+
 
 This repository contains the code base for a Laravel based front end for the latest version of @fitzwilliammuseum website.
 
