@@ -1,6 +1,6 @@
 @if(in_array(Route::currentRouteName(), ['home', 'events', 'visit', 'exhibitions']))
     <div class="container-fluid bg-dark text-white p-1">
-        <div class="container">
+        <div class="container text-center">
             <div class="text-center my-2">
                 <a class="text-center btn btn-outline-light btn__book"
                    href="{{ $bookingLink }}">
@@ -8,9 +8,10 @@
                 </a>
             </div>
 
-            <p class="text-center text-black">
                 @include('includes.structure.opening-hours')
-                @fa('door-closed', 'closed') <a class="free_ticket"
+            <p class="text-center">
+
+            @fa('door-closed', 'closed') <a class="free_ticket"
                                                 href="{{ URL::to('/visit-us/gallery-closures-and-collection-updates') }}">Gallery
                     closures and collection updates</a>
             </p>

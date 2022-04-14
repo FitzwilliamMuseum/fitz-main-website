@@ -1,1 +1,1 @@
-{!! $openingMessage !!}
+@markdown($openingMessage)
