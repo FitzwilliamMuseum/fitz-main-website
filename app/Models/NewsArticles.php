@@ -39,7 +39,7 @@ class NewsArticles extends Model
               'meta' => 'result_count,total_count,type',
               'sort' => $sort,
               'limit' => $limit,
-              'filter[feature_front_page][eq]' => 'yes'
+//              'filter[feature_front_page][eq]' => 'yes'
           )
       );
       return $api->getData();
