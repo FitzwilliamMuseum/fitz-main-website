@@ -9,6 +9,7 @@
     },
     "devDependencies": {
         "ansi-regex": ">=5.0.1",
+        "async": ">=2.6.4",
         "axios": ">=0.21.1",
         "bootstrap": "^4.6.0",
         "cross-env": "^7.0.3",
