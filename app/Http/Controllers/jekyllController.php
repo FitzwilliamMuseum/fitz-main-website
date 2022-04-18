@@ -33,7 +33,8 @@ class jekyllController extends Controller
         'sevenheadsofgogmagog',
         'thingsofbeautygrowing',
         'creative-economy',
-        'cockerel'
+        'cockerel',
+        'islander'
     );
 
     /** @var string */

@@ -3,6 +3,7 @@
 ## 19.04.2022
 
 1. Added Cockerell exhibition site to solr importer
+2. Added Islander site to solr importer
 
 ## 18.04.2022
 1. Added Spoliation MVC functions
