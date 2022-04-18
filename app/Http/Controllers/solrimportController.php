@@ -736,4 +736,29 @@ class solrimportController extends Controller
             array('title' => 'title', 'content' => 'description')
         );
     }
+
+    /**
+     * @return ResultInterface|Result
+     */
+    public function spoliation()
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('spoliation_claims');
+        $api->setArguments(
+            array(
+                'limit' => '200',
+                'fields' => 'id,alt_text,text,priref,image.*',
+            )
+        );
+        $data = $api->getData();
+        $solr = new SolrImporter();
+        return $solr->import(
+            $data['data'],
+            'spoliation',
+            'spoliation',
+            'about.spoliation.claim',
+            array('priref'),
+            array('title' => 'alt_text', 'content' => 'text', 'image' => 'image')
+        );
+    }
 }

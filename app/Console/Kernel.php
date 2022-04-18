@@ -66,6 +66,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('sitemap:generate')->daily();
         # Long form
         $schedule->call('App\Http\Controllers\solrimportController@longform')->weekly();
+        # Spoliation
+        $schedule->call('App\Http\Controllers\solrimportController@spoliation')->daily();
 
     }
 
