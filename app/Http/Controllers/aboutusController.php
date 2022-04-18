@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Directors;
 use App\Models\Governance;
 use App\Models\PressTerms;
+use App\Models\SpoliationClaims;
 use App\Models\StaffProfiles;
 use App\Models\Vacancies;
 use Illuminate\Contracts\View\View;
@@ -150,5 +151,17 @@ class aboutusController extends Controller
     {
         $terms = PressTerms::list();
         return view('aboutus.hockney', compact('terms'));
+    }
+
+    public function spoliation(Request $request): View
+    {
+        $claims = SpoliationClaims::list($request );
+        return view('aboutus.spoliation', compact('claims'));
+    }
+
+    public function spoliationClaim(string $priref): View
+    {
+        $claims = SpoliationClaims::find($priref);
+        return view('aboutus.spoliation-claim', compact('claims'));
     }
 }

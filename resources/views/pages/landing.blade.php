@@ -40,11 +40,11 @@
           $jobs         = $pagesController::injectPages('about-us','work-for-us');
           $research     = $pagesController::injectPages('research','research-and-impact');
         @endphp
-        @include('includes.structure.cards', $data = $governance )
+        @include('includes.structure.cards',      $data = $governance )
         @include('includes.structure.commercial', $data = $comm )
-        @include('includes.structure.cards', $data = $depart)
-        @include('includes.structure.cards', $data = $coll)
-        @include('includes.structure.cards', $data = $press)
+        @include('includes.structure.cards',      $data = $depart)
+        @include('includes.structure.cards',      $data = $coll)
+        @include('includes.structure.cards',      $data = $press)
         <div class="col-md-4 mb-3">
           <div class="card card-fitz h-100">
             <a href="{{route('about.our.staff')}}">
@@ -60,6 +60,22 @@
             </div>
           </div>
         </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card card-fitz h-100">
+                    <a href="{{route('about.spoliation')}}">
+                        <img class="card-img-top" src="https://content.fitz.ms/fitz-website/assets/La%20Ronde%20Enfantine.png?key=directus-medium-crop"
+                             alt="La ronde enfantine image" loading="lazy" />
+                    </a>
+                    <div class="card-body h-100">
+                        <h3>
+                            <a href="{{route('about.spoliation')}}" class="stretched-link">
+                                Spoliation claims
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
         @include('includes.structure.cards', $data = $jobs)
         @include('includes.structure.cards', $data =  $research)
       @endif
