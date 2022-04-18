@@ -1,5 +1,9 @@
 # Change log
 
+## 19.04.2022
+
+1. Added Cockerell exhibition site to solr importer
+
 ## 18.04.2022
 1. Added Spoliation MVC functions
 2. Added Spoliation to solr importer

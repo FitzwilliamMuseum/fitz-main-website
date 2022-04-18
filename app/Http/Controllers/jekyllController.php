@@ -32,7 +32,8 @@ class jekyllController extends Controller
         'inspire2020',
         'sevenheadsofgogmagog',
         'thingsofbeautygrowing',
-        'creative-economy'
+        'creative-economy',
+        'cockerel'
     );
 
     /** @var string */
