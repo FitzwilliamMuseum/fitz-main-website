@@ -1,5 +1,23 @@
 # Change log
 
+## 18.04.2022
+1. Added Spoliation MVC functions
+2. Added Spoliation to solr importer
+
+## 14.04.2022
+
+1. Added Creative Economy website to solr import routine
+2. Update opening hours blade template for markdown support
+3. Added DOI and updated release
+
+## 13.04.2022
+
+1. Added plyr support to podcasts and audio guides
+
+### 11.04.2022
+
+1. Added True to Nature MVC functions
+2. Added True to Nature Maps, Labels and Artists
 ### 05.04.2022
 
 1. Added FAQ functions

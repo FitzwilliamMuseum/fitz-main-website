@@ -30,5 +30,8 @@
         "url-parse": ">=1.5.8",
         "vue-template-compiler": "^2.6.12",
         "websocket-extensions": ">=0.1.4"
+    },
+    "dependencies": {
+        "leaflet-iiif": "^3.0.0"
     }
 }
