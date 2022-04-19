@@ -64,6 +64,7 @@ class JekyllImporter
         $url = $this->getUrl();
         $response = Http::get($url);
         echo($url);
+        echo("\r\n");
         try {
             return json_decode($response, false, 512, JSON_THROW_ON_ERROR);
         } catch (JsonException $ex) {
