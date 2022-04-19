@@ -3,39 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\JekyllImporter;
+use App\Models\JekyllSites;
 
 class jekyllController extends Controller
 {
-    /**
-     * @var array|string[]
-     */
-    protected array $_subdomains = array(
-        'whistler',
-        'auerbach',
-        'yoshitoshi',
-        'la-grande-guerre',
-        'vive-la-difference',
-        'extreme-unction',
-        'french-impressionists',
-        'weaving-stories',
-        'shahnameh',
-        'netsuke',
-        'kunisada-and-kabuki',
-        'book-of-the-dead',
-        'snowcountry',
-        'nightoflonging',
-        'treasured-possessions',
-        'madonnas-and-miracles',
-        'clark',
-        'beyondthelabel',
-        'afrocombs',
-        'inspire2020',
-        'sevenheadsofgogmagog',
-        'thingsofbeautygrowing',
-        'creative-economy',
-        'cockerel',
-        'islander'
-    );
+
 
     /** @var string */
     protected string $_baseurl = '.fitzmuseum.cam.ac.uk/data.json';
@@ -49,7 +21,8 @@ class jekyllController extends Controller
      */
     public function import()
     {
-        foreach ($this->_subdomains as $subdomain) {
+        $subdomains = JekyllSites::list();
+        foreach ($subdomains as $subdomain) {
             $jekyll = new JekyllImporter;
             $jekyll->setUrl($this->buildUrl($subdomain));
             $jekyll->import($subdomain);

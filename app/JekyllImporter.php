@@ -4,6 +4,7 @@ namespace App;
 
 use Config;
 use Illuminate\Support\Facades\Http;
+use JsonException;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
 use Solarium\Core\Query\Result\ResultInterface;
@@ -35,23 +36,24 @@ class JekyllImporter
         $documents = array();
         foreach ($data as $jekyllPage) {
             $doc = $update->createDocument();
-            $doc->id = md5($jekyllPage['title']) . '-jekyll-' . $subdomain;
-            $doc->title = $jekyllPage['title'];
-            $doc->description = $jekyllPage['summary'];
-            $doc->body = $jekyllPage['content'];
-            $doc->slug = $jekyllPage['slug'];
-            $doc->url = $jekyllPage['url'];
+            $doc->id = md5($jekyllPage->title) . '-jekyll-' . $subdomain;
+            $doc->title = $jekyllPage->title;
+            $doc->description = $jekyllPage->summary;
+            $doc->body = $jekyllPage->content;
+            $doc->slug = $jekyllPage->slug;
+            $doc->url = $jekyllPage->url;
             $doc->contentType = 'research-resource';
-            if (isset($jekyllPage['image'])) {
-                $doc->thumbnail = $jekyllPage['thumbnail'];
-                $doc->image = $jekyllPage['image'];
-                $doc->searchImage = $jekyllPage['thumbnail'];
+            if (isset($jekyllPage->image)) {
+                $doc->thumbnail = $jekyllPage->thumbnail;
+                $doc->image = $jekyllPage->image;
+                $doc->searchImage = $jekyllPage->thumbnail;
             }
             $documents[] = $doc;
         }
         $update->addDocuments($documents);
         $update->addCommit();
         return $client->update($update);
+
     }
 
     /**
@@ -61,7 +63,12 @@ class JekyllImporter
     {
         $url = $this->getUrl();
         $response = Http::get($url);
-        return $response->json();
+        echo($url);
+        try {
+            return json_decode($response, false, 512, JSON_THROW_ON_ERROR);
+        } catch (JsonException $ex) {
+            return $ex->getMessage() . ' for this url: ' . $url;
+        }
     }
 
     /**

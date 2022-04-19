@@ -4,6 +4,7 @@
 
 1. Added Cockerell exhibition site to solr importer
 2. Added Islander site to solr importer
+3. Change jekyll site import list to configurable list via directus
 
 ## 18.04.2022
 1. Added Spoliation MVC functions
