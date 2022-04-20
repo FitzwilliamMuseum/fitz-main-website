@@ -11,7 +11,7 @@
         </blockquote>
     </div>
 @endsection
-@section('exhibitionlabels')
+@section('exhibition-labels')
     <div class="container-fluid py-3">
         <div class="container">
             <div class="row">

@@ -124,13 +124,12 @@ class exhibitionsController extends Controller
     public function cases(string $slug): View
     {
         $cases = Cases::find($slug);
-
         return view('exhibitions.cases', compact('cases'));
     }
 
     /**
      * @param string $slug
-     * @return Response
+     * @return View|Response
      */
     public function externals(string $slug): View|Response
     {
@@ -160,7 +159,6 @@ class exhibitionsController extends Controller
         $artists = TtnBios::find($slug)['data'];
         $works = TtnLabels::byArtist($artists[0]['id'])['data'];
         $records = FindMoreLikeThis::find($slug, 'ttnArtists');
-
         return view('exhibitions.ttn-artist', compact('artists', 'works','records'));
     }
 
