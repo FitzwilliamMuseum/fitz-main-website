@@ -74,7 +74,7 @@
         layer.bindPopup(
             feature.properties.title + "<br>" +  feature.properties.artist
             + "<br>" +
-            "<a href='/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/label/"
+            "<a href='/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/"
             + feature.properties.slug  + "'>" +
             "<img src='" + feature.properties.image + "'/>"
             + "</a>"
