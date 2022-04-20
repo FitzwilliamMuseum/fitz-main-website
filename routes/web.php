@@ -87,9 +87,9 @@ Route::get('visit-us/exhibitions/labels/{slug}', 'exhibitionsController@label')-
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists', 'exhibitionsController@ttnArtists')->name('exhibition.ttn.artists');
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists/{slug}', 'exhibitionsController@ttnArtist')->name('exhibition.ttn.artist');
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels', 'exhibitionsController@ttnLabels')->name('exhibition.ttn.labels');
-Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/label/{slug}', 'exhibitionsController@ttnLabel')->name('exhibition.ttn.label');
-Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/geojson', 'exhibitionsController@ttnGeoJson')->name('exhibition.ttn.geoJson');
-Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/mapped', 'exhibitionsController@ttnMap')->name('exhibition.ttn.mapped');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/{slug}', 'exhibitionsController@ttnLabel')->name('exhibition.ttn.label');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/geojson', 'exhibitionsController@ttnGeoJson')->name('exhibition.ttn.geoJson');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/mapped', 'exhibitionsController@ttnMap')->name('exhibition.ttn.mapped');
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/test', 'exhibitionsController@ttnSonic')->name('exhibition.ttn.sonic');
 
 
