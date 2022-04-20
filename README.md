@@ -29,14 +29,22 @@ In production, we use REDIS. Locally use File based caching unless you want to i
 # installation
 
 1. Install php 8.1 into your environment
-2. Install composer
-3. git clone https://github.com/FitzwilliamMuseum/beta.fitz.ms
-4. cd beta.fitz.ms
-5. composer install
-6. cp .env.example .env
-7. nano .env
-8. Fill in variables for your instance (Cache etc)
-9. php artisan serve
+2. Install composer and then do the following
+```
+$ git clone https://github.com/FitzwilliamMuseum/fitz-main-website
+$ cd fitz-main-website
+$ composer install
+$ cp .env.example .env
+$ nano .env
+$ npm install 
+```
+Fill in variables for your instance (Cache etc)
+
+If you are running locally you can preview the website via: 
+
+```
+$ php artisan serve
+```
 
 # License
 
