@@ -47,7 +47,7 @@
         minZoom: 0,
         maxZoom: 11
     });
-    $.getJSON("/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/geojson", function (data) {
+    $.getJSON("{{route('exhibition.ttn.geoJson')}}", function (data) {
         // add GeoJSON layer to the map once the file is loaded
         L.geoJson(data, {
             onEachFeature: onEachFeature,

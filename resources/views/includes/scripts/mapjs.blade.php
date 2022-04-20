@@ -1,7 +1,7 @@
 <script>
 @if(\Route::current()->getName() == 'visit')
 window.addEventListener('LaravelMaps:MapInitialized', function (event) {
-  var geojsonFeature = {
+  const geojsonFeature = {
     "type": "FeatureCollection",
     "features": [
       {
@@ -312,16 +312,16 @@ window.addEventListener('LaravelMaps:MapInitialized', function (event) {
     ]
   };
 
-  var element = event.detail.element;
-  var map = event.detail.map;
+  const element = event.detail.element;
+  const map = event.detail.map;
   L.geoJSON(geojsonFeature).addTo(map);
   map.scrollWheelZoom.disable();
 });
 @elseif(\Route::current()->getName() == 'exhibition.ttn.label')
 window.addEventListener('LaravelMaps:MapInitialized', function (event) {
-    var map = event.detail.map;
+    const map = event.detail.map;
 
-var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+const Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abcd',
     minZoom: 0,
@@ -330,18 +330,17 @@ var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terr
 });
     map.addLayer(Stamen_Terrain);
 
-
 });
-@elseif(\Route::current()->getName() === 'exhsibition.ttn.mapped')
+@elseif(\Route::current()->getName() === 'exhibition.ttn.mapped')
 window.addEventListener('LaravelMaps:MapInitialized', function (event) {
     // load GeoJSON from an external file
-    var map = event.detail.map;
+    const map = event.detail.map;
 
-    $.getJSON("/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/geojson",function(data){
+    $.getJSON("{{route('exhibition.ttn.geoJson')}}",function(data){
         // add GeoJSON layer to the map once the file is loaded
         L.geoJson(data).addTo(map);
     });
-    var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+    const Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         subdomains: 'abcd',
         minZoom: 0,
@@ -354,8 +353,7 @@ window.addEventListener('LaravelMaps:MapInitialized', function (event) {
 
 @else
 window.addEventListener('LaravelMaps:MapInitialized', function (event) {
-  var element = event.detail.element;
-  var map = event.detail.map;
+  const map = event.detail.map;
   map.scrollWheelZoom.disable();
 });
 @endif
