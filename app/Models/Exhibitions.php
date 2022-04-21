@@ -66,6 +66,7 @@ class Exhibitions extends Model
           array(
               'fields' => '*.*.*.*',
               'filter[exhibition_status][eq]' => $status,
+              'filter[featured_home][eq]' => 'yes',
               'meta' => 'result_count,total_count,type',
               'sort' => $sort,
               'limit' => $limit
