@@ -9,64 +9,62 @@
 
 
 @section('news')
-  @foreach($news['data'] as $news)
-    <x-image-card
-    :altTag="$news['field_image_alt_text']"
-    :title="$news['article_title']"
-    :image="$news['field_image']"
-    :route="'article'"
-    :params="[$news['slug']]"></x-image-card>
-    @endforeach
-  @endsection
-
-  @section('fundraising')
-    <div class="container mt-3">
-      <h3><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h3>
-      <div class="row">
-        @foreach($fundraising['data'] as $donate)
-          <x-partner-card
-          :altTag="$donate['hero_image_alt_text']"
-          :title="$donate['title']"
-          :subtitle="$donate['sub_title']"
-          :image="$donate['hero_image']"
-          :url="$donate['url']"></x-partner-card>
-          @endforeach
-        </div>
-      </div>
-    @endsection
-
-
-    @section('research')
-      @foreach($research['data'] as $project)
+    @foreach($news['data'] as $news)
         <x-image-card
-        :altTag="$project['hero_image_alt_text']"
-        :title="$project['title']"
-        :image="$project['hero_image']"
-        :route="'research-project'"
-        :params="[$project['slug']]"></x-image-card>
-        @endforeach
-      @endsection
+            :altTag="$news['field_image_alt_text']"
+            :title="$news['article_title']"
+            :image="$news['field_image']"
+            :route="'article'"
+            :params="[$news['slug']]"></x-image-card>
+    @endforeach
+@endsection
 
-      @section('themes')
-        @foreach($objects['data'] as $theme)
-          <x-image-card
-          :altTag="$theme['image_alt_text']"
-          :title="$theme['title']"
-          :image="$theme['image']"
-          :route="'highlight'"
-          :params="[$theme['slug']]"></x-image-card>
-          @endforeach
-        @endsection
-
-        @if(!empty($shopify))
-          @section('shopify')
-            <div class="container">
-              <h3 class="mt-3"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from Curating Cambridge</a></h3>
-              <div class="row">
-                @foreach($shopify as $record)
-                  <x-shopify-card :result="$record"></x-shopify-card>
+@section('fundraising')
+    <div class="container-fluid mt-3">
+        <div class="col-md-12">
+            <h3><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h3>
+            <div class="row">
+                @foreach($fundraising['data'] as $donate)
+                    <x-fundraising-card :donate="$donate"></x-fundraising-card>
                 @endforeach
-              </div>
             </div>
-          @endsection
-        @endif
+        </div>
+    </div>
+@endsection
+
+
+@section('research')
+    @foreach($research['data'] as $project)
+        <x-image-card
+            :altTag="$project['hero_image_alt_text']"
+            :title="$project['title']"
+            :image="$project['hero_image']"
+            :route="'research-project'"
+            :params="[$project['slug']]"></x-image-card>
+    @endforeach
+@endsection
+
+@section('themes')
+    @foreach($objects['data'] as $theme)
+        <x-image-card
+            :altTag="$theme['image_alt_text']"
+            :title="$theme['title']"
+            :image="$theme['image']"
+            :route="'highlight'"
+            :params="[$theme['slug']]"></x-image-card>
+    @endforeach
+@endsection
+
+@if(!empty($shopify))
+@section('shopify')
+    <div class="container">
+        <h3 class="mt-3"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from
+                Curating Cambridge</a></h3>
+        <div class="row">
+            @foreach($shopify as $record)
+                <x-shopify-card :result="$record"></x-shopify-card>
+            @endforeach
+        </div>
+    </div>
+@endsection
+@endif

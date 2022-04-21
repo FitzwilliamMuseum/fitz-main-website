@@ -30,7 +30,7 @@ class homeController extends Controller
         $exhibitions = Exhibitions::listHome('current', '?', 3);
         $news = NewsArticles::feature();
         $research = ResearchProjects::list('?', 3);
-        $fundraising = FundRaising::list();
+        $fundraising = FundRaising::list(4);
         $objects = Highlights::homeList();
         $things = ThingsToDo::list();
         $shopify = Shopify::list();
