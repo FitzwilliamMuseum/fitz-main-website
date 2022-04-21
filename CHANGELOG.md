@@ -1,5 +1,13 @@
 # Change log
 
+## 21.04.2022
+
+1. Added True to Nature banner to homepage (this will need removal at end of the exhibition)
+2. Change things to do -> Podcasts
+3. Change exhibition model for home page to allow for featured instances
+4. Changed layout for fundraising and added new component 
+5. Added Tessitura search for related exhibition events
+
 ## 19.04.2022
 
 1. Added Cockerell exhibition site to solr importer

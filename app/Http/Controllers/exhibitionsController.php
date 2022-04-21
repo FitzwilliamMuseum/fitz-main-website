@@ -15,6 +15,7 @@ use App\Models\AssociatedPeople;
 use App\Models\Labels;
 use App\Models\TtnBios;
 use App\Models\TtnLabels;
+use App\Models\TessituraPerformances;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
 
@@ -78,6 +79,7 @@ class exhibitionsController extends Controller
         $podcasts = NULL;
         $cases = NULL;
         $products = NULL;
+        $events = NULL;
         if (!empty($exhibitions['data'][0]['podcasts'])) {
             $podcasts = PodcastArchive::find($exhibitions['data'][0]['podcasts'][0]['podcast_series_id']['id']);
         }
@@ -87,10 +89,14 @@ class exhibitionsController extends Controller
         if (!empty($exhibitions['data'][0]['fme_product_ids'])) {
             $products = Shopify::getShopifyCollection($exhibitions['data'][0]['fme_product_ids']);
         }
+        if (!empty($exhibitions['data'][0]['tessitura_keyword_id'])) {
+            $events = TessituraPerformances::getExhibitionPerformances($exhibitions['data'][0]['tessitura_keyword_id']);
+        }
         if (empty($exhibitions['data'])) {
             return response()->view('errors.404', [], 404);
         }
-        return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases', 'products'));
+
+        return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases', 'products', 'events'));
     }
 
     /**

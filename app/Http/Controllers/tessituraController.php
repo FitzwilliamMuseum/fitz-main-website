@@ -61,6 +61,8 @@ class tessituraController extends Controller
         return view('tessitura.type', compact('productions', 'slug', 'events'));
     }
 
+
+
     /**
      * @param string $slug
      * @return int
@@ -86,7 +88,6 @@ class tessituraController extends Controller
      */
     public function search(): View
     {
-//        dd(request('datefrom'));
         $this->validateForm();
         $prods = $this->getTessituraApi();
         $prods->setPerformanceStartDate(request('datefrom'));

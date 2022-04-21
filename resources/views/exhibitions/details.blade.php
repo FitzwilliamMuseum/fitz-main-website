@@ -45,7 +45,8 @@
                 @endif
                 @if(isset($coll['exhibition_start_date']))
                     <li>
-                        {{$type}} run: {{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }} to
+                        {{$type}} run: {{  Carbon\Carbon::parse($coll['exhibition_start_date'])->format('l dS F Y') }}
+                        to
                         {{  Carbon\Carbon::parse($coll['exhibition_end_date'])->format('l dS F Y') }}
                     </li>
                 @endif
@@ -197,14 +198,14 @@
                         :params="[$curator['staff_profiles_id']['slug']]"
                     />
                 @endforeach
-                    @foreach($coll['external_curators'] as $curator)
-                            <x-image-card
-                                :altTag="$curator['associated_people_id']['display_name']"
-                                :title="$curator['associated_people_id']['display_name']"
-                                :image="$curator['associated_people_id']['profile_image']"
-                                :route="'exhibition-externals'"
-                                :params="[$curator['associated_people_id']['slug']]"></x-image-card>
-                    @endforeach
+                @foreach($coll['external_curators'] as $curator)
+                    <x-image-card
+                        :altTag="$curator['associated_people_id']['display_name']"
+                        :title="$curator['associated_people_id']['display_name']"
+                        :image="$curator['associated_people_id']['profile_image']"
+                        :route="'exhibition-externals'"
+                        :params="[$curator['associated_people_id']['slug']]"></x-image-card>
+                @endforeach
             </div>
         </div>
     </div>
@@ -399,6 +400,20 @@
         <div class="row">
             @foreach($products as $record)
                 <x-shopify-live-card :result="$record"></x-shopify-live-card>
+            @endforeach
+        </div>
+    </div>
+@endsection
+@endif
+
+
+@if(!empty($events))
+@section('tnew-data')
+    <div class="container">
+        <h3>Special events for this exhibition</h3>
+        <div class="row">
+            @foreach($events as $production)
+                <x-tessitura-production-details-card :production="$production"/>
             @endforeach
         </div>
     </div>

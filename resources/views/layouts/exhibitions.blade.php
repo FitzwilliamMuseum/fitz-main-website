@@ -41,6 +41,7 @@
 <div class="container mt-3">
     @yield('content')
 </div>
+@yield('tnew-data')
 @yield('exhibitions-files')
 @yield('shopify')
 @yield('exhibitionCaseCards')
