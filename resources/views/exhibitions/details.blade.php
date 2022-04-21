@@ -9,6 +9,11 @@
 @php
     $type = match($coll['type']){'exhibition'=>'Exhibition','display'=>'Temporary Display',default=>'Exhibition'}
 @endphp
+@if($coll['slug'] === 'true-to-nature-open-air-painting-in-europe-1780-1870')
+    @if (\Carbon\Carbon::now()->diffInHours('2022-05-03 09:30:00', false) <= 0)
+        @include('includes.structure.true')
+    @endif
+@endif
 @section('content')
 
     @isset($coll['tessitura_string'])
@@ -409,7 +414,7 @@
 
 @if(!empty($events))
 @section('tnew-data')
-    <div class="container">
+    <div class="container pt-3">
         <h3>Special events for this exhibition</h3>
         <div class="row">
             @foreach($events as $production)
@@ -419,3 +424,4 @@
     </div>
 @endsection
 @endif
+
