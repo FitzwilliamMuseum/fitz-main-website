@@ -1097,7 +1097,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     margin-top: 60px;
     background-color: #8695be;
 }
-
+.ttn_top_banner__home {
+    min-height: 40vh;
+    background-color: #8695be;
+}
 
 .hockney__link a {
     text-decoration: none;

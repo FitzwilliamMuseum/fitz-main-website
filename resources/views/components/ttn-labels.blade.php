@@ -28,6 +28,9 @@
                <p class="text-info">
                    {{$labels['artist']['display_name'] ?? 'Anon'}}
                </p>
+                <p class="text-black-50">
+                    {{ $labels['institution'] ?? 'Private collection' }}
+                </p>
             </div>
         </div>
     </div>

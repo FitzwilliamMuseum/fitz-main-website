@@ -20,9 +20,7 @@
     @include('includes.structure.head')
 @endif
 @include('includes.structure.open')
-
-@include('includes.structure.steppe')
-
+@include('includes.structure.ttn-header-home')
 @include('includes.structure.exhibitions')
 
 <div class="container-fluid parallax parallax-home"></div>
