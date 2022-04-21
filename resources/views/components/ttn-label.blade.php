@@ -10,11 +10,8 @@
     <h2 class="py-2">
         {{ $label['display_id_number'] }}: <em>{{ $label['title'] }}</em>
     </h2>
-        @if(isset($label['room_number']))
-        <p>
-            Room: {{$label['room_number']}}  {{ ucfirst($label['display_wall']) }} wall
-        </p>
-        @endif
+
+
     <p>
         {{ $label['artist']['display_name'] }}<br/>
         {{ $label['artist']['place_of_birth']}} {{$label['artist']['year_of_birth']}}
@@ -48,6 +45,10 @@
 
         </p>
     @endif
+        @if(isset($label['theme']))
+            <h3 class="text-info">Section: {{ $label['theme']['theme_name'] }}</h3>
+            <p>This can be found in {{$label['gallery']['gallery_name']}}</p>
+        @endif
 </div>
 @if(!empty($label['lat']))
 @section('map')
@@ -72,3 +73,4 @@
     </div>
 @endsection
 @endif
+

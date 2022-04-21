@@ -1,6 +1,6 @@
 <div class="container mt-3">
   <h3>
-    <a href="{{route('things')}}">Things to do</a>
+    <a href="{{route('podcasts')}}">Podcasts</a>
   </h3>
   <div class="row">
     @foreach($things['data'] as $thing)

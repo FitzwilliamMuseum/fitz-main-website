@@ -25,6 +25,25 @@ class TtnLabels extends Model
     }
 
     /**
+     * @param int $theme
+     * @return array
+     */
+    public static function listByTheme(int $theme): array
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('ttn_labels');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*.*.*',
+                'meta' => '*',
+                'sort' => 'display_id_number',
+                'filter[theme][eq]' => $theme
+            )
+        );
+        return $api->getData();
+    }
+
+    /**
      * @param string $slug
      * @return array
      */
@@ -34,7 +53,7 @@ class TtnLabels extends Model
         $api->setEndpoint('ttn_labels');
         $api->setArguments(
             array(
-                'fields' => '*.*.*.*.*.*',
+                'fields' => '*.*.*.*',
                 'meta' => '*',
                 'filter[slug][eq]' => $slug
             )

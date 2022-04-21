@@ -167,8 +167,20 @@ class exhibitionsController extends Controller
      */
     public function ttnLabels(): View
     {
-        $labels = TtnLabels::list()['data'];
-        return view('exhibitions.ttn-labels', compact('labels'));
+        $one = TtnLabels::listByTheme(1)['data'];
+        $two =  TtnLabels::listByTheme(2)['data'];
+        $three =  TtnLabels::listByTheme(3)['data'];
+        $four =  TtnLabels::listByTheme(4)['data'];
+        $five =  TtnLabels::listByTheme(5)['data'];
+        $six =  TtnLabels::listByTheme(6)['data'];
+        $seven =  TtnLabels::listByTheme(7)['data'];
+        $eight =  TtnLabels::listByTheme(8)['data'];
+        $nine =  TtnLabels::listByTheme(9)['data'];
+        $ten =  TtnLabels::listByTheme(10)['data'];
+        return view('exhibitions.ttn-labels', compact(
+             'one','two', 'three',
+            'four','five', 'six','seven','eight','nine','ten'
+        ));
     }
 
     /**

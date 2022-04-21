@@ -15,6 +15,9 @@
                     Place of Death: {{$artist[0]['place_of_death']}}
                 </p>
             @endif
+            @if($artist[0]['biography_author'])
+                <p>Biography by: {{ $artist[0]['biography_author'] }}</p>
+            @endif
         </div>
     </div>
 </div>
