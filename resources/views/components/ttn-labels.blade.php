@@ -18,7 +18,9 @@
         <div class="card-body h-100">
             <div class="contents-labels mb-3">
                 <h3>
-
+                    @if(isset($labels['display_id_number']))
+                        {{ $labels['display_id_number'] }}:
+                    @endif
                     <a href="{{ route('exhibition.ttn.label', $labels['slug']) }}" class="stretched-link">
                         {{ $labels['title'] }}
                     </a>
