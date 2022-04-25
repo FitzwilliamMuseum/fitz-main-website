@@ -90,7 +90,8 @@ Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/labels/{slug}', 'exhibitionsController@ttnLabel')->name('exhibition.ttn.label');
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/geojson', 'exhibitionsController@ttnGeoJson')->name('exhibition.ttn.geoJson');
 Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/mapped', 'exhibitionsController@ttnMap')->name('exhibition.ttn.mapped');
-Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/test', 'exhibitionsController@ttnSonic')->name('exhibition.ttn.sonic');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/viewpoints', 'exhibitionsController@ttnViewpoints')->name('exhibition.ttn.viewpoints');
+Route::get('visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/viewpoints/{id}', 'exhibitionsController@ttnViewpoint')->name('exhibition.ttn.viewpoint');
 
 
 /*

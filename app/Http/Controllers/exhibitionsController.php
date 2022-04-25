@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shopify;
+use App\MoreLikeThis;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Exhibitions;
@@ -15,8 +16,11 @@ use App\Models\AssociatedPeople;
 use App\Models\Labels;
 use App\Models\TtnBios;
 use App\Models\TtnLabels;
+use App\Models\TtnViewpoints;
 use App\Models\TessituraPerformances;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
+
 use Psr\SimpleCache\InvalidArgumentException;
 
 class exhibitionsController extends Controller
@@ -235,9 +239,32 @@ class exhibitionsController extends Controller
         return response()->json($geoJson);
     }
 
+    /**
+     * @return View
+     */
     public function ttnMap(): View
     {
         return view('exhibitions.ttn-map');
     }
 
+    /**
+     * @return View
+     */
+    public function ttnViewpoints(): View
+    {
+        $viewpoints = TtnViewpoints::list();
+        return view('exhibitions.ttn-viewpoints', compact('viewpoints'));
+    }
+
+    /**
+     * @param string $id
+     * @return View
+     * @throws InvalidArgumentException
+     */
+    public function ttnViewpoint(string $id): View
+    {
+        $viewpoint = TtnViewpoints::find($id)['data'];
+        $records = FindMoreLikeThis::find(Str::slug($viewpoint[0]['title']), 'ttnLabels');
+        return view('exhibitions.ttn-viewpoint', compact('viewpoint', 'records'));
+    }
 }

@@ -761,4 +761,29 @@ class solrimportController extends Controller
             array('title' => 'alt_text', 'content' => 'text', 'image' => 'image')
         );
     }
+
+    /**
+     * @return ResultInterface|Result
+     */
+    public function viewpoints()
+    {
+        $api = $this->getApi();
+        $api->setEndpoint('ttn_viewpoints');
+        $api->setArguments(
+            array(
+                'fields' => 'id,title,viewpoint,associated_artworks..*',
+            )
+        );
+        $data = $api->getData();
+        dd($data);
+        $solr = new SolrImporter();
+        return $solr->import(
+            $data['data'],
+            'ttnViewpoints',
+            'ttn_viewpoints',
+            'exhibition.ttn.viewpoint',
+            array(Str::slug('title')),
+            array('title' => 'title', 'content' => 'viewpoint', 'image' => 'image')
+        );
+    }
 }

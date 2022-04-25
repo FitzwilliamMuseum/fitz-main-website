@@ -9,14 +9,15 @@ class AssociatedPeople extends Model
     /**
      * @return array
      */
-    public static function list(): array
+    public static function list(string $filters = 'podcastGuest'): array
     {
         $api = new DirectUs;
         $api->setEndpoint('associated_people');
         $api->setArguments(
             array(
                 'fields' => '*.*.*.*',
-                'sort' => 'surname'
+                'sort' => 'surname',
+                'filter[association][in]' => $filters
             )
         );
         return $api->getData();
