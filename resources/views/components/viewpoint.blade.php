@@ -27,6 +27,7 @@
             @if(!empty($person['associated_people_id']['associated_institution']))
                 <br/>{{$person['associated_people_id']['associated_institution'][0]['partner_organisations_id']['partner_full_name']}}
             @endisset
+            <br/>
         @endforeach
     </h3>
 </div>
