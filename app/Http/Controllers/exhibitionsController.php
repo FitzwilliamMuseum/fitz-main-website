@@ -264,7 +264,7 @@ class exhibitionsController extends Controller
     public function ttnViewpoint(string $id): View
     {
         $viewpoint = TtnViewpoints::find($id)['data'];
-        $records = FindMoreLikeThis::find(Str::slug($viewpoint[0]['title']), 'ttnLabels');
+        $records = FindMoreLikeThis::find(Str::slug($viewpoint[0]['title']), 'ttnViewpoints');
         return view('exhibitions.ttn-viewpoint', compact('viewpoint', 'records'));
     }
 }

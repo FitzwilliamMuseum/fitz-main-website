@@ -7,15 +7,15 @@
 @section('hero_image', $coll['hero_image']['data']['url'])
 @section('hero_image_title', $coll['hero_image_alt_text'])
 @php
-    $type = match($coll['type']){'exhibition'=>'Exhibition','display'=>'Temporary Display',default=>'Exhibition'}
+    $type = match($coll['type']){ 'display'=>'Temporary Display', default => 'Exhibition'}
 @endphp
 @if($coll['slug'] === 'true-to-nature-open-air-painting-in-europe-1780-1870')
     @if (\Carbon\Carbon::now()->diffInHours('2022-05-03 09:30:00', false) <= 0)
         @include('includes.structure.true')
     @endif
 @endif
-@section('content')
 
+@section('content')
     @isset($coll['tessitura_string'])
         @if(!Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast() && !Carbon\Carbon::parse($coll['exhibition_end_date'])->isPast())
             @include('includes.structure.tessitura')
@@ -60,7 +60,7 @@
     @endif
 
     @if(!empty($cases['data']))
-@section('exhibitionCaseCards')
+    @section('exhibitionCaseCards')
     <div class="container-fluid bg-pastel py-3">
         <div class="container">
             <h3 class="lead text-white">
@@ -80,8 +80,8 @@
             </div>
         </div>
     </div>
-@endsection
-@endif
+    @endsection
+    @endif
 
 @if(!empty($podcasts))
 @section('exhibitionAudio')
@@ -137,8 +137,6 @@
         </div>
     </div>
 @endif
-
-
 
 
 @isset($adlib)

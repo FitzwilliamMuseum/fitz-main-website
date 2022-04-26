@@ -771,18 +771,26 @@ class solrimportController extends Controller
         $api->setEndpoint('ttn_viewpoints');
         $api->setArguments(
             array(
-                'fields' => 'id,title,viewpoint,associated_artworks..*',
+                'fields' => '*.*.*.*'
             )
         );
-        $data = $api->getData();
-        dd($data);
+        $data = $api->getData()['data'];
+        $updateData = array();
+        foreach ($data as $datum) {
+            $updateData[] = array(
+                'title' => $datum['title'],
+                'viewpoint' => $datum['viewpoint'],
+                'id' => $datum['id'],
+                'image' => $datum['associated_artworks'][0]['ttn_labels_id']['image']
+            );
+        }
         $solr = new SolrImporter();
         return $solr->import(
-            $data['data'],
+            $updateData,
             'ttnViewpoints',
             'ttn_viewpoints',
             'exhibition.ttn.viewpoint',
-            array(Str::slug('title')),
+            array('id'),
             array('title' => 'title', 'content' => 'viewpoint', 'image' => 'image')
         );
     }

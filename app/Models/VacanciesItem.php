@@ -15,8 +15,8 @@ class VacanciesItem extends Model implements Feedable
     private string $title;
     private string $id;
     private string $body;
-    private string$authorName;
-    private string$summary;
+    private string $authorName;
+    private string $summary;
     private Carbon $updated_at;
 
     /**
