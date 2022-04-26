@@ -16,7 +16,14 @@
                 </p>
             @endif
             @if($artist[0]['biography_author'])
-                <p>Biography by: {{ $artist[0]['biography_author'] }}</p>
+                <p>
+                    Text written and researched by {{ $artist[0]['biography_author'] }}
+                    @if($artist[0]['biography_author'] === 'Amy Marquis')
+                         Fitzwilliam Museum, University of Cambridge.
+                        @else
+                         National Gallery of Art, Washington DC.
+                    @endif
+                </p>
             @endif
         </div>
     </div>

@@ -13,7 +13,7 @@
 
 
     <p>
-        {{ $label['artist']['display_name'] }}<br/>
+        <a href="{{route('exhibition.ttn.artist',$label['artist']['slug'])}}">{{ $label['artist']['display_name'] }}</a><br/>
         {{ $label['artist']['place_of_birth']}} {{$label['artist']['year_of_birth']}}
         - {{$label['artist']['year_of_death']}} {{ $label['artist']['place_of_death']}}
     </p>
@@ -22,7 +22,7 @@
             {{ $label['accession_number'] }}:
         @endif
         {{ $label['institution'] }}<br/>
-        {{ $label['credit_line'] }}
+        Rights held by: {{ $label['credit_line'] }}
     </p>
     @if(!empty($label['artist']['biography']))
         @markdown($label['artist']['biography'])

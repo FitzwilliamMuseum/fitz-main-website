@@ -317,7 +317,7 @@ window.addEventListener('LaravelMaps:MapInitialized', function (event) {
   L.geoJSON(geojsonFeature).addTo(map);
   map.scrollWheelZoom.disable();
 });
-@elseif(\Route::current()->getName() == 'exhibition.ttn.label')
+@elseif(in_array(\Route::current()->getName(), array('exhibition.ttn.label','exhibition.ttn.artist') ))
 window.addEventListener('LaravelMaps:MapInitialized', function (event) {
     const map = event.detail.map;
 
