@@ -68,6 +68,11 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\solrimportController@longform')->weekly();
         # Spoliation
         $schedule->call('App\Http\Controllers\solrimportController@spoliation')->daily();
+        # True to nature
+        $schedule->call('App\Http\Controllers\solrimportController@ttnLabels')->weekly();
+        $schedule->call('App\Http\Controllers\solrimportController@ttnArtists')->weekly();
+        $schedule->call('App\Http\Controllers\solrimportController@viewpoints')->weekly();
+
 
     }
 

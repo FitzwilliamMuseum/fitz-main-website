@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\SolrImporter;
 use Config;
 use Illuminate\Support\Str;
+use PHPShopify\Exception\ApiException;
+use PHPShopify\Exception\CurlException;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
 use Solarium\Core\Query\Result\ResultInterface;
@@ -116,7 +118,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function researchprojects()
+    public function researchprojects(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('research_projects');
@@ -141,7 +143,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function galleries()
+    public function galleries(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('galleries');
@@ -166,7 +168,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function collections()
+    public function collections(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('collections');
@@ -191,7 +193,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function lookthinkdo()
+    public function lookthinkdo(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('look_think_do');
@@ -216,7 +218,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function highlights()
+    public function highlights(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('pharos');
@@ -241,7 +243,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function pressroom()
+    public function pressroom(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('pressroom_files');
@@ -271,7 +273,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function departments()
+    public function departments(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('departments');
@@ -296,7 +298,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function vacancies()
+    public function vacancies(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('vacancies');
@@ -320,7 +322,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function directors()
+    public function directors(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('directors');
@@ -345,7 +347,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function pharospages()
+    public function pharospages(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('pharos_pages');
@@ -370,7 +372,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function floor()
+    public function floor(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('floorplans_guides');
@@ -399,7 +401,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function governance()
+    public function governance(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('governance_files');
@@ -428,7 +430,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function learningfiles()
+    public function learningfiles(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('learning_files');
@@ -457,7 +459,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function exhibitions()
+    public function exhibitions(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('exhibitions');
@@ -482,7 +484,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function audio()
+    public function audio(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('audio_guide');
@@ -507,7 +509,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function sessions()
+    public function sessions(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('school_sessions');
@@ -533,7 +535,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function shopifyRefresh()
+    public function shopifyRefresh(): Result|ResultInterface
     {
         $configSolr = Config::get('solarium');
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
@@ -546,7 +548,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function sessionsRefresh()
+    public function sessionsRefresh(): Result|ResultInterface
     {
         $configSolr = Config::get('solarium');
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
@@ -558,10 +560,10 @@ class solrimportController extends Controller
 
     /**
      * @return ResultInterface|Result
-     * @throws \PHPShopify\Exception\ApiException
-     * @throws \PHPShopify\Exception\CurlException
+     * @throws ApiException
+     * @throws CurlException
      */
-    public function shopify()
+    public function shopify(): Result|ResultInterface
     {
         $solr = new SolrImporter();
         return $solr->shopify();
@@ -570,7 +572,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function podcasts()
+    public function podcasts(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('podcast_archive');
@@ -595,7 +597,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function podcastseries()
+    public function podcastseries(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('podcast_series');
@@ -620,7 +622,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function mindseye()
+    public function mindseye(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('mindseye');
@@ -646,7 +648,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function resources()
+    public function resources(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('online_resources');
@@ -668,7 +670,10 @@ class solrimportController extends Controller
         );
     }
 
-    public function ttnArtists()
+    /**
+     * @return ResultInterface|Result
+     */
+    public function ttnArtists(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('ttn_artists');
@@ -690,7 +695,10 @@ class solrimportController extends Controller
         );
     }
 
-    public function ttnLabels()
+    /**
+     * @return ResultInterface|Result
+     */
+    public function ttnLabels(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('ttn_labels');
@@ -715,7 +723,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function longform()
+    public function longform(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('long_form');
@@ -740,7 +748,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function spoliation()
+    public function spoliation(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('spoliation_claims');
@@ -765,7 +773,7 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function viewpoints()
+    public function viewpoints(): Result|ResultInterface
     {
         $api = $this->getApi();
         $api->setEndpoint('ttn_viewpoints');
