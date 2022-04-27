@@ -6,7 +6,7 @@
                     <h2 class="display-4">
                         <span class="text-white">Free to visit</span>
                     </h2>
-                    <a class="btn btn-info btn-large"
+                    <a class="btn btn-info btn-large text-white"
                        href="https://tickets.museums.cam.ac.uk/overview/generaladmission">Book your ticket in
                         advance</a>
                     <h3 class="text-white mt-3">Booking and ticketing assistance</h3>
