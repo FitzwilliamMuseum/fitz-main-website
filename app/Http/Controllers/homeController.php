@@ -27,7 +27,7 @@ class homeController extends Controller
         $settings = HomePage::find();
         $carousel = Carousels::findBySection('home');
         $galleries = Galleries::list(3, '?');
-        $exhibitions = Exhibitions::listHome('current', '-ticketed', 3);
+        $exhibitions = Exhibitions::listHome('current', 'tessitura_string', 3);
         $news = NewsArticles::feature();
         $research = ResearchProjects::list('?', 3);
         $fundraising = FundRaising::list(4);
