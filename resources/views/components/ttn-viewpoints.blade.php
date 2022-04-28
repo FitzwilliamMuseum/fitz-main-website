@@ -26,9 +26,14 @@
                     </a>
                 </h3>
                 <p class="text-info">
-{{--                    @dd($viewpoint)--}}
                     @foreach($viewpoint['associated_people'] as $person)
                     {{$person['associated_people_id']['display_name'] ?? 'Anon'}}<br/>
+                        @isset($person['associated_people_id']['associated_role'])
+                            <span class="text-black-50">{{$person['associated_people_id']['associated_role']}}</span>
+                        @endisset
+                        @if(end($viewpoint['associated_people']))
+                            <br/>
+                        @endif
                     @endforeach
                 </p>
 

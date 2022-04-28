@@ -7,7 +7,7 @@
 @if(!empty($records))
 @section('mlt')
     <div class="container">
-        <h3>Paintings that may interest you based on this viewpoint</h3>
+        <h3>Discover other viewpoints related to this</h3>
         <div class="row">
             @foreach($records as $record)
                 <x-solr-card :result="$record"/>
