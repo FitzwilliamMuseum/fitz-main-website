@@ -10,7 +10,7 @@
     $type = match($coll['type']){ 'display'=>'Temporary Display', default => 'Exhibition'}
 @endphp
 @if($coll['slug'] === 'true-to-nature-open-air-painting-in-europe-1780-1870')
-    @if (\Carbon\Carbon::now()->diffInHours('2022-05-03 09:30:00', false) <= 0)
+    @if (\Carbon\Carbon::now()->diffInHours('2022-04-29 00:00:01', false) <= 0)
         @include('includes.structure.true')
     @endif
 @endif
