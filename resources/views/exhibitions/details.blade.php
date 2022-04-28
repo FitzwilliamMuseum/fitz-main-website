@@ -202,12 +202,9 @@
                     />
                 @endforeach
                 @foreach($coll['external_curators'] as $curator)
-                    <x-image-card
-                        :altTag="$curator['associated_people_id']['display_name']"
-                        :title="$curator['associated_people_id']['display_name']"
-                        :image="$curator['associated_people_id']['profile_image']"
-                        :route="'exhibition-externals'"
-                        :params="[$curator['associated_people_id']['slug']]"></x-image-card>
+                        <x-associated-curator
+                            :curator="$curator"
+                        />
                 @endforeach
             </div>
         </div>
