@@ -13,6 +13,7 @@
 .btn-info {
     background-color: #0f7290 !important;
     border-color: #0f7290 !important;
+    color: white;
 }
 
 .text-info {
@@ -984,7 +985,6 @@ ul.text-center.conversation-footer {
 }
 
 .panel-heading a:before {
-    font-family: 'Font Awesome 5 Free';
     content: "\f078";
     float: right;
     transition: all 0.9s;
@@ -1113,19 +1113,13 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .hockney__link {
-    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg');
     min-height: 400px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg') no-repeat center;
     background-size: contain;
 }
 .ttn__link {
-    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/ttn_right_panel.jpg');
     min-height: 400px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/ttn_right_panel.jpg') no-repeat center;
     background-size: contain;
 }
 
