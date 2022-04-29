@@ -1,5 +1,18 @@
 # Change log
 
+## 29.04.2022
+
+1. Migrated Bootstrap version
+2. Fix all breaking changes
+3. Remove docs folder 
+
+## 28.04.2022 
+
+1. Added curators and external curators to exhibition pages
+2. Change order for exhibitions on homepage
+3. Implemented better minification of css/js
+4. Upgraded webpack 
+5. 
 ## 21.04.2022
 
 1. Added True to Nature banner to homepage (this will need removal at end of the exhibition)
