@@ -1,9 +1,6 @@
 <div class="container-fluid bg-grey py-3">
     <div class="container mb-3">
-        <h3 class="mt-3">Getting here
-
-
-
+        <h3 class="mt-3">Getting here</h3>
         <div class="accordion mt-2" id="accordionDirections">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -11,7 +8,6 @@
                         {{ $directions['data']['0']['method']}}
                     </button>
                 </div>
-
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                      data-parent="#accordionDirections">
                     <div class="card-body">
