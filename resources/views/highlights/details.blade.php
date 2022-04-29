@@ -58,8 +58,8 @@
     @if(!empty($record['youtube_id']))
         <div class="container">
             <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" title="A video from YouTube related to {{ $record['title'] }}"
+                <div class="ratio ratio-16x9">
+                    <iframe title="A video from YouTube related to {{ $record['title'] }}"
                             src="https://www.youtube.com/embed/{{$record['youtube_id']}}"
                             allowfullscreen></iframe>
                 </div>

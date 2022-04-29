@@ -1,7 +1,7 @@
 <!-- Breadcrumb done by @sina-rzp -->
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb p-3">
         <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('home') }}">Home</a></li>
         @php
             $bread = URL::to('/');
