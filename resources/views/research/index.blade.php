@@ -29,7 +29,7 @@
           <div class="card-body h-100">
             <h3>
               <a href="{{route('research-profiles')}}" class="stretched-link">
-                Our active researchers
+                Our researchers
               </a>
             </h3>
           </div>
