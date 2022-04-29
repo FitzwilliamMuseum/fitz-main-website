@@ -12,7 +12,7 @@
 2. Change order for exhibitions on homepage
 3. Implemented better minification of css/js
 4. Upgraded webpack 
-5. 
+
 ## 21.04.2022
 
 1. Added True to Nature banner to homepage (this will need removal at end of the exhibition)
