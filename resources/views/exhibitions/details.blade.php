@@ -105,8 +105,8 @@
         {{ $type }} films
     </h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
+        <div class="ratio ratio-16x9">
+            <iframe title="A film related to {{ $coll['exhibition_title'] }}"
                     loading="lazy"
                     src="https://www.youtube.com/embed/{{$coll['youtube_id']}}"
                     allowfullscreen></iframe>
@@ -116,8 +116,8 @@
 
 @if(isset($coll['youtube_secondary_id']) && $coll['youtube_secondary_id']!= '' )
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
+        <div class="ratio ratio-16x9">
+            <iframe title="A film related to {{ $coll['exhibition_title'] }}"
                     loading="lazy"
                     src="https://www.youtube.com/embed/{{$coll['youtube_secondary_id']}}" frameborder="0"
                     allowfullscreen></iframe>
@@ -130,8 +130,8 @@
         {{ $type }} films - a playlist
     </h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" title="A YouTube video playlist from the Fitzwilliam Museum"
+        <div class="ratio ratio-16x9">
+            <iframe title="A YouTube video playlist from the Fitzwilliam Museum"
                     src="https://www.youtube.com/embed/videoseries?list={{$coll['youtube_playlist_id']}}"
                     allowfullscreen></iframe>
         </div>
@@ -371,8 +371,8 @@
         <div class="container">
             <h4 class="lead">3d model of this display or exhibition</h4>
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-                <div class="embed-responsive embed-responsive-4by3">
-                    <iframe title="A 3D  model related to this exhibition" class="embed-responsive-item"
+                <div class="ratio ratio-4x3">
+                    <iframe title="A 3D  model related to this exhibition"
                             src="https://sketchfab.com/models/{{ $coll['sketchfab_id']}}/embed?"
                             allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
                             webkitallowfullscreen="true"></iframe>

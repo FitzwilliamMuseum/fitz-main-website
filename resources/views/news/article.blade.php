@@ -29,8 +29,8 @@
 
   @if($project['youtube_id'])
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" title="A YouTube video related to this story"
+    <div class="ratio ratio-16x9">
+      <iframe title="A YouTube video related to this story"
       src="https://www.youtube.com/embed/{{$project['youtube_id']}}"
       allowfullscreen></iframe>
     </div>
@@ -40,8 +40,8 @@
 
   @if($project['vimeo_id'])
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" title="A Vimeo Video related to this story"
+    <div class="ratio ratio-16x9">
+      <iframe title="A Vimeo Video related to this story"
       src="https://player.vimeo.com/video/{{$project['vimeo_id']}}"
       allowfullscreen></iframe>
     </div>
