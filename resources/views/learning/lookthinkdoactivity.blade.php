@@ -59,8 +59,8 @@
 
                 {!! $look['look_text'] !!}
                 @if(isset($look['look_answers']))
-                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                            data-target="#lookanswers">Answers
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#lookanswers">Answers
                     </button>
                 @endif
             </div>
@@ -71,8 +71,8 @@
 
                 {!! $look['think_text'] !!}
                 @if(isset($look['think_answers']))
-                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                            data-target="#thinkanswers">Answers
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#thinkanswers">Answers
                     </button>
                 @endif
             </div>
@@ -83,8 +83,8 @@
 
                 {!! $look['do_text'] !!}
                 @if(isset($look['do_answers']))
-                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                            data-target="#doanswers">Answers
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#doanswers">Answers
                     </button>
                 @endif
             </div>
