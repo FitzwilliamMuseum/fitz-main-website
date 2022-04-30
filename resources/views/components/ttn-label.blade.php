@@ -27,6 +27,16 @@
     @if(!empty($label['artist']['biography']))
         @markdown($label['artist']['biography'])
     @endif
+        @if($label['artist']['biography_author'])
+            <p>
+                Text written and researched by {{ $label['artist']['biography_author'] }}
+                @if($label['artist']['biography_author'] === 'Amy Marquis')
+                    Fitzwilliam Museum, University of Cambridge.
+                @else
+                    National Gallery of Art, Washington DC.
+                @endif
+            </p>
+        @endif
     <p>
         {{ $label['media'] }}<br/>
         {{ $label['dimensions'] }}
