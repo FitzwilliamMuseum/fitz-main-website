@@ -29,6 +29,26 @@ class TtnBios extends Model
      * @param string $slug
      * @return array
      */
+    public static function listFiltered(string $field): array
+    {
+        $filter = 'filter[' . $field . '][nnull]';
+        $api = new DirectUs;
+        $api->setEndpoint('ttn_artists');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*.*.*',
+                'meta' => '*',
+                'sort' => 'year_of_birth',
+                $filter => '',
+            )
+        );
+        return $api->getData();
+    }
+
+    /**
+     * @param string $slug
+     * @return array
+     */
     public static function find(string $slug): array
     {
         $api = new DirectUs;
