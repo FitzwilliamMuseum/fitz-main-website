@@ -105,8 +105,8 @@
         {{ $type }} films
     </h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
+        <div class="ratio ratio-16x9">
+            <iframe title="A film related to {{ $coll['exhibition_title'] }}"
                     loading="lazy"
                     src="https://www.youtube.com/embed/{{$coll['youtube_id']}}"
                     allowfullscreen></iframe>
@@ -116,8 +116,8 @@
 
 @if(isset($coll['youtube_secondary_id']) && $coll['youtube_secondary_id']!= '' )
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" title="A film related to {{ $coll['exhibition_title'] }}"
+        <div class="ratio ratio-16x9">
+            <iframe title="A film related to {{ $coll['exhibition_title'] }}"
                     loading="lazy"
                     src="https://www.youtube.com/embed/{{$coll['youtube_secondary_id']}}" frameborder="0"
                     allowfullscreen></iframe>
@@ -130,8 +130,8 @@
         {{ $type }} films - a playlist
     </h3>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" title="A YouTube video playlist from the Fitzwilliam Museum"
+        <div class="ratio ratio-16x9">
+            <iframe title="A YouTube video playlist from the Fitzwilliam Museum"
                     src="https://www.youtube.com/embed/videoseries?list={{$coll['youtube_playlist_id']}}"
                     allowfullscreen></iframe>
         </div>
@@ -258,13 +258,13 @@
     <div class="container-fluid bg-white py-2">
         <div class="container">
             <div class="bd-example mb-3">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="10000">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="10000">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class=""></li>
+                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class=""></li>
                         @if(array_key_exists('image_four_alt_text',$coll['exhibition_carousel'][0]['carousels_id']))
-                            <li data-target="#carouselExampleCaptions" data-slide-to="3" class=""></li>
+                            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" class=""></li>
                         @endif
                     </ol>
                     <div class="carousel-inner">
@@ -303,11 +303,11 @@
                             </div>
                         @endif
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -371,8 +371,8 @@
         <div class="container">
             <h4 class="lead">3d model of this display or exhibition</h4>
             <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-                <div class="embed-responsive embed-responsive-4by3">
-                    <iframe title="A 3D  model related to this exhibition" class="embed-responsive-item"
+                <div class="ratio ratio-4x3">
+                    <iframe title="A 3D  model related to this exhibition"
                             src="https://sketchfab.com/models/{{ $coll['sketchfab_id']}}/embed?"
                             allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
                             webkitallowfullscreen="true"></iframe>

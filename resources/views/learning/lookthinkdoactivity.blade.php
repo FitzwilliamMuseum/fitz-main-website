@@ -59,8 +59,8 @@
 
                 {!! $look['look_text'] !!}
                 @if(isset($look['look_answers']))
-                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                            data-target="#lookanswers">Answers
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#lookanswers">Answers
                     </button>
                 @endif
             </div>
@@ -71,8 +71,8 @@
 
                 {!! $look['think_text'] !!}
                 @if(isset($look['think_answers']))
-                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                            data-target="#thinkanswers">Answers
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#thinkanswers">Answers
                     </button>
                 @endif
             </div>
@@ -83,8 +83,8 @@
 
                 {!! $look['do_text'] !!}
                 @if(isset($look['do_answers']))
-                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                            data-target="#doanswers">Answers
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                            data-bs-target="#doanswers">Answers
                     </button>
                 @endif
             </div>
@@ -157,8 +157,8 @@
 
     @if($look['youtube_id'])
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" title="A YouTube video related to {{ $look['title_of_work'] }}"
+            <div class="ratio ratio-16x9">
+                <iframe title="A YouTube video related to {{ $look['title_of_work'] }}"
                         src="https://www.youtube.com/embed/{{ $look['youtube_id'] }}"
                         allowfullscreen></iframe>
             </div>
@@ -167,8 +167,8 @@
 
     @if($look['vimeo_id'])
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" title="A Vimeo video related to {{ $look['title_of_work'] }}"
+            <div class="ratio ratio-16x9">
+                <iframe title="A Vimeo video related to {{ $look['title_of_work'] }}"
                         src="https://player.vimeo.com/video/{{$look['vimeo_id']}}"
                         allowfullscreen></iframe>
             </div>
