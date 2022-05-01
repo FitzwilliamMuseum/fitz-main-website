@@ -242,7 +242,7 @@ class exhibitionsController extends Controller
 
     public function linkedPasts()
     {
-        $labels = TtnLabels::list()['data'];
+        $labels = TtnLabels::listFiltered('lat')['data'];
         $geoJson = array(
             "@id" => "https://fitz.ms/ttnlabels",
             "type" => "FeatureCollection",
@@ -278,7 +278,13 @@ class exhibitionsController extends Controller
                     'title' => $label['title'],
                     'artist' => $label['artist']['display_name'] ?? 'Not known',
                     'slug' => $label['slug'],
-                    'image' => $label ['image']['data']['thumbnails'][7]['url']
+                ),
+                'depictions' => array(
+                    array(
+                    'license' => 'cc:by-sa/3.0/',
+                    'thumbnail' => $label ['image']['data']['url'],
+                    '@id' => $label ['image']['data']['url']
+                    )
                 ),
                 'geometry' => array(
                     "type" =>  "Point",
@@ -294,6 +300,126 @@ class exhibitionsController extends Controller
         return response()->json($geoJson);
     }
 
+
+    public function linkedPastsBirths()
+    {
+        $labels = TtnBios::listFiltered('birth_lat')['data'];
+        $geoJson = array(
+            "@id" => "https://fitz.ms/ttnBirths",
+            "type" => "FeatureCollection",
+            "@context" => "https://fitzmuseum.cam.ac.uk/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/geojson.ld",
+            'features' => array(),
+            'indexing' => array(
+                "@context" => "https://schema.org/",
+                "@type" => "Dataset",
+                "name" => "True to Nature",
+                "description" => "True to Nature labels",
+                "creator" => array(
+                    "@type" => "Person",
+                    "name" => "Daniel Pett",
+                    "url" => "https://orcid.org/0000-0002-0246-2335"
+                ),
+                "license" => "https://creativecommons.org/licenses/by/4.0/",
+                "identifier" => "https://fitz.ms/ttnlabels",
+                "temporalCoverage" => "1780/1870",
+                'spatialCoverage' => array(
+                    "@type" => "Place",
+                    "geoCoveredBy" => array(
+                        "@type" => "DefinedRegion",
+                        "addressCountry" => "GB"
+                    )
+                )
+            )
+        );
+        foreach ($labels as $label) {
+            $feature = array(
+                "type" => "Feature",
+                "@id" =>  route('exhibition.ttn.artist', $label['slug']),
+                'properties' => array(
+                    'title' => $label['display_name'] ?? 'Not known',
+                    'slug' => $label['slug'],
+                ),
+                'depictions' => array(
+                        array(
+
+                        'license' => 'cc:by-sa/3.0/',
+                        'thumbnail' => $label['image']['data']['thumbnails'][7]['url'] ?? '',
+                        '@id' => $label ['image']['data']['thumbnails'][7]['url'] ?? ''
+                    ),
+                ),
+                'geometry' => array(
+                    "type" =>  "Point",
+                    "coordinates" => array(
+                        $label['birth_lon'], $label['birth_lat']
+                    ),
+                    "certainty" => "certain"
+                )
+
+            );
+            $geoJson['features'][] = $feature;
+        }
+        return response()->json($geoJson);
+    }
+
+    public function linkedPastsDeaths()
+    {
+        $labels = TtnBios::listFiltered('death_lon')['data'];
+        $geoJson = array(
+            "@id" => "https://fitz.ms/ttnBirths",
+            "type" => "FeatureCollection",
+            "@context" => "https://fitzmuseum.cam.ac.uk/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/geojson.ld",
+            'features' => array(),
+            'indexing' => array(
+                "@context" => "https://schema.org/",
+                "@type" => "Dataset",
+                "name" => "True to Nature",
+                "description" => "True to Nature labels",
+                "creator" => array(
+                    "@type" => "Person",
+                    "name" => "Daniel Pett",
+                    "url" => "https://orcid.org/0000-0002-0246-2335"
+                ),
+                "license" => "https://creativecommons.org/licenses/by/4.0/",
+                "identifier" => "https://fitz.ms/ttnlabels",
+                "temporalCoverage" => "1780/1870",
+                'spatialCoverage' => array(
+                    "@type" => "Place",
+                    "geoCoveredBy" => array(
+                        "@type" => "DefinedRegion",
+                        "addressCountry" => "GB"
+                    )
+                )
+            )
+        );
+        foreach ($labels as $label) {
+            $feature = array(
+                "type" => "Feature",
+                "@id" =>  route('exhibition.ttn.artist', $label['slug']),
+                'properties' => array(
+                    'title' => $label['display_name'] ?? 'Not known',
+                    'slug' => $label['slug'],
+                ),
+                'depictions' => array(
+                    array(
+
+                        'license' => 'cc:by-sa/3.0/',
+                        'thumbnail' => $label['image']['data']['thumbnails'][7]['url'] ?? '',
+                        '@id' => $label ['image']['data']['thumbnails'][7]['url'] ?? ''
+                    ),
+                ),
+                'geometry' => array(
+                    "type" =>  "Point",
+                    "coordinates" => array(
+                        $label['death_lon'], $label['death_lat']
+                    ),
+                    "certainty" => "certain"
+                )
+
+            );
+            $geoJson['features'][] = $feature;
+        }
+        return response()->json($geoJson);
+    }
     /**
      * @return View
      */
@@ -321,5 +447,13 @@ class exhibitionsController extends Controller
         $viewpoint = TtnViewpoints::find($id)['data'];
         $records = FindMoreLikeThis::find(Str::slug($viewpoint[0]['title']), 'ttnViewpoints');
         return view('exhibitions.ttn-viewpoint', compact('viewpoint', 'records'));
+    }
+
+    /**
+     * @return View
+     */
+    public function peripleo(): View
+    {
+        return view('exhibitions.peripleo');
     }
 }

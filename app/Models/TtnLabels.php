@@ -24,6 +24,20 @@ class TtnLabels extends Model
         return $api->getData();
     }
 
+    public static function listFiltered(string $field): array
+    {
+        $filter = 'filter[' . $field . '][nnull]';
+        $api = new DirectUs;
+        $api->setEndpoint('ttn_labels');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*.*.*',
+                'meta' => '*',
+                $filter => '',
+            )
+        );
+        return $api->getData();
+    }
     /**
      * @param int $theme
      * @return array
