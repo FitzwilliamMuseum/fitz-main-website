@@ -273,7 +273,7 @@ class exhibitionsController extends Controller
         foreach ($labels as $label) {
             $feature = array(
                 "type" => "Feature",
-                "@id" =>  route('exhibition.ttn.label', $label['id']),
+                "@id" =>  route('exhibition.ttn.label', $label['slug']),
                 'properties' => array(
                     'title' => $label['title'],
                     'artist' => $label['artist']['display_name'] ?? 'Not known',
