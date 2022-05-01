@@ -59,12 +59,12 @@
             <div class="wrapper center-block">
                 <div class="panel panel-default">
                     <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
-                        <h3 class="panel-title">
+                        <span class="panel-title ">
                             <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne"
                                aria-expanded="true" aria-controls="collapseOne">
                                 <h3>Publications</h3>
                             </a>
-                        </h3>
+                        </span>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3"
                          role="tabpanel" aria-labelledby="headingOne">
@@ -77,12 +77,12 @@
                 @isset($profile['professional_memberships'])
                     <div class="panel panel-default">
                         <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
-                            <h3 class="panel-title">
+                            <span class="panel-title">
                                 <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseTwo"
                                    aria-expanded="true" aria-controls="collapseOne">
                                     <h3>Professional Memberships</h3>
                                 </a>
-                            </h3>
+                            </span>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3"
                              role="tabpanel" aria-labelledby="headingTwo">
@@ -95,12 +95,12 @@
                 @isset($profile['college_affiliated'])
                     <div class="panel panel-default">
                         <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
-                            <h3 class="panel-title">
+                            <span class="panel-title">
                                 <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseThree"
                                    aria-expanded="true" aria-controls="collapseOne">
                                     <h3>Affiliations</h3>
                                 </a>
-                            </h3>
+                            </span>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3"
                              role="tabpanel" aria-labelledby="headingThree">
@@ -119,12 +119,12 @@
                     @if(null !== ($profile['orcid']) || null !== ($profile['githubid']) || null !== ($profile['google_scholar_id']) || null !== ($profile['twitter_handle']) )
                         <div class="panel panel-default">
                             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
-                                <h3 class="panel-title">
+                                <span class="panel-title">
                                     <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
                                        href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                         <h3>Research and social profiles</h3>
                                     </a>
-                                </h3>
+                                </span>
                             </div>
                             <div id="collapseFour"
                                  class="panel-collapse collapse in col-md-12 shadow-sm p-3 mx-auto mb-3" role="tabpanel"
