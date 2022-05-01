@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shopify;
-use App\MoreLikeThis;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Exhibitions;
@@ -47,11 +46,11 @@ class exhibitionsController extends Controller
      */
     public function index(): View
     {
-        $pages = Stubs::getLanding('exhibitions');
-        $current = Exhibitions::list();
+        $pages    = Stubs::getLanding('exhibitions');
+        $current  = Exhibitions::list();
         $displays = Exhibitions::list('current', '-ticketed', 'display');
-        $future = Exhibitions::listFuture();
-        $archive = Exhibitions::archive('archived', '-exhibition_end_date', 3);
+        $future   = Exhibitions::listFuture();
+        $archive  = Exhibitions::archive('archived', '-exhibition_end_date', 3);
         return view('exhibitions.index', compact(
             'current', 'pages', 'archive',
             'future', 'displays'

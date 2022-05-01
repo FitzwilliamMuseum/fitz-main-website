@@ -60,7 +60,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
                         <h3 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                            <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne"
                                aria-expanded="true" aria-controls="collapseOne">
                                 <h3>Publications</h3>
                             </a>
@@ -78,7 +78,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
                             <h3 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseTwo"
                                    aria-expanded="true" aria-controls="collapseOne">
                                     <h3>Professional Memberships</h3>
                                 </a>
@@ -96,7 +96,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
                             <h3 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseThree"
                                    aria-expanded="true" aria-controls="collapseOne">
                                     <h3>Affiliations</h3>
                                 </a>
@@ -120,7 +120,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
                                 <h3 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
                                        href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                         <h3>Research and social profiles</h3>
                                     </a>
@@ -131,7 +131,6 @@
                                  aria-labelledby="headingFour">
                                 <div class="panel-body">
                                     <ul>
-
                                         @if(isset($profile['orcid']))
                                             <li>
                                                 <a href="https://orcid.org/{{$profile['orcid']}}">ORCID</a>
