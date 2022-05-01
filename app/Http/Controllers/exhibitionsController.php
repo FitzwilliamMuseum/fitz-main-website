@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Shopify;
 use App\MoreLikeThis;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Exhibitions;
 use App\Models\Stubs;
@@ -169,7 +170,7 @@ class exhibitionsController extends Controller
         $artists = TtnBios::find($slug)['data'];
         $works = TtnLabels::byArtist($artists[0]['id'])['data'];
         $records = FindMoreLikeThis::find($slug, 'ttnArtists');
-        return view('exhibitions.ttn-artist', compact('artists', 'works','records'));
+        return view('exhibitions.ttn-artist', compact('artists', 'works', 'records'));
     }
 
     /**
@@ -178,18 +179,18 @@ class exhibitionsController extends Controller
     public function ttnLabels(): View
     {
         $one = TtnLabels::listByTheme(1)['data'];
-        $two =  TtnLabels::listByTheme(2)['data'];
-        $three =  TtnLabels::listByTheme(3)['data'];
-        $four =  TtnLabels::listByTheme(4)['data'];
-        $five =  TtnLabels::listByTheme(5)['data'];
-        $six =  TtnLabels::listByTheme(6)['data'];
-        $seven =  TtnLabels::listByTheme(7)['data'];
-        $eight =  TtnLabels::listByTheme(8)['data'];
-        $nine =  TtnLabels::listByTheme(9)['data'];
-        $ten =  TtnLabels::listByTheme(10)['data'];
+        $two = TtnLabels::listByTheme(2)['data'];
+        $three = TtnLabels::listByTheme(3)['data'];
+        $four = TtnLabels::listByTheme(4)['data'];
+        $five = TtnLabels::listByTheme(5)['data'];
+        $six = TtnLabels::listByTheme(6)['data'];
+        $seven = TtnLabels::listByTheme(7)['data'];
+        $eight = TtnLabels::listByTheme(8)['data'];
+        $nine = TtnLabels::listByTheme(9)['data'];
+        $ten = TtnLabels::listByTheme(10)['data'];
         return view('exhibitions.ttn-labels', compact(
-             'one','two', 'three',
-            'four','five', 'six','seven','eight','nine','ten'
+            'one', 'two', 'three',
+            'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'
         ));
     }
 
@@ -205,7 +206,7 @@ class exhibitionsController extends Controller
     }
 
     /**
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function ttnGeoJson()
     {
@@ -235,6 +236,60 @@ class exhibitionsController extends Controller
                 );
                 $geoJson['features'][] = $feature;
             }
+        }
+        return response()->json($geoJson);
+    }
+
+    public function linkedPasts()
+    {
+        $labels = TtnLabels::list()['data'];
+        $geoJson = array(
+            "@id" => "https://fitz.ms/ttnlabels",
+            "type" => "FeatureCollection",
+            "@context" => "https://fitzmuseum.cam.ac.uk/visit-us/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/geojson.ld",
+            'features' => array(),
+            'indexing' => array(
+                "@context" => "https://schema.org/",
+                "@type" => "Dataset",
+                "name" => "True to Nature",
+                "description" => "True to Nature labels",
+                "creator" => array(
+                    "@type" => "Person",
+                    "name" => "Daniel Pett",
+                    "url" => "https://orcid.org/0000-0002-0246-2335"
+                ),
+                "license" => "https://creativecommons.org/licenses/by/4.0/",
+                "identifier" => "https://fitz.ms/ttnlabels",
+                "temporalCoverage" => "1780/1870",
+                'spatialCoverage' => array(
+                    "@type" => "Place",
+                    "geoCoveredBy" => array(
+                        "@type" => "DefinedRegion",
+                        "addressCountry" => "GB"
+                    )
+                )
+            )
+        );
+        foreach ($labels as $label) {
+            $feature = array(
+                "type" => "Feature",
+                "@id" =>  route('exhibition.ttn.label', $label['id']),
+                'properties' => array(
+                    'title' => $label['title'],
+                    'artist' => $label['artist']['display_name'] ?? 'Not known',
+                    'slug' => $label['slug'],
+                    'image' => $label ['image']['data']['thumbnails'][7]['url']
+                ),
+                'geometry' => array(
+                    "type" =>  "Point",
+                    "coordinates" => array(
+                        $label['lng'], $label['lat']
+                    ),
+                    "certainty" => "certain"
+                )
+
+            );
+            $geoJson['features'][] = $feature;
         }
         return response()->json($geoJson);
     }
