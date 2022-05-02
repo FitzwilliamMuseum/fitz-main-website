@@ -991,6 +991,11 @@ ul.text-center.conversation-footer {
     float: right;
     transition: all 0.9s;
 }
+.panel-heading.active a:before {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
 
 li.nav-item.active {
     border-bottom: solid 5px #fff !important;

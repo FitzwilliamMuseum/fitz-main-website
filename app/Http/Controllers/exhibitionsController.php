@@ -424,7 +424,7 @@ class exhibitionsController extends Controller
      */
     public function ttnMap(): View
     {
-        return view('exhibitions.ttn-map');
+        return view('exhibitions.peripleo-ttn');
     }
 
     /**
