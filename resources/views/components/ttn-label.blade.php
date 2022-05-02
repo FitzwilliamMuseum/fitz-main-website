@@ -13,9 +13,9 @@
     <h2 class="py-2">
         {{ $label['display_id_number'] }}: <em>{{ $label['title'] }}</em>
     </h2>
-        @if(!empty($label['manifest_url']))
-            <a href="{{ route('exhibition.ttn.iiif', [$label['slug']]) }}" class="btn btn-dark my-3 p-2">View deep zooming image</a>
-        @endif
+{{--        @if(!empty($label['manifest_url']))--}}
+{{--            <a href="{{ route('exhibition.ttn.iiif', [$label['slug']]) }}" class="btn btn-dark my-3 p-2">View deep zooming image</a>--}}
+{{--        @endif--}}
 
     <p>
         <a href="{{route('exhibition.ttn.artist',$label['artist']['slug'])}}">{{ $label['artist']['display_name'] }}</a><br/>
