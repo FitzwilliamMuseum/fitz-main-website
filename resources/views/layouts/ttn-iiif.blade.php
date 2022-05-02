@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>True to Nature - Peripleo map</title>
+    <title>@yield('title')</title>
     <style type="text/css">
         html {
             overflow: auto;

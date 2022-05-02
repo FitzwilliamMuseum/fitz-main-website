@@ -196,12 +196,23 @@ class exhibitionsController extends Controller
     /**
      * @param string $slug
      * @return View
+     * @throws InvalidArgumentException
      */
     public function ttnLabel(string $slug): View
     {
         $label = TtnLabels::find($slug)['data'];
         $records = FindMoreLikeThis::find($slug, 'ttnLabels');
         return view('exhibitions.ttn-label', compact('label', 'records'));
+    }
+
+    /**
+     * @param string $slug
+     * @return View
+     */
+    public function ttniif(string $slug): View
+    {
+        $label = TtnLabels::find($slug)['data'];
+        return view('exhibitions.ttn-iiif', compact('label'));
     }
 
     /**
