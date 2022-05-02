@@ -985,7 +985,9 @@ ul.text-center.conversation-footer {
 }
 
 .panel-heading a:before {
-    content: "\f078";
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     float: right;
     transition: all 0.9s;
 }

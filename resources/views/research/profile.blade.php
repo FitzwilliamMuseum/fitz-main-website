@@ -57,7 +57,7 @@
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="container">
             <div class="wrapper center-block">
-                <div class="panel panel-default">
+                <div class="panel panel-default ">
                     <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
                         <span class="panel-title ">
                             <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne"
