@@ -1,0 +1,60 @@
+<!--
+    This is what the embed iframe src links to. It doesn't need to communicate with the parent page, only fill the available space and look for #? parameters
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="uv.css" />
+    <script type="text/javascript" src="umd/UV.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="uv" class="uv"></div>
+
+    <script type="text/javascript">
+      // todo: use UV.URLAdapter that looks at hash params to determine
+      // content type
+      // #?manifest=manifesturl
+      // #?type=iiifmanifest&url=manifesturl
+      // #?type=pdf&url=pdfurl
+      // #?type=iiifimage&url=imageurl
+
+      var urlAdapter = new UV.IIIFURLAdapter(true);
+
+      const data = urlAdapter.getInitialData({
+        embedded: true,
+      });
+
+      uv = UV.init("uv", data);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var $UV = document.getElementById("uv");
+
+        function resize() {
+          $UV.setAttribute("style", "width:" + window.innerWidth + "px");
+          $UV.setAttribute("style", "height:" + window.innerHeight + "px");
+        }
+
+        document.addEventListener("resize", function() {
+          resize();
+        });
+
+        resize();
+      });
+    </script>
+  </body>
+</html>
