@@ -7,9 +7,8 @@
         "hot": "mix watch --hot",
         "production": "mix --production",
         "copy": "npm run copy-uv-html && npm run copy-uv-css",
-        "copy-uv-html": "cp -R node_modules/universalviewer/dist/uv.html ./",
-        "copy-uv-css": "cp -R node_modules/universalviewer/dist/uv.css ./",
-        "postinstall": "npm run copy",
+        "copy-uv-html": "cp -R node_modules/universalviewer/dist/uv.html ./public",
+        "copy-uv-css": "cp -R node_modules/universalviewer/dist/uv.css ./public/",
         "postinstall": "npm run copy"
     },
     "devDependencies": {
