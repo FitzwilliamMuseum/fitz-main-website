@@ -285,14 +285,20 @@ class exhibitionsController extends Controller
                 "type" => "Feature",
                 "@id" =>  route('exhibition.ttn.label', $label['slug']),
                 'properties' => array(
-                    'title' => $label['title'],
+                    'title' => $label['title'] . ' - ' . $label['artist']['display_name'],
                     'artist' => $label['artist']['display_name'] ?? 'Not known',
                     'slug' => $label['slug'],
                     'birth' => trim(preg_replace('/\t+/', '',$label['artist']['place_of_birth'])),
                     'death' => trim(preg_replace('/\t+/', '',$label['artist']['place_of_death'])),
                     'theme' => $label['theme']['theme_name'],
                     'institution' => $label['institution'],
+                    'media' => $label['media']
                     ),
+                'descriptions' => array(
+                    array(
+                        'value' => $label['artist']['biography']
+                    )
+                ),
                 'depictions' => array(
                     array(
                     'license' => 'cc:by-sa/3.0/',
@@ -355,10 +361,9 @@ class exhibitionsController extends Controller
                 ),
                 'depictions' => array(
                         array(
-
                         'license' => 'cc:by-sa/3.0/',
-                        'thumbnail' => $label['image']['data']['thumbnails'][7]['url'] ?? '',
-                        '@id' => $label ['image']['data']['thumbnails'][7]['url'] ?? ''
+                        'thumbnail' => $label['image']['data']['url'] ?? '',
+                        '@id' => $label ['image']['data']['url'] ?? ''
                     ),
                 ),
                 'geometry' => array(
@@ -417,8 +422,8 @@ class exhibitionsController extends Controller
                     array(
 
                         'license' => 'cc:by-sa/3.0/',
-                        'thumbnail' => $label['image']['data']['thumbnails'][7]['url'] ?? '',
-                        '@id' => $label ['image']['data']['thumbnails'][7]['url'] ?? ''
+                        'thumbnail' => $label['image']['data']['url'] ?? '',
+                        '@id' => $label ['image']['data']['url'] ?? ''
                     ),
                 ),
                 'geometry' => array(
