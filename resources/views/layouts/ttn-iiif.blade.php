@@ -15,7 +15,6 @@
         #uv {
             width: 100vw;
             height: 100vh;
-            margin-bottom: 0px;
         }
     </style>
 </head>
