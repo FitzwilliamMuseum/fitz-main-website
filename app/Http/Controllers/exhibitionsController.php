@@ -420,7 +420,6 @@ class exhibitionsController extends Controller
                 ),
                 'depictions' => array(
                     array(
-
                         'license' => 'cc:by-sa/3.0/',
                         'thumbnail' => $label['image']['data']['url'] ?? '',
                         '@id' => $label ['image']['data']['url'] ?? ''
