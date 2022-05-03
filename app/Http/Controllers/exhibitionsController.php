@@ -288,7 +288,11 @@ class exhibitionsController extends Controller
                     'title' => $label['title'],
                     'artist' => $label['artist']['display_name'] ?? 'Not known',
                     'slug' => $label['slug'],
-                ),
+                    'birth' => trim(preg_replace('/\t+/', '',$label['artist']['place_of_birth'])),
+                    'death' => trim(preg_replace('/\t+/', '',$label['artist']['place_of_death'])),
+                    'theme' => $label['theme']['theme_name'],
+                    'institution' => $label['institution'],
+                    ),
                 'depictions' => array(
                     array(
                     'license' => 'cc:by-sa/3.0/',
@@ -407,7 +411,7 @@ class exhibitionsController extends Controller
                 "@id" =>  route('exhibition.ttn.artist', $label['slug']),
                 'properties' => array(
                     'title' => $label['display_name'] ?? 'Not known',
-                    'slug' => $label['slug'],
+                    'slug' => $label['slug']
                 ),
                 'depictions' => array(
                     array(
