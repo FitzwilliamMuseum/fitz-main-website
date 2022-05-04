@@ -14,7 +14,7 @@
         {{ $label['display_id_number'] }}: <em>{{ $label['title'] }}</em>
     </h2>
         @if(!empty($label['manifest_url']))
-            <a href="{{ route('exhibition.ttn.iiif', [$label['slug']]) }}" class="btn btn-dark my-3 p-2">View deep zooming image</a>
+            <a href="{{ route('exhibition.ttn.iiif', [$label['slug']]) }}" class="btn btn-ttn my-3 p-2"><img src="{{ env('COLLECTION_URL') }}/images/logos/iiif.svg" alt="IIIF icon - view image" width="20px"> View deep zooming image</a>
         @endif
 
     <p>
