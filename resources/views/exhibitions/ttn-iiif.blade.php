@@ -6,8 +6,8 @@
         let uv = UV.init(
             "uv",
             {
-                manifestUri: "{{$label[0]['manifest_url']}}",
-                configUri: "{{ url('/') }}/config.json",
+                manifestUri: "{{ $label[0]['manifest_url'] }}",
+                configUri: "https://data.fitzmuseum.cam.ac.uk/config.json",
             },
             new UV.URLDataProvider()
         );
@@ -16,6 +16,7 @@
             uv.resize();
         });
     </script>
+
 @endsection
 
 
