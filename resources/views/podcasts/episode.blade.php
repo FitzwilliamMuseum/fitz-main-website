@@ -43,8 +43,8 @@
                 @isset($podcast['mp3_id'])
                     <div class="col shadow-sm p-3 mx-auto mb-3">
                         <div class="plyr">
-                            <div class="embed-responsive  audio-player">
-                                <audio id="player" controls class="embed-responsive-item">
+                            <div class="ratio audio-player">
+                                <audio id="player" controls >
                                     <source src="{{ $podcast['mp3_id'] }}" type="audio/mp3">
                                 </audio>
                             </div>
@@ -54,7 +54,7 @@
 
                 @isset($podcast['podcast_id'])
                     <div class="col shadow-sm p-3 mx-auto mb-3">
-                        <div class="embed-responsive libsyn">
+                        <div class="ratio libsyn">
                             @include('includes/social/libsyn')
                         </div>
                     </div>

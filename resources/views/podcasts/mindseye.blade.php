@@ -12,7 +12,7 @@
         <!-- column two -->
         <div class="col-md-7 mt-3">
             <div class="col shadow-sm p-3 mx-auto mb-3">
-                <div class="embed-responsive libsyn">
+                <div class="libsyn">
                     @include('includes/social/libsyn')
                 </div>
             </div>
@@ -107,8 +107,7 @@
         <!-- Column one -->
 
         <div class="col-md-5 mb-3">
-            <h3>Object in focus</h3>
-            <div class=" shadow-sm p-3 mb-3 mt-3">
+            <div class="shadow-sm p-3 mb-3 mt-3">
                 <figure class="figure">
                     <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
                          class="img-fluid" alt="{{ $podcast['title'] }}" loading="lazy"

@@ -134,9 +134,8 @@
                     <div class="col shadow-sm p-3 mx-auto mb-3">
 
                         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-                            <div class="embed-responsive embed-responsive-4by3">
+                            <div class="ratio ratio-4x3">
                                 <iframe title="A 3D model related to {{ $look['title_of_work'] }}"
-                                        class="embed-responsive-item"
                                         src="https://sketchfab.com/models/{{ $look['sketchfab_id'] }}/embed?"
                                         allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
                                         webkitallowfullscreen="true"></iframe>

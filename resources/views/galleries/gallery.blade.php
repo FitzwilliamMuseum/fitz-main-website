@@ -80,8 +80,8 @@
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
           <div class="shadow-sm p-3 mx-auto mb-3">
             <div class="plyr">
-              <div class="embed-responsive audio-player">
-                <audio id="player" controls class="embed-responsive-item">
+              <div class="audio-player">
+                <audio id="player" controls>
                   <source src="{{ $gallery['audio_guide']['data']['full_url'] }}" type="audio/aac">
                   </audio>
                 </div>
@@ -110,8 +110,8 @@
       <div class="container">
         <h3>3D scans of objects in gallery</h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-          <div class="embed-responsive embed-responsive-4by3">
-            <iframe title="A 3D model of {{ $gallery['gallery_name'] }}" class="embed-responsive-item"
+          <div class="ratio ratio-4x3">
+            <iframe title="A 3D model of {{ $gallery['gallery_name'] }}"
             src="https://sketchfab.com/playlists/embed?collection={{ $gallery['sketchfab_id_collection']}}"
              allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
           </div>
@@ -125,8 +125,8 @@
       <div class="container">
         <h3>Sketchup model of this gallery</h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-          <div class="embed-responsive embed-responsive-4by3">
-            <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}" class="embed-responsive-item"
+          <div class="ratio ratio-4x3">
+            <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}"
             src="https://sketchfab.com/models/{{ $gallery['sketchfab_sketchup_id']}}/embed?"
              allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
           </div>

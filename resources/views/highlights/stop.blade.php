@@ -12,8 +12,8 @@
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         <div class="shadow-sm p-3 mx-auto mb-3">
             <div class="plyr">
-                <div class="embed-responsive audio-player">
-                    <audio id="player" controls class="embed-responsive-item">
+                <div class="audio-player">
+                    <audio id="player" controls >
                         <source src="{{ $record['associated_audio_file'][0]['directus_files_id']['data']['full_url'] }}"
                                 type="audio/aac">
                     </audio>
