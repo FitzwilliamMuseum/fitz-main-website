@@ -14,7 +14,7 @@
                 <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {{ (request()->is('visit-us*')) ? 'active' : '' }}">
+                <li class="nav-item {{ (request()->is('visit-us')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('visit') }}">Visit</a>
                 </li>
                 <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">

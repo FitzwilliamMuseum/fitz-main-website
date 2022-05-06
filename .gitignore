@@ -12,3 +12,8 @@ npm-debug.log
 yarn-error.log
 .DS_Store
 .idea*
+public/umd*
+public/uv-assets
+public/uv-dist-umd
+public/uv.css
+public/uv.html

@@ -1,8 +1,8 @@
-<html>
+<html lang="en">
 
 <head>
     <title>True to Nature - Peripleo map</title>
-    <style type="text/css">
+    <style>
         html {
             overflow: auto;
         }
@@ -11,8 +11,8 @@
         body,
         div,
         iframe {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
             height: 100%;
             border: none;
         }
