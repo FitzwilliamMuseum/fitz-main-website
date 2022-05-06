@@ -3,7 +3,7 @@
 @section('content')
     <div id="uv" class="uv"></div>
     <script>
-        let uv = UV.init(
+        var uv = UV.init(
             "uv",
             {
                 manifestUri: "{{ $label[0]['manifest_url'] }}",
