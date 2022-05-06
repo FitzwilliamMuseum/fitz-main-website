@@ -150,7 +150,7 @@
                                         @endif
                                         @if(isset($profile['twitter_handle']))
                                             <li>
-                                                <a href="https://twitter.com/{{ $profile['twitter_handle']}}">Twitter</a>
+                                                <a href="https://twitter.com/{{ str_replace('@','',$profile['twitter_handle'])}}">Twitter</a>
                                             </li>
                                         @endif
 
