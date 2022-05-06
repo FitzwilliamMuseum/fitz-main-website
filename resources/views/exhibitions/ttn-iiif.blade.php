@@ -7,7 +7,7 @@
             "uv",
             {
                 manifestUri: "{{ $label[0]['manifest_url'] }}",
-                configUri: "https://data.fitzmuseum.cam.ac.uk/config.json",
+                configUri: "config.json",
             },
         );
     </script>
