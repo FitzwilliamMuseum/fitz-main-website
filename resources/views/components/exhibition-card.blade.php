@@ -34,7 +34,7 @@
                     {{  Carbon\Carbon::parse($endDate)->format('l dS F Y') }}
                 </p>
                 @if($status === 'archived')
-                    <span class="badge badge-lg badge-info p-2 d-block">
+                    <span class="badge bg-maroon p-2 d-block">
           This is now closed
         </span>
                 @endif
