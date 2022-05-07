@@ -152,6 +152,9 @@ footer, .chip-icon {
 .bg-maroon {
     background-color: maroon !important;
 }
+.bg-nav-cambridge {
+    background-color: #a3c1ad;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
