@@ -3,13 +3,13 @@
 @section('content')
     <div id="uv" class="uv"></div>
     <script>
-        var uv = UV.init(
-            "uv",
-            {
-                manifestUri: "{{ $label[0]['manifest_url'] }}",
-                configUri: "config.json",
-            },
-        );
+        var urlAdaptor = new UV.IIIFURLAdaptor();
+        const data = urlAdaptor.getInitialData({
+            manifest: "{{ $label[0]['manifest_url'] }}",
+            // embedded: true // needed for codesandbox frame
+        });
+        uv = UV.init("uv", data);
+        urlAdaptor.bindTo(uv);
     </script>
 
 @endsection
