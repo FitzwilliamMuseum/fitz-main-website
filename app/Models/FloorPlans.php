@@ -21,6 +21,7 @@ class FloorPlans extends Model
                 '[filter][type][eq]' => 'floor_plan',
             )
         );
-        return $api->getData();
+        $floorplans = $api->getData()['data'];
+        return array_chunk($floorplans,4,true);
     }
 }

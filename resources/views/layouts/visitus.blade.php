@@ -45,19 +45,14 @@
 
 @include('includes.elements.directions')
 
-<div class="container mt-3">
+<div class="container mt-2">
     <h3>Floorplans and guides</h3>
-    <div class="row">
-        <div class="col-md-12 mb-3">
-            <div class="container">
-                <div class="contents-label mb-3 text-center">
-                    @yield('floorplans')
-                </div>
-            </div>
+    <div class="col-md-12 mb-2">
+        <div class="mb-3 text-center">
+            @yield('floorplans')
         </div>
     </div>
 </div>
-
 
 @yield('associated_pages')
 @include('includes.structure.emailsignup')

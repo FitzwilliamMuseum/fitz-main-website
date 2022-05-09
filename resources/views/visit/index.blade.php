@@ -159,12 +159,12 @@
 @endsection
 
 @section('floorplans')
-    <ul id="floor-plans">
-        @foreach($floors['data'] as $floor)
-            <li>
-                <a href="{{$floor['file']['data']['full_url']}}">{{$floor['title']}}</a>
-            </li>
-        @endforeach
-    </ul>
+    <div class="row">
+    @foreach($floors as $floorplans)
+    <div class="col-md-4">
+        <x-floor-plans :floorplans="$floorplans"/>
+    </div>
+    @endforeach
+    </div>
 @endsection
 
