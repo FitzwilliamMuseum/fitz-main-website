@@ -77,7 +77,7 @@
                     Switchboard: +44 (0)1223 332 900<br/>
                     Box office: +44 (0)1223 333 230<br/>
                     <i class="fas fa-ticket-alt mr-1" aria-hidden="true" title="ticket"></i> <a
-                        href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a></br>
+                        href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a><br />
                     What3Words: <span class="w3w"><a
                             href="https://map.what3words.com/lofts.puzzle.given"
                             aria-label="What3Words location phrase">lofts.puzzle.given</a></span>
@@ -162,7 +162,7 @@
                        href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
                         <i class="fab fa-youtube fa-3x p-2"></i>
                     </a>
-                    <a aria-label="Fitzwilliam Museum news feed" href="{{ URL::to('/feeds/news/') }}">
+                    <a aria-label="Fitzwilliam Museum news feed" href="/feeds/news/">
                         <i class="fas fa-rss fa-3x ml-1"></i>
                     </a>
                 </p>
