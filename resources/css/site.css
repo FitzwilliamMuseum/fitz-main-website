@@ -507,13 +507,8 @@ a.share-click {
     height: 500px;
 }
 
-ul#floor-plans {
+.floor-plans > li {
     list-style: none;
-    display: inline-block;
-    columns: 2;
-    -webkit-columns: 3;
-    width: 100%;
-    -moz-columns: 2;
 }
 
 blockquote {
