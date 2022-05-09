@@ -1,14 +1,14 @@
 @extends('layouts.layout')
-@if(!is_null($ids['data']))
-    @section('title', $ids['data'][0]['title'])
-@section('hero_image', $ids['data'][0]['hero_image']['data']['url'] )
-@section('hero_image_title', $ids['data'][0]['hero_image_alt_tag'])
-@else
-    @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
-@section('hero_image_title', 'Springtime by Claude Monet')
-@endif
-@section('description', $ids['data'][0]['title'])
-@section('content')
+    @if(!is_null($ids['data']))
+        @section('title', $ids['data'][0]['title'])
+        @section('hero_image', $ids['data'][0]['hero_image']['data']['url'] )
+        @section('hero_image_title', $ids['data'][0]['hero_image_alt_tag'])
+    @else
+        @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
+        @section('hero_image_title', 'Springtime by Claude Monet')
+    @endif
+    @section('description', $ids['data'][0]['title'])
+    @section('content')
 
     @isset($ids['data'][0]['description'])
         <div class="shadow-sm p-3 mb-2">

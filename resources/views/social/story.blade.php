@@ -9,7 +9,8 @@
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
     @section('hero_image_title', "The inside of our Founder's entrance")
   @endif
-
+@endforeach
+@foreach($insta['data'] as $instagram)
   @section('content')
 
 

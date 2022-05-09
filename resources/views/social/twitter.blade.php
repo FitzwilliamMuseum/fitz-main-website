@@ -8,7 +8,7 @@
 
     <div class="row">
         @foreach($tweets as $tweet)
-            <x-twitter-card :tweet="$tweet"/>
+            <x-twitter-card :tweet="$tweet"></x-twitter-card>
         @endforeach
     </div>
 @endsection

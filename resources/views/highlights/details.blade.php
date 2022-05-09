@@ -135,23 +135,10 @@
                     @include('includes/elements/descriptive')
 
                     @include('includes/elements/legal')
-
                     @include('includes/elements/lifecycle')
-
-                    @include('includes/elements/measurements')
-
                     @include('includes/elements/agents-subjects')
-
                     @include('includes/elements/medium')
-
                     @include('includes/elements/materials')
-
-                    @include('includes/elements/techniques')
-
-                    @include('includes/elements/inscriptions')
-
-                    @include('includes/elements/department')
-
                     @include('includes/elements/identification')
 
                 </div>

@@ -2,10 +2,7 @@
 @foreach($week['data'] as $record)
     @section('description', $record['meta_description'])
 @section('title')
-    @php
-        $title = $record['title']
-    @endphp
-    {{ strip_tags($title) }}
+    {{ strip_tags($record['title']) }}
 @endsection
 @section('hero_image', $record['hero_image']['data']['url'])
 @section('hero_image_title', $record['hero_image_alt_text'])

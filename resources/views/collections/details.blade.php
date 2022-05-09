@@ -49,7 +49,6 @@
                         <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">{{ ucfirst($record['_source']['summary_title']) }}</a>
                       @endif            </h3>
                       <p class="text-info">{{ $record['_source']['identifier'][0]['accession_number'] }}</p>
-
                     </div>
                   </div>
                 </div>

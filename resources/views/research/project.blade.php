@@ -64,7 +64,8 @@
             :altTag="$partner['partner']['partner_full_name']"
             :title="$partner['partner']['partner_full_name']"
             :image="$partner['partner']['partner_logo']"
-            :url="$partner['partner']['partner_url']"></x-partner-card>
+            :url="$partner['partner']['partner_url']">
+            </x-partner-card>
             @endforeach
           </div>
         </div>

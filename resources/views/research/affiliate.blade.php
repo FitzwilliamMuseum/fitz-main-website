@@ -16,11 +16,13 @@
     <div class="mb-3">
       @if(!is_null($profile['profile_image']))
       <div class="img-fluid float-right p-3">
-          <a href="{{ route('research-profile', $profile['slug']) }}"><img class="img-fluid" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
-        alt="Profile image for {{ $profile['display_name'] }}"
-        width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
-        height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}"
-        loading="lazy"/></a>
+          <a href="{{ route('research-profile', $profile['slug']) }}">
+              <img class="img-fluid" src="{{ $profile['profile_image']['data']['thumbnails'][2]['url']}}"
+                   alt="Profile image for {{ $profile['display_name'] }}"
+                   width="{{ $profile['profile_image']['data']['thumbnails'][2]['width'] }}"
+                   height="{{ $profile['profile_image']['data']['thumbnails'][2]['height'] }}"
+                   loading="lazy"/>
+          </a>
       </div>
       @endif
 

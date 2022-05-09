@@ -75,7 +75,7 @@
                         :title="$case['title']"
                         :image="$case['cover_image']"
                         :route="'exhibition.labels'"
-                        :params="['exhibition' => $case['related_exhibition'][0]['exhibitions_id']['slug'],'slug' => $case['slug']]"/>
+                        :params="['exhibition' => $case['related_exhibition'][0]['exhibitions_id']['slug'],'slug' => $case['slug']]"></x-image-card>
                 @endforeach
             </div>
         </div>
@@ -92,7 +92,7 @@
                 @foreach($podcasts['data'] as $podcast)
                     <x-image-card :altTag="$podcast['hero_image_alt_tag']" :title="$podcast['title']"
                                   :image="$podcast['hero_image']" :route="'podcasts.episode'"
-                                  :params="[$podcast['slug']]"/>
+                                  :params="[$podcast['slug']]"></x-image-card>
                 @endforeach
             </div>
         </div>
@@ -223,8 +223,7 @@
                         :altTag="$partner['partner']['partner_full_name']"
                         :title="$partner['partner']['partner_full_name']"
                         :image="$partner['partner']['partner_logo']"
-                        :url="$partner['partner']['partner_url']"
-                    />
+                        :url="$partner['partner']['partner_url']"></x-partner-card>
                 @endforeach
             </div>
         </div>
@@ -244,8 +243,7 @@
                     :title="$department['departments_id']['title']"
                     :image="$department['departments_id']['hero_image']"
                     :route="'department'"
-                    :params="[$department['departments_id']['slug']]"
-                />
+                    :params="[$department['departments_id']['slug']]"></x-image-card>
             @endforeach
         </div>
     </div>
@@ -331,8 +329,7 @@
                         :title="$gallery['galleries_id']['gallery_name']"
                         :image="$gallery['galleries_id']['hero_image']"
                         :route="'gallery'"
-                        :params="[$gallery['galleries_id']['slug']]"
-                    />
+                        :params="[$gallery['galleries_id']['slug']]"></x-image-card>
                 @endforeach
             </div>
         </div>
@@ -359,7 +356,7 @@
         <h3>Similar exhibitions from our archives</h3>
         <div class="row">
             @foreach($records as $record)
-                <x-solr-card :result="$record"/>
+                <x-solr-card :result="$record"></x-solr-card>
             @endforeach
         </div>
     </div>
@@ -374,7 +371,8 @@
                 <div class="ratio ratio-4x3">
                     <iframe title="A 3D  model related to this exhibition"
                             src="https://sketchfab.com/models/{{ $coll['sketchfab_id']}}/embed?"
-                            allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
+                            allow="autoplay; fullscreen; vr"
+                            mozallowfullscreen="true"
                             webkitallowfullscreen="true"></iframe>
                 </div>
             </div>
@@ -385,12 +383,12 @@
 
 @section('exhibitions-files')
     @if(!empty($coll['exhibition_files']))
-        <x-exhibition-files :files="$coll['exhibition_files']"/>
+        <x-exhibition-files :files="$coll['exhibition_files']"></x-exhibition-files>
     @endif
 @endsection
 
 @section('exhibition-thanks')
-    <x-exhibition-thanks :exhibition="$coll"/>
+    <x-exhibition-thanks :exhibition="$coll"></x-exhibition-thanks>
 @endsection
 
 @if(!empty($products))
@@ -413,7 +411,7 @@
         <h3>Special events for this exhibition</h3>
         <div class="row">
             @foreach($events as $production)
-                <x-tessitura-production-details-card :production="$production"/>
+                <x-tessitura-production-details-card :production="$production"></x-tessitura-production-details-card>
             @endforeach
         </div>
     </div>

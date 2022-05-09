@@ -5,8 +5,6 @@
 @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('content')
-
-
     <div class="row">
         @foreach($periods as $record)
             <x-image-card

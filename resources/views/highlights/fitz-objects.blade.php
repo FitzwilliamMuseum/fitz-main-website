@@ -13,8 +13,7 @@
                 :altTag="$record['hero_image_alt_text']"
                 :route="'fitz-object'"
                 :params="[$record['slug']]"
-                :title="$record['title']"
-            />
+                :title="$record['title']"></x-image-card>
         @endforeach
     </div>
     <nav aria-label="Page navigation">

@@ -11,7 +11,8 @@
           :title="$podcast['title']"
           :image="$podcast['cover_image']"
           :route="'podcasts.series'"
-          :params="[$podcast['slug']]"></x-image-card>
+          :params="[$podcast['slug']]">
+      </x-image-card>
     @endforeach
   </div>
 @endsection

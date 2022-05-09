@@ -3,6 +3,7 @@
   @section('jsonld')
     @include('includes.jsonld.news')
   @endsection
+
   @section('title', $project['article_title'])
   @section('description',$project['meta_description'])
   @section('keywords',$project['meta_keywords'])
@@ -14,17 +15,20 @@
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
     @section('hero_image_title', "The inside of our Founder's entrance")
   @endif
+@endforeach
 
-  @section('content')
+@foreach($news['data'] as $project)
+    @if($project['youtube_playlist_id'])
+        @section('youtube-playlist')
+            @include('includes.social.youtube-playlist')
+        @endsection
+    @endif
+
+@section('content')
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 article" >
     @include('includes.structure.oldnews')
     @markdown($project['article_body'])
     <h3 class="text-info lead">{{  Carbon\Carbon::parse($project['publication_date'])->format('l dS F Y') }}</h3>
-    @if($project['youtube_playlist_id'])
-      @section('youtube-playlist')
-      @include('includes.social.youtube-playlist')
-      @endsection
-    @endif
   </div>
 
   @if($project['youtube_id'])

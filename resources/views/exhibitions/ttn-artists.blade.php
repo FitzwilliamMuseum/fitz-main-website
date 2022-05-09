@@ -5,7 +5,7 @@
 @section('content')
     <div class="row">
         @foreach($artists as $artist)
-        <x-ttn-artist :artists="$artist"/>
+        <x-ttn-artist :artists="$artist"></x-ttn-artist>
         @endforeach
     </div>
 @endsection

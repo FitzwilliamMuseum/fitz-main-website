@@ -23,8 +23,7 @@
         :route="'learning-resource'"
         :params="[$resource['slug']]"
         :title="$resource['title']"
-        :altTag="$resource['hero_image_alt_text']"
-        />
+        :altTag="$resource['hero_image_alt_text']"></x-image-card>
       @endforeach
     </div>
   </div>
@@ -40,8 +39,7 @@
         :route="'learning-resource'"
         :params="[$resource['slug']]"
         :title="$resource['title']"
-        :altTag="$resource['hero_image_alt_text']"
-        />
+        :altTag="$resource['hero_image_alt_text']"></x-image-card>
       @endforeach
     </div>
   </div>

@@ -62,7 +62,7 @@
 @yield('exhibition-thanks')
 @yield('360')
 @yield('mlt')
-@include('includes.structure.emailsignup')
+@include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.structure.modal')
 @include('includes.scripts.javascript')

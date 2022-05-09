@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-
 @foreach($ltd['data'] as $look)
     @section('title','Look, think, do: ' . $look['title_of_work'])
 @section('description', 'A Look Think Do page for ' . $look['title_of_work'])
@@ -22,11 +21,11 @@
                     />
                 </figure>
                 <span class="btn btn-wine m-1 p-2 share">
-            <a href="{{ URL::to( $look['focus_image']['data']['full_url'] )  }}" target="_blank"
+            <a href="{{ $look['focus_image']['data']['full_url'] }}" target="_blank"
                download><i class="fas fa-download mr-2"></i>  Download this image</a>
           </span>
                 <span class="btn btn-dark p-2">
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img
+            <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img
                     alt="Creative Commons Licence"
                     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a></span>
             </div>

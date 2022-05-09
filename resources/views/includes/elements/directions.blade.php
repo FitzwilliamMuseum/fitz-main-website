@@ -4,7 +4,13 @@
         <div class="accordion mt-2" id="accordionDirections">
             <div class="card">
                 <div class="card-header" id="headingOne">
-                    <button class="btn btn-dark d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button
+                        class="btn btn-dark d-block text-center"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
                         {{ $directions['data']['0']['method']}}
                     </button>
                 </div>
@@ -35,7 +41,8 @@
                         {{ $directions['data']['2']['method']}}
                     </button>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionDirections">
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                     data-parent="#accordionDirections">
                     <div class="card-body">
                         @markdown($directions['data']['2']['directions'])
                     </div>
@@ -48,7 +55,8 @@
                         {{ $directions['data']['3']['method']}}
                     </button>
                 </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionDirections">
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                     data-parent="#accordionDirections">
                     <div class="card-body">
                         @markdown($directions['data']['3']['directions'])
                     </div>
