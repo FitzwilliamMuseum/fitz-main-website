@@ -116,203 +116,153 @@
 @endsection
 
 @section('theme-carousel')
-    <div class="container-fluid py-2 bg-white">
-        <h3>Explore highlights by theme</h3>
-        <div class="row mb-2">
-            <div id="carouselThemes" class="carousel slide sliders" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner row w-100 mx-auto">
-                    @php
-                        $slides = $pharos['data'];
-                        $count = sizeof($slides);
-                        $first = array_slice($slides,0,1);
-                        $rest = array_slice($slides, 1, $count)
-                    @endphp
-
-                    @foreach($first as $record)
-                        <div class="carousel-item  active">
-                            <div class="col-md-4">
-                                <div class="card card-fitz h-100">
-                                    @if(!is_null($record['hero_image']))
-                                        <a href="{{ route('theme', [$record['slug']]) }}">
-                                            <img class="card-img-top"
-                                                 src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-                                                 alt="{{ $record[ 'hero_image']['title'] }}" loading="lazy"/>
-                                        </a>
-                                    @endif
-                                    <div class="card-body h-100">
-                                        <h3>
-                                            <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    @foreach($rest as $record)
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-fitz">
-                                    @if(!is_null($record['hero_image']))
-                                        <a href="{{ route('theme', [$record['slug']]) }}"><img class="img-fluid"
-                                                                                               src="{{ $record[ 'hero_image']['data']['thumbnails'][4]['url']}}"
-                                                                                               alt="{{ $record[ 'hero_image']['title'] }}"
-                                                                                               loading="lazy"/></a>
-                                    @endif
-                                    <div class="card-body">
-                                        <h3>
-                                            <a href="{{ route('theme', [$record['slug']]) }}">{!! ucfirst(str_replace('-',' ', $record['title'])) !!}</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+    <section class="pt-3 pb-2">
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="my-3">Explore Highlights by theme</h3>
                 </div>
-                <a class="carousel-control-prev" href="#carouselThemes" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselThemes" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="col-12">
+                    <div id="pharos" class="carousel slide"  data-bs-ride="carousel" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            @foreach(array_chunk($pharos['data'],3,true) as $slides)
+                                @if($loop->first)
+                                    <x-carousel-slide
+                                        :slides="$slides"
+                                        :class="'active'"
+                                        :imageObject="'hero_image'"
+                                        :title="'title'"
+                                        :route="'theme'"
+                                        :param="'slug'"
+                                        :slugify="'false'"
+                                    />
+                                @else
+                                    <x-carousel-slide
+                                        :slides="$slides"
+                                        :class="''"
+                                        :imageObject="'hero_image'"
+                                        :title="'title'"
+                                        :route="'theme'"
+                                        :param="'slug'"
+                                        :slugify="'false'"
+                                    />
+                                @endif
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#pharos" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#pharos" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @section('period-carousel')
-    <div class="container-fluid py-2 bg-white">
-        <h3>Explore highlights by period</h3>
-        <div class="row mb-2">
-            <div id="carouselPeriods" class="carousel slide sliders" data-ride="carousel"
-                 data-interval="false" data-pause="hover">
-                <div class="carousel-inner row w-100 mx-auto">
-                    @php
-                        $slides = $periods;
-                        $count = sizeof($slides);
-                        $first = array_slice($slides,0,1);
-                        $rest = array_slice($slides, 1, $count)
-                    @endphp
-
-                    @foreach($first as $record)
-                        <div class="carousel-item active">
-                            <div class="col-md-4 ">
-                                <div class="card card-fitz h-100 ">
-                                    @if(!is_null($record[0]['image']))
-                                        <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}/"><img
-                                                class="img-fluid"
-                                                src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-                                                alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/></a>
-                                    @endif
-                                    <div class="card-body">
-                                        <h3>
-                                            <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    @foreach($rest as $record)
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-fitz h-100">
-                                    @if(!is_null($record[0][ 'image']))
-                                        <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">
-                                            <img class="img-fluid"
-                                                 src="{{ $record[0][ 'image']['data']['thumbnails'][4]['url']}}"
-                                                 alt="{{ $record[0]['period_assigned'] }}" loading="lazy"/>
-                                        </a>
-                                    @endif
-                                    <div class="card-body">
-                                        <h3>
-                                            <a href="{{ route('period', [Str::slug($record[0]['period_assigned'],'-')]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['period_assigned'])) !!}</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+    <section class="pt-5 pb-5">
+        <div class="container-fluid bg-pastel">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="my-3">Explore periods</h3>
                 </div>
-                <a class="carousel-control-prev" href="#carouselPeriods" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselPeriods" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="col-12">
+                    <div id="periods" class="carousel slide"  data-bs-ride="carousel" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            @foreach(array_chunk($periods,3,true) as $slides)
+                                @if($loop->first)
+                                    <x-carousel-slide
+                                        :slides="$slides"
+                                        :class="'active'"
+                                        :imageObject="'image'"
+                                        :title="'period_assigned'"
+                                        :route="'period'"
+                                        :param="'period_assigned'"
+                                        :slugify="'true'"
+                                    />
+                                @else
+                                    <x-carousel-slide
+                                        :slides="$slides"
+                                        :class="''"
+                                        :imageObject="'image'"
+                                        :title="'period_assigned'"
+                                        :route="'period'"
+                                        :param="'period_assigned'"
+                                        :slugify="true"
+                                    />
+                                @endif
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#periods" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#periods" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
 @endsection
 
 @section('context-carousel')
-    <div class="container-fluid py-2 bg-white">
-        <h3>Explore object contexts</h3>
-        <div class="row">
-            <div id="carouselContexts" class="carousel slide sliders" data-ride="carousel"
-                 data-interval="false" data-pause="hover">
-                <div class="carousel-inner row w-100 mx-auto">
-                    @php
-                        $slides = $context;
-                        $count = sizeof($slides);
-                        $first = array_slice($slides,0,1);
-                        $rest = array_slice($slides, 1, $count)
-                    @endphp
-
-                    @foreach($first as $record)
-                        <div class="carousel-item active">
-                            <div class="col-md-4 ">
-                                <div class="card card-fitz h-100 ">
-                                    @if(!is_null($record[0]['hero_image']))
-                                        <a href="{{ route('context-sections',[$record[0]['section']]) }}"><img
-                                                class="img-fluid"
-                                                src="{{ $record[0][ 'hero_image']['data']['thumbnails'][4]['url']}}"
-                                                alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/></a>
-                                    @endif
-                                    <div class="card-body">
-                                        <h3>
-                                            <a href="{{ route('context-sections',[$record[0]['section']]) }}">{!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    @foreach($rest as $record)
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-fitz h-100">
-                                    @if(!is_null($record[0]['hero_image']))
-                                        <a href="{{ route('context-sections',[$record[0]['section']]) }}">
-                                            <img class="img-fluid"
-                                                 src="{{ $record[0]['hero_image']['data']['thumbnails'][4]['url']}}"
-                                                 alt="{{ $record[0][ 'hero_image_alt_text'] }}" loading="lazy"/>
-                                        </a>
-                                    @endif
-                                    <div class="card-body">
-                                        <h3>
-                                            <a href="{{ route('context-sections',[$record[0]['section']]) }}">
-                                                {!! ucfirst(str_replace('-',' ', $record[0]['section'])) !!}
-                                            </a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+    <section class="pt-2 pb-2">
+        <div class="container-fluid bg-gdbo">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="my-3">Explore Contexts</h3>
                 </div>
-                <a class="carousel-control-prev" href="#carouselContexts" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselContexts" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
+                <div class="col-12">
+                    <div id="contexts" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            @foreach(array_chunk($contexts,3,true) as $slides)
+                                @if($loop->first)
+                                    <x-carousel-slide
+                                        :slides="$slides"
+                                        :class="'active'"
+                                        :imageObject="'hero_image'"
+                                        :title="'section'"
+                                        :route="'context-sections'"
+                                        :param="'section'"
+                                        :slugify="'false'"
+                                    />
+                                @else
+                                    <x-carousel-slide
+                                        :slides="$slides"
+                                        :class="''"
+                                        :imageObject="'hero_image'"
+                                        :title="'section'"
+                                        :route="'context-sections'"
+                                        :param="'section'"
+                                        :slugify="'false'"
+                                    />
+                                @endif
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#contexts" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#contexts" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
 @endsection
+
+

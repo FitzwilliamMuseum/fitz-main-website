@@ -80,8 +80,8 @@ class highlightsController extends Controller
         $periods = Highlights::getPeriods();
         $periods = $this->group_by("period_assigned", $periods['data']);
         $contexts = HighlightPages::getContexts();
-        $context = $this->group_by("section", $contexts['data']);
-        return view('highlights.landing', compact('pharos', 'periods', 'context', 'page'));
+        $contexts = $this->group_by("section", $contexts['data']);
+        return view('highlights.landing', compact('pharos', 'periods', 'contexts', 'page'));
     }
 
     /**
