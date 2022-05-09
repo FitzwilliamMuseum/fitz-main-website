@@ -27,7 +27,7 @@
 
   @include('includes.structure.nav')
 
-  @if(Request::is('about-us/terms/hockney')) 
+  @if(Request::is('about-us/terms/hockney'))
    @include('includes.structure.hockney-header')
   @else
       @include('includes.structure.head')
@@ -125,7 +125,7 @@
     @yield('shopify')
 
 
-  @include('includes.structure.emailsignup')
+  @include('includes.structure.email-signup')
   @include('includes.structure.footer')
   @hasSection('lookanswers')
     @yield('lookanswers')

@@ -83,7 +83,7 @@
 @yield('artistsSimilar')
 @yield('shopify')
 
-@include('includes.structure.emailsignup')
+@include('includes.structure.email-signup')
 
 @include('includes.structure.footer')
 

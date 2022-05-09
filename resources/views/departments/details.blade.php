@@ -45,7 +45,6 @@
         @include('includes.structure.areas')
         @include('includes.structure.cons-blog')
     @endif
-
 @endsection
 
 @if(!empty($staff['data']))
@@ -54,9 +53,12 @@
         <h3>Associated staff</h3>
         <div class="row">
             @foreach($staff['data'] as $curator)
-                <x-image-card :altTag="$curator['profile_image_alt_text']" :title="$curator['display_name']"
-                              :image="$curator['profile_image']" :route="'research-profile'"
-                              :params="array('slug' => $curator['slug'])"></x-image-card>
+                <x-image-card
+                    :altTag="$curator['profile_image_alt_text']"
+                    :title="$curator['display_name']"
+                    :image="$curator['profile_image']"
+                    :route="'research-profile'"
+                    :params="array('slug' => $curator['slug'])"></x-image-card>
             @endforeach
         </div>
     </div>

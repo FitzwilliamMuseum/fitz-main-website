@@ -13,7 +13,8 @@
                 :title="$profile['display_name']"
                 :image="$profile['profile_image']"
                 :route="'research-profile'"
-                :params="[$profile['slug']]"></x-image-card>
+                :params="[$profile['slug']]">
+            </x-image-card>
         @endforeach
     </div>
 @endsection

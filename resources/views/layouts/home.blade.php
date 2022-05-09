@@ -72,7 +72,7 @@
 <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')
 </div>
-@include('includes.structure.emailsignup')
+@include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.scripts.javascript')
 

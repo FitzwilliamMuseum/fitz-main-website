@@ -51,7 +51,6 @@
         <div class="row">
             @foreach($records as $record)
                 <x-solr-card :result="$record"></x-solr-card>
-
             @endforeach
         </div>
     </div>

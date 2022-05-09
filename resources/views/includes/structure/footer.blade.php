@@ -3,37 +3,61 @@
     <div class="col-md-12 mx-auto">
         <div class="row justify-content-center mb-4">
             <div class="col-md-2 col-sm-2 text-center">
-                <a href="https://www.museums.cam.ac.uk"><img class="img-fluid mx-auto " loading="lazy"
-                                                             alt="University of Cambridge Museums logo"
-                                                             src="{{ asset('/images/logos/ucm_logo_black_white.png') }}"/></a>
+                <a href="https://www.museums.cam.ac.uk">
+                    <img class="mx-auto my-2"
+                         loading="lazy"
+                         width="200"
+                         alt="University of Cambridge Museums logo"
+                         src="{{ asset('/images/logos/ucm_logo_black_white.png') }}"
+                    />
+                </a>
             </div>
             <div class="col-md-2 col-sm-2 text-center">
-                <a href="https://www.cambridge.gov.uk/"><img class="img-fluid" loading="lazy"
-                                                             alt="Cambridge City Council logo"
-                                                             src="{{ asset('/images/logos/camcity_logo.png') }}"/></a>
+                <a href="https://www.cambridge.gov.uk/">
+                    <img class="mx-auto my-2"
+                         loading="lazy"
+                         width="60"
+                         alt="Cambridge City Council logo"
+                         src="{{ asset('/images/logos/camcity_logo.png') }}"
+                    />
+                </a>
             </div>
             <div class="col-md-2 col-sm-2 text-center">
-                <a href="https://www.artscouncil.org.uk/"><img class="img-fluid mx-auto d-block"
-                                                               alt="Arts Council England Logo"
-                                                               src="{{ asset('/images/logos/artscouncil_grant.png')}}"
-                                                               loading="lazy"/></a>
+                <a href="https://www.artscouncil.org.uk/">
+                    <img class="mx-auto my-2"
+                         alt="Arts Council England Logo"
+                         src="{{ asset('/images/logos/artscouncil_grant.png')}}"
+                         loading="lazy"
+                         width="200"
+                    />
+                </a>
             </div>
             <div class="col-md-2 col-sm-2 text-center">
-                <a href="https://re.ukri.org/"><img class="img-fluid mx-auto d-block" alt="Research England logo"
-                                                    loading="lazy"
-                                                    src="{{ asset('images/logos/UKRI_RE-Logo_Horiz-RGB.png')}}"/></a>
+                <a href="https://re.ukri.org/">
+                    <img class="mx-auto my-2"
+                         alt="Research England logo"
+                         loading="lazy"
+                         width="200"
+                         src="{{ asset('images/logos/UKRI_RE-Logo_Horiz-RGB.png')}}"
+                    />
+                </a>
             </div>
         </div>
     </div>
 </div>
+
 <!-- Sponsor -->
 <div class="container-fluid bg-white p-2 container-fluid bg-white border-cambridge">
     <div class="col-md-12 mx-auto">
         <div class="row justify-content-center mb-4">
             <div class="col-md-2 col-sm-2">
-                <a href="https://www.brewin.co.uk/individuals/our-offices/cambridge"><img
-                        class="img-fluid mx-auto d-block mb-4" alt="Brewin Dolphin Logo"
-                        src="{{ asset('/images/logos/brewin-dolphin.jpg')}}" loading="lazy"/></a>
+                <a href="https://www.brewin.co.uk/individuals/our-offices/cambridge">
+                    <img class="mx-auto d-block mb-4"
+                         alt="Brewin Dolphin Logo"
+                         width="300"
+                         src="{{ asset('/images/logos/brewin-dolphin.jpg')}}"
+                         loading="lazy"/>
+                </a>
             </div>
         </div>
     </div>
@@ -114,9 +138,10 @@
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row pt-2">
-            <div class="col-md-6  mx-auto">
+            <div class="col-md-6 mx-auto">
                 <h3 class="sr-only">Join our conversations</h3>
                 <p class="share text-center">
                     <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
@@ -143,6 +168,7 @@
                 </p>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-6 mb-2 mx-auto">
                 <p class="text-center">

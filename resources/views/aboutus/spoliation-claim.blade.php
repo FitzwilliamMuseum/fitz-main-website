@@ -11,10 +11,12 @@
     @foreach($claims as $claim)
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 article">
             @markdown($claim['text'])
-            <a class="btn btn-info py-3 d-block" href="{{ route('article',[$claim['news_slug']]) }}">Learn more about
-                this claim</a></p>
+            <a class="btn btn-info py-3 d-block" href="{{ route('article',[$claim['news_slug']]) }}">
+                Learn more about this claim
+            </a>
         </div>
-        <img class="card-img-top" src="{{ $claim['image']['data']['url']}}"
+        <img class="card-img-top"
+             src="{{ $claim['image']['data']['url']}}"
              alt="{{ $claim['alt_text'] }}"
              width="{{ $claim['image']['width'] }}"
              loading="lazy"/>

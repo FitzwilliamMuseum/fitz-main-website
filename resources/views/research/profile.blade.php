@@ -16,10 +16,12 @@
         <div class="mb-3">
             @if(!is_null($profile['profile_image']))
                 <div class="p-3 ">
-                    <a href="{{ route('research-profile', $profile['slug']) }}"><img
-                            src="{{ $profile['profile_image']['data']['thumbnails'][5]['url']}}"
-                            alt="Profile image for {{ $profile['display_name'] }}"
-                            loading="lazy" class="img-fluid mx-auto d-block"/></a>
+                    <a href="{{ route('research-profile', $profile['slug']) }}">
+                        <img src="{{ $profile['profile_image']['data']['thumbnails'][5]['url']}}"
+                             alt="Profile image for {{ $profile['display_name'] }}"
+                             loading="lazy"
+                             class="img-fluid mx-auto d-block"/>
+                    </a>
                 </div>
             @endif
             <h3>
@@ -50,7 +52,7 @@
 @endsection
 
 @if(!empty($profile['publications']))
-@section('publications')
+    @section('publications')
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="container">
             <div class="wrapper center-block">
@@ -75,7 +77,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
                             <span class="panel-title">
-                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseTwo"
+                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
+                                   href="#collapseTwo"
                                    aria-expanded="true" aria-controls="collapseOne">
                                     <h3>Professional Memberships</h3>
                                 </a>
@@ -93,7 +96,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
                             <span class="panel-title">
-                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseThree"
+                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
+                                   href="#collapseThree"
                                    aria-expanded="true" aria-controls="collapseOne">
                                     <h3>Affiliations</h3>
                                 </a>
@@ -151,7 +155,6 @@
                                                 <a href="https://twitter.com/{{ str_replace('@','',$profile['twitter_handle'])}}">Twitter</a>
                                             </li>
                                         @endif
-
                                     </ul>
                                 </div>
                             </div>
@@ -161,85 +164,90 @@
             </div>
         </div>
     </div>
-
 @endsection
 @endif
 
 
 @if(!empty($profile['research_projects']))
-@section('research-projects')
-    <div class="container-fluid bg-gdbo py-3">
-        <div class="container">
-            <h3>
-                Associated Research Projects
-            </h3>
-            <div class="row">
-                @foreach($profile['research_projects'] as $project)
-                    <x-image-card :altTag="$project['research_projects_id']['hero_image_alt_text'] "
-                                  :title="$project['research_projects_id']['title']"
-                                  :image="$project['research_projects_id']['hero_image']" :route="'research-project'"
-                                  :params="[$project['research_projects_id']['slug']]"></x-image-card>
-                @endforeach
+    @section('research-projects')
+        <div class="container-fluid bg-gdbo py-3">
+            <div class="container">
+                <h3>
+                    Associated Research Projects
+                </h3>
+                <div class="row">
+                    @foreach($profile['research_projects'] as $project)
+                        <x-image-card
+                            :altTag="$project['research_projects_id']['hero_image_alt_text']"
+                            :title="$project['research_projects_id']['title']"
+                            :image="$project['research_projects_id']['hero_image']"
+                            :route="'research-project'"
+                            :params="[$project['research_projects_id']['slug']]">
+                        </x-image-card>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif
+
 @if(!empty($profile['departments_affiliated']))
-@section('departments-affiliated')
-    <div class="container-fluid bg-grey py-3">
-        <div class="container">
-            <h3>
-                Associated Departments
-            </h3>
-            <div class="row">
-                @foreach($profile['departments_affiliated'] as $department)
-                    <x-image-card
-                        :altTag="$department['department']['hero_image_alt_text']"
-                        :title="$department['department']['title']"
-                        :image="$department['department']['hero_image']"
-                        :route="'department'"
-                        :params="[$department['department']['slug']]"></x-image-card>
-                @endforeach
+    @section('departments-affiliated')
+        <div class="container-fluid bg-grey py-3">
+            <div class="container">
+                <h3>
+                    Associated Departments
+                </h3>
+                <div class="row">
+                    @foreach($profile['departments_affiliated'] as $department)
+                        <x-image-card
+                            :altTag="$department['department']['hero_image_alt_text']"
+                            :title="$department['department']['title']"
+                            :image="$department['department']['hero_image']"
+                            :route="'department'"
+                            :params="[$department['department']['slug']]">
+                        </x-image-card>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif
 
 @if(!empty($profile['exhibitions_curated']))
-@section('exhibitions-curated')
-    <div class="container-fluid bg-pastel p-3">
-        <div class="container">
-            <h3>
-                Associated Exhibitions
-            </h3>
-            <div class="row">
-                @foreach($profile['exhibitions_curated'] as $exhibition)
-                    <x-image-card
-                        :altTag="$exhibition['exhibition']['hero_image_alt_text']"
-                        :title="$exhibition['exhibition']['exhibition_title']"
-                        :image="$exhibition['exhibition']['hero_image']"
-                        :route="'exhibition'"
-                        :params="[$exhibition['exhibition']['slug']]"></x-image-card>
-                @endforeach
+    @section('exhibitions-curated')
+        <div class="container-fluid bg-pastel p-3">
+            <div class="container">
+                <h3>
+                    Associated Exhibitions
+                </h3>
+                <div class="row">
+                    @foreach($profile['exhibitions_curated'] as $exhibition)
+                        <x-image-card
+                            :altTag="$exhibition['exhibition']['hero_image_alt_text']"
+                            :title="$exhibition['exhibition']['exhibition_title']"
+                            :image="$exhibition['exhibition']['hero_image']"
+                            :route="'exhibition'"
+                            :params="[$exhibition['exhibition']['slug']]">
+                        </x-image-card>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif
 
 @endforeach
 
 @if(!empty($similar))
-@section('mlt')
-    <div class="container py-3">
-        <h3>Researchers with similar profiles</h3>
-        <div class="row">
-            @foreach($similar as $record)
-                <x-solr-card :result="$record"></x-solr-card>
-            @endforeach
+    @section('mlt')
+        <div class="container py-3">
+            <h3>Researchers with similar profiles</h3>
+            <div class="row">
+                @foreach($similar as $record)
+                    <x-solr-card :result="$record"></x-solr-card>
+                @endforeach
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif
