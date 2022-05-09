@@ -1,5 +1,5 @@
 <!-- Nav bars -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-maroon fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container-fluid">
 
         <a class="navbar-brand" href="{{ route('home') }}">

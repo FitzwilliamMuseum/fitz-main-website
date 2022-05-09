@@ -2,29 +2,6 @@
 
 <script src="/js/backtotop.js"></script>
 
-@hasSection('theme-carousel')
-  <script src="/js/carousel-themes.js"></script>
-  <script>
-  $('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-
-    for (var i=0;i<minPerSlide;i++) {
-      next=next.next();
-      if (!next.length) {
-        next = $(this).siblings(':first');
-      }
-
-      next.children(':first-child').clone().appendTo($(this));
-    }
-  });
-</script>
-@endif
-
 <!-- Cookie management -->
 <script defer type="text/javascript" src="/js/config.js"></script>
 <script defer type="text/javascript" src="/js/klaro.js"></script>

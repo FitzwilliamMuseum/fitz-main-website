@@ -18,6 +18,4 @@
 }
 @include('includes.css.parallax')
 </style>
-@hasSection('theme-carousel')
-  <link href="{{ URL::to('/css/cards-carousel.css') }}" rel="stylesheet" media="screen">
-@endif
+
