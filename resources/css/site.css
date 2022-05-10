@@ -1159,3 +1159,6 @@ a.text-center.btn.btn-outline-light.btn__book {
 .btn-ttn.disabled,.btn-ttn:disabled{color:#fff;background-color:#8695be;border-color:#8695be}
 .btn-ttn:not(:disabled):not(.disabled):active,.btn-ttn:not(:disabled):not(.disabled).active,.show>.btn-ttn.dropdown-toggle{color:#fff;background-color:#8695be;border-color:#8695be}
 .btn-ttn:not(:disabled):not(.disabled):active:focus,.btn-ttn:not(:disabled):not(.disabled).active:focus,.show>.btn-ttn.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+.footer__info {
+    width: 330px;
+}
