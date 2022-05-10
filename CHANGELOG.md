@@ -1,5 +1,15 @@
 # Change log
 
+This file documents code based changes to the front end framework.
+
+## 10.05.2022
+
+1. Added static image card component for sections that are not database controlled.
+2. Refactored footer images for better rendering
+3. Refactored footer text for responsive layout and better display
+4. Refactored collections landing page for don't repeat yourself code paradigm
+5. Fixed issue with parallax padding and changed image
+
 ## 09.05.2022
 
 1. Fix collection landing page carousel for 3 tiles shifting
@@ -25,9 +35,10 @@
 
 1. Add IIIF viewing capabilities via Universal Viewer 4.
 2. Add IIIF embeds to True to nature pages where available.
+
 ## 01.05.2022
 
-1. NPM packages updates
+1. NPM package updates and better compression of J's files
 2. Add peripleo embed with fullscreen functions 
 
 ## 31.04.2022
@@ -41,9 +52,9 @@
 
 ## 29.04.2022
 
-1. Migrated Bootstrap version
-2. Fix all breaking changes
-3. Remove docs folder 
+1. Migrated Bootstrap version from 4.5 to 5 latest version 
+2. Fix all breaking changes from BS migration
+3. Remove docs folder with unwanted thumbnail
 
 ## 28.04.2022 
 
