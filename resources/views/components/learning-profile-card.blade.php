@@ -6,8 +6,8 @@
                     {{ $profile['display_name'] }}
                 </h3>
                 <p>
-                    {{ $profile['job_title']}}<br />
-                    Telephone: {{ $profile['telephone_number']}}<br />
+                    {{ $profile['job_title']}}<br/>
+                    Telephone: {{ $profile['telephone_number']}}<br/>
                     Email: <a href="mailto:{{ $profile['email_address']}}">{{ $profile['email_address']}}</a>
                 </p>
             </div>

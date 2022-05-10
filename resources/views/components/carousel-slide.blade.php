@@ -7,12 +7,12 @@
                         @if($slugify)
                             <a href="{{ route($route, Str::slug($slide[0][$param],'-')) }}" class="stretched-link">
                                 <img class="card-img-top" alt="{{$slide[0][$title]}}"
-                                     src="{{ $slide[0][$imageObject]['data']['thumbnails'][13]['url'] }}">
+                                     src="{{ $slide[0][$imageObject]['data']['thumbnails'][13]['url'] }} /">
                             </a>
                         @else
                             <a href="{{ route($route, $slide[0][$param]) }}" class="stretched-link">
                                 <img class="card-img-top" alt="{{$slide[0][$title]}}"
-                                     src="{{ $slide[0][$imageObject]['data']['thumbnails'][13]['url'] }}">
+                                     src="{{ $slide[0][$imageObject]['data']['thumbnails'][13]['url'] }}"/>
                             </a>
                         @endif
                         <div class="card-body">
@@ -37,12 +37,12 @@
                         @if($slugify)
                             <a href="{{ route($route, Str::slug($slide[$param],'-')) }}" class="stretched-link">
                                 <img class="card-img-top" alt="{{$slide[$title]}}"
-                                     src="{{ $slide[$imageObject]['data']['thumbnails'][13]['url'] }}">
+                                     src="{{ $slide[$imageObject]['data']['thumbnails'][13]['url'] }}"/>
                             </a>
                         @else
                             <a href="{{ route($route, $slide[$param]) }}" class="stretched-link">
                                 <img class="card-img-top" alt="{{$slide[$title]}}"
-                                     src="{{ $slide[$imageObject]['data']['thumbnails'][13]['url'] }}">
+                                     src="{{ $slide[$imageObject]['data']['thumbnails'][13]['url'] }}"/>
 
                             </a>
                         @endif

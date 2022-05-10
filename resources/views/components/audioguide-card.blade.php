@@ -5,14 +5,16 @@
                 <img class="card-img-top" src="{{ $image['data']['thumbnails'][2]['url']}}"
                      alt="{{ $altTag }}"
                      width="{{ $image['data']['thumbnails'][2]['width'] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @else
             <a href="{{ route($route, $params) }}">
                 <img class="card-img-top"
                      src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                      alt="A stand in image for {{ $title }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @endisset
         <div class="card-body h-100">

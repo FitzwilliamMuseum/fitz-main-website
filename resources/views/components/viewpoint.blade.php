@@ -2,11 +2,11 @@
 <div>
     @foreach($viewpoint['associated_artworks'] as $image)
         <figure class="figure">
-        <img class="figure-img img-fluid  my-2" src="{{$image['ttn_labels_id']['image']['data']['url']}}"
-             alt="{{ $image['ttn_labels_id']['alt_text'] }}"
-             width="{{ $image['ttn_labels_id']['image']['width'] }}"
-             loading="lazy"/>
-        <figcaption class="figure-caption text-info">{{$image['ttn_labels_id']['image']['title']}}</figcaption>
+            <img class="figure-img img-fluid  my-2" src="{{$image['ttn_labels_id']['image']['data']['url']}}"
+                 alt="{{ $image['ttn_labels_id']['alt_text'] }}"
+                 width="{{ $image['ttn_labels_id']['image']['width'] }}"
+                 loading="lazy"/>
+            <figcaption class="figure-caption text-info">{{$image['ttn_labels_id']['image']['title']}}</figcaption>
         </figure>
     @endforeach
 </div>

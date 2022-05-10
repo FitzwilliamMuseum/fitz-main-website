@@ -2,7 +2,8 @@
     <div class="card card-fitz h-100">
         @if(!empty($viewpoint['associated_artworks'][0]['ttn_labels_id']['image']))
             <a href="{{ route('exhibition.ttn.viewpoint', $viewpoint['id']) }}">
-                <img class="card-img-top" src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][2]['url']}}"
+                <img class="card-img-top"
+                     src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][2]['url']}}"
                      alt="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['alt_text'] }}"
                      width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][2]['width'] }}"
                      loading="lazy"/>
@@ -27,7 +28,7 @@
                 </h3>
                 <p class="text-info">
                     @foreach($viewpoint['associated_people'] as $person)
-                    {{$person['associated_people_id']['display_name'] ?? 'Anon'}}<br/>
+                        {{$person['associated_people_id']['display_name'] ?? 'Anon'}}<br/>
                         @isset($person['associated_people_id']['associated_role'])
                             <span class="text-black-50">{{$person['associated_people_id']['associated_role']}}</span>
                         @endisset

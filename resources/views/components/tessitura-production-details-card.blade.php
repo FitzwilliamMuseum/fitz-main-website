@@ -5,21 +5,24 @@
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img class="card-img-top" property="image"
                      src="@tessitura($production->ProductionSeason->Id)"
-                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"/>
+                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"
+                />
             </a>
         @elseif($production->Facility->Id === 56)
             <a class="stretched-link"
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img property="image" class="card-img-top"
                      src="@tessitura($production->PerformanceId )"
-                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"/>
+                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"
+                />
             </a>
         @else
             <a class="stretched-link"
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img class="card-img-top" property="image"
                      src="@tessitura($production->ProductionSeason->Id)"
-                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"/>
+                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"
+                />
             </a>
         @endif
         <div class="card-body">

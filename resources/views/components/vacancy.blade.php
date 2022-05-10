@@ -1,12 +1,14 @@
 <div class="col-md-4 mb-3">
     <div class="card  card-fitz h-100">
         @if(!is_null($vacancy['hero_image']))
-            <a href="{{ route('vacancy', $vacancy['slug'])}}"><img class="img-fluid"
-                                                                   src="{{ $vacancy['hero_image']['data']['thumbnails'][4]['url']}}"
-                                                                   alt="A highlight image for {{ $vacancy['hero_image_alt_text'] }}"
-                                                                   height="{{ $vacancy['hero_image']['data']['thumbnails'][4]['height'] }}"
-                                                                   width="{{ $vacancy['hero_image']['data']['thumbnails'][4]['width'] }}"
-                                                                   loading="lazy"/></a>
+            <a href="{{ route('vacancy', $vacancy['slug'])}}">
+                <img class="img-fluid"
+                     src="{{ $vacancy['hero_image']['data']['thumbnails'][4]['url']}}"
+                     alt="A highlight image for {{ $vacancy['hero_image_alt_text'] }}"
+                     height="{{ $vacancy['hero_image']['data']['thumbnails'][4]['height'] }}"
+                     width="{{ $vacancy['hero_image']['data']['thumbnails'][4]['width'] }}"
+                     loading="lazy"/>
+            </a>
         @endif
         @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
             @include('includes.structure.jobexpired')
@@ -19,9 +21,8 @@
                 <p class="text-info">Closing
                     Date: {{ Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</p>
                 @if(isset($vacancy['salary_range']))
-                    <p class="text-danger">£ {{ $vacancy['salary_range'] }}</p>
+                    <p class="text-danger">£{{ $vacancy['salary_range'] }}</p>
                 @endif
-
             </div>
         </div>
     </div>

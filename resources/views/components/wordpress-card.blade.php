@@ -4,14 +4,16 @@
             <a href="{{ $url }}">
                 <img class="card-img-top" src="{{ $image}}"
                      alt="{{ $title }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @else
             <a href="{{ $url }}">
                 <img class="card-img-top"
                      src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                      alt="A stand in image for {{ $title }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @endisset
         <div class="card-body h-100">
@@ -21,7 +23,6 @@
                         {{ $title }}
                     </a>
                 </h3>
-
             </div>
         </div>
     </div>
