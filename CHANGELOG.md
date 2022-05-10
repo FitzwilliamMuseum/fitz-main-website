@@ -9,6 +9,9 @@ This file documents code based changes to the front end framework.
 3. Refactored footer text for responsive layout and better display
 4. Refactored collections landing page for don't repeat yourself code paradigm
 5. Fixed issue with parallax padding and changed image
+6. Fixed salary rendering
+7. Refactored components
+8. External software update - SOLR upgraded from 8.3.0 to 8.11.1 
 
 ## 09.05.2022
 

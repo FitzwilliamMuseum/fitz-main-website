@@ -14,8 +14,8 @@ The models in this system point at an API rather than a database.
 Data comes from various systems and API endpoints.
 
 1. Main content - Directus Headless CMS
-2. Search content - SOLR 7.x instance
-3. Collections content - ElasticSearch instance from Knowledge Integration, standard mappings and the nascent API
+2. Search content - SOLR 8.11.1 instance
+3. Collections content - CIIM version 5 ElasticSearch instance from Knowledge Integration, standard mappings and the nascent API
 4. Twitter - API driven
 5. Shopify - FME systems queried and indexed daily into SOLR
 6. Sketchfab
