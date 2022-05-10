@@ -4,14 +4,16 @@
             <a href="{{ $donate['url'] }}">
                 <img class="card-img-top" src="{{ $donate['hero_image']['data']['thumbnails'][2]['url']}}"
                      alt="{{ $donate['hero_image_alt_text'] }}"
-                     loading="lazy" width="{{ $donate['hero_image']['data']['thumbnails'][2]['width'] }}"/>
+                     loading="lazy" width="{{ $donate['hero_image']['data']['thumbnails'][2]['width'] }}"
+                />
             </a>
         @else
             <a href="{{ $donate['url'] }}">
                 <img class="card-img-top"
                      src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                      alt="A stand in image for {{ $donate['title'] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @endisset
         <div class="card-body h-100">

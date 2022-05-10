@@ -4,14 +4,16 @@
             <a href="{{ $result['url'][0] }}">
                 <img class="card-img-top" src="{{ $result['thumbnail'][0]}}"
                      alt="A product image depicting {{ $result['title'][0] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @else
             <a href="{{ $result['url'][0] }}">
                 <img class="card-img-top"
                      src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                      alt="A stand in product image depicting {{ $result['title'][0] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @endisset
         <div class="card-body h-100">

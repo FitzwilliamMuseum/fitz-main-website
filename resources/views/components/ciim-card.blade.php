@@ -17,7 +17,8 @@
             <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
                 <img class="results_image__thumbnail"
                      src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"
-                     alt="A stand in image for {{ ucfirst($record['_source']['summary_title']) }}}"/>
+                     alt="A stand in image for {{ ucfirst($record['_source']['summary_title']) }}}"
+                />
             </a>
         @endif
         <div class="card-body ">
@@ -38,7 +39,6 @@
                 <p class="text-info">
                     {{ $record['_source']['identifier'][0]['accession_number'] }}
                 </p>
-
             </div>
         </div>
     </div>

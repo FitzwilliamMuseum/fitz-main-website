@@ -5,16 +5,19 @@
                 <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
                      alt="{{ $altTag }}"
                      width="{{ $image['data']['thumbnails'][13]['width'] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @else
             <a href="{{ route($route, $params) }}">
                 <img class="card-img-top"
                      src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                      alt="A stand in image for {{ $title }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @endisset
+
         <div class="card-body h-100">
             <div class="contents-label mb-3">
                 <h3>
@@ -35,10 +38,9 @@
                 </p>
                 @if($status === 'archived')
                     <span class="badge bg-maroon p-2 d-block">
-          This is now closed
-        </span>
+                        This is now closed
+                    </span>
                 @endif
-
             </div>
         </div>
         @isset($copyright)

@@ -2,17 +2,20 @@
     <div class="card card-fitz h-100">
         @isset($claim['image'])
             <a href="{{ route('about.spoliation.claim', $claim['priref']) }}">
-                <img class="card-img-top" src="{{ $claim['image']['data']['thumbnails'][2]['url']}}"
+                <img class="card-img-top"
+                     src="{{ $claim['image']['data']['thumbnails'][2]['url']}}"
                      alt="{{ $claim['alt_text'] }}"
                      width="{{ $claim['image']['data']['thumbnails'][2]['width'] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @else
             <a href="{{ route('about.spoliation.claim', $claim['priref']) }}">
                 <img class="card-img-top"
                      src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
                      alt="A stand in image for {{ $claim['accession_number'] }}"
-                     loading="lazy"/>
+                     loading="lazy"
+                />
             </a>
         @endisset
         <div class="card-body h-100">

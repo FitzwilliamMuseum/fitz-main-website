@@ -12,8 +12,9 @@
                         <li>File type: PDF</li>
                     @endif
                 </ul>
-                <a href="{{ $file['learning_files_id']['file']['data']['url'] }}" class="btn btn-dark d-block"><i class="fa fa-download mr-2" aria-hidden="true"></i>  Download file</a>
-
+                <a href="{{ $file['learning_files_id']['file']['data']['url'] }}" class="btn btn-dark d-block">
+                    <i class="fa fa-download mr-2" aria-hidden="true"></i>  Download file
+                </a>
             </div>
         </div>
     </div>
