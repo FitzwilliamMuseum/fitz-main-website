@@ -26,7 +26,7 @@
         "alaouy/youtube": "^2.2.5",
         "arcanedev/laravel-markdown": "^6.0",
         "conedevelopment/blade-filters": "^1.0",
-        "elasticsearch/elasticsearch": "^8.2.0",
+        "elasticsearch/elasticsearch": "^7.17.0",
         "fitzwilliammuseum/maps": "master",
         "fitzwilliammuseum/instagram-php-scraper": "master",
         "fruitcake/laravel-cors": "^3.0.0",
