@@ -64,9 +64,9 @@ class aboutusController extends Controller
      * Returns a list of vacancies
      * @return View
      */
-    public function archiveVacancies(): View
+    public function archiveVacancies(Request $request): View
     {
-        $vacancies = Vacancies::getArchived();
+        $vacancies = Vacancies::getArchived(12, $request);
         return view('aboutus.archived', compact('vacancies'));
     }
 

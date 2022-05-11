@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\DirectUs;
 use Carbon\Carbon;
 
@@ -41,65 +42,62 @@ class NewsItem extends Model implements Feedable
     private mixed $summary;
 
     /**
+     * @return Collection
+     */
+    public static function getFeedItems(): Collection
+    {
+        return self::feedItems();
+    }
+
+    /**
+     * @return Collection
+     */
+    public static function feedItems(): Collection
+    {
+        $api = new DirectUs;
+        $api->setEndpoint('news_articles');
+        $api->setArguments(
+            array(
+                'fields' => 'id,article_title,article_excerpt,article_body,slug,modified_on',
+                'sort' => '-id',
+                'limit' => 20,
+            )
+        );
+        $news = $api->getData()['data'];
+        $news = collect($news)->map(function ($item) {
+            return (object)$item;
+        });
+        $items = collect(); // create new collection
+
+        foreach ($news as $key => $value) {
+            $mod = Carbon::parse($value->modified_on);
+            $instance = new static; // create new NewsItem model class
+            $instance->id = route('article', $value->slug);
+            $instance->title = $value->article_title;
+            $instance->summary = $value->article_excerpt;
+            $instance->link = route('article', $value->slug);
+            $instance->updated_at = $mod;
+            $instance->body = $value->article_body;
+            $instance->authorName = 'The Fitzwilliam Museum';
+            $instance->exists = true;
+            $items[$key] = $instance;
+        }
+        return $items;
+    }
+
+    /**
      * @return FeedItem
      */
-  public function toFeedItem(): FeedItem
-  {
-      return FeedItem::create([
-          'id' => $this->link,
-          'title' => $this->title,
-          'summary' => $this->summary,
-          'updated' => $this->updated_at,
-          'content' => $this->body,
-          'link' => $this->link,
-          'authorName' => $this->authorName,
-      ]);
-  }
-
-    /**
-     * @return Collection
-     */
-  public static function feedItems(): Collection
-  {
-    $api = new DirectUs;
-    $api->setEndpoint('news_articles');
-    $api->setArguments(
-        array(
-            'fields' => 'id,article_title,article_excerpt,article_body,slug,modified_on',
-            'sort' => '-id',
-            'limit' => 20,
-        )
-    );
-    $news = $api->getData()['data'];
-    $news = collect($news)->map(function ($item) {
-      return (object) $item;
-    });
-    $items = collect(); // create new collection
-
-    foreach ($news as $key => $value) {
-      // dump(Carbon::parse($value->modified_on));
-        // $news[$key]->updated_at = Carbon::parse($value->modified_on)->format('dS F Y H:i a');
-        // $news[$key]->link = route('article', $value->slug);
-        $mod = Carbon::parse($value->modified_on);
-        $instance = new static; // create new NewsItem model class
-        $instance->id = route('article', $value->slug);
-        $instance->title = $value->article_title;
-        $instance->summary = $value->article_excerpt;
-        $instance->link = route('article', $value->slug);
-        $instance->updated_at = $mod;
-        $instance->body = $value->article_body;
-        $instance->authorName = 'The Fitzwilliam Museum';
-        $instance->exists = true;
-        $items[$key] = $instance;
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create([
+            'id' => $this->link,
+            'title' => $this->title,
+            'summary' => $this->summary,
+            'updated' => $this->updated_at,
+            'content' => $this->body,
+            'link' => $this->link,
+            'authorName' => $this->authorName,
+        ]);
     }
-    return $items;
-  }
-
-    /**
-     * @return Collection
-     */
-  public static function getFeedItems(): Collection
-  {
-    return self::feedItems();
-  }
 }
