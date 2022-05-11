@@ -72,7 +72,9 @@ h3.hc {
 button.btn.btn-btnBook a {
     color: white;
 }
-
+.open-link a {
+    color: white;
+}
 .absolute-bottom {
     position: absolute;
     bottom: 0;

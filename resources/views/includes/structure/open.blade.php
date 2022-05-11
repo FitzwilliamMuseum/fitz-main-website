@@ -7,11 +7,12 @@
                     @fa('ticket-alt', 'ticket', 'mr-2') Visiting us? Book Free Entry
                 </a>
             </div>
-
+            <div class="open-link">
                 @include('includes.structure.opening-hours')
+            </div>
             <p class="text-center">
 
-            @fa('door-closed', 'closed') <a class="free_ticket"
+                @fa('door-closed', 'closed') <a class="free_ticket"
                                                 href="{{ URL::to('/visit-us/gallery-closures-and-collection-updates') }}">Gallery
                     closures and collection updates</a>
             </p>
