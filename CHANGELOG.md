@@ -2,6 +2,12 @@
 
 This file documents code based changes to the front end framework.
 
+## 11.05.2022 
+
+1. Migrated from laravel 8 to laravel 9
+2. Changed pagination by default to bootstrap 5 version
+3. Upgraded various PHP libraries 
+
 ## 10.05.2022
 
 1. Added static image card component for sections that are not database controlled.
