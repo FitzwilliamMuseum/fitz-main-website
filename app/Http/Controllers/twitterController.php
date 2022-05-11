@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Config;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cache;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
 use Solarium\Core\Query\Result\ResultInterface;
 use Solarium\QueryType\Update\Result;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Twitter;
-
+use Atymic\Twitter\Facade\Twitter;
 
 class twitterController extends Controller
 {
@@ -38,12 +37,13 @@ class twitterController extends Controller
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $update = $client->createUpdate();
         $documents = array();
+
         foreach ($tweets as $tweet) {
             $doc = $update->createDocument();
             $doc->id = $tweet->id;
-            $text = iconv(mb_detect_encoding($tweet->full_text, mb_detect_order(), true), "UTF-8", $tweet->full_text);
-            $text = transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove', $text);
-            $text = trim(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', mb_convert_encoding($tweet->full_text, "UTF-8")));
+            $fulltext = iconv(mb_detect_encoding($tweet->full_text, mb_detect_order(), true), "UTF-8", $tweet->full_text);
+            $cleaned = transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove', $fulltext);
+            $text = trim(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', mb_convert_encoding($cleaned, "UTF-8")));
             $doc->title = substr($text, 0, 200);
             $doc->description = $text;
             $doc->created = $tweet->created_at;
@@ -60,6 +60,7 @@ class twitterController extends Controller
             }
             $documents[] = $doc;
         }
+        dd($documents);
         $update->addDocuments($documents);
         $update->addCommit();
         return $client->update($update);
