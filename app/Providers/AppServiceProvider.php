@@ -33,8 +33,7 @@ class AppServiceProvider extends ServiceProvider
         if (!$this->app->isLocal()){
           URL::forceScheme('https');
         }
-        Paginator::useBootstrap();
-        Paginator::defaultView('pagination::simple-tailwind');
+        Paginator::useBootstrapFive();
         view()->composer('includes.structure.opening-hours', \App\Http\Composers\OpeningHours::class);
         view()->composer('includes.structure.open', \App\Http\Composers\BookingLink::class);
 

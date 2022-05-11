@@ -16,7 +16,5 @@
                 :title="$record['title']"></x-image-card>
         @endforeach
     </div>
-    <nav aria-label="Page navigation">
-        {{ $paginator->links() }}
-    </nav>
+    {{ $paginator->links() }}
 @endsection
