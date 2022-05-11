@@ -25,10 +25,11 @@
         "ext-json": "*",
         "alaouy/youtube": "^2.2.5",
         "arcanedev/laravel-markdown": "^6.0",
+        "atymic/twitter": "^3.1",
         "conedevelopment/blade-filters": "^1.0",
         "elasticsearch/elasticsearch": "^7.17.0",
-        "fitzwilliammuseum/maps": "master",
         "fitzwilliammuseum/instagram-php-scraper": "master",
+        "fitzwilliammuseum/maps": "master",
         "fruitcake/laravel-cors": "^3.0.0",
         "gmostafa/php-graphql-client": "^1.13",
         "guzzlehttp/guzzle": "^7.4.2",
@@ -54,9 +55,9 @@
         "spatie/laravel-sitemap": "^6.1.0",
         "symfony/cache": "^6.0.8",
         "symfony/http-kernel": "^6.1.x-dev",
-        "thujohn/twitter": "^3.1.15",
         "upthemedia/xss-protection": "^0.0.8",
-        "xantios/mimey": "^2.2.0"
+        "xantios/mimey": "^2.2.0",
+        "ext-iconv": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12.3",

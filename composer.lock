@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d148e90edf6f684302b589a8d8855c7e",
+    "content-hash": "4ea6f47816392fa1972aa8ec8ddc1ad5",
     "packages": [
         {
             "name": "alaouy/youtube",
@@ -202,6 +202,95 @@
                 "source": "https://github.com/ARCANEDEV/Support/tree/9.0.0"
             },
             "time": "2022-02-10T19:52:50+00:00"
+        },
+        {
+            "name": "atymic/twitter",
+            "version": "3.1.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atymic/twitter.git",
+                "reference": "0cfc76c1b049cd85845caa14ade929979b09c8b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atymic/twitter/zipball/0cfc76c1b049cd85845caa14ade929979b09c8b0",
+                "reference": "0cfc76c1b049cd85845caa14ade929979b09c8b0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.4 || ^7.0",
+                "guzzlehttp/oauth-subscriber": "^0.6",
+                "illuminate/support": "6 - 9",
+                "kamermans/guzzle-oauth2-subscriber": "^1.0",
+                "league/oauth2-client": "^2.6",
+                "nesbot/carbon": "^1.2 || ^2.26",
+                "php": "^7.4 || ^8.0",
+                "php-di/php-di": "^6.2",
+                "phpoption/phpoption": "^1.7",
+                "psr/log": "^1.1 || ^2.0 || ^3.0",
+                "react/http": "^1.2",
+                "vlucas/phpdotenv": "*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8 - 7",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^8.3 || ^9.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Atymic\\Twitter\\ServiceProvider\\LaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Twitter": "Atymic\\Twitter\\Facade\\Twitter"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Atymic\\Twitter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "atymic",
+                    "email": "atymicq@gmail.com",
+                    "homepage": "https://atymic.dev"
+                },
+                {
+                    "name": "reliq",
+                    "email": "reliq@reliqarts.com",
+                    "homepage": "https://iamreliq.com"
+                }
+            ],
+            "description": "Twitter API for PHP & Laravel",
+            "keywords": [
+                "laravel",
+                "laravel5",
+                "laravel6",
+                "twitter"
+            ],
+            "support": {
+                "issues": "https://github.com/atymic/twitter/issues",
+                "source": "https://github.com/atymic/twitter/tree/3.1.15"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/atymic",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/reliq",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-02-13T23:16:47+00:00"
         },
         {
             "name": "beberlei/assert",
@@ -2208,16 +2297,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.12.1",
+            "version": "v9.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7c8bf052ef4919b8ffa7f25ec6f8648c4a36fc57"
+                "reference": "b5b5c635f1a93f277b5248725a1f7ffc97e20810"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7c8bf052ef4919b8ffa7f25ec6f8648c4a36fc57",
-                "reference": "7c8bf052ef4919b8ffa7f25ec6f8648c4a36fc57",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b5b5c635f1a93f277b5248725a1f7ffc97e20810",
+                "reference": "b5b5c635f1a93f277b5248725a1f7ffc97e20810",
                 "shasum": ""
             },
             "require": {
@@ -2383,7 +2472,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-05-10T19:32:47+00:00"
+            "time": "2022-05-11T13:38:26+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -9460,96 +9549,6 @@
             "time": "2020-10-28T17:51:34+00:00"
         },
         {
-            "name": "thujohn/twitter",
-            "version": "3.1.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/atymic/twitter.git",
-                "reference": "0cfc76c1b049cd85845caa14ade929979b09c8b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/atymic/twitter/zipball/0cfc76c1b049cd85845caa14ade929979b09c8b0",
-                "reference": "0cfc76c1b049cd85845caa14ade929979b09c8b0",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "guzzlehttp/guzzle": "^6.4 || ^7.0",
-                "guzzlehttp/oauth-subscriber": "^0.6",
-                "illuminate/support": "6 - 9",
-                "kamermans/guzzle-oauth2-subscriber": "^1.0",
-                "league/oauth2-client": "^2.6",
-                "nesbot/carbon": "^1.2 || ^2.26",
-                "php": "^7.4 || ^8.0",
-                "php-di/php-di": "^6.2",
-                "phpoption/phpoption": "^1.7",
-                "psr/log": "^1.1 || ^2.0 || ^3.0",
-                "react/http": "^1.2",
-                "vlucas/phpdotenv": "*"
-            },
-            "require-dev": {
-                "orchestra/testbench": "3.8 - 7",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^8.3 || ^9.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Atymic\\Twitter\\ServiceProvider\\LaravelServiceProvider"
-                    ],
-                    "aliases": {
-                        "Twitter": "Atymic\\Twitter\\Facade\\Twitter"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Atymic\\Twitter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "atymic",
-                    "email": "atymicq@gmail.com",
-                    "homepage": "https://atymic.dev"
-                },
-                {
-                    "name": "reliq",
-                    "email": "reliq@reliqarts.com",
-                    "homepage": "https://iamreliq.com"
-                }
-            ],
-            "description": "Twitter API for PHP & Laravel",
-            "keywords": [
-                "laravel",
-                "laravel5",
-                "laravel6",
-                "twitter"
-            ],
-            "support": {
-                "issues": "https://github.com/atymic/twitter/issues",
-                "source": "https://github.com/atymic/twitter/tree/3.1.15"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/atymic",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/reliq",
-                    "type": "github"
-                }
-            ],
-            "abandoned": "atymic/twitter",
-            "time": "2022-02-13T23:16:47+00:00"
-        },
-        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.4",
             "source": {
@@ -13115,7 +13114,8 @@
     "platform": {
         "php": "^8.0|^8.1",
         "ext-intl": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-iconv": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
