@@ -6,22 +6,20 @@
 @section('keywords', 'press,release,fitzwilliam')
 
 @section('press-contact')
-<div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-  <p>
-    Contact the press team: @fa('phone') 01223 332941 @fa('at')
-    <a href="mailto:press@fitzmuseum.cam.ac.uk">press@fitzmuseum.cam.ac.uk</a>
-  </p>
-</div>
+    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
+        <p>
+            Contact the press team: @fa('phone') 01223 332941 @fa('at')
+            <a href="mailto:press@fitzmuseum.cam.ac.uk">press@fitzmuseum.cam.ac.uk</a>
+        </p>
+    </div>
 @endsection
 @section('releases')
-<div class="container">
-  <div class="row">
-    @foreach($press['data'] as $release)
-        <x-press-card :release="$release" />
-    @endforeach
-  </div>
-  <nav aria-label="Page navigation">
-    {{ $paginator->links() }}
-  </nav>
-</div>
+    <div class="container">
+        <div class="row">
+            @foreach($press['data'] as $release)
+                <x-press-card :release="$release"/>
+            @endforeach
+        </div>
+        {{ $paginator->appends(request()->except('page'))->links() }}
+    </div>
 @endsection
