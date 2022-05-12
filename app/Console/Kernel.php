@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
     {
         # Import to search
         $schedule->call('App\Http\Controllers\solrimportController@staff')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@affilates')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrimportController@affiliates')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@stubs')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@news')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@directors')->cron('0 */5 * * *');
@@ -36,7 +36,6 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\solrimportController@collections')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@departments')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@pressroom')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@themes')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@pharospages')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@highlights')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\solrimportController@floor')->cron('0 */5 * * *');
