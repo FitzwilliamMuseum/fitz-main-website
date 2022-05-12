@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @foreach($news['data'] as $project)
   @section('jsonld')
     @include('includes.jsonld.news')

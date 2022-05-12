@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @section('title','Our Governance Documents')
 @section('hero_image', env('CONTENT_STORE') . 'millais_bridesmaid.jpg')
 @section('hero_image_title','Millais\'s Bridesmaid')

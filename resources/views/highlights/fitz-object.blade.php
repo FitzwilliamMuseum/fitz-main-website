@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layouts.layout')
 @foreach($week['data'] as $record)
     @section('description', $record['meta_description'])
 @section('title')
