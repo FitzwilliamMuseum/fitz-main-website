@@ -31,13 +31,16 @@
             @include('includes.structure.general')
         @endif
     @endisset
-
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        @markdown($coll['exhibition_narrative'])
-        @if(isset($coll['exhibition_abstract']))
-            @markdown($coll['exhibition_abstract'])
-        @endif
-    </div>
+    @if(isset($coll['exhibition_narrative']) || isset($coll['exhibition_abstract']))
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+            @if(isset($coll['exhibition_narrative']))
+                @markdown($coll['exhibition_narrative'])
+            @endif
+            @if(isset($coll['exhibition_abstract']))
+                @markdown($coll['exhibition_abstract'])
+            @endif
+        </div>
+    @endif
 
     @if( isset($coll['exhibition_url']) || isset($coll['exhibition_start_date']))
         <h3>{{$type}} details</h3>
