@@ -109,8 +109,8 @@ Route::get('news/{slug}/', 'newsController@article')->name('article');
 /*
 Learning routes
 */
-Route::get('learning/look-think-do/', 'learningController@lookthinkdomain')->name('ltd');
-Route::get('learning/look-think-do/{slug}', 'learningController@lookthinkdoactivity')->name('ltd-activity');
+Route::get('learning/look-think-do/', 'learningController@lookThinkDoMain')->name('ltd');
+Route::get('learning/look-think-do/{slug}', 'learningController@lookThinkDoActivity')->name('ltd-activity');
 Route::get('learning/resources/', 'learningController@resources')->name('learning-resources');
 Route::get('learning/resources/{slug}', 'learningController@resource')->name('learning-resource');
 Route::get('learning/school-sessions/{slug}', 'learningController@session')->name('school-sessions');
