@@ -56,8 +56,7 @@
                         <p class="text-info event-price">
                             @fa('ticket-alt') From
                             <meta property="priceCurrency" content="GBP"/>
-                            £
-                            <meta property="price"
+                            £<meta property="price"
                                   content="{{ $tmp[0]->Price }}"/>{{ $tmp[0]->Price }}
                         </p>
                     @else
