@@ -77,6 +77,7 @@ class tessituraController extends Controller
             'blind-and-partially-sighted' => 62,
             'online-events' => 110,
             'adult-events' => 116,
+            'friends-events' => 119,
             default => 37,
         };
     }
