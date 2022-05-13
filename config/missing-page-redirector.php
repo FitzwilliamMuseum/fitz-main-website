@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 return [
     /*
      * This is the class responsible for providing the URLs which must be redirected.
-     * The only requirement for the redirector is that it needs to implement the
+     * The only requirement for the re-director is that it needs to implement the
      * `Spatie\MissingPageRedirector\Redirector\Redirector`-interface
      */
     'redirector' => ConfigurationRedirector::class,
@@ -272,6 +272,7 @@ return [
         '/learning/families/gallery-activities' => '/learning/gallery-activities',
         '/learning/community' => '/learning/community-programming',
         '/learning/adults' => '/learning/adult-programming',
+        '/learning/into-action' => '/learning/resources/into-action',
         '/learning/families/stories' => '/learning/tales-from-the-museum',
         '/work/fitzwilliam-museum-portico' => '/learning/look-think-do/the-fitzwilliam-museum-portico',
         '/work/gust-wind' => '/learning/look-think-do/the-gust-of-wind',

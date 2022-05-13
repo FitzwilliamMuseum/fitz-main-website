@@ -22,10 +22,10 @@
         <div class="container h-100">
           <div class="contents-label mb-3">
             <h3>
-              {{ $file['learning_files_id']['title'] }}
+              {{ $file['learning_files_id']['title'] ?? 'Error'}}
             </h3>
             <ul>
-              <li>Resource type: {{ ucfirst($file['learning_files_id']['type']) }}</li>
+              <li>Resource type: {{ ucfirst($file['learning_files_id']['type'] ?? $file['id']) }}</li>
               <li>File size: @humansize($file['learning_files_id']['file']['filesize'],2)</li>
               @if(isset($file['learning_files_id']['file']['type']))
                 <li>File type: PDF</li>

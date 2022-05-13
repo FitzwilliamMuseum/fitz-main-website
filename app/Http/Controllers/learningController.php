@@ -22,7 +22,7 @@ class learningController extends Controller
      * Display a listing of the resource.
      * @return View|Response
      */
-    public function lookthinkdomain(): View|Response
+    public function lookThinkDoMain(): View|Response
     {
         $ltd = LookThinkDo::list();
         $pages = Stubs::getPage('learning', 'look-think-do');
@@ -37,7 +37,7 @@ class learningController extends Controller
      * @param string $slug The required slug
      * @return View
      */
-    public function lookthinkdoactivity(string $slug): View
+    public function lookThinkDoActivity(string $slug): View
     {
         $ltd = LookThinkDo::find($slug);
         $adlib = CIIM::findByAccession($ltd['data'][0]['adlib_id_number']);
@@ -63,6 +63,7 @@ class learningController extends Controller
     public function resource(string $slug): View
     {
         $res = LearningPages::filterBySlug($slug);
+
         return view('learning.resource', compact('res'));
     }
 
