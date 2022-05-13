@@ -7,6 +7,8 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use JetBrains\PhpStorm\Pure;
+use App\Models\TessituraEventTypes;
+use Illuminate\Support\Arr;
 
 class tessituraController extends Controller
 {
@@ -69,17 +71,8 @@ class tessituraController extends Controller
      */
     public function translateEvent(string $slug):int
     {
-        return match ($slug) {
-            'exhibitions' => 42,
-            'talks' => 58,
-            'families' => 60,
-            'young-people' => 61,
-            'blind-and-partially-sighted' => 62,
-            'online-events' => 110,
-            'adult-events' => 116,
-            'friends-events' => 119,
-            default => 37,
-        };
+        $events = TessituraEventTypes::eventTypeMatch();
+        return Arr::flatten(Arr::only($events, [$slug]))[0] ?? 37;
     }
 
     /**
