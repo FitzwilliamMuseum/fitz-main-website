@@ -61,6 +61,9 @@ class SolrImporter
                     $doc->searchImage = $record[$image]['data']['thumbnails'][13]['url'];
                 }
             }
+            if(Arr::exists($record, 'publication_date')){
+                $doc->publication_date = $record['publication_date'];
+            }
             // Section
             if (Arr::exists($record, 'section')) {
                 if (Arr::accessible($record['section'])) {
