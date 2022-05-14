@@ -437,7 +437,7 @@ class solrimportController extends Controller
         $api->setArguments(
             array(
                 'limit' => '500',
-                'fields' => 'id,title,type,curriculum_area,keystages,file.type,file.filesize,file.data,'
+                'fields' => 'id,title,type,curriculum_area,key_stage,keystages,file.type,file.filesize,file.data,'
             )
         );
         $data = $api->getData();

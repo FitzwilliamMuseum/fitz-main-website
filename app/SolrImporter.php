@@ -61,31 +61,42 @@ class SolrImporter
                     $doc->searchImage = $record[$image]['data']['thumbnails'][2]['url'];
                 }
             }
-            if (isset($record['section'])) {
-                $doc->section = $record['section'];
+            if (Arr::exists( $record, 'section')) {
+                if(Arr::accessible($record['section'])) {
+                    $doc->section = $record['section'];
+                }
             }
-            if (isset($record['keystages'])) {
-                $doc->keystages = implode(',', $record['keystages']);
+            if (Arr::exists($record,'keystages' )) {
+                if(Arr::accessible($record['keystages'])) {
+                    $doc->keystages = implode(',', $record['keystages']);
+                }
             }
-            if (isset($record['key_stages'])) {
-                $doc->keystages = implode(',', $record['key_stages']);
+            if (Arr::exists($record,'key_stages')) {
+                if(Arr::accessible($record['key_stages'])) {
+                    $doc->keystages = implode(',', $record['key_stages']);
+                }
             }
-            if (isset($record['theme'])) {
-                $doc->theme = implode(',', $record['theme']);
+            if (Arr::exists($record,'session_type')) {
+                if(Arr::accessible($record['session_type'])) {
+                    $doc->session_type = implode(',', $record['session_type']);
+                }
             }
-            if (isset($record['session_type'])) {
-                $doc->session_type = implode(',', $record['session_type']);
+            if (Arr::exists($record,'type_of_activity')) {
+                if(Arr::accessible($record['type_of_activity'])) {
+                    $doc->type_of_activity = $record['type_of_activity'];
+                }
             }
-            if (isset($record['type_of_activity'])) {
-                $doc->type_of_activity = implode(',', $record['type_of_activity']);
+            if (Arr::exists($record,'type')) {
+                if(Arr::accessible($record['type'])) {
+                    $doc->type_of_activity = $record['type'];
+                }
             }
-            if (isset($record['type'])) {
-                $doc->type_of_activity = $record['type'];
+            if (Arr::exists($record,'curriculum_area')) {
+                if(Arr::accessible($record['curriculum_area'])) {
+                    $doc->curriculum_link = implode(',', $record['curriculum_area']);
+                }
             }
-            if (isset($record['curriculum_area'])) {
-                $doc->curriculum_link = implode(',', $record['curriculum_area']);
-            }
-            if (array_key_exists('file', $mapping)) {
+            if (Arr::exists($mapping,'file')) {
                 $doc->url = $record[$mapping['file']]['data']['url'];
                 $doc->mimetype = $record[$mapping['file']]['type'];
                 $doc->filesize = $record[$mapping['file']]['filesize'];
