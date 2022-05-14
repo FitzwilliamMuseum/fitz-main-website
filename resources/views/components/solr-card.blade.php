@@ -2,14 +2,12 @@
     <div class="card card-fitz h-100">
         @if(!is_null($result['smallimage']))
             <a href="{{ $result['url'][0] }}" class="stretched-link">
-                <div class="ratio ratio-4x3">
                     <img src="{{ $result['smallimage'][0]}}" alt="Highlight image for {{ $result['title'][0] }}"
-                         loading="lazy"/>
-                </div>
+                         loading="lazy" class="card-img-top"/>
             </a>
         @else
-            <img class="ratio ratio-4x3"
-                 src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+            <img class="card-img-top"
+                 src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=exhibition"
                  alt="A stand in image for {{ $result['title'][0] }}"
                  loading="lazy"
             />

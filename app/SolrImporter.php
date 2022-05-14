@@ -58,45 +58,60 @@ class SolrImporter
                     $doc->thumbnail = $record[$image]['data']['thumbnails'][5]['url'];
                     $doc->image = $record[$image]['data']['full_url'];
                     $doc->smallimage = $record[$image]['data']['thumbnails'][4]['url'];
-                    $doc->searchImage = $record[$image]['data']['thumbnails'][2]['url'];
+                    $doc->searchImage = $record[$image]['data']['thumbnails'][13]['url'];
                 }
             }
-            if (Arr::exists( $record, 'section')) {
-                if(Arr::accessible($record['section'])) {
+            // Section
+            if (Arr::exists($record, 'section')) {
+                if (Arr::accessible($record['section'])) {
                     $doc->section = $record['section'];
                 }
             }
-            if (Arr::exists($record,'keystages' )) {
-                if(Arr::accessible($record['keystages'])) {
-                    $doc->keystages = implode(',', $record['keystages']);
+            // Key stage for learning activities
+            if (Arr::exists($record, 'keystages')) {
+                if (Arr::accessible($record['keystages'])) {
+                    $doc->keystages = implode(',', array_filter($record['keystages']));
                 }
             }
-            if (Arr::exists($record,'key_stages')) {
-                if(Arr::accessible($record['key_stages'])) {
-                    $doc->keystages = implode(',', $record['key_stages']);
+            // Single keystage entry
+            if (Arr::exists($record, 'key_stage')) {
+                    $doc->key_stage = $record['key_stage'];
+            }
+            // Session type - learning files type
+            if (Arr::exists($record, 'type')) {
+                $doc->type = $record['type'];
+            }
+            // Type of activities school sessions -array
+            if (Arr::exists($record, 'type_of_activity')) {
+                if (Arr::accessible($record['type_of_activity'])) {
+                    $doc->type_of_activity = implode(',',array_filter($record['type_of_activity']));
                 }
             }
-            if (Arr::exists($record,'session_type')) {
-                if(Arr::accessible($record['session_type'])) {
-                    $doc->session_type = implode(',', $record['session_type']);
+            // Type of activities school sessions - array
+            if (Arr::exists($record, 'session_type')) {
+                if (Arr::accessible($record['session_type'])) {
+                    $doc->session_types = implode(',',array_filter($record['session_type']));
                 }
             }
-            if (Arr::exists($record,'type_of_activity')) {
-                if(Arr::accessible($record['type_of_activity'])) {
-                    $doc->type_of_activity = $record['type_of_activity'];
+            // School sessions curriculum link - array of values
+            if (Arr::exists($record, 'curriculum_link')) {
+                if (Arr::accessible($record['curriculum_link'])) {
+                    $doc->curriculum_link = implode(',',array_filter($record['curriculum_link']));
                 }
             }
-            if (Arr::exists($record,'type')) {
-                if(Arr::accessible($record['type'])) {
-                    $doc->type_of_activity = $record['type'];
+            // School sessions theme - array of values
+            if (Arr::exists($record, 'theme')) {
+                if (Arr::accessible($record['theme'])) {
+                    $doc->themes = implode(',',array_filter($record['theme']));
                 }
             }
-            if (Arr::exists($record,'curriculum_area')) {
-                if(Arr::accessible($record['curriculum_area'])) {
-                    $doc->curriculum_link = implode(',', $record['curriculum_area']);
-                }
+            // Learning files curriculum area - string
+            if (Arr::exists($record, 'curriculum_area')) {
+                $doc->curriculum_area = $record['curriculum_area'];
             }
-            if (Arr::exists($mapping,'file')) {
+
+            // Attached files - array
+            if (Arr::exists($mapping, 'file')) {
                 $doc->url = $record[$mapping['file']]['data']['url'];
                 $doc->mimetype = $record[$mapping['file']]['type'];
                 $doc->filesize = $record[$mapping['file']]['filesize'];
