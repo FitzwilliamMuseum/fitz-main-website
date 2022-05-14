@@ -57,7 +57,7 @@ class SolrImporter
                 if (!empty($record[$image]['data'])) {
                     $doc->thumbnail = $record[$image]['data']['thumbnails'][5]['url'];
                     $doc->image = $record[$image]['data']['full_url'];
-                    $doc->smallimage = $record[$image]['data']['thumbnails'][4]['url'];
+                    $doc->smallimage = $record[$image]['data']['thumbnails'][13]['url'];
                     $doc->searchImage = $record[$image]['data']['thumbnails'][13]['url'];
                 }
             }
