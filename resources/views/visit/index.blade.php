@@ -1,11 +1,9 @@
 @extends('layouts.visitus')
 
-@foreach($pages['data'] as $page)
     @section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/european-pottery-bond.jpg')
     @section('title', 'Visit us')
-    @section('description', $page['meta_description'])
-    @section('keyword', $page['meta_keywords'])
-@endforeach
+    @section('description', 'Visiting the Fitzwilliam Museum? What do you need to know?')
+    @section('keyword', 'cambridge,museums,visit')
 
 @section('content')
     <div class="row">
