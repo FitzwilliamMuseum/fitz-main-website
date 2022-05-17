@@ -11,15 +11,15 @@ class Transport extends Model
      */
     public static function list(): array
     {
-      $api = new Directus;
-      $api->setEndpoint('transport');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'sort' => 'id',
-          )
-      );
-      return $api->getData();
+        $api = new Directus;
+        $api->setEndpoint('transport');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => '*',
+                'sort' => 'id',
+            )
+        );
+        return $api->getData();
     }
 }

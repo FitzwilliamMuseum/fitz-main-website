@@ -3,7 +3,7 @@
         @if(empty($artists['image']))
         <a href="{{ route('exhibition.ttn.artist', $artists['slug']) }}">
                 <img class="card-img-top"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in image for {{ $artists['display_name'] }}"
                      loading="lazy"
                 />
@@ -11,9 +11,9 @@
         @else
             <a href="{{ route('exhibition.ttn.artist', $artists['slug']) }}">
                 <img class="card-img-top"
-                     src="{{ $artists['image']['data']['thumbnails'][2]['url'] }}"
+                     src="{{ $artists['image']['data']['thumbnails'][13]['url'] }}"
                      alt="{{ $artists['display_name'] }}"
-                     width="{{ $artists['image']['data']['thumbnails'][2]['width'] }}"
+                     width="{{ $artists['image']['data']['thumbnails'][13]['width'] }}"
                      loading="lazy"
                 />
             </a>

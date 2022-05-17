@@ -21,8 +21,7 @@
                         :altTag="$label['hero_image_alt_title']"
                         :route="'exhibition.label'"
                         :params="[$label['slug']]"
-                        :title="$label['title']"
-                    />
+                        :title="$label['title']"></x-image-card>
                 @endforeach
             </div>
         </div>

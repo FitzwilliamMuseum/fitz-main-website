@@ -152,7 +152,7 @@ class Exhibitions extends Model
     }
 
     /**
-     * @param int $slug
+     * @param int $curator
      * @return array
      */
     public static function findByExternals(int $curator): array

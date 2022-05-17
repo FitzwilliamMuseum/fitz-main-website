@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr"
-      prefix="content: https://purl.org/rss/1.0/modules/content/  dc: https://purl.org/dc/terms/  foaf: https://xmlns.com/foaf/0.1/  og: https://ogp.me/ns#  rdfs: https://www.w3.org/2000/01/rdf-schema#  schema: https://schema.org/  sioc: https://rdfs.org/sioc/ns#  sioct: https://rdfs.org/sioc/types#  skos: https://www.w3.org/2004/02/skos/core#  xsd: https://www.w3.org/2001/XMLSchema# ">
+@include('includes.structure.name-spaces')
 <head>
     <script src="{{ url('/') }}/umd/UV.js"></script>
     <link rel="stylesheet" type="text/css" href="/uv.css"/>

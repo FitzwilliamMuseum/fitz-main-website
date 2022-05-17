@@ -47,11 +47,11 @@ class exhibitionsController extends Controller
      */
     public function index(): View
     {
-        $pages    = Stubs::getLanding('exhibitions');
-        $current  = Exhibitions::list();
+        $pages = Stubs::getLanding('exhibitions');
+        $current = Exhibitions::list();
         $displays = Exhibitions::list('current', '-ticketed', 'display');
-        $future   = Exhibitions::listFuture();
-        $archive  = Exhibitions::archive('archived', '-exhibition_end_date', 3);
+        $future = Exhibitions::listFuture();
+        $archive = Exhibitions::archive('archived', '-exhibition_end_date', 3);
         return view('exhibitions.index', compact(
             'current', 'pages', 'archive',
             'future', 'displays'
@@ -177,19 +177,21 @@ class exhibitionsController extends Controller
      */
     public function ttnLabels(): View
     {
-        $one = TtnLabels::listByTheme(1)['data'];
-        $two = TtnLabels::listByTheme(2)['data'];
-        $three = TtnLabels::listByTheme(3)['data'];
-        $four = TtnLabels::listByTheme(4)['data'];
-        $five = TtnLabels::listByTheme(5)['data'];
-        $six = TtnLabels::listByTheme(6)['data'];
-        $seven = TtnLabels::listByTheme(7)['data'];
-        $eight = TtnLabels::listByTheme(8)['data'];
-        $nine = TtnLabels::listByTheme(9)['data'];
-        $ten = TtnLabels::listByTheme(10)['data'];
+        $sectionOne = TtnLabels::listByTheme(1)['data'];
+        $sectionTwo = TtnLabels::listByTheme(2)['data'];
+        $sectionThree = TtnLabels::listByTheme(3)['data'];
+        $sectionFour = TtnLabels::listByTheme(4)['data'];
+        $sectionFive = TtnLabels::listByTheme(5)['data'];
+        $sectionSix = TtnLabels::listByTheme(6)['data'];
+        $sectionSeven = TtnLabels::listByTheme(7)['data'];
+        $sectionEight = TtnLabels::listByTheme(8)['data'];
+        $sectionNine = TtnLabels::listByTheme(9)['data'];
+        $sectionTen = TtnLabels::listByTheme(10)['data'];
         return view('exhibitions.ttn-labels', compact(
-            'one', 'two', 'three',
-            'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'
+            'sectionOne', 'sectionTwo', 'sectionThree',
+            'sectionFour', 'sectionFive', 'sectionSix',
+            'sectionSeven', 'sectionEight', 'sectionNine',
+            'sectionTen'
         ));
     }
 
@@ -283,17 +285,17 @@ class exhibitionsController extends Controller
         foreach ($labels as $label) {
             $feature = array(
                 "type" => "Feature",
-                "@id" =>  route('exhibition.ttn.label', $label['slug']),
+                "@id" => route('exhibition.ttn.label', $label['slug']),
                 'properties' => array(
                     'title' => $label['title'] . ' - ' . $label['artist']['display_name'],
                     'artist' => $label['artist']['display_name'] ?? 'Not known',
                     'slug' => $label['slug'],
-                    'birth' => trim(preg_replace('/\t+/', '',$label['artist']['place_of_birth'])),
-                    'death' => trim(preg_replace('/\t+/', '',$label['artist']['place_of_death'])),
+                    'birth' => trim(preg_replace('/\t+/', '', $label['artist']['place_of_birth'])),
+                    'death' => trim(preg_replace('/\t+/', '', $label['artist']['place_of_death'])),
                     'theme' => $label['theme']['theme_name'],
                     'institution' => $label['institution'],
                     'media' => $label['media']
-                    ),
+                ),
                 'descriptions' => array(
                     array(
                         'value' => $label['artist']['biography']
@@ -301,13 +303,13 @@ class exhibitionsController extends Controller
                 ),
                 'depictions' => array(
                     array(
-                    'license' => 'cc:by-sa/3.0/',
-                    'thumbnail' => $label ['image']['data']['url'],
-                    '@id' => $label ['image']['data']['url']
+                        'license' => 'cc:by-sa/3.0/',
+                        'thumbnail' => $label ['image']['data']['url'],
+                        '@id' => $label ['image']['data']['url']
                     )
                 ),
                 'geometry' => array(
-                    "type" =>  "Point",
+                    "type" => "Point",
                     "coordinates" => array(
                         $label['lng'], $label['lat']
                     ),
@@ -354,20 +356,20 @@ class exhibitionsController extends Controller
         foreach ($labels as $label) {
             $feature = array(
                 "type" => "Feature",
-                "@id" =>  route('exhibition.ttn.artist', $label['slug']),
+                "@id" => route('exhibition.ttn.artist', $label['slug']),
                 'properties' => array(
                     'title' => $label['display_name'] ?? 'Not known',
                     'slug' => $label['slug'],
                 ),
                 'depictions' => array(
-                        array(
+                    array(
                         'license' => 'cc:by-sa/3.0/',
                         'thumbnail' => $label['image']['data']['url'] ?? '',
                         '@id' => $label ['image']['data']['url'] ?? ''
                     ),
                 ),
                 'geometry' => array(
-                    "type" =>  "Point",
+                    "type" => "Point",
                     "coordinates" => array(
                         $label['birth_lon'], $label['birth_lat']
                     ),
@@ -413,7 +415,7 @@ class exhibitionsController extends Controller
         foreach ($labels as $label) {
             $feature = array(
                 "type" => "Feature",
-                "@id" =>  route('exhibition.ttn.artist', $label['slug']),
+                "@id" => route('exhibition.ttn.artist', $label['slug']),
                 'properties' => array(
                     'title' => $label['display_name'] ?? 'Not known',
                     'slug' => $label['slug']
@@ -426,7 +428,7 @@ class exhibitionsController extends Controller
                     ),
                 ),
                 'geometry' => array(
-                    "type" =>  "Point",
+                    "type" => "Point",
                     "coordinates" => array(
                         $label['death_lon'], $label['death_lat']
                     ),
@@ -438,6 +440,7 @@ class exhibitionsController extends Controller
         }
         return response()->json($geoJson);
     }
+
     /**
      * @return View
      */

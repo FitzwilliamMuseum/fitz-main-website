@@ -33,7 +33,7 @@
         <h3>Other highlight objects in our collection you might like</h3>
         <div class="row">
             @foreach($records as $record)
-                <x-solr-card :result="$record"/>
+                <x-solr-card :result="$record"></x-solr-card>
             @endforeach
         </div>
     </div>

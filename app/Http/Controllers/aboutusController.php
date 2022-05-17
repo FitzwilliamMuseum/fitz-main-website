@@ -61,7 +61,8 @@ class aboutusController extends Controller
     }
 
     /**
-     * Returns a list of vacancies
+     * Returns a list of archived vacancies
+     * @param Request $request
      * @return View
      */
     public function archiveVacancies(Request $request): View
@@ -153,12 +154,20 @@ class aboutusController extends Controller
         return view('aboutus.hockney', compact('terms'));
     }
 
+    /**
+     * @param Request $request
+     * @return View
+     */
     public function spoliation(Request $request): View
     {
         $claims = SpoliationClaims::list($request );
         return view('aboutus.spoliation', compact('claims'));
     }
 
+    /**
+     * @param string $priref
+     * @return View
+     */
     public function spoliationClaim(string $priref): View
     {
         $claims = SpoliationClaims::find($priref);

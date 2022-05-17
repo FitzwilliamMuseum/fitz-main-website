@@ -12,7 +12,7 @@
         @else
             <a href="{{ route('instagram.story', $instagram['slug']) }}">
                 <img class="img-fluid"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in image for {{ $instagram['title'] }}"
                 />
             </a>
@@ -20,7 +20,9 @@
         <div class="card-body h-100">
             <div class="contents-label mb-3">
                 <h3>
-                    <a href="{{ route('instagram.story', $instagram['slug']) }}">{{ $instagram['title'] }}</a>
+                    <a href="{{ route('instagram.story', $instagram['slug']) }}">
+                        {{ $instagram['title'] }}
+                    </a>
                 </h3>
                 <p class="text-info">
                     {{ Carbon\Carbon::parse($instagram['date_posted'])->format('l j F Y') }}

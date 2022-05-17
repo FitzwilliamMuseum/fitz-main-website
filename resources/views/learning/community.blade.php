@@ -54,7 +54,7 @@
     @endsection
 @endforeach
 @section('immunity')
-    @if(Request::is('objects-and-artworks/immunity-from-seizure'))
+    @if(\Request::is('objects-and-artworks/immunity-from-seizure'))
 
         @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
         @php

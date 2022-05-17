@@ -3,7 +3,7 @@
 @section('content')
     <div id="uv" class="uv"></div>
     <script>
-        var urlAdaptor = new UV.IIIFURLAdaptor();
+        const urlAdaptor = new UV.IIIFURLAdaptor();
         const data = urlAdaptor.getInitialData({
             manifest: "{{ $label[0]['manifest_url'] }}",
             // embedded: true // needed for codesandbox frame

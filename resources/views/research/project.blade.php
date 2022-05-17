@@ -11,8 +11,9 @@
       @markdown($project['project_overview'])
     </div>
     @if(!@empty ($project['project_principal']))
-
-      <h3>Project information</h3>
+      <h3>
+          Project information
+      </h3>
       <div class="col-12 shadow-sm p-3 mx-auto mb-3">
         <ul>
           @if($project['project_principal'])

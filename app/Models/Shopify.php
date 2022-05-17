@@ -44,11 +44,11 @@ class Shopify extends Model
 
     /**
      * @param string $ids
-     * @return array|false[]
+     * @return array
      * @throws ApiException
      * @throws CurlException
      */
-    public static function getShopifyCollection(string $ids)
+    public static function getShopifyCollection(string $ids): array
     {
         $config = array(
             'ShopUrl' => env('SHOPIFY_FME_URL'),
@@ -57,6 +57,6 @@ class Shopify extends Model
         );
         $shop = new ShopifySDK;
         $shop->config($config);
-        return $shop->Product->get(['limit' => 3, 'status' => 'active','ids' => $ids]);
+        return $shop->Product->get(['limit' => 3, 'status' => 'active', 'ids' => $ids]);
     }
 }

@@ -3,16 +3,16 @@
         @isset($claim['image'])
             <a href="{{ route('about.spoliation.claim', $claim['priref']) }}">
                 <img class="card-img-top"
-                     src="{{ $claim['image']['data']['thumbnails'][2]['url']}}"
+                     src="{{ $claim['image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $claim['alt_text'] }}"
-                     width="{{ $claim['image']['data']['thumbnails'][2]['width'] }}"
+                     width="{{ $claim['image']['data']['thumbnails'][13]['width'] }}"
                      loading="lazy"
                 />
             </a>
         @else
             <a href="{{ route('about.spoliation.claim', $claim['priref']) }}">
                 <img class="card-img-top"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in image for {{ $claim['accession_number'] }}"
                      loading="lazy"
                 />

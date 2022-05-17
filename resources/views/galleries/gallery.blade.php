@@ -46,8 +46,7 @@
       :altTag="$object['pharos_id']['image_alt_text']"
       :route="'highlight'"
       :params="[$object['pharos_id']['slug']]"
-      :title="$object['pharos_id']['title']"
-      />
+      :title="$object['pharos_id']['title']"></x-image-card>
     @endforeach
   </div>
   @endif
@@ -55,8 +54,7 @@
   @isset($gallery['object_id_numbers'])
     @inject('galleriesController', 'App\Http\Controllers\galleriesController')
     @php
-    $records = $galleriesController::getObjects($gallery['object_id_numbers']);
-    // @dd($records);
+      $records = $galleriesController::getObjects($gallery['object_id_numbers']);
     @endphp
     @if(!empty($records))
       <h3>
@@ -64,7 +62,7 @@
       </h3>
       <div class="row">
         @foreach($records as $record)
-          <x-ciim-card :record="$record" />
+          <x-ciim-card :record="$record"></x-ciim-card>
         @endforeach
         </div>
       @endif
@@ -96,7 +94,6 @@
       @if(!empty($gallery['image_360_pano']))
         <div class="container">
           <h3>{{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h3>
-
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div id="panorama"></div>
           </div>

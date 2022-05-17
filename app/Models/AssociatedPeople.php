@@ -7,6 +7,7 @@ use App\DirectUs;
 class AssociatedPeople extends Model
 {
     /**
+     * @param string $filters
      * @return array
      */
     public static function list(string $filters = 'podcastGuest'): array

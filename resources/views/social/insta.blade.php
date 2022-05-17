@@ -7,7 +7,7 @@
 
     <div class="row">
         @foreach($insta['data'] as $instagram)
-            <x-instagram-card :instagram="$instagram"/>
+            <x-instagram-card :instagram="$instagram"></x-instagram-card>
         @endforeach
     </div>
 @endsection

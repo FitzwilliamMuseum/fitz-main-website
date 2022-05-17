@@ -8,7 +8,6 @@ class TtnBios extends Model
 {
 
     /**
-     * @param string $slug
      * @return array
      */
     public static function list(): array
@@ -26,7 +25,7 @@ class TtnBios extends Model
     }
 
     /**
-     * @param string $slug
+     * @param string $field
      * @return array
      */
     public static function listFiltered(string $field): array

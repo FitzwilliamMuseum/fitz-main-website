@@ -12,16 +12,16 @@ class ResearchOpportunities extends Model
      */
     public static function list(): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('research_opportunities');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'sort' => 'id'
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs();
+        $api->setEndpoint('research_opportunities');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'sort' => 'id'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -30,15 +30,15 @@ class ResearchOpportunities extends Model
      */
     public static function find(string $slug): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('research_opportunities');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[slug][eq]' => $slug
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs();
+        $api->setEndpoint('research_opportunities');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[slug][eq]' => $slug
+            )
+        );
+        return $api->getData();
     }
 }

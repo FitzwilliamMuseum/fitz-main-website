@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Config;
+use Illuminate\Support\Facades\Config;
 use Psr\SimpleCache\InvalidArgumentException;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
