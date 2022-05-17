@@ -10,7 +10,7 @@
         @else
             <a href="{{ $result['url'][0] }}">
                 <img class="card-img-top"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in product image depicting {{ $result['title'][0] }}"
                      loading="lazy"
                 />

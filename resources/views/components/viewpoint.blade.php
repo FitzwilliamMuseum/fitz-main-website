@@ -1,4 +1,5 @@
 @section('title', $viewpoint['title'])
+@section('description', 'A viewpoint focused on ' . $image['ttn_labels_id']['alt_text'])
 <div>
     @foreach($viewpoint['associated_artworks'] as $image)
         <figure class="figure">

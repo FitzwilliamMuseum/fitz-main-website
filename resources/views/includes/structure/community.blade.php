@@ -10,13 +10,15 @@
         height="{{ $session['hero_image']['data']['thumbnails'][4]['width'] }}"
         loading="lazy" /></a>
       @else
-        <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+        <img class="img-fluid" src="{{ env('MISSING_IMAGE_URL') }}"
         alt="No image was provided for {{ $session['title'] }}"/>
       @endif
       <div class="card-body h-100">
         <div class="contents-label mb-3">
           <h3>
-            <a href="{{ route('community-programming', $session['slug']) }}">{{ $session['title'] }}</a>
+            <a href="{{ route('community-programming', $session['slug']) }}">
+                {{ $session['title'] }}
+            </a>
           </h3>
           @if(isset($session['key_stages']))
           <p>Key stages: {{ implode(',',$session['key_stages']) }}</p>

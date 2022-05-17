@@ -16,8 +16,7 @@
                     :altTag="$gallery['gallery_name']"
                     :route="'gallery'"
                     :title="$gallery['gallery_name']"
-                    :params="[$gallery['slug']]"
-                />
+                    :params="[$gallery['slug']]"></x-gallery-card>
             @endforeach
         </div>
     </div>

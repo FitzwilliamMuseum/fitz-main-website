@@ -56,7 +56,8 @@
                         <p class="text-info event-price">
                             @fa('ticket-alt') From
                             <meta property="priceCurrency" content="GBP"/>
-                            £<meta property="price"
+                            £
+                            <meta property="price"
                                   content="{{ $tmp[0]->Price }}"/>{{ $tmp[0]->Price }}
                         </p>
                     @else
@@ -82,9 +83,9 @@
                      <meta property="url" content="{{ env('APP_URL') }}">
                    </span>
                 @endisset
-                            @isset($production->Duration)
-                                <p>Duration: <meta property="duration" content="PT{{ $production->Duration }}M00S">{{ $production->Duration }} minutes</p>
-                    @endisset
+                @isset($production->Duration)
+                    <p>Duration: <meta property="duration" content="PT{{ $production->Duration }}M00S">{{ $production->Duration }} minutes</p>
+                @endisset
             </div>
         </div>
     </div>

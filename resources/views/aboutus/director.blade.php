@@ -23,7 +23,7 @@
                 - {{ $director['date_to'] }}
             @endif
         </p>
-        @markdown($director['biography'])
+        @markdown($director['biography'] ?? 'No content available')
     </div>
 @endsection
 @endforeach

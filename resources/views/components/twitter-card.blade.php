@@ -11,7 +11,7 @@
             @endforeach
         @else
             <a href="{{ Twitter::linkTweet($tweet) }}">
-                <img class="img-fluid" src="https://content.fitz.ms/fitz-website/assets/portico.jpg"/>
+                <img class="img-fluid" alt="The Portico of the Fitzwilliam Museum" src="https://content.fitz.ms/fitz-website/assets/portico.jpg"/>
             </a>
         @endif
         <div class="card-body">

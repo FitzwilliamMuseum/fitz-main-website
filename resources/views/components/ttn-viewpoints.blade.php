@@ -3,15 +3,15 @@
         @if(!empty($viewpoint['associated_artworks'][0]['ttn_labels_id']['image']))
             <a href="{{ route('exhibition.ttn.viewpoint', $viewpoint['id']) }}">
                 <img class="card-img-top"
-                     src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][2]['url']}}"
+                     src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['alt_text'] }}"
-                     width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][2]['width'] }}"
+                     width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['width'] }}"
                      loading="lazy"/>
             </a>
         @else
             <a href="{{ route('exhibition.ttn.viewpoint', $viewpoint['id']) }}">
                 <img class="card-img-top"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in image for {{ $viewpoint['title'] }}"
                      loading="lazy"/>
             </a>

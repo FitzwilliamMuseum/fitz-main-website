@@ -133,10 +133,10 @@ class TessituraApi
     }
 
     /**
-     * @param string $date
+     * @param Carbon|string $date
      * @return Carbon|string
      */
-    public function setPerformanceStartDate( $date): Carbon|string
+    public function setPerformanceStartDate( Carbon|string $date): Carbon|string
     {
         if (!isset($date)) {
             $this->_performanceStartDate = Carbon::now();
@@ -150,7 +150,7 @@ class TessituraApi
      * @param Carbon|string $date
      * @return Carbon|string
      */
-    public function setPerformanceEndDate( $date): Carbon|string
+    public function setPerformanceEndDate( Carbon|string $date): Carbon|string
     {
         if (!isset($date)) {
             $this->_performanceEndDate = Carbon::now()->addDays(7);
@@ -160,6 +160,10 @@ class TessituraApi
         return $this->_performanceEndDate;
     }
 
+    /**
+     * @param string $facilities
+     * @return string
+     */
     public function setFacilities( string $facilities): string
     {
         $this->_facilities = match ($facilities) {

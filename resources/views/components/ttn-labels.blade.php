@@ -2,15 +2,15 @@
     <div class="card card-fitz h-100">
         @if(!empty($labels['image']))
             <a href="{{ route('exhibition.ttn.label', $labels['slug']) }}">
-                <img class="card-img-top" src="{{$labels['image']['data']['thumbnails'][2]['url']}}"
+                <img class="card-img-top" src="{{$labels['image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $labels['alt_text'] }}"
-                     width="{{ $labels['image']['data']['thumbnails'][2]['width'] }}"
+                     width="{{ $labels['image']['data']['thumbnails'][13]['width'] }}"
                      loading="lazy"/>
             </a>
         @else
             <a href="{{ route('exhibition.ttn.label', $labels['slug']) }}">
                 <img class="card-img-top"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in image for {{ $labels['title'] }}"
                      loading="lazy"/>
             </a>

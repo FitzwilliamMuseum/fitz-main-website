@@ -12,7 +12,7 @@
   @endif
 
   @section('content')
-    <div class="bg-white p-3" style="min-height:500;">
+    <div class="bg-white p-3" style="min-height:500px;">
     <div class="mb-3">
       @if(!is_null($profile['profile_image']))
       <div class="img-fluid float-right p-3">
@@ -161,7 +161,7 @@
         </h3>
         <div class="row">
           @foreach($profile['research_projects'] as $project)
-            <x-image-card :altTag="$project['research_projects_id']['hero_image_alt_text'] " :title="$project['research_projects_id']['title']"  :image="$project['research_projects_id']['hero_image']" :route="'research-project'" :params="[$project['research_projects_id']['slug']]" />
+            <x-image-card :altTag="$project['research_projects_id']['hero_image_alt_text'] " :title="$project['research_projects_id']['title']"  :image="$project['research_projects_id']['hero_image']" :route="'research-project'" :params="[$project['research_projects_id']['slug']]"></x-image-card>
           @endforeach
         </div>
       </div>
@@ -183,8 +183,7 @@
             :title="$department['departments_id']['title']"
             :image="$department['departments_id']['hero_image']"
             :route="'department'"
-            :params="[$department['departments_id']['slug']]"
-            />
+            :params="[$department['departments_id']['slug']]"></x-image-card>
           @endforeach
         </div>
       </div>
@@ -206,8 +205,7 @@
           :title="$exhibition['exhibition']['exhibition_title']"
           :image="$exhibition['exhibition']['hero_image']"
           :route="'exhibition'"
-          :params="[$exhibition['exhibition']['slug']]"
-          />
+          :params="[$exhibition['exhibition']['slug']]"></x-image-card>
         @endforeach
       </div>
     </div>
@@ -223,7 +221,7 @@
       <h3>Researchers with similar profiles</h3>
       <div class="row">
         @foreach($similar as $record)
-          <x-solr-card :result="$record" />
+          <x-solr-card :result="$record"></x-solr-card>
         @endforeach
       </div>
     </div>

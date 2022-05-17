@@ -3,16 +3,16 @@
     <div class="card card-fitz h-100">
         @isset($curator['associated_people_id']['profile_image'])
             <a href="{{ route('exhibition-externals', $curator['associated_people_id']['slug']) }}">
-                <img class="card-img-top" src="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][2]['url']}}"
+                <img class="card-img-top" src="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['url']}}"
                      alt="A profile image of {{ $curator['associated_people_id']['display_name'] }}"
-                     width="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][2]['width'] }}"
+                     width="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['width'] }}"
                      loading="lazy"
                 />
             </a>
         @else
             <a href="{{ route('exhibition-externals', $curator['associated_people_id']['slug']) }}">
                 <img class="card-img-top"
-                     src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=directus-large-crop"
+                     src="{{ env('MISSING_IMAGE_URL') }}"
                      alt="A stand in image for {{ $curator['associated_people_id']['display_name'] }}"
                      loading="lazy"
                 />

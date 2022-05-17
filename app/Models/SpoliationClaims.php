@@ -30,7 +30,7 @@ class SpoliationClaims extends Model
     public static function list(Request $request): LengthAwarePaginator
     {
         $perPage = 12;
-        $offset = ($request['page'] -1) * $perPage ;
+        $offset = ($request['page'] - 1) * $perPage;
         $api = new DirectUs;
         $api->setEndpoint(self::$table);
         $api->setArguments(

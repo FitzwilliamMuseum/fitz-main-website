@@ -5,6 +5,5 @@
         title="A Peripleo map"
         allowfullscreen
         width="100%"
-        height="100%"
-    />
+        height="100%"></iframe>
 @endsection

@@ -1,99 +1,51 @@
 @extends('layouts.visitus')
-@section('title', 'Visit us')
-@section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/european-pottery-bond.jpg')
-@section('hero_image_title', "The Museum's founder's building")
-@section('description','How to visit the Fitzwilliam Museum in Cambridge')
+
+@foreach($pages['data'] as $page)
+    @section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/european-pottery-bond.jpg')
+    @section('title', 'Visit us')
+    @section('description', $page['meta_description'])
+    @section('keyword', $page['meta_keywords'])
+@endforeach
 
 @section('content')
     <div class="row">
-        <div class="col-md-3 mb-3">
-            <div class="card card-fitz h-100">
-                <a href="{{route('exhibitions')}}" class="stretched-link">
-                    <img class="img-fluid"
-                         src="https://content.fitz.ms/fitz-website/assets/C.7-1986_201810_adn21_dc1.jpg?key=directus-medium-crop"
-                         loading="lazy"
-                         alt="Magdalene Odundo vessel" width="800"
-                         height="600">
-                </a>
-                <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                        <h3>
-                            <a href="{{route('exhibitions')}}" class="stretched-link">Exhibitions</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-visit-us-static-card
+            :image="'https://content.fitz.ms/fitz-website/assets/C.7-1986_201810_adn21_dc1.jpg?key=exhibition'"
+            :alt="'Magdalene Odundo vessel'"
+            :route="'exhibitions'"
+            :params="[]"
+            :title="'Exhibitions'"
+            :colWidth="'3'"></x-visit-us-static-card>
 
-        <div class="col-md-3 mb-3">
-            <div class="card card-fitz h-100">
-                <a href="{{route('exhibitions')}}#displays" class="stretched-link">
-                    <img class="img-fluid"
-                         src="https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=directus-medium-crop"
-                         alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century"
-                         loading="lazy" width="800"
-                         height="600">
-                </a>
-                <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                        <h3>
-                            <a aria-label="New displays link" href="{{route('exhibitions')}}#displays">
-                                New displays
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-visit-us-static-card
+            :image="'https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=exhibition'"
+            :alt="'A highlight image for Gallery 1: British and European Art, 19th–20th Century'"
+            :route="'exhibitions'"
+            :params="[]"
+            :title="'New Displays'"
+            :colWidth="'3'"></x-visit-us-static-card>
 
-        <div class="col-md-3 mb-3">
-            <div class="card card-fitz h-100">
-                <a href="{{ route('galleries')}}" class="stretched-link">
-                    <img class="img-fluid"
-                         src="https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=directus-medium-crop"
-                         alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century"
-                         loading="lazy" width="800"
-                         height="600">
-                </a>
-                <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                        <h3>
-                            <a href="{{ route('galleries')}}" class="stretched-link">
-                                Our galleries
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-visit-us-static-card
+            :image="'https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=exhibition'"
+            :alt="'A highlight image for Gallery 1: British and European Art, 19th–20th Century'"
+            :route="'galleries'"
+            :params="[]"
+            :title="'Our galleries'"
+            :colWidth="'3'"></x-visit-us-static-card>
 
-        <div class="col-md-3 mb-3">
-            <div class="card card-fitz h-100">
-                <a href="{{ route('events')}}" class="stretched-link">
-                    <img class="img-fluid"
-                         src="https://content.fitz.ms/fitz-website/assets/unknown_st_augustine_st_jerome_and_st_benedict.jpg?key=directus-medium-crop"
-                         alt="A highlight image for Gallery 1: British and European Art, 19th–20th Century"
-                         loading="lazy"
-                         width="800"
-                         height="600">
-                </a>
-                <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                        <h3>
-                            <a href="{{ route('events')}}" class="stretched-link">What's on?</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <x-visit-us-static-card
+            :image="'https://content.fitz.ms/fitz-website/assets/unknown_st_augustine_st_jerome_and_st_benedict.jpg?key=exhibition'"
+            :alt="'An image depicting St Augustine, St Jerome and St Benedict'"
+            :route="'events'"
+            :params="[]"
+            :title="'Events and talks'"
+            :colWidth="'3'"></x-visit-us-static-card>
     </div>
+
     @foreach($pages['data'] as $page)
-    @section('description', $page['meta_description'])
-    @section('keyword', $page['meta_keywords'])
         <div class="col-12 shadow-sm p-3 mt-3 mx-auto mb-3">
             <h2>{{ $page['title']}}</h2>
-            @markdown($page['body'])
+            @markdown($page['body'] ?? 'No text available')
         </div>
     @endforeach
 @endsection
@@ -109,8 +61,7 @@
                     :alt="'Visitor in Gallery 5'"
                     :route="'landing-section'"
                     :params="['visit-us','frequently-asked-questions']"
-                    :title="'Frequently Asked Questions'"
-                    />
+                    :title="'Frequently Asked Questions'"></x-static-image-card>
                 @foreach($associated['data'] as $associate)
                     <x-image-card
                         :altTag="$associate['hero_image_alt_text']"
@@ -128,7 +79,7 @@
     <div class="row">
         @foreach($floors as $floorplans)
             <div class="col-md-4">
-                <x-floor-plans :floorplans="$floorplans"/>
+                <x-floor-plans :floorplans="$floorplans"></x-floor-plans>
             </div>
         @endforeach
     </div>

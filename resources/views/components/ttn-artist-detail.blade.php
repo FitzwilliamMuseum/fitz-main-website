@@ -8,7 +8,7 @@
                 {{$artist[0]['year_of_birth']}} - {{$artist[0]['year_of_death']}}
             </p>
 
-            @markdown($artist[0]['biography'])
+            @markdown($artist[0]['biography'] ?? 'No biography available')
             @if(!empty($artist[0]['place_of_birth']))
                 <p>
                     Place of Birth: {{$artist[0]['place_of_birth']}}<br/>

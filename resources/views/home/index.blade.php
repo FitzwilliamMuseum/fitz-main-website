@@ -7,7 +7,6 @@
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', $settings['title'])
 
-
 @section('news')
     @foreach($news['data'] as $news)
         <x-image-card
@@ -32,7 +31,6 @@
     </div>
 @endsection
 
-
 @section('research')
     @foreach($research['data'] as $project)
         <x-image-card
@@ -56,15 +54,18 @@
 @endsection
 
 @if(!empty($shopify))
-@section('shopify')
-    <div class="container">
-        <h3 class="mt-3"><a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Gifts from
-                Curating Cambridge</a></h3>
-        <div class="row">
-            @foreach($shopify as $record)
-                <x-shopify-card :result="$record"></x-shopify-card>
-            @endforeach
+    @section('shopify')
+        <div class="container">
+            <h3 class="mt-3">
+                <a href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">
+                    Gifts from Curating Cambridge
+                </a>
+            </h3>
+            <div class="row">
+                @foreach($shopify as $record)
+                    <x-shopify-card :result="$record"></x-shopify-card>
+                @endforeach
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif

@@ -7,7 +7,7 @@
             </a>
         @else
             <img class="card-img-top"
-                 src="https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg?key=exhibition"
+                 src="{{ env('MISSING_IMAGE_URL') }}"
                  alt="A stand in image for {{ $result['title'][0] }}"
                  loading="lazy"
             />

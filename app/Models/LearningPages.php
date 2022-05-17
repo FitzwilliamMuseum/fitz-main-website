@@ -12,17 +12,17 @@ class LearningPages extends Model
      */
     public static function filterByResource(string $resource): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('learning_pages');
-      $api->setArguments(
-          array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[page_type][eq]' => $resource,
-            'sort' => '-id'
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs;
+        $api->setEndpoint('learning_pages');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[page_type][eq]' => $resource,
+                'sort' => '-id'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -31,17 +31,17 @@ class LearningPages extends Model
      */
     public static function filterByResourceNotEqual(string $resource): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('learning_pages');
-      $api->setArguments(
-          array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[page_type][neq]' => $resource,
-            'sort' => '-id'
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs;
+        $api->setEndpoint('learning_pages');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[page_type][neq]' => $resource,
+                'sort' => '-id'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -50,16 +50,16 @@ class LearningPages extends Model
      */
     public static function filterBySlug(string $slug): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('learning_pages');
-      $api->setArguments(
-          array(
-            'fields' => '*.*.*.*',
-            'meta' => 'result_count,total_count,type',
-            'filter[slug][eq]' => $slug
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs;
+        $api->setEndpoint('learning_pages');
+        $api->setArguments(
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[slug][eq]' => $slug
+            )
+        );
+        return $api->getData();
     }
 
 }
