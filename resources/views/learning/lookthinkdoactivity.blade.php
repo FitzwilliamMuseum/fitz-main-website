@@ -29,17 +29,20 @@
                     alt="Creative Commons Licence"
                     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a></span>
             </div>
-            <h3>
-                Description of this object or artwork
-            </h3>
-            <div class="shadow-sm p-3 mx-auto">
-                @markdown($look['main_text_description'])
-            </div>
+            @if(!is_null($look['main_text_description']))
 
-            <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
-                @markdown($look['object_metadata'])
-
-            </div>
+                <div class="shadow-sm p-3 mx-auto">
+                    <h3 class="text-info">
+                        Description of this object or artwork
+                    </h3>
+                    @markdown($look['main_text_description'] ?? 'No description provided')
+                </div>
+            @endif
+            @if(!is_null($look['object_metadata']))
+                <div class="shadow-sm p-3 mx-auto mb-3 mt-3">
+                    @markdown($look['object_metadata'] ?? 'No metadata available')
+                </div>
+            @endif
             @if(isset($look['adlib_id_number']))
                 @foreach($adlib as $record)
                     @include('includes.elements.iiif')
@@ -51,11 +54,11 @@
 
         <!-- column two -->
         <div class="col-md-5 mt-3">
-            <h3>
-                Look
-            </h3>
-            <div class="col shadow-sm p-3 mx-auto mb-3">
 
+            <div class="col shadow-sm p-3 mx-auto mb-3">
+                <h3 class="text-info">
+                    Look
+                </h3>
                 {!! $look['look_text'] !!}
                 @if(isset($look['look_answers']))
                     <button type="button" class="btn btn-dark" data-bs-toggle="modal"
@@ -63,11 +66,10 @@
                     </button>
                 @endif
             </div>
-            <h3>
-                Think
-            </h3>
             <div class="col shadow-sm p-3 mx-auto mb-3">
-
+                <h3 class="text-info">
+                    Think
+                </h3>
                 {!! $look['think_text'] !!}
                 @if(isset($look['think_answers']))
                     <button type="button" class="btn btn-dark" data-bs-toggle="modal"
@@ -75,11 +77,11 @@
                     </button>
                 @endif
             </div>
-            <h3>
-                Do
-            </h3>
-            <div class="col shadow-sm p-3 mx-auto mb-3">
 
+            <div class="col shadow-sm p-3 mx-auto mb-3">
+                <h3 class="text-info">
+                    Do
+                </h3>
                 {!! $look['do_text'] !!}
                 @if(isset($look['do_answers']))
                     <button type="button" class="btn btn-dark" data-bs-toggle="modal"
@@ -89,10 +91,10 @@
             </div>
 
             @if(isset($look['adlib_id_number']))
-                <h3>
-                    Collections record
-                </h3>
                 <div class="col shadow-sm p-3 mx-auto mb-3">
+                    <h3 class="text-info">
+                        Collections record
+                    </h3>
                     <p>
                         {!! $look['adlib_id_number'] !!}
                         @foreach($adlib as $record)
