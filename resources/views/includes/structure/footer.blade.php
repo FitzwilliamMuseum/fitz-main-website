@@ -162,6 +162,10 @@
                        href="https://www.facebook.com/fitzwilliammuseum/">
                         <i class="fab fa-facebook fa-3x p-2"></i>
                     </a>
+                    <a aria-label="Fitzwilliam Museum linkedin account"
+                       href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
+                        <i class="fab fa-linkedin fa-3x p-2"></i>
+                    </a>
                     <a aria-label="Fitzwilliam Museum github account"
                        href="https://www.github.com/fitzwilliammuseum/beta.fitz.ms">
                         <i class="fab fa-github fa-3x p-2"></i>
