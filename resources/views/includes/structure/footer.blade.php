@@ -135,10 +135,29 @@
                                    aria-label="How to visit the university">Visiting the University</a></li>
                             <li><a href="https://www.philanthropy.cam.ac.uk/give-now"
                                    aria-label="How to support the University">Give to Cambridge</a></li>
-                            <li>Content: CC-BY</li>
-                            <li>Metadata: CC0</li>
-                            <li>Images: CC-BY-NC-ND</li>
-                            <li>Code: GPL-V3</li>
+                            <li>
+                                <a href="https://creativecommons.org/licenses/by/4.0/"
+                                   aria-label="CC-BY license terms" >
+                                    Content: CC-BY
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://creativecommons.org/share-your-work/public-domain/cc0/"
+                                   aria-label="CC0 license terms" >
+                                    Metadata: CC0
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                                   aria-label="CC-BY-NC-ND license terms" >
+                                    Images: CC-BY-NC-ND
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/fitzwilliammuseum/fitz-main-website" aria-label="Get the code">
+                                    Code: GPL-V3
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -167,14 +186,14 @@
                         <i class="fab fa-linkedin fa-3x p-2"></i>
                     </a>
                     <a aria-label="Fitzwilliam Museum github account"
-                       href="https://www.github.com/fitzwilliammuseum/beta.fitz.ms">
+                       href="https://www.github.com/fitzwilliammuseum/">
                         <i class="fab fa-github fa-3x p-2"></i>
                     </a>
                     <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
                         <i class="fab fa-youtube fa-3x p-2"></i>
                     </a>
                     <a aria-label="Fitzwilliam Museum news feed" href="{{route("feeds.news")}}">
-                        <i class="fas fa-rss fa-3x ml-1"></i>
+                        <i class="fas fa-rss fa-3x  p-2"></i>
                     </a>
                 </p>
             </div>
@@ -183,9 +202,13 @@
         <div class="row">
             <div class="col-md-6 mb-2 mx-auto">
                 <p class="text-center">
-                    <a href="https://cam.ac.uk"><img src="{{ asset('/images/logos/cambridge_university2.svg')}}"
-                                                     alt="The University of Cambridge logo" width="200" height="41.59"
-                                                     class="img-fluid mx-auto mb-3"/></a>
+                    <a href="https://cam.ac.uk">
+                        <img src="{{ asset('/images/logos/cambridge_university2.svg')}}"
+                             alt="The University of Cambridge logo"
+                             width="200"
+                             height="41.59"
+                             class="img-fluid mx-auto mb-3"/>
+                    </a>
                     <br/>
                     &copy; {{ now()->year }} The University of Cambridge</p>
             </div>
