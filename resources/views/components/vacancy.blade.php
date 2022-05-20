@@ -3,10 +3,10 @@
         @if(!is_null($vacancy['hero_image']))
             <a href="{{ route('vacancy', $vacancy['slug'])}}">
                 <img class="img-fluid"
-                     src="{{ $vacancy['hero_image']['data']['thumbnails'][4]['url']}}"
+                     src="{{ $vacancy['hero_image']['data']['thumbnails'][13]['url']}}"
                      alt="A highlight image for {{ $vacancy['hero_image_alt_text'] }}"
-                     height="{{ $vacancy['hero_image']['data']['thumbnails'][4]['height'] }}"
-                     width="{{ $vacancy['hero_image']['data']['thumbnails'][4]['width'] }}"
+                     height="{{ $vacancy['hero_image']['data']['thumbnails'][13]['height'] }}"
+                     width="{{ $vacancy['hero_image']['data']['thumbnails'][13]['width'] }}"
                      loading="lazy"/>
             </a>
         @endif

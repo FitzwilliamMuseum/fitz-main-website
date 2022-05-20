@@ -3,10 +3,10 @@
         @if(!empty($instagram['hero_image']))
             <a href="{{ route('instagram.story', $instagram['slug']) }}">
                 <img class="img-fluid"
-                     src="{{ $instagram['hero_image']['data']['thumbnails'][2]['url']}}"
+                     src="{{ $instagram['hero_image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $instagram['hero_image_alt_text'] }}"
-                     width="{{ $instagram['hero_image']['data']['thumbnails'][5]['width'] }}"
-                     height="{{ $instagram['hero_image']['data']['thumbnails'][5]['height'] }}"
+                     width="{{ $instagram['hero_image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $instagram['hero_image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"/>
             </a>
         @else
