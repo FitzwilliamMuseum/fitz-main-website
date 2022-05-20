@@ -1,4 +1,5 @@
 <!-- Footer logos -->
+<!--suppress HtmlUnknownAnchorTarget -->
 <div class="container-fluid bg-white p-2 container-fluid bg-white border-cambridge">
     <div class="col-md-12 mx-auto">
         <div class="row justify-content-center mb-4">
@@ -207,7 +208,9 @@
                              alt="The University of Cambridge logo"
                              width="200"
                              height="41.59"
-                             class="img-fluid mx-auto mb-3"/>
+                             class="img-fluid mx-auto mb-3"
+                             loading="lazy"
+                        />
                     </a>
                     <br/>
                     &copy; {{ now()->year }} The University of Cambridge</p>
