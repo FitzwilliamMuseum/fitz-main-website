@@ -4,7 +4,8 @@
             <div class="text-center my-2">
                 <a class="text-center btn btn-outline-light btn__book"
                    href="{{ $bookingLink }}">
-                    @fa('ticket-alt', 'ticket', 'mr-2') Visiting us? Book Free Entry
+                    <x-fas-ticket width="25" height="25"/>
+                    Visiting us? Book Free Entry
                 </a>
             </div>
             <div class="open-link">
@@ -12,7 +13,7 @@
             </div>
             <p class="text-center">
 
-                @fa('door-closed', 'closed') <a class="free_ticket"
+                <x-fluentui-building-bank-toolbox-24 width="25" height="25"/> <a class="free_ticket"
                                                 href="{{ URL::to('/visit-us/gallery-closures-and-collection-updates') }}">Gallery
                     closures and collection updates</a>
             </p>

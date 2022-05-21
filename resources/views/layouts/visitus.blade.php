@@ -10,7 +10,6 @@
 
         @include('includes.structure.manifest')
         @include('googletagmanager::head')
-
     </head>
     <body class="doc-body">
         @include('googletagmanager::body')

@@ -52,8 +52,14 @@
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingOne">
                 <h3 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h3>Publications</h3>
+                  <a role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span class="collapsed">
+      @svg('fas-plus',['width'=>'15'])
+    </span>
+                      <span class="expanded">
+      @svg('fas-minus', ['width'=>'15'])
+    </span>
+                      <h3>Publications</h3>
                   </a>
                 </h3>
               </div>
@@ -68,7 +74,7 @@
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingTwo">
                 <h3 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                  <a role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
                     <h3>Professional Memberships</h3>
                   </a>
                 </h3>
@@ -84,7 +90,7 @@
             <div class="panel panel-default">
               <div class="panel-heading active p-2 mb-2" role="tab" id="headingThree">
                 <h3 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                  <a role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
                     <h3>Affiliations</h3>
                   </a>
                 </h3>
@@ -106,7 +112,7 @@
           <div class="panel panel-default">
             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
               <h3 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                <a role="button" data-bs-toggle="collapse"  data-bs-target="#collapseFour" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                   <h3>Research and social profiles</h3>
                 </a>
               </h3>

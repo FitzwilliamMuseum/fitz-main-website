@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
 
 <link rel="stylesheet" href="{{ mix('css/fitzwilliam.css') }}" />
-<link rel="stylesheet" href="/css/site.css" />
 
 @hasSection('audio-guide')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.css" rel="stylesheet" media="screen">

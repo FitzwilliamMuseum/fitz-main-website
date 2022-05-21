@@ -21,11 +21,13 @@
     ],
     "require": {
         "php": "^8.0|^8.1",
+        "ext-iconv": "*",
         "ext-intl": "*",
         "ext-json": "*",
         "alaouy/youtube": "^2.2.5",
         "arcanedev/laravel-markdown": "^6.0",
         "atymic/twitter": "^3.1",
+        "codeat3/blade-fluentui-system-icons": "^1.24",
         "conedevelopment/blade-filters": "^1.0",
         "elasticsearch/elasticsearch": "^7.17.0",
         "fitzwilliammuseum/instagram-php-scraper": "master",
@@ -42,6 +44,7 @@
         "laravelcollective/html": "^6.3",
         "mews/purifier": "^3.3.7",
         "olssonm/l5-very-basic-auth": "^6.7",
+        "owenvoke/blade-fontawesome": "^2.0",
         "phpclassic/php-shopify": "^v1.1.22",
         "phpfastcache/phpfastcache": "^9.0",
         "predis/predis": "^1.1.10",
@@ -56,8 +59,7 @@
         "symfony/cache": "^6.0.8",
         "symfony/http-kernel": "^6.1.x-dev",
         "upthemedia/xss-protection": "^0.0.8",
-        "xantios/mimey": "^2.2.0",
-        "ext-iconv": "*"
+        "xantios/mimey": "^2.2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12.3",

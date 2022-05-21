@@ -54,7 +54,7 @@
                 @isset($tmp[0]->Price)
                     @if($tmp[0]->Price > 0 )
                         <p class="text-info event-price">
-                            @fa('ticket-alt') From
+                            @svg('fas-ticket-alt',['width' => 20, 'height' => 20]) From
                             <meta property="priceCurrency" content="GBP"/>
                             £
                             <meta property="price"
@@ -64,7 +64,7 @@
                         <p class="text-info">FREE ENTRY/ Suggested Donation</p>
                     @endif
                     @if($production->Facility->Id != 19)
-                        <span class="sr-only">Location: <span class="event-venue"
+                        <span class="visually-hidden">Location: <span class="event-venue"
                                                               property="location"
                                                               typeof="Place">
                       <span property="name">The Fitzwilliam Museum</span>
