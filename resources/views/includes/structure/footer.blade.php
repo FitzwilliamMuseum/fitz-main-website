@@ -72,7 +72,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="my-2 mx-auto footer__info p-4">
-                        <h3 class="sr-only">Contact us</h3>
+                        <h3 class="visually-hidden">Contact us</h3>
                         <p>
                             The Fitzwilliam Museum<br/>
                             Trumpington Street<br/>
@@ -80,7 +80,7 @@
                             CB2 1RB<br/>
                             Switchboard: +44 (0)1223 332 900<br/>
                             Box office: +44 (0)1223 333 230<br/>
-                            <i class="fas fa-ticket-alt mr-1" aria-hidden="true" title="ticket"></i> <a
+                            @svg('fas-at',['width'=> 20]) <a
                                 href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a><br/>
                             What3Words: <span class="w3w"><a
                                     href="https://map.what3words.com/lofts.puzzle.given"
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="my-2 mx-auto footer__info p-4">
-                        <h3 class="sr-only">Useful links</h3>
+                        <h3 class="visually-hidden">Useful links</h3>
                         <ul class="share">
                             <li>
                                 <a href="https://www.museums.cam.ac.uk/"
@@ -128,7 +128,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="my-2 mx-auto footer__info p-4">
-                        <h3 class="sr-only">About the University and licenses</h3>
+                        <h3 class="visually-hidden">About the University and licenses</h3>
                         <ul class="share">
                             <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work"
                                    aria-label="How Collegiate Cambridge works">The University and Colleges</a></li>
@@ -170,31 +170,31 @@
     <div class="container">
         <div class="row pt-2">
             <div class="col-md-6 mx-auto">
-                <h3 class="sr-only">Join our conversations</h3>
+                <h3 class="visually-hidden">Join our conversations</h3>
                 <p class="share text-center">
                     <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
-                        <i class="fab fa-twitter fa-3x p-2"></i>
+                        <img src="{{ asset( "/images/svg/twitter.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                     <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
-                        <i class="fab fa-instagram fa-3x p-2"></i>
+                        <img src="{{ asset( "/images/svg/instagram.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                     <a aria-label="Fitzwilliam Museum facebook account"
                        href="https://www.facebook.com/fitzwilliammuseum/">
-                        <i class="fab fa-facebook fa-3x p-2"></i>
+                        <img src="{{ asset( "/images/svg/facebook.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                     <a aria-label="Fitzwilliam Museum linkedin account"
                        href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
-                        <i class="fab fa-linkedin fa-3x p-2"></i>
+                        <img src="{{ asset( "/images/svg/linkedin.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                     <a aria-label="Fitzwilliam Museum github account"
                        href="https://www.github.com/fitzwilliammuseum/">
-                        <i class="fab fa-github fa-3x p-2"></i>
+                        <img src="{{ asset( "/images/svg/github.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                     <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
-                        <i class="fab fa-youtube fa-3x p-2"></i>
+                        <img src="{{ asset( "/images/svg/youtube.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                     <a aria-label="Fitzwilliam Museum news feed" href="{{route("feeds.news")}}">
-                        <i class="fas fa-rss fa-3x  p-2"></i>
+                        <img src="{{ asset( "/images/svg/rss.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
                 </p>
             </div>
@@ -216,6 +216,12 @@
                     &copy; {{ now()->year }} The University of Cambridge</p>
             </div>
         </div>
+        <button
+            type="button"
+            class="btn btn-floating btn-lg"
+            id="btn-back-to-top"
+        >
+            <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg"><path fill="black" id="scrolltop-bg" d="M0 0h48v48h-48z"/><path fill="white" id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"/></svg>
+        </button>
     </div>
-    <a href="#0" class="cd-top js-cd-top">Top</a>
 </footer>

@@ -17,13 +17,15 @@
                 <figure class="figure">
                     @isset($podcast['focus_object_image'])
                         <img src="{{ $podcast['focus_object_image']['data']['full_url'] }}"
-                             class="img-fluid" alt="{{ $podcast['focus_object_image_alt_text'] }}" loading="lazy"
+                             class="img-fluid" alt="{{ $podcast['focus_object_image_alt_text'] }}"
+                             loading="lazy"
                              width="{{ $podcast['focus_object_image']['width'] }}"
                              height="{{ $podcast['focus_object_image']['height'] }}"
                         />
                     @else
                         <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
-                             class="img-fluid" alt="{{ $podcast['title'] }}" loading="lazy"
+                             class="img-fluid" alt="{{ $podcast['title'] }}"
+                             loading="lazy"
                              width="{{ $podcast['hero_image']['width'] }}"
                              height="{{ $podcast['hero_image']['height'] }}"
                         />
@@ -198,10 +200,12 @@
                 <div class="col-md-4 mb-3">
                     <div class="card h-100">
                         @if(!is_null($record['searchImage']))
-                            <a href="{{ $record['url'][0] }}"><img class="card-img-top "
-                                                                   src="{{ $record['searchImage'][0]}}"
-                                                                   alt="Highlight image for {{ $record['title'][0] }}"
-                                                                   loading="lazy"/></a>
+                            <a href="{{ $record['url'][0] }}">
+                                <img class="card-img-top "
+                                     src="{{ $record['searchImage'][0]}}"
+                                     alt="Highlight image for {{ $record['title'][0] }}"
+                                     loading="lazy"/>
+                            </a>
                         @endif
                         <div class="card-body ">
                             <div class="contents-label mb-3">
@@ -224,5 +228,5 @@
 @endsection
 @section('plyr-js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.10/plyr.min.js"></script>
-    <script defer type="text/javascript" src="/js/plyr-controls.js"></script>
+    <script defer type="text/javascript" src="{{ asset("/js/plyr-controls.js") }}"></script>
 @endsection

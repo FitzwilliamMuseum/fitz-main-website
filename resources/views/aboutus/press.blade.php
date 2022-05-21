@@ -8,7 +8,7 @@
 @section('press-contact')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
         <p>
-            Contact the press team: @fa('phone') 01223 332941 @fa('at')
+            Contact the press team: @svg('fas-phone',['width' => 20, 'height' => 20]) 01223 332941 @svg('fas-at',['width' => 20, 'height' => 20])
             <a href="mailto:press@fitzmuseum.cam.ac.uk">press@fitzmuseum.cam.ac.uk</a>
         </p>
     </div>

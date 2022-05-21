@@ -127,13 +127,11 @@
 @section('adlib')
     @if(!empty($adlib))
         @foreach($adlib as $record)
-            <h3 class="sr-only">Data from our collections database</h3>
+            <h3 class="visually-hidden">Data from our collections database</h3>
             @include('includes/elements/expander')
             <div id="expand-more" class="collapse">
                 <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-
                     @include('includes/elements/descriptive')
-
                     @include('includes/elements/legal')
                     @include('includes/elements/lifecycle')
                     @include('includes/elements/agents-subjects')

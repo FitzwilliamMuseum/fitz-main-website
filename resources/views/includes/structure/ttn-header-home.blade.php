@@ -13,9 +13,9 @@
             <div class="col-md-7 ttn__link">
                 <a href="{{ route('exhibition',['true-to-nature-open-air-painting-in-europe-1780-1870']) }}"
                    title="Exhibition details" class="hockney__link__href"> </a>
-                <p class="text-center sr-only text-white py-3 hockney-title">True to Nature</p>
-                <p class="sr-only text-center text-white hockney-subtitle">Free entry</p>
-                <p class="sr-only text-center text-white py-1 hockney-dates">3rd May - 29 August 2022</p>
+                <p class="text-center visually-hidden text-white py-3 hockney-title">True to Nature</p>
+                <p class="visually-hidden text-center text-white hockney-subtitle">Free entry</p>
+                <p class="visually-hidden text-center text-white py-1 hockney-dates">3rd May - 29 August 2022</p>
             </div>
 
         </div>

@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('home') }}">Home <span class="visually-hidden">(current)</span></a>
                 </li>
                 <li class="nav-item {{ (request()->is('visit-us*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('visit') }}">Visit</a>
@@ -49,7 +49,7 @@
                 </li>
             </ul>
             {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'class' => 'd-flex']) }}
-            <label for="search" class="sr-only">Search: </label>
+            <label for="search" class="visually-hidden">Search: </label>
             <input id="query" name="query" type="text" class="form-control me-2"
                    placeholder="Search our site" required value="{{ old('query') }}" aria-label="Your query">
             <button type="submit" class="btn btn-outline-light my-2 my-sm-0" id="searchButton"

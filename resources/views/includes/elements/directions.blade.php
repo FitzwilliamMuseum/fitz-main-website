@@ -70,8 +70,9 @@
             <div class="row text-center">
                 @foreach ($transport['data'] as $transport)
                     <div class="col-md-3 mt-3 text-center">
-                        <a href="{{ $transport['google_string']}}"><i
-                                class="fa fa-{{ $transport['fa_icon']}} fa-5x circle-icon"></i>
+
+                        <a href="{{ $transport['google_string']}}">
+                            @svg($transport['fa_icon'], 'icon-lg my-3', ['height' => '50'])
                             <br/>
                             {{ $transport['title'] }}</a>
                     </div>

@@ -43,7 +43,7 @@
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="dns-prefetch" href="//s3.amazonaws.com">
-<link rel="dns-prefetch" href="//use.fontawesome.com">
+
 <!--
 d888888P dP                  88888888b oo   dP                       oo dP dP oo                        8888ba.88ba
 88    88                    88             88                          88 88                           88  `8b  `8b

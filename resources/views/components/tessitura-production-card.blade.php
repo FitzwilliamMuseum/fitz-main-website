@@ -37,7 +37,7 @@
                 @isset($tmp[0]->Price)
                     @if($tmp[0]->Price > 0 )
                         <p class="text-info">
-                            @fa('pound-sign') @fa('ticket-alt')<br/>
+                            @svg('fas-pound-sign',['width' => 20, 'height' => 20]) @svg('fas-ticket-alt',['width' => 20, 'height' => 20])<br/>
                             From £{{ $tmp[0]->Price }}
                         </p>
                     @else

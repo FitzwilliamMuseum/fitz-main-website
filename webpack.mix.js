@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+require('laravel-mix-purgecss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,9 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.styles(['resources/css/site.css'], 'public/css/fitzwilliam.css').version();
+mix.styles(['resources/css/site.css','resources/css/top.css'], 'public/css/fitzwilliam.css').version();
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css').version();
+    .sass('resources/sass/app.scss', 'public/css').purgeCss({safelist: { deep: [/carousel/] }}).version();
 mix.webpackConfig({
     stats: {
         children: true,
