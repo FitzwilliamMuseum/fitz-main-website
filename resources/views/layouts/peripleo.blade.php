@@ -26,7 +26,7 @@
         </style>
         @include('googletagmanager::head')
     </head>
-    <body>
+    <body class="c_darkmode">
         @include('googletagmanager::body')
         @yield('content')
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>

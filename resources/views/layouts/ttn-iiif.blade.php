@@ -14,7 +14,7 @@
         }
     </style>
 </head>
-<body class="doc-body">
+<body class="doc-body c_darkmode">
 @include('googletagmanager::body')
 @yield('content')
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
