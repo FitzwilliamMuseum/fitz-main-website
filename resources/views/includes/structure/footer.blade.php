@@ -159,6 +159,9 @@
                                     Code: GPL-V3
                                 </a>
                             </li>
+                            <li>
+                                <a href="#" data-cc="c-settings">Cookie preferences</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
