@@ -1,10 +1,5 @@
 <script src="{{ mix('js/app.js') }}"></script>
 
-<!-- Cookie management -->
-{{--<script defer type="text/javascript" src="{{ asset("js/cookieconsent.js")}}"></script>--}}
-<script defer type="text/javascript" src="{{ asset("js/config.js")}}"></script>
-<!-- End of body -->
-
 @hasSection('audio-guide')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.10/plyr.min.js"></script>
     <script defer type="text/javascript" src="{{ asset("/js/plyr-controls.js") }}"></script>
