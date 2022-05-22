@@ -2,9 +2,12 @@
     <div class="card card-fitz h-100">
         @isset($image)
             <a href="{{ $url }}">
-                <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
+                <img class="card-img-top"
+                     src="{{ $image['data']['thumbnails'][13]['url']}}"
                      alt="{{ $altTag }}"
-                     loading="lazy" width="{{ $image['data']['thumbnails'][13]['width'] }}"
+                     loading="lazy"
+                     width="{{ $image['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $image['data']['thumbnails'][13]['height'] }}"
                 />
             </a>
         @else

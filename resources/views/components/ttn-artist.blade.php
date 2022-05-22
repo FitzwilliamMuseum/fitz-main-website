@@ -14,6 +14,7 @@
                      src="{{ $artists['image']['data']['thumbnails'][13]['url'] }}"
                      alt="{{ $artists['display_name'] }}"
                      width="{{ $artists['image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $artists['image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"
                 />
             </a>

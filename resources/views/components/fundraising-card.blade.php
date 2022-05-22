@@ -2,9 +2,13 @@
     <div class="card card-fitz h-100">
         @isset($donate['hero_image'])
             <a href="{{ $donate['url'] }}">
-                <img class="card-img-top" src="{{ $donate['hero_image']['data']['thumbnails'][13]['url']}}"
+                <img class="card-img-top"
+                     src="{{ $donate['hero_image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $donate['hero_image_alt_text'] }}"
-                     loading="lazy" width="{{ $donate['hero_image']['data']['thumbnails'][13]['width'] }}"
+                     loading="lazy"
+                     width="{{ $donate['hero_image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $donate['hero_image']['data']['thumbnails'][13]['height'] }}"
+
                 />
             </a>
         @else

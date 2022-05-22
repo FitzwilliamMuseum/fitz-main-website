@@ -6,6 +6,7 @@
                      src="{{ $claim['image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $claim['alt_text'] }}"
                      width="{{ $claim['image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $claim['image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"
                 />
             </a>
