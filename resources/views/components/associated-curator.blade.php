@@ -6,6 +6,7 @@
                 <img class="card-img-top" src="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['url']}}"
                      alt="A profile image of {{ $curator['associated_people_id']['display_name'] }}"
                      width="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"
                 />
             </a>

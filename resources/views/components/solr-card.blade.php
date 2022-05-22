@@ -2,8 +2,11 @@
     <div class="card card-fitz h-100">
         @if(!is_null($result['smallimage']))
             <a href="{{ $result['url'][0] }}" class="stretched-link">
-                    <img src="{{ $result['smallimage'][0]}}" alt="Highlight image for {{ $result['title'][0] }}"
-                         loading="lazy" class="card-img-top"/>
+                <img src="{{ $result['smallimage'][0]}}"
+                     alt="Highlight image for {{ $result['title'][0] }}"
+                     loading="lazy"
+                     class="card-img-top"
+                />
             </a>
         @else
             <img class="card-img-top"

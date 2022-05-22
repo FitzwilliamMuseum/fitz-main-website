@@ -5,6 +5,7 @@
                 <img class="card-img-top" src="{{$labels['image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $labels['alt_text'] }}"
                      width="{{ $labels['image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $labels['image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"/>
             </a>
         @else

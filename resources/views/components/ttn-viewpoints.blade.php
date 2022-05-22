@@ -6,6 +6,7 @@
                      src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['alt_text'] }}"
                      width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"/>
             </a>
         @else
