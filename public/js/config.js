@@ -10,7 +10,9 @@ var klaroConfig = {
     // You can customize the ID of the DIV element that Klaro will create
     // when starting up. If undefined, Klaro will use 'klaro'.
     elementID: 'klaro',
-
+    styling: {
+        theme: ['dark', 'left', 'narrow'],
+    },
     // You can customize the name of the cookie that Klaro uses for storing
     // user consent decisions. If undefined, Klaro will use 'klaro'.
     cookieName: 'klaro',
@@ -21,10 +23,10 @@ var klaroConfig = {
 
     // You can customize the name of the cookie that Klaro will use to
     // store user consent. If undefined, Klaro will use 'klaro'.
- 
+
     // Put a link to your privacy policy here (relative or absolute).
     privacyPolicy: 'https://www.fitzmuseum.cam.ac.uk/website/cookiepolicy',
-    
+
     // Defines the default state for applications (true=enabled by default).
     default: true,
 
@@ -102,7 +104,7 @@ var klaroConfig = {
             // The purpose(s) of this app. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
             purposes : ['analytics'],
-            
+
             // A list of regex expressions or strings giving the names of
             // cookies set by this app. If the user withdraws consent for a
             // given app, Klaro will then automatically delete all matching
@@ -131,21 +133,9 @@ var klaroConfig = {
             onlyOnce: true,
         },
         {
-            name : 'bootstrap',
-            title : 'Bootstrap CDN',
-            purposes : ['styling']
-        },
-
-        {
             name : 'googleFonts',
             title : 'Google Fonts',
             purposes : ['styling']
-        },
-        {
-            name : 'cloudflare',
-            title : 'Cloudflare',
-            purposes : ['security'],
-            required: true,
         },
         {
             name : 'vimeo',

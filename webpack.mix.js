@@ -12,7 +12,7 @@ require('laravel-mix-purgecss');
  */
 
 mix.styles(['resources/css/site.css','resources/css/top.css'], 'public/css/fitzwilliam.css').version();
-mix.js('resources/js/app.js', 'public/js')
+mix.js(['resources/js/app.js','resources/js/backtotop.js'], 'public/js')
     .sass('resources/sass/app.scss', 'public/css').purgeCss({safelist: { deep: [/carousel/] }}).version();
 mix.webpackConfig({
     stats: {
