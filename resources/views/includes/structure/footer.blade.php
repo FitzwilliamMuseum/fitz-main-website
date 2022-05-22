@@ -186,6 +186,10 @@
                        href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
                         <img src="{{ asset( "/images/svg/linkedin.svg") }}" width="48" class="eden my-2 mx-2"/>
                     </a>
+                    <a aria-label="Fitzwilliam Museum sketchfab account"
+                       href="https://www.sketchfab.com/fitzwilliammuseum/">
+                        <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" width="48" class="eden my-2 mx-2"/>
+                    </a>
                     <a aria-label="Fitzwilliam Museum github account"
                        href="https://www.github.com/fitzwilliammuseum/">
                         <img src="{{ asset( "/images/svg/github.svg") }}" width="48" class="eden my-2 mx-2"/>

@@ -4,7 +4,7 @@
             <div class="col-md-5 px-0">
                 <a href="{{ route('exhibition',['hockneys-eye-the-art-and-technology-of-depiction']) }}"
                    title="Exhibition details"><img
-                        src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/david-hockney_21a14-self-portrait-1-.jpg"
+                        src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/david_hockney_self_portrait_optimised_homepage.jpg"
                         class="img-fluid"
                         alt="Self portrait of David Hockney"
                     /></a>
