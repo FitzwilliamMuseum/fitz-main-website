@@ -265,6 +265,7 @@
             type="button"
             class="btn btn-floating btn-lg"
             id="btn-back-to-top"
+            aria-label="Return to the top of the page"
         >
             <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg"><path fill="black" id="scrolltop-bg" d="M0 0h48v48h-48z"/><path fill="white" id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"/></svg>
         </button>
