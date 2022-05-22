@@ -11,7 +11,7 @@
         @include('includes.structure.manifest')
         @include('googletagmanager::head')
     </head>
-    <body class="doc-body">
+    <body class="doc-body c_darkmode">
         @include('googletagmanager::body')
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')

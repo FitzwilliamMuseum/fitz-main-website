@@ -10,7 +10,7 @@
     @include('googletagmanager::head')
 
 </head>
-<body class="doc-body bg-pastel">
+<body class="doc-body bg-pastel c_darkmode">
 @include('googletagmanager::body')
 
 @include('includes.structure.accessibility')
