@@ -10,7 +10,7 @@
 @section('content')
     <div class="shadow-sm">
         <div class=" p-3 mx-auto mb-3">
-            @markdown($dept['department_description'])
+            @markdown($dept['department_description'] ?? '')
             @isset($dept['email_address'])
                 <p class="text-info">
                     Email: <a href="mailto:{{ $dept['email_address']}}">{{ $dept['email_address']}}</a>

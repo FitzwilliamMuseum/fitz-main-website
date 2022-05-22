@@ -173,32 +173,70 @@
                 <h3 class="visually-hidden">Join our conversations</h3>
                 <p class="share text-center">
                     <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
-                        <img src="{{ asset( "/images/svg/twitter.svg") }}" width="48" class="eden my-2 mx-2"/>
+                        <img src="{{ asset( "/images/svg/twitter.svg") }}"
+                             width="48"
+                             height="48"
+                             alt="Twitter logo"
+                             class="eden my-2 mx-2"
+                        />
                     </a>
                     <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
-                        <img src="{{ asset( "/images/svg/instagram.svg") }}" width="48" class="eden my-2 mx-2"/>
+                        <img src="{{ asset( "/images/svg/instagram.svg") }}"
+                             width="48"
+                             height="48"
+                             alt="Instagram logo"
+                             class="eden my-2 mx-2"
+                        />
                     </a>
                     <a aria-label="Fitzwilliam Museum facebook account"
                        href="https://www.facebook.com/fitzwilliammuseum/">
-                        <img src="{{ asset( "/images/svg/facebook.svg") }}" width="48" class="eden my-2 mx-2"/>
+                        <img src="{{ asset( "/images/svg/facebook.svg") }}"
+                             width="48"
+                             height="48"
+                             alt="Facebook logo"
+                             class="eden my-2 mx-2"
+                        />
                     </a>
                     <a aria-label="Fitzwilliam Museum linkedin account"
                        href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
-                        <img src="{{ asset( "/images/svg/linkedin.svg") }}" width="48" class="eden my-2 mx-2"/>
+                        <img src="{{ asset( "/images/svg/linkedin.svg") }}"
+                             width="48"
+                             height="48"
+                             alt="Linkin logo"
+                             class="eden my-2 mx-2"
+                        />
                     </a>
-                    <a aria-label="Fitzwilliam Museum sketchfab account"
-                       href="https://www.sketchfab.com/fitzwilliammuseum/">
-                        <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" width="48" class="eden my-2 mx-2"/>
+                    <a aria-label="Fitzwilliam Museum sketchfab account" href="https://www.sketchfab.com/fitzwilliammuseum/">
+                        <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}"
+                             width="48"
+                             height="48"
+                             alt="Sketchfab logo"
+                             class="eden my-2 mx-2"
+                        />
                     </a>
-                    <a aria-label="Fitzwilliam Museum github account"
-                       href="https://www.github.com/fitzwilliammuseum/">
-                        <img src="{{ asset( "/images/svg/github.svg") }}" width="48" class="eden my-2 mx-2"/>
+                    <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
+                        <img src="{{ asset( "/images/svg/github.svg") }}"
+                             width="48"
+                             class="eden my-2 mx-2"
+                             alt="Github logo"
+                             height="48"
+                        />
                     </a>
                     <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
-                        <img src="{{ asset( "/images/svg/youtube.svg") }}" width="48" class="eden my-2 mx-2"/>
+                        <img src="{{ asset( "/images/svg/youtube.svg") }}"
+                             width="48"
+                             class="eden my-2 mx-2"
+                             alt="Youtube logo"
+                             height="48"
+                        />
                     </a>
                     <a aria-label="Fitzwilliam Museum news feed" href="{{route("feeds.news")}}">
-                        <img src="{{ asset( "/images/svg/rss.svg") }}" width="48" class="eden my-2 mx-2"/>
+                        <img src="{{ asset( "/images/svg/rss.svg") }}"
+                             width="48"
+                             class="eden my-2 mx-2"
+                             height="48"
+                             alt="RSS logo"
+                        />
                     </a>
                 </p>
             </div>

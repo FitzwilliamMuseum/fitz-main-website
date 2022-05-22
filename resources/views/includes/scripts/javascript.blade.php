@@ -1,7 +1,5 @@
 <script src="{{ mix('js/app.js') }}"></script>
 
-<script src="{{ asset("/js/backtotop.js") }}"></script>
-
 <!-- Cookie management -->
 <script defer type="text/javascript" src="{{ asset("/js/config.js")}}"></script>
 <script defer type="text/javascript" src="{{ asset("/js/klaro.js")}}"></script>
