@@ -57,9 +57,8 @@
                     :title="'Spoliation claims'"
                     :route="'about.spoliation'"
                     :params="[]"
-                    :image="'https://content.fitz.ms/fitz-website/assets/La%20Ronde%20Enfantine.png?key=exhibition'"
+                    :image="'https://content.fitz.ms/fitz-website/assets/pd_28_1951_dc2-2.jpg?key=exhibition'"
                     :alt="'La ronde enfantine image'"></x-static-image-card>
-
                 @include('includes.structure.cards', $data = $jobs)
                 @include('includes.structure.cards', $data =  $research)
             @endif
