@@ -18,7 +18,7 @@
     @include('googletagmanager::head')
 
 </head>
-<body class="doc-body bg-grey">
+<body class="doc-body bg-grey c_darkmode">
   @include('googletagmanager::body')
 
   @include('includes.structure.accessibility')

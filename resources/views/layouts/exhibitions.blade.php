@@ -68,8 +68,5 @@
 @hasSection('360')
     @include('includes.scripts.photosphere-js')
 @endif
-
-@include('includes.scripts.fullscreen')
-
 </body>
 </html>

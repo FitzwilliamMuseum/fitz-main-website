@@ -1,8 +1,8 @@
 <script src="{{ mix('js/app.js') }}"></script>
 
 <!-- Cookie management -->
-<script defer type="text/javascript" src="{{ asset("/js/config.js")}}"></script>
-<script defer type="text/javascript" src="{{ asset("/js/klaro.js")}}"></script>
+{{--<script defer type="text/javascript" src="{{ asset("js/cookieconsent.js")}}"></script>--}}
+<script defer type="text/javascript" src="{{ asset("js/config.js")}}"></script>
 <!-- End of body -->
 
 @hasSection('audio-guide')
@@ -21,7 +21,8 @@
     });
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
-<script>
+
+<script type="text/plain" data-cookiecategory="analytics">
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {

@@ -6,11 +6,13 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "production": "mix --production",
-        "copy": "npm run copy-uv-html && npm run copy-uv-css && npm run copy-icons",
+        "copy": "npm run copy-uv-html && npm run copy-uv-css && npm run copy-icons && npm run copy-cookie-css && npm run copy-cookie-js",
         "copy-uv-html": "cp -R node_modules/universalviewer/dist/uv.html ./public",
         "copy-uv-css": "cp -R node_modules/universalviewer/dist/uv.css ./public/",
         "copy-uv-assets": "cp -R node_modules/universalviewer/dist/umd/ ./public/umd/",
         "copy-icons": "cp -R node_modules/super-tiny-icons/images/svg/ ./public/images/svg/",
+        "copy-cookie-css": "cp -R node_modules/vanilla-cookieconsent/dist/*.css ./resources/css/",
+        "copy-cookie-js": "cp -R node_modules/vanilla-cookieconsent/dist/*.js ./resources/js/",
         "postinstall": "npm run copy"
     },
     "devDependencies": {
@@ -47,6 +49,7 @@
         "minimist": ">=1.2.6",
         "popper.js": "^1.16.1",
         "super-tiny-icons": "^0.4.0",
-        "universalviewer": "^4.0.0-pre.107"
+        "universalviewer": "^4.0.0-pre.107",
+        "vanilla-cookieconsent": "^2.8.0"
     }
 }
