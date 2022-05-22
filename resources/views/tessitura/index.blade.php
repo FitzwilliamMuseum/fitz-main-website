@@ -8,7 +8,7 @@
 
     <div class="alert alert-info mb-3 text-center">
         For assistance with booking and ticketing enquiries, please contact us.<br/>
-        @svg('fas-envelope',['width' => 20, 'height' => 20]): <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a> @svg('fas-phone'): +44
+        @svg('fas-envelope',['width' => 20, 'height' => 20]): <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a> @svg('fas-phone',['width' => 20, 'height' => 20]): +44
         (0)1223
         333 230
         <br/>
