@@ -8,6 +8,7 @@
                     <img class="mx-auto my-2"
                          loading="lazy"
                          width="200"
+                         height="62"
                          alt="University of Cambridge Museums logo"
                          src="{{ asset('/images/logos/ucm_logo_black_white.png') }}"
                     />
@@ -18,6 +19,7 @@
                     <img class="mx-auto my-2"
                          loading="lazy"
                          width="60"
+                         height="73.85"
                          alt="Cambridge City Council logo"
                          src="{{ asset('/images/logos/camcity_logo.png') }}"
                     />
@@ -30,6 +32,7 @@
                          src="{{ asset('/images/logos/artscouncil_grant.png')}}"
                          loading="lazy"
                          width="200"
+                         height="63.3833"
                     />
                 </a>
             </div>
@@ -39,6 +42,7 @@
                          alt="Research England logo"
                          loading="lazy"
                          width="200"
+                         height="63.5"
                          src="{{ asset('images/logos/UKRI_RE-Logo_Horiz-RGB.png')}}"
                     />
                 </a>
@@ -56,6 +60,7 @@
                     <img class="mx-auto d-block mb-4"
                          alt="Brewin Dolphin Logo"
                          width="300"
+                         height="42.35"
                          src="{{ asset('/images/logos/brewin-dolphin.jpg')}}"
                          loading="lazy"/>
                 </a>
