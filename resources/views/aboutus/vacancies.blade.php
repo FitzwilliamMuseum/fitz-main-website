@@ -9,7 +9,7 @@
   @if(!empty($vacancies['data']))
     <div class="row">
       @foreach($vacancies['data'] as $vacancy)
-        <x-vacancy :vacancy="$vacancy"/>
+        <x-vacancy :vacancy="$vacancy"></x-vacancy>
       @endforeach
     </div>
   @else

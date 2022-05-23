@@ -14,8 +14,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
 
@@ -27,8 +26,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
 
@@ -40,8 +38,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
 
@@ -53,8 +50,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
 
@@ -66,8 +62,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
     <h3>Research policies and strategy</h3>
@@ -78,8 +73,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
     <h3>Education Reports</h3>
@@ -90,8 +84,7 @@
                 :type="$document['type']"
                 :image="$document['hero_image']"
                 :altTag="$document['hero_image_alt_text']"
-                :title="$document['title']"
-            />
+                :title="$document['title']"></x-governance-card>
         @endforeach
     </div>
 @endsection
