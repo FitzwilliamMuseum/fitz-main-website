@@ -152,8 +152,5 @@
             @include('includes.scripts.timeline-js')
         @endif
 
-        @hasSection('datepicker')
-            @yield('datepicker')
-        @endif
     </body>
 </html>

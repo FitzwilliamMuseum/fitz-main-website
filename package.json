@@ -13,6 +13,8 @@
         "copy-icons": "cp -R node_modules/super-tiny-icons/images/svg/ ./public/images/svg/",
         "copy-cookie-css": "cp -R node_modules/vanilla-cookieconsent/dist/*.css ./resources/css/",
         "copy-cookie-js": "cp -R node_modules/vanilla-cookieconsent/dist/*.js ./resources/js/",
+        "copy-pannellum-css": "cp -R node_modules/pannellum/build/*.css ./public/css/",
+        "copy-pannellum-js": "cp -R node_modules/pannellum/build/*.js ./public/js/",
         "postinstall": "npm run copy"
     },
     "devDependencies": {
@@ -47,6 +49,7 @@
         "clean-css": "^5.3.0",
         "leaflet-iiif": "^3.0.0",
         "minimist": ">=1.2.6",
+        "pannellum": "^2.5.6",
         "popper.js": "^1.16.1",
         "super-tiny-icons": "^0.4.0",
         "universalviewer": "^4.0.0-pre.107",
