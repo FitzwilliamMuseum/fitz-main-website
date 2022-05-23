@@ -10,7 +10,7 @@
     @if(!empty($vacancies->total() > 0))
         <div class="row">
             @foreach($vacancies->items()['data'] as $vacancy)
-                <x-vacancy :vacancy="$vacancy"/>
+                <x-vacancy :vacancy="$vacancy"></x-vacancy>
             @endforeach
         </div>
     @else

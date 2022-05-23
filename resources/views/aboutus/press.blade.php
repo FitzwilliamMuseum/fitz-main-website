@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             @foreach($press['data'] as $release)
-                <x-press-card :release="$release"/>
+                <x-press-card :release="$release"></x-press-card>
             @endforeach
         </div>
         {{ $paginator->appends(request()->except('page'))->links() }}

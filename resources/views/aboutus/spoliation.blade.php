@@ -7,7 +7,7 @@
 @section('content')
     <div class="row">
         @foreach($claims['data'] as $claim)
-            <x-spoliation-card :claim="$claim"/>
+            <x-spoliation-card :claim="$claim"></x-spoliation-card>
         @endforeach
     </div>
     <div class="container mt-1 p-2 text-center">

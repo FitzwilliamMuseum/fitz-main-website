@@ -1,5 +1,5 @@
-@extends('layouts/error')
-@section('title', 'Page not found')
+@extends('layouts.error')
+@section('title', 'An error has been recorded')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/cupidpsychelarge.jpg')
 @section('hero_image_title', 'Cupid and Psyche - del Sallaio')
 @section('content')
@@ -13,18 +13,8 @@
             </div>
             <div class="col-md-6">
                 <p>
-                    Sorry, we can’t seem to find what you’re looking for. You've landed on a URL
-                    that doesn't seem to exist.
+                    We are very sorry, but our website has encountered a problem.
                 </p>
-                <p>
-                    We have just changed our website (3/8/2021) and are reorganising our information, so
-                    things you may want to see could have been moved.
-                </p>
-                <p>
-                    Please do try using our search engine and see if that can find what you
-                    are looking for.
-                </p>
-
             </div>
         </div>
     </div>

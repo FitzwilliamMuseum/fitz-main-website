@@ -12,7 +12,7 @@
   </div>
   <div class="col-md-8">
     <p>
-      Sorry, we cannot seem to find what you’re looking for, and Ronald Searle's cat is grumpy because of  this.
+      Sorry, we cannot seem to find what you’re looking for, and Ronald Searle's cat is grumpy because of this.
       You've landed on a URL that doesn't seem to exist.
     </p>
     <p>
