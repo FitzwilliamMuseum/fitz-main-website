@@ -10,7 +10,7 @@
                          width="200"
                          height="62"
                          alt="University of Cambridge Museums logo"
-                         src="{{ asset('/images/logos/ucm_logo_black_white.png') }}"
+                         src="{{ asset('/images/logos/ucm_logo.svg') }}"
                     />
                 </a>
             </div>
@@ -146,24 +146,25 @@
                                    aria-label="How to support the University">Give to Cambridge</a></li>
                             <li>
                                 <a href="https://creativecommons.org/licenses/by/4.0/"
-                                   aria-label="CC-BY license terms" >
+                                   aria-label="CC-BY license terms">
                                     Content: CC-BY
                                 </a>
                             </li>
                             <li>
                                 <a href="https://creativecommons.org/share-your-work/public-domain/cc0/"
-                                   aria-label="CC0 license terms" >
+                                   aria-label="CC0 license terms">
                                     Metadata: CC0
                                 </a>
                             </li>
                             <li>
                                 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-                                   aria-label="CC-BY-NC-ND license terms" >
+                                   aria-label="CC-BY-NC-ND license terms">
                                     Images: CC-BY-NC-ND
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fitzwilliammuseum/fitz-main-website" aria-label="Get the code">
+                                <a href="https://github.com/fitzwilliammuseum/fitz-main-website"
+                                   aria-label="Get the code">
                                     Code: GPL-V3
                                 </a>
                             </li>
@@ -214,7 +215,8 @@
                              class="eden my-2 mx-2"
                         />
                     </a>
-                    <a aria-label="Fitzwilliam Museum sketchfab account" href="https://www.sketchfab.com/fitzwilliammuseum/">
+                    <a aria-label="Fitzwilliam Museum sketchfab account"
+                       href="https://www.sketchfab.com/fitzwilliammuseum/">
                         <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}"
                              width="48"
                              height="48"
@@ -230,7 +232,8 @@
                              height="48"
                         />
                     </a>
-                    <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
+                    <a aria-label="Watch our YouTube videos"
+                       href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
                         <img src="{{ asset( "/images/svg/youtube.svg") }}"
                              width="48"
                              class="eden my-2 mx-2"
@@ -262,8 +265,11 @@
                              loading="lazy"
                         />
                     </a>
-                    <br/>
-                    &copy; {{ now()->year }} The University of Cambridge</p>
+                </p>
+                <p class="text-center">
+                    &copy; {{ now()->year }} The University of Cambridge
+                </p>
+
             </div>
         </div>
         <button
@@ -272,7 +278,10 @@
             id="btn-back-to-top"
             aria-label="Return to the top of the page"
         >
-            <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg"><path fill="black" id="scrolltop-bg" d="M0 0h48v48h-48z"/><path fill="white" id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"/></svg>
+            <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg">
+                <path fill="black" id="scrolltop-bg" d="M0 0h48v48h-48z"/>
+                <path fill="white" id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"/>
+            </svg>
         </button>
     </div>
 </footer>
