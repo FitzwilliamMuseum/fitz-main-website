@@ -112,6 +112,9 @@
                                     accessibility</a>
                             </li>
                             <li>
+                                <a href="#" data-cc="c-settings">Cookie preferences</a>
+                            </li>
+                            <li>
                                 <a aria-label="Contact the museum"
                                    href="{{ route('landing-section', ['about-us', 'contact-us'])}}">Contact us</a>
                             </li>
@@ -163,9 +166,6 @@
                                 <a href="https://github.com/fitzwilliammuseum/fitz-main-website" aria-label="Get the code">
                                     Code: GPL-V3
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" data-cc="c-settings">Cookie preferences</a>
                             </li>
                         </ul>
                     </div>
