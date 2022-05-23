@@ -22,3 +22,4 @@
       Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 </IfModule>
+AddOutputFilterByType DEFLATE image/svg+xml

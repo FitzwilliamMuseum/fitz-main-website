@@ -4,7 +4,6 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('meta_description', "Search results for your query" )
 @section('meta_keywords', 'search,results,fitzwilliam,museum')
-
 @section('content')
     @include('includes.elements.search-form')
     @include('includes.elements.search-results-head')
