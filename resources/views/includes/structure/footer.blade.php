@@ -43,7 +43,7 @@
                          loading="lazy"
                          width="200"
                          height="63.5"
-                         src="{{ asset('images/logos/UKRI_RE-Logo_Horiz-RGB.png')}}"
+                         src="{{ asset('images/logos/UKRI_RE-Logo_Horiz-RGB.svg')}}"
                     />
                 </a>
             </div>

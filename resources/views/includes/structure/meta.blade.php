@@ -60,7 +60,7 @@ dP    dP    dP `88888P'     dP        dP   dP   d888888P 8888P Y8P  dP dP dP dP 
 <script type="application/ld+json">
       {"publisher":{"@type":"Organization",
       "logo":{"@type":"ImageObject",
-      "url":"{{ URL::to('/images/logos/FV.png') }}"}},
+      "url":"{{ URL::to('/images/logos/FitzLogo.svg') }}"}},
       "headline":"The Fitzwilliam Museum","@type":"WebSite","url":"{{ URL::to('/')}}",
       "name":"The Fitzwilliam Museum",
       "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
