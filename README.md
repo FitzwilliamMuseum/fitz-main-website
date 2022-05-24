@@ -72,8 +72,18 @@ the main network drive.
 
 If you are running locally you can preview the website via: 
 
-```
+```bash
 $ php artisan serve
+```
+
+### I feel the need for speed 
+
+To cache icons and routes
+
+```bash
+$ php artisan icons:cache
+$ php artisan route:cache
+
 ```
 
 # License
