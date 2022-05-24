@@ -19,8 +19,11 @@ Data comes from various systems and API endpoints.
 4. Twitter - API driven
 5. Shopify - FME systems queried and indexed daily into SOLR
 6. Sketchfab
-7. ~~Google Poly~~ deprecated as of June 2021
-8. Instagram
+7. Instagram
+8. Libsyn for podcasts
+9. UCAM streaming media service
+10. YouTube
+11. Vimeo
 
 # Cache
 
@@ -38,7 +41,34 @@ $ cp .env.example .env
 $ nano .env
 $ npm install 
 ```
-Fill in variables for your instance (Cache etc)
+On some ubuntu machines, the npm install script fails at the npm run copy command. 
+To fix this run the commands separately:
+
+```bash
+$ npm run copy-uv-html # "cp -R node_modules/universalviewer/dist/uv.html ./public", Universal viewer copy
+$ npm run copy-uv-css # "cp -R node_modules/universalviewer/dist/uv.css ./public/",
+$ npm run copy-uv-assets # "cp -R node_modules/universalviewer/dist/umd/ ./public/umd/",
+$ npm run copy-icons # "cp -R node_modules/super-tiny-icons/images/svg/ ./public/images/svg/",
+$ npm run copy-cookie-css # cp -R node_modules/vanilla-cookieconsent/dist/*.css ./resources/css/",
+$ npm run copy-cookie-js # "cp -R node_modules/vanilla-cookieconsent/dist/*.js ./resources/js/",
+$ npm run copy-pannellum-css # "cp -R node_modules/pannellum/build/*.css ./public/css/",
+$ npm run copy-pannellum-js # "cp -R node_modules/pannellum/build/*.js ./public/js/",
+```
+
+If the versions have been updated you may need to run:
+
+```bash
+$ npm run production 
+```
+
+Which will compress all the css and js files. 
+
+### Env setup 
+
+Fill in variables for your instance (Cache etc), values from the production version of the websites are on
+the main network drive. 
+
+### Running a local copy 
 
 If you are running locally you can preview the website via: 
 
