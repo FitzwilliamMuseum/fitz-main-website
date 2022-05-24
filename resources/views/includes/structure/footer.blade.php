@@ -21,7 +21,7 @@
                          width="60"
                          height="73.85"
                          alt="Cambridge City Council logo"
-                         src="{{ asset('/images/logos/camcity_logo.png') }}"
+                         src="{{ asset('/images/logos/Cambridge_City.svg') }}"
                     />
                 </a>
             </div>
@@ -29,7 +29,7 @@
                 <a href="https://www.artscouncil.org.uk/">
                     <img class="mx-auto my-2"
                          alt="Arts Council England Logo"
-                         src="{{ asset('/images/logos/artscouncil_grant.png')}}"
+                         src="{{ asset('/images/logos/ace_grant_eps_black.svg')}}"
                          loading="lazy"
                          width="200"
                          height="63.3833"
