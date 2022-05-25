@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{asset("/images/logos/Fitz_logo_white.png")}}"
+            <img src="{{asset("/images/logos/FitzLogo.svg")}}"
                  alt="The Fitzwilliam Museum Logo"
                  height="60"
                  width="66.66"
