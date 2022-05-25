@@ -118,10 +118,8 @@
                         </div>
                     </div>
                 @endisset
-                @php
-                    $social = array('orcid','githubid','google_scholar_id','twitter_handle')
-                @endphp
-                @if(Arr::hasAny($profile, $social))
+
+                @if(Arr::hasAny($profile,  array('orcid','githubid','google_scholar_id','twitter_handle')))
                     @if(null !== ($profile['orcid']) || null !== ($profile['githubid']) || null !== ($profile['google_scholar_id']) || null !== ($profile['twitter_handle']) )
                         <div class="panel panel-default">
                             <div class="panel-heading active p-2 mb-2" role="tab" id="headingFour">
