@@ -2,9 +2,9 @@
     <div class="card card-fitz h-100">
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     {{ $file['learning_files_id']['title'] }}
-                </h3>
+                </h2>
                 <ul>
                     <li>Resource type: {{ ucfirst($file['learning_files_id']['type']) }}</li>
                     <li>File size: @humansize($file['learning_files_id']['file']['filesize'],2)</li>

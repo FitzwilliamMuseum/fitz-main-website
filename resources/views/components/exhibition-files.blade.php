@@ -1,7 +1,7 @@
 @if(!empty($files))
     <div class="container">
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-            <h3>Exhibition files and maps</h3>
+            <h2>Exhibition files and maps</h2>
             <ul>
                 @foreach($files as $file)
                     <li>

@@ -21,11 +21,11 @@
         @endif
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route('exhibition.ttn.artist', $artists['slug']) }}" class="stretched-link">
                         {{ $artists['display_name'] }}
                     </a>
-                </h3>
+                </h2>
                 <p class="text-info">{{ $artists['year_of_birth'] }} -{{ $artists['year_of_death'] }}</p>
             </div>
         </div>

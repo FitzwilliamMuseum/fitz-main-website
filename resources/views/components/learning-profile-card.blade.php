@@ -2,9 +2,9 @@
     <div class="card card-fitz h-100 ">
         <div class="card-body">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     {{ $profile['display_name'] }}
-                </h3>
+                </h2>
                 <p>
                     {{ $profile['job_title']}}<br/>
                     Telephone: {{ $profile['telephone_number']}}<br/>

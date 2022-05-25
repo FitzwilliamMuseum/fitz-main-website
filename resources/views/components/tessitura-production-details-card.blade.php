@@ -27,13 +27,13 @@
         @endif
         <div class="card-body">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a class="stretched-link" property="url"
                        href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                                                 <span class="event-title"
                                                       property="name">{{ $production->PerformanceDescription }}</span>
                     </a>
-                </h3>
+                </h2>
                 <h5 property="startDate"
                     content="{{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}">
                     {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}

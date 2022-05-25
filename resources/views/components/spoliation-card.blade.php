@@ -21,11 +21,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route('about.spoliation.claim', $claim['priref']) }}" class="stretched-link">
                         {{ $claim['accession_number'] }}: {{ $claim['alt_text'] }}
                     </a>
-                </h3>
+                </h2>
                 <p class="text-info">Call for information expires on: {{ $claim['expiry_date'] }}</p>
             </div>
         </div>

@@ -21,11 +21,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route('exhibition-externals', $curator['associated_people_id']['slug']) }}" class="stretched-link">
                         {{ $curator['associated_people_id']['display_name'] }}
                     </a>
-                </h3>
+                </h2>
                 @isset($curator['associated_people_id']['associated_role'])
                 <p class="text-black-50">
                     {{$curator['associated_people_id']['associated_role']}}

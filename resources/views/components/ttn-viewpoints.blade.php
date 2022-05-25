@@ -19,14 +19,14 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-labels mb-3">
-                <h3>
+                <h2>
                     @if(isset($viewpoint['display_id_number']))
                         {{ $viewpoint['display_id_number'] }}:
                     @endif
                     <a href="{{ route('exhibition.ttn.viewpoint', $viewpoint['id']) }}" class="stretched-link">
                         {{ $viewpoint['title'] }}
                     </a>
-                </h3>
+                </h2>
                 <p class="text-info">
                     @foreach($viewpoint['associated_people'] as $person)
                         {{$person['associated_people_id']['display_name'] ?? 'Anon'}}<br/>

@@ -220,25 +220,4 @@ class highlightsController extends Controller
         $theme = HighlightThemes::getDetails($theme);
         return view('highlights.bytheme', compact('pharos', 'theme'));
     }
-
-    /**
-     * @param Request $request
-     * @return View
-     */
-    public function fitzobjects(Request $request): View
-    {
-        $paginator = StaffObjects::list($request);
-        $week = $paginator->items();
-        return view('highlights.fitz-objects', compact('week', 'paginator'));
-    }
-
-    /**
-     * @param string $slug
-     * @return View
-     */
-    public function fitzobject(string $slug): View
-    {
-        $week = StaffObjects::find($slug);
-        return view('highlights.fitz-object', compact('week'));
-    }
 }

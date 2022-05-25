@@ -21,11 +21,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ $file['data']['full_url'] }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h3>
+                </h2>
                 <p>@mime($file['type']) - @humansize($file['filesize'])</p>
                 <p class="text-info">
                     Document type: {{ ucfirst($type) }}

@@ -15,9 +15,9 @@
         @endif
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route('vacancy', $vacancy['slug'])}}">{{ $vacancy['job_title']}}</a>
-                </h3>
+                </h2>
                 <p class="text-info">Closing
                     Date: {{ Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</p>
                 @if(isset($vacancy['salary_range']))
