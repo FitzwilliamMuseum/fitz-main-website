@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="row">
-        @foreach($pharos['data'] as $record)
+        @foreach($paginator->items()['data'] as $record)
             <x-image-card
                 :params="[$record['slug']]"
                 :route="'highlight'"
