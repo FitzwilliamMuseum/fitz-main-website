@@ -5,8 +5,8 @@
                 <img class="card-img-top"
                      src="{{ $image['data']['thumbnails'][13]['url']}}"
                      alt="{{ $altTag }}"
-                     width="100%"
-                     height="100%"
+                     width="{{ $image['data']['thumbnails'][13]['width']}}"
+                     height="{{ $image['data']['thumbnails'][13]['height']}}"
                      loading="lazy"
                 />
             </a>
