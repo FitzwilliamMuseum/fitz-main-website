@@ -30,7 +30,7 @@ class Highlights extends Model
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
         $total = $pharos['meta']['total_count'];
         $paginator = new LengthAwarePaginator($pharos, $total, $perPage, $currentPage);
-        $paginator->setPath('highlights');
+        $paginator->setPath(route('highlights'));
         return $paginator;
     }
 
