@@ -7,6 +7,8 @@
                         src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/david_hockney_self_portrait_optimised_homepage.jpg"
                         class="img-fluid"
                         alt="Self portrait of David Hockney"
+                        height="1200"
+                        width="1000"
                     /></a>
             </div>
 
