@@ -140,7 +140,6 @@ Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@deta
 
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide')->name('audio-guide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop')->name('audio-stop');
-Route::get('objects-and-artworks/staff-favourites/', 'highlightsController@fitzobjects')->name('fitz-objects');
 Route::get('objects-and-artworks/staff-favourites/{slug}/', 'highlightsController@fitzobject')->name('fitz-object');
 /*
 * Social
@@ -168,21 +167,22 @@ Route::get('/conversations/podcasts/episode/{slug}', 'podcastsController@episode
 
 
 Route::get('/events', 'tessituraController@index')->name('events');
+
 Route::match(array('GET', 'POST'), 'events/search', [
     'uses' => 'tessituraController@search',
     'as' => 'tessitura.search'
-])->name('events-search');
+]);
+
 Route::get('/events/{facility}', 'tessituraController@type')->name('events.type');
 
 /*
 * Search routing
 */
-Route::get('search', 'searchController@index');
+Route::get('search', 'searchController@index')->name('search.index');
 Route::match(array('GET', 'POST'), 'search/results', [
     'uses' => 'searchController@results',
     'as' => 'search.results'
 ]);
-Route::get('search/shopify', 'searchController@shopify');
 /*
  * Route for checking solr up and running
  */
