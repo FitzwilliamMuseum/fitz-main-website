@@ -6,8 +6,8 @@
                      src="{{ $donate['hero_image']['data']['thumbnails'][13]['url']}}"
                      alt="{{ $donate['hero_image_alt_text'] }}"
                      loading="lazy"
-                     width="100%"
-                     height="100%"
+                     width="{{ $donate['hero_image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $donate['hero_image']['data']['thumbnails'][13]['height'] }}"
 
                 />
             </a>
