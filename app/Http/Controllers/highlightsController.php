@@ -35,8 +35,7 @@ class highlightsController extends Controller
     public function index(Request $request): View
     {
         $paginator = Highlights::list($request);
-        $pharos = $paginator->items();
-        return view('highlights.index', compact('paginator', 'pharos'));
+        return view('highlights.index', compact('paginator'));
     }
 
     /**
