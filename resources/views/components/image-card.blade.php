@@ -6,7 +6,6 @@
                      src="{{ $image['data']['thumbnails'][13]['url']}}"
                      alt="{{ $altTag }}"
                      width="{{ $image['data']['thumbnails'][13]['width']}}"
-                     height="{{ $image['data']['thumbnails'][13]['height']}}"
                      loading="lazy"
                 />
             </a>
