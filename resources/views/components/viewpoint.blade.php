@@ -23,7 +23,7 @@
             @markdown($viewpoint['poetry'])
         @endif
     </blockquote>
-    <h3 class="text-info">
+    <h2 class="text-info">
         @foreach($viewpoint['associated_people'] as $person)
             {{$person['associated_people_id']['display_name']}}@isset($person['associated_people_id']['associated_role']), {{$person['associated_people_id']['associated_role']}}
             @endisset
@@ -33,5 +33,5 @@
             @endisset
             <br/>
         @endforeach
-    </h3>
+    </h2>
 </div>

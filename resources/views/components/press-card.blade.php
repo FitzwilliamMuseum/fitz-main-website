@@ -11,11 +11,11 @@
         @endif
         <div class="card-body ">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a class="stretched-link" href="{{ $release['file']['data']['full_url'] }}">
                         {{ $release['title']}}
                     </a>
-                </h3>
+                </h2>
             </div>
             <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($release['body'])),0,200) }}...</p>
             <p class="text-info">

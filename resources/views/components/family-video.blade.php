@@ -15,7 +15,9 @@
         @endif
         <div class="card-body ">
             <div class="contents-label mb-3">
-                <h3>{{ $session['title'] }}</h3>
+                <h2>
+                    {{ $session['title'] }}
+                </h2>
             </div>
         </div>
     </div>

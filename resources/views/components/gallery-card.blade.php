@@ -21,11 +21,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h3>
+                </h2>
                 @if($status)
                     @foreach($status as $stat)
                         <span class="badge badge-wine mb-1">{{$stat}}</span>

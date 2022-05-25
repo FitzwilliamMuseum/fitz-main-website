@@ -21,11 +21,11 @@
 
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h3>
+                </h2>
                 @if($status === 'current' && $ticketed === true && !is_null($tessitura))
                     <p class="text-info">Ticket and timed entry</p>
                     <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura }}">Book

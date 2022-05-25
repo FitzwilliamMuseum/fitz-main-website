@@ -24,11 +24,11 @@
         <div class="card-body ">
             <div class="contents-label mb-3">
                 @if(array_key_exists('title',$record['_source'] ))
-                    <h3>
+                    <h2>
                         <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}" class="stretched-link">
                             {{ ucfirst($record['_source']['title'][0]['value']) }}
                         </a>
-                    </h3>
+                    </h2>
                 @else
                     <h3>
                         <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}" class="stretched-link">

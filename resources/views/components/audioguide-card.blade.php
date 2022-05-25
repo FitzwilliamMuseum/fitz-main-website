@@ -20,11 +20,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h3>
+                <h2>
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h3>
+                </h2>
                 @isset($stop)
                     <p class="text-info">
                         Stop number: {{ $stop }}
