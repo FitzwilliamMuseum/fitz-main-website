@@ -40,12 +40,11 @@
             @include('includes.css.photosphere-css')
         @endif
 
-        <div class="container-fluid  mt-3 mb-3 p-3">
+        <div class="container-fluid mt-3 mb-3 p-3">
             <div class="container">
                 @include('includes.structure.breadcrumb')
                 @yield('press-contact')
                 @yield('content')
-
                 @yield('adlib')
                 @yield('timeline')
             </div>
