@@ -5,6 +5,8 @@
                 <img src="{{ $result['smallimage'][0]}}"
                      alt="Highlight image for {{ $result['title'][0] }}"
                      loading="lazy"
+                     width="416"
+                     height="416"
                      class="card-img-top"
                 />
             </a>
