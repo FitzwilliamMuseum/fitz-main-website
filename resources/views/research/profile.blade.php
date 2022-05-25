@@ -33,7 +33,9 @@
                     </a>
                 </div>
             @endif
-
+            <h2 class="display-6 text-info ">
+                About  {{ $profile['first_name'] }}
+            </h2>
             {!! $profile['biography'] !!}
 
             @isset($profile['job_title'])
