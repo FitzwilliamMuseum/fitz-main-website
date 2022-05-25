@@ -2,7 +2,6 @@
 @foreach($profiles['data'] as $profile)
     @section('keywords', $profile['meta_keywords'])
 @section('description', $profile['meta_description'])
-@section('title', $profile['display_name'])
 @if(!is_null($profile['hero_image']))
     @section('hero_image', $profile['hero_image']['data']['url'])
 @section('hero_image_title', $profile['hero_image_alt_text'])
@@ -10,6 +9,13 @@
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
 @section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
 @endif
+
+@section('title')
+    @isset($profile['title'])
+        {{$profile['title'] ?? ''}}
+    @endisset
+    {{ $profile['display_name'] }}
+@endSection
 
 @section('content')
     <div class="bg-white p-3" style="min-height: 500px;">
@@ -19,18 +25,17 @@
                     <a href="{{ route('research-profile', $profile['slug']) }}">
                         <img src="{{ $profile['profile_image']['data']['thumbnails'][5]['url']}}"
                              alt="Profile image for {{ $profile['display_name'] }}"
+                             width="{{ $profile['profile_image']['data']['thumbnails'][5]['width']}}"
+                             height="{{ $profile['profile_image']['data']['thumbnails'][5]['height']}}"
                              loading="lazy"
-                             class="img-fluid mx-auto d-block"/>
+                             class="img-fluid mx-auto d-block"
+                        />
                     </a>
                 </div>
             @endif
-            <h3>
-                @isset($profile['title'])
-                    {{ $profile['title'] }}
-                @endisset
-                {{ $profile['display_name'] }}
-            </h3>
+
             {!! $profile['biography'] !!}
+
             @isset($profile['job_title'])
                 <p>
                     Job title: {{ $profile['job_title'] }}
