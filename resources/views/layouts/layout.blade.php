@@ -46,7 +46,6 @@
                 @yield('press-contact')
                 @yield('content')
                 @yield('adlib')
-                @yield('timeline')
             </div>
         </div>
         @yield('audioGuide')

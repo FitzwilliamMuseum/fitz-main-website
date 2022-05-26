@@ -146,6 +146,25 @@ Breadcrumbs::for('article', function (BreadcrumbTrail $trail, string $slug): voi
 });
 
 /** About us  */
+
+
+Breadcrumbs::for('directors', function (BreadcrumbTrail $trail): void {
+    $trail->parent('home');
+    $trail->push('About us', route('landing', ['about-us']));
+    $trail->push('Our Directors', route('directors'));
+});
+Breadcrumbs::for('directors-redirect', function (BreadcrumbTrail $trail): void {
+    $trail->parent('home');
+    $trail->push('About us', route('landing', ['about-us']));
+    $trail->push('Our Directors', route('directors-redirect'));
+});
+
+Breadcrumbs::for('director', function (BreadcrumbTrail $trail, string $slug): void {
+    $trail->parent('home');
+    $trail->push('About us', route('landing', ['about-us']));
+    $trail->push('Our Directors', route('directors'));
+    $trail->push('Director', route('director', [$slug]));
+});
 Breadcrumbs::for('press-room', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
