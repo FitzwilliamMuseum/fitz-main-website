@@ -1,25 +1,9 @@
-
 .parallax {
     min-height: 65vh;
     background-attachment: fixed;
     background-size: cover;
     margin-top: 0 !important;
 }
-
-.human {
-    min-height: 200px;
-}
-
-.btn-info {
-    background-color: #0f7290 !important;
-    border-color: #0f7290 !important;
-    color: white;
-}
-
-.text-info {
-    color: #0f7290 !important;
-}
-
 .no-gutters {
     margin-right: -14px !important;
     margin-left: -14px !important;
@@ -33,89 +17,22 @@
 .card-header {
     background-color: white;
 }
-
-#coverVideo {
-    height: 300px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#contentVideo {
-    flex: 0;
-    min-height: 100%;
-    min-width: 100%;
-}
-
-.humancontent {
-    color: white;
-    z-index: 9999;
-    position: absolute;
-}
-
 h3.hc {
     font-size: 3rem;
-}
-
-.btn-btnBook {
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: black;
-}
-
-button.btn.btn-btnBook a {
-    color: white;
 }
 .open-link a {
     color: white;
 }
-.absolute-bottom {
-    position: absolute;
-    bottom: 0;
-}
-
-.jumbotron {
-    margin-top: 30px;
-    margin-bottom: 0;
-}
-
-.steppe {
-    min-height: 600px;
-    background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/kazakh-compressed.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-
-}
-
 @media screen and (max-width: 440px) {
     .head {
         padding-top: 100px;
         background-repeat: no-repeat;
-        /* background-size: cover; */
         background-position: center center;
-        /* display: none; */
-        /* visibility: hidden; */
     }
 
     .second-parallax-home {
         background-position: center center;
     }
-
-    .third-parallax-home {
-        background-position: center center;
-    }
-
-    .fourth-parallax-home {
-        background-position: center center;
-    }
-
     .parallax-home {
         background-position: center center;
     }
@@ -123,7 +40,6 @@ button.btn.btn-btnBook a {
     .hide {
         padding-top: 5rem;
     }
-
     .division {
         text-align: center;
     }
@@ -139,9 +55,6 @@ button.btn.btn-btnBook a {
     }
 }
 
-footer, .chip-icon {
-    background-color: #fff;
-}
 
 .bg-black {
     background-color: #000000 !important;
@@ -226,44 +139,8 @@ video {
         bottom: 30px;
     }
 }
-
-
-.thumb-post img {
-    object-fit: cover;
-}
-
-.thumb-nail {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-}
-
-.label-thumb {
-    position: relative;
-    max-width: 100%;
-    max-height: 400px;
-}
-
-
 #sponsors img {
     margin-bottom: 10px;
-}
-
-.badge-wine {
-    background-color: #731200;
-    color: #fff;
-    padding: 10px;
-}
-
-.btn-wine {
-    background-color: #731200;
-    color: #fff;
-    padding: 10px;
-}
-
-.max-coffins {
-    max-width: 100%;
 }
 
 .share li {
@@ -298,24 +175,12 @@ label.cm-app-label {
 .intro-card {
     background-color: rgba(115, 18, 0, 0.1);
 }
-
-.not-intro {
-    text-align: right;
-    font-size: small;
-    color: #686868;
-}
-
 @media (max-width: 440px) {
     .shorten-words {
         max-width: 300px;
         display: inline-block
     }
 
-}
-
-
-.shareTwitter a {
-    color: #000;
 }
 
 .txt-intro {
@@ -394,14 +259,6 @@ label.cm-app-label {
     padding-bottom: 10px
 }
 
-.beta {
-    background-color: #a3c1ad;
-    min-height: 50px;
-    color: #000;
-    font-size: 1.2rem;
-    padding-top: 10px;
-}
-
 .white {
     color: white;
 }
@@ -466,13 +323,6 @@ a.share {
     color: black;
     text-decoration: underline;
 }
-
-.svg-logo {
-    z-index: -1;
-    float: right;
-    margin-top: -6px;
-}
-
 input#query {
     background-color: #ffffff;
     color: #000000;
@@ -486,51 +336,9 @@ input#query::placeholder {
     min-height: 200px;
 }
 
-.badge-wine {
-    background-color: #731200;
-    color: #fff;
-}
-
 .ucam {
     margin-bottom: -40px;
     margin-top: 9px;
-}
-
-.further-info {
-    margin-top: -4.125rem;
-}
-
-.frontpageQuote {
-    font-size: 5rem;
-    font-weight: normal;
-    color: white;
-    border-left: none;
-}
-
-.overlay {
-    opacity: 0;
-    visibility: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 100;
-    -webkit-transform: scale(1.8);
-    -moz-transform: scale(1.8);
-    -o-transform: scale(1.8);
-    transform: scale(1.8);
-}
-
-.heroCaption {
-    font-size: 1.3rem;
-    padding: 10px 16px;
-    width: 220px;
-    position: absolute;
-    bottom: 100%;
-    top: auto;
-    right: 0;
-    left: auto;
-    margin-bottom: 20px;
 }
 
 .parallax-home {
@@ -546,17 +354,6 @@ input#query::placeholder {
 
 .further-info a:hover, .further-info a:active {
     color: black;
-}
-
-.small-muted {
-    color: rgba(214, 217, 207, 0.6) !important;
-    font-size: 2.5rem;
-    font-weight: bolder;
-}
-
-.beta a, .covid-19 a {
-    color: #000;
-    text-decoration: underline;
 }
 
 figcaption.figure-caption.text-right {
@@ -965,13 +762,6 @@ a.nav-link {
     margin-bottom: 0;
 }
 
-.btn {
-    border-radius: 0;
-}
-
-.form-control {
-    border-radius: 0;
-}
 
 a.text-center.btn.btn-outline-light.btn__book {
     border: 4px solid white;

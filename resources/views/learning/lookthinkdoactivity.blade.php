@@ -20,7 +20,7 @@
                          height="{{ $look['focus_image']['height'] }}"
                     />
                 </figure>
-                <span class="btn btn-wine m-1 p-2 share">
+                <span class="btn btn-dark m-1 p-2 share">
             <a href="{{ $look['focus_image']['data']['full_url'] }}" target="_blank"
                download><i class="fas fa-download mr-2"></i>  Download this image</a>
           </span>
