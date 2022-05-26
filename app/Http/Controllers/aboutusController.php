@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Directors;
 use App\Models\Governance;
+use App\Models\PressRoom;
 use App\Models\PressTerms;
 use App\Models\SpoliationClaims;
 use App\Models\StaffProfiles;
@@ -98,7 +99,8 @@ class aboutusController extends Controller
         $mission = Governance::getGovernanceByType('Mission');
         $education = Governance::getGovernanceByType('Education Report');
         $research = Governance::getGovernanceByType('Research');
-        return view('aboutus.governance', compact(
+        return view('aboutus.governance',
+            compact(
                 'policy', 'strategy', 'review',
                 'report', 'mission', 'education',
                 'research'
@@ -113,24 +115,8 @@ class aboutusController extends Controller
      */
     public function press(Request $request): View
     {
-        $perPage = 6;
-        $directus = $this->getApi();
-        $directus->setEndpoint('pressroom_files');
-        $directus->setArguments(
-            array(
-                'fields' => '*.*.*',
-                'limit' => $perPage,
-                'offset' => ($request['page'] - 1) * $perPage,
-                'meta' => '*',
-                'sort' => '-release_date'
-            )
-        );
-        $press = $directus->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $press['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($press, $total, $perPage, $currentPage);
-        $paginator->setPath('press-room');
-        return view('aboutus.press', compact('press', 'paginator'));
+        $press = PressRoom::list($request);
+        return view('aboutus.press', compact( 'press'));
     }
 
     /**
