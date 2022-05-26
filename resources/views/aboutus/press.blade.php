@@ -16,10 +16,10 @@
 @section('releases')
     <div class="container">
         <div class="row">
-            @foreach($press['data'] as $release)
+            @foreach($press->items()['data'] as $release)
                 <x-press-card :release="$release"></x-press-card>
             @endforeach
         </div>
-        {{ $paginator->appends(request()->except('page'))->links() }}
+        {{ $press->appends(request()->except('page'))->links() }}
     </div>
 @endsection
