@@ -21,7 +21,7 @@
                 <p class="text-info">Closing
                     Date: {{ Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</p>
                 @if(isset($vacancy['salary_range']))
-                    <p class="text-danger">£{{ $vacancy['salary_range'] }}</p>
+                    <span class="badge bg-dark">£{{ $vacancy['salary_range'] }}</span>
                 @endif
             </div>
         </div>
