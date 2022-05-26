@@ -29,7 +29,7 @@ class homeController extends Controller
         $galleries = Galleries::list(3, '?');
         $exhibitions = Exhibitions::listHome('current', 'tessitura_string', 3);
         $news = NewsArticles::feature();
-        $research = ResearchProjects::list('?', 3);
+        $research = ResearchProjects::listSimple('?', 3);
         $fundraising = FundRaising::list(4);
         $objects = Highlights::homeList();
         $things = ThingsToDo::list();
