@@ -3,25 +3,36 @@
 namespace App\Models;
 
 use App\DirectUs;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class OnlineResources extends Model
 {
     /**
-     * @return array
+     * @param Request $request
+     * @return LengthAwarePaginator
      */
-    public static function list(): array
+    public static function list(Request $request): LengthAwarePaginator
     {
+        $perPage = 12;
+        $offset = ($request['page'] - 1) * $perPage;
         $api = new DirectUs;
         $api->setEndpoint('online_resources');
         $api->setArguments(
             array(
                 'fields' => '*.*.*.*',
-                'limit' => 100,
+                'limit' => $perPage,
+                'offset' => $offset,
                 'meta' => '*',
                 'sort' => 'id'
             )
         );
-        return $api->getData();
+        $resources =  $api->getData();
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $total = $resources['meta']['total_count'];
+        $paginator = new LengthAwarePaginator($resources, $total, $perPage, $currentPage);
+        $paginator->setPath(route('resources'));
+        return $paginator;
     }
 
     /**
