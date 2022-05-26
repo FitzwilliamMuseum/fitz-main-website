@@ -5,9 +5,6 @@
 @section('description', 'A list and timeline of our directors')
 @section('keywords', 'directors,timeline,museum,cambridge,fitzwilliam')
 @section('content')
-    <h2>
-        Our directors
-    </h2>
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
         <div class="table-responsive">
             <table class="table table-striped">
