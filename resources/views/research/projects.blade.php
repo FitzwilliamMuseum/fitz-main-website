@@ -5,7 +5,7 @@
 @section('description', 'An overview of Fitzwilliam Museum research projects')
 @section('content')
   <div class="row">
-    @foreach($projects['data'] as $project)
+    @foreach($projects->items()['data'] as $project)
       <x-image-card
           :altTag="$project['hero_image_alt_text']"
           :title="$project['title']"
@@ -14,4 +14,5 @@
           :params="[$project['slug']]"></x-image-card>
     @endforeach
   </div>
+  {{ $projects->appends(request()->except('page'))->links() }}
 @endsection

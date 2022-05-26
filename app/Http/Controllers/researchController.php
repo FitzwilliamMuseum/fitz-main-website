@@ -49,11 +49,12 @@ class researchController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return View
      */
-    public function projects(): View
+    public function projects(Request $request): View
     {
-        $projects = ResearchProjects::list();
+        $projects = ResearchProjects::list($request);
         return view('research.projects', compact('projects'));
     }
 
@@ -74,11 +75,12 @@ class researchController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return View
      */
-    public function profiles(): View
+    public function profiles(Request $request): View
     {
-        $profiles = StaffProfiles::list();
+        $profiles = StaffProfiles::list($request);
         return view('research.profiles', compact('profiles'));
     }
 
@@ -137,9 +139,9 @@ class researchController extends Controller
     /**
      * @return View
      */
-    public function resources(): View
+    public function resources(Request $request): View
     {
-        $resources = OnlineResources::list();
+        $resources = OnlineResources::list($request);
         return view('research.resources', compact('resources'));
     }
 

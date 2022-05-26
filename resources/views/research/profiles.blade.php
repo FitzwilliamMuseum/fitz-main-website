@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="row">
-        @foreach($profiles['data'] as $profile)
+        @foreach($profiles->items()['data'] as $profile)
             <x-image-card
                 :altTag="$profile['profile_image_alt_text']"
                 :title="$profile['display_name']"
@@ -17,4 +17,6 @@
             </x-image-card>
         @endforeach
     </div>
+    {{ $profiles->appends(request()->except('page'))->links() }}
+
 @endsection

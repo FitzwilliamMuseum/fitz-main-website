@@ -3,27 +3,37 @@
 namespace App\Models;
 
 use App\DirectUs;
+use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ResearchProjects extends Model
 {
     /**
+     * @param Request $request
      * @param string $sort
-     * @param int $limit
-     * @return array
+     * @return LengthAwarePaginator
      */
-    public static function list(string $sort = 'title', int $limit = 100): array
+    public static function list(Request $request, string $sort = 'title'): LengthAwarePaginator
     {
+        $perPage = 12;
+        $offset = ($request['page'] - 1) * $perPage;
         $api = new DirectUs;
         $api->setEndpoint('research_projects');
         $api->setArguments(
             array(
                 'fields' => '*.*.*.*',
-                'meta' => 'result_count,total_count,type',
+                'meta' => '*',
                 'sort' => $sort,
-                'limit' => $limit
+                'limit' => $perPage,
+                'offset' => $offset
             )
         );
-        return $api->getData();
+        $projects =  $api->getData();
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $total = $projects['meta']['total_count'];
+        $paginator = new LengthAwarePaginator($projects, $total, $perPage, $currentPage);
+        $paginator->setPath(route('research-projects'));
+        return $paginator;
     }
 
     /**
