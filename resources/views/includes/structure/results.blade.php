@@ -36,10 +36,10 @@
               @endif
               <p>
 
-                <span class="badge badge-wine p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
+                <span class="badge badge-dark p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
                 @if(isset($result['mimetype']))
                   @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
-                    <span class="badge badge-wine p-2">
+                    <span class="badge badge-dark p-2">
                       <i class="fas fa-file-pdf mr-2"></i>
                       <i class="fa fa-download mr-2" aria-hidden="true"></i> @humansize($result['filesize'][0],2)
                     </span>
@@ -47,12 +47,12 @@
                 @endif
 
                 @if($result['contentType'][0] == 'learning_files')
-                  <span class="badge badge-wine p-2">{{ $result['learningfiletype'][0]}}</span>
+                  <span class="badge badge-dark p-2">{{ $result['learningfiletype'][0]}}</span>
                   @if(isset($result['keystages']))
-                    <span class="badge badge-wine p-2">Key Stages this is for: {{ implode(', ', $result['keystages']) }}</span>
+                    <span class="badge badge-dark p-2">Key Stages this is for: {{ implode(', ', $result['keystages']) }}</span>
                   @endif
                   @if(isset($result['curriculum_area']))
-                    <span class="badge badge-wine p-2">{{ $result['curriculum_area'][0]}}</span>
+                    <span class="badge badge-dark p-2">{{ $result['curriculum_area'][0]}}</span>
                   @endif
                 @endif
 

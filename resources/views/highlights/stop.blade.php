@@ -34,7 +34,7 @@
                  id="stand-out"
             />
             <figcaption class="figure-caption text-right">{{$record['hero_image_alt_text']}}</figcaption>
-            <span class="btn btn-wine m-1 p-2 share">
+            <span class="btn btn-dark m-1 p-2 share">
         <a href="{{$record['hero_image']['data']['full_url']  }}"
            download><i class="fas fa-download mr-2"></i>  Download image</a>
       </span>

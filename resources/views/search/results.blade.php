@@ -28,7 +28,7 @@
                             @include('includes.elements.search-result-title')
                             @include('includes.elements.mimetype')
                             <p>
-                                <span class="badge badge-wine p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
+                                <span class="badge badge-dark p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
                                 @include('includes.elements.mimetype-meta')
                                 @include('includes.elements.learning-files')
                             </p>
