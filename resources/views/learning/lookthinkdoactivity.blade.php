@@ -110,8 +110,8 @@
 
                     <div class="card mb-3">
                         @if(!is_null($look['associated_pharos'][0]['pharos_id']['image']))
-                            <a href="{{ route('highlight', $look['associated_pharos'][0]['pharos_id']['slug']) }}"><img
-                                    class="img-fluid"
+                            <a href="{{ route('highlight', $look['associated_pharos'][0]['pharos_id']['slug']) }}">
+                                <img class="img-fluid"
                                     src="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
                                     alt="{{ $look['associated_pharos'][0]['pharos_id']['image_alt_text'] }}"
                                     loading="lazy"
@@ -138,7 +138,8 @@
                             <div class="ratio ratio-4x3">
                                 <iframe title="A 3D model related to {{ $look['title_of_work'] }}"
                                         src="https://sketchfab.com/models/{{ $look['sketchfab_id'] }}/embed?"
-                                        allow="autoplay; fullscreen; vr" mozallowfullscreen="true"
+                                        allow="autoplay; fullscreen; vr"
+                                        mozallowfullscreen="true"
                                         webkitallowfullscreen="true"></iframe>
                             </div>
                         </div>

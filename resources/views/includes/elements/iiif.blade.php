@@ -18,7 +18,7 @@ foreach ($record['_source']['multimedia'] as $image ){
       @if(array_key_exists('type', $id))
         @if($id['type'] === 'priref')
           <div class="ratio ratio-1x1">
-            <iframe src="{{ env('COLLECTION_URL') }}/uv.html#?manifest=https://api.fitz.ms/data-distributor/iiif/object-{{ $id['value']}}/manifest&c=0&m=0&cv=0&config={{ env('COLLECTION_URL') }}/config.json&locales=en-GB:English (GB),cy-GB:Cymraeg,fr-FR:Français (FR),sv-SE:Svenska,xx-XX:English (GB) (xx-XX)&xywh=-2139,-341,9925,5028&r=0"
+            <iframe src="{{ env('COLLECTION_URL') }}/uv.html#?manifest=https://api.fitz.ms/data-distributor/iiif/object-{{ $id['value']}}/manifest&c=0&m=0&cv=0&config={{ env('COLLECTION_URL') }}/config.json&locales=en-GB:English (GB),cy-GB:Cymraeg,fr-FR:Français (FR),sv-SE:Svenska,xx-XX:English (GB) (xx-XX)&xywh=0,0,0,0&r=0"
             allowfullscreen ></iframe>
           </div>
         @endif
