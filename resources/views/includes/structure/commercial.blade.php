@@ -15,10 +15,10 @@
             @endif
             <div class="card-body h-100">
                 <div class="contents-label mb-3">
-                    <h3>
+                    <h2>
                         <a class="stretched-link"
                            href="{{ route('landing', [$datum['section']]) }}">{{ $datum['title']}}</a>
-                    </h3>
+                    </h2>
                 </div>
             </div>
         </div>
