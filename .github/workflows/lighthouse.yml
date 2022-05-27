@@ -18,7 +18,7 @@ jobs:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: "90"
           minBestPracticesScore: "85"
-          minPerformanceScore: "85"
+          minPerformanceScore: "70"
           minSeoScore: "90"
       - name: Upload artifacts
         uses: actions/upload-artifact@master
