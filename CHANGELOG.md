@@ -2,6 +2,31 @@
 
 This file documents code based changes to the front end framework.
 
+## 23.05.2022
+
+1. Added cookie library to smaller library
+2. Refactored javascript and removed jquery, fontawesome 
+3. I feel the need for speed update 
+
+## 22.05.2022
+
+1. Refactor of code for better speed and loading 
+
+## 17.05.2022 
+
+1. Added license links to footer 
+2. Updated composer and package json files
+
+## 14.05.2022   
+
+1. Fixed education/learning import to do more with metadata
+2. Added publication date to news cards 
+
+## 13.05.2022   
+
+1. Added dynamic config for event types from tessitura
+2. Fixed formatting for prices on event pages
+3. Fixed failed SOLR imports 
 ## 11.05.2022 
 
 1. Migrated from laravel 8 to laravel 9
