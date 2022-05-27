@@ -7,7 +7,7 @@
                 </div>
 
                 <div class="col-12">
-                    <div id="contexts" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                    <div id="contexts" class="carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
                         <div class="carousel-inner">
                             @foreach(array_chunk($contexts,3,true) as $slides)
                                 @if($loop->first)

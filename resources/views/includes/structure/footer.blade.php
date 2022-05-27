@@ -71,11 +71,11 @@
 
 
 <footer class="text-black bg-pastel">
-    <div class="container-fluid">
+    <div class="container-fluid pt-3">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4">
-                    <div class="my-2 mx-auto footer__info p-4">
+                    <div class="mx-auto footer__info px-4 pt-2">
                         <h3 class="visually-hidden">Contact us</h3>
                         <p>
                             The Fitzwilliam Museum<br/>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="my-2 mx-auto footer__info p-4">
+                    <div class="mx-auto footer__info px-4 pt-2">
                         <h3 class="visually-hidden">Useful links</h3>
                         <ul class="share">
                             <li>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="my-2 mx-auto footer__info p-4">
+                    <div class="mx-auto footer__info px-4 pt-2">
                         <h3 class="visually-hidden">About the University and licenses</h3>
                         <ul class="share">
                             <li><a href="https://cam.ac.uk/about-the-university/how-the-university-and-colleges-work"
