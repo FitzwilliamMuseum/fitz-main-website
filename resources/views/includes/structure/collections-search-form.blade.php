@@ -5,9 +5,9 @@
                 {{ $page }}
             </div>
             <div class="p-3 mx-auto mb-3 bg-white">
-                {{ Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET']) }}
+                {{ Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET', 'class' => 'bg-white']) }}
                 <div class="row">
-                    <div class="form-group col-md-12">
+                    <div class="col-md-12 mb-3">
                         <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
                                placeholder="Search our collection" required value="{{ old('query') }}">
                     </div>
@@ -15,18 +15,18 @@
                 <div class="row">
                     <div class="col">
                         <h3>Visual results</h3>
-                        <div class="form-group form-check ">
+                        <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="images" name="images">
                             <label class="form-check-label" for="images">Only with images?</label>
                         </div>
-                        <div class="form-group form-check ">
+                        <div class="form-check ">
                             <input type="checkbox" class="form-check-input" id="iiif" name="iiif">
                             <label class="form-check-label" for="iiif">Deep zoom enabled (IIIF)?</label>
                         </div>
                     </div>
                     <div class="col">
                         <h3>Operator</h3>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mb-3">
                             <input class="form-check-input" type="radio" name="operator" id="operator" value="AND"
                                    checked>
                             <label class="form-check-label" for="operator">
@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-12">
+                    <div class="col-md-12 mt-3">
                         <button type="submit" class="btn btn-dark">Submit</button>
                     </div>
                 </div>
@@ -80,12 +80,12 @@
             <div class="col-12 shadow-sm p-3 mx-auto">
                 {{ Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
                 <div class="row center-block">
-                    <div class="col-lg-12 center-block searchform">
+                    <div class="col-lg-12 center-block">
                         <div class="input-group mr-3">
-                            <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
+                            <input type="text" id="query" name="query" value="" class="form-control input-lg me-4"
                                    placeholder="Search our highlight objects" required
                                    value="{{ old('query') }}&contentType:pharos">
-                            <span class="input-group-btn">
+                            <span class="input-group-btn ml-3">
                 <button class="btn btn-dark" type="submit">Search...</button>
               </span>
                         </div>
