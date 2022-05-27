@@ -2,6 +2,10 @@
 
 This file documents code based changes to the front end framework.
 
+## 27.05.2022
+
+1. Add lighthouse test via action
+
 ## 23.05.2022
 
 1. Added cookie library to smaller library
