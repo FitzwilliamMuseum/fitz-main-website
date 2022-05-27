@@ -1,0 +1,27 @@
+name: Lighthouse
+on: [pull_request]
+
+jobs:
+  lighthouse-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        id: lighthouseCheck
+        with:
+          urls: 'https://fitzmuseum.cam.ac.uk,https://fitzmuseum.cam.ac.uk/about-us,https://fitzmuseum.cam.ac.uk/visit-us,https://fitzmuseum.cam.ac.uk/research'
+          # ... all your other inputs
+      - name: Verify Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: "90"
+          minBestPracticesScore: "85"
+          minPerformanceScore: "85"
+          minSeoScore: "90"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: ${{ github.workspace }}/tmp/artifacts
