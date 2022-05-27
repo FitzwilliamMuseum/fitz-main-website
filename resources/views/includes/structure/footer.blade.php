@@ -1,6 +1,6 @@
 <!-- Footer logos -->
 <!--suppress HtmlUnknownAnchorTarget -->
-<div class="container-fluid bg-white p-2 container-fluid bg-white border-cambridge">
+<div class="container-fluid p-2 container-fluid bg-white border-cambridge">
     <div class="col-md-12 mx-auto">
         <div class="row justify-content-center mb-4">
             <div class="col-md-2 col-sm-2 text-center">
