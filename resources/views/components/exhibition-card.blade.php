@@ -27,18 +27,18 @@
                     </a>
                 </h2>
                 @if($status === 'current' && $ticketed === true && !is_null($tessitura))
-                    <p class="text-info">Ticket and timed entry</p>
+                    <p class="text-dark">Ticket and timed entry</p>
                     <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura }}">Book
                         now</a>
                 @elseif($status === 'current')
-                    <p class="text-info">Included in General admission</p>
+                    <p class="text-dark">Included in General admission</p>
                 @endif
-                <p class="text-info">
+                <p class="text-dark">
                     {{  Carbon\Carbon::parse($startDate)->format('l dS F Y') }} to
                     {{  Carbon\Carbon::parse($endDate)->format('l dS F Y') }}
                 </p>
                 @if($status === 'archived')
-                    <span class="badge bg-maroon p-2 d-block">
+                    <span class="badge bg-dark p-2 d-block">
                         This is now closed
                     </span>
                 @endif
