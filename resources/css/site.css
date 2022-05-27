@@ -744,3 +744,9 @@ a.text-center.btn.btn-outline-light.btn__book {
 .card-img-top {
     height: 100% !important;
 }
+.share li {
+    list-style: none;
+}
+.share a {
+    color: #000;
+}
