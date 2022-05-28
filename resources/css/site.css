@@ -273,8 +273,25 @@ h5 > a:hover::before {
     visibility: visible;
     transform: scaleX(1);
 }
-
-
+.open-link a {
+    color: #fff;
+}
+.btn-circle.btn-xl {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+}
+.form-control {
+    border-radius: 0;
+}
+a {
+    background-color: transparent;
+    color: #731100;
+    text-decoration: none;
+}
 .free_ticket a {
     color: #fff !important;
 }
@@ -467,14 +484,6 @@ a.nav-link {
 .alert__jobs {
     border-radius: 0;
     margin-bottom: 0;
-}
-
-.btn {
-    border-radius: 0;
-}
-
-.form-control {
-    border-radius: 0;
 }
 
 a.text-center.btn.btn-outline-light.btn__book {

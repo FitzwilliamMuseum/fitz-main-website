@@ -30,7 +30,9 @@
         @endif
         @if(isset($record['themes']))
             @foreach($record['themes'] as $th)
-                <a href="{{route('theme', [$th]) }}" class="btn btn-dark mr-2 mt-2">{{str_replace('-',' ',$th)}}</a>
+                <a href="{{route('theme', [$th]) }}" class="btn btn-dark mr-2 mt-2">
+                    {{str_replace('-',' ',$th)}}
+                </a>
             @endforeach
         @endif
     </div>
