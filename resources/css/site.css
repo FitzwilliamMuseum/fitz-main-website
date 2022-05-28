@@ -273,7 +273,9 @@ h5 > a:hover::before {
     visibility: visible;
     transform: scaleX(1);
 }
-
+.open-link a {
+    color: #fff;
+}
 .btn-circle.btn-xl {
     width: 50px;
     height: 50px;
@@ -282,8 +284,8 @@ h5 > a:hover::before {
     font-size: 12px;
     text-align: center;
 }
-form-control {
-    border-radius: 0px;
+.form-control {
+    border-radius: 0;
 }
 a {
     background-color: transparent;

@@ -20,14 +20,10 @@
                          height="{{ $look['focus_image']['height'] }}"
                     />
                 </figure>
-                <span class="btn btn-dark m-1 p-2 share">
-            <a href="{{ $look['focus_image']['data']['full_url'] }}" target="_blank"
-               download><i class="fas fa-download mr-2"></i>  Download this image</a>
-          </span>
-                <span class="btn btn-dark p-2">
-            <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img
-                    alt="Creative Commons Licence"
-                    src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a></span>
+                <a class="btn btn-dark m-1 p-2" href="{{ $look['focus_image']['data']['full_url'] }}" target="_blank"
+                download>@svg('fas-download', ['width' => 15, 'height'=> 15]) Download this image</a>
+                <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img alt="Creative Commons Licence" src="{{ asset('/images/logos/by-nc-nd.svg') }}"/></a>
             </div>
             @if(!is_null($look['main_text_description']))
 
@@ -112,11 +108,11 @@
                         @if(!is_null($look['associated_pharos'][0]['pharos_id']['image']))
                             <a href="{{ route('highlight', $look['associated_pharos'][0]['pharos_id']['slug']) }}">
                                 <img class="img-fluid"
-                                    src="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
-                                    alt="{{ $look['associated_pharos'][0]['pharos_id']['image_alt_text'] }}"
-                                    loading="lazy"
-                                    width="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['width'] }}"
-                                    height="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['height'] }}"
+                                     src="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
+                                     alt="{{ $look['associated_pharos'][0]['pharos_id']['image_alt_text'] }}"
+                                     loading="lazy"
+                                     width="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['width'] }}"
+                                     height="{{ $look['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['height'] }}"
                                 /></a>
                         @endif
                         <div class="card-body h-100">
