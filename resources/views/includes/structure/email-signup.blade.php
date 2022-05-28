@@ -4,11 +4,11 @@
             <div class="btn-sign rounded-left rounded-right">
                 <div class="btn-sign-box"></div>
                 <div class="btn-sign-text">
-                    <h3>
+                    <h5>
                         <a href="https://tickets.museums.cam.ac.uk/account/create" class="stretch-link">
                             Sign up for updates
                         </a>
-                    </h3>
+                    </h5>
                     <p class="text-center">Updates about future exhibitions and displays, family activities, virtual
                         events & news. You'll be the first to know...</p>
                 </div>
