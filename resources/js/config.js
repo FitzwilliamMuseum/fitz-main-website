@@ -14,8 +14,9 @@ cc.run({
     // auto_language: null,                     // default: null; could also be 'browser' or 'document'
     // autorun: true,                           // default: true
     // delay: 0,                                // default: 0
-    // force_consent: false,
-    // hide_from_bots: false,                   // default: false
+    //
+    force_consent: true,
+    hide_from_bots: true,                   // default: false
     // remove_cookie_tables: false              // default: false
     // cookie_domain: location.hostname,        // default: current domain
     // cookie_path: "/",                        // default: root
@@ -91,7 +92,7 @@ cc.run({
                         description: 'These cookies allow the website to remember the choices you have made in the past',
                         toggle: {
                             value: 'analytics',     // there are no default categories => you specify them
-                            enabled: false,
+                            enabled: true,
                             readonly: false
                         },
                         cookie_table: [
@@ -99,14 +100,14 @@ cc.run({
                                 col1: '^_ga',
                                 col2: 'google.com',
                                 col3: '2 years',
-                                col4: 'description ...',
+                                col4: 'Google Analytics identifies unique users across GA sessions through client ID. The client ID is stored in the Google Analytics cookie. The GA cookie is set when a person visits your website for the first time. Google Analytics sends the client ID with each hit to associate hits with a user.',
                                 is_regex: true
                             },
                             {
                                 col1: '_gid',
                                 col2: 'google.com',
                                 col3: '1 day',
-                                col4: 'description ...',
+                                col4: 'This cookie is installed by Google Analytics. The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the website is doing.',
                             }
                         ]
                     }, {
@@ -119,7 +120,7 @@ cc.run({
                         }
                     }, {
                         title: 'More information',
-                        description: 'For any queries in relation to our policy on cookies and your choices, please review <a class="cc-link" href="/about-us/privacy-and-cookies">the University of Cambridge policy</a>.',
+                        description: 'For any queries in relation to our policy on cookies and your choices, please review <a class="cc-link" href="https://fitzmuseum.cam.ac.uk/about-us/privacy-and-cookies">the University of Cambridge policy</a>.',
                     }
                 ]
             }
