@@ -1,6 +1,5 @@
 @include('includes.structure.name-spaces')
 <head>
-    <title>An error has been logged</title>
     @include('includes.structure.meta')
     <x-feed-links></x-feed-links>
     @include('includes.css.css')
