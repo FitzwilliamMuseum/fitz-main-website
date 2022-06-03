@@ -19,16 +19,22 @@
             @include('includes.structure.jobexpired')
         @endif
         @if(isset($vacancy['salary_range']))
-            <p class="text-danger">£ {{ $vacancy['salary_range'] }}</p>
+            <span class="badge bg-dark my-2">Salary range: £{{ $vacancy['salary_range'] }}</span>
         @endif
-        @markdown($vacancy['job_description'])
-        <p class="text-info">Closing date:
-            <strong>{{  Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</strong></p>
+        <span class="badge bg-info">Closing date:
+                {{  Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}
+            </span>
         @isset($vacancy['job_pack'])
             <a href="{{ $vacancy['job_pack']['data']['full_url'] }}" class="btn btn-dark" download>
-                Download the job pack
+                @svg('fas-file-pdf', ['width' => 15, 'height' => 15]) Download the job pack
             </a>
         @endisset
+        @markdown($vacancy['job_description'])
+
+        @if(!Carbon\Carbon::parse($vacancy['expires'])->isPast())
+            @include('includes.structure.jobLink')
+        @endif
+
     </div>
 @endsection
 @endforeach

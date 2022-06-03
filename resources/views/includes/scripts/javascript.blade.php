@@ -15,17 +15,15 @@
         return new bootstrap.Popover(popoverTriggerEl);
     });
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
+<script type="text/plain" data-cookiecategory="analytics" async  src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
 
 <script type="text/plain" data-cookiecategory="analytics">
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
         dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
-    gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}', { cookie_flags: 'SameSite=None;Secure' });
+    gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
 </script>
 @hasSection('map')
     @mapscripts

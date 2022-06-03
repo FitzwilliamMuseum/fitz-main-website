@@ -59,7 +59,7 @@
                     @endphp
 
                     @if($count > 12)
-                        <a class="btn btn-dark mx-2 mb-2 collapsed" data-toggle="collapse" href="#transcript"
+                        <a class="btn btn-dark mx-2 mb-2 collapsed" data-bs-toggle="collapse" href="#transcript"
                            role="button" aria-expanded="false" aria-controls="transcript">
                             <span class="if-collapsed">Show full transcript</span>
                             <span class="if-not-collapsed">Hide full transcript</span>
