@@ -28,7 +28,7 @@
                 </h2>
                 @if($status)
                     @foreach($status as $stat)
-                        <span class="badge badge-dark mb-1">{{$stat}}</span>
+                        <span class="badge bg-dark mb-1">{{$stat}}</span>
                     @endforeach
                 @endif
             </div>

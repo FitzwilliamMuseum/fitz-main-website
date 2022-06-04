@@ -103,7 +103,7 @@
                                 @foreach ($end as $transcript)
                                     <li>
                                         {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}<br/>
-                                        <span class="badge badge-dark p-2">{{ $transcript['speaker'] }}</span>
+                                        <span class="badge bg-dark p-2">{{ $transcript['speaker'] }}</span>
                                         {{ $transcript['comment'] }}
                                     </li>
                                 @endforeach
