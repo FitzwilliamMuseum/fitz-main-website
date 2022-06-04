@@ -20,12 +20,12 @@ class searchContentType extends Component
     public function __construct(string $type)
     {
         $this->type = $type;
-        $this->display_name = $this->getDisplayName();
+        $this->display_name = $this->getDisplayName($type);
     }
 
-    public function getDisplayName(): string
+    public function getDisplayName(string $type): string
     {
-        return SearchContentTypes::find($this->type)['display_name'] ?? 'No type found';
+        return SearchContentTypes::find($type)['display_name'] ?? 'No type found';
     }
 
     /**
