@@ -3,12 +3,14 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
+
 use App\Models\SearchContentTypes;
 
 class searchContentType extends Component
 {
     public string $type;
-    public string $displayName;
+    public string $display_name;
 
     /**
      * Create a new component instance.
@@ -18,7 +20,7 @@ class searchContentType extends Component
     public function __construct(string $type)
     {
         $this->type = $type;
-        $this->displayName = $this->getDisplayName($type);
+        $this->display_name = $this->getDisplayName($type);
     }
 
     public function getDisplayName(string $type): string
@@ -31,7 +33,7 @@ class searchContentType extends Component
      *
      * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.search-content-type');
     }
