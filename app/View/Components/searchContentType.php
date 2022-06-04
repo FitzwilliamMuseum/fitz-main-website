@@ -15,9 +15,10 @@ class searchContentType extends Component
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param $type
+     * @param null $display_name
      */
-    public function __construct(string $type, string $display_name = NULL)
+    public function __construct($type, $display_name = NULL)
     {
         $this->type = $type;
         if($display_name === '') {
