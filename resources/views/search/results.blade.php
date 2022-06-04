@@ -26,12 +26,9 @@
                         @endif
                         <div class="card-body ">
                             @include('includes.elements.search-result-title')
-                            @include('includes.elements.mimetype')
-                            <p>
-                                <span class="badge bg-dark p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
-                                @include('includes.elements.mimetype-meta')
-                                @include('includes.elements.learning-files')
-                            </p>
+                            <x-search-content-type :type="$result['contentType'][0]"/>
+                            @include('includes.elements.mimetype-meta')
+                            @include('includes.elements.learning-files')
                         </div>
                     </div>
 

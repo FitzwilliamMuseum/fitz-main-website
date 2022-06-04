@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Composers\BookingLink;
+use App\Http\Composers\OpeningHours;
 use Illuminate\Support\ServiceProvider;
 use ImLiam\BladeHelper\Facades\BladeHelper;
 use App\DirectUs;
@@ -34,8 +36,8 @@ class AppServiceProvider extends ServiceProvider
           URL::forceScheme('https');
         }
         Paginator::useBootstrapFive();
-        view()->composer('includes.structure.opening-hours', \App\Http\Composers\OpeningHours::class);
-        view()->composer('includes.structure.open', \App\Http\Composers\BookingLink::class);
+        view()->composer('includes.structure.opening-hours', OpeningHours::class);
+        view()->composer('includes.structure.open', BookingLink::class);
 
         BladeHelper::directive('mime', function($mime){
           $mimes = new MimeTypes;
@@ -100,119 +102,6 @@ class AppServiceProvider extends ServiceProvider
           $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
           $factor = floor((strlen($bytes) - 1) / 3);
           return sprintf("%.{$precision}f", $bytes / pow(1024, $factor)) . @$size[$factor];
-        });
-
-        BladeHelper::directive('fa', function(string $iconName, string $text = null, $classes = '') {
-            if (is_array($classes)) {
-                $classes = join(' ', $classes);
-            }
-
-            $text = $text ?? $iconName;
-
-            return "<i class='fas fa-{$iconName} {$classes}' aria-hidden='true' title='{$text}'></i><span class='sr-only'>{$text}</span>";
-        });
-
-        BladeHelper::directive('contentType', function ($string) {
-          switch($string) {
-            case "pressroom":
-              $clean = 'A press room pdf release';
-            break;
-            case "news":
-              $clean = 'A news article';
-            break;
-            case "pages":
-              $clean = 'A page or article';
-            break;
-            case "pharos":
-              $clean = 'A collection highlight';
-            break;
-            case "pharos-pages":
-              $clean = 'Pharos information';
-            break;
-            case "gallery":
-              $clean = 'Gallery information';
-            break;
-            case "department":
-              $clean = 'Department information';
-            break;
-            case "directors":
-              $clean = 'A director\'s profile';
-            break;
-            case "staffProfile":
-              $clean = 'A staff research profile';
-            break;
-            case "affilateProfile":
-              $clean = 'An affiliate researcher profile';
-            break;
-            case "projects":
-              $clean = 'A research project\'s details';
-            break;
-            case "collection":
-              $clean = 'Collections description';
-            break;
-            case "learning":
-              $clean = 'A Learning and Education resource';
-            break;
-            case "governance":
-              $clean = 'Reports and reviews';
-            break;
-            case "learning_files":
-              $clean = 'Learning and Education files';
-            break;
-            case 'ucmblog':
-              $clean = 'A UCM blog post';
-              break;
-            case 'egyptiancoffins':
-              $clean = 'Egyptian Coffins website';
-              break;
-            case 'dataislands':
-              $clean = 'Linking Islands of Data';
-              break;
-            case 'exhibitions':
-              $clean = 'Exhibitions information';
-              break;
-            case 'hkiblog.com':
-              $clean = 'Hamilton Kerr Institute blog post';
-              break;
-            case 'conservationblog':
-              $clean = 'Conservation team blog post';
-              break;
-            case 'creativeeconomy':
-              $clean = 'Creative Economy AHRC';
-              break;
-            case 'feastfast':
-              $clean = 'Feast and Fast exhibition';
-              break;
-            case 'beyond':
-              $clean = 'Beyond the Label content';
-              break;
-            case 'do-not-touch':
-                $clean = 'Do Not Touch research';
-              break;
-            case 'hayley':
-                $clean = 'Correspondence of William Hayley';
-                break;
-            case 'audioguide':
-                $clean = 'Audio guide content';
-                break;
-            case 'podcasts':
-                $clean = 'Podcasts and audio';
-                break;
-            case 'shopify':
-                $clean = 'A shop product';
-                break;
-            case 'shopifyPrints':
-                $clean = 'A fine art print to own';
-                break;
-              case 'resources':
-              case 'research-resource':
-                $clean = 'Research/exhibition resource';
-                break;
-              default:
-              $clean = $string;
-            break;
-          }
-          return $clean;
         });
     }
 }
