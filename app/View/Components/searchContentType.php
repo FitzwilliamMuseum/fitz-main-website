@@ -17,10 +17,12 @@ class searchContentType extends Component
      *
      * @return void
      */
-    public function __construct(string $type)
+    public function __construct(string $type, string $display_name = '')
     {
         $this->type = $type;
-        $this->display_name = $this->getDisplayName($type);
+        if($display_name == '') {
+            $this->display_name = $this->getDisplayName($type);
+        }
     }
 
     public function getDisplayName(string $type): string
