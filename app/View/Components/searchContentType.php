@@ -22,6 +22,8 @@ class searchContentType extends Component
         $this->type = $type;
         if($display_name == '') {
             $this->display_name = $this->getDisplayName($type);
+        } else {
+            $this->display_name = $type;
         }
     }
 
