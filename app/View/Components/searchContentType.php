@@ -20,7 +20,7 @@ class searchContentType extends Component
     public function __construct(string $type)
     {
         $this->type = $type;
-        dump($this->getDisplayName($type));
+        dd($this->getDisplayName($type));
         $this->display_name = $this->getDisplayName($type);
     }
 
