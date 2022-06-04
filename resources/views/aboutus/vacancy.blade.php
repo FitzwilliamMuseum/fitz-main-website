@@ -21,11 +21,11 @@
         @if(isset($vacancy['salary_range']))
             <span class="badge bg-dark my-2">Salary range: £{{ $vacancy['salary_range'] }}</span>
         @endif
-        <span class="badge bg-info">Closing date:
+        <span class="badge bg-info my-2">Closing date:
                 {{  Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}
             </span>
         @isset($vacancy['job_pack'])
-            <a href="{{ $vacancy['job_pack']['data']['full_url'] }}" class="btn btn-dark" download>
+            <a href="{{ $vacancy['job_pack']['data']['full_url'] }}" class="btn btn-dark my-2" download>
                 @svg('fas-file-pdf', ['width' => 15, 'height' => 15]) Download the job pack
             </a>
         @endisset
