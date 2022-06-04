@@ -10,7 +10,7 @@ use App\Models\SearchContentTypes;
 class searchContentType extends Component
 {
     public string $type;
-    public string $display_name;
+    public string $display;
 
     /**
      * Create a new component instance.
@@ -18,14 +18,13 @@ class searchContentType extends Component
      * @param $type
      * @param  $display_name
      */
-    public function __construct($type, $display_name)
+    public function __construct($type, $display)
     {
         $this->type = $type;
-        dump($display_name);
-        if($display_name === '') {
-            $this->display_name = $this->getDisplayName($type);
+        if($display === '') {
+            $this->display = $this->getDisplayName($type);
         } else {
-            $this->display_name = $type;
+            $this->display = $type;
         }
     }
 
