@@ -17,7 +17,7 @@ class searchContentType extends Component
     public function __construct( string $type)
     {
         $this->type = $type;
-        $this->displayName = SearchContentTypes::find($type)['display_name'] ?? 'No type found';
+        $this->displayName = SearchContentTypes::find($this->type)['display_name'] ?? 'No type found';
     }
 
     /**
