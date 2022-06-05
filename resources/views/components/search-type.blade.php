@@ -1,6 +1,6 @@
 <div>
     {{ $name }}
-    {{ $title }}
+    {{ $title() }}
     {{ dd(get_defined_vars()) }}
 
 </div>
