@@ -8,14 +8,16 @@ use Illuminate\View\Component;
 class searchType extends Component
 {
     public string $title;
+    public string $name;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name)
     {
         $this->title = $this->titleString();
+        $this->name = $name;
     }
 
     public function titleString(): string
