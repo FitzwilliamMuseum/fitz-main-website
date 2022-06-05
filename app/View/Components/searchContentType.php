@@ -10,22 +10,15 @@ use App\Models\SearchContentTypes;
 class searchContentType extends Component
 {
     public string $type;
-    public string $display;
 
     /**
      * Create a new component instance.
      *
      * @param $type
-     * @param  $display
      */
-    public function __construct($type, $display)
+    public function __construct($type)
     {
-        $this->type = $type;
-        if(isset($display)) {
-            $this->display = $this->getDisplayName($type);
-        } else {
-            $this->display = $type;
-        }
+        $this->type = $this->getDisplayName($type);
     }
 
     public function getDisplayName(string $type): string
