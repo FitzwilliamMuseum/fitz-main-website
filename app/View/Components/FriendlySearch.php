@@ -22,7 +22,7 @@ class FriendlySearch extends Component
 
     public function titleString(): string
     {
-        return SearchContentTypes::find($type)['display_name'];
+        return SearchContentTypes::find($this->name)['display_name'];
 
     }
     /**
