@@ -6,7 +6,7 @@ use App\DirectUs;
 class SearchContentTypes extends Model
 {
 
-    public static function find(string $type): Array| NULL
+    public static function find(string $type)
     {
         $api = new DirectUs;
         $api->setEndpoint('search_content_types');
@@ -17,6 +17,11 @@ class SearchContentTypes extends Model
                 'filter[solr_content_type][eq]' => $type
             )
         );
-        return collect($api->getData()['data'])->first();
+        $data = $api->getData()['data'];
+        if(!empty($data)){
+            return collect($api->getData()['data'])->first();
+        } else {
+            return array('display_name' => 'Unknown');
+        }
     }
 }

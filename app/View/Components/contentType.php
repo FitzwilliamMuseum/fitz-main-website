@@ -9,16 +9,13 @@ use App\Models\SearchContentTypes;
 class contentType extends Component
 {
     public string $display;
+    public string $name;
 
 
     public function __construct(string $display)
     {
         $this->display = $display;
-    }
-
-    public function getDisplayName()
-    {
-        return SearchContentTypes::find($this->display)['display_name'];
+        $this->name = SearchContentTypes::find($this->display)['display_name'];
     }
 
     /**
