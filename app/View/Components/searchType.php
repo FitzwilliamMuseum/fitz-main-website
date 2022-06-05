@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 
 class searchType extends Component
 {
-    public string $content;
+    public string $title;
     /**
      * Create a new component instance.
      *
@@ -15,10 +15,10 @@ class searchType extends Component
      */
     public function __construct()
     {
-        $this->content = $this->content();
+        $this->title = $this->titleString();
     }
 
-    public function content(): string
+    public function titleString(): string
     {
         return 'content';
     }
