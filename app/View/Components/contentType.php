@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use App\Models\SearchContentTypes;
 
-class contentType extends Component
+class ContentType extends Component
 {
     public string $display;
 
