@@ -17,15 +17,15 @@ class searchType extends Component
      *
      * @return void
      */
-    #[Pure] public function __construct($name)
+    #[Pure] public function __construct($name, $title)
     {
         $this->name = $name;
-        $this->title = $this->titleString();
+        $this->title = $this->titleString($title);
     }
 
-    public function titleString(): string
+    public function titleString($title): string
     {
-        return 'content';
+        return $title;
     }
 
     /**
