@@ -5,16 +5,19 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use App\Models\SearchContentTypes;
 
-class ContentType extends Component
+class contentType extends Component
 {
     public string $display;
-    public string $name;
 
 
     public function __construct(string $display)
     {
         $this->display = $display;
-        $this->name = SearchContentTypes::find($this->display)['display_name'];
+    }
+
+    public function getDisplayName($string)
+    {
+        return SearchContentTypes::find($string)['display_name'];
     }
 
     public function render()
