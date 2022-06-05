@@ -8,7 +8,8 @@
     </h3>
 @else
     <h3>
-        <a href="{{ $result['url'][0]}}"
-           class="stretched-link">{{ $result['title'][0] }}</a>
+        <a href="{{ $result['url'][0]}}" class="stretched-link">
+            {{ html_entity_decode($result['title'][0]) }}
+        </a>
     </h3>
 @endif
