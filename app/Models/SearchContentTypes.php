@@ -17,7 +17,6 @@ class SearchContentTypes extends Model
                 'filter[solr_content_type][eq]' => $type
             )
         );
-        dd($api->getData()['data']);
         return collect($api->getData()['data'])->first();
     }
 }
