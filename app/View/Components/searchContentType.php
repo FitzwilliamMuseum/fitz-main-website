@@ -16,12 +16,12 @@ class searchContentType extends Component
      * Create a new component instance.
      *
      * @param $type
-     * @param  $display_name
+     * @param  $display
      */
     public function __construct($type, $display)
     {
         $this->type = $type;
-        if($display === '') {
+        if(isset($display)) {
             $this->display = $this->getDisplayName($type);
         } else {
             $this->display = $type;
