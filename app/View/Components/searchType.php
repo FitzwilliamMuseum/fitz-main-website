@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use JetBrains\PhpStorm\Pure;
 
 class searchType extends Component
 {
@@ -14,7 +15,7 @@ class searchType extends Component
      *
      * @return void
      */
-    public function __construct($name)
+    #[Pure] public function __construct($name)
     {
         $this->title = $this->titleString();
         $this->name = $name;
@@ -24,10 +25,11 @@ class searchType extends Component
     {
         return 'content';
     }
+
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
     public function render(): View
     {
