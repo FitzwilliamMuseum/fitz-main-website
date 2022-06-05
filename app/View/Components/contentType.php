@@ -8,21 +8,21 @@ use App\Models\SearchContentTypes;
 
 class contentType extends Component
 {
-    public string $type;
+    public string $display;
 
     /**
      * Create a new component instance.
      *
      * @param $type
      */
-    public function __construct($type)
+    public function __construct($display)
     {
-        $this->type = $this->getDisplayName($type);
+        $this->display = $this->getDisplayName($display);
     }
 
-    public function getDisplayName(string $type): string
+    public function getDisplayName(string $display): string
     {
-        return SearchContentTypes::find($type)['display_name'];
+        return SearchContentTypes::find($display)['display_name'];
     }
 
     /**
@@ -32,6 +32,6 @@ class contentType extends Component
      */
     public function render(): View
     {
-        return view('components.search-content-type');
+        return view('components.content-type');
     }
 }
