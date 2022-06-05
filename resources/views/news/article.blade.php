@@ -67,17 +67,7 @@
   @endif
 @endsection
 
-@if(!empty($project['field_image']))
-  @section('height-test')
-    <script>
-      $("#stand-out").on("load", function(){
-        let height = $(this).height();
-        console.log(height);
-        $('.article').css('min-height', height + 100);
-      });
-    </script>
-  @endsection
-@endif
+
 
 @endforeach
 @section('mlt')

@@ -31,7 +31,6 @@
                  loading="lazy"
                  height="{{ $record['hero_image']['data']['thumbnails']['7']['height'] }}"
                  width="{{ $record['hero_image']['data']['thumbnails']['7']['width'] }}"
-                 id="stand-out"
             />
             <figcaption class="figure-caption text-right">{{$record['hero_image_alt_text']}}</figcaption>
             <span class="btn btn-dark m-1 p-2 share">
@@ -58,19 +57,6 @@
         @markdown($record['transcribers'])
     </div>
 @endsection
-
-@if(!empty($record['hero_image']))
-@section('height-test')
-    <script>
-        $("#stand-out").on("load", function () {
-            const height = $(this).height();
-            console.log(height);
-            $('.article').css('min-height', height + 120);
-        });
-    </script>
-@endsection
-@endif
-
 
 @if(!empty($record['associated_pharos_object']))
 @section('pharos-pages')
