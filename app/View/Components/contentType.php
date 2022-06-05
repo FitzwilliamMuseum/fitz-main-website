@@ -17,7 +17,7 @@ class contentType extends Component
      */
     public function __construct($display)
     {
-        $this->display = $this->getDisplayName($display);
+        $this->display = $display;
     }
 
     public function getDisplayName(string $display): string
