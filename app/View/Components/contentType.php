@@ -15,7 +15,7 @@ class contentType extends Component
         $this->display = $display;
     }
 
-    public function getDisplayName($string)
+    public function showDisplayName($string)
     {
         return SearchContentTypes::find($string)['display_name'];
     }
@@ -23,5 +23,9 @@ class contentType extends Component
     public function render()
     {
         return view('components.content-type');
+    }
+    public function test()
+    {
+        return 'test';
     }
 }
