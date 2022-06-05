@@ -9,17 +9,18 @@ use JetBrains\PhpStorm\Pure;
 
 class searchType extends Component
 {
-    public string $title;
     public string $name;
+    public $title;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    #[Pure] public function __construct($name, $title)
+    #[Pure] public function __construct($name)
     {
-        $this->title = $this->titleString();
         $this->name = $name;
+        $this->title = $this->titleString();
     }
 
     public function titleString(): string
