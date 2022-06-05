@@ -1,4 +1,4 @@
 <div>
-        {{ dd(get_defined_vars()) }}
-    {{ $title }}
+
+    {{ $title }}{{ dd(get_defined_vars()) }}
 </div>
