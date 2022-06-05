@@ -4,7 +4,6 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
-
 use App\Models\SearchContentTypes;
 
 class searchContentType extends Component
