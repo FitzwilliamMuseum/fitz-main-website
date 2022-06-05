@@ -26,7 +26,7 @@
                         @endif
                         <div class="card-body ">
                             @include('includes.elements.search-result-title')
-{{--                            <x-search-type :name="$result['contentType'][0]" :title="$result['contentType'][0]"></x-search-type>--}}
+                            <x-friendly-search :name="$result['contentType'][0]" :title="$result['contentType'][0]"></x-friendly-search>
                             @include('includes.elements.mimetype-meta')
                             @include('includes.elements.learning-files')
                         </div>
