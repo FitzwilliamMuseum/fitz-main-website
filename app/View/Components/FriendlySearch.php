@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\SearchContentTypes;
 use Illuminate\View\Component;
 
 class FriendlySearch extends Component
@@ -16,12 +17,13 @@ class FriendlySearch extends Component
     public function __construct($name)
     {
         $this->name = $name;
-        $this->title = $this->titleString($name);
+        $this->title = $this->titleString();
     }
 
-    public function titleString($name): string
+    public function titleString(): string
     {
-        return 'content';
+        return SearchContentTypes::find($type)['display_name'];
+
     }
     /**
      * Get the view / contents that represent the component.
