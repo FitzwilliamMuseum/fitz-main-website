@@ -10,19 +10,15 @@ class contentType extends Component
 {
     public string $display;
 
-    /**
-     * Create a new component instance.
-     *
-     * @param $type
-     */
-    public function __construct($display)
+
+    public function __construct(string $display)
     {
         $this->display = $display;
     }
 
-    public function getDisplayName(string $display): string
+    public function getDisplayName()
     {
-        return SearchContentTypes::find($display)['display_name'];
+        return SearchContentTypes::find($this->display)['display_name'];
     }
 
     /**
