@@ -26,15 +26,7 @@
                         @endif
                         <div class="card-body ">
                             @include('includes.elements.search-result-title')
-                            <x-static-image-card
-                                :image="'https://content.fitz.ms/fitz-website/assets/imme.jpg?key=exhibition'"
-                                :alt="'In my Mind\'s eye'"
-                                :route="'mindeyes'"
-                                :params="[]"
-                                :title="'In my mind\'s eye'">
-                            </x-static-image-card>
-                            <x-search-type :name="$result['contentType'][0]" />
-{{--                            <x-content-type :display="$result['contentType'][0]" />--}}
+                            <x-search-type :name="$result['contentType'][0]"></x-search-type>
                             @include('includes.elements.mimetype-meta')
                             @include('includes.elements.learning-files')
                         </div>
