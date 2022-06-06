@@ -464,6 +464,7 @@ return [
         '/about-us/our-staff/profile/jana-mokrisova' => 'https://www.classics.cam.ac.uk/directory/dr-jana-mokrisova',
         '/about-us/our-staff/profile/melanie-pitkin' => '/research/affiliates/melanie-pitkin',
         #  visit
+        'visit-us/exhibitions/currencies-of-conflict-and-dissent' => 'visit-us/exhibitions/defaced',
         '/visit/gettinghere' => '/visit-us',
         '/visit/{url}' => '/visit-us/{url}',
         # feeds
