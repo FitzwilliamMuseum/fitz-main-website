@@ -1,17 +1,16 @@
 <div class="container-fluid p-0" id="player">
     <div class="row no-gutters">
     <video
-        poster="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3-1.jpg"
+        poster="{{ env('CONTENT_STORE') }}Mosaic Floor_Founders Entrance_201702_mfj22_mas-2.jpg"
         class="js-player no-gutters" muted crossorigin playsinline loop>
         <source src="https://d3rppa0cay3gy1.cloudfront.net/fitzwilliam.mp4"/>
     </video>
     </div>
 </div>
-<link href="https://unpkg.com/plyr@3/dist/plyr.css" rel="stylesheet" />
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
-<script src="https://unpkg.com/plyr@3"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.2/plyr.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.2/plyr.min.js"></script>
 <script>
-    var controls =
+    const controls =
         [
             'play-large',
             'mute',
