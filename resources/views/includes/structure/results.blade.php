@@ -35,8 +35,7 @@
                 @endif
               @endif
               <p>
-
-                <span class="badge bg-dark p-2 shorten-words text-truncate">Content to expect: @contentType($result['contentType'][0])</span>
+                  <x-friendly-search :name="$result['contentType'][0]" :title="$result['contentType'][0]"></x-friendly-search>
                 @if(isset($result['mimetype']))
                   @if(!is_null($result['mimetype'] && $result['mimetype'] == 'application\pdf'))
                     <span class="badge bg-dark p-2">
