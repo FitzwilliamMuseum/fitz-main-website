@@ -19,8 +19,7 @@
 @endif
 @include('includes.structure.open')
 @include('includes.structure.exhibitions')
-
-<div class="container-fluid parallax parallax-home"></div>
+@include('includes.social.video-intro')
 
 @include('includes.structure.galleries')
 
