@@ -2,7 +2,7 @@
     <div class="row no-gutters">
     <video
         poster="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3-1.jpg"
-        class="js-player no-gutters"  autoplay muted crossorigin playsinline loop>
+        class="js-player no-gutters"   muted crossorigin playsinline loop>
         <source src="https://d3rppa0cay3gy1.cloudfront.net/fitzwilliam.mp4"/>
     </video>
     </div>
