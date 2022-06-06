@@ -2,7 +2,7 @@
     <div class="row no-gutters">
     <video
         poster="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/fitzwilliam-museum-main-entrance-2018_3-1.jpg"
-        class="js-player no-gutters"   muted crossorigin playsinline loop>
+        class="js-player no-gutters" muted crossorigin playsinline loop>
         <source src="https://d3rppa0cay3gy1.cloudfront.net/fitzwilliam.mp4"/>
     </video>
     </div>
@@ -13,8 +13,9 @@
 <script>
     var controls =
         [
-            'play-large', // The large play button in the center
-            'mute'
+            'play-large',
+            'mute',
+            'play'
         ];
 
     const player = new Plyr('video', { controls });
