@@ -1,7 +1,7 @@
 <div class="container-fluid p-0" id="player">
     <div class="row no-gutters">
     <video
-        poster="{{ env('CONTENT_STORE') }}Mosaic Floor_Founders Entrance_201702_mfj22_mas-2.jpg"
+        poster="{{ env('CONTENT_STORE') }}Fitzwilliam_Museum_Main_Entrance_Face.jpg"
         class="js-player no-gutters" muted crossorigin playsinline loop>
         <source src="https://d3rppa0cay3gy1.cloudfront.net/fitzwilliam.mp4"/>
     </video>
