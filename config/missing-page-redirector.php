@@ -257,6 +257,7 @@ return [
         '/events/events' => '/events',
         '/wo' => '/events',
         '/contact' => '/about-us/contact-us',
+        '/aboutus/contact' => '/about-us/contact-us',
         '/opac' => 'https://data.fitzmuseum.cam.ac.uk',
         '/opac/{url?}' => 'https://data.fitzmuseum.cam.ac.uk',
         '/opac/search/{url?}' => 'https://data.fitzmuseum.cam.ac.uk',
