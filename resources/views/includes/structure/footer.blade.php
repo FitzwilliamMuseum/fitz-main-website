@@ -114,6 +114,10 @@
                                 <a href="#" data-cc="c-settings">Cookie preferences</a>
                             </li>
                             <li>
+                                <a aria-label="Our Collections API"
+                                   href="{{env('COLLECTION_URL')}}/api">Our Collections API</a>
+                            </li>
+                            <li>
                                 <a aria-label="Contact the museum"
                                    href="{{ route('landing-section', ['about-us', 'contact-us'])}}">Contact us</a>
                             </li>
