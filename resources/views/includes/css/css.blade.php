@@ -1,8 +1,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 
-<link rel="stylesheet" href="{{ mix('css/app.css') }}" media="screen"/>
+@vite('resources/css/app.css')
 
-<link rel="stylesheet" href="{{ mix('css/fitzwilliam.css') }}" media="screen" />
+@vite('resources/css/fitzwilliam.css')
 @hasSection('audio-guide')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.6/plyr.css" rel="stylesheet" media="screen">
 @endif

@@ -1,4 +1,4 @@
-<script src="{{ mix('js/app.js') }}"></script>
+@vite('resources/js/app.js')
 
 @hasSection('audio-guide')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.5.10/plyr.min.js"></script>
