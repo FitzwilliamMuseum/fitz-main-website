@@ -58,7 +58,7 @@ $ npm run copy-pannellum-js # "cp -R node_modules/pannellum/build/*.js ./public/
 If the versions have been updated you may need to run:
 
 ```bash
-$ npm run production 
+$ npm run build 
 ```
 
 Which will compress all the css and js files. 

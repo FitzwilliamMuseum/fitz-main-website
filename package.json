@@ -1,11 +1,6 @@
 {
     "private": true,
     "scripts": {
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "production": "mix --production",
         "copy": "npm run copy-uv-html && npm run copy-uv-css && npm run copy-icons && npm run copy-cookie-css && npm run copy-cookie-js",
         "copy-uv-html": "cp -R node_modules/universalviewer/dist/uv.html ./public",
         "copy-uv-css": "cp -R node_modules/universalviewer/dist/uv.css ./public/",
@@ -15,7 +10,9 @@
         "copy-cookie-js": "cp -R node_modules/vanilla-cookieconsent/dist/*.js ./resources/js/",
         "copy-pannellum-css": "cp -R node_modules/pannellum/build/*.css ./public/css/",
         "copy-pannellum-js": "cp -R node_modules/pannellum/build/*.js ./public/js/",
-        "postinstall": "npm run copy"
+        "postinstall": "npm run copy",
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
         "ansi-regex": "^6.0.1",
