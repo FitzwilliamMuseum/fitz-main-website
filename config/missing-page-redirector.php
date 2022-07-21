@@ -455,7 +455,8 @@ return [
         '/sites/default/files/Graphite.pdf' => 'https://content.fitz.ms/fitz-website/assets/Graphite.pdf',
         # Research
         '/conservd' => '/research/projects/conservd',
-        '/research/grr' => '/visit-us/galleries/gallery-9',
+        '/research/grr' => '/research/study-room',
+        '/dept/grr' => '/research/study-room',
         '/research/mec' => '/research/projects/medieval-european-coinage',
         '/research/ancient-egyptian-coffins' => 'https://egyptiancoffins.org',
         '/research/workingwithschools' => '/learning/working-with-teachers-and-students',
