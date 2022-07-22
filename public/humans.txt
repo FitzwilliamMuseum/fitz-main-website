@@ -1,20 +1,12 @@
 /* TEAM */
 
-Project lead: Daniel Pett
+Name: Daniel Pett
+Role: Lead Developer, Front End Design, Information Architect and Head of Digital and IT
 Twitter: @dejpett
 Location: The Fitzwilliam Museum, Trumpington Street Cambridge
 Geo: 52.199, 0.119
-Email: dejp3 at cam.ac.uk
-Site: http://museologi.st
+Web: http://museologi.st
 
-Digital Humanities Developer: George Doji
-Email: gd304 at cam.ac.uk
-
-/* SITE */
-Last update: Everyday
-Standards: xHTML1, CSS2, PHP5.4, MYSQL5, solr 4.2.1
-Components: jQuery, php, flash, java, solr,
-Software: Zend Studio, netBeans, phpstorm
 /* COLOPHON */
 Hic sunt dracones - Here be dragons. St George is coming to get them.
 
