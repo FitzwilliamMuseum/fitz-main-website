@@ -472,7 +472,14 @@ return [
         # feeds
         '/news/feed/' => '/feeds/news/',
         # podcasts
-        '/conversations/podcasts/episode' => '/conversations/podcasts/'
+        '/conversations/podcasts/episode' => '/conversations/podcasts/',
+        # Department changes July 2022
+        'about-us/departments/antiquities' => '/about-us/departments/collections-and-research',
+        'about-us/departments/applied-arts' => '/about-us/departments/collections-and-research',
+        'about-us/departments/coins-and-medals' => '/about-us/departments/collections-and-research',
+        'about-us/departments/manuscripts-and-printed-books' => '/about-us/departments/collections-and-research',
+        'about-us/departments/paintings-drawings-and-prints' => '/about-us/departments/collections-and-research',
+        'about-us/departments/research' => '/about-us/departments/collections-and-research',
     ],
 
 ];

@@ -37,9 +37,10 @@ class departmentsController extends Controller
     public function details(string $slug): View|Response
     {
         $departments = Departments::find($slug);
-        $staff = StaffProfiles::findByDepartment($departments['data'][0]['id']);
         if (empty($departments['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            $staff = StaffProfiles::findByDepartment($departments['data'][0]['id']);
         }
         return view('departments.details', compact('departments', 'staff'));
     }
