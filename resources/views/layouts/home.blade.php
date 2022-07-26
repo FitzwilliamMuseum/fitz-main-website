@@ -19,7 +19,6 @@
 @endif
 @include('includes.structure.open')
 @include('includes.structure.exhibitions')
-@include('includes.social.video-intro')
 
 @include('includes.structure.galleries')
 
