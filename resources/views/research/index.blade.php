@@ -1,15 +1,15 @@
 @extends('layouts.layout')
 @foreach($pages['data'] as $page)
     @section('title', $page['title'])
-@if(!empty($page['hero_image']))
-    @section('hero_image', $page['hero_image']['data']['url'])
-@section('hero_image_title', $page['hero_image_alt_text'])
-@else
-    @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
-@section('hero_image_title', "The inside of our Founder's entrance")
-@endif
-@section('description', $page['meta_description'])
-@section('keywords', $page['meta_keywords'])
+    @if(!empty($page['hero_image']))
+        @section('hero_image', $page['hero_image']['data']['url'])
+        @section('hero_image_title', $page['hero_image_alt_text'])
+    @else
+        @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
+        @section('hero_image_title', "The inside of our Founder's entrance")
+    @endif
+    @section('description', $page['meta_description'])
+    @section('keywords', $page['meta_keywords'])
 @endforeach
 @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto  ">
