@@ -185,72 +185,40 @@
                 <h3 class="visually-hidden">Join our conversations</h3>
                 <p class="share text-center">
                     <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
-                        <img src="{{ asset( "/images/svg/twitter.svg") }}"
-                             width="48"
-                             height="48"
-                             alt="Twitter logo"
-                             class="eden my-2 mx-2"
-                        />
+                        @svg('fab-twitter',['width'=> 48,'height'=> 48, 'alt' => "Twitter logo", "class" => "my-2 mx-2"])
+
                     </a>
                     <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
-                        <img src="{{ asset( "/images/svg/instagram.svg") }}"
-                             width="48"
-                             height="48"
-                             alt="Instagram logo"
-                             class="eden my-2 mx-2"
-                        />
+                        @svg('fab-instagram',['width'=> 48,'height'=> 48, 'alt' => "Instagram logo", "class" => "my-2 mx-2"])
+
                     </a>
                     <a aria-label="Fitzwilliam Museum facebook account"
                        href="https://www.facebook.com/fitzwilliammuseum/">
-                        <img src="{{ asset( "/images/svg/facebook.svg") }}"
-                             width="48"
-                             height="48"
-                             alt="Facebook logo"
-                             class="eden my-2 mx-2"
-                        />
+                        @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkin logo", "class" => "my-2 mx-2"])
+
                     </a>
                     <a aria-label="Fitzwilliam Museum linkedin account"
                        href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
-                        <img src="{{ asset( "/images/svg/linkedin.svg") }}"
-                             width="48"
-                             height="48"
-                             alt="Linkin logo"
-                             class="eden my-2 mx-2"
-                        />
+                        @svg('fab-facebook',['width'=> 48,'height'=> 48, 'alt' => "Facebook logo", "class" => "my-2 mx-2"])
                     </a>
-                    <a aria-label="Fitzwilliam Museum sketchfab account"
-                       href="https://www.sketchfab.com/fitzwilliammuseum/">
+                    <a aria-label="Fitzwilliam Museum sketchfab account" href="https://www.sketchfab.com/fitzwilliammuseum/">
                         <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}"
                              width="48"
                              height="48"
                              alt="Sketchfab logo"
-                             class="eden my-2 mx-2"
+                             class="my-2 mx-2 eden"
                         />
                     </a>
                     <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
-                        <img src="{{ asset( "/images/svg/github.svg") }}"
-                             width="48"
-                             class="eden my-2 mx-2"
-                             alt="Github logo"
-                             height="48"
-                        />
+                        @svg('fab-github',['width'=> 48,'height'=> 48, 'alt' => "Github logo", "class" => "my-2 mx-2"])
+
                     </a>
-                    <a aria-label="Watch our YouTube videos"
-                       href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
-                        <img src="{{ asset( "/images/svg/youtube.svg") }}"
-                             width="48"
-                             class="eden my-2 mx-2"
-                             alt="Youtube logo"
-                             height="48"
-                        />
+                    <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
+                        @svg('fab-youtube',['width'=> 48,'height'=> 48, 'alt' => "Youtube logo", "class" => "my-2 mx-2"])
+
                     </a>
-                    <a aria-label="Fitzwilliam Museum news feed" href="{{route("feeds.news")}}">
-                        <img src="{{ asset( "/images/svg/rss.svg") }}"
-                             width="48"
-                             class="eden my-2 mx-2"
-                             height="48"
-                             alt="RSS logo"
-                        />
+                    <a aria-label="Fitzwilliam Museum news feed" href="{{ env('MAIN_URL') }}/news/feed/">
+                        @svg('fas-rss',['width'=> 48,'height'=> 48, 'alt' => "RSS logo", "class" => "my-2 mx-2"])
                     </a>
                 </p>
             </div>
@@ -268,11 +236,8 @@
                              loading="lazy"
                         />
                     </a>
-                </p>
-                <p class="text-center">
-                    &copy; {{ now()->year }} The University of Cambridge
-                </p>
-
+                    <br/>
+                    &copy; {{ now()->year }} The University of Cambridge</p>
             </div>
         </div>
         <button
@@ -281,10 +246,7 @@
             id="btn-back-to-top"
             aria-label="Return to the top of the page"
         >
-            <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg">
-                <path fill="black" id="scrolltop-bg" d="M0 0h48v48h-48z"/>
-                <path fill="white" id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"/>
-            </svg>
+            <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg"><path fill="black" id="scrolltop-bg" d="M0 0h48v48h-48z"/><path fill="white" id="scrolltop-arrow" d="M14.83 30.83l9.17-9.17 9.17 9.17 2.83-2.83-12-12-12 12z"/></svg>
         </button>
     </div>
 </footer>
