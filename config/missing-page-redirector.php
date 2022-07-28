@@ -481,5 +481,4 @@ return [
         'about-us/departments/paintings-drawings-and-prints' => '/about-us/departments/curatorial',
         'about-us/departments/research' => '/about-us/departments/curatorial',
     ],
-
 ];
