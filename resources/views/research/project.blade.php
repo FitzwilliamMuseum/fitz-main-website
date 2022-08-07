@@ -54,7 +54,6 @@
       </div>
     @endif
   @endsection
-
   @if(!empty($project['project_partnerships'] ))
     @section('research-funders')
       <div class="container">
@@ -78,7 +77,7 @@
         <div class="container">
           <h3>Outcomes of the project</h3>
           <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-            @markdown($project['outcomes'])
+              {!! $project['outcomes'] !!}
           </div>
         </div>
       @endsection
