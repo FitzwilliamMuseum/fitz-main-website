@@ -10,6 +10,7 @@
 @include('includes.structure.theme-carousel')
 @include('includes.structure.period-carousel')
 @include('includes.structure.context-carousel')
+@include('includes.structure.developer')
 
 
 
