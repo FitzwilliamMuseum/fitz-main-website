@@ -78,6 +78,10 @@
             @include('includes.structure.parallax')
         @endif
 
+        @hasSection('developer')
+            @yield('developer')
+        @endif
+
         @hasSection('map')
             <div class="container-fluid map-box mb-3">
                 @yield('map')
