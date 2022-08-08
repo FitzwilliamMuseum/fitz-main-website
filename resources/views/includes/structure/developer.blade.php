@@ -1,6 +1,6 @@
 @section('developer')
     <section>
-        <div class="container-fluid bg-gdbo">
+        <div class="container-fluid bg-gdbo p-2">
             <h3 class="my-3">Explore things made with our data</h3>
             <div class="row">
                 <div class="col-md-4 mb-3">
