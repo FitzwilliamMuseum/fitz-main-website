@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="card card-fitz h-100">
-                        <a href="{{ route('api.index') }}">
+                        <a href="{{ env('COLLECTION_URL') }}/api">
                             <img class="card-img-top"
                                  src="https://content.fitz.ms/fitz-website/assets/json-peep.png?key=exhibition"
                                  alt="An image showing a JSON response "
@@ -37,7 +37,7 @@
                         <div class="card-body h-100">
                             <div class="contents-label mb-3">
                                 <h2>
-                                    <a href="{{ route('api.index') }}" class="stretched-link">
+                                    <a href="{{ env('COLLECTION_URL') }}/api" class="stretched-link">
                                         Our Collections API
                                     </a>
                                 </h2>
