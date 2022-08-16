@@ -34,15 +34,9 @@
                 </div>
             @endif
             <h2 class="display-6 text-info ">
-                About  {{ $profile['first_name'] }}
+                {{ $profile['job_title'] }}
             </h2>
             {!! $profile['biography'] !!}
-
-            @isset($profile['job_title'])
-                <p>
-                    Job title: {{ $profile['job_title'] }}
-                </p>
-            @endisset
 
             @isset($profile['pronouns'])
                 <p>
