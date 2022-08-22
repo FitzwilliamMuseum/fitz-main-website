@@ -29,7 +29,8 @@ class StaffProfiles extends Model
                 'limit' => $perPage,
                 'offset' => $offset,
                 'sort' => 'last_name',
-                'filter[research_active][in]' => 'yes'
+                'filter[research_active][in]' => 'yes',
+                'filter[employment_status][in]' => 'employed',
             )
         );
         $staff = $api->getData();
@@ -63,7 +64,8 @@ class StaffProfiles extends Model
                 'offset' => $offset,
                 'meta' => '*',
                 'sort' => 'last_name',
-                'filter[status][in]' => 'published'
+                'filter[status][in]' => 'published',
+                'filter[employment_status][in]' => 'employed',
             )
         );
         $staff = $directus->getData();
