@@ -16,7 +16,7 @@ jobs:
   check-site-for-broken-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: harrisonpim/broken-link-checker@0.2.1
+      - uses: fitzwilliammuseum/broken-link-checker@1.0.0
         with:
           sitemap: https://fitzmuseum.cam.ac.uk/sitemap.xml
           allowList: '["https://tickets.museums.cam.ac.uk/account/create","https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking","https://cubc.org.uk","https://www.linkedin.com/company/the-fitzwilliam-museum/"]'
