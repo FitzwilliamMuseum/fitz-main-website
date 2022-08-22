@@ -12,6 +12,7 @@ use App\Models\NewsArticles;
 use App\Models\ResearchProjects;
 use App\Models\Shopify;
 use App\Models\ThingsToDo;
+use App\Models\HomePageBanners;
 use Illuminate\Contracts\View\View;
 use Psr\SimpleCache\InvalidArgumentException;
 
@@ -34,12 +35,12 @@ class homeController extends Controller
         $objects = Highlights::homeList();
         $things = ThingsToDo::list();
         $shopify = Shopify::list();
-
+        $banners = HomePageBanners::getBanner();
         return view('home.index', compact(
             'carousel', 'news', 'research',
             'objects', 'things', 'fundraising',
-            'shopify', 'galleries',
-            'exhibitions', 'settings'
+            'shopify', 'galleries', 'exhibitions',
+            'settings', 'banners'
         ));
     }
 }
