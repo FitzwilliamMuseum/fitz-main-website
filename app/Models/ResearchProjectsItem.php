@@ -31,9 +31,8 @@ class ResearchProjectsItem extends Model implements Feedable
      */
     public static function feedItems(): Collection
     {
-        $api = new DirectUs;
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
+        $api = new DirectUs(
+            'research_projects',
             array(
                 'fields' => 'id,title,summary,project_overview,slug,created_on',
                 'sort' => '-created_on',

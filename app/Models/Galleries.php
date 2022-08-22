@@ -7,15 +7,19 @@ use App\DirectUs;
 class Galleries extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'galleries';
+
+    /**
      * @param int $limit
      * @param string $sort
      * @return array
      */
-    public static function list(int $limit = 100, string $sort = 'id'):array
+    public static function list(int $limit = 100, string $sort = 'id'): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('galleries');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -32,9 +36,8 @@ class Galleries extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('galleries');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'filter[slug]' => $slug,

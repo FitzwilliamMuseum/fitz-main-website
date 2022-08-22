@@ -13,8 +13,6 @@ class Podcasting extends Model
      */
     public static function list(Request $request): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('mindseye');
         $args = array(
             'fields' => '*.*.*.*',
             'meta' => 'result_count,total_count,type',
@@ -26,9 +24,11 @@ class Podcasting extends Model
         } else {
             $args['filter[publish_time][lte]'] = 'now';
         }
-        $api->setArguments(
+        $api = new DirectUs(
+            'mindseye',
             $args
         );
+
         return $api->getData();
     }
 
@@ -38,9 +38,8 @@ class Podcasting extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('podcasting');
-        $api->setArguments(
+        $api = new DirectUs(
+            'podcasting',
             array(
                 'fields' => '*.*.*.*.*',
                 'meta' => '*',

@@ -7,13 +7,17 @@ use App\DirectUs;
 class TessituraEventTypes extends Model
 {
     /**
+     * @var string
+     */
+    protected static string $table = 'tessitura_event_types';
+
+    /**
      * @return array
      */
     public static function listIds(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('tessitura_event_types');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => 'event_id',
                 'meta' => '*'
@@ -27,9 +31,8 @@ class TessituraEventTypes extends Model
      */
     public static function eventTypeMatch(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('tessitura_event_types');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => 'slug,event_id',
                 'meta' => '*'

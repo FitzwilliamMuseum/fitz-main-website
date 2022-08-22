@@ -5,12 +5,11 @@ namespace App\Models;
 use App\DirectUs;
 class SearchContentTypes extends Model
 {
-
+    protected static string $table = 'search_content_types';
     public static function find(string $type)
     {
-        $api = new DirectUs;
-        $api->setEndpoint('search_content_types');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

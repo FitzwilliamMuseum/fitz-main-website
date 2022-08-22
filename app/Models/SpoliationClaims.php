@@ -8,13 +8,19 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class SpoliationClaims extends Model
 {
+    /**
+     * @var string
+     */
     public static string $table = 'spoliation_claims';
 
+    /**
+     * @param string $priref
+     * @return array
+     */
     public static function find(string $priref): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint(self::$table);
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'filter[priref][eq]' => $priref
@@ -31,9 +37,8 @@ class SpoliationClaims extends Model
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint(self::$table);
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -42,11 +47,13 @@ class SpoliationClaims extends Model
                 'offset' => $offset
             )
         );
-        $news = $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $news['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($news, $total, $perPage, $currentPage);
-        $paginator->setPath('news');
+        $claims = $api->getData();
+        $paginator = new LengthAwarePaginator(
+            $claims,
+            $claims['meta']['total_count'],
+            $perPage, LengthAwarePaginator::resolveCurrentPage()
+        );
+        $paginator->setPath(route('about.spoliation'));
         return $paginator;
     }
 }

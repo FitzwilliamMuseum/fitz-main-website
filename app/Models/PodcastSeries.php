@@ -6,14 +6,15 @@ use App\DirectUs;
 
 class PodcastSeries extends Model
 {
+    protected static string $table = 'podcast_series';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('podcast_series');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -29,9 +30,8 @@ class PodcastSeries extends Model
      */
     public static function getSeriesID(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('podcast_series');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'filter[slug][eq]' => $slug

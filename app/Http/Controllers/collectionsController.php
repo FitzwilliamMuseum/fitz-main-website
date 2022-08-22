@@ -42,4 +42,5 @@ class collectionsController extends Controller
   {
     return CIIM::findByPriRefs($prirefs);
   }
+
 }

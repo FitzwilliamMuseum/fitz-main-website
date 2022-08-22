@@ -6,14 +6,15 @@ use App\DirectUs;
 
 class FloorPlans extends Model
 {
+    protected static string $table = 'floorplans_guides';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new Directus;
-        $api->setEndpoint('floorplans_guides');
-        $api->setArguments(
+        $api = new Directus(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -22,6 +23,6 @@ class FloorPlans extends Model
             )
         );
         $floorplans = $api->getData()['data'];
-        return array_chunk($floorplans,4,true);
+        return array_chunk($floorplans, 4, true);
     }
 }

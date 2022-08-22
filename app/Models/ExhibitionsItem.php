@@ -12,9 +12,6 @@ use Spatie\Feed\FeedItem;
 class ExhibitionsItem extends Model implements Feedable
 {
     private mixed $summary;
-    /**
-     * @var mixed|string
-     */
     private mixed $authorName;
     private mixed $body;
     private mixed $id;
@@ -35,9 +32,8 @@ class ExhibitionsItem extends Model implements Feedable
      */
     public static function feedNews(): Collection
     {
-        $api = new DirectUs;
-        $api->setEndpoint('exhibitions');
-        $api->setArguments(
+        $api = new DirectUs(
+            'exhibitions',
             array(
                 'fields' => 'id,exhibition_title,exhibition_narrative,meta_description,slug,modified_on',
                 'sort' => '-id',

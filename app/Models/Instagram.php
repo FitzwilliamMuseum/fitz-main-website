@@ -9,6 +9,11 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class Instagram extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'on_insta';
+
+    /**
      * @param Request $request
      * @return LengthAwarePaginator
      */
@@ -16,9 +21,8 @@ class Instagram extends Model
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint('on_insta');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -28,9 +32,12 @@ class Instagram extends Model
             )
         );
         $insta = $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $insta['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($insta, $total, $perPage, $currentPage);
+        $paginator = new LengthAwarePaginator(
+            $insta,
+            $insta['meta']['total_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath('instagram');
         return $paginator;
     }
@@ -41,9 +48,8 @@ class Instagram extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('on_insta');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

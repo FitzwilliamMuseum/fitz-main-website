@@ -9,6 +9,7 @@ use App\Models\ResearchOpportunities;
 use App\Models\ResearchProjects;
 use App\Models\StaffProfiles;
 use App\Models\ExternalCurators;
+use App\Models\Stubs;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -21,30 +22,8 @@ class researchController extends Controller
      */
     public function index(): View
     {
-        $api = $this->getApi();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
-            array(
-                'fields' => '*.*.*.*',
-                'meta' => 'result_count,total_count,type',
-                'filter[landing_page][eq]' => '1',
-                'filter[section][eq]' => 'research',
-            )
-        );
-        $pages = $api->getData();
-
-        $apiRes = $this->getApi();
-        $apiRes->setEndpoint('stubs_and_pages');
-        $apiRes->setArguments(
-            array(
-                'fields' => '*.*.*.*',
-                'meta' => 'result_count,total_count,type',
-                'filter[landing_page][null]' => '',
-                'filter[section][eq]' => 'research',
-                'filter[associate_with_landing_page][eq]' => '1'
-            )
-        );
-        $associated = $apiRes->getData();
+        $pages = Stubs::getLandingBySection('research');
+        $associated = Stubs::getAssociated('research');
         return view('research.index', compact('pages', 'associated'));
     }
 
@@ -70,7 +49,6 @@ class researchController extends Controller
         if (empty($projects['data'])) {
             return response()->view('errors.404', [], 404);
         }
-
         return view('research.project', compact('projects', 'records'));
     }
 
@@ -137,6 +115,7 @@ class researchController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return View
      */
     public function resources(Request $request): View

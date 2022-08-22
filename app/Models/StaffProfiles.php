@@ -9,6 +9,11 @@ use App\DirectUs;
 class StaffProfiles extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'staff_profiles';
+
+    /**
      * @param Request $request
      * @return LengthAwarePaginator
      */
@@ -16,9 +21,8 @@ class StaffProfiles extends Model
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint('staff_profiles');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -29,9 +33,12 @@ class StaffProfiles extends Model
             )
         );
         $staff = $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $staff['meta']['filter_count'];
-        $paginator = new LengthAwarePaginator($staff, $total, $perPage, $currentPage);
+        $paginator = new LengthAwarePaginator(
+            $staff,
+            $staff['meta']['filter_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath(route('research-profiles'));
         return $paginator;
     }
@@ -43,14 +50,13 @@ class StaffProfiles extends Model
     public static function allstaff(Request $request): LengthAwarePaginator
     {
         $perPage = 24;
-        $directus = new DirectUs;
         if ($request['page'] > 1) {
             $offset = ($request['page'] - 1) * $perPage;
         } else {
             $offset = 0;
         }
-        $directus->setEndpoint('staff_profiles');
-        $directus->setArguments(
+        $directus = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'limit' => $perPage,
@@ -61,9 +67,12 @@ class StaffProfiles extends Model
             )
         );
         $staff = $directus->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $staff['meta']['status_count']['published'];
-        $paginator = new LengthAwarePaginator($staff, $total, $perPage, $currentPage);
+        $paginator = new LengthAwarePaginator(
+            $staff,
+            $staff['meta']['status_count']['published'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath(route('about.our.staff'));
         return $paginator;
     }
@@ -71,9 +80,8 @@ class StaffProfiles extends Model
 
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('staff_profiles');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -89,9 +97,8 @@ class StaffProfiles extends Model
      */
     public static function findByDepartment(int $department): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('staff_profiles');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'filter[departments_affiliated.department][in]' => $department,

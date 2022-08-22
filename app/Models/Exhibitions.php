@@ -6,6 +6,8 @@ use App\DirectUs;
 
 class Exhibitions extends Model
 {
+    protected static string $table = 'exhibitions';
+
     /**
      * @param string $status
      * @param string $sort
@@ -13,21 +15,20 @@ class Exhibitions extends Model
      * @param int $limit
      * @return array
      */
-    public static function list(string $status = 'current', string $sort = '-ticketed', string $type = 'exhibition', int $limit = 100 ):array
+    public static function list(string $status = 'current', string $sort = '-ticketed', string $type = 'exhibition', int $limit = 100): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('exhibitions');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'filter[exhibition_status][eq]' => $status,
-              'filter[type][eq]' => $type,
-              'meta' => '*',
-              'sort' => $sort,
-              'limit' => $limit
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[exhibition_status][eq]' => $status,
+                'filter[type][eq]' => $type,
+                'meta' => '*',
+                'sort' => $sort,
+                'limit' => $limit
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -36,20 +37,19 @@ class Exhibitions extends Model
      * @param int $limit
      * @return array
      */
-    public static function listFuture(string $status = 'future', string $sort = '-ticketed', int $limit = 100 ):array
+    public static function listFuture(string $status = 'future', string $sort = '-ticketed', int $limit = 100): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('exhibitions');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'filter[exhibition_status][eq]' => $status,
-              'meta' => '*',
-              'sort' => $sort,
-              'limit' => $limit
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[exhibition_status][eq]' => $status,
+                'meta' => '*',
+                'sort' => $sort,
+                'limit' => $limit
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -58,21 +58,19 @@ class Exhibitions extends Model
      * @param int $limit
      * @return array
      */
-    public static function listHome(string $status = 'current', string $sort = '-ticketed', int $limit = 100 ):array
+    public static function listHome(string $status = 'current', string $sort = '-ticketed', int $limit = 100): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('exhibitions');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-//              'filter[exhibition_status][eq]' => $status,
-              'filter[featured_home][eq]' => 'yes',
-              'meta' => 'result_count,total_count,type',
-              'sort' => $sort,
-              'limit' => $limit
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[featured_home][eq]' => 'yes',
+                'meta' => 'result_count,total_count,type',
+                'sort' => $sort,
+                'limit' => $limit
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -81,20 +79,19 @@ class Exhibitions extends Model
      * @param int $limit
      * @return array
      */
-    public static function archive(string $status = 'current', string $sort = '-ticketed', int $limit = 100 ):array
+    public static function archive(string $status = 'current', string $sort = '-ticketed', int $limit = 100): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('exhibitions');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'filter[exhibition_status][eq]' => $status,
-              'meta' => 'result_count,total_count,type',
-              'sort' => $sort,
-              'limit' => $limit
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[exhibition_status][eq]' => $status,
+                'meta' => 'result_count,total_count,type',
+                'sort' => $sort,
+                'limit' => $limit
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -103,16 +100,15 @@ class Exhibitions extends Model
      */
     public static function find(string $slug): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('exhibitions');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*.*.*',
-              'filter[slug][eq]' => $slug,
-              'meta' => '*'
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*.*.*',
+                'filter[slug][eq]' => $slug,
+                'meta' => '*'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -120,17 +116,16 @@ class Exhibitions extends Model
      */
     public static function immunity(): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('exhibitions');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'filter[immunity_from_seizure][nnull]' => '',
-              'sort' => '-exhibition_end_date'
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => '*',
+                'filter[immunity_from_seizure][nnull]' => '',
+                'sort' => '-exhibition_end_date'
             )
-      );
-      return $api->getData();
+        );
+        return $api->getData();
     }
 
     /**
@@ -138,17 +133,16 @@ class Exhibitions extends Model
      */
     public static function loanImmunity(): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('incoming_loans');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'filter[immunity_from_seizure][nnull]' => '',
-              'sort' => '-id'
+        $api = new DirectUs(
+            'incoming_loans',
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => '*',
+                'filter[immunity_from_seizure][nnull]' => '',
+                'sort' => '-id'
             )
-      );
-      return $api->getData();
+        );
+        return $api->getData();
     }
 
     /**
@@ -157,9 +151,8 @@ class Exhibitions extends Model
      */
     public static function findByExternals(int $curator): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('exhibitions_associated_people');
-        $api->setArguments(
+        $api = new DirectUs(
+            'exhibitions_associated_people',
             array(
                 'fields' => '*.*.*.*',
                 'filter[associated_people_id][in]' => $curator,

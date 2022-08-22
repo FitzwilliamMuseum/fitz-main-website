@@ -7,13 +7,17 @@ use App\DirectUs;
 class SchoolSessions extends Model
 {
     /**
+     * @var string  $table
+     */
+    protected static string $table = 'school_sessions';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('school_sessions');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type'
@@ -28,9 +32,8 @@ class SchoolSessions extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('school_sessions');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

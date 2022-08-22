@@ -7,18 +7,22 @@ use App\DirectUs;
 class ConservationAreas extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'conservation_areas';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('conservation_areas');
-      $api->setArguments(
-          array(
-            'fields' => '*.*.*.*.*',
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*.*',
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -27,14 +31,13 @@ class ConservationAreas extends Model
      */
     public static function find(string $slug): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('conservation_areas');
-      $api->setArguments(
-          array(
-            'fields' => '*.*.*.*',
-            'filter[slug][eq]' => $slug,
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[slug][eq]' => $slug,
+            )
+        );
+        return $api->getData();
     }
 }

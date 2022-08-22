@@ -9,6 +9,11 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class ResearchProjects extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'research_projects';
+
+    /**
      * @param Request $request
      * @param string $sort
      * @return LengthAwarePaginator
@@ -17,9 +22,8 @@ class ResearchProjects extends Model
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -28,10 +32,13 @@ class ResearchProjects extends Model
                 'offset' => $offset
             )
         );
-        $projects =  $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $projects['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($projects, $total, $perPage, $currentPage);
+        $projects = $api->getData();
+        $paginator = new LengthAwarePaginator(
+            $projects,
+            $projects['meta']['total_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath(route('research-projects'));
         return $paginator;
     }
@@ -42,9 +49,8 @@ class ResearchProjects extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -59,9 +65,8 @@ class ResearchProjects extends Model
      */
     public static function findByDepartment(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -78,9 +83,8 @@ class ResearchProjects extends Model
      */
     public static function listSimple(string $sort = 'title', int $limit = 100): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

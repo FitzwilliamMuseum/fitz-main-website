@@ -7,14 +7,18 @@ use App\DirectUs;
 class LearningPages extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'learning_pages';
+
+    /**
      * @param string $resource
      * @return array
      */
     public static function filterByResource(string $resource): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('learning_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -31,9 +35,8 @@ class LearningPages extends Model
      */
     public static function filterByResourceNotEqual(string $resource): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('learning_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -50,9 +53,8 @@ class LearningPages extends Model
      */
     public static function filterBySlug(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('learning_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

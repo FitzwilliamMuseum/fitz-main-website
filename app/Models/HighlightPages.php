@@ -7,15 +7,19 @@ use App\DirectUs;
 class HighlightPages extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'pharos_pages';
+
+    /**
      * @param string $slug
      * @param string $section
      * @return array
      */
     public static function list(string $slug, string $section): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('pharos_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -32,9 +36,8 @@ class HighlightPages extends Model
      */
     public static function getContexts(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('pharos_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => 'section,hero_image_alt_text,hero_image.*',
                 'meta' => 'result_count,total_count,type'
@@ -48,9 +51,8 @@ class HighlightPages extends Model
      */
     public static function getByContext(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('pharos_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => 'section,hero_image.*',
                 'meta' => 'result_count,total_count,type'
@@ -65,9 +67,8 @@ class HighlightPages extends Model
      */
     public static function getBySection(string $section): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('pharos_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => 'result_count,total_count,type',

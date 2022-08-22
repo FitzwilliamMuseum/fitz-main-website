@@ -15,13 +15,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    /**
-     * @return DirectUs
-     */
-    #[Pure] public function getApi(): DirectUs
-    {
-        return new DirectUs;
-    }
 
     /**
      * @return string

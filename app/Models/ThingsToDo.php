@@ -7,13 +7,17 @@ use App\DirectUs;
 class ThingsToDo extends Model
 {
     /**
+     * @var string $table The table associated with the model.
+     */
+    protected static string $table = 'things_to_do';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('things_to_do');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -24,11 +28,13 @@ class ThingsToDo extends Model
         return $api->getData();
     }
 
+    /**
+     * @return array
+     */
     public static function listAll($limit = 100): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('things_to_do');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',

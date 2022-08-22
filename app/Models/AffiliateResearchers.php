@@ -6,22 +6,23 @@ use App\DirectUs;
 
 class AffiliateResearchers extends Model
 {
+    protected static string $table = 'affiliate_researchers';
+
     /**
      * Return a list of affiliate researchers
      * @returns array
      */
     public static function list(): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('affiliate_researchers');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'sort' => 'last_name'
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'sort' => 'last_name'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -30,32 +31,30 @@ class AffiliateResearchers extends Model
      */
     public static function find(string $slug): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('affiliate_researchers');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'filter[slug][eq]' => $slug
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => '*',
+                'filter[slug][eq]' => $slug
+            )
+        );
+        return $api->getData();
     }
+
     /**
-     * Return a list of affiliate researchers for a department
-     * @param int $department The department ID number
-     * @returns array
+     * @param int $department
+     * @return array
      */
     public static function findByDepartment(int $department): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('affiliate_researchers');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'filter[departments_affiliated.department][in]' => $department,
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[departments_affiliated.department][in]' => $department,
+            )
+        );
+        return $api->getData();
     }
 }

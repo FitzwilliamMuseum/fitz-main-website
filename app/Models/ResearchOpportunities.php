@@ -7,14 +7,15 @@ use App\DirectUs;
 class ResearchOpportunities extends Model
 {
 
+    protected static string $table = 'research_opportunities';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('research_opportunities');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -30,9 +31,8 @@ class ResearchOpportunities extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('research_opportunities');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

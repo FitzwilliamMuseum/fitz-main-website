@@ -8,15 +8,19 @@ use App\DirectUs;
 class Stubs extends Model
 {
     /**
+     * @var string
+     */
+    protected static string $table = 'stubs_and_pages';
+
+    /**
      * @param string $section
      * @param string $slug
      * @return array
      */
     public static function getPage(string $section, string $slug): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -33,9 +37,8 @@ class Stubs extends Model
      */
     public static function findBySlug(string $slug): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -51,9 +54,8 @@ class Stubs extends Model
      */
     public static function findBySubSection(string $subsection): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -69,9 +71,8 @@ class Stubs extends Model
      */
     public static function getLanding(string $section): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -89,9 +90,8 @@ class Stubs extends Model
      */
     public static function getLandingBySlug(string $section, string $slug): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'filter[section]=' => $section,
                 'filter[slug]=' => $slug,
@@ -108,9 +108,8 @@ class Stubs extends Model
      */
     public static function getAssociated(string $section): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -129,9 +128,8 @@ class Stubs extends Model
      */
     public static function getHighlightPage(int $id): mixed
     {
-        $api = new DirectUs;
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -139,5 +137,55 @@ class Stubs extends Model
             )
         );
         return $api->getData()['data'][0]['body'];
+    }
+
+    /**
+     * @return array
+     */
+    public static function visitUsAssociated():array
+    {
+        $api = new DirectUs(
+            'stubs_and_pages',
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[section][eq]' => 'visit-us',
+                'filter[landing_page][null]' => '',
+                'filter[associate_with_landing_page][eq]' => '1'
+            )
+        );
+        return $api->getData();
+    }
+
+    public static function visitUsLanding(): array
+    {
+        $api = new DirectUs(
+            'stubs_and_pages',
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[section][eq]' => 'visit-us',
+                'filter[landing_page][eq]' => '1',
+            )
+        );
+        return $api->getData();
+    }
+
+    /**
+     * @param string $section
+     * @return array
+     */
+    public static function getLandingBySection(string $section): array
+    {
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[section][eq]' => $section,
+                'filter[landing_page][eq]' => '1',
+            )
+        );
+        return $api->getData();
     }
 }

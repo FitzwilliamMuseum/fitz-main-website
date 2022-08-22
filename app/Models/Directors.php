@@ -6,14 +6,22 @@ use App\DirectUs;
 
 class Directors extends Model
 {
+    protected static string $table = 'directors';
+
     /**
      * @return array
      */
     public static function getDirectors(): array
     {
-      $directus = new DirectUs();
-      $directus->setEndpoint('directors');
-      return $directus->getData();
+        $directus = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'sort' => 'id',
+                'meta' => '*',
+            )
+        );
+        return $directus->getData();
     }
 
     /**
@@ -22,15 +30,14 @@ class Directors extends Model
      */
     public static function getDirector(string $slug): array
     {
-      $directus = new DirectUs();
-      $directus->setEndpoint('directors');
-      $directus->setArguments(
-          array(
-            'fields' => '*.*.*',
-            'meta' => '*',
-            'filter[slug][eq]' => $slug
-          )
-      );
-      return $directus->getData();
+        $directus = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*',
+                'meta' => '*',
+                'filter[slug][eq]' => $slug
+            )
+        );
+        return $directus->getData();
     }
 }
