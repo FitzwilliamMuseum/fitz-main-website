@@ -52,11 +52,13 @@ Route::get('research/projects/', 'researchController@projects')->name('research-
 Route::get('research/projects/{slug}/', 'researchController@project')->name('research-project');
 Route::get('research/active-researchers', 'researchController@profiles')->name('research-profiles');
 Route::get('about-us/our-staff/profile/{slug}', 'researchController@profile')->name('research-profile');
+
+Route::get('research/affiliates/{slug}', 'researchController@affiliate')->name('research-affiliate');
 Route::get('research/affiliates', 'researchController@affiliates')->name('research-affiliates');
+
 Route::get('research/external-curators/{slug}', 'exhibitionsController@externals')->name('exhibition-externals');
 Route::get('research/external-curators','researchController@externalCurators')->name('exhibition-externals-list');
 
-Route::get('research/affiliates/{slug}', 'researchController@affiliate')->name('research-affiliate');
 Route::get('research/online-resources/', 'researchController@resources')->name('resources');
 Route::get('research/online-resources/{slug}', 'researchController@resource')->name('resource');
 Route::get('research/opportunities/', 'researchController@opportunities')->name('opportunities');
