@@ -246,9 +246,8 @@ class TessituraApi
      */
     public function getEventTypes(): array
     {
-        $directus = new DirectUs;
-        $directus->setEndpoint('tessitura_event_types');
-        $directus->setArguments(
+        $directus = new DirectUs(
+            'tessitura_event_types',
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',

@@ -25,31 +25,31 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         # Import to search
-        $schedule->call('App\Http\Controllers\solrimportController@staff')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@affiliates')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@stubs')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@news')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@directors')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@researchprojects')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@galleries')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@lookthinkdo')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@collections')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@departments')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@pressroom')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@pharospages')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@highlights')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@floor')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@governance')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@learningfiles')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@exhibitions')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@audio')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@sessions')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@shopify')->cron('5 */12 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@podcasts')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@podcastseries')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@mindseye')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@vacancies')->cron('0 */5 * * *');
-        $schedule->call('App\Http\Controllers\solrimportController@resources')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@staff')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@affiliates')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@stubs')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@news')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@directors')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@researchProjects')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@galleries')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@lookThinkDo')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@collections')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@departments')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@pressroom')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@pharosPages')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@highlights')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@floor')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@governance')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@learningFiles')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@exhibitions')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@audio')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@sessions')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@shopify')->cron('5 */12 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@podcasts')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@podcastSeries')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@mindseye')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@vacancies')->cron('0 */5 * * *');
+        $schedule->call('App\Http\Controllers\solrImportController@resources')->cron('0 */5 * * *');
 //        $schedule->call('App\Http\Controllers\instagramController@instagram')->cron('0 */5 * * *');
         $schedule->call('App\Http\Controllers\twitterController@twitter')->cron('0 */5 * * *');
         # Import Jekyll to solr
@@ -59,18 +59,18 @@ class Kernel extends ConsoleKernel
         # Clear caches
         $schedule->call('App\Http\Controllers\Controller@clearCache')->cron('6 */12 * * */1');
         # Clear sessions/shopify
-        $schedule->call('App\Http\Controllers\solrimportController@shopifyRefresh')->cron('1 */12 * * */3');
-        $schedule->call('App\Http\Controllers\solrimportController@sessionsRefresh')->cron('1 */12 * * */3');
+        $schedule->call('App\Http\Controllers\solrImportController@shopifyRefresh')->cron('1 */12 * * */3');
+        $schedule->call('App\Http\Controllers\solrImportController@sessionsRefresh')->cron('1 */12 * * */3');
         # Sitemap generation
         $schedule->command('sitemap:generate')->daily();
         # Long form
-        $schedule->call('App\Http\Controllers\solrimportController@longform')->weekly();
+        $schedule->call('App\Http\Controllers\solrImportController@longForm')->weekly();
         # Spoliation
-        $schedule->call('App\Http\Controllers\solrimportController@spoliation')->daily();
+        $schedule->call('App\Http\Controllers\solrImportController@spoliation')->daily();
         # True to nature
-        $schedule->call('App\Http\Controllers\solrimportController@ttnLabels')->weekly();
-        $schedule->call('App\Http\Controllers\solrimportController@ttnArtists')->weekly();
-        $schedule->call('App\Http\Controllers\solrimportController@viewpoints')->weekly();
+        $schedule->call('App\Http\Controllers\solrImportController@ttnLabels')->weekly();
+        $schedule->call('App\Http\Controllers\solrImportController@ttnArtists')->weekly();
+        $schedule->call('App\Http\Controllers\solrImportController@viewPoints')->weekly();
 
 
     }

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\SolrImporter;
-use Config;
+use App\DirectUs;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use PHPShopify\Exception\ApiException;
 use PHPShopify\Exception\CurlException;
@@ -13,16 +14,15 @@ use Solarium\Core\Query\Result\ResultInterface;
 use Solarium\QueryType\Update\Result;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class solrimportController extends Controller
+class solrImportController extends Controller
 {
     /**
      * @return ResultInterface|Result
      */
     public function staff(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('staff_profiles');
-        $api->setArguments(
+        $api = new DirectUs(
+            'staff_profiles',
             array(
                 'limit' => '500',
                 'fields' => 'id,display_name,biography,slug,profile_image.*'
@@ -45,9 +45,8 @@ class solrimportController extends Controller
      */
     public function affiliates(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('affiliate_researchers');
-        $api->setArguments(
+        $api = new DirectUs(
+            'affiliate_researchers',
             array(
                 'limit' => '500',
                 'fields' => 'id,display_name,biography,slug,profile_image.*'
@@ -70,9 +69,8 @@ class solrimportController extends Controller
      */
     public function news(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('news_articles');
-        $api->setArguments(
+        $api = new DirectUs(
+            'news_articles',
             array(
                 'limit' => '500',
                 'fields' => 'id,article_title,article_body,slug,publication_date,field_image.*'
@@ -95,9 +93,8 @@ class solrimportController extends Controller
      */
     public function stubs(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('stubs_and_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            'stubs_and_pages',
             array(
                 'limit' => '500',
                 'fields' => 'id,section,title,body,slug,hero_image.*'
@@ -118,11 +115,10 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function researchprojects(): Result|ResultInterface
+    public function researchProjects(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('research_projects');
-        $api->setArguments(
+        $api = new DirectUs(
+            'research_projects',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,project_overview,slug,hero_image.*'
@@ -145,9 +141,8 @@ class solrimportController extends Controller
      */
     public function galleries(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('galleries');
-        $api->setArguments(
+        $api = new DirectUs(
+            'galleries',
             array(
                 'limit' => '500',
                 'fields' => 'id,gallery_name,gallery_description,slug,hero_image.*'
@@ -170,9 +165,8 @@ class solrimportController extends Controller
      */
     public function collections(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('collections');
-        $api->setArguments(
+        $api = new DirectUs(
+            'collections',
             array(
                 'limit' => '500',
                 'fields' => 'id,collection_name,collection_description,slug,hero_image.*'
@@ -193,11 +187,10 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function lookthinkdo(): Result|ResultInterface
+    public function lookThinkDo(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('look_think_do');
-        $api->setArguments(
+        $api = new DirectUs(
+            'look_think_do',
             array(
                 'limit' => '500',
                 'fields' => 'id,title_of_work,main_text_description,slug,focus_image.*'
@@ -220,9 +213,8 @@ class solrimportController extends Controller
      */
     public function highlights(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('pharos');
-        $api->setArguments(
+        $api = new DirectUs(
+            'pharos',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,description,slug,image.*'
@@ -245,9 +237,8 @@ class solrimportController extends Controller
      */
     public function pressroom(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('pressroom_files');
-        $api->setArguments(
+        $api = new DirectUs(
+            'pressroom_files',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,body,file.type,file.filesize,file.data,hero_image.*'
@@ -275,9 +266,8 @@ class solrimportController extends Controller
      */
     public function departments(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('departments');
-        $api->setArguments(
+        $api = new DirectUs(
+            'departments',
             array(
                 'limit' => '20',
                 'fields' => 'id,title,department_description,slug,hero_image.*'
@@ -300,9 +290,8 @@ class solrimportController extends Controller
      */
     public function vacancies(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('vacancies');
-        $api->setArguments(
+        $api = new DirectUs(
+            'vacancies',
             array(
                 'fields' => 'id,job_title,job_description,slug,hero_image.*'
             )
@@ -324,9 +313,8 @@ class solrimportController extends Controller
      */
     public function directors(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('directors');
-        $api->setArguments(
+        $api = new DirectUs(
+            'directors',
             array(
                 'limit' => '20',
                 'fields' => 'id,display_name,biography,slug,hero_image.*'
@@ -347,11 +335,10 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function pharospages(): Result|ResultInterface
+    public function pharosPages(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('pharos_pages');
-        $api->setArguments(
+        $api = new DirectUs(
+            'pharos_pages',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,body,slug,section,hero_image.*'
@@ -374,9 +361,8 @@ class solrimportController extends Controller
      */
     public function floor(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('floorplans_guides');
-        $api->setArguments(
+        $api = new DirectUs(
+            'floorplans_guides',
             array(
                 'limit' => '10',
                 'fields' => 'id,title,description,file.type,file.filesize,file.data,'
@@ -403,9 +389,8 @@ class solrimportController extends Controller
      */
     public function governance(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('governance_files');
-        $api->setArguments(
+        $api = new DirectUs(
+            'governance_files',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,file.type,file.filesize,file.data,'
@@ -430,11 +415,10 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function learningfiles(): Result|ResultInterface
+    public function learningFiles(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('learning_files');
-        $api->setArguments(
+        $api = new DirectUs(
+            'learning_files',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,type,curriculum_area,key_stage,keystages,file.type,file.filesize,file.data,'
@@ -461,9 +445,8 @@ class solrimportController extends Controller
      */
     public function exhibitions(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('exhibitions');
-        $api->setArguments(
+        $api = new DirectUs(
+            'exhibitions',
             array(
                 'limit' => '500',
                 'fields' => 'id,exhibition_title,exhibition_narrative,slug,hero_image.*'
@@ -486,9 +469,8 @@ class solrimportController extends Controller
      */
     public function audio(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('audio_guide');
-        $api->setArguments(
+        $api = new DirectUs(
+            'audio_guide',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,stop_number,transcription,slug,hero_image.*'
@@ -511,9 +493,8 @@ class solrimportController extends Controller
      */
     public function sessions(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('school_sessions');
-        $api->setArguments(
+        $api = new DirectUs(
+            'school_sessions',
             array(
                 'limit' => '30',
                 'fields' => 'id,title,description,format_session,quote,key_stages,theme,session_type,slug,type_of_activity,curriculum_link,hero_image.*'
@@ -574,9 +555,8 @@ class solrimportController extends Controller
      */
     public function podcasts(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('podcast_archive');
-        $api->setArguments(
+        $api = new DirectUs(
+            'podcast_archive',
             array(
                 'limit' => '500',
                 'fields' => 'id,title,description,slug,hero_image.*'
@@ -597,11 +577,10 @@ class solrimportController extends Controller
     /**
      * @return ResultInterface|Result
      */
-    public function podcastseries(): Result|ResultInterface
+    public function podcastSeries(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('podcast_series');
-        $api->setArguments(
+        $api = new DirectUs(
+            'podcast_series',
             array(
                 'limit' => '50',
                 'fields' => 'id,title,slug,cover_image.*'
@@ -624,9 +603,8 @@ class solrimportController extends Controller
      */
     public function mindseye(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('mindseye');
-        $api->setArguments(
+        $api = new DirectUs(
+            'mindseye',
             array(
                 'limit' => '10',
                 'fields' => 'id,title,story,slug,hero_image.*',
@@ -650,9 +628,8 @@ class solrimportController extends Controller
      */
     public function resources(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('online_resources');
-        $api->setArguments(
+        $api = new DirectUs(
+            'online_resources',
             array(
                 'limit' => '200',
                 'fields' => 'id,title,description,slug,hero_image.*',
@@ -675,9 +652,8 @@ class solrimportController extends Controller
      */
     public function ttnArtists(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('ttn_artists');
-        $api->setArguments(
+        $api = new DirectUs(
+            'ttn_artists',
             array(
                 'limit' => '200',
                 'fields' => 'id,display_name,biography,slug,image.*',
@@ -700,9 +676,8 @@ class solrimportController extends Controller
      */
     public function ttnLabels(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            'ttn_labels',
             array(
                 'limit' => '200',
                 'fields' => 'id,title,slug,image.*',
@@ -725,9 +700,8 @@ class solrimportController extends Controller
      */
     public function longform(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('long_form');
-        $api->setArguments(
+        $api = new DirectUs(
+            'long_form',
             array(
                 'limit' => '200',
                 'fields' => 'id,title,description,hero_image.*',
@@ -750,9 +724,8 @@ class solrimportController extends Controller
      */
     public function spoliation(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('spoliation_claims');
-        $api->setArguments(
+        $api = new DirectUs(
+            'spoliation_claims',
             array(
                 'limit' => '200',
                 'fields' => 'id,alt_text,text,priref,image.*',
@@ -775,9 +748,8 @@ class solrimportController extends Controller
      */
     public function viewpoints(): Result|ResultInterface
     {
-        $api = $this->getApi();
-        $api->setEndpoint('ttn_viewpoints');
-        $api->setArguments(
+        $api = new DirectUs(
+            'ttn_viewpoints',
             array(
                 'fields' => '*.*.*.*'
             )

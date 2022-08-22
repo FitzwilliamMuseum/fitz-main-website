@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\CIIM;
 use App\Models\Instagram;
-use Cache;
+use App\TwitterSearch;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Twitter;
 
 class socialController extends Controller
 {
@@ -46,20 +45,7 @@ class socialController extends Controller
      */
     public function twitter(): View
     {
-        $expiresTwitter = now()->addMinutes(360);
-        if (Cache::has('cache_twitter_social_list')) {
-            $tweets = Cache::get('cache_twitter_social_list');
-        } else {
-            $tweets = Twitter::getUserTimeline([
-                'screen_name' => 'fitzmuseum_uk',
-                'count' => 36,
-                'format' => 'object',
-                'tweet_mode' => 'extended',
-                'include_rts' => false,
-                'exclude_replies' => true
-            ]);
-            Cache::put('cache_twitter_social_list', $tweets, $expiresTwitter); // 1 hour
-        }
+        $tweets = TwitterSearch::getTimeLine();
         return view('social.twitter', compact('tweets'));
     }
 
