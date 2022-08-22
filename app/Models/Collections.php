@@ -2,25 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\DirectUs;
 
 class Collections extends Model
 {
+    protected static string $table = 'collections';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('collections');
-      $api->setArguments(
-        array(
-          'fields' => '*.*.*',
-          'sort' => 'collection_name'
-        )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*',
+                'sort' => 'collection_name'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -29,14 +29,13 @@ class Collections extends Model
      */
     public static function find(string $slug): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('collections');
-      $api->setArguments(
-        array(
-          'fields' => '*.*.*.*.*',
-          'filter[slug]=' => $slug
-        )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*.*',
+                'filter[slug]=' => $slug
+            )
+        );
+        return $api->getData();
     }
 }

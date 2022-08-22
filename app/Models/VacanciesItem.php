@@ -32,9 +32,8 @@ class VacanciesItem extends Model implements Feedable
      */
     public static function feedNews(): Collection
     {
-        $api = new DirectUs;
-        $api->setEndpoint('vacancies');
-        $api->setArguments(
+        $api = new DirectUs(
+            'vacancies',
             array(
                 'fields' => 'id,job_title,job_description,meta_description,slug,modified_on',
                 'sort' => '-id',

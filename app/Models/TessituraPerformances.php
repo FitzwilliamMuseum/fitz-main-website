@@ -7,8 +7,6 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class TessituraPerformances extends Model
 {
-
-
     /**
      * @param string $id
      * @return mixed

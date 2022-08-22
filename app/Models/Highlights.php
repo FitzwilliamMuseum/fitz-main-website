@@ -8,6 +8,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class Highlights extends Model
 {
+    protected static string $table = 'pharos';
+
     /**
      * @param Request $request
      * @return LengthAwarePaginator
@@ -16,9 +18,8 @@ class Highlights extends Model
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint('pharos');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -27,9 +28,12 @@ class Highlights extends Model
             )
         );
         $pharos = $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $pharos['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($pharos, $total, $perPage, $currentPage);
+        $paginator = new LengthAwarePaginator(
+            $pharos,
+            $pharos['meta']['total_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath(route('highlights'));
         return $paginator;
     }
@@ -40,9 +44,8 @@ class Highlights extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('pharos');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -57,9 +60,8 @@ class Highlights extends Model
      */
     public static function getPeriods(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('pharos');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => 'period_assigned,image.*',
                 'meta' => 'result_count,total_count,type',
@@ -82,9 +84,8 @@ class Highlights extends Model
         } else {
             $query = str_replace('-', ' ', $period);
         }
-        $api = new DirectUs;
-        $api->setEndpoint('pharos');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => 'result_count,total_count,type',
@@ -101,15 +102,13 @@ class Highlights extends Model
      */
     public static function homeList(string $sort = '?', int $limit = 3): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('pharos');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
                 'sort' => $sort,
                 'limit' => $limit,
-                // 'filter[featured][eq]' => 'yes'
             )
         );
         return $api->getData();

@@ -6,21 +6,22 @@ use App\DirectUs;
 
 class Departments extends Model
 {
+    protected static string $table = 'departments';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('departments');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'sort' => 'title',
-              'meta' => '*'
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'sort' => 'title',
+                'meta' => '*'
+            )
+        );
+        return $api->getData();
     }
 
     /**
@@ -29,14 +30,13 @@ class Departments extends Model
      */
     public static function find(string $slug): array
     {
-      $api = new DirectUs();
-      $api->setEndpoint('departments');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'filter[slug][eq]' => $slug,
-          )
-      );
-      return $api->getData();
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'filter[slug][eq]' => $slug,
+            )
+        );
+        return $api->getData();
     }
 }

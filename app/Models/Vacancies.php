@@ -9,14 +9,15 @@ use Illuminate\Support\Collection;
 
 class Vacancies extends Model
 {
+    protected static string $table = 'vacancies';
+
     /**
      * @return Collection
      */
     public static function getVacancies(): Collection
     {
-        $directus = new Directus();
-        $directus->setEndpoint('vacancies');
-        $directus->setArguments(
+        $directus = new Directus(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'meta' => '*',
@@ -34,9 +35,8 @@ class Vacancies extends Model
      */
     public static function getArchived(int $limit, Request $request): LengthAwarePaginator
     {
-        $directus = new Directus();
-        $directus->setEndpoint('vacancies');
-        $directus->setArguments(
+        $directus = new Directus(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'meta' => '*',
@@ -47,8 +47,7 @@ class Vacancies extends Model
             )
         );
         $vacancies = $directus->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        return new LengthAwarePaginator($vacancies, $vacancies['meta']['filter_count'], 12, $currentPage);
+        return new LengthAwarePaginator($vacancies, $vacancies['meta']['filter_count'], 12, LengthAwarePaginator::resolveCurrentPage());
     }
 
     /**
@@ -57,9 +56,8 @@ class Vacancies extends Model
      */
     public static function getVacancy($slug): array
     {
-        $directus = new Directus();
-        $directus->setEndpoint('vacancies');
-        $directus->setArguments(
+        $directus = new Directus(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'meta' => '*',

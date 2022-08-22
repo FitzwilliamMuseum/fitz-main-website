@@ -6,15 +6,16 @@ use App\DirectUs;
 
 class PodcastArchive extends Model
 {
+    protected static string $table = 'podcast_archive';
+
     /**
      * @param string $id
      * @return array
      */
     public static function find(string $id): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('podcast_archive');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -30,9 +31,8 @@ class PodcastArchive extends Model
      */
     public static function findByEpisode(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('podcast_archive');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',

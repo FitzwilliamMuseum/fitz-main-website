@@ -54,9 +54,8 @@ class NewsItem extends Model implements Feedable
      */
     public static function feedItems(): Collection
     {
-        $api = new DirectUs;
-        $api->setEndpoint('news_articles');
-        $api->setArguments(
+        $api = new DirectUs(
+            'news_articles',
             array(
                 'fields' => 'id,article_title,article_excerpt,article_body,slug,modified_on',
                 'sort' => '-id',

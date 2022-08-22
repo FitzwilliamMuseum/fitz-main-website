@@ -7,18 +7,26 @@ use App\DirectUs;
 class Faqs extends Model
 {
 
-    public static function list(string $section ):array
+    /**
+     * @var string $table
+     */
+    protected static string $table = 'faqs';
+
+    /**
+     * @param string $section
+     * @return array
+     */
+    public static function list(string $section): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('faqs');
-      $api->setArguments(
-          array(
-              'fields' => '*',
-              'filter[section][eq]' => $section,
-              'meta' => '*'
-          )
-      );
-      return $api->getData()['data'];
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*',
+                'filter[section][eq]' => $section,
+                'meta' => '*'
+            )
+        );
+        return $api->getData()['data'];
     }
 
 

@@ -28,9 +28,8 @@ class ResearchOpportunitiesItem extends Model implements Feedable
 
     public static function feedItems(): Collection
     {
-        $api = new DirectUs;
-        $api->setEndpoint('research_opportunities');
-        $api->setArguments(
+        $api = new DirectUs(
+            'research_opportunities',
             array(
                 'fields' => 'id,title,meta_description,description,slug,created_on',
                 'sort' => '-created_on',

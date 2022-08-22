@@ -7,13 +7,17 @@ use App\DirectUs;
 class TtnLabels extends Model
 {
     /**
+     * @var string $table The table associated with the model.
+     */
+    protected static string $table = 'ttn_labels';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -27,9 +31,8 @@ class TtnLabels extends Model
     public static function listFiltered(string $field): array
     {
         $filter = 'filter[' . $field . '][nnull]';
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -38,15 +41,15 @@ class TtnLabels extends Model
         );
         return $api->getData();
     }
+
     /**
      * @param int $theme
      * @return array
      */
     public static function listByTheme(int $theme): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -63,9 +66,8 @@ class TtnLabels extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -81,9 +83,8 @@ class TtnLabels extends Model
      */
     public static function byArtist(int $id): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',

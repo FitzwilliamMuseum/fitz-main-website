@@ -6,14 +6,15 @@ use App\DirectUs;
 
 class LookThinkDo extends Model
 {
+    protected static string $table = 'look_think_do';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('look_think_do');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'filter[publication_date][lte]' => 'now',
@@ -29,9 +30,8 @@ class LookThinkDo extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs();
-        $api->setEndpoint('look_think_do');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

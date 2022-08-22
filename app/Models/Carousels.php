@@ -6,10 +6,7 @@ use App\DirectUs;
 
 class Carousels extends Model
 {
-    public static function findByID(int $id)
-    {
-
-    }
+    protected static string $table = 'carousels';
 
     /**
      * @param string $section
@@ -17,22 +14,16 @@ class Carousels extends Model
      */
     public static function findBySection(string $section): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('carousels');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => 'result_count,total_count,type',
-              'filter[section][eq]' => $section,
-              'single' => '1',
-              'sort' => '-id'
-          )
-      );
-      return $api->getData();
-    }
-
-    public static function list()
-    {
-
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => 'result_count,total_count,type',
+                'filter[section][eq]' => $section,
+                'single' => '1',
+                'sort' => '-id'
+            )
+        );
+        return $api->getData();
     }
 }

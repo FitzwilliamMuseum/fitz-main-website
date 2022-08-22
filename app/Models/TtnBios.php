@@ -6,15 +6,18 @@ use App\DirectUs;
 
 class TtnBios extends Model
 {
+    /**
+     * @var string
+     */
+    protected static string $table = 'ttn_artists';
 
     /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_artists');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -31,9 +34,8 @@ class TtnBios extends Model
     public static function listFiltered(string $field): array
     {
         $filter = 'filter[' . $field . '][nnull]';
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_artists');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -50,9 +52,8 @@ class TtnBios extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_artists');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',

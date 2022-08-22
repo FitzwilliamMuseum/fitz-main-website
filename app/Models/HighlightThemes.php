@@ -6,14 +6,14 @@ use App\DirectUs;
 
 class HighlightThemes extends Model
 {
+    protected static string $table = 'pharos_themes';
     /**
      * @return array
      */
     public static function list(): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('pharos_themes');
-      $api->setArguments(
+      $api = new DirectUs(
+          self::$table,
           array(
               'fields' => '*.*.*',
               'meta' => 'result_count,total_count,type'
@@ -28,9 +28,8 @@ class HighlightThemes extends Model
      */
     public static function find(string $theme):array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('pharos');
-      $api->setArguments(
+      $api = new DirectUs(
+          self::$table,
           array(
               'fields' => '*.*.*',
               'meta' => 'result_count,total_count,type',
@@ -46,9 +45,8 @@ class HighlightThemes extends Model
      */
     public static function getDetails(string $theme): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('pharos_themes');
-      $api->setArguments(
+      $api = new DirectUs(
+          self::$table,
           array(
               'fields' => '*.*.*.*.*.*',
               'meta' => 'result_count,total_count,type',
@@ -64,9 +62,8 @@ class HighlightThemes extends Model
      */
     public static function getThemes(): array
     {
-      $api = new DirectUs;
-      $api->setEndpoint('pharos_themes');
-      $api->setArguments(
+      $api = new DirectUs(
+          self::$table,
           array(
               'fields' => '*.*.*',
               'meta' => 'result_count,total_count,type'

@@ -6,14 +6,15 @@ use App\DirectUs;
 
 class GalleryFamilyActivities extends Model
 {
+    protected static string $table = 'gallery_family_activities';
+
     /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('gallery_family_activities');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '',

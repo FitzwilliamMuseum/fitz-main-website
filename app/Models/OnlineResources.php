@@ -9,6 +9,11 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class OnlineResources extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'online_resources';
+
+    /**
      * @param Request $request
      * @return LengthAwarePaginator
      */
@@ -16,9 +21,8 @@ class OnlineResources extends Model
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint('online_resources');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'limit' => $perPage,
@@ -27,10 +31,13 @@ class OnlineResources extends Model
                 'sort' => 'id'
             )
         );
-        $resources =  $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $resources['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($resources, $total, $perPage, $currentPage);
+        $resources = $api->getData();
+        $paginator = new LengthAwarePaginator(
+            $resources,
+            $resources['meta']['total_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath(route('resources'));
         return $paginator;
     }
@@ -41,9 +48,8 @@ class OnlineResources extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('online_resources');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

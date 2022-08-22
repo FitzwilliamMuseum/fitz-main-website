@@ -8,13 +8,17 @@ use App\DirectUs;
 class MindsEye extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'mindseye';
+
+    /**
      * @param Request $request
      * @return array
      */
     public static function list(Request $request): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('mindseye');
+
         $args = array(
             'fields' => '*.*.*.*',
             'meta' => 'result_count,total_count,type',
@@ -26,7 +30,8 @@ class MindsEye extends Model
         } else {
             $args['filter[publish_time][lte]'] = 'now';
         }
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             $args
         );
         return $api->getData();
@@ -38,9 +43,8 @@ class MindsEye extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('mindseye');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',

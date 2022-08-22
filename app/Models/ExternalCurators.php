@@ -9,6 +9,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class ExternalCurators extends Model
 {
 
+    protected static string $table = 'associated_people';
 
     /**
      * @param string $slug
@@ -16,9 +17,8 @@ class ExternalCurators extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('associated_people');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*',
                 'meta' => '*',
@@ -28,13 +28,16 @@ class ExternalCurators extends Model
         return $api->getData();
     }
 
+    /**
+     * @param Request $request
+     * @return LengthAwarePaginator
+     */
     public static function list(Request $request): LengthAwarePaginator
     {
         $perPage = 12;
         $offset = ($request['page'] - 1) * $perPage;
-        $api = new DirectUs;
-        $api->setEndpoint('associated_people');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*',
                 'sort' => '-id',
@@ -46,9 +49,12 @@ class ExternalCurators extends Model
             )
         );
         $curators = $api->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $curators['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($curators, $total, $perPage, $currentPage);
+        $paginator = new LengthAwarePaginator(
+            $curators,
+            $curators['meta']['total_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         return $paginator->setPath('news');
     }
 }

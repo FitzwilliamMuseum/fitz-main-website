@@ -7,13 +7,17 @@ use App\DirectUs;
 class TtnViewpoints extends Model
 {
     /**
+     * @var string $table The table associated with the model.
+     */
+    protected static string $table = 'ttn_viewpoints';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_viewpoints');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
@@ -30,9 +34,8 @@ class TtnViewpoints extends Model
      */
     public static function find(string $id): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_viewpoints');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*',
                 'meta' => '*',
@@ -48,9 +51,8 @@ class TtnViewpoints extends Model
      */
     public static function byArtist(int $id): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('ttn_labels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',

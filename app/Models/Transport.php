@@ -7,13 +7,17 @@ use App\DirectUs;
 class Transport extends Model
 {
     /**
+     * @var string $table The table associated with the model.
+     */
+    protected static string $table = 'transport';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new Directus;
-        $api->setEndpoint('transport');
-        $api->setArguments(
+        $api = new Directus(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',

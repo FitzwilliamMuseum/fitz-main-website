@@ -6,15 +6,15 @@ use App\DirectUs;
 
 class AssociatedPeople extends Model
 {
+    protected static string $table = 'associated_people';
     /**
      * @param string $filters
      * @return array
      */
     public static function list(string $filters = 'podcastGuest'): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('associated_people');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'sort' => 'surname',
@@ -30,9 +30,8 @@ class AssociatedPeople extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('associated_people');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*',
                 'meta' => '*',

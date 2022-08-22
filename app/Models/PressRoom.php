@@ -9,6 +9,10 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class PressRoom extends Model
 {
+    /**
+     * @var string $table
+     */
+    protected static string $table = 'pressroom_files';
 
     /**
      * @param string $sort
@@ -18,9 +22,8 @@ class PressRoom extends Model
     public static function list(Request $request): LengthAwarePaginator
     {
         $perPage = 6;
-        $directus = new DirectUs();
-        $directus->setEndpoint('pressroom_files');
-        $directus->setArguments(
+        $directus = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*',
                 'limit' => $perPage,
@@ -30,9 +33,12 @@ class PressRoom extends Model
             )
         );
         $press = $directus->getData();
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $total = $press['meta']['total_count'];
-        $paginator = new LengthAwarePaginator($press, $total, $perPage, $currentPage);
+        $paginator = new LengthAwarePaginator(
+            $press,
+            $press['meta']['total_count'],
+            $perPage,
+            LengthAwarePaginator::resolveCurrentPage()
+        );
         $paginator->setPath(route('press-room'));
         return $paginator;
     }

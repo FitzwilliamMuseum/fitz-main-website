@@ -6,6 +6,10 @@ use App\DirectUs;
 
 class Labels extends Model
 {
+    /**
+     * @var string $table
+     */
+    protected static string $table = 'mo_objectlabels';
 
     /**
      * @param string $slug
@@ -13,9 +17,8 @@ class Labels extends Model
      */
     public static function list(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('mo_objectlabels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',
@@ -32,9 +35,8 @@ class Labels extends Model
      */
     public static function find(string $slug): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('mo_objectlabels');
-        $api->setArguments(
+        $api = new DirectUs(
+            self::$table,
             array(
                 'fields' => '*.*.*.*.*.*',
                 'meta' => '*',

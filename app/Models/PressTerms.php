@@ -7,17 +7,15 @@ use App\DirectUs;
 class PressTerms extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'press_terms';
+    /**
      * @return array
      */
     public static function list(): array
     {
-        $api = new DirectUs;
-        $api->setEndpoint('press_terms');
-        $api->setArguments(
-            array(
-                'fields' => '*.*.*.*',
-            )
-        );
+        $api = new DirectUs(self::$table, array('fields' => '*.*.*.*'));
         return $api->getData();
     }
 }

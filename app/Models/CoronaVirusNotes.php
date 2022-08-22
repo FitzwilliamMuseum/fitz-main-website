@@ -7,19 +7,23 @@ use App\DirectUs;
 class CoronaVirusNotes extends Model
 {
     /**
+     * @var string $table
+     */
+    protected static string $table = 'corona_virus_notes';
+
+    /**
      * @return array
      */
     public static function list(): array
     {
-      $api = new Directus;
-      $api->setEndpoint('coronavirus_notes');
-      $api->setArguments(
-          array(
-              'fields' => '*.*.*.*',
-              'meta' => '*',
-              'sort' => 'id',
-          )
-      );
-      return $api->getData();
+        $api = new Directus(
+            self::$table,
+            array(
+                'fields' => '*.*.*.*',
+                'meta' => '*',
+                'sort' => 'id',
+            )
+        );
+        return $api->getData();
     }
 }
