@@ -48,6 +48,11 @@
         }
     </script>
     <style>
+        .exhibitions_top_banner {
+            min-height: 40vh;
+            margin-top: 60px;
+            background-color: {{ $banners['button_colour']}};
+        }
         .exhibitions-title {
             font-size: 3.3rem;
         }
@@ -67,7 +72,7 @@
 
         .exhibitions_header {
             min-height: 40vh;
-            background-color: #2a9941;
+            background-color: {{ $banners['button_colour']}};
         }
 
         .exhibitions__link a {
