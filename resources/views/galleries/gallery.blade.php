@@ -10,7 +10,7 @@
 @section('content')
     @include('includes.elements.galleries.status')
 
-    @include('includes.elements')
+    @include('includes.elements.galleries.description')
 
     @include('includes.elements.galleries.info')
 
