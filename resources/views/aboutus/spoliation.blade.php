@@ -5,7 +5,7 @@
 @section('description', 'Spoliation claims made to the Museum')
 @section('keywords', 'spoliation,stories,museum,cambridge')
 @section('content')
-    <div class="row">
+    <div class="row mt-3">
         @foreach($claims['data'] as $claim)
             <x-spoliation-card :claim="$claim"></x-spoliation-card>
         @endforeach

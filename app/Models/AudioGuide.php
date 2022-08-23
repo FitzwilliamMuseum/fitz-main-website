@@ -6,7 +6,7 @@ use App\DirectUs;
 
 class AudioGuide extends Model
 {
-    protected static string $table = 'audio_guides';
+    protected static string $table = 'audio_guide';
 
     /**
      * @return array

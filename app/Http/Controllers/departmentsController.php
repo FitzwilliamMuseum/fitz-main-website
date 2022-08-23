@@ -40,9 +40,11 @@ class departmentsController extends Controller
         if (empty($departments['data'])) {
             return response()->view('errors.404', [], 404);
         } else {
-            $staff = StaffProfiles::findByDepartment($departments['data'][0]['id']);
+            $department = Collect($departments['data'])->first();
+            $staff = StaffProfiles::findByDepartment($department['id']);
+            return view('departments.details', compact('department', 'staff'));
         }
-        return view('departments.details', compact('departments', 'staff'));
+
     }
 
     /**

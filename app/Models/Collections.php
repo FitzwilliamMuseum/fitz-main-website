@@ -6,6 +6,9 @@ use App\DirectUs;
 
 class Collections extends Model
 {
+    /**
+     * @var string $table
+     */
     protected static string $table = 'collections';
 
     /**

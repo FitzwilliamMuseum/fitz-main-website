@@ -1,13 +1,12 @@
 @extends('layouts.layout')
 
-@foreach($pages['data'] as $page)
-    @section('title', $page['title'])
+@section('title', $page['title'])
 @if(!empty($page['hero_image']))
     @section('hero_image', $page['hero_image']['data']['url'])
-@section('hero_image_title', $page['hero_image_alt_text'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
 @else
     @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
-@section('hero_image_title', "The inside of our Founder's entrance")
+    @section('hero_image_title', "The inside of our Founder's entrance")
 @endif
 @section('description', $page['meta_description'])
 @section('keywords', $page['meta_keywords'])
@@ -21,7 +20,6 @@
         </div>
     @endif
 @endsection
-@endforeach
 
 @section('associated_pages')
     @if(Request::is('learning'))
@@ -74,3 +72,9 @@
         </div>
     </div>
 @endsection
+
+@if($page['youtube_playlist_id'])
+    @section('youtube-playlist')
+        @include('includes.social.youtube-playlist')
+    @endsection
+@endif

@@ -12,7 +12,6 @@ use App\Models\Vacancies;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class aboutusController extends Controller
 {
@@ -43,11 +42,12 @@ class aboutusController extends Controller
      */
     public function director(string $slug): View|Response
     {
-        $directors = Directors::getDirector($slug);
-        if (empty($directors['data'])) {
+        $data = Directors::getDirector($slug);
+        if (empty($data['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('aboutus.director', ['director' => Collect($data['data'])->first()]);
         }
-        return view('aboutus.director', compact('directors'));
     }
 
 
@@ -79,11 +79,12 @@ class aboutusController extends Controller
      */
     public function vacancy(string $slug): View|Response
     {
-        $vacancies = Vacancies::getVacancy($slug);
-        if (empty($vacancies['data'])) {
+        $vacancy = Vacancies::getVacancy($slug);
+        if (empty($vacancy['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('aboutus.vacancy', ['vacancy' => Collect($vacancy['data'])->first()]);
         }
-        return view('aboutus.vacancy', compact('vacancies'));
     }
 
     /**
@@ -152,11 +153,15 @@ class aboutusController extends Controller
 
     /**
      * @param string $priref
-     * @return View
+     * @return View|Response
      */
-    public function spoliationClaim(string $priref): View
+    public function spoliationClaim(string $priref): View|Response
     {
         $claims = SpoliationClaims::find($priref);
-        return view('aboutus.spoliation-claim', compact('claims'));
+        if(empty($claims ['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            return view('aboutus.spoliation-claim', ['claims' => Collect($claims['data'])->first()]);
+        }
     }
 }

@@ -1,6 +1,5 @@
 @extends('layouts.highlights')
-@foreach($labels['data'] as $label)
-    @section('keywords', 'labels,cases')
+@section('keywords', 'labels,cases')
 @section('description', $label['hero_image_alt_title'])
 @section('title', $label['title'])
 @section('hero_image', $label['hero_image']['data']['url'])
@@ -25,17 +24,16 @@
         </div>
     </div>
 @endsection
-@endforeach
 
 @if(!empty($records))
-@section('mlt')
-    <div class="container">
-        <h3>Other highlight objects in our collection you might like</h3>
-        <div class="row">
-            @foreach($records as $record)
-                <x-solr-card :result="$record"></x-solr-card>
-            @endforeach
+    @section('mlt')
+        <div class="container">
+            <h3>Other highlight objects in our collection you might like</h3>
+            <div class="row">
+                @foreach($records as $record)
+                    <x-solr-card :result="$record"></x-solr-card>
+                @endforeach
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif

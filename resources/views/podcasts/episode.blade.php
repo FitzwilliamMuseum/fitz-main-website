@@ -138,11 +138,11 @@
                 </h3>
                 <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
 
-                    @include('includes/elements/descriptive')
+                    @include('includes.elements.descriptive')
 
-                    @include('includes/elements/lifecycle')
+                    @include('includes.elements.lifecycle')
 
-                    @include('includes/elements/identification-insta')
+                    @include('includes.elements.identification-insta')
 
                 </div>
             </div>

@@ -9,7 +9,6 @@ use App\Models\HighlightPages;
 use App\Models\HighlightPeriods;
 use App\Models\Highlights;
 use App\Models\HighlightThemes;
-use App\Models\StaffObjects;
 use App\Models\Stubs;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
@@ -48,11 +47,17 @@ class highlightsController extends Controller
         $pharos = Highlights::find($slug);
         if (empty($pharos['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            $records = FindMoreLikeThis::find($slug, 'highlights');
+            $adlib = CIIM::findByAccession(Str::upper($pharos['data'][0]['adlib_id']));
+            $shopify = FindMoreLikeThis::find($slug, 'shopify');
+            return view('highlights.details', [
+                'pharos' => Collect($pharos['data'])->first(),
+                'records' => $records,
+                'adlib' => $adlib,
+                'shopify' => $shopify
+            ]);
         }
-        $records = FindMoreLikeThis::find($slug, 'highlights');
-        $adlib = CIIM::findByAccession(Str::upper($pharos['data'][0]['adlib_id']));
-        $shopify = FindMoreLikeThis::find($slug, 'shopify');
-        return view('highlights.details', compact('pharos', 'records', 'adlib', 'shopify'));
     }
 
     /**
@@ -66,7 +71,11 @@ class highlightsController extends Controller
         $pharos = HighlightPages::list($slug, $section);
         $records = FindMoreLikeThis::find($slug, '"pharos-pages"');
         $highlights = FindMoreLikeThis::find($slug, 'highlights');
-        return view('highlights.associate', compact('pharos', 'records', 'highlights'));
+        return view('highlights.associate', [
+            'pharos' => Collect($pharos['data'])->first(),
+            'records' => $records,
+            'highlights' => $highlights,
+        ]);
     }
 
     /**
@@ -74,13 +83,16 @@ class highlightsController extends Controller
      */
     public function landing(): View
     {
-        $page = Stubs::getHighlightPage(9);
-        $pharos = HighlightThemes::list();
         $periods = Highlights::getPeriods();
-        $periods = $this->group_by("period_assigned", $periods['data']);
+        $periodsGrouped = $this->group_by("period_assigned", $periods['data']);
         $contexts = HighlightPages::getContexts();
-        $contexts = $this->group_by("section", $contexts['data']);
-        return view('highlights.landing', compact('pharos', 'periods', 'contexts', 'page'));
+        $contextsGrouped = $this->group_by("section", $contexts['data']);
+        return view('highlights.landing', [
+            'pharos' => HighlightThemes::list(),
+            'periods'=> $periodsGrouped,
+            'contexts' => $contextsGrouped,
+            'page' => Stubs::getHighlightPage(9)
+        ]);
     }
 
     /**
@@ -150,14 +162,23 @@ class highlightsController extends Controller
 
     /**
      * @param string $slug
-     * @return View
+     * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function stop(string $slug): View
+    public function stop(string $slug): View|Response
     {
         $stop = AudioGuide::find($slug);
-        $records = FindMoreLikeThis::find($slug, 'audioguide');
-        return view('highlights.stop', compact('stop', 'records'));
+        if(empty($stop['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $records = FindMoreLikeThis::find($slug, 'audioguide');
+            return view('highlights.stop',
+                [
+                    'stop' => Collect($stop['data'])->first(),
+                    'records' => $records
+                ]
+            );
+        }
     }
 
     /**
@@ -171,34 +192,49 @@ class highlightsController extends Controller
     }
 
     /**
-     * @return View
+     * @return View|Response
      */
-    public function contextual(): View
+    public function contextual(): View|Response
     {
         $pharos = HighlightPages::getByContext();
-        $context = $this->group_by("section", $pharos['data']);
-        return view('highlights.context', compact('context'));
+        if(empty($pharos['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $context = $this->group_by("section", $pharos['data']);
+            return view('highlights.context', compact('context'));
+        }
     }
 
     /**
-     * @return View
+     * @return View|Response
      */
-    public function period(): View
+    public function period(): View|Response
     {
         $pharos = Highlights::getPeriods();
-        $periods = $this->group_by("period_assigned", $pharos['data']);
-        return view('highlights.period', compact('periods'));
+        if(empty($pharos['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $periods = $this->group_by("period_assigned", $pharos['data']);
+            return view('highlights.period', compact('periods'));
+        }
     }
 
     /**
      * @param string $period
-     * @return View
+     * @return View|Response
      */
-    public function byperiod(string $period): View
+    public function byPeriod(string $period): View|Response
     {
         $pharos = Highlights::findByPeriod($period);
-        $period = HighlightPeriods::find($period);
-        return view('highlights.byperiod', compact('pharos', 'period'));
+        if(empty($pharos['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $period = HighlightPeriods::find($period);
+            return view('highlights.byperiod', [
+                'pharos'=> $pharos,
+                'period' => Collect($period['data'])->first()
+            ]);
+        }
     }
 
     /**
@@ -212,12 +248,20 @@ class highlightsController extends Controller
 
     /**
      * @param string $theme
-     * @return View
+     * @return View|Response
      */
-    public function bytheme(string $theme): View
+    public function byTheme(string $theme): View|Response
     {
+
         $pharos = HighlightThemes::find($theme);
-        $theme = HighlightThemes::getDetails($theme);
-        return view('highlights.bytheme', compact('pharos', 'theme'));
+        if(empty($pharos['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $theme = HighlightThemes::getDetails($theme);
+            return view('highlights.bytheme', [
+                'pharos'=> $pharos,
+                'theme' => Collect($theme['data'])->first()
+            ]);
+        }
     }
 }

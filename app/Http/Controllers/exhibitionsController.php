@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shopify;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -21,6 +22,8 @@ use App\Models\TessituraPerformances;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 
+use PHPShopify\Exception\ApiException;
+use PHPShopify\Exception\CurlException;
 use Psr\SimpleCache\InvalidArgumentException;
 
 class exhibitionsController extends Controller
@@ -71,36 +74,37 @@ class exhibitionsController extends Controller
      * @param string $slug
      * @return View|Response
      * @throws InvalidArgumentException
+     * @throws GuzzleException
+     * @throws ApiException
+     * @throws CurlException
      */
     public function details(string $slug): View|Response
     {
         $exhibitions = Exhibitions::find($slug);
-        $adlib = NULL;
-        if (!empty($exhibitions['data'])) {
-            $adlib = CIIM::findByExhibition($exhibitions['data'][0]['adlib_id_exhibition']);
+        if(empty($exhibitions['data'])){
+            abort(404);
+        } else {
+            $exhibition = Collect($exhibitions['data'])->first();
+            $adlib = CIIM::findByExhibition($exhibition['adlib_id_exhibition']);
+            $records = FindMoreLikeThis::find($slug, 'exhibitions');
+            $podcasts = NULL;
+            $cases = NULL;
+            $products = NULL;
+            $events = NULL;
+            if (!empty($exhibition['podcasts'])) {
+                $podcasts = PodcastArchive::find($exhibition['podcasts'][0]['podcast_series_id']['id']);
+            }
+            if (!empty($exhibition['id'])) {
+                $cases = Cases::list($exhibition['id']);
+            }
+            if (!empty($exhibition['fme_product_ids'])) {
+                $products = Shopify::getShopifyCollection($exhibition['fme_product_ids']);
+            }
+            if (!empty($exhibition['tessitura_keyword_id'])) {
+                $events = TessituraPerformances::getExhibitionPerformances($exhibition['tessitura_keyword_id']);
+            }
+            return view('exhibitions.details', compact('exhibition', 'records', 'adlib', 'podcasts', 'cases', 'products', 'events'));
         }
-        $records = FindMoreLikeThis::find($slug, 'exhibitions');
-        $podcasts = NULL;
-        $cases = NULL;
-        $products = NULL;
-        $events = NULL;
-        if (!empty($exhibitions['data'][0]['podcasts'])) {
-            $podcasts = PodcastArchive::find($exhibitions['data'][0]['podcasts'][0]['podcast_series_id']['id']);
-        }
-        if (!empty($exhibitions['data'][0]['id'])) {
-            $cases = Cases::list($exhibitions['data'][0]['id']);
-        }
-        if (!empty($exhibitions['data'][0]['fme_product_ids'])) {
-            $products = Shopify::getShopifyCollection($exhibitions['data'][0]['fme_product_ids']);
-        }
-        if (!empty($exhibitions['data'][0]['tessitura_keyword_id'])) {
-            $events = TessituraPerformances::getExhibitionPerformances($exhibitions['data'][0]['tessitura_keyword_id']);
-        }
-        if (empty($exhibitions['data'])) {
-            return response()->view('errors.404', [], 404);
-        }
-
-        return view('exhibitions.details', compact('exhibitions', 'records', 'adlib', 'podcasts', 'cases', 'products', 'events'));
     }
 
     /**
@@ -123,8 +127,14 @@ class exhibitionsController extends Controller
     public function label(string $slug): View
     {
         $labels = Labels::find($slug);
-        $records = FindMoreLikeThis::find($slug, 'highlights');
-        return view('exhibitions.label', compact('labels', 'records'));
+        if(empty($labels['data'])){
+            abort(404);
+        } else {
+            $label = Collect($labels['data'])->first();
+            $records = FindMoreLikeThis::find($slug, 'highlights');
+            return view('exhibitions.label', compact('label', 'records'));
+        }
+
     }
 
     /**
@@ -144,12 +154,12 @@ class exhibitionsController extends Controller
     public function externals(string $slug): View|Response
     {
         $external = AssociatedPeople::find($slug);
-
         if (empty($external['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            $exhibitions = Exhibitions::findByExternals($external['data'][0]['id'])['data'];
+            return view('exhibitions.externals', compact('external', 'exhibitions'));
         }
-        $exhibitions = Exhibitions::findByExternals($external['data'][0]['id'])['data'];
-        return view('exhibitions.externals', compact('external', 'exhibitions'));
     }
 
     /**
@@ -162,14 +172,21 @@ class exhibitionsController extends Controller
     }
 
     /**
+     * @param string $slug
      * @return View
+     * @throws InvalidArgumentException
      */
     public function ttnArtist(string $slug): View
     {
-        $artists = TtnBios::find($slug)['data'];
-        $works = TtnLabels::byArtist($artists[0]['id'])['data'];
-        $records = FindMoreLikeThis::find($slug, 'ttnArtists');
-        return view('exhibitions.ttn-artist', compact('artists', 'works', 'records'));
+        $artists = TtnBios::find($slug);
+        if(empty($artists['data'])){
+            abort(404);
+        } else {
+            $artist = Collect($artists['data'])->first();
+            $works = TtnLabels::byArtist($artist['id'])['data'];
+            $records = FindMoreLikeThis::find($slug, 'ttnArtists');
+            return view('exhibitions.ttn-artist', compact('artist', 'works', 'records'));
+        }
     }
 
     /**
@@ -202,9 +219,14 @@ class exhibitionsController extends Controller
      */
     public function ttnLabel(string $slug): View
     {
-        $label = TtnLabels::find($slug)['data'];
-        $records = FindMoreLikeThis::find($slug, 'ttnLabels');
-        return view('exhibitions.ttn-label', compact('label', 'records'));
+        $label = TtnLabels::find($slug);
+        if(empty($label['data'])){
+            abort(404);
+        } else {
+            $labels = Collect($label['data'])->first();
+            $records = FindMoreLikeThis::find($slug, 'ttnLabels');
+            return view('exhibitions.ttn-label', compact('labels', 'records'));
+        }
     }
 
     /**
@@ -220,7 +242,7 @@ class exhibitionsController extends Controller
     /**
      * @return JsonResponse
      */
-    public function ttnGeoJson()
+    public function ttnGeoJson(): JsonResponse
     {
         $labels = TtnLabels::list()['data'];
         $geoJson = array(
@@ -252,7 +274,10 @@ class exhibitionsController extends Controller
         return response()->json($geoJson);
     }
 
-    public function linkedPasts()
+    /**
+     * @return JsonResponse
+     */
+    public function linkedPasts(): JsonResponse
     {
         $labels = TtnLabels::listFiltered('lat')['data'];
         $geoJson = array(
@@ -323,7 +348,11 @@ class exhibitionsController extends Controller
     }
 
 
-    public function linkedPastsBirths()
+    /**
+     * @return JsonResponse
+     * @throws InvalidArgumentException
+     */
+    public function linkedPastsBirths(): JsonResponse
     {
         $labels = TtnBios::listFiltered('birth_lat')['data'];
         $geoJson = array(
@@ -382,7 +411,11 @@ class exhibitionsController extends Controller
         return response()->json($geoJson);
     }
 
-    public function linkedPastsDeaths()
+    /**
+     * @return JsonResponse
+     * @throws InvalidArgumentException
+     */
+    public function linkedPastsDeaths(): JsonResponse
     {
         $labels = TtnBios::listFiltered('death_lon')['data'];
         $geoJson = array(

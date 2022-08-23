@@ -3,21 +3,21 @@
 {
   "@context" : "https://schema.org",
   "@type" : "Article",
-  "headline" : "{{ $project['article_title'] }}",
+  "headline" : "{{ $news['article_title'] }}",
   "author" : {
     "@type" : "Organization",
     "name" : "The Fitzwilliam Museum"
   },
-  "datePublished" : "{{ $project['publication_date'] }}",
-  @if(isset($project['modified_on']))
-    "dateModified" : "{{ $project['modified_on'] }}",
+  "datePublished" : "{{ $news['publication_date'] }}",
+  @if(isset($news['modified_on']))
+    "dateModified" : "{{ $news['modified_on'] }}",
   @endif
-  @if(isset($project['field_image']))
-    "image" : "{{ $project['field_image']['data']['full_url'] }}",
+  @if(isset($news['field_image']))
+    "image" : "{{ $news['field_image']['data']['full_url'] }}",
   @else
     "image" : "{{ env('MISSING_IMAGE_URL') }}",
   @endif
-  "articleBody" : "{{ $project['article_body'] }}",
+  "articleBody" : "{{ $news['article_body'] }}",
   "url" : "{{ Request::url() }}",
   "mainEntityOfPage": {
          "@type": "WebPage",

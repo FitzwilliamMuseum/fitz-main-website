@@ -25,23 +25,34 @@ class learningController extends Controller
     public function lookThinkDoMain(): View|Response
     {
         $ltd = LookThinkDo::list();
-        $pages = Stubs::getPage('learning', 'look-think-do');
+        $page = Stubs::getPage('learning', 'look-think-do');
         if (empty($ltd['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('learning.lookthinkdomain',
+                [
+                    'page' => Collect($page['data'])->first(),
+                    'ltd' => Collect($ltd['data']),
+                ]);
         }
-        return view('learning.lookthinkdomain', compact('pages', 'ltd'));
     }
 
     /**
      * Display a Look think do activity
      * @param string $slug The required slug
-     * @return View
+     * @return View|Response
      */
-    public function lookThinkDoActivity(string $slug): View
+    public function lookThinkDoActivity(string $slug): View|Response
     {
         $ltd = LookThinkDo::find($slug);
-        $adlib = CIIM::findByAccession($ltd['data'][0]['adlib_id_number']);
-        return view('learning.lookthinkdoactivity', compact('ltd', 'adlib'));
+        if (empty($ltd['data'])) {
+            return response()->view('errors.404', [], 404);
+        } else {
+            $activity = Collect($ltd['data'])->first();
+            $adlib = CIIM::findByAccession($activity['adlib_id_number']);
+            return view('learning.lookthinkdoactivity', ['ltd' => $activity, 'adlib' => $adlib]);
+        }
+
     }
 
     /**
@@ -58,13 +69,17 @@ class learningController extends Controller
 
     /**
      * @param string $slug
-     * @return View
+     * @return View|Response
      */
-    public function resource(string $slug): View
+    public function resource(string $slug): View|Response
     {
-        $res = LearningPages::filterBySlug($slug);
+        $resource = LearningPages::filterBySlug($slug);
+        if (empty($resource['data'])) {
+            return response()->view('errors.404', [], 404);
+        } else {
+            return view('learning.resource', ['resource' => Collect($resource['data'])->first()]);
 
-        return view('learning.resource', compact('res'));
+        }
     }
 
     /**
@@ -125,47 +140,68 @@ class learningController extends Controller
 
     /**
      * @param $slug
-     * @return View
+     * @return View|Response
      */
-    public function adult($slug): View
+    public function adult($slug): View|Response
     {
         $session = Stubs::findBySlug($slug);
-        return view('learning.adult', compact('session'));
+        if(empty($session['data'])) {
+            return response()->view('errors.404', [], 404);
+        } else {
+            return view('learning.adult', ['session' => Collect($session['data'])->first()]);
+        }
     }
 
     /**
      * @param $slug
-     * @return View
+     * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function session($slug): View
+    public function session($slug): View|Response
     {
         $session = SchoolSessions::find($slug);
-        $records = FindMoreLikeThis::find($slug, 'pages');
-        return view('learning.session', compact('session', 'records'));
+        if (empty($session['data'])) {
+            return response()->view('errors.404', [], 404);
+        } else {
+            $records = FindMoreLikeThis::find($slug, 'pages');
+            return view('learning.session', ['session' => Collect($session['data'])->first(), 'records' => $records]);
+        }
+
     }
 
     /**
      * @param $slug
-     * @return View
+     * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function community($slug): View
+    public function community($slug): View|Response
     {
         $pages = Stubs::findBySlug($slug);
-        $records = FindMoreLikeThis::find($slug, 'school_sessions');
-        return view('learning.community', compact('pages', 'records'));
+        if(empty($pages['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $records = FindMoreLikeThis::find($slug, 'pages');
+            return view('learning.community', [
+                'page' => Collect($pages['data'])->first(),
+                'records' => $records]
+            );
+        }
     }
+
     /**
      * @param string $slug
-     * @return View
+     * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function young(string $slug): View
+    public function young(string $slug): View|Response
     {
         $session = Stubs::findBySlug($slug);
-        $records = FindMoreLikeThis::find($slug, 'schoolsessions');
-        return view('learning.young', compact('session', 'records'));
+        if(empty($session['data'])){
+            return response()->view('errors.404', [], 404);
+        } else {
+            $records = FindMoreLikeThis::find($slug, 'pages');
+            return view('learning.young', ['session' => Collect($session['data'])->first(), 'records' => $records]);
+        }
     }
 
     /**

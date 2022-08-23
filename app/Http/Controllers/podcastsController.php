@@ -34,10 +34,17 @@ class podcastsController extends Controller
         $ids = PodcastSeries::getSeriesID($slug);
         if (empty($ids['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            $podcasts = PodcastArchive::find(Collect($ids['data'])->first()['id']);
+            $suggest = FindMoreLikeThis::find($slug, 'podcast_series');
+            return view('podcasts.series',
+                [
+                    'podcasts' => $podcasts['data'],
+                    'ids' => Collect($ids['data'])->first(),
+                    'suggest' => $suggest
+                ]
+            );
         }
-        $podcasts = PodcastArchive::find($ids['data'][0]['id']);
-        $suggest = FindMoreLikeThis::find($slug, 'podcast_series');
-        return view('podcasts.series', compact('podcasts', 'ids', 'suggest'));
     }
 
     /**
@@ -74,12 +81,16 @@ class podcastsController extends Controller
     public function mindseye(string $slug): View|Response
     {
         $mindseye = MindsEye::find($slug);
-        $adlib = CIIM::findByAccession($mindseye['data'][0]['adlib_id']);
-        $suggest = FindMoreLikeThis::find($slug, 'podcasts');
         if (empty($mindseye['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            $mind = Collect($mindseye['data'])->first();
+            return view('podcasts.mindseye', [
+                'mindseye' => $mind,
+                'adlib' => CIIM::findByAccession($mind['adlib_id']),
+                'suggest' => FindMoreLikeThis::find($slug, 'podcasts')
+            ]);
         }
-        return view('podcasts.mindseye', compact('mindseye', 'adlib', 'suggest'));
     }
 
     /**
@@ -88,11 +99,12 @@ class podcastsController extends Controller
      */
     public function presenter(string $slug): View|Response
     {
-        $profiles = AssociatedPeople::find($slug);
-        if (empty($profiles['data'])) {
+        $profile = AssociatedPeople::find($slug);
+        if (empty($profile['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('podcasts.presenter', ['profile' => Collect($profile['data'])->first()]);
         }
-        return view('podcasts.presenter', compact('profiles'));
     }
 
     /**
@@ -103,7 +115,8 @@ class podcastsController extends Controller
         $profiles = AssociatedPeople::list();
         if (empty($profiles['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('podcasts.presenters', compact('profiles'));
         }
-        return view('podcasts.presenters', compact('profiles'));
     }
 }

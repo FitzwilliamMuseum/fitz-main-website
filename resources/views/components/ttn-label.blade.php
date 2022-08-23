@@ -1,6 +1,6 @@
 @section('title', $label['title'])
 @section('description', $label['alt_text'] . ' - True to Nature')
-<div data-src="{{$label['image']['data']['url']}}">
+<div data-src="{{$label['image']['data']['url']}}" class="mt-3">
     @if(!empty($label['image']))
         <img class="img-fluid" src="{{$label['image']['data']['url']}}"
              alt="{{ $label['alt_text'] }}"
@@ -12,11 +12,14 @@
     </h2>
     @if(!empty($label['manifest_url']))
         <a href="{{ route('exhibition.ttn.iiif', [$label['slug']]) }}" class="btn btn-ttn my-3 p-2"><img
-                src="{{ env('COLLECTION_URL') }}/images/logos/iiif.svg" alt="IIIF icon - view image" width="20px"> View
+                src="{{ asset('/images/logos/iiif.svg') }}" alt="IIIF icon - view image" width="20px"> View
             deep zooming image</a>
     @endif
     <p>
-        <a href="{{route('exhibition.ttn.artist',$label['artist']['slug'])}}">{{ $label['artist']['display_name'] }}</a><br/>
+        <a href="{{route('exhibition.ttn.artist',$label['artist']['slug'])}}">
+            {{ $label['artist']['display_name'] }}
+        </a>
+        <br/>
         {{ $label['artist']['place_of_birth']}} {{$label['artist']['year_of_birth']}}
         - {{$label['artist']['year_of_death']}} {{ $label['artist']['place_of_death']}}
     </p>
@@ -69,20 +72,20 @@
     <div class="container p-3">
         @map(
         [
-        'lat' => $label['lat'],
-        'lng' => $label['lng'],
-        'zoom' => 12,
-        'minZoom' => 6,
-        'maxZoom' => 18,
-        'markers' => [
-        [
-        'title' => 'Place depicted',
-        'lat' => $label['lat'],
-        'lng' => $label['lng'],
-        'popup' => 'Place depicted',
-        ],
-        ],
-        ]
+            'lat' => $label['lat'],
+            'lng' => $label['lng'],
+            'zoom' => 12,
+            'minZoom' => 6,
+            'maxZoom' => 18,
+            'markers' => [
+                    [
+                        'title' => 'Place depicted',
+                        'lat' => $label['lat'],
+                        'lng' => $label['lng'],
+                        'popup' => 'Place depicted',
+                    ],
+                ],
+            ]
         )
     </div>
 @endsection

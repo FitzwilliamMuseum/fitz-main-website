@@ -29,10 +29,10 @@ class HighlightThemes extends Model
     public static function find(string $theme):array
     {
       $api = new DirectUs(
-          self::$table,
+          'pharos',
           array(
               'fields' => '*.*.*',
-              'meta' => 'result_count,total_count,type',
+              'meta' => '*',
               'filter[themes][contains]' => $theme,
           )
       );

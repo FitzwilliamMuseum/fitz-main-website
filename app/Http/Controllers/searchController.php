@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Config;
+use Illuminate\Support\Facades\Config;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ use Psr\SimpleCache\InvalidArgumentException;
 use Solarium\Client;
 use Solarium\Core\Client\Adapter\Curl;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Purifier;
+use Mews\Purifier\Facades\Purifier;
 
 class searchController extends Controller
 {
