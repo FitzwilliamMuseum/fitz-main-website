@@ -7,6 +7,10 @@
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', $settings['title'])
 
+@section('banner')
+    <x-home-page-banner :banners="$banners"></x-home-page-banner>
+@endSection
+
 @section('news')
     @foreach($news['data'] as $news)
         <x-image-card

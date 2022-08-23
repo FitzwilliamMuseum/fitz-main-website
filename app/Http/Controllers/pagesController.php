@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\FindMoreLikeThis;
 use App\Models\Stubs;
 use Illuminate\Contracts\View\View;
@@ -27,12 +28,16 @@ class pagesController extends Controller
      */
     public function index(string $section, string $slug): View|Response
     {
-        $pages = Stubs::getPage($section, $slug);
-        $records = FindMoreLikeThis::find($slug, 'pages');
-        if (empty($pages['data'])) {
+        $page = Stubs::getPage($section, $slug);
+        if (empty($page['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('pages.index', [
+                    'page' => Collect($page['data'])->first(),
+                    'records' => FindMoreLikeThis::find($slug, 'pages'),
+                ]
+            );
         }
-        return view('pages.index', compact('pages', 'records'));
     }
 
     /**
@@ -41,11 +46,14 @@ class pagesController extends Controller
      */
     public function landing(string $section): View|Response
     {
-        $pages = Stubs::getLanding($section);
-        $associated = Stubs::getAssociated($section);
-        if (empty($pages['data'])) {
+        $page = Stubs::getLanding($section);
+        if (empty($page['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('pages.landing', [
+                'page' => Collect($page['data'])->first(),
+                'associated' => Stubs::getAssociated($section)
+            ]);
         }
-        return view('pages.landing', compact('pages', 'associated'));
     }
 }

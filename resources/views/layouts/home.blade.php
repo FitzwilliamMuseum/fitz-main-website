@@ -12,11 +12,7 @@
 @include('googletagmanager::body')
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
-@if (\Carbon\Carbon::now()->diffInHours('2022-02-14 09:30:00', false) <= 0)
-    @include('includes.structure.hockney-header')
-@else
-    @include('includes.structure.head')
-@endif
+@yield('banner')
 @include('includes.structure.open')
 @include('includes.structure.exhibitions')
 

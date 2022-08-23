@@ -16,4 +16,6 @@
 }
 @include('includes.css.parallax')
 </style>
-
+@hasSection('360')
+    <link rel="stylesheet" href="{{ asset("/css/pannellum.css")}}"/>
+@endif

@@ -27,14 +27,6 @@
 
 @include('includes.structure.highlight')
 
-@hasSection('timeline')
-    @include('includes.css.timeline-css')
-@endif
-
-@hasSection('360')
-    @include('includes.css.photosphere-css')
-@endif
-
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')
 </div>
@@ -42,9 +34,7 @@
     <div class="container bg-white">
         @yield('press-contact')
         @yield('content')
-
         @yield('adlib')
-        @yield('timeline')
     </div>
 </div>
 
@@ -107,10 +97,6 @@
 @hasSection('map')
     @mapscripts
     @include('includes.scripts.mapjs')
-@endif
-
-@hasSection('timeline')
-    @include('includes.scripts.timeline-js')
 @endif
 
 </body>

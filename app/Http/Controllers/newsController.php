@@ -30,10 +30,16 @@ class newsController extends Controller
     public function article(string $slug): View|Response
     {
         $news = NewsArticles::find($slug);
-        $records = FindMoreLikeThis::find($slug, 'news');
-        if (empty($news['data'])) {
+        if(empty($news['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            $records = FindMoreLikeThis::find($slug, 'news');
+            return view('news.article',
+                [
+                    'news' => Collect($news['data'])->first(),
+                    'records' => $records
+                ]
+            );
         }
-        return view('news.article', compact('news', 'records'));
     }
 }

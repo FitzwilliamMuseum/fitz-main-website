@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-@foreach($pages['data'] as $page)
     @if(!empty($page['hero_image']))
         @section('hero_image', $page['hero_image']['data']['url'])
         @section('hero_image_title', $page['hero_image_alt_text'])
@@ -10,19 +9,15 @@
     @section('title', 'Look, Think, Do')
     @section('description', $page['meta_description'])
     @section('keywords', $page['meta_keywords'])
-@endforeach
 
-@foreach($pages['data'] as $page)
     @section('content')
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             @markdown($page['body'])
         </div>
 
-
-
-        @if(!empty($ltd['data']))
+        @if(!empty($ltd))
             <div class="row">
-                @foreach($ltd['data'] as $look)
+                @foreach($ltd as $look)
                     <x-image-card
                         :altTag="$look['focus_image_alt_text']"
                         :title="$look['title_of_work']"
@@ -33,4 +28,3 @@
             </div>
         @endif
     @endsection
-@endforeach

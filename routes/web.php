@@ -39,11 +39,6 @@ Route::get('about-us/spoliation', 'aboutusController@spoliation')->name('about.s
 Route::get('about-us/spoliation/{slug}', 'aboutusController@spoliationClaim')->name('about.spoliation.claim');
 
 /*
-Things to do
- */
- Route::get('thingstodo/', 'thingstodoController@index')->name('things');
-
-/*
 Research section routes
 */
 Route::get('research/', 'researchController@index')->name('research');
@@ -53,7 +48,7 @@ Route::get('research/projects/{slug}/', 'researchController@project')->name('res
 Route::get('research/active-researchers', 'researchController@profiles')->name('research-profiles');
 Route::get('about-us/our-staff/profile/{slug}', 'researchController@profile')->name('research-profile');
 
-Route::get('research/affiliates/{slug}', 'researchController@affiliate')->name('research-affiliate');
+Route::get('research/affiliates/{slug}', 'researchController@affiliatedResearcher')->name('research-affiliate');
 Route::get('research/affiliates', 'researchController@affiliates')->name('research-affiliates');
 
 Route::get('research/external-curators/{slug}', 'exhibitionsController@externals')->name('exhibition-externals');
@@ -133,16 +128,15 @@ Route::get('objects-and-artworks/highlights', 'highlightsController@index')->nam
 Route::get('objects-and-artworks/highlights/periods/', 'highlightsController@period')->name('periods');
 Route::get('objects-and-artworks/highlights/themes/', 'highlightsController@theme')->name('themes');
 Route::get('objects-and-artworks/highlights/context/', 'highlightsController@contextual')->name('context');
-Route::get('objects-and-artworks/highlights/periods/{period}', 'highlightsController@byperiod')->name('period');
+Route::get('objects-and-artworks/highlights/periods/{period}', 'highlightsController@byPeriod')->name('period');
 
-Route::get('objects-and-artworks/highlights/themes/{theme}', 'highlightsController@bytheme')->name('theme');
+Route::get('objects-and-artworks/highlights/themes/{theme}', 'highlightsController@byTheme')->name('theme');
 Route::get('objects-and-artworks/highlights/context/{section}/', 'highlightsController@pharosSections')->name('context-sections');
 Route::get('objects-and-artworks/highlights/context/{section}/{slug}/', 'highlightsController@associate')->name('context-section-detail');
 Route::get('objects-and-artworks/highlights/{slug}/', 'highlightsController@details')->name('highlight');
 
 Route::get('objects-and-artworks/audio-guide/', 'highlightsController@audioguide')->name('audio-guide');
 Route::get('objects-and-artworks/audio-guide/{slug}/', 'highlightsController@stop')->name('audio-stop');
-Route::get('objects-and-artworks/staff-favourites/{slug}/', 'highlightsController@fitzobject')->name('fitz-object');
 /*
 * Social
 */

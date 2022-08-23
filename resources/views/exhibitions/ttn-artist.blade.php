@@ -1,8 +1,8 @@
 @extends('layouts.highlights')
-@section('title', $artists[0]['display_name'])
-
+@section('title', $artist['display_name'])
+@section('description', 'A page listing image cases for ' . $artist['display_name'])
 @section('content')
-    <x-ttn-artist-detail :artist="$artists"></x-ttn-artist-detail>
+    <x-ttn-artist-detail :artist="$artist"></x-ttn-artist-detail>
 @endsection
 
 @if(!empty($works))

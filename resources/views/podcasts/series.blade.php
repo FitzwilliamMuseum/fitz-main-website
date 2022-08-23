@@ -1,35 +1,34 @@
 @extends('layouts.layout')
-    @if(!is_null($ids['data']))
-        @section('title', $ids['data'][0]['title'])
-        @section('hero_image', $ids['data'][0]['hero_image']['data']['url'] )
-        @section('hero_image_title', $ids['data'][0]['hero_image_alt_tag'])
-    @else
-        @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
-        @section('hero_image_title', 'Springtime by Claude Monet')
-    @endif
-    @section('description', $ids['data'][0]['title'])
-    @section('content')
-
-    @isset($ids['data'][0]['description'])
+@if(!empty($ids))
+    @section('title', $ids['title'])
+    @section('hero_image', $ids['hero_image']['data']['url'] )
+    @section('hero_image_title', $ids['hero_image_alt_tag'])
+@else
+    @section('hero_image', 'https://content.fitz.ms/fitz-website/assets/SpringtimeWEB.jpg?key=directus-large-crop')
+    @section('hero_image_title', 'Springtime by Claude Monet')
+@endif
+@section('description', $ids['title'])
+@section('content')
+    @isset($ids['description'])
         <div class="shadow-sm p-3 mb-2">
-            @markdown($ids['data'][0]['description'])
+            @markdown($ids['description'])
         </div>
     @endisset
-
-    @if($ids['data'][0]['youtube_id'])
+    @if($ids['youtube_id'])
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
             <div class="ratio ratio-16x9">
                 <iframe title="A YouTube video related to this podcast series"
-                        src="https://www.youtube.com/embed/{{$ids['data'][0]['youtube_id']}}"
+                        src="https://www.youtube.com/embed/{{$ids['youtube_id']}}"
                         allowfullscreen></iframe>
             </div>
         </div>
     @endif
-
-    @if(!empty($podcasts['data']))
-        <h3>Episodes</h3>
+    @if(!empty($podcasts))
+        <h3>
+            Episodes
+        </h3>
         <div class="row">
-            @foreach($podcasts['data'] as $podcast)
+            @foreach($podcasts as $podcast)
                 <x-image-card
                     :altTag="$podcast['hero_image_alt_tag'] "
                     :title="$podcast['title']"
@@ -42,12 +41,12 @@
 
 @endsection
 
-@if(!empty($ids['data'][0]['partners']))
+@if(!empty($ids['partners']))
     @section('research-funders')
         <div class="container">
             <h3>Partners</h3>
             <div class="row">
-                @foreach($ids['data'][0]['partners'] as $partner)
+                @foreach($ids['partners'] as $partner)
                     <x-partner-card
                         :altTag="$partner['partner_organisations_id']['partner_full_name']"
                         :title="$partner['partner_organisations_id']['partner_full_name']"
@@ -59,12 +58,12 @@
     @endsection
 @endif
 
-@if(!empty($ids['data'][0]['presenters']))
+@if(!empty($ids['presenters']))
     @section('presenters')
         <div class="container">
             <h3>Presenters</h3>
             <div class="row">
-                @foreach($ids['data'][0]['presenters'] as $presenter)
+                @foreach($ids['presenters'] as $presenter)
                     <x-image-card
                         :altTag="$presenter['associated_people_id']['display_name']"
                         :title="$presenter['associated_people_id']['display_name']"

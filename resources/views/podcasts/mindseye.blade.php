@@ -2,9 +2,8 @@
 @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 
-@foreach($mindseye['data'] as $podcast)
-    @section('description', $podcast['meta_description'])
-@section('title', $podcast['title'])
+@section('description', $mindseye['meta_description'])
+@section('title', $mindseye['title'])
 
 
 @section('content')
@@ -13,32 +12,32 @@
         <div class="col-md-7 mt-3">
             <div class="col shadow-sm p-3 mx-auto mb-3">
                 <div class="libsyn">
-                    @include('includes/social/libsyn')
+                    @include('includes.social.libsyn')
                 </div>
             </div>
-            @if(!empty($podcast['author_poem']))
+            @if(!empty($mindseye['author_poem']))
                 <div class="col shadow-sm p-3 mx-auto mb-3">
-                    {!! $podcast['author_poem'] !!}
+                    {!! $mindseye['author_poem'] !!}
                 </div>
             @endif
-            @if(!empty($podcast['author_response']))
+            @if(!empty($mindseye['author_response']))
                 <h3>The artist's response</h3>
                 <div class="col shadow-sm p-3 mx-auto mb-3">
                     <figure class="figure">
-                        <img class="img-fluid" src="{{ $podcast['author_response']['data']['thumbnails'][4]['url'] }}"
-                             alt="$podcast['author_response_caption']"/>
-                        @if(!empty($podcast['author_response_caption']))
-                            <figcaption class="figure-caption">{{ $podcast['author_response_caption'] }}</figcaption>
+                        <img class="img-fluid" src="{{ $mindseye['author_response']['data']['thumbnails'][4]['url'] }}"
+                             alt="$mindseye['author_response_caption']"/>
+                        @if(!empty($mindseye['author_response_caption']))
+                            <figcaption class="figure-caption">{{ $mindseye['author_response_caption'] }}</figcaption>
                         @endif
                     </figure>
                 </div>
             @endif
 
             <div class="col shadow-sm p-3 mx-auto mb-3">
-                {!! $podcast['story'] !!}
+                {!! $mindseye['story'] !!}
             </div>
 
-            @if(!empty($podcast['transcript']))
+            @if(!empty($mindseye['transcript']))
                 <h3>
                     Podcast transcript
                 </h3>
@@ -51,10 +50,10 @@
                         </em>
                     </p>
                     @php
-                        $count = count($podcast['transcript']);
-                        $start = array_slice($podcast['transcript'],0,12);
+                        $count = count($mindseye['transcript']);
+                        $start = array_slice($mindseye['transcript'],0,12);
                         if($count > 12) {
-                          $end = array_slice($podcast['transcript'],12, $count);
+                          $end = array_slice($mindseye['transcript'],12, $count);
                         }
                     @endphp
 
@@ -87,7 +86,7 @@
                         </div>
                     @else
                         <ol>
-                            @foreach ($podcast['transcript'] as $transcript)
+                            @foreach ($mindseye['transcript'] as $transcript)
                                 <li>
                                     {{ $transcript['start_time'] }} - {{ $transcript['end_time'] }}:
                                     <strong>{{ $transcript['speaker'] }}</strong><br/>
@@ -109,10 +108,10 @@
         <div class="col-md-5 mb-3">
             <div class="shadow-sm p-3 mb-3 mt-3">
                 <figure class="figure">
-                    <img src="{{ $podcast['hero_image']['data']['full_url'] }}"
-                         class="img-fluid" alt="{{ $podcast['title'] }}" loading="lazy"
-                         width="{{ $podcast['hero_image']['width'] }}"
-                         height="{{ $podcast['hero_image']['height'] }}"
+                    <img src="{{ $mindseye['hero_image']['data']['full_url'] }}"
+                         class="img-fluid" alt="{{ $mindseye['title'] }}" loading="lazy"
+                         width="{{ $mindseye['hero_image']['width'] }}"
+                         height="{{ $mindseye['hero_image']['height'] }}"
                     />
 
                 </figure>
@@ -125,35 +124,35 @@
                     </h3>
                     <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
 
-                        @include('includes/elements/descriptive')
+                        @include('includes.elements.descriptive')
 
-                        @include('includes/elements/lifecycle')
+                        @include('includes.elements.lifecycle')
 
-                        @include('includes/elements/identification-insta')
+                        @include('includes.elements.identification-insta')
 
                     </div>
                 @endforeach
             @endif
 
-            @if(!empty($podcast['author_headshot']))
+            @if(!empty($mindseye['author_headshot']))
                 <div class="col shadow-sm p-3 mx-auto mb-3">
                     <figure class="figure">
-                        <img src="{{ $podcast['author_headshot']['data']['full_url'] }}"
+                        <img src="{{ $mindseye['author_headshot']['data']['full_url'] }}"
                              class="img-fluid"
-                             alt="{{ $podcast['author_caption'] }}"
+                             alt="{{ $mindseye['author_caption'] }}"
                         />
-                        @if(!empty($podcast['author_caption'] ))
+                        @if(!empty($mindseye['author_caption'] ))
                             <figcaption class="figure-caption">
-                                {{ $podcast['author_caption'] }}
+                                {{ $mindseye['author_caption'] }}
                             </figcaption>
                         @endif
                     </figure>
                 </div>
             @endif
 
-            @if(!empty($podcast['author_bio']))
+            @if(!empty($mindseye['author_bio']))
                 <div class="col shadow-sm p-3 mx-auto mb-3">
-                    {!! $podcast['author_bio'] !!}
+                    {!! $mindseye['author_bio'] !!}
                 </div>
             @endif
         </div>
@@ -164,29 +163,28 @@
 @endsection
 
 @if(!empty($suggest))
-@section('mlt')
-    <div class="container">
-        <h3>Similar podcasts to listen to</h3>
-        <div class="row">
-            @foreach($suggest as $record)
-                <div class="col-md-4 mb-3">
-                    <div class="card h-100">
-                        @if(!is_null($record['searchImage']))
-                            <img class="img-fluid " src="{{ $record['searchImage'][0]}}"
-                                 alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
-                        @endif
-                        <div class="card-body ">
-                            <div class="contents-label mb-3">
-                                <h3>
-                                    <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
-                                </h3>
+    @section('mlt')
+        <div class="container">
+            <h3>Similar podcasts to listen to</h3>
+            <div class="row">
+                @foreach($suggest as $record)
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            @if(!is_null($record['searchImage']))
+                                <img class="img-fluid " src="{{ $record['searchImage'][0]}}"
+                                     alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
+                            @endif
+                            <div class="card-body ">
+                                <div class="contents-label mb-3">
+                                    <h3>
+                                        <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif
-@endforeach

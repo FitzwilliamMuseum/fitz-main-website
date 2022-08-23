@@ -44,12 +44,15 @@ class researchController extends Controller
      */
     public function project(string $slug): View|Response
     {
-        $projects = ResearchProjects::find($slug);
-        $records = FindMoreLikeThis::find($slug, 'projects');
-        if (empty($projects['data'])) {
+        $project = ResearchProjects::find($slug);
+        if (empty($project['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('research.project', [
+                'project' => Collect($project['data'])->first(),
+                'records' => FindMoreLikeThis::find($slug, 'projects')
+            ]);
         }
-        return view('research.project', compact('projects', 'records'));
     }
 
     /**
@@ -67,14 +70,17 @@ class researchController extends Controller
      * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function affiliate(string $slug): View|Response
+    public function affiliatedResearcher(string $slug): View|Response
     {
-        $profiles = AffiliateResearchers::find($slug);
-        if (empty($profiles['data'])) {
+        $profile = AffiliateResearchers::find($slug);
+        if (empty($profile['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('research.affiliate', [
+                'profile' => Collect($profile['data'])->first(),
+                'similar' => FindMoreLikeThis::find($slug, 'affiliate')
+            ]);
         }
-        $similar = FindMoreLikeThis::find($slug, 'affiliate');
-        return view('research.affiliate', compact('profiles', 'similar'));
     }
 
     /**
@@ -93,12 +99,15 @@ class researchController extends Controller
      */
     public function profile(string $slug): View|Response
     {
-        $profiles = StaffProfiles::find($slug);
-        if (empty($profiles['data'])) {
+        $profile = StaffProfiles::find($slug);
+        if (empty($profile['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('research.profile', [
+                'profile' => Collect($profile['data'])->first(),
+                'similar' => FindMoreLikeThis::find($slug, 'staffProfile')
+            ]);
         }
-        $similar = FindMoreLikeThis::find($slug, 'staffProfile');
-        return view('research.profile', compact('profiles', 'similar'));
     }
 
     /**
@@ -110,8 +119,9 @@ class researchController extends Controller
         $resources = OnlineResources::find($slug);
         if (empty($resources['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('research.resource', ['resources' => Collect($resources['data'])->first()]);
         }
-        return view('research.resource', compact('resources'));
     }
 
     /**
@@ -130,11 +140,12 @@ class researchController extends Controller
      */
     public function opportunity(string $slug): View|Response
     {
-        $opportunities = ResearchOpportunities::find($slug);
-        if (empty($opportunities['data'])) {
+        $opportunity = ResearchOpportunities::find($slug);
+        if (empty($opportunity['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('research.opportunity', ['opportunity' => Collect($opportunity['data'])->first()]);
         }
-        return view('research.opportunity', compact('opportunities'));
     }
 
     /**

@@ -26,7 +26,7 @@ class SpoliationClaims extends Model
                 'filter[priref][eq]' => $priref
             )
         );
-        return $api->getData()['data'];
+        return $api->getData();
     }
 
     /**

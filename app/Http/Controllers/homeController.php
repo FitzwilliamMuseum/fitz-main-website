@@ -12,9 +12,9 @@ use App\Models\NewsArticles;
 use App\Models\ResearchProjects;
 use App\Models\Shopify;
 use App\Models\ThingsToDo;
+use App\Models\HomePageBanners;
 use Illuminate\Contracts\View\View;
 use Psr\SimpleCache\InvalidArgumentException;
-
 
 class homeController extends Controller
 {
@@ -24,22 +24,19 @@ class homeController extends Controller
      */
     public function index(): View
     {
-        $settings = HomePage::find();
-        $carousel = Carousels::findBySection('home');
-        $galleries = Galleries::list(3, '?');
-        $exhibitions = Exhibitions::listHome('current', 'tessitura_string', 3);
-        $news = NewsArticles::feature();
-        $research = ResearchProjects::listSimple('?', 3);
-        $fundraising = FundRaising::list(4);
-        $objects = Highlights::homeList();
-        $things = ThingsToDo::list();
-        $shopify = Shopify::list();
-
-        return view('home.index', compact(
-            'carousel', 'news', 'research',
-            'objects', 'things', 'fundraising',
-            'shopify', 'galleries',
-            'exhibitions', 'settings'
-        ));
+        return view('home.index', [
+                'carousel' => Carousels::findBySection('home'),
+                'news' => NewsArticles::feature(),
+                'research' => ResearchProjects::listSimple('?', 3),
+                'objects' => Highlights::homeList(),
+                'things' => ThingsToDo::list(),
+                'fundraising' => FundRaising::list(4),
+                'shopify' => Shopify::list(),
+                'galleries' => Galleries::list(3, '?'),
+                'exhibitions' => Exhibitions::listHome('current', 'tessitura_string', 3),
+                'settings' => HomePage::find(),
+                'banners' => HomePageBanners::getBanner()
+            ]
+        );
     }
 }

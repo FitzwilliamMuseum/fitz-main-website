@@ -29,8 +29,9 @@ class galleriesController extends Controller
         $galleries = Galleries::find($slug);
         if (empty($galleries['data'])) {
             return response()->view('errors.404', [], 404);
+        } else {
+            return view('galleries.gallery', ['gallery' => Collect($galleries['data'])->first()]);
         }
-        return view('galleries.gallery', compact('galleries'));
     }
 
     /**

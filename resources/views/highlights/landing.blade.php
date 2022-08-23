@@ -5,7 +5,6 @@
 @section('description','A search page for our highlight objects')
 @section('keywords', 'search,highlights, objects')
 @section('collection-parallax', env('CONTENT_STORE') . 'large_PD_8_1979_1_201709.jpg')
-
 @include('includes.structure.collections-search-form')
 @include('includes.structure.theme-carousel')
 @include('includes.structure.period-carousel')

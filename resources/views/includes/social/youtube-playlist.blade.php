@@ -1,3 +1,4 @@
+@dd($project)
 @if($project['youtube_playlist_id'])
 <div class="container">
   <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">

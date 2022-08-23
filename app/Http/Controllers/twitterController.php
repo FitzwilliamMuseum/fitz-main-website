@@ -60,7 +60,6 @@ class twitterController extends Controller
             }
             $documents[] = $doc;
         }
-        dd($documents);
         $update->addDocuments($documents);
         $update->addCommit();
         return $client->update($update);

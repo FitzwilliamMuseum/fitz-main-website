@@ -14,33 +14,36 @@ class collectionsController extends Controller
     /**
      * @return View
      */
-  public function index(): View
-  {
-    $pages = Stubs::getLandingBySlug('about-us', 'collections');
-    $collections = Collections::list();
-    return view('collections.index', compact('collections', 'pages'));
-  }
+    public function index(): View
+    {
+        $pages = Stubs::getLandingBySlug('about-us', 'collections');
+        $collections = Collections::list();
+        return view('collections.index', compact('collections', 'pages'));
+    }
 
     /**
      * @param string $slug
      * @return View|Response
      */
-  public function details(string $slug): View|Response
-  {
-    $collection = Collections::find($slug);
-    if(empty($collection['data'])){
-      return response()->view('errors.404',[],404);
+    public function details(string $slug): View|Response
+    {
+        $collection = Collections::find($slug);
+        if(empty($collection['data'])) {
+            return response()->view('errors.404', [], 404);
+        } else {
+            return view('collections.details', [
+                'collection' => Collect($collection['data'])->first()
+            ]);
+        }
     }
-    return view('collections.details', compact('collection'));
-  }
 
     /**
      * @param string $prirefs
      * @return array
      */
-  public static function getObjects(string $prirefs): array
-  {
-    return CIIM::findByPriRefs($prirefs);
-  }
+    public static function getObjects(string $prirefs): array
+    {
+        return CIIM::findByPriRefs($prirefs);
+    }
 
 }
