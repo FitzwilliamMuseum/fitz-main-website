@@ -8,16 +8,16 @@
 @section('content')
     <div class="row">
         <x-visit-us-static-card
-            :image="'https://content.fitz.ms/fitz-website/assets/C.7-1986_201810_adn21_dc1.jpg?key=exhibition'"
-            :alt="'Magdalene Odundo vessel'"
+            :image="$exhibition['hero_image']['data']['thumbnails'][13]['url']"
+            :alt="$exhibition['hero_image_alt_text']"
             :route="'exhibitions'"
             :params="[]"
             :title="'Exhibitions'"
             :colWidth="'3'"></x-visit-us-static-card>
 
         <x-visit-us-static-card
-            :image="'https://content.fitz.ms/fitz-website/assets/Women%20makers%20and%20muses.jpg?key=exhibition'"
-            :alt="'A highlight image for Gallery 1: British and European Art, 19th–20th Century'"
+            :image="$display['hero_image']['data']['thumbnails'][13]['url']"
+            :alt="$display['hero_image_alt_text']"
             :route="'exhibitions'"
             :params="[]"
             :title="'New Displays'"

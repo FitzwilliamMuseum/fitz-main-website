@@ -8,6 +8,9 @@ use App\Models\FindMoreLikeThis;
 use App\Models\FloorPlans;
 use App\Models\Transport;
 use App\Models\Faqs;
+use App\Models\Galleries;
+use App\Models\Exhibitions;
+use App\Models\HomePageBanner;
 use App\Models\Stubs;
 use App\Models\VisitUsComponents;
 
@@ -27,7 +30,11 @@ class visitController extends Controller
                 'floors' => FloorPlans::list(),
                 'corona' => CoronaVirusNotes::list(),
                 'transport' => Transport::list(),
-                'measures' => VisitUsComponents::find(2)
+                'measures' => VisitUsComponents::find(2),
+                'exhibition' => Exhibitions::tileVisit('current', 'tessitura_string', 1),
+                'display' => Exhibitions::tileDisplay('current',  1),
+//            'gallery' => ,
+//            'events' => ,
             ]
         );
     }
@@ -41,7 +48,8 @@ class visitController extends Controller
             'visiting' => Faqs::list('visit'),
             'hse' => Faqs::list('hse'),
             'booking' => Faqs::list('booking'),
-            'records' => FindMoreLikeThis::find('frequently-asked-questions', 'pages')
+            'records' => FindMoreLikeThis::find('frequently-asked-questions', 'pages'),
+
         ]);
     }
 }

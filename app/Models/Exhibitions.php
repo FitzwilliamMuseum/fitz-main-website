@@ -79,6 +79,48 @@ class Exhibitions extends Model
      * @param int $limit
      * @return array
      */
+    public static function tileVisit(string $status = 'current', string $sort = '-ticketed', int $limit = 1): array
+    {
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => 'hero_image_alt_text,hero_image.*.*.*.*',
+                'filter[featured_home][eq]' => 'yes',
+                'meta' => '*',
+                'sort' => $sort,
+                'limit' => $limit
+            )
+        );
+        return Collect($api->getData()['data'])->first();
+    }
+
+    /**
+     * @param string $status
+     * @param int $limit
+     * @return array
+     */
+    public static function tileDisplay(string $status = 'current', int $limit = 1): array
+    {
+        $api = new DirectUs(
+            self::$table,
+            array(
+                'fields' => 'hero_image_alt_text,hero_image.*.*.*.*',
+                'filter[featured_home][eq]' => 'no',
+                'filter[exhibition_status][eq]' => $status,
+                'meta' => '*',
+                'sort' => '?',
+                'limit' => $limit
+            )
+        );
+        return Collect($api->getData()['data'])->first();
+    }
+
+    /**
+     * @param string $status
+     * @param string $sort
+     * @param int $limit
+     * @return array
+     */
     public static function archive(string $status = 'current', string $sort = '-ticketed', int $limit = 100): array
     {
         $api = new DirectUs(
