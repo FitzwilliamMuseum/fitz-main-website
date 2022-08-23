@@ -27,3 +27,5 @@
     </div>
 
 @endsection
+
+@include('includes.structure.related-pages')

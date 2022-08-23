@@ -2,7 +2,7 @@
 <script>
     pannellum.viewer('panorama', {
         "type": "equirectangular",
-        "panorama": "@yield('360_image')",
+        "panorama": "@yield('360_image_url')",
         "autoLoad": true
     });
 </script>

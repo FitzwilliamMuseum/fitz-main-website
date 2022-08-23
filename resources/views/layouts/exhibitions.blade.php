@@ -29,16 +29,10 @@
 @endif
 @include('includes.structure.open')
 
-@hasSection('360')
-    @include('includes.css.photosphere-css')
-@endif
-
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')
 </div>
-<div class="container mt-3">
     @yield('content')
-</div>
 @yield('ttn-actions')
 @yield('tnew-data')
 @yield('exhibitions-files')
