@@ -26,7 +26,7 @@
                         {{ $title }}
                     </a>
                 </h2>
-                @if($status === 'current' && $ticketed === true && !is_null($tessitura))
+                @if(in_array($status, array('current','future')) && $ticketed === true && !is_null($tessitura))
                     <p class="text-dark">Ticket and timed entry</p>
                     <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura }}">Book
                         now</a>
