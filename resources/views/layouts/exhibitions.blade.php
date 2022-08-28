@@ -38,6 +38,7 @@
 @yield('exhibitions-files')
 @yield('shopify')
 @yield('exhibitionCaseCards')
+@yield('exhibition-objects')
 @yield('exhibition-labels')
 @yield('exhibitionAudio')
 @yield('excarousel')
