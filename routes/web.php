@@ -47,7 +47,7 @@ Route::get('research/projects/', 'researchController@projects')->name('research-
 Route::get('research/projects/{slug}/', 'researchController@project')->name('research-project');
 Route::get('research/active-researchers', 'researchController@profiles')->name('research-profiles');
 Route::get('about-us/our-staff/profile/{slug}', 'researchController@profile')->name('research-profile');
-
+# Research Affiliates
 Route::get('research/affiliates/{slug}', 'researchController@affiliatedResearcher')->name('research-affiliate');
 Route::get('research/affiliates', 'researchController@affiliates')->name('research-affiliates');
 
