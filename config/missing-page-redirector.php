@@ -480,5 +480,7 @@ return [
         'about-us/departments/manuscripts-and-printed-books' => '/about-us/departments/curatorial',
         'about-us/departments/paintings-drawings-and-prints' => '/about-us/departments/curatorial',
         'about-us/departments/research' => '/about-us/departments/curatorial',
+        # Redirects August 2022
+        'inspire2020' => 'https://inspire2020.fitzmuseum.cam.ac.uk',
     ],
 ];
