@@ -1,20 +1,20 @@
 <div class="col-md-4 mb-3">
     <div class="card card-fitz h-100">
-        @if(empty($artist['image']))
-        <a href="{{ route('exhibition.ttn.artist', $artist['slug']) }}">
+        @if(empty($artists['image']))
+        <a href="{{ route('exhibition.ttn.artist', $artists['slug']) }}">
                 <img class="card-img-top"
                      src="{{ env('MISSING_IMAGE_URL') }}"
-                     alt="A stand in image for {{ $artist['display_name'] }}"
+                     alt="A stand in image for {{ $artists['display_name'] }}"
                      loading="lazy"
                 />
             </a>
         @else
-            <a href="{{ route('exhibition.ttn.artist', $artist['slug']) }}">
+            <a href="{{ route('exhibition.ttn.artist', $artists['slug']) }}">
                 <img class="card-img-top"
-                     src="{{ $artist['image']['data']['thumbnails'][13]['url'] }}"
-                     alt="{{ $artist['display_name'] }}"
-                     width="{{ $artist['image']['data']['thumbnails'][13]['width'] }}"
-                     height="{{ $artist['image']['data']['thumbnails'][13]['height'] }}"
+                     src="{{ $artists['image']['data']['thumbnails'][13]['url'] }}"
+                     alt="{{ $artists['display_name'] }}"
+                     width="{{ $artists['image']['data']['thumbnails'][13]['width'] }}"
+                     height="{{ $artists['image']['data']['thumbnails'][13]['height'] }}"
                      loading="lazy"
                 />
             </a>
@@ -22,11 +22,11 @@
         <div class="card-body h-100">
             <div class="contents-label mb-3">
                 <h2>
-                    <a href="{{ route('exhibition.ttn.artist', $artist['slug']) }}" class="stretched-link">
-                        {{ $artist['display_name'] }}
+                    <a href="{{ route('exhibition.ttn.artist', $artists['slug']) }}" class="stretched-link">
+                        {{ $artists['display_name'] }}
                     </a>
                 </h2>
-                <p class="text-info">{{ $artist['year_of_birth'] }} -{{ $artist['year_of_death'] }}</p>
+                <p class="text-info">{{ $artists['year_of_birth'] }} -{{ $artists['year_of_death'] }}</p>
             </div>
         </div>
     </div>

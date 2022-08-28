@@ -5,7 +5,7 @@
             <div class="plyr">
                 <div class="ratio audio-player">
                     <audio id="player" controls>
-                        <source src="{{ $record['audio_guide']['data']['full_url'] }}" type="audio/aac">
+                        <source src="{{ $pharos['audio_guide']['data']['full_url'] }}" type="audio/aac">
                     </audio>
                 </div>
             </div>

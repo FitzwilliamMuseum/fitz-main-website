@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                @markdown($look['look_answers'])
+                @markdown($ltd['look_answers'])
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>

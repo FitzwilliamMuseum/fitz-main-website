@@ -41,7 +41,7 @@
 @yield('exhibition-labels')
 @yield('exhibitionAudio')
 @yield('excarousel')
-
+@yield('youtube')
 @yield('curators')
 @yield('research-funders')
 @yield('current')

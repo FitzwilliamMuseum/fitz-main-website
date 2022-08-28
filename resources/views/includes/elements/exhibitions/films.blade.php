@@ -1,10 +1,8 @@
 @section('youtube')
+    <div class="container pt-3">
     @if(isset($exhibition['youtube_id']) && $exhibition['youtube_id']!= '' )
-        @php
-            $type = match($exhibition['type']){ 'display'=>'Temporary Display', default => 'Exhibition'}
-        @endphp
         <h3>
-            {{ $type }} films
+            Explore our films
         </h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
             <div class="ratio ratio-16x9">
@@ -29,7 +27,7 @@
 
     @if(isset($exhibition['youtube_playlist_id']))
         <h3>
-            {{ $type }} films - a playlist
+            Explore our films - a playlist
         </h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
             <div class="ratio ratio-16x9">
@@ -39,4 +37,5 @@
             </div>
         </div>
     @endif
+    </div>
 @endsection
