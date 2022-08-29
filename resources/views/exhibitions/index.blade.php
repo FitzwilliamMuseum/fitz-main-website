@@ -7,6 +7,10 @@
 @section('hero_image_title', $page['hero_image_alt_text'])
 @endforeach
 
+@section('banner')
+    <x-home-page-banner :banners="$banners"></x-home-page-banner>
+@endSection
+
 @section('current')
     <div class="container-fluid py-3 bg-gdbo">
         <div class="container">
