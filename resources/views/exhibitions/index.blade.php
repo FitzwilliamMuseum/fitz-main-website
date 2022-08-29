@@ -1,10 +1,10 @@
 @extends('layouts.exhibitions')
 @foreach($pages['data'] as $page)
     @section('title', $page['title'])
-@section('description', $page['meta_description'])
-@section('keywords', $page['meta_keywords'])
-@section('hero_image', $page['hero_image']['data']['url'])
-@section('hero_image_title', $page['hero_image_alt_text'])
+    @section('description', $page['meta_description'])
+    @section('keywords', $page['meta_keywords'])
+    @section('hero_image', $page['hero_image']['data']['url'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
 @endforeach
 
 @section('banner')
@@ -15,7 +15,6 @@
     <div class="container-fluid py-3 bg-gdbo">
         <div class="container">
             @if(!empty($current['data']))
-
 
                 <h3>Our current exhibitions</h3>
                 <div class="row">
@@ -58,31 +57,31 @@
     </div>
 @endsection
 @if(!empty($future['data'] ))
-@section('future')
-    <div class="container-fluid py-3 bg-grey">
+    @section('future')
+        <div class="container-fluid py-3 bg-grey">
 
-        <div class="container">
-            <h3>Our forthcoming exhibitions and displays</h3>
-            <div class="row">
-                @foreach($future['data'] as $future)
+            <div class="container">
+                <h3>Our forthcoming exhibitions and displays</h3>
+                <div class="row">
+                    @foreach($future['data'] as $future)
 
-                    <x-exhibition-card
-                        :altTag="$future['hero_image_alt_text']"
-                        :title="$future['exhibition_title']"
-                        :image="$future['hero_image']"
-                        :route="'exhibition'"
-                        :params="[$future['slug']]"
-                        :startDate="$future['exhibition_start_date']"
-                        :endDate="$future['exhibition_end_date']"
-                        :status="'future'"
-                        :ticketed="$future['ticketed']"
-                        :tessitura="$future['tessitura_string']"
-                        :copyright="$future['copyright_text']"></x-exhibition-card>
-                @endforeach
+                        <x-exhibition-card
+                            :altTag="$future['hero_image_alt_text']"
+                            :title="$future['exhibition_title']"
+                            :image="$future['hero_image']"
+                            :route="'exhibition'"
+                            :params="[$future['slug']]"
+                            :startDate="$future['exhibition_start_date']"
+                            :endDate="$future['exhibition_end_date']"
+                            :status="'future'"
+                            :ticketed="$future['ticketed']"
+                            :tessitura="$future['tessitura_string']"
+                            :copyright="$future['copyright_text']"></x-exhibition-card>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
 @endif
 
 @section('archive')

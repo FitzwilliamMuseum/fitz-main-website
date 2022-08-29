@@ -15,19 +15,17 @@
 
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
-@if(
-  (Request::is('visit-us/exhibitions/hockneys-eye-the-art-and-technology-of-depiction')
-  ||
-  Request::is('visit-us/exhibitions')
-  ))
-@yield('banner')
+@hasSection('banner')
+    @yield('banner')
+@else
+    @include('includes.structure.head')
 @endif
 @include('includes.structure.open')
 
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')
 </div>
-    @yield('content')
+@yield('content')
 @yield('ttn-actions')
 @yield('tnew-data')
 @yield('exhibitions-files')
