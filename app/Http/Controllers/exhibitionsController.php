@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomePageBanners;
 use App\Models\Shopify;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\View\View;
@@ -55,9 +56,11 @@ class exhibitionsController extends Controller
         $displays = Exhibitions::list('current', '-ticketed', 'display');
         $future = Exhibitions::listFuture();
         $archive = Exhibitions::archive('archived', '-exhibition_end_date', 3);
+        $banners =  HomePageBanners::getBanner();
+
         return view('exhibitions.index', compact(
             'current', 'pages', 'archive',
-            'future', 'displays'
+            'future', 'displays', 'banners'
         ));
     }
 
