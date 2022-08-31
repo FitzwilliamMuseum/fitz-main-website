@@ -14,18 +14,23 @@ class Galleries extends Model
     /**
      * @param int $limit
      * @param string $sort
+     * @param string|null $status
      * @return array
      */
-    public static function list(int $limit = 100, string $sort = 'id'): array
+    public static function list(int $limit = 100, string $sort = 'id', string $status = null): array
     {
+        $args = array(
+            'fields' => '*.*.*.*',
+            'meta' => '*',
+            'limit' => $limit,
+            'sort' => $sort,
+        );
+        if(!is_null($status)) {
+            $args['filter[gallery_status][in]'] = $status;
+        }
         $api = new DirectUs(
             self::$table,
-            array(
-                'fields' => '*.*.*.*',
-                'meta' => '*',
-                'limit' => $limit,
-                'sort' => $sort
-            )
+            $args
         );
         return $api->getData();
     }
