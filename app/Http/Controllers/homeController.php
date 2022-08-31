@@ -32,7 +32,7 @@ class homeController extends Controller
                 'things' => ThingsToDo::list(),
                 'fundraising' => FundRaising::list(4),
                 'shopify' => Shopify::list(),
-                'galleries' => Galleries::list(3, '?'),
+                'galleries' => Galleries::list(3, '?', 'Open'),
                 'exhibitions' => Exhibitions::listHome('current', 'tessitura_string', 3),
                 'settings' => HomePage::find(),
                 'banners' => HomePageBanners::getBanner()
