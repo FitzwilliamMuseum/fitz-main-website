@@ -482,5 +482,6 @@ return [
         'about-us/departments/research' => '/about-us/departments/curatorial',
         # Redirects August 2022
         'inspire2020' => 'https://inspire2020.fitzmuseum.cam.ac.uk',
+        'visit-us/exhibitions/defaced' => '/visit-us/exhibitions/defaced-money-conflict-protest'
     ],
 ];
