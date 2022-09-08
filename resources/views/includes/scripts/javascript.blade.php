@@ -29,3 +29,10 @@
     @mapscripts
     @include('includes.scripts.mapjs')
 @endif
+
+
+
+<script>
+    var modalButton = document.getElementById('launchEmergencyModalButton');
+    modalButton.click();
+</script>
