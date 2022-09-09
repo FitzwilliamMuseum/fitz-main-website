@@ -31,8 +31,13 @@
 @endif
 
 
-
+{{--
+    
+    @TODO: Modify this code so that it works by launching the modal 
+    programmatically rather than by triggering a click event on a button
+    
 <script>
     var modalButton = document.getElementById('launchEmergencyModalButton');
     modalButton.click();
 </script>
+--}}
