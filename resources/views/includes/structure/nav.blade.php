@@ -4,8 +4,9 @@
     ** please note that there is code in:
     **
     ** resources/views/includes/scripts/javascript.blade.php
+    ** resources/js/app.js
     **
-    ** which also needs uncommenting
+    ** which also needs uncommenting for this to work
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="launchEmergencyModalButton" aria-hidden="true" tabindex="-1" style="border: 0; height: 0px; overflow: hidden; padding: 0; width: 0px;">
