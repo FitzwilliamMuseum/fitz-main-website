@@ -22,8 +22,6 @@
             @include('includes.structure.breadcrumb')
         </div>
 
-        @include('includes.elements.book')
-
         <div class="container-fluid py-3 bg-dark">
             @yield('content')
         </div>
