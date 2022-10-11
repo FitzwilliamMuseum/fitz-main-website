@@ -29,6 +29,11 @@ Data comes from various systems and API endpoints.
 
 In production, we use REDIS. Locally use File based caching unless you want to install REDIS.
 
+# Deployment 
+For deployment information please view the Fitzwilliam Docs in the section  
+
+how-to-guides/deploying-code/from-github/
+
 # installation
 
 1. Install php 8.1 into your environment
