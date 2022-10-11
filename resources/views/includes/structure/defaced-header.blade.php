@@ -4,10 +4,10 @@
             <div class="col-md-12 px-0">
                 <a href="{{ route('exhibition',['defaced']) }}" title="Exhibition details">
                     <img
-                        src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/2657_Fitzwilliam_Defaced_WebBanner_Artwork.jpg"
+                        src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/2657_Fitzwilliam_Defaced_WebBanner_Artwork_cropped.jpeg"
                         class="img-fluid temporary-banner-image"
                         alt=""
-                        height="1000"
+                        height="700"
                         width="2000"
                     />
                 </a>
@@ -35,7 +35,6 @@
                 max-width: none;
                 margin-left: -100%;
                 margin-right: -100%;
-                margin-top: -40%;
                 object-fit: cover;
                 width: 300%;
             }
