@@ -44,7 +44,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.6",
-        "@xmldom/xmldom": "^0.8.2",
+        "@xmldom/xmldom": "^0.8.3",
         "autoprefixer": "^10.4.8",
         "clean-css": "^5.3.1",
         "leaflet-iiif": "^3.0.0",
