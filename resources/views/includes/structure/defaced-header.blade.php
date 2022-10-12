@@ -1,5 +1,5 @@
 <div class="container-fluid defaced_top_banner">
-    <div class="container-fluid mt-5 defaced_header">
+    <div class="container-fluid defaced_header">
         <div class="row d-flex h-100 defaced_sub">
             <div class="col-md-12 px-0">
                 <a href="{{ route('exhibition',['defaced']) }}" title="Exhibition details">
@@ -25,6 +25,17 @@
 </div>
 
 <style>
+    {{--
+    We have to override the margin-top here as there isn't a utility class
+    larger than mt-5, and the client was complaining of the global header
+    overlapping the new hero that we added
+
+    @TODO: We need to implement a long term solution to this issue
+    --}}
+    .defaced_header {
+        margin-top: 84px !important;
+    }
+
     .temporary-banner-image {
         width: 100%;
     }
@@ -33,10 +44,10 @@
         @media screen and (max-width: 900px) {
             .temporary-banner-image {
                 max-width: none;
-                margin-left: -100%;
-                margin-right: -100%;
+                margin-left: -40%;
+                margin-right: -40%;
                 object-fit: cover;
-                width: 300%;
+                width: 180%;
             }
         }
     }
