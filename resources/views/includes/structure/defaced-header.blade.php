@@ -25,6 +25,13 @@
 </div>
 
 <style>
+    .defaced_top_banner {
+        /**
+         * Hide the overflowing image
+         */
+        overflow: hidden;
+    }
+
     {{--
     We have to override the margin-top here as there isn't a utility class
     larger than mt-5, and the client was complaining of the global header
