@@ -60,8 +60,8 @@
                     <img class="mx-auto d-block mb-4"
                          alt="Brewin Dolphin Logo"
                          width="300"
-                         height="42.35"
-                         src="{{ asset('/images/logos/brewin-dolphin.jpg')}}"
+                         height="150"
+                         src="{{ asset('/images/logos/brewin-2022.jpg')}}"
                          loading="lazy"/>
                 </a>
             </div>
