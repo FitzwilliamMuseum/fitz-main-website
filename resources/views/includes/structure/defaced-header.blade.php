@@ -3,13 +3,10 @@
         <div class="row d-flex h-100 defaced_sub">
             <div class="col-md-12 px-0">
                 <a href="{{ route('exhibition',['defaced']) }}" title="Exhibition details">
-                    <img
-                        src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/2657_Fitzwilliam_Defaced_WebBanner_Artwork_cropped.jpeg"
-                        class="img-fluid temporary-banner-image"
-                        alt=""
-                        height="700"
-                        width="2000"
-                    />
+                    <picture>
+                        <source srcset="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/2657_Fitzwilliam_Defaced_WebsiteDesktopBanner.jpg" media="(min-width: 800px)" />
+                        <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/2657_Fitzwilliam_Defaced_WebsiteMobileBanner.jpg" alt="" height="700" width="2000" class="img-fluid temporary-banner-image" />
+                    </picture>
                 </a>
             </div>
 
@@ -45,17 +42,5 @@
 
     .temporary-banner-image {
         width: 100%;
-    }
-
-    @supports (object-fit: cover) {
-        @media screen and (max-width: 900px) {
-            .temporary-banner-image {
-                max-width: none;
-                margin-left: -40%;
-                margin-right: -40%;
-                object-fit: cover;
-                width: 180%;
-            }
-        }
     }
 </style>
