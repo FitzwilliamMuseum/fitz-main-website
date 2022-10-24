@@ -26,6 +26,8 @@
         /**
          * Hide the overflowing image
          */
+        padding-right: 0;
+        padding-left: 0;
         overflow: hidden;
     }
 
