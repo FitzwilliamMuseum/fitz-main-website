@@ -10,5 +10,5 @@
     @endif
 @endsection
 @if(!empty($gallery['image_360_pano']))
-    @section('360_image', $gallery['image_360_pano']['data']['full_url'])
+    @section('360_image_url', $gallery['image_360_pano']['data']['full_url'])
 @endif
