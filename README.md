@@ -30,9 +30,7 @@ Data comes from various systems and API endpoints.
 In production, we use REDIS. Locally use File based caching unless you want to install REDIS.
 
 # Deployment 
-For deployment information please view the Fitzwilliam Docs in the section  
-
-how-to-guides/deploying-code/from-github/
+View [deployment information](https://github.com/FitzwilliamMuseum/fitz-web-docs/blob/main/docs/websites/main-website/how-to-guides/deploying-code/from-github.md) on the Fitzwilliam Docs.   
 
 # installation
 
