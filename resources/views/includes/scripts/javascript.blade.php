@@ -32,12 +32,20 @@
 
 
 {{--
-    
     @TODO: Modify this code so that it works by launching the modal 
     programmatically rather than by triggering a click event on a button
-    
+--}}
+
+<?php
+
+$date = new DateTime();
+$start = new DateTime('2022-12-23 17:00');
+$end = new DateTime('2023-01-02 17:00');
+
+if ($date > $start && $date < $end):
+?>
 <script>
     var modalButton = document.getElementById('launchEmergencyModalButton');
     modalButton.click();
 </script>
---}}
+<?php endif; ?>
