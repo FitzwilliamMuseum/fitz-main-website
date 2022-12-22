@@ -10,7 +10,7 @@
 --}}
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="launchEmergencyModalButton" aria-hidden="true" tabindex="-1" style="border: 0; height: 0px; overflow: hidden; padding: 0; width: 0px;">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="launchEmergencyModalButton" aria-hidden="true" tabindex="-1" style="display:none;">
   Launch static backdrop modal
 </button>
 
