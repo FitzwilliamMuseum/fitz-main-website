@@ -2,7 +2,7 @@
     <div class="container-fluid exhibitions_top_banner">
         <div class="container-fluid mt-5 exhibitions_header">
             <div class="row d-flex h-100 exhibitions_sub">
-                <div class="col-md-5 px-0">
+                <div class="col-md-6 px-0">
                     <a href="{{ route('exhibition', $banners['linked_exhibition'][0]['exhibitions_id']['slug'] ) }}"
                        title="Exhibition details for {{ $banners['linked_exhibition'][0]['exhibitions_id']['exhibition_title'] }}">
                         <img src="{{$banners['left_image']['data']['full_url']}}"
@@ -14,7 +14,7 @@
                     </a>
                 </div>
 
-                <div class="col-md-7 exhibitions__link">
+                <div class="col-md-6 exhibitions__link">
                     <a href="{{ route('exhibition', $banners['linked_exhibition'][0]['exhibitions_id']['slug']   ) }}"
                        title="Exhibition details for {{ $banners['linked_exhibition'][0]['exhibitions_id']['exhibition_title'] }}"
                        class="exhibitions__link__href"> </a>
