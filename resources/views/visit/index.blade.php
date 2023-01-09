@@ -7,13 +7,15 @@
 
 @section('content')
     <div class="row">
-        <x-visit-us-static-card
-            :image="$exhibition['hero_image']['data']['thumbnails'][13]['url']"
-            :alt="$exhibition['hero_image_alt_text']"
-            :route="'exhibitions'"
-            :params="[]"
-            :title="'Exhibitions'"
-            :colWidth="'3'"></x-visit-us-static-card>
+        <?php if(!empty($exhibition)): ?>
+            <x-visit-us-static-card
+                :image="$exhibition['hero_image']['data']['thumbnails'][13]['url']"
+                :alt="$exhibition['hero_image_alt_text']"
+                :route="'exhibitions'"
+                :params="[]"
+                :title="'Exhibitions'"
+                :colWidth="'3'"></x-visit-us-static-card>
+        <?php endif; ?>
 
         <x-visit-us-static-card
             :image="$display['hero_image']['data']['thumbnails'][13]['url']"

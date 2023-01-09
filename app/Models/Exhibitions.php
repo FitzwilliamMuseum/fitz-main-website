@@ -91,7 +91,19 @@ class Exhibitions extends Model
                 'limit' => $limit
             )
         );
-        return Collect($api->getData()['data'])->first();
+
+        $results = Collect($api->getData()['data'])->first();
+
+        /**
+         * The Directus query can return `null`, but this causes errors as this 
+         * method is set to return an array, and a `null` return value is
+         * erroneous 
+         */
+        if(empty($results)) {
+            $results = [];
+        }
+
+        return $results;
     }
 
     /**
