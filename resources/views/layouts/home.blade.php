@@ -14,6 +14,7 @@
 @include('includes.structure.nav')
 {{-- include temporary banner for the site --}}
 {{-- @include('includes.structure.defaced-header') --}}
+
 {{-- uncomment the following line once the above banner has been removed --}}
 @yield('banner')
 
