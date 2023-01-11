@@ -85,7 +85,7 @@
             text-decoration: none;
             color: white;
         }
-        
+
         /*
         .exhibitions__link {
             min-height: 400px;
@@ -106,6 +106,4 @@
         .btn-exhibitions:not(:disabled):not(.disabled):active,.btn-exhibitions:not(:disabled):not(.disabled).active,.show>.btn-exhibitions.dropdown-toggle{color:#fff;background-color:{{ $banners['button_colour'] }}border-color:{{ $banners['button_colour'] }}}
         .btn-exhibitions:not(:disabled):not(.disabled):active:focus,.btn-exhibitions:not(:disabled):not(.disabled).active:focus,.show>.btn-exhibitions.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
     </style>
-@else
-    @include('includes.structure.head')
 @endif
