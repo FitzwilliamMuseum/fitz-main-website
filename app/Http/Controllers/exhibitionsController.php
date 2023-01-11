@@ -106,7 +106,14 @@ class exhibitionsController extends Controller
             if (!empty($exhibition['tessitura_keyword_id'])) {
                 $events = TessituraPerformances::getExhibitionPerformances($exhibition['tessitura_keyword_id']);
             }
-            return view('exhibitions.details', compact('exhibition', 'records', 'adlib', 'podcasts', 'cases', 'products', 'events'));
+
+            $banners = null;
+
+            if(!empty($exhibition['exhibition_banner']['id'])) {
+                $banners = HomePageBanners::getBannerByID($exhibition['exhibition_banner']['id']);
+            }
+
+            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products', 'events'));
         }
     }
 
