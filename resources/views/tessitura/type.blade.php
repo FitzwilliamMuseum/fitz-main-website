@@ -12,7 +12,7 @@
 @section('collections')
 
     <div class="container">
-        <h3 class="text-center mb-2">Events in the next 60 days</h3>
+        <h3 class="text-center mb-2">Events in the next 120 days</h3>
         @php
             usort($productions, function($a, $b) {
               return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
