@@ -16,7 +16,11 @@
 {{-- @include('includes.structure.defaced-header') --}}
 
 {{-- uncomment the following line once the above banner has been removed --}}
-@yield('banner')
+@hasSection('banner')
+    @yield('banner')
+@else
+    @include('includes.structure.head')
+@endif
 
 @include('includes.structure.open')
 @include('includes.structure.exhibitions')
