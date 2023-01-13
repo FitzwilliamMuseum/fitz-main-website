@@ -86,6 +86,10 @@
             color: white;
         }
 
+        .exhibitions_header .img-fluid {
+            width: 100%;
+        }
+
         /*
         .exhibitions__link {
             min-height: 400px;
