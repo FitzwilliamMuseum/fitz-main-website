@@ -24,7 +24,7 @@ class EventsTessitura extends Model
         } else {
             $productions = (new self)->getTessituraApi();
             $productions->setPerformanceStartDate(Carbon::now());
-            $productions->setPerformanceEndDate(Carbon::now()->addDays(120));
+            $productions->setPerformanceEndDate(Carbon::now()->addDays(365));
             $productions->setFacilities('lectures');
             $productions = $productions->getPerformancesSearch();
             Cache::store('file')->put($keyTess, $productions, $expiresAt);

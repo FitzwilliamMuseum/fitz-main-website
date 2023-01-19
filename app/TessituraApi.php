@@ -123,7 +123,7 @@ class TessituraApi
 
         $payload = array(
             "PerformanceStartDate" => Carbon::now(),
-            "PerformanceEndDate" => Carbon::now()->addDays(120),
+            "PerformanceEndDate" => Carbon::now()->addDays(365),
             "BusinessUnitId" => 1,
             "FacilityIds" => implode(',', array_column($facilities, 'facility_id')),
             'KeywordIds' => $keywordID
