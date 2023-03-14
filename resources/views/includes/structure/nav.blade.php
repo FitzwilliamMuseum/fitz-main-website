@@ -1,5 +1,5 @@
-{{-- 
-    
+{{--
+
     ** emergency announcement modal can be uncommented if necessary
     ** please note that there is code in:
     **
@@ -15,7 +15,9 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background: rgba(0, 0, 0, 0.25);">
+<!-- Commented out as not in use, but the image is appearing in Social Media links -->
+
+<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background: rgba(0, 0, 0, 0.25);">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,7 +43,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <!-- Nav bars -->
