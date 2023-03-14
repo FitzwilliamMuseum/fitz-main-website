@@ -1,5 +1,5 @@
-{{-- 
-    
+{{--
+
     ** emergency announcement modal can be uncommented if necessary
     ** please note that there is code in:
     **
@@ -15,33 +15,35 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background: rgba(0, 0, 0, 0.25);">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Christmas and New Year at the Fitzwilliam Museum</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+<!-- Commented out as not in use, but the image is appearing in Social Media links -->
 
-        <img src="/images/logos/tree.png" alt="X-Mas 2022" style="float:right;max-width:200px;margin-left:20px;">
+{{--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background: rgba(0, 0, 0, 0.25);">--}}
+{{--  <div class="modal-dialog">--}}
+{{--    <div class="modal-content">--}}
+{{--      <div class="modal-header">--}}
+{{--        <h5 class="modal-title" id="staticBackdropLabel">Christmas and New Year at the Fitzwilliam Museum</h5>--}}
+{{--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--      </div>--}}
+{{--      <div class="modal-body">--}}
 
-        <p>The Museum will be open on the following days over the festive period: </p>
+{{--        <img src="/images/logos/tree.png" alt="X-Mas 2022" style="float:right;max-width:200px;margin-left:20px;">--}}
 
-        <ul style="margin:0 0 10px 10px;padding:0;">
-            <li>27 December (12:00 – 17:00)</li>
-            <li>28, 29, 30 December (10:00 – 17:00)</li>
-        </ul>
+{{--        <p>The Museum will be open on the following days over the festive period: </p>--}}
 
-        <p>Our regular opening hours will resume on Tuesday 3 January 2023</p>
+{{--        <ul style="margin:0 0 10px 10px;padding:0;">--}}
+{{--            <li>27 December (12:00 – 17:00)</li>--}}
+{{--            <li>28, 29, 30 December (10:00 – 17:00)</li>--}}
+{{--        </ul>--}}
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+{{--        <p>Our regular opening hours will resume on Tuesday 3 January 2023</p>--}}
+
+{{--      </div>--}}
+{{--      <div class="modal-footer">--}}
+{{--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
+{{--      </div>--}}
+{{--    </div>--}}
+{{--  </div>--}}
+{{--</div>--}}
 
 
 <!-- Nav bars -->
