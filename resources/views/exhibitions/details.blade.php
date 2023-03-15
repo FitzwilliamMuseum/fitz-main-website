@@ -8,6 +8,7 @@
         <x-home-page-banner :banners="$banners"></x-home-page-banner>
     @endSection
     @section('hero_image_title', $exhibition['hero_image_alt_text'])
+    @section('hero_image', $exhibition['hero_image']['data']['url'])
 @else
     @section('hero_image', $exhibition['hero_image']['data']['url'])
     @section('hero_image_title', $exhibition['hero_image_alt_text'])
