@@ -1,21 +1,22 @@
 @section('content')
     <div class="container mt-3">
 
-        @isset($exhibition['tessitura_string'])
-            @if(!Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast() && !Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast())
+        @if(isset($exhibition['ticketed']) && $exhibition['ticketed'] == true && isset($exhibition['tessitura_string']))
+            @if(!Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast())
                 @include('includes.structure.tessitura')
             @endif
-        @endisset
-        @isset($exhibition['exhibition_end_date'])
+        @endif
+        @if(isset($exhibition['exhibition_end_date']))
             @if(Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast())
                 @include('includes.structure.expired')
             @endif
-        @endisset
+        @endif
         @if($exhibition['tessitura_string'] === NULL)
-            @if(!Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast() && !Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast() && $exhibition['exhibition_status'] === 'current')
+            @if(!Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast() && $exhibition['exhibition_status'] === 'current')
                 @include('includes.structure.general')
             @endif
-        @endisset
+        @endif
+
         @if(isset($exhibition['exhibition_narrative']) || isset($exhibition['exhibition_abstract']))
             <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
                 @if(isset($exhibition['exhibition_narrative']))
