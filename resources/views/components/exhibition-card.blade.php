@@ -30,8 +30,8 @@
                     <p class="text-dark">Ticket and timed entry</p>
                     <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura }}">Book
                         now</a>
-                @elseif($status === 'current')
-                    <p class="text-dark">Included in General admission</p>
+                {{-- @elseif($status === 'current')
+                    <p class="text-dark">Included in General admission</p> --}}
                 @endif
                 <p class="text-dark">
                     {{  Carbon\Carbon::parse($startDate)->format('l dS F Y') }} to
