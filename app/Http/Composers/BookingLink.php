@@ -17,7 +17,13 @@ class BookingLink
      */
     public function __construct()
     {
-        $this->uri = VisitUsComponents::find(4)['data'][0]['text'];
+        $this->uri = null;
+
+        $entryData = VisitUsComponents::find(4);
+
+        if(!empty($entryData['data'][0]['text'])) {
+            $this->uri = $entryData['data'][0]['text'];
+        }
     }
 
     /**

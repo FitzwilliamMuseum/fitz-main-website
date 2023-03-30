@@ -15,12 +15,15 @@
 
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
+
 @hasSection('banner')
     @yield('banner')
+    @include('includes.structure.exhibition-title')
 @else
     @include('includes.structure.head')
 @endif
-@include('includes.structure.open')
+
+    @include('includes.structure.open')
 
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')

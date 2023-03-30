@@ -1,5 +1,5 @@
-{{-- 
-    
+{{--
+
     ** emergency announcement modal can be uncommented if necessary
     ** please note that there is code in:
     **
@@ -7,29 +7,43 @@
     ** resources/js/app.js
     **
     ** which also needs uncommenting for this to work
+--}}
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="launchEmergencyModalButton" aria-hidden="true" tabindex="-1" style="border: 0; height: 0px; overflow: hidden; padding: 0; width: 0px;">
-  Launch static backdrop modal
-</button>
+{{--<!-- Button trigger modal -->--}}
+{{--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="launchEmergencyModalButton" aria-hidden="true" tabindex="-1" style="display:none;">--}}
+{{--  Launch static backdrop modal--}}
+{{--</button>--}}
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background: rgba(0, 0, 0, 0.25);">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Closed until Saturday 10 September</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      The Fitzwilliam is deeply saddened to hear of the death of Her Majesty The Queen. We are closed until Saturday 10 September as a mark of respect.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> --}}
+{{--<!-- Modal -->--}}
+{{--<!-- Commented out as not in use, but the image is appearing in Social Media links -->--}}
+
+{{--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background: rgba(0, 0, 0, 0.25);">--}}
+{{--  <div class="modal-dialog">--}}
+{{--    <div class="modal-content">--}}
+{{--      <div class="modal-header">--}}
+{{--        <h5 class="modal-title" id="staticBackdropLabel">Christmas and New Year at the Fitzwilliam Museum</h5>--}}
+{{--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--      </div>--}}
+{{--      <div class="modal-body">--}}
+
+{{--        <img src="/images/logos/tree.png" alt="X-Mas 2022" style="float:right;max-width:200px;margin-left:20px;">--}}
+
+{{--        <p>The Museum will be open on the following days over the festive period: </p>--}}
+
+{{--        <ul style="margin:0 0 10px 10px;padding:0;">--}}
+{{--            <li>27 December (12:00 – 17:00)</li>--}}
+{{--            <li>28, 29, 30 December (10:00 – 17:00)</li>--}}
+{{--        </ul>--}}
+
+{{--        <p>Our regular opening hours will resume on Tuesday 3 January 2023</p>--}}
+
+{{--      </div>--}}
+{{--      <div class="modal-footer">--}}
+{{--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
+{{--      </div>--}}
+{{--    </div>--}}
+{{--  </div>--}}
+{{--</div>--}}
 
 
 <!-- Nav bars -->

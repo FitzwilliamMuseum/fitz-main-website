@@ -2,22 +2,24 @@
     <div class="container-fluid exhibitions_top_banner">
         <div class="container-fluid mt-5 exhibitions_header">
             <div class="row d-flex h-100 exhibitions_sub">
-                <div class="col-md-5 px-0">
+                <div class="col-md-6 px-0">
                     <a href="{{ route('exhibition', $banners['linked_exhibition'][0]['exhibitions_id']['slug'] ) }}"
                        title="Exhibition details for {{ $banners['linked_exhibition'][0]['exhibitions_id']['exhibition_title'] }}">
                         <img src="{{$banners['left_image']['data']['full_url']}}"
                              class="img-fluid"
                              alt="{{ $banners['left_image_alt_text'] }}"
-                             height="1200"
+                             height="1000"
                              width="1000"
                         />
                     </a>
                 </div>
 
-                <div class="col-md-7 exhibitions__link">
+                <div class="col-md-6 px-0 exhibitions__link">
                     <a href="{{ route('exhibition', $banners['linked_exhibition'][0]['exhibitions_id']['slug']   ) }}"
                        title="Exhibition details for {{ $banners['linked_exhibition'][0]['exhibitions_id']['exhibition_title'] }}"
-                       class="exhibitions__link__href"> </a>
+                       class="exhibitions__link__href">
+                        <img src="{{ $banners['right_image']['data']['full_url'] }}" class="img-fluid" alt="" height="1000" width="1000" />
+                    </a>
                     <p class="text-center visually-hidden text-white py-3 exhibitions-title">{{$banners['exhibition_title']}}</p>
                     @if(isset($data['exhibition_subtitle']))
                         <p class="visually-hidden text-center text-white exhibitions-subtitle">{{$banners['exhibition_subtitle']}}</p>
@@ -83,16 +85,23 @@
             text-decoration: none;
             color: white;
         }
+
+        .exhibitions_header .img-fluid {
+            width: 100%;
+        }
+
+        /*
         .exhibitions__link {
             min-height: 400px;
             background: url('{{ $banners['right_image']['data']['full_url'] }}') no-repeat center;
             background-size: contain;
         }
+        */
 
         .exhibitions__link__href {
             display: block;
             height: 100%;
-            width:100%;
+            width: 100%;
         }
         .btn-exhibitions{color:#fff;background-color:{{ $banners['button_colour'] }};border-color:{{ $banners['button_colour'] }}}
         .btn-exhibitions:hover{color:#fff;background-color:{{ $banners['button_colour'] }};border-color:{{ $banners['button_colour'] }}}
@@ -101,6 +110,4 @@
         .btn-exhibitions:not(:disabled):not(.disabled):active,.btn-exhibitions:not(:disabled):not(.disabled).active,.show>.btn-exhibitions.dropdown-toggle{color:#fff;background-color:{{ $banners['button_colour'] }}border-color:{{ $banners['button_colour'] }}}
         .btn-exhibitions:not(:disabled):not(.disabled):active:focus,.btn-exhibitions:not(:disabled):not(.disabled).active:focus,.show>.btn-exhibitions.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
     </style>
-@else
-    @include('includes.structure.head')
 @endif

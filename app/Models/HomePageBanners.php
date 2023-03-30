@@ -21,6 +21,29 @@ class HomePageBanners
             $args
         );
         $banner = $api->getData();
+
+        if(!empty($banner['data'])) {
+            return Collect($banner['data'])->first();
+        } else {
+            return [];
+        }
+    }
+    /**
+     * @return array
+     */
+    public static function getBannerByID(int $id): array
+    {
+        $args = [
+            'filter[id][eq]' => $id,
+            'limit' => 1,
+            'fields' => '*.*.*.*',
+        ];
+        $api = new DirectUs(
+            'banner_images',
+            $args
+        );
+        $banner = $api->getData();
+
         if(!empty($banner['data'])) {
             return Collect($banner['data'])->first();
         } else {

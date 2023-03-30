@@ -2,8 +2,18 @@
 @section('keywords', $exhibition['meta_keywords'])
 @section('description', $exhibition['meta_description'])
 @section('title', $exhibition['exhibition_title'])
-@section('hero_image', $exhibition['hero_image']['data']['url'])
-@section('hero_image_title', $exhibition['hero_image_alt_text'])
+
+@if(!empty($banners))
+    @section('banner')
+        <x-home-page-banner :banners="$banners"></x-home-page-banner>
+    @endSection
+    @section('hero_image_title', $exhibition['hero_image_alt_text'])
+    @section('hero_image', $exhibition['hero_image']['data']['url'])
+@else
+    @section('hero_image', $exhibition['hero_image']['data']['url'])
+    @section('hero_image_title', $exhibition['hero_image_alt_text'])
+@endif
+
 
 @if($exhibition['slug'] === 'true-to-nature-open-air-painting-in-europe-1780-1870')
     @if (\Carbon\Carbon::now()->diffInHours('2022-04-28 00:00:01', false) <= 0)

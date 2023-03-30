@@ -51,25 +51,6 @@
     </div>
 </div>
 
-<!-- Sponsor -->
-<div class="container-fluid bg-white p-2 container-fluid ">
-    <div class="col-md-12 mx-auto">
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-2 col-sm-2">
-                <a href="https://www.brewin.co.uk/individuals/our-offices/cambridge">
-                    <img class="mx-auto d-block mb-4"
-                         alt="Brewin Dolphin Logo"
-                         width="300"
-                         height="150"
-                         src="{{ asset('/images/logos/brewin-2022.jpg')}}"
-                         loading="lazy"/>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <footer class="text-black bg-pastel">
     <div class="container-fluid pt-3">
         <div class="container">

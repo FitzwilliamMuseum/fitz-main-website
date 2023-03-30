@@ -116,9 +116,10 @@ class Stubs extends Model
                 'filter[landing_page][null]' => '',
                 'filter[section][eq]' => $section,
                 'filter[associate_with_landing_page][eq]' => '1',
-                'sort' => 'title'
+                'sort' => 'custom_order'
             )
         );
+
         return $api->getData();
     }
 
