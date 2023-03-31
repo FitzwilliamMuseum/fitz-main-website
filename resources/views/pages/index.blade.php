@@ -23,7 +23,13 @@
     @endif
 
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+
         @markdown($page['body'])
+
+        @if(Request::is('support-us/friends-of-the-fitzwilliam'))
+            @include('includes.elements.payment-options')
+        @endif
+        
     </div>
 
     @if($page['vimeo_id'])
