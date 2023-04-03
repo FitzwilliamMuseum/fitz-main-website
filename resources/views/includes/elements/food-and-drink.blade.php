@@ -16,7 +16,7 @@
         <div class="col-md-4">
             <img
                 src="https://content.fitz.ms/fitz-website/assets/islanders-promo-image-for-banner-738x738.jpg?key=directus-medium-crop"
-                class="card-img-top" width="369" height="369" alt="Human touch">
+                class="card-img-top" width="369" height="369" alt="">
         </div>
     </div>
 </div>
