@@ -1,28 +1,3 @@
-{{-- <div class="container">
-    <div class="card mb-3 col-md-12">
-        <div class="row no-gutters">
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h2 class="lead display-4">
-                        <span class="text-black">For Friends individual</span>
-                    </h2>
-                    <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=2" class="btn btn-info text-center">Credit card</a>
-                    <a href="https://fitz-tnew-test.tnhs.cloud/components/precart?exec=true&procedureId=54&contrib_type=2&is_dd=y
-                    " class="btn btn-info text-center">Direct Debit</a>
-                </div>
-                <div class="card-body">
-                    <h2 class="lead display-4">
-                        <span class="text-black">For Joint Friends</span>
-                    </h2>
-                    <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=3" class="btn btn-info text-center">Credit card</a>
-                    <a href="https://fitz-tnew-test.tnhs.cloud/components/precart?exec=true&procedureId=54&contrib_type=3&is_dd=y" class="btn btn-info text-center">Direct Debit</a>
-                </div>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-    </div>
-</div> --}}
-
 <div class="container mt-4 p-5">
     <div class="card mt-4 col-md-12">
         <div class="row mb-4 no-gutters">
