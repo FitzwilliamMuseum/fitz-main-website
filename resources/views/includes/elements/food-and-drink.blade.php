@@ -6,10 +6,13 @@
                     <span class="text-white">Islanders Specials</span>
                 </h2>
                 <p class="text-white mt-3">
-                    To celebrate the Islanders exhibition, the Courtyard Kitchen is serving 2 Mediterranean Specials in addition to the lunch menu. Ticket holders can receive 10% off these specials.
+                    To celebrate our current exhibition, 'Islanders: The Making of the Mediterranean', the Courtyard Kitchen is serving two Mediterranean specials in addition to the lunch menu.
+                </p>
+                <p class="text-white mt-3">
+                    'Islanders' ticket holders receive a 10% discount off the specials.
                 </p>
                 <a class="text-center btn btn-outline-light" href="https://www.fitzmuseum.cam.ac.uk/visit-us/exhibitions/islanders">
-                    View the Islanders Exhibition Information
+                    Book now for 'Islanders'
                 </a>
             </div>
         </div>
