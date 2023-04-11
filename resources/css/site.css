@@ -603,3 +603,41 @@ a.text-center.btn.btn-outline-light.btn__book {
 .card-img-top {
     height: 100% !important;
 }
+
+.p-heading {
+    font-weight: 500;
+}
+
+.p-container {
+    flex-direction: column-reverse;
+    padding: 40px;
+}
+
+.p-container--single {
+    color:#299942;
+}
+
+.p-container--joint {
+    color: #165181;
+    margin-bottom: 16px;
+}
+
+.p-image {
+    max-width: 30%;
+    margin: 0 auto;
+}
+
+.p-image--single {
+    filter: invert(47%) sepia(44%) saturate(738%) hue-rotate(82deg) brightness(93%) contrast(89%);
+}
+
+.p-image--joint {
+    filter: invert(25%) sepia(77%) saturate(564%) hue-rotate(165deg) brightness(95%) contrast(97%);
+}
+
+.btn-credit,
+.btn-direct {
+    padding: 18px 36px;
+    font-size: 1.15rem;
+}
+
