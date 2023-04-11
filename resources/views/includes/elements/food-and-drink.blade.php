@@ -9,12 +9,12 @@
                     To celebrate our current exhibition, 'Islanders: The Making of the Mediterranean', the newly refurbished Courtyard Kitchen is serving two Mediterranean specials in addition to the lunch menu:
                 </p>
                 <p class="text-white mt-3">
-                    <ul class="text-white mt-3">
-                        <li>Sardinian Minestrone</li>
-                        <li>Seasonal vegetables, fava beans, fregola pasta</li>
-                        <li>Lamb Souvlaki</li>
-                        <li>Greek salad, flatbread, coriander yoghurt</li>
-                </ul>
+                        Sardinian Minestrone<br>
+                        Seasonal vegetables, fava beans, fregola pasta
+                </p>
+                <p class="text-white mt-3">
+                    Lamb Souvlaki<br>
+                    Greek salad, flatbread, coriander yoghurt
                 </p>
                 <p class="text-white mt-3">
                     'Islanders' ticket holders receive a 10% discount off the specials.
