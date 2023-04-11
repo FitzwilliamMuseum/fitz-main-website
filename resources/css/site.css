@@ -641,3 +641,11 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-size: 1.15rem;
 }
 
+@media screen and (min-width: 993px) {
+    .btn-credit,
+    .btn-direct {
+        max-width: 85%;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
