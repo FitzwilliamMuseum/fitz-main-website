@@ -623,10 +623,14 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .p-image {
-    max-width: 30%;
     margin: 0 auto;
+    max-width: 30%;
 }
 
+/* 
+
+https://codepen.io/sosuke/pen/Pjoqqp - this tool is used generate filter values based on desired #hex value.
+*/
 .p-image--single {
     filter: invert(47%) sepia(44%) saturate(738%) hue-rotate(82deg) brightness(93%) contrast(89%);
 }
@@ -637,15 +641,15 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .btn-credit,
 .btn-direct {
-    padding: 18px 36px;
     font-size: 1.15rem;
+    padding: 18px 36px;
 }
 
 @media screen and (min-width: 993px) {
     .btn-credit,
     .btn-direct {
+        margin: 0 auto;
         max-width: 85%;
         width: 100%;
-        margin: 0 auto;
     }
 }
