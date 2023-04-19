@@ -43,7 +43,7 @@
         "websocket-extensions": ">=0.1.4"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.6",
+        "@popperjs/core": "^2.11.7",
         "@xmldom/xmldom": "^0.8.2",
         "autoprefixer": "^10.4.8",
         "clean-css": "^5.3.1",
