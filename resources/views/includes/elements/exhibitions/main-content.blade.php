@@ -11,11 +11,14 @@
                 @include('includes.structure.expired')
             @endif
         @endif
-        @if($exhibition['tessitura_string'] === NULL)
+        {{--
+         This was previously used during Covid when visitors had to book general admission
+
+         @if($exhibition['tessitura_string'] === NULL)
             @if(!Carbon\Carbon::parse($exhibition['exhibition_end_date'])->isPast() && $exhibition['exhibition_status'] === 'current')
                 @include('includes.structure.general')
             @endif
-        @endif
+        @endif --}}
 
         @if(isset($exhibition['exhibition_narrative']) || isset($exhibition['exhibition_abstract']))
             <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
