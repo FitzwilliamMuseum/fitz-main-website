@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\SolrSearch;
 use Illuminate\Support\Facades\Config;
 use Psr\SimpleCache\InvalidArgumentException;
 use Solarium\Client;
@@ -87,6 +88,10 @@ class MoreLikeThis {
      */
   public function getData(): array
   {
+      if (!SolrSearch::isSolrEnabled()) {
+          return [];
+      }
+
     $queryString = $this->getQuery();
     $key = md5($queryString . 'mlt' . $this->getLimit() . $this->getType());
     $expiresAt = now()->addMinutes(3600);

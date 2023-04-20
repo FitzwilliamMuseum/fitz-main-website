@@ -22,6 +22,10 @@ class Shopify extends Model
      */
     public static function list(): mixed
     {
+        if (!SolrSearch::isSolrEnabled()) {
+            return [];
+        }
+
         $expiresAt = Carbon::now()->addMinutes(3600);
         $key = md5('shopify-api-front');
         if (Cache::has($key)) {
