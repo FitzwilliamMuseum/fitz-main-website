@@ -76,6 +76,12 @@ the main network drive.
 nano .env
 ```
 
+### A few notes on env settings
+
+Set `CACHE_DRIVER` to `redis` or `file` depending on your environment.
+
+Set the `SOLR_ENABLED` flag to `true` or `false` based on whether Solr is supported in your environment.  
+
 ## Running a local copy 
 
 If you are running locally you can preview the website via: 
