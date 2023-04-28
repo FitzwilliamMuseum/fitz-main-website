@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-4">
             <img
-                src="https://content.fitz.ms/fitz-website/assets/islanders-specials-738x738.jpg?key=directus-medium-crop"
+                src="https://content.fitz.ms/fitz-website/assets/islanders-specials-738x738.jpg"
                 class="card-img-top" width="369" height="369" alt="">
         </div>
     </div>
