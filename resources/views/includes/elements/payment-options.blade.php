@@ -38,7 +38,7 @@
                 </figure>
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
-                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=4" class="btn btn-info btn-credit">Credit/Debit Card £450/yr</a>
+                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=4" class="btn btn-info btn-credit">Credit/Debit Card £450</a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                 </figure>
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
-                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=5" class="btn btn-info btn-hockney btn-direct">Credit/Debit Card £750/yr</a>
+                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=5" class="btn btn-info btn-hockney btn-direct">Credit/Debit Card £750</a>
             </div>
         </div>
 
