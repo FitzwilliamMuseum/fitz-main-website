@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Config;
 class SolrSearch extends Model
 {
     /**
+     * Return whether Solr is enabled for this installation
+     *
+     * @return bool
+     */
+     public static function isSolrEnabled(): bool
+     {
+         return Config::get('solarium.enabled');
+     }
+
+    /**
      * @param string $query
      * @param string $type
      * @return array

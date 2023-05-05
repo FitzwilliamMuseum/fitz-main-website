@@ -2,6 +2,10 @@
 
 This file documents code based changes to the front end framework.
 
+## 21.04.2023
+
+1. Added SOLR_ENABLED flag to enable/disable Solr on local environments 
+
 ## 27.05.2022
 
 1. Add lighthouse test via action

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ConservationAreas;
 use App\Models\ConservationBlog;
 use App\Models\Departments;
+use App\Models\SolrSearch;
 use App\Models\StaffProfiles;
 use App\Models\Stubs;
 use Illuminate\Http\Response;
@@ -97,6 +98,10 @@ class departmentsController extends Controller
      */
     public static function hkiblog(): mixed
     {
+        if (!SolrSearch::isSolrEnabled()) {
+            return [];
+        }
+
         $expiresAt = now()->addMinutes(3600);
         $key = md5('hki-blog-posts');
         if (Cache::has($key)) {
