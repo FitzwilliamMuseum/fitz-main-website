@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SolrSearch;
 use Illuminate\Support\Facades\Config;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -55,7 +56,9 @@ class searchController extends Controller
      */
     public function index(): View
     {
-        return view('search.index');
+        return view('search.index', [
+            'enabled' => SolrSearch::isSolrEnabled()
+        ]);
     }
 
     /** Get results for search
@@ -67,6 +70,14 @@ class searchController extends Controller
      */
     public function results(Request $request): View
     {
+        $enabled = SolrSearch::isSolrEnabled();
+
+        if (!$enabled) {
+            return view('search.results', [
+                'enabled' => false
+            ]);
+        }
+
         $this->validate($request, [
             'query' => 'required|max:200|min:3',
         ]);
@@ -96,7 +107,8 @@ class searchController extends Controller
         $records = $data->getDocuments();
         $paginate = new LengthAwarePaginator($records, $number, $perPage);
         $paginate->setPath($request->getBaseUrl() . '?query=' . $queryString);
-        return view('search.results', compact('records', 'number', 'paginate', 'queryString'));
+
+        return view('search.results', compact('enabled', 'records', 'number', 'paginate', 'queryString'));
     }
 
     /** Ping function for search

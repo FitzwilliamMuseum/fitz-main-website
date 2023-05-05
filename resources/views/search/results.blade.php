@@ -5,6 +5,9 @@
 @section('meta_description', "Search results for your query" )
 @section('meta_keywords', 'search,results,fitzwilliam,museum')
 @section('content')
+
+    @if ($enabled)
+
     @include('includes.elements.search-form')
     @include('includes.elements.search-results-head')
 
@@ -43,6 +46,14 @@
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <p>No results to display.</p>
         </div>
+    @endif
+
+    @else
+
+        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+            Search is not supported by this website
+        </div>
+
     @endif
 
 @endsection

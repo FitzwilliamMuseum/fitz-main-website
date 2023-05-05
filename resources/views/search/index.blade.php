@@ -8,6 +8,9 @@
 
 @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+
+        @if ($enabled)
+
         {{ Form::open(['url' => url('search/results'),'method' => 'GET']) }}
         <div class="row center-block">
             <div class="col-lg-6 center-block searchform">
@@ -32,5 +35,11 @@
             </div>
         @endif
         {!! Form::close() !!}
+
+        @else
+
+        Search is not supported by this website
+
+        @endif
     </div>
 @endsection

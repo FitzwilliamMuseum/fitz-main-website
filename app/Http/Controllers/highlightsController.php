@@ -9,6 +9,7 @@ use App\Models\HighlightPages;
 use App\Models\HighlightPeriods;
 use App\Models\Highlights;
 use App\Models\HighlightThemes;
+use App\Models\SolrSearch;
 use App\Models\Stubs;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
@@ -131,19 +132,26 @@ class highlightsController extends Controller
         $perPage = 24;
         $expiresAt = now()->addMinutes(3600);
         $from = ($request->get('page', 1) - 1) * $perPage;
-        if (Cache::has($key)) {
-            $data = Cache::store('file')->get($key);
+
+        if (!SolrSearch::isSolrEnabled()) {
+            $data = [];
+
         } else {
-            $configSolr = Config::get('solarium');
-            $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
-            $query = $client->createSelect();
-            $query->setQuery($queryString . ' contentType:pharos');
-            $query->setQueryDefaultOperator('AND');
-            $query->setStart($from);
-            $query->setRows($perPage);
-            $data = $client->select($query);
-            Cache::store('file')->put($key, $data, $expiresAt);
+            if (Cache::has($key)) {
+                $data = Cache::store('file')->get($key);
+            } else {
+                $configSolr = Config::get('solarium');
+                $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+                $query = $client->createSelect();
+                $query->setQuery($queryString . ' contentType:pharos');
+                $query->setQueryDefaultOperator('AND');
+                $query->setStart($from);
+                $query->setRows($perPage);
+                $data = $client->select($query);
+                Cache::store('file')->put($key, $data, $expiresAt);
+            }
         }
+
         $number = $data->getNumFound();
         $records = $data->getDocuments();
         $paginate = new LengthAwarePaginator($records, $number, $perPage);

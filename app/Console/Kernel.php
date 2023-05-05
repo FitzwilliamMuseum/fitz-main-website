@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Models\SolrSearch;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -23,6 +24,19 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected function schedule(Schedule $schedule)
+    {
+        if (SolrSearch::isSolrEnabled()) {
+            $this->solrTasks($schedule);
+        }
+    }
+
+    /**
+     * Scheduled console tasks to run for Solr
+     *
+     * @param Schedule $schedule
+     * @return void
+     */
+    public function solrTasks(Schedule $schedule)
     {
         # Import to search
         $schedule->call('App\Http\Controllers\solrImportController@staff')->cron('0 */5 * * *');
@@ -71,8 +85,6 @@ class Kernel extends ConsoleKernel
         $schedule->call('App\Http\Controllers\solrImportController@ttnLabels')->weekly();
         $schedule->call('App\Http\Controllers\solrImportController@ttnArtists')->weekly();
         $schedule->call('App\Http\Controllers\solrImportController@viewPoints')->weekly();
-
-
     }
 
     /**
