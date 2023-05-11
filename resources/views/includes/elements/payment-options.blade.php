@@ -2,7 +2,7 @@
     <div class="card mt-4 col-md-12">
 
         <div class="row mb-4 no-gutters">
-            <h3 class="lead p-heading p-heading--single">Friends individual</h3>
+            <h3 class="lead p-heading p-heading--single">Friends Individual</h3>
             <hr /> 
             <div class="col-md-4 border d-flex rounded text-center p-container p-container--single">
                 <figure class="fluid">
@@ -10,8 +10,8 @@
                 </figure>
          	</div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
-                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=2" class="btn btn-info btn-credit">Credit/Debit Card £30/yr</a>
-                <a href="https://tickets.museums.cam.ac.uk/components/precart?exec=true&procedureId=54&contrib_type=2&is_dd=Y" class="mt-3 btn btn-hockney btn-direct">Direct Debit £30/yr</a>
+                <a href="https://fitz-tnew-test.tnhs.cloud/donate/contribute1?ct=2" class="btn btn-info btn-credit">Credit/Debit Card £30/yr</a>
+                <a href="https://fitz-tnew-test.tnhs.cloud/components/precart?exec=true&procedureId=54&contrib_type=2&is_dd=y" class="mt-3 btn btn-hockney btn-direct">Direct Debit £30/yr</a>
             </div>
         </div>	
 
@@ -24,8 +24,8 @@
                 </figure>
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
-                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=3" class="btn btn-info btn-credit">Credit/Debit Card £48/yr</a>
-                <a href="https://tickets.museums.cam.ac.uk/components/precart?exec=true&procedureId=54&contrib_type=3&is_dd=y" class="mt-3 btn btn-hockney btn-direct">Direct Debit £48/yr</a>
+                <a href="https://fitz-tnew-test.tnhs.cloud/donate/contribute1?ct=3" class="btn btn-info btn-credit">Credit/Debit Card £48/yr</a>
+                <a href="https://fitz-tnew-test.tnhs.cloud/components/precart?exec=true&procedureId=54&contrib_type=3&is_dd=y" class="mt-3 btn btn-hockney btn-direct">Direct Debit £48/yr</a>
             </div>
         </div>
         
@@ -38,7 +38,7 @@
                 </figure>
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
-                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=4" class="btn btn-info btn-credit">Credit/Debit Card £450</a>
+                <a href="https://fitz-tnew-test.tnhs.cloud/donate/contribute1?ct=4" class="btn btn-info btn-credit">Credit/Debit Card £450</a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                 </figure>
             </div>
             <div class="col-md-8 d-flex flex-column justify-content-center">
-                <a href="https://tickets.museums.cam.ac.uk/donate/contribute1?ct=5" class="btn btn-info btn-hockney btn-direct">Credit/Debit Card £750</a>
+                <a href="https://fitz-tnew-test.tnhs.cloud/donate/contribute1?ct=5" class="btn btn-info btn-direct">Credit/Debit Card £750</a>
             </div>
         </div>
 
