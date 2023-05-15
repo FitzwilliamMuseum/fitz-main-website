@@ -45,7 +45,7 @@
 
 @include('includes.elements.exhibitions.sketchfab')
 
-@if($exhibition['slug'] === 'defaced-money-conflict-protest')
+@if($exhibition['slug'] === 'islanders')
     @include('includes.elements.exhibitions.shopify')
 @endif
 
