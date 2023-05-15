@@ -45,6 +45,10 @@
 
 @include('includes.elements.exhibitions.sketchfab')
 
+@if($exhibition['slug'] === 'defaced-money-conflict-protest')
+    @include('includes.elements.exhibitions.shopify')
+@endif
+
 @include('includes.elements.exhibitions.files')
 
 @include('includes.elements.exhibitions.thanks')
