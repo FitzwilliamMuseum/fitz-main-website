@@ -1,9 +1,7 @@
 @section('exhibition-shopify')
 
-<div class="container-fluid bg-grey py-3">
+<div class="container-fluid bg-grey py-3 mb-3">
     <div class="container mb-3">
-        <h3 class="mt-3">TEST</h3>
-
 
 <div id='collection-component-1683290166747'></div>
 <script type="text/javascript">
