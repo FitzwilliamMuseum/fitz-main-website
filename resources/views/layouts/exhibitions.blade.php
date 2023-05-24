@@ -31,6 +31,7 @@
 @yield('content')
 @yield('ttn-actions')
 @yield('tnew-data')
+@yield('exhibition-shopify')
 @yield('exhibitions-files')
 @yield('shopify')
 @yield('exhibitionCaseCards')
