@@ -603,3 +603,42 @@ a.text-center.btn.btn-outline-light.btn__book {
 .card-img-top {
     height: 100% !important;
 }
+
+.p-heading {
+    font-weight: 500;
+  }
+
+  .p-container .card {
+    width: 100%;
+  }
+  .p-container--joint figure,
+  .p-container--single figure {
+    margin: 1rem 0 !important;
+  }
+  
+  .p-image {
+    margin: 0 auto;
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .btn-credit,
+  .btn-direct {
+    margin-top: 16px;
+    font-size: 1.15rem;
+    padding: 18px 36px;
+  }
+
+  .btn-direct:focus {
+    background: #299942;
+    color: #fff;
+  }
+
+  @media screen and (min-width: 993px) {
+    .btn-credit,
+    .btn-direct {
+        margin: 0 auto;
+        max-width: 85%;
+        width: 100%;
+    }
+  }
