@@ -36,9 +36,6 @@
             @include('includes.structure.breadcrumb')
             @yield('press-contact')
             @yield('content')
-            @if(Request::is('visit-us/shopping-and-eating'))
-                @include('includes.elements.food-and-drink')
-            @endif
             @yield('adlib')
         </div>
         @yield('audioGuide')
