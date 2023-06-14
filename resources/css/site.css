@@ -619,7 +619,7 @@ a.text-center.btn.btn-outline-light.btn__book {
   .p-image {
     margin: 0 auto;
     object-fit: cover;
-    height: 100%;
+    min-height: 100%;
   }
   
   .btn-credit,
