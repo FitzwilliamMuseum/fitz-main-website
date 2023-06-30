@@ -57,16 +57,13 @@
     </div>
 @endsection
 @if(!empty($future['data'] ))
-    @php
-        $dataByDate = collect($future['data'])->sortBy('exhibition_start_date');
-    @endphp
     @section('future')
         <div class="container-fluid py-3 bg-grey">
 
             <div class="container">
                 <h3>Our forthcoming exhibitions and displays</h3>
                 <div class="row">
-                    @foreach($dataByDate as $future)
+                    @foreach($future['data'] as $future)
 
                         <x-exhibition-card
                             :altTag="$future['hero_image_alt_text']"
