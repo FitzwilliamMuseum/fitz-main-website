@@ -54,7 +54,7 @@ class exhibitionsController extends Controller
         $pages = Stubs::getLanding('exhibitions');
         $current = Exhibitions::list();
         $displays = Exhibitions::list('current', '-ticketed', 'display');
-        $future = Exhibitions::listFuture();
+        $future = Exhibitions::listFuture('future', 'exhibition_start_date');
         $archive = Exhibitions::archive('archived', '-exhibition_end_date', 3);
         $banners =  HomePageBanners::getBanner();
 
