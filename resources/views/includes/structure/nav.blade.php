@@ -47,8 +47,23 @@
 
 
 <!-- Nav bars -->
+
+@if(
+(!empty(SiteHelper::getAnnouncement()['data'][0]['status']) && SiteHelper::getAnnouncement()['data'][0]['status'] == 'published')
+)
+<nav class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
+    <div style="background: red; color: white; padding: 10px; display: flex; justify-content: center; width: 100%;">
+        {{ (SiteHelper::getAnnouncement()['data'][0]['announcement']) }}
+    </div>
+    <div class="container-fluid" style="padding-top: 8px;">
+
+@else
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container-fluid">
+
+@endif
+
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{asset("/images/logos/FitzLogo.svg")}}"
                  alt="The Fitzwilliam Museum Logo"
