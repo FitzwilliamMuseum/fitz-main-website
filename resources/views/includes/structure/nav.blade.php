@@ -70,7 +70,7 @@
                     <a class="nav-link" href="{{ route('visit') }}">Visit</a>
                 </li>
                 <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('events') }}">Events & tickets</a>
+                    <a class="nav-link" href="{{ route('events') }}">Events</a>
                 </li>
 
                 <li class="nav-item {{ (Request()->is('objects-and-artworks*')) ? 'active' : '' }}">
