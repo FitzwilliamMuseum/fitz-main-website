@@ -61,7 +61,7 @@
         <div class="container-fluid py-3 bg-grey">
 
             <div class="container">
-                <h3>Our forthcoming exhibitions and displays</h3>
+                <h3>Forthcoming Exhibitions and Displays</h3>
                 <div class="row">
                     @foreach($future['data'] as $future)
 
