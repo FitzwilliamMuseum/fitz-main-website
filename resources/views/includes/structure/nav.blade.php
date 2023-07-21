@@ -47,8 +47,30 @@
 
 
 <!-- Nav bars -->
+{{-- If the client has a global announcement published in the CMS, then output it at the top of the page --}}
+@if(
+(!empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) && SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
+)
+<nav class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
+    <div id="global-announcement" class="global-announcement" style="background: #EB0000; color: white; padding: 10px; text-align: center; width: 100%;">
+        <style>
+            #global-announcement a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        </style>
+
+        {!! (SiteHelper::getGlobalAnnouncement()['data'][0]['announcement']) !!}
+    </div>
+    <div class="container-fluid" style="padding-top: 8px;">
+
+@else
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container-fluid">
+
+@endif
+
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{asset("/images/logos/FitzLogo.svg")}}"
                  alt="The Fitzwilliam Museum Logo"
