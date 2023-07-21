@@ -10,7 +10,7 @@ class helpers {
      *
      * @return array
      */
-    public static function getAnnouncement() {
+    public static function getGlobalAnnouncement() {
         $globalAnnouncment = AnnouncementGlobal::list();
 
         return $globalAnnouncment;

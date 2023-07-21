@@ -47,9 +47,9 @@
 
 
 <!-- Nav bars -->
-
+{{-- If the client has a global announcement published in the CMS, then output it at the top of the page --}}
 @if(
-(!empty(SiteHelper::getAnnouncement()['data'][0]['status']) && SiteHelper::getAnnouncement()['data'][0]['status'] == 'published')
+(!empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) && SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
 )
 <nav class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
     <div id="global-announcement" class="global-announcement" style="background: #EB0000; color: white; padding: 10px; text-align: center; width: 100%;">
@@ -60,7 +60,7 @@
             }
         </style>
 
-        {!! (SiteHelper::getAnnouncement()['data'][0]['announcement']) !!}
+        {!! (SiteHelper::getGlobalAnnouncement()['data'][0]['announcement']) !!}
     </div>
     <div class="container-fluid" style="padding-top: 8px;">
 
