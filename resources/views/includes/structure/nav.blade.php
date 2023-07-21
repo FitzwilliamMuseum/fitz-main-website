@@ -52,8 +52,15 @@
 (!empty(SiteHelper::getAnnouncement()['data'][0]['status']) && SiteHelper::getAnnouncement()['data'][0]['status'] == 'published')
 )
 <nav class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
-    <div style="background: #EB0000; color: white; padding: 10px; display: flex; justify-content: center; width: 100%;">
-        {{ (SiteHelper::getAnnouncement()['data'][0]['announcement']) }}
+    <div id="global-announcement" class="global-announcement" style="background: #EB0000; color: white; padding: 10px; text-align: center; width: 100%;">
+        <style>
+            #global-announcement a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        </style>
+
+        {!! (SiteHelper::getAnnouncement()['data'][0]['announcement']) !!}
     </div>
     <div class="container-fluid" style="padding-top: 8px;">
 
