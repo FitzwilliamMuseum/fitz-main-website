@@ -7,8 +7,12 @@
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', $settings['title'])
 
-@section('banner')
+{{-- @section('banner')
     <x-home-page-banner :banners="$banners"></x-home-page-banner>
+@endSection --}}
+
+@section('homepage-hero')
+    <x-homepage-hero :hero="$hero"></x-homepage-hero>
 @endSection
 
 @section('news')

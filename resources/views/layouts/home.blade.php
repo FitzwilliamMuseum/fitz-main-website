@@ -16,11 +16,13 @@
 {{-- @include('includes.structure.defaced-header') --}}
 
 {{-- uncomment the following line once the above banner has been removed --}}
-@hasSection('banner')
+{{-- @hasSection('banner')
     @yield('banner')
 @else
     @include('includes.structure.head')
-@endif
+@endif --}}
+
+@yield('homepage-hero')
 
 @include('includes.structure.open')
 @include('includes.structure.exhibitions')
