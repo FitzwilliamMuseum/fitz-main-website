@@ -16,15 +16,21 @@ class Faqs extends Model
      * @param string $section
      * @return array
      */
-    public static function list(string $section): array
+    public static function list(string $section, $exhibition = null): array
     {
+        $filters = [
+            'fields' => '*',
+            'filter[section][eq]' => $section,
+            'meta' => '*'
+        ];
+
+        if ($exhibition) {
+            $filters['filter[exhibition][eq]'] = $exhibition;
+        }
+
         $api = new DirectUs(
             self::$table,
-            array(
-                'fields' => '*',
-                'filter[section][eq]' => $section,
-                'meta' => '*'
-            )
+            $filters
         );
         return $api->getData()['data'];
     }
