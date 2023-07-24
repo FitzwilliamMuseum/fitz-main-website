@@ -169,7 +169,9 @@ Route::match(array('GET', 'POST'), 'events/search', [
     'as' => 'tessitura.search'
 ]);
 
-Route::get('/events/{facility}', 'tessituraController@type')->name('events.type');
+Route::group(['domain' => 'https://tickets.museums.cam.ac.uk'], function() {
+    Route::get('/events', 'tessituraController@type')->name('events.type');
+});
 
 /*
 * Search routing
