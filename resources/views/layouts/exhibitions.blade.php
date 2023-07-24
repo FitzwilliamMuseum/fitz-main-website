@@ -30,7 +30,7 @@
 </div>
 @yield('content')
 @yield('ttn-actions')
-@yield('tnew-data')
+@yield('events-url')
 @yield('exhibition-shopify')
 @yield('exhibitions-files')
 @yield('shopify')

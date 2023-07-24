@@ -103,9 +103,6 @@ class exhibitionsController extends Controller
             if (!empty($exhibition['fme_product_ids'])) {
                 $products = Shopify::getShopifyCollection($exhibition['fme_product_ids']);
             }
-            if (!empty($exhibition['tessitura_keyword_id'])) {
-                $events = TessituraPerformances::getExhibitionPerformances($exhibition['tessitura_keyword_id']);
-            }
 
             $banners = null;
 
@@ -113,7 +110,7 @@ class exhibitionsController extends Controller
                 $banners = HomePageBanners::getBannerByID($exhibition['exhibition_banner']['id']);
             }
 
-            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products', 'events'));
+            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products'));
         }
     }
 

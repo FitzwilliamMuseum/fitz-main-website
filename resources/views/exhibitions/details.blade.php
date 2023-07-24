@@ -57,5 +57,7 @@
 
 @include('includes.elements.exhibitions.events')
 
+@include('includes.elements.exhibitions.events-url')
+
 @include('includes.elements.exhibitions.similar-exhibits')
 
