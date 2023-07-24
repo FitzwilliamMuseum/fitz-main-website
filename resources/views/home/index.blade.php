@@ -29,7 +29,7 @@
 @section('fundraising')
     <div class="container-fluid mt-3">
         <div class="col-md-12">
-            <h3><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h3>
+            <h3><a href="{{ route('landing', 'support-us') }}">Support us</a></h3>
             <div class="row">
                 @foreach($fundraising['data'] as $donate)
                     <x-fundraising-card :donate="$donate"></x-fundraising-card>
