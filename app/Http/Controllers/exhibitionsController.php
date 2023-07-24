@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faqs;
 use App\Models\HomePageBanners;
 use App\Models\Shopify;
 use GuzzleHttp\Exception\GuzzleException;
@@ -110,7 +111,9 @@ class exhibitionsController extends Controller
                 $banners = HomePageBanners::getBannerByID($exhibition['exhibition_banner']['id']);
             }
 
-            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products'));
+            $faqs = Faqs::list('exhibition', $exhibition['id']);
+
+            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products', 'faqs'));
         }
     }
 

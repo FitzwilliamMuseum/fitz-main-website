@@ -33,6 +33,7 @@
 @yield('events-url')
 @yield('exhibition-shopify')
 @yield('exhibitions-files')
+@yield('exhibition-faqs')
 @yield('shopify')
 @yield('exhibitionCaseCards')
 @yield('exhibition-objects')

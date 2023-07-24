@@ -49,7 +49,6 @@ class visitController extends Controller
             'hse' => Faqs::list('hse'),
             'booking' => Faqs::list('booking'),
             'records' => FindMoreLikeThis::find('frequently-asked-questions', 'pages'),
-
         ]);
     }
 }

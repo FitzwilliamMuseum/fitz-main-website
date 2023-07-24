@@ -43,6 +43,8 @@
 
 @include('includes.elements.exhibitions.360')
 
+@include('includes.elements.exhibitions.faqs')
+
 @include('includes.elements.exhibitions.sketchfab')
 
 @if($exhibition['slug'] === 'islanders')
