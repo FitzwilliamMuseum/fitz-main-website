@@ -29,7 +29,7 @@
         @if(Request::is('support-us/friends-of-the-fitzwilliam'))
             @include('includes.elements.payment-options')
         @endif
-        
+
     </div>
 
     @if($page['vimeo_id'])
@@ -55,6 +55,11 @@
     @include('includes.structure.related-pages')
 
 @endsection
+
+@if($page['slug'] === 'group-visits')
+    @include('includes.elements.group-visits')
+@endif
+
 @section('immunity')
     @if(Request::is('objects-and-artworks/immunity-from-seizure'))
 
