@@ -1,9 +1,10 @@
 <div class="container mt-3">
     <h3>
-        <a href="{{ route('exhibitions')}}">Exhibitions and new displays</a>
+        <a href="{{ route('exhibitions')}}">What's on</a>
     </h3>
     <div class="row">
-        @foreach($exhibitions['data'] as $current)
+        {{ json_encode($settings) }}
+        {{-- @foreach($exhibitions['data'] as $current)
             <x-exhibition-card
                 :altTag="$current['hero_image_alt_text']"
                 :title="$current['exhibition_title']"
@@ -16,6 +17,6 @@
                 :ticketed="$current['ticketed']"
                 :tessitura="$current['tessitura_string']"
             />
-        @endforeach
+        @endforeach --}}
     </div>
 </div>
