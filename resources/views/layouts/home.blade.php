@@ -24,21 +24,39 @@
     "listing_title" => "What's on"
 ))
 
+<div class="container-fluid parallax parallax-home mt-3"></div>
+
 @include('includes.structure.exhibitions', array(
     "listing_type" => "future",
     "listing_title" => "Coming soon"
 ))
 
-@include('includes.structure.galleries')
+<div class="container-fluid parallax parallax-home mt-3"></div>
+
+<div class="container mt-3">
+    <h3><a href="{{ route('news') }}">Latest news</a></h3>
+    <div class="row">
+        @yield('news')
+    </div>
+</div>
 
 <div class="container-fluid parallax parallax-home"></div>
 
-@yield('fundraising')
+<div class="container mt-3">
+    <h3><a href="{{ route('research') }}">Our research</a></h3>
+    <div class="row">
+        @yield('research')
+    </div>
+</div>
+
+<div class="container mt-3">
+    @yield('fundraising')
+</div>
 <div class="container-fluid parallax parallax-home mt-3">
 </div>
 {{-- @include('includes.structure.thingstodo') --}}
 
-<div class="container-fluid parallax second-parallax-home mt-3">
+<div class="container-fluid parallax parallax-home mt-3">
 </div>
 
 <div class="container mt-3">
@@ -48,26 +66,10 @@
     </div>
 </div>
 
-<div class="container-fluid parallax second-parallax-home mt-3"></div>
+<div class="container-fluid parallax parallax-home mt-3"></div>
 
-<div class="container mt-3">
-    <h3><a href="{{ route('research') }}">Our research</a></h3>
-    <div class="row">
-        @yield('research')
-    </div>
-</div>
+<div class="container-fluid parallax parallax-home"></div>
 
-<div class="container-fluid parallax second-parallax-home">
-</div>
-
-<div class="container mt-3">
-    <h3><a href="{{ route('news') }}">Latest news</a></h3>
-    <div class="row">
-        @yield('news')
-    </div>
-</div>
-<div class="container-fluid parallax second-parallax-home">
-</div>
 <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')
 </div>
