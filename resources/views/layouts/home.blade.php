@@ -19,18 +19,20 @@
 @hasSection('homepage-hero')
     @yield('homepage-hero')
 @endif
-
-@include('includes.structure.exhibitions', array(
-    "listing_type" => "upcoming",
-    "listing_title" => "What's on"
-))
+@if(!empty($settings['whats_on']))
+    @include('includes.structure.exhibitions', array(
+        "listing_type" => "upcoming",
+        "listing_title" => "What's on"
+    ))
+@endif
 
 <div class="container-fluid parallax parallax-home mt-3"></div>
-
-@include('includes.structure.exhibitions', array(
-    "listing_type" => "future",
-    "listing_title" => "Coming soon"
-))
+@if(!empty($settings['coming_soon']))
+    @include('includes.structure.exhibitions', array(
+        "listing_type" => "future",
+        "listing_title" => "Coming soon"
+    ))
+@endif
 
 <div class="container-fluid parallax parallax-home mt-3"></div>
 
