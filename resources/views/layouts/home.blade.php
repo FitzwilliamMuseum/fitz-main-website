@@ -15,14 +15,10 @@
 {{-- include temporary banner for the site --}}
 {{-- @include('includes.structure.defaced-header') --}}
 
-{{-- uncomment the following line once the above banner has been removed --}}
-@hasSection('banner')
-    @yield('banner')
-@else
-    @include('includes.structure.head')
+@hasSection('homepage-hero')
+    @yield('homepage-hero')
 @endif
 
-@include('includes.structure.open')
 @include('includes.structure.exhibitions')
 
 @include('includes.structure.galleries')
@@ -32,7 +28,7 @@
 @yield('fundraising')
 <div class="container-fluid parallax parallax-home mt-3">
 </div>
-@include('includes.structure.thingstodo')
+{{-- @include('includes.structure.thingstodo') --}}
 
 <div class="container-fluid parallax second-parallax-home mt-3">
 </div>

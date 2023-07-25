@@ -7,8 +7,12 @@
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', $settings['title'])
 
-@section('banner')
+{{-- @section('banner')
     <x-home-page-banner :banners="$banners"></x-home-page-banner>
+@endSection --}}
+
+@section('homepage-hero')
+    <x-homepage-hero :hero="$hero"></x-homepage-hero>
 @endSection
 
 @section('news')
@@ -25,7 +29,7 @@
 @section('fundraising')
     <div class="container-fluid mt-3">
         <div class="col-md-12">
-            <h3><a href="{{ route('landing', 'support-us') }}">Donate, become a member or support us</a></h3>
+            <h3><a href="{{ route('landing', 'support-us') }}">Support us</a></h3>
             <div class="row">
                 @foreach($fundraising['data'] as $donate)
                     <x-fundraising-card :donate="$donate"></x-fundraising-card>
