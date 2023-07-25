@@ -10,7 +10,12 @@
             text-align:left!important;
         }
         .card-header button::before {
-            content: ">";
+            background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iNDgiPjxwYXRoIGQ9Im0zMDQtODItNTYtNTcgMzQzLTM0My0zNDMtMzQzIDU2LTU3IDQwMCA0MDBMMzA0LTgyWiIvPjwvc3ZnPg==');
+            content:' ';
+            width:20px;
+            height:20px;
+            background-size:100%;
+            margin-top:5px;
             float:right;
         }
         .group-visits button[aria-expanded=true]::before {
