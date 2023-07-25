@@ -3,7 +3,6 @@
         <a href="{{ route('exhibitions')}}">{{ $listing_title }}</a>
     </h3>
     <div class="row">
-        {{-- {{ json_encode($settings['whats_on']) }} --}}
         @if ($listing_type == "upcoming")
             @foreach($settings['whats_on'] as $current)
                 <x-exhibition-card
