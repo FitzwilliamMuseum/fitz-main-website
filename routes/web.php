@@ -63,6 +63,7 @@ Visit us Route
 */
 Route::get('visit-us/', 'visitController@index')->name('visit');
 Route::get('visit-us/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
+Route::get('visit-us/group-visits','visitController@groupVisits')->name('visit.groupvisits');
 
 Route::get('/galleries', function () {
     return redirect('visit-us/galleries');

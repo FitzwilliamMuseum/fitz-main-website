@@ -6,6 +6,7 @@ use App\Models\CoronaVirusNotes;
 use App\Models\Directions;
 use App\Models\FindMoreLikeThis;
 use App\Models\FloorPlans;
+use App\Models\GroupVisits;
 use App\Models\Transport;
 use App\Models\Faqs;
 use App\Models\Galleries;
@@ -15,6 +16,7 @@ use App\Models\Stubs;
 use App\Models\VisitUsComponents;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
 
 class visitController extends Controller
 {
@@ -39,6 +41,21 @@ class visitController extends Controller
         );
     }
 
+    /**
+     * @return View
+     */
+    public function groupVisits(): View|Response
+    {
+        $page = Stubs::getPage('visit-us', 'group-visits');
+
+        return view('pages.index', [
+                'page' => Collect($page['data'])->first(),
+                'records' => FindMoreLikeThis::find('group-visits', 'pages'),
+                'group_visits' => GroupVisits::list()
+            ]
+        );
+
+    }
     /**
      * @return View
      */
