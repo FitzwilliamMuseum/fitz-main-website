@@ -12,7 +12,7 @@
 @endSection --}}
 
 @section('homepage-hero')
-    <x-homepage-hero :hero="$hero"></x-homepage-hero>
+    <x-home-page-hero :hero="$hero"></x-home-page-hero>
 @endSection
 
 @section('news')
