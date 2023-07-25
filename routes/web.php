@@ -63,17 +63,24 @@ Visit us Route
 */
 Route::get('visit-us/', 'visitController@index')->name('visit');
 Route::get('visit-us/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
+Route::get('visit-us/group-visits','visitController@groupVisits')->name('visit.groupvisits');
 
 Route::get('/galleries', function () {
     return redirect('visit-us/galleries');
 });
+
 Route::get('/exhibitions', function () {
     return redirect('visit-us/exhibitions');
 });
+
+Route::get('visit-us/exhibitions/archive', function () {
+    return redirect('visit-us/past-exhibitions-and-displays');
+});
+
 Route::get('visit-us/galleries', 'galleriesController@index')->name('galleries');
 Route::get('visit-us/galleries/{slug}', 'galleriesController@gallery')->name('gallery');
+Route::get('visit-us/past-exhibitions-and-displays', 'exhibitionsController@archive')->name('archive');
 Route::get('visit-us/exhibitions/', 'exhibitionsController@index')->name('exhibitions');
-Route::get('visit-us/exhibitions/archive', 'exhibitionsController@archive')->name('archive');
 Route::get('visit-us/exhibitions/future', 'exhibitionsController@future')->name('future');
 Route::get('visit-us/exhibitions/{slug}', 'exhibitionsController@details')->name('exhibition');
 Route::get('visit-us/exhibitions/{exhibition}/cases/{slug}', 'exhibitionsController@labels')->name('exhibition.labels');
@@ -169,7 +176,9 @@ Route::match(array('GET', 'POST'), 'events/search', [
     'as' => 'tessitura.search'
 ]);
 
-Route::get('/events/{facility}', 'tessituraController@type')->name('events.type');
+Route::group(['domain' => 'https://tickets.museums.cam.ac.uk'], function() {
+    Route::get('/events', 'tessituraController@type')->name('events.type');
+});
 
 /*
 * Search routing

@@ -251,6 +251,7 @@ class TessituraApi
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
+                'sort' => 'sort'
             )
         );
         return $directus->getData();

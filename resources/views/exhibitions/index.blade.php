@@ -35,7 +35,7 @@
                 </div>
             @endif
             @if(!empty($displays['data']))
-                <h3 id="displays">New displays in the galleries</h3>
+                <h3 id="displays">Exhibitions and Displays</h3>
                 <div class="row">
                     @foreach($displays['data'] as $display)
                         <x-exhibition-card
@@ -61,7 +61,7 @@
         <div class="container-fluid py-3 bg-grey">
 
             <div class="container">
-                <h3>Our forthcoming exhibitions and displays</h3>
+                <h3>Forthcoming Exhibitions and Displays</h3>
                 <div class="row">
                     @foreach($future['data'] as $future)
 

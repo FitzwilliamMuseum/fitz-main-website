@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title','Our events')
+@section('title','Events')
 @section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'The Fitzwilliam Museum runs a rich programme of events')
@@ -27,13 +27,6 @@
         @endphp
 
         <div class="row">
-            <div class="card col-md-3 shadow-sm  mx-auto mb-3 ">
-                <div class="card-body">
-                    <h3 class="align-self-center">Filter events</h3>
-                    @include('includes.elements.filters-tessitura')
-                </div>
-            </div>
-            <div class="col-md-9">
                 <div class="row">
                     @foreach ($events['data'] as $type)
                         <x-image-card
@@ -41,11 +34,10 @@
                             :title="$type['title']"
                             :image="$type['hero_image']"
                             :route="'events.type'"
-                            :params="[Str::slug($type['title'])]">
+                            :params="['kid' => $type['event_id']]">
                         </x-image-card>
                     @endforeach
                 </div>
-            </div>
         </div>
     </div>
 @endsection
