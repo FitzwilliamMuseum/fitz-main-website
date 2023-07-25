@@ -43,7 +43,7 @@
                     <div id="collapse{{ $loop->index }}" class="collapse" aria-labelledby="heading{{ $loop->index }}"
                          data-parent="#accordionDirections">
                         <div class="card-body">
-                            {{ $group_visit['content'] }}
+                            @markdown($group_visit['content'])
                         </div>
                     </div>
                 </div>
