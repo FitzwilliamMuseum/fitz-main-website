@@ -12,6 +12,7 @@
 @include('googletagmanager::body')
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
+
 {{-- include temporary banner for the site --}}
 {{-- @include('includes.structure.defaced-header') --}}
 
@@ -61,6 +62,34 @@
 </div>
 
 <div class="container-fluid parallax parallax-home mt-3"></div>
+
+<div class="container-fluid parallax parallax-home"></div>
+
+@include('includes.structure.galleries')
+
+<div class="container-fluid parallax parallax-home"></div>
+
+<div class="container mt-3 container-home-cards">
+    <h3><a href="{{ route('news') }}">Latest news</a></h3>
+    <div class="row row-home">
+        @yield('news')
+    </div>
+</div>
+
+<div class="container-fluid parallax parallax-home"></div>
+
+<div class="container mt-3 container-home-cards">
+    <h3><a href="{{ route('research') }}">Our research</a></h3>
+    <div class="row row-home">
+        @yield('research')
+    </div>
+</div>
+
+<div class="container-fluid parallax parallax-home"></div>
+
+@yield('fundraising')
+
+<div class="container-fluid parallax parallax-home"></div>
 
 <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')

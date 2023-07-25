@@ -1,30 +1,27 @@
 @hasSection('parallax_two')
     .second-parallax-home {
-    min-height: 400px;
-    background-image: url(@yield('parallax_two'));
-    background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/homepage-adjusted-2000x1000_1.png');
-    background-image: url('{{ $exhibitions['data'][0]['hero_image']['data']['full_url'] }}');
-
-    background-repeat: no-repeat;
-    background-size: cover;
+        min-height: 400px;
+        background-image: url(@yield('parallax_two'));
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 @endif
 @hasSection('parallax_home')
     .parallax-home {
-    min-height: 400px;
-    background-image: url(@yield('parallax_home'));
-    background-image: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/homepage-adjusted-2000x1000_1.png');
-    background-image: url('{{ $exhibitions['data'][0]['hero_image']['data']['full_url'] }}');
+        height: 280px;
+        background-image: url('@yield('hero_image')');
+        background-image: url('https://content.fitz.ms/fitz-website/assets/B%20Walker%20for%20exhib%20webpage.png?key=exhibition');
 
-    background-repeat: no-repeat;
-    background-size: cover;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 30%;
     }
 @endif
 @hasSection('collection-parallax')
     .parallax-collection {
-    min-height: 300px;
-    background-image: url(@yield('collection-parallax'));
-    background-repeat: no-repeat;
-    background-size: cover;
+        min-height: 300px;
+        background-image: url(@yield('collection-parallax'));
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 @endif

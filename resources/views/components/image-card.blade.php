@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3 container-home-card">
     <div class="card card-fitz h-100">
         @isset($image)
             <a href="{{ route($route, $params) }}">

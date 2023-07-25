@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3 container-home-cards">
     <h3>
         <a href="{{ route('exhibitions')}}">Exhibitions and new displays</a>
     </h3>
