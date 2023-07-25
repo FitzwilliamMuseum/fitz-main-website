@@ -19,7 +19,15 @@
     @yield('homepage-hero')
 @endif
 
-@include('includes.structure.exhibitions')
+@include('includes.structure.exhibitions', array(
+    "listing_type" => "upcoming",
+    "listing_title" => "What's on"
+))
+
+@include('includes.structure.exhibitions', array(
+    "listing_type" => "future",
+    "listing_title" => "Coming soon"
+))
 
 @include('includes.structure.galleries')
 
