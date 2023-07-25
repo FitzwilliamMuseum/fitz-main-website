@@ -19,7 +19,7 @@ class HomePage extends Model
         $api = new DirectUs(
             self::$table,
             array(
-                'fields' => '*.*.*.*',
+                'fields' => '*.*.*.*.*',
                 'meta' => '*',
                 'sort' => '-id'
             )

@@ -1,8 +1,8 @@
 @extends('layouts.home')
 @section('hero_image',$settings['hero_image']['data']['full_url'])
 @section('hero_image_title', $settings['hero_image_alt_text'])
-@section('parallax_home', $settings['parallax_one']['data']['full_url'])
-@section('parallax_two', $settings['parallax_two']['data']['full_url'])
+@section('parallax_home', $settings['hero_image']['data']['full_url'])
+{{-- @section('parallax_two', $settings['parallax_two']['data']['full_url']) --}}
 @section('description', $settings['meta_description'])
 @section('keywords', 'fitzwilliam, museum, cambridge, university, art, design, archaeology')
 @section('title', $settings['title'])

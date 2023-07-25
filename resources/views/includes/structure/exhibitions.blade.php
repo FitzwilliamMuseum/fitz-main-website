@@ -1,21 +1,38 @@
 <div class="container mt-3">
     <h3>
-        <a href="{{ route('exhibitions')}}">Exhibitions and new displays</a>
+        <a href="{{ route('exhibitions')}}">{{ $listing_title }}</a>
     </h3>
     <div class="row">
-        @foreach($exhibitions['data'] as $current)
-            <x-exhibition-card
-                :altTag="$current['hero_image_alt_text']"
-                :title="$current['exhibition_title']"
-                :image="$current['hero_image']"
-                :route="'exhibition'"
-                :params="[$current['slug']]"
-                :startDate="$current['exhibition_start_date']"
-                :endDate="$current['exhibition_end_date']"
-                :status="'current'"
-                :ticketed="$current['ticketed']"
-                :tessitura="$current['tessitura_string']"
-            />
-        @endforeach
+        @if ($listing_type == "upcoming")
+            @foreach($settings['whats_on'] as $current)
+                <x-exhibition-card
+                    :altTag="$current['exhibitions_id']['hero_image_alt_text']"
+                    :title="$current['exhibitions_id']['exhibition_title']"
+                    :image="$current['exhibitions_id']['hero_image']"
+                    :route="'exhibition'"
+                    :params="[$current['exhibitions_id']['slug']]"
+                    :startDate="$current['exhibitions_id']['exhibition_start_date']"
+                    :endDate="$current['exhibitions_id']['exhibition_end_date']"
+                    :status="'current'"
+                    :ticketed="$current['exhibitions_id']['ticketed']"
+                    :tessitura="$current['exhibitions_id']['tessitura_string']"
+                />
+            @endforeach
+        @elseif ($listing_type == "future")
+            @foreach($settings['coming_soon'] as $current)
+                <x-exhibition-card
+                    :altTag="$current['exhibitions_id']['hero_image_alt_text']"
+                    :title="$current['exhibitions_id']['exhibition_title']"
+                    :image="$current['exhibitions_id']['hero_image']"
+                    :route="'exhibition'"
+                    :params="[$current['exhibitions_id']['slug']]"
+                    :startDate="$current['exhibitions_id']['exhibition_start_date']"
+                    :endDate="$current['exhibitions_id']['exhibition_end_date']"
+                    :status="'current'"
+                    :ticketed="$current['exhibitions_id']['ticketed']"
+                    :tessitura="$current['exhibitions_id']['tessitura_string']"
+                />
+            @endforeach
+        @endif
     </div>
 </div>
