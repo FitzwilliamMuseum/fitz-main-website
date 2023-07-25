@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="{{$hero['exhibition_link'] ? 'col-md-8' : ''}}">
-                @if($hero['hero_title'])
+                @if(!empty($hero['hero_title']))
                     <h1>{{ $hero['hero_title'] }}</h1>
                 @else
                     <h1>{{ title }}</h1>
                 @endif
-                @if($hero['hero_title'])
+                @if(!empty($hero['hero_title']))
                     <h2>
                         {{ $hero['hero_subtitle'] }}
                     </h2>
@@ -20,13 +20,13 @@
                     </p>
                 @endif
             </div>
-            @if($hero['exhibition_link'])
+            @if(!empty($hero['exhibition_link']))
                 <div class="col-md-4 mt-auto">
                     <a href="{{ route('exhibition', $hero['exhibition_link']['slug']) }}">{{ $hero['exhibition_link_text'] }}</a>
                 </div>
             @endif
         </div>
-        @if($hero['hero_image'])
+        @if(!empty($hero['hero_image']))
             <picture>
                 @foreach($hero['hero_image']['data']['thumbnails'] as $image)
                     @if ($image['key'] == 'mural-tablet')
