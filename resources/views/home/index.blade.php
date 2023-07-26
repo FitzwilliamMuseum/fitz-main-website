@@ -17,12 +17,12 @@
 
 @section('news')
     @foreach($news['data'] as $news)
-        <x-image-card
+        <x-image-home-card
             :altTag="$news['field_image_alt_text']"
             :title="$news['article_title']"
             :image="$news['field_image']"
             :route="'article'"
-            :params="[$news['slug']]"></x-image-card>
+            :params="[$news['slug']]"></x-image-home-card>
     @endforeach
 @endsection
 
@@ -31,7 +31,7 @@
             <h3><a href="{{ route('landing', 'support-us') }}">Support us</a></h3>
             <div class="row row-home">
                 @foreach($fundraising['data'] as $donate)
-                    <x-fundraising-card :donate="$donate"></x-fundraising-card>
+                    <x-fundraising-home-card :donate="$donate"></x-fundraising-home-card>
                 @endforeach
             </div>
     </div>
@@ -39,23 +39,23 @@
 
 @section('research')
     @foreach($research['data'] as $project)
-        <x-image-card
+        <x-image-home-card
             :altTag="$project['hero_image_alt_text']"
             :title="$project['title']"
             :image="$project['hero_image']"
             :route="'research-project'"
-            :params="[$project['slug']]"></x-image-card>
+            :params="[$project['slug']]"></x-image-home-card>
     @endforeach
 @endsection
 
 @section('themes')
     @foreach($objects['data'] as $theme)
-        <x-image-card
+        <x-image-home-card
             :altTag="$theme['image_alt_text']"
             :title="$theme['title']"
             :image="$theme['image']"
             :route="'highlight'"
-            :params="[$theme['slug']]"></x-image-card>
+            :params="[$theme['slug']]"></x-image-home-card>
     @endforeach
 @endsection
 

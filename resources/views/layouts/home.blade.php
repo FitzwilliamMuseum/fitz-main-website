@@ -45,6 +45,15 @@
 <div class="container-fluid parallax parallax-home"></div>
 
 <div class="container mt-3 container-home-cards">
+    <h3><a href="{{  route('objects') }}">Collections highlights</a></h3>
+    <div class="row row-home">
+        @yield('themes')
+    </div>
+</div>
+
+<div class="container-fluid parallax parallax-home"></div>
+
+<div class="container mt-3 container-home-cards">
     <h3><a href="{{ route('research') }}">Our research</a></h3>
     <div class="row row-home">
         @yield('research')
