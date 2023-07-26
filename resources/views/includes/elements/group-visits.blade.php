@@ -8,18 +8,19 @@
             padding:0;
             width:100%;
             text-align:left!important;
+            height:2rem;
         }
         .card-header button::before {
-            background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iNDgiPjxwYXRoIGQ9Im0zMDQtODItNTYtNTcgMzQzLTM0My0zNDMtMzQzIDU2LTU3IDQwMCA0MDBMMzA0LTgyWiIvPjwvc3ZnPg==');
+            background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iNDgiPjxwYXRoIGQ9Ik00ODAtMzQ0IDI0MC01ODRsNDMtNDMgMTk3IDE5NyAxOTctMTk3IDQzIDQzLTI0MCAyNDBaIi8+PC9zdmc+');
             content:' ';
-            width:20px;
-            height:20px;
+            width:35px;
+            height:35px;
             background-size:100%;
-            margin-top:5px;
             float:right;
+            transform:rotate(180deg);
         }
         .group-visits button[aria-expanded=true]::before {
-            transform:rotate(90deg);
+            transform:rotate(0deg);
         }
         .group-visits .card-header {
             border-bottom:#000 3px solid;
