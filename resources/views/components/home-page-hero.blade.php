@@ -9,9 +9,9 @@
                     <h1>{{ title }}</h1>
                 @endif
                 @if (!empty($hero['hero_title']))
-                    <h2>
+                    <p>
                         {{ $hero['hero_subtitle'] }}
-                    </h2>
+                    </p>
                 @endif
                 @if ($hero['exhibition_link'])
                     <p>
