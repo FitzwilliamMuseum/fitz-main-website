@@ -19,7 +19,7 @@
                             datetime="{{ $hero['exhibition_link']['exhibition_start_date'] }}">{{ date('l jS F o', strtotime($hero['exhibition_link']['exhibition_start_date'])) }}</time>
                         -
                         <time
-                            datetime="{{ $hero['exhibition_link']['exhibition_end_date'] }}">{{ date('l dS F o', strtotime($hero['exhibition_link']['exhibition_end_date'])) }}</time>
+                            datetime="{{ $hero['exhibition_link']['exhibition_end_date'] }}">{{ date('l jS F o', strtotime($hero['exhibition_link']['exhibition_end_date'])) }}</time>
                     </p>
                 @endif
             </div>
