@@ -35,7 +35,7 @@
 
 <div class="container-fluid parallax parallax-home"></div>
 
-<div class="container mt-3 container-home-cards">
+<div class="container container-home-cards">
     <h3><a href="{{ route('news') }}">Latest news</a></h3>
     <div class="row row-home">
         @yield('news')
@@ -44,7 +44,7 @@
 
 <div class="container-fluid parallax parallax-home"></div>
 
-<div class="container mt-3 container-home-cards">
+<div class="container container-home-cards">
     <h3><a href="{{  route('objects') }}">Collections highlights</a></h3>
     <div class="row row-home">
         @yield('themes')
@@ -53,7 +53,7 @@
 
 <div class="container-fluid parallax parallax-home"></div>
 
-<div class="container mt-3 container-home-cards">
+<div class="container container-home-cards">
     <h3><a href="{{ route('research') }}">Our research</a></h3>
     <div class="row row-home">
         @yield('research')
