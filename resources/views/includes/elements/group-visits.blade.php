@@ -2,19 +2,19 @@
 
     <style>
         .group-visits button {
-            text-transform:uppercase;
-            font-weight:bold;
-            font-size:1.1em;
+            /*text-transform:uppercase;*/
+            /*font-weight:bold;*/
+            /*font-size:1.1em;*/
             padding:0;
             width:100%;
             text-align:left!important;
-            height:2rem;
+            height:1.6rem;
         }
         .card-header button::before {
             background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiB3aWR0aD0iNDgiPjxwYXRoIGQ9Ik00ODAtMzQ0IDI0MC01ODRsNDMtNDMgMTk3IDE5NyAxOTctMTk3IDQzIDQzLTI0MCAyNDBaIi8+PC9zdmc+');
             content:' ';
-            width:35px;
-            height:35px;
+            width:28px;
+            height:28px;
             background-size:100%;
             float:right;
             transform:rotate(180deg);
@@ -23,7 +23,7 @@
             transform:rotate(0deg);
         }
         .group-visits .card-header {
-            border-bottom:#000 3px solid;
+            border-bottom:#000 2px solid;
             padding:0.5em 0;
         }
 
@@ -43,7 +43,7 @@
                     </div>
                     <div id="collapse{{ $loop->index }}" class="collapse" aria-labelledby="heading{{ $loop->index }}"
                          data-parent="#accordionDirections">
-                        <div class="card-body">
+                        <div class="card-body" style="padding-left:1em 0 0 0;">
                             @markdown($group_visit['content'])
                         </div>
                     </div>
