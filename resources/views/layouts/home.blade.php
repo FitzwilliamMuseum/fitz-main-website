@@ -19,75 +19,19 @@
 @hasSection('homepage-hero')
     @yield('homepage-hero')
 @endif
-@if(!empty($settings['whats_on']))
-    @include('includes.structure.exhibitions', array(
-        "listing_type" => "upcoming",
-        "listing_title" => "What's on"
+
+
+@include('includes.structure.exhibitions', array(
+    "listing_type" => "upcoming",
+    "listing_title" => "What's on"
     ))
-@endif
-
-<div class="container-fluid parallax parallax-home mt-3"></div>
-@if(!empty($settings['coming_soon']))
-    @include('includes.structure.exhibitions', array(
-        "listing_type" => "future",
-        "listing_title" => "Coming soon"
-    ))
-@endif
-
-<div class="container-fluid parallax parallax-home mt-3"></div>
-
-<div class="container mt-3">
-    <h3><a href="{{ route('news') }}">Latest news</a></h3>
-    <div class="row">
-        @yield('news')
-    </div>
-</div>
 
 <div class="container-fluid parallax parallax-home"></div>
 
-<div class="container mt-3">
-    <h3><a href="{{ route('research') }}">Our research</a></h3>
-    <div class="row">
-        @yield('research')
-    </div>
-</div>
-
-<div class="container mt-3">
-    @yield('fundraising')
-</div>
-<div class="container-fluid parallax parallax-home mt-3">
-</div>
-{{-- @include('includes.structure.thingstodo') --}}
-
-<div class="container-fluid parallax parallax-home mt-3">
-</div>
-
-<div class="container mt-3">
-    <h3><a href="{{  route('objects') }}">Collections highlights</a></h3>
-    <div class="row">
-        @yield('themes')
-    </div>
-</div>
-
-<div class="container-fluid parallax parallax-home mt-3"></div>
-
-<div class="container-fluid parallax parallax-home"></div>
-
-
-<div class="container-fluid parallax parallax-home mt-3"></div>
-
-<div class="container mt-3">
-    <h3><a href="{{ route('news') }}">Latest news</a></h3>
-    <div class="row">
-        @yield('news')
-    </div>
-</div>
-
-<div class="container-fluid parallax parallax-home mt-3"></div>
-
-<div class="container-fluid parallax parallax-home"></div>
-
-@include('includes.structure.galleries')
+@include('includes.structure.exhibitions', array(
+    "listing_type" => "future",
+    "listing_title" => "Coming soon"
+))
 
 <div class="container-fluid parallax parallax-home"></div>
 
