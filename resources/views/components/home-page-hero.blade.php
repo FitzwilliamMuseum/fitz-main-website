@@ -15,11 +15,9 @@
                 @endif
                 @if ($hero['exhibition_link'])
                     <p>
-                        <time
-                            datetime="{{ $hero['exhibition_link']['exhibition_start_date'] }}">{{ date('l jS F o', strtotime($hero['exhibition_link']['exhibition_start_date'])) }}</time>
+                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('l jS F Y') }}
                         -
-                        <time
-                            datetime="{{ $hero['exhibition_link']['exhibition_end_date'] }}">{{ date('l jS F o', strtotime($hero['exhibition_link']['exhibition_end_date'])) }}</time>
+                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_end_date'])->format('l jS F Y') }}
                     </p>
                 @endif
             </div>
