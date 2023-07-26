@@ -5,33 +5,37 @@
     <div class="row row-home">
         @if ($listing_type == "upcoming")
             @foreach($settings['whats_on'] as $current)
-                <x-exhibition-card
-                    :altTag="$current['exhibitions_id']['hero_image_alt_text']"
-                    :title="$current['exhibitions_id']['exhibition_title']"
-                    :image="$current['exhibitions_id']['hero_image']"
-                    :route="'exhibition'"
-                    :params="[$current['exhibitions_id']['slug']]"
-                    :startDate="$current['exhibitions_id']['exhibition_start_date']"
-                    :endDate="$current['exhibitions_id']['exhibition_end_date']"
-                    :status="'current'"
-                    :ticketed="$current['exhibitions_id']['ticketed']"
-                    :tessitura="$current['exhibitions_id']['tessitura_string']"
-                />
+                @if(!empty($current['exhibitions_id']))
+                    <x-exhibition-card
+                        :altTag="$current['exhibitions_id']['hero_image_alt_text']"
+                        :title="$current['exhibitions_id']['exhibition_title']"
+                        :image="$current['exhibitions_id']['hero_image']"
+                        :route="'exhibition'"
+                        :params="[$current['exhibitions_id']['slug']]"
+                        :startDate="$current['exhibitions_id']['exhibition_start_date']"
+                        :endDate="$current['exhibitions_id']['exhibition_end_date']"
+                        :status="'current'"
+                        :ticketed="$current['exhibitions_id']['ticketed']"
+                        :tessitura="$current['exhibitions_id']['tessitura_string']"
+                    />
+                @endif
             @endforeach
         @elseif ($listing_type == "future")
             @foreach($settings['coming_soon'] as $current)
-                <x-exhibition-card
-                    :altTag="$current['exhibitions_id']['hero_image_alt_text']"
-                    :title="$current['exhibitions_id']['exhibition_title']"
-                    :image="$current['exhibitions_id']['hero_image']"
-                    :route="'exhibition'"
-                    :params="[$current['exhibitions_id']['slug']]"
-                    :startDate="$current['exhibitions_id']['exhibition_start_date']"
-                    :endDate="$current['exhibitions_id']['exhibition_end_date']"
-                    :status="'current'"
-                    :ticketed="$current['exhibitions_id']['ticketed']"
-                    :tessitura="$current['exhibitions_id']['tessitura_string']"
-                />
+                @if(!empty($current['exhibitions_id']))
+                    <x-exhibition-card
+                        :altTag="$current['exhibitions_id']['hero_image_alt_text']"
+                        :title="$current['exhibitions_id']['exhibition_title']"
+                        :image="$current['exhibitions_id']['hero_image']"
+                        :route="'exhibition'"
+                        :params="[$current['exhibitions_id']['slug']]"
+                        :startDate="$current['exhibitions_id']['exhibition_start_date']"
+                        :endDate="$current['exhibitions_id']['exhibition_end_date']"
+                        :status="'current'"
+                        :ticketed="$current['exhibitions_id']['ticketed']"
+                        :tessitura="$current['exhibitions_id']['tessitura_string']"
+                    />
+                @endif
             @endforeach
         @endif
     </div>
