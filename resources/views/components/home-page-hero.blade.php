@@ -21,11 +21,18 @@
                     </p>
                 @endif
             </div>
-            @if (!empty($hero['exhibition_link']))
+            @if (!empty($hero['ticket_link']))
                 <button class="hero-cta">
                     <a
-                        href="{{ route('exhibition', $hero['exhibition_link']['slug']) }}">{{ $hero['exhibition_link_text'] }}</a>
+                        href="{{ $hero['ticket_link'] }}">{{ $hero['exhibition_link_text'] }}</a>
                 </button>
+            @else
+                @if (!empty($hero['exhibition_link']))
+                    <button class="hero-cta">
+                        <a
+                            href="{{ route('exhibition', $hero['exhibition_link']['slug']) }}">{{ $hero['exhibition_link_text'] }}</a>
+                    </button>
+                @endif
             @endif
         </div>
 
