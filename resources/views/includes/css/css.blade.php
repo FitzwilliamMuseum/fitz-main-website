@@ -9,9 +9,7 @@
 @yield('plyr-css')
 <style>
     .head {
-        background-repeat: no-repeat;
-        background-image: url('@yield('hero_image')');
-        background-position: 40% 10%;
+        background: url('@yield('hero_image')') no-repeat center top / cover;
     }
 
     @include('includes.css.parallax');
