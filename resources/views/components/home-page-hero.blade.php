@@ -9,17 +9,17 @@
                     <h1>{{ title }}</h1>
                 @endif
                 @if (!empty($hero['hero_title']))
-                    <h2>
+                    <p>
                         {{ $hero['hero_subtitle'] }}
-                    </h2>
+                    </p>
                 @endif
                 @if ($hero['exhibition_link'])
                     <p>
                         <time
-                            datetime="{{ $hero['exhibition_link']['exhibition_start_date'] }}">{{ date('l dS F o', strtotime($hero['exhibition_link']['exhibition_start_date'])) }}</time>
+                            datetime="{{ $hero['exhibition_link']['exhibition_start_date'] }}">{{ date('l jS F o', strtotime($hero['exhibition_link']['exhibition_start_date'])) }}</time>
                         -
                         <time
-                            datetime="{{ $hero['exhibition_link']['exhibition_end_date'] }}">{{ date('l dS F o', strtotime($hero['exhibition_link']['exhibition_end_date'])) }}</time>
+                            datetime="{{ $hero['exhibition_link']['exhibition_end_date'] }}">{{ date('l jS F o', strtotime($hero['exhibition_link']['exhibition_end_date'])) }}</time>
                     </p>
                 @endif
             </div>

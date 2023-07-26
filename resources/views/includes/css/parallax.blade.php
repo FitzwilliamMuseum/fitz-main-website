@@ -9,11 +9,19 @@
 @hasSection('parallax_home')
     .parallax-home {
     height: 280px;
+    display: none;
     background-image: url('@yield('hero_image')');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 30%;
     }
+
+    @media screen and (min-width: 768px) {
+        .parallax-home {
+            display: block;
+        }
+    }
+
 @endif
 @hasSection('collection-parallax')
     .parallax-collection {

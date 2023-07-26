@@ -27,7 +27,7 @@
 @endsection
 
 @section('fundraising')
-    <div class="container container-home-cards mt-3">
+    <div class="container container-home-cards">
             <h3><a href="{{ route('landing', 'support-us') }}">Support us</a></h3>
             <div class="row row-home">
                 @foreach($fundraising['data'] as $donate)
