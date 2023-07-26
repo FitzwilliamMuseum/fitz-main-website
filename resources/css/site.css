@@ -688,9 +688,7 @@ a.text-center.btn.btn-outline-light.btn__book {
         padding: 0 16px 32px 16px;
     }
 }
-.home-hero .parallax {
-    min-height: 70vh;
-}
+
 .home-hero .wrapper {
     width: 100%;
     display: flex;
@@ -701,13 +699,6 @@ a.text-center.btn.btn-outline-light.btn__book {
     color: #FFF;
     font-size: 80px;
     font-weight: 500;
-    padding-top: 300px;
-}
-
-@media screen and (min-width: 768px) {
-    .home-hero .wrapper h1 {
-        padding-top: 0;
-    }
 }
 
 .home-hero .wrapper p {
@@ -765,14 +756,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-gap: 10px;
 }
 
-.container-home-cards h2 {
-    grid-column: 1 / -1;
-}
-
 .container-home-cards h3 a {
     font-size: 24px;
     font-weight: 500;
-    display: block;
+    display: inline-block;
 }
 
 .container-home-card .card-image {
