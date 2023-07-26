@@ -51,15 +51,13 @@
     </div>
 </div>
 
+<div class="container-fluid parallax parallax-home mt-3"></div>
+
 <div class="container mt-3">
     @yield('fundraising')
 </div>
-<div class="container-fluid parallax parallax-home mt-3">
-</div>
+<div class="container-fluid parallax parallax-home mt-3"></div>
 {{-- @include('includes.structure.thingstodo') --}}
-
-<div class="container-fluid parallax parallax-home mt-3">
-</div>
 
 <div class="container mt-3">
     <h3><a href="{{  route('objects') }}">Collections highlights</a></h3>
@@ -67,10 +65,6 @@
         @yield('themes')
     </div>
 </div>
-
-<div class="container-fluid parallax parallax-home mt-3"></div>
-
-<div class="container-fluid parallax parallax-home"></div>
 
 <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')
