@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3 {{ $source == "homepage" ? 'container-home-card' : ''}}">
+<div class="col-md-4 mb-3 {{ !empty($source) && $source == "homepage" ? 'container-home-card' : ''}}">
     <div class="card card-fitz h-100">
         @isset($image)
             <a class="card-image" href="{{ route($route, $params) }}">

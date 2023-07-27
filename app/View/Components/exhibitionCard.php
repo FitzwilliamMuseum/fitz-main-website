@@ -32,7 +32,7 @@ class exhibitionCard extends Component
      * @param $endDate
      * @param $ticketed
      * @param string $status
-     * @param string $source
+     * @param string|NULL $source
      * @param $tessitura
      * @param string|null $copyright;
      */
