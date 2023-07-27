@@ -681,6 +681,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     justify-content: space-between;
     color: white;
     gap: 180px;
+    line-height: normal;
 }
 
 @media (max-width: 768px) {
