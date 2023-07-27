@@ -24,14 +24,16 @@
 
 @include('includes.structure.exhibitions', array(
     "listing_type" => "upcoming",
-    "listing_title" => "What's on"
+    "listing_title" => "What's on",
+    "listing_source" => "homepage"
     ))
 
 <div class="container-fluid parallax parallax-home"></div>
 
 @include('includes.structure.exhibitions', array(
     "listing_type" => "future",
-    "listing_title" => "Coming soon"
+    "listing_title" => "Coming soon",
+    "listing_source" => "homepage"
 ))
 
 <div class="container-fluid parallax parallax-home"></div>

@@ -18,6 +18,7 @@ class exhibitionCard extends Component
     public $endDate;
     public $ticketed;
     public $status;
+    public $source;
     public $tessitura;
     public $copyright;
 
@@ -31,14 +32,22 @@ class exhibitionCard extends Component
      * @param $endDate
      * @param $ticketed
      * @param string $status
+     * @param string|NULL $source
      * @param $tessitura
      * @param string|null $copyright;
      */
+
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    
     public function __construct(
         string $route, array $params, string $title,
         string $altTag = NULL, array $image = NULL,
                $startDate = NULL, $endDate = NULL, $ticketed = NULL,
-        string $status = 'current', $tessitura = NULL, string $copyright = NULL
+        string $status = 'current', $source = NULL, $tessitura = NULL, string $copyright = NULL
     )
     {
         $this->route = $route;
@@ -50,6 +59,7 @@ class exhibitionCard extends Component
         $this->endDate = $endDate;
         $this->ticketed = $ticketed;
         $this->status = $status;
+        $this->source = $source;
         $this->tessitura = $tessitura;
         $this->copyright = $copyright;
     }

@@ -14,13 +14,24 @@ class galleryCard extends Component
     public $image;
     public $route;
     public $status;
+    public $source;
+
+    /**
+     * @param string $title
+     * @param string|NULL $altTag
+     * @param array $params
+     * @param array|NULL $image
+     * @param string $route
+     * @param string $status
+     * @param string|NULL $source
+     */
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(string $route, array $params, string $title, string $altTag = NULL, array $image = NULL, array $status)
+    public function __construct(string $route, array $params, string $title, string $altTag = NULL, array $image = NULL, array $status, string $source = NULL)
     {
         $this->route = $route;
         $this->params = $params;
@@ -28,6 +39,7 @@ class galleryCard extends Component
         $this->altTag = $altTag;
         $this->image = $image;
         $this->status = $status;
+        $this->source = $source;
     }
 
     /**

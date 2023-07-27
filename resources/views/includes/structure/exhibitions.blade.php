@@ -15,6 +15,7 @@
                         :startDate="$current['exhibitions_id']['exhibition_start_date']"
                         :endDate="$current['exhibitions_id']['exhibition_end_date']"
                         :status="'current'"
+                        :source="'homepage'"
                         :ticketed="$current['exhibitions_id']['ticketed']"
                         :tessitura="$current['exhibitions_id']['tessitura_string']"
                     />
@@ -32,6 +33,7 @@
                         :startDate="$current['exhibitions_id']['exhibition_start_date']"
                         :endDate="$current['exhibitions_id']['exhibition_end_date']"
                         :status="'current'"
+                        :source="'homepage'"
                         :ticketed="$current['exhibitions_id']['ticketed']"
                         :tessitura="$current['exhibitions_id']['tessitura_string']"
                     />
