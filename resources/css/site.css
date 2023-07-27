@@ -651,6 +651,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     z-index: 100;
 }
 
+.parallax {
+    height: 770px;
+}
+
 .parallax-home {
     min-height: 0;
     height: 280px;
@@ -738,6 +742,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .container-home-card {
+    max-width: 627px;
     width: 100%;
 }
 

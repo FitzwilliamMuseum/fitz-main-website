@@ -6,12 +6,13 @@
     background-size: cover;
     }
 @endif
-@hasSection('parallax_home')
+@hasSection('parallax_one')
+
     .parallax-home {
     height: 280px;
     display: none;
-    background-image: url('@yield('hero_image')');
     background-repeat: no-repeat;
+    background-image: url(@yield('parallax_one'));
     background-size: cover;
     background-position: 50% 30%;
     }

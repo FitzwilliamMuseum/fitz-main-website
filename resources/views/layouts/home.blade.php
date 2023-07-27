@@ -18,6 +18,7 @@
 
 @hasSection('homepage-hero')
     @yield('homepage-hero')
+    {{-- @dd($hero['parallax_one']['data']['url']); --}}
 @endif
 
 

@@ -11,7 +11,6 @@
     .head {
         background: url('@yield('hero_image')') no-repeat center top / cover;
     }
-
     @include('includes.css.parallax');
 </style>
 @hasSection('360')
