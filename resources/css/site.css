@@ -701,9 +701,16 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .home-hero .wrapper h1 {
     color: #FFF;
-    font-size: 80px;
+    font-size: 44px;
     font-weight: 500;
 }
+
+@media screen and (min-width: 768px) {
+    .home-hero .wrapper h1 {
+        font-size: 80px;
+    }
+}
+
 
 .home-hero .wrapper p {
     font-size: 24px;
@@ -742,7 +749,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .container-home-card {
-    max-width: 627px;
+    max-width: 650px;
     width: 100%;
 }
 
@@ -771,7 +778,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     display: block;
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%;
+    padding-top: 42.59%;
 }
 
 .container-home-card .card-image img {
