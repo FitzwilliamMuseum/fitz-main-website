@@ -17,6 +17,16 @@ class galleryCard extends Component
     public $source;
 
     /**
+     * @param string $title
+     * @param string|NULL $altTag
+     * @param array $params
+     * @param array|NULL $image
+     * @param string $route
+     * @param string $status
+     * @param string|NULL $source
+     */
+
+    /**
      * Create a new component instance.
      *
      * @return void
