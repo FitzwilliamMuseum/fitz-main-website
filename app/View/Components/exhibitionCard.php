@@ -36,6 +36,13 @@ class exhibitionCard extends Component
      * @param $tessitura
      * @param string|null $copyright;
      */
+
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    
     public function __construct(
         string $route, array $params, string $title,
         string $altTag = NULL, array $image = NULL,
