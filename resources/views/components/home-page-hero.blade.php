@@ -13,13 +13,13 @@
                         {{ $hero['hero_subtitle'] }}
                     </p>
                 @endif
-                {{-- @if ($hero['exhibition_link'])
+                @if ($hero['exhibition_link'])
                     <p>
-                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('l jS F Y') }}
+                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('jS F Y') }}
                         -
-                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_end_date'])->format('l jS F Y') }}
+                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_end_date'])->format('jS F Y') }}
                     </p>
-                @endif --}}
+                @endif
             </div>
             @if (!empty($hero['ticket_link']))
                 <button class="hero-cta">
