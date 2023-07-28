@@ -36,6 +36,7 @@
             @include('includes.structure.breadcrumb')
             @yield('press-contact')
             @yield('content')
+            @yield('group-visits')
             @yield('adlib')
         </div>
         @yield('audioGuide')

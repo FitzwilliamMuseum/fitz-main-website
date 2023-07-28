@@ -24,6 +24,7 @@ class HomePage extends Model
                 'sort' => '-id'
             )
         );
+        // dd($api->getData());
         return $api->getData()['data'][0];
     }
 }

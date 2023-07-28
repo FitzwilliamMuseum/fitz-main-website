@@ -12,61 +12,67 @@
 @include('googletagmanager::body')
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
+
 {{-- include temporary banner for the site --}}
 {{-- @include('includes.structure.defaced-header') --}}
 
-{{-- uncomment the following line once the above banner has been removed --}}
-@hasSection('banner')
-    @yield('banner')
-@else
-    @include('includes.structure.head')
+@hasSection('homepage-hero')
+    @yield('homepage-hero')
+    {{-- @dd($hero['parallax_one']['data']['url']); --}}
 @endif
 
-@include('includes.structure.open')
-@include('includes.structure.exhibitions')
 
-@include('includes.structure.galleries')
+@include('includes.structure.exhibitions', array(
+    "listing_type" => "upcoming",
+    "listing_title" => "What's on",
+    "listing_source" => "homepage"
+    ))
 
 <div class="container-fluid parallax parallax-home"></div>
 
-@yield('fundraising')
-<div class="container-fluid parallax parallax-home mt-3">
-</div>
-@include('includes.structure.thingstodo')
+@include('includes.structure.exhibitions', array(
+    "listing_type" => "future",
+    "listing_title" => "Coming soon",
+    "listing_source" => "homepage"
+))
 
-<div class="container-fluid parallax second-parallax-home mt-3">
+<div class="container-fluid parallax parallax-home"></div>
+
+<div class="container container-home-cards">
+    <h3><a href="{{ route('news') }}">Latest news</a></h3>
+    <div class="row row-home">
+        @yield('news')
+    </div>
 </div>
 
-<div class="container mt-3">
+<div class="container-fluid parallax parallax-home"></div>
+
+<div class="container container-home-cards">
     <h3><a href="{{  route('objects') }}">Collections highlights</a></h3>
-    <div class="row">
+    <div class="row row-home">
         @yield('themes')
     </div>
 </div>
 
-<div class="container-fluid parallax second-parallax-home mt-3"></div>
+<div class="container-fluid parallax parallax-home"></div>
 
-<div class="container mt-3">
+<div class="container container-home-cards">
     <h3><a href="{{ route('research') }}">Our research</a></h3>
-    <div class="row">
+    <div class="row row-home">
         @yield('research')
     </div>
 </div>
 
-<div class="container-fluid parallax second-parallax-home">
-</div>
+<div class="container-fluid parallax parallax-home"></div>
 
-<div class="container mt-3">
-    <h3><a href="{{ route('news') }}">Latest news</a></h3>
-    <div class="row">
-        @yield('news')
-    </div>
-</div>
-<div class="container-fluid parallax second-parallax-home">
-</div>
+@yield('fundraising')
+
+<div class="container-fluid parallax parallax-home"></div>
+
 <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')
 </div>
+
 @include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.scripts.javascript')

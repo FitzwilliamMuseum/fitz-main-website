@@ -277,6 +277,12 @@ Breadcrumbs::for('visit.faqs', function (BreadcrumbTrail $trail): void
     $trail->push('Visit Us',route('visit'));
     $trail->push('FAQs',route('visit.faqs'));
 });
+Breadcrumbs::for('visit.groupvisits', function (BreadcrumbTrail $trail): void
+{
+    $trail->parent('home');
+    $trail->push('Visit Us',route('visit'));
+    $trail->push('Group Visits',route('visit.groupvisits'));
+});
 Breadcrumbs::for('galleries', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');

@@ -43,6 +43,8 @@
 
 @include('includes.elements.exhibitions.360')
 
+@include('includes.elements.exhibitions.faqs')
+
 @include('includes.elements.exhibitions.sketchfab')
 
 @if($exhibition['slug'] === 'islanders')
@@ -56,6 +58,8 @@
 @include('includes.elements.exhibitions.products')
 
 @include('includes.elements.exhibitions.events')
+
+@include('includes.elements.exhibitions.events-url')
 
 @include('includes.elements.exhibitions.similar-exhibits')
 

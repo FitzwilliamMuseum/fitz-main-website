@@ -1,7 +1,7 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3 {{ !empty($source) && $source == "homepage" ? 'container-home-card' : ''}}">
     <div class="card card-fitz h-100">
         @isset($image)
-            <a href="{{ route($route, $params) }}">
+            <a class="card-image" href="{{ route($route, $params) }}">
                 <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
                      alt="{{ $altTag }}"
                      width="{{ $image['data']['thumbnails'][13]['width'] }}"
@@ -34,8 +34,8 @@
                     <p class="text-dark">Included in General admission</p> --}}
                 @endif
                 <p class="text-dark">
-                    {{  Carbon\Carbon::parse($startDate)->format('l dS F Y') }} to
-                    {{  Carbon\Carbon::parse($endDate)->format('l dS F Y') }}
+                    {{  Carbon\Carbon::parse($startDate)->format('l jS F Y') }} to
+                    {{  Carbon\Carbon::parse($endDate)->format('l jS F Y') }}
                 </p>
                 @if($status === 'archived')
                     <span class="badge bg-dark p-2 d-block">

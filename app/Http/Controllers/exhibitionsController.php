@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faqs;
 use App\Models\HomePageBanners;
 use App\Models\Shopify;
 use GuzzleHttp\Exception\GuzzleException;
@@ -103,9 +104,6 @@ class exhibitionsController extends Controller
             if (!empty($exhibition['fme_product_ids'])) {
                 $products = Shopify::getShopifyCollection($exhibition['fme_product_ids']);
             }
-            if (!empty($exhibition['tessitura_keyword_id'])) {
-                $events = TessituraPerformances::getExhibitionPerformances($exhibition['tessitura_keyword_id']);
-            }
 
             $banners = null;
 
@@ -113,7 +111,9 @@ class exhibitionsController extends Controller
                 $banners = HomePageBanners::getBannerByID($exhibition['exhibition_banner']['id']);
             }
 
-            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products', 'events'));
+            $faqs = Faqs::list('exhibition', $exhibition['id']);
+
+            return view('exhibitions.details', compact('exhibition', 'records', 'banners', 'adlib', 'podcasts', 'cases', 'products', 'faqs'));
         }
     }
 
