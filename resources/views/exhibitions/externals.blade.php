@@ -3,8 +3,14 @@
     @section('description', 'A curatorial or expert profile for ' . $profile['display_name'])
 @section('title', $profile['display_name'])
 
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
-@section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
+
+@if(!is_null($profile['banner_image']))
+    @section('hero_image',$profile['banner_image']['data']['url'])
+    @section('hero_image_title', '')
+@else
+    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/baroque.jpg')
+    @section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
+@endif
 
 @section('content')
     @if(!is_null($profile['profile_image']))
