@@ -6,6 +6,11 @@
 @section('keywords', 'events,fitzwilliam')
 @section('content')
 
+    {{--
+
+    This alert box was previously used to display contact info, but it could also be used
+    to display other information if needed.
+
     <div class="alert alert-info mb-3 text-center">
         For assistance with booking and ticketing enquiries, please contact us.<br />
         @svg('fas-envelope', ['width' => 20, 'height' => 20]): <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a> @svg('fas-phone', ['width' => 20, 'height' => 20]): +44
@@ -14,6 +19,9 @@
         <br />
         Available 10:00 - 17:00 Tuesday to Saturday, 12:00 - 17:00 Sunday, closed Monday.
     </div>
+    --}}
+
+
     <div class="container">
         <h3 class="text-center mb-2">What would you like to attend?</h3>
         @php
