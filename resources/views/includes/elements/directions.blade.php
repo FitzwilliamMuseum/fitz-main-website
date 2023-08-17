@@ -65,7 +65,7 @@
         </div>
 
 
-        <h3 class="mt-3">Directions via Google Maps</h3>
+        {{--<h3 class="mt-3">Directions via Google Maps</h3>
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <div class="row text-center">
                 @foreach ($transport['data'] as $transport)
@@ -78,6 +78,6 @@
                     </div>
                 @endforeach
             </div>
-        </div>
+        </div>--}}
     </div>
 </div>
