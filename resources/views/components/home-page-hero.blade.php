@@ -15,9 +15,9 @@
                 @endif
                 @if ($hero['exhibition_link'])
                     <p>
-                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('jS F Y') }}
+                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('j F Y') }}
                         -
-                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_end_date'])->format('jS F Y') }}
+                        {{  Carbon\Carbon::parse($hero['exhibition_link']['exhibition_end_date'])->format('j F Y') }}
                     </p>
                 @endif
             </div>
