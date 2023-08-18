@@ -18,7 +18,7 @@
               </h3>
               @if(isset($result['pubDate']))
                 <h3 class="text-info lead">
-                  Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('l dS F Y') }}
+                  Published: {{  Carbon\Carbon::parse($result['pubDate'][0])->format('j F Y') }}
                 </h3>
               @endif
 

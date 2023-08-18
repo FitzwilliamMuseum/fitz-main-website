@@ -19,7 +19,7 @@
             </div>
             <p class="card-text">{{ substr(strip_tags(htmlspecialchars_decode($release['body'])),0,200) }}...</p>
             <p class="text-info">
-                {{ Carbon\Carbon::parse($release['release_date'])->format('l j F Y') }}
+                {{ Carbon\Carbon::parse($release['release_date'])->format('j F Y') }}
             </p>
             <p> @mime($release['file']['type']) - @humansize($release['file']['filesize'])</p>
             <a href="{{ $release['file']['data']['full_url'] }}" class="btn d-block btn-dark stretched-link">

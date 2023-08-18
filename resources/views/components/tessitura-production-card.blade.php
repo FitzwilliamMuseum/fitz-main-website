@@ -22,7 +22,7 @@
                     </a>
                 </h2>
                 <h5>
-                    {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}
+                    {{ Carbon\Carbon::parse($production->PerformanceDate)->format('j F Y')  }}
                 </h5>
                 @if($production->PerformanceDescription === 'The Human Touch')
                     <p>This includes general admission</p>
