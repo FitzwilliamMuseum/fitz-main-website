@@ -281,7 +281,7 @@ Breadcrumbs::for('visit.groupvisits', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
     $trail->push('Visit Us',route('visit'));
-    $trail->push('Group Visits',route('visit.groupvisits'));
+    $trail->push('Group visits',route('visit.groupvisits'));
 });
 Breadcrumbs::for('galleries', function (BreadcrumbTrail $trail): void
 {

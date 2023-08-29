@@ -88,7 +88,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('landing-section', ['commercial-services', 'gallery-hire']) }}">
+                                <a href="{{ route('landing-section', ['commercial-services', 'venue-hire']) }}">
                                     Venue hire
                                 </a>
                             </li>
@@ -99,7 +99,7 @@
                             </li>
 
                             <li>
-                                <a aria-label="Work for us" href="{{ route('vacancies')}}">Work with us</a>
+                                <a aria-label="Work with us" href="{{ route('vacancies')}}">Work with us</a>
                             </li>
                             <li>
                                 <a href="https://www.museums.cam.ac.uk/"

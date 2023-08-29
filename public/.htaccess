@@ -21,6 +21,11 @@
     <FilesMatch ".(eot|ttf|otf|woff)">
       Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
+
+    Redirect 301 /visit-us /plan-your-visit
+    Redirect 301 /objects-and-artworks /explore-our-collection
+    Redirect 301 /learning /learn-with-us
+    Redirect 301 /about-us/work-for-us /about-us/work-with-us
 </IfModule>
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE application/javascript

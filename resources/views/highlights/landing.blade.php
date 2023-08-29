@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Our objects and artworks')
+@section('title', 'Explore our collection')
 @section('hero_image',env('CONTENT_STORE') . 'large_PD_8_1979_1_201709.jpg')
 @section('hero_image_title', 'The Death of Hippolytus')
 @section('description','A search page for our highlight objects')
