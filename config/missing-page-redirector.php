@@ -490,6 +490,7 @@ return [
         # Redirects August 2023
         '/commercial-services/gallery-hire' => '/commercial-services/venue-hire',
         '/about-us/history-of-the-building-and-collections' => '/about-us/our-history',
-        '/plan-your-visit/accessibility-and-our-facilities' => '/plan-your-visit/accessibility-and-facilities'
+        '/plan-your-visit/accessibility-and-our-facilities' => '/plan-your-visit/accessibility-and-facilities',
+        '/plan-your-visit/family-visiting-tips' => '/plan-your-visit/families'
     ],
 ];
