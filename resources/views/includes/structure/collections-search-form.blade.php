@@ -2,6 +2,7 @@
     <div class="container-fluid bg-gdbo">
         <div class="container py-3 ">
             <div class="mx-auto mb-3">
+                <h3>{{ $subtitle }}</h3>
                 {{ $page }}
             </div>
             <div class="p-3 mx-auto mb-3 bg-white">
