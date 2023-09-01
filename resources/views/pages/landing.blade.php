@@ -36,7 +36,7 @@
                     $coll         = $pagesController::injectPages('about-us','collections');
                     $press        = $pagesController::injectPages('about-us','press-room');
                     $jobs         = $pagesController::injectPages('about-us','work-for-us');
-                    $research     = $pagesController::injectPages('research','research-and-impact')
+                    $research     = $pagesController::injectPages('research','discover-our-research')
                 @endphp
                 @include('includes.structure.cards',      $data = $governance )
                 @include('includes.structure.commercial', $data = $comm )
