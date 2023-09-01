@@ -1,16 +1,20 @@
 @section('collection-search')
-    <div class="container-fluid bg-gdbo">
-        <div class="container py-3 ">
+    <div class="container-fluid">
+        <div class="container">
             <div class="mx-auto mb-3">
-                <h3>{{ $subtitle }}</h3>
-                {{ $page }}
+                <div class="acknowledgement-notice">
+                    <div class="wrapper">
+                        <h2>{{ $subtitle }}</h2>
+                        <p>{{ $page }}</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-3 mx-auto mb-3 bg-white">
-                {{ Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET', 'class' => 'bg-white']) }}
+            <div class="mx-auto mb-3 bg-white">
+                {{ Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET', 'class' => 'bg-white acknowledgement-collection-form']) }}
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <input type="text" id="query" name="query" value="" class="form-control input-lg mr-4"
-                               placeholder="Search our collection" required value="{{ old('query') }}">
+                        <label for="collection-query">Search our objects and artworks</label>
+                        <input type="text" id="collection-query" name="query" value="" class="form-control input-lg mr-4" placeholder="Search our collection" required value="{{ old('query') }}">
                     </div>
                 </div>
                 <div class="row">
@@ -77,20 +81,14 @@
                 {!! Form::close() !!}
             </div>
 
-            <h3>Search our highlights</h3>
-            <div class="col-12 shadow-sm p-3 mx-auto">
-                {{ Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'text-center']) }}
-                <div class="row center-block">
-                    <div class="col-lg-12 center-block">
-                        <div class="input-group mr-3">
-                            <input type="text" id="query" name="query" value="" class="form-control input-lg me-4"
-                                   placeholder="Search our highlight objects" required
-                                   value="{{ old('query') }}&contentType:pharos">
-                            <span class="input-group-btn ml-3">
-                <button class="btn btn-dark" type="submit">Search...</button>
-              </span>
+            <div class="col-12 shadow-sm mx-auto">
+                {{ Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'acknowledgement-highlights-form']) }}
+                <div class="row">
+                        <label for="highlights-query">Search our highlights</label>
+                        <div class="col-lg-12 mb-3 form-field">
+                            <input type="text" id="highlights-query" name="query" value="" class="form-control input-lg me-4" placeholder="Search our highlight objects" required value="{{ old('query') }}&contentType:pharos">
+                            <button class="btn btn-dark" type="submit">Search...</button>
                         </div>
-                    </div>
                 </div>
                 @if(count($errors))
                     <div class="form-group">
