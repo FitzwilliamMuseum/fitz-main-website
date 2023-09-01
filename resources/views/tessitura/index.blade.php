@@ -23,7 +23,6 @@
 
 
     <div class="container">
-        <h3 class="text-center mb-2">What would you like to attend?</h3>
         @php
             use Illuminate\Support\Arr;
             $types = Arr::pluck($productions, 'FacilityDescription');

@@ -469,6 +469,9 @@ return [
         'visit-us/exhibitions/currencies-of-conflict-and-dissent' => 'visit-us/exhibitions/defaced',
         '/visit/gettinghere' => '/visit-us',
         '/visit/{url}' => '/visit-us/{url}',
+
+        // client requested changing the entire visit-us section to plan-your-visit
+        '/visit-us' => '/plan-your-visit',
         # feeds
         '/news/feed/' => '/feeds/news/',
         # podcasts
@@ -482,6 +485,12 @@ return [
         'about-us/departments/research' => '/about-us/departments/curatorial',
         # Redirects August 2022
         'inspire2020' => 'https://inspire2020.fitzmuseum.cam.ac.uk',
-        'visit-us/exhibitions/defaced' => '/visit-us/exhibitions/defaced-money-conflict-protest'
+        'visit-us/exhibitions/defaced' => '/visit-us/exhibitions/defaced-money-conflict-protest',
+
+        # Redirects August 2023
+        '/commercial-services/gallery-hire' => '/commercial-services/venue-hire',
+        '/about-us/history-of-the-building-and-collections' => '/about-us/our-history',
+        '/plan-your-visit/accessibility-and-our-facilities' => '/plan-your-visit/accessibility-and-facilities',
+        '/plan-your-visit/family-visiting-tips' => '/plan-your-visit/families'
     ],
 ];

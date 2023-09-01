@@ -46,9 +46,9 @@
 {{--                    @if(isset($exhibition['exhibition_start_date']))--}}
 {{--                        <li>--}}
 {{--                            {{$type}}--}}
-{{--                            run: {{  Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('l dS F Y') }}--}}
+{{--                            run: {{  Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('j F Y') }}--}}
 {{--                            to--}}
-{{--                            {{  Carbon\Carbon::parse($exhibition['exhibition_end_date'])->format('l dS F Y') }}--}}
+{{--                            {{  Carbon\Carbon::parse($exhibition['exhibition_end_date'])->format('j F Y') }}--}}
 {{--                        </li>--}}
 {{--                    @endif--}}
 {{--                </ul>--}}

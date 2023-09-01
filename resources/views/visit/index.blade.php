@@ -1,7 +1,7 @@
 @extends('layouts.visitus')
 
     @section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/european-pottery-bond.jpg')
-    @section('title', 'Visit us')
+    @section('title', 'Plan your visit')
     @section('description', 'Visiting the Fitzwilliam Museum? What do you need to know?')
     @section('keyword', 'cambridge,museums,visit')
 
@@ -63,7 +63,7 @@
                     :alt="'Visitor in Gallery 5'"
                     :route="'landing-section'"
                     :params="['visit-us','frequently-asked-questions']"
-                    :title="'Frequently Asked Questions'"></x-static-image-card>
+                    :title="'Frequently asked questions'"></x-static-image-card>
                 @foreach($associated['data'] as $associate)
                     <x-image-card
                         :altTag="$associate['hero_image_alt_text']"

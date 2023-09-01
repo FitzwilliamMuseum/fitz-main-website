@@ -21,7 +21,7 @@
             <span class="badge bg-dark my-2">Salary range: £{{ $vacancy['salary_range'] }}</span>
         @endif
         <span class="badge bg-info my-2">Closing date:
-                {{  Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}
+                {{  Carbon\Carbon::parse($vacancy['expires'])->format('j F Y') }}
             </span>
         @isset($vacancy['job_pack'])
             <a href="{{ $vacancy['job_pack']['data']['full_url'] }}" class="btn btn-dark my-2" download>

@@ -35,10 +35,10 @@
                     </a>
                 </h2>
                 <h5 property="startDate"
-                    content="{{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}">
-                    {{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}
+                    content="{{ Carbon\Carbon::parse($production->PerformanceDate)->format('j F Y')  }}">
+                    {{ Carbon\Carbon::parse($production->PerformanceDate)->format('j F Y')  }}
                     <span property="endDate"
-                          content="{{ Carbon\Carbon::parse($production->PerformanceDate)->format('l j F Y')  }}"></span>
+                          content="{{ Carbon\Carbon::parse($production->PerformanceDate)->format('j F Y')  }}"></span>
                 </h5>
                 @if($production->PerformanceDescription === 'The Human Touch')
                     <p>This includes general admission</p>

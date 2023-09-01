@@ -3,7 +3,7 @@
         <div class="container-fluid bg-grey">
             <div class="row">
                 <div class="col-6">
-                    <h3 class="my-3">Explore Highlights by theme</h3>
+                    <h3 class="my-3">Explore themes</h3>
                 </div>
                 <div class="col-12">
                     <div id="pharos" class="carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">

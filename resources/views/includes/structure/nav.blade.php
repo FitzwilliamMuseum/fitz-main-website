@@ -88,27 +88,27 @@
                 <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('home') }}">Home <span class="visually-hidden">(current)</span></a>
                 </li>
-                <li class="nav-item {{ (request()->is('visit-us*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('visit') }}">Visit</a>
+                <li class="nav-item {{ (request()->is('plan-your-visit*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('visit') }}">Visit us</a>
                 </li>
                 <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('events') }}">Events</a>
                 </li>
 
-                <li class="nav-item {{ (Request()->is('objects-and-artworks*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('objects') }}">Our Collection</a>
+                <li class="nav-item {{ (Request()->is('explore-our-collection*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('objects') }}">Collection</a>
                 </li>
-                <li class="nav-item {{ (Request()->is('learning*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('landing', ['learning']) }}">
+                <li class="nav-item {{ (Request()->is('learn-with-us*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('landing', ['learn-with-us']) }}">
                         Learning</a>
                 </li>
                 <li class="nav-item {{ (Request()->is('about-us*')) ? 'active' : '' }}">
                     <a class="nav-link " href="{{ route('landing', ['about-us']) }}">
-                        About</a>
+                        About us</a>
                 </li>
                 <li class="nav-item {{ (Request()->is('support-us*')) ? 'active' : '' }}">
                     <a class="nav-link " href="{{ route('landing', ['support-us']) }}">
-                        Support Us</a>
+                        Support us</a>
                 </li>
                 <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('landing', ['research']) }}">Research</a>

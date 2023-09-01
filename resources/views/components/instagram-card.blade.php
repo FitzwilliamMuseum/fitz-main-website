@@ -25,7 +25,7 @@
                     </a>
                 </h3>
                 <p class="text-info">
-                    {{ Carbon\Carbon::parse($instagram['date_posted'])->format('l j F Y') }}
+                    {{ Carbon\Carbon::parse($instagram['date_posted'])->format('j F Y') }}
                 </p>
             </div>
         </div>

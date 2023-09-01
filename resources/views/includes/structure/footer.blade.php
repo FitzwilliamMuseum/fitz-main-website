@@ -212,7 +212,6 @@
                     <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
                         @svg('fab-github',['width'=> 48,'height'=> 48, 'alt' => "Github logo", "class" => "my-2 mx-2"])
                     </a>
-
                 </p>
             </div>
         </div>

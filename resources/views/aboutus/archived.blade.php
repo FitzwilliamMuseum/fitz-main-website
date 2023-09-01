@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Work for us - Archived Vacancies')
+@section('title', 'Work with us - Archived Vacancies')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'An overview of archived job vacancies')
