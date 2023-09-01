@@ -169,18 +169,22 @@
                         @svg('fab-twitter',['width'=> 48,'height'=> 48, 'alt' => "Twitter logo", "class" => "my-2 mx-2"])
 
                     </a>
-                    <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
-                        @svg('fab-instagram',['width'=> 48,'height'=> 48, 'alt' => "Instagram logo", "class" => "my-2 mx-2"])
-
-                    </a>
                     <a aria-label="Fitzwilliam Museum linkedin account"
                        href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
                         @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkedin logo", "class" => "my-2 mx-2"])
 
                     </a>
+                    <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
+                        @svg('fab-youtube',['width'=> 48,'height'=> 48, 'alt' => "Youtube logo", "class" => "my-2 mx-2"])
+
+                    </a>
                     <a aria-label="Fitzwilliam Museum facebook account"
                        href="https://www.facebook.com/fitzwilliammuseum/">
                         @svg('fab-facebook',['width'=> 48,'height'=> 48, 'alt' => "Facebook logo", "class" => "my-2 mx-2"])
+                    </a>
+                    <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
+                        @svg('fab-instagram',['width'=> 48,'height'=> 48, 'alt' => "Instagram logo", "class" => "my-2 mx-2"])
+
                     </a>
                     <a aria-label="Fitzwilliam Museum sketchfab account" href="https://www.sketchfab.com/fitzwilliammuseum/">
                         <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}"
@@ -194,10 +198,7 @@
                         @svg('fab-github',['width'=> 48,'height'=> 48, 'alt' => "Github logo", "class" => "my-2 mx-2"])
 
                     </a>
-                    <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
-                        @svg('fab-youtube',['width'=> 48,'height'=> 48, 'alt' => "Youtube logo", "class" => "my-2 mx-2"])
 
-                    </a>
                     <a aria-label="Fitzwilliam Museum news feed" href="{{ env('MAIN_URL') }}/news/feed/">
                         @svg('fas-rss',['width'=> 48,'height'=> 48, 'alt' => "RSS logo", "class" => "my-2 mx-2"])
                     </a>
