@@ -137,7 +137,7 @@ class Stubs extends Model
                 'filter[id][eq]' => $id
             )
         );
-        return $api->getData()['data'][0]['body'];
+        return $api->getData()['data'][0];
     }
 
     /**
