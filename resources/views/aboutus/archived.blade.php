@@ -16,8 +16,7 @@
     @else
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
             <p>
-                We do not have any vacancies in our archive at the moment.
-                Thank you for your interest.
+                We currently have no vacancies, please check back again soon.
             </p>
         </div>
     @endif

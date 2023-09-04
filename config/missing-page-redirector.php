@@ -46,7 +46,7 @@ return [
         '/aboutus/review' => '/about-us/governance-policies-and-reports',
         '/about/rnuseumhistory.html' => '/about-us/history-of-the-building-and-collections',
         '/aboutus/imagelibrary' => '/commercial-services/image-library',
-        '/aboutus/mission' => '/about-us/our-mission',
+        '/aboutus/mission' => '/about-us/our-mission-and-values',
         '/aboutus/museumhistory/old' => '/about-us/history-of-the-building-and-collections',
         '/aboutus/history' => '/about-us/history-of-the-building-and-collections',
         '/aboutus/press/pr_archive' => '/about-us/press-room',

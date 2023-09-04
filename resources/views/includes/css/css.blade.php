@@ -11,6 +11,12 @@
     .head {
         background: url('@yield('hero_image')') no-repeat center top / cover;
     }
+    .learning-heading {
+        text-transform: lowercase;
+    }
+    .learning-heading:first-letter {
+        text-transform: uppercase;
+    }
     @include('includes.css.parallax');
 </style>
 @hasSection('360')

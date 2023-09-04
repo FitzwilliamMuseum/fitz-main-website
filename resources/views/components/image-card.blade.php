@@ -22,7 +22,7 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h2>
+                <h2 {{ Request::segment(1) === "learning" ? 'class=learning-heading' : '' }}>
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
