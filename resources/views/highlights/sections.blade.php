@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title','Collection Context: ' . str_replace('-',' ',$pharos['data'][0]['section']))
+@section('title','Collection Context: ' . str_replace('-',', ',$pharos['data'][1]['section']))
 @section('description', 'A collection of objects from the collection of the Fitzwilliam Museum')
 @section('keywords', 'museum,highlights,collection,objects')
 @section('hero_image',env('CONTENT_STORE') . 'img_20190105_153947.jpg')
