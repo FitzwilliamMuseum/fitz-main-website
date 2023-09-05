@@ -506,6 +506,7 @@ return [
         '/objects-and-artworks/highlights/periods/19th-century/{url}' => '/objects-and-artworks/highlights/periods/1800s/{url}',
         '/objects-and-artworks/highlights/periods/18th-century' => '/objects-and-artworks/highlights/periods/1700s',
         '/objects-and-artworks/highlights/periods/18th-century/{url}' => '/objects-and-artworks/highlights/periods/1700s/{url}',
+        '/visit-us/library-regulations' => '/visit-us/reference-library',
         '/visit-us/library-regulations/{url}' => '/visit-us/reference-library/{url}',
         '/support-us/friends-of-the-fitzwilliam' => '/support-us/become-a-friend',
         '/support-us/donate' => '/support-us/make-a-donation',
