@@ -24,11 +24,27 @@
                                 @if($slugify)
                                     <a href="{{ route($route, Str::slug($slide[0][$param],'-')) }}"
                                        class="stretched-link">
-                                        {{ ucfirst(str_replace('-',' ', $slide[0][$title])) }}
+                                       {{-- For Collection Context: patrons, donors, collectors card --}}
+                                       @if(str_contains($slide[0][$title], 'patrons'))
+                                           {{ ucfirst(str_replace('-',',', $slide[0][$title])) }}
+                                           {{-- For Italy 1400 - 1700 and Northern Europe 1400 - 1700 card --}}
+                                           @elseif(str_contains($slide[0][$title], '1400'))
+                                           {{ $slide[0][$title] }}
+                                           @else
+                                           {{ ucfirst(str_replace('-',' ', $slide[0][$title])) }}
+                                       @endif
                                     </a>
                                 @else
                                     <a href="{{ route($route, $slide[0][$param]) }}" class="stretched-link">
-                                        {{ ucfirst(str_replace('-',' ', $slide[0][$title])) }}
+                                        {{-- For Collection Context: patrons, donors, collectors card --}}
+                                        @if(str_contains($slide[0][$title], 'patrons'))
+                                            {{ ucfirst(str_replace('-',', ', $slide[0][$title])) }}
+                                            {{-- For Italy 1400 - 1700 and Northern Europe 1400 - 1700 card --}}
+                                            @elseif(str_contains($slide[0][$title], '1400'))
+                                            {{ $slide[0][$title] }}
+                                            @else
+                                            {{ ucfirst(str_replace('-',' ', $slide[0][$title])) }}
+                                        @endif
                                     </a>
                                 @endif
                             </h3>
