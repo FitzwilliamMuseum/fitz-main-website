@@ -190,6 +190,11 @@
                         @svg('fab-twitter',['width'=> 48,'height'=> 48, 'alt' => "Twitter logo", "class" => "my-2
                         mx-2"])
                     </a>
+                    <a aria-label="Fitzwilliam Museum linkedin account"
+                        href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
+                         @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkedin logo", "class" => "my-2
+                         mx-2"])
+                    </a>
                     <a aria-label="Watch our YouTube videos"
                        href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
                         @svg('fab-youtube',['width'=> 48,'height'=> 48, 'alt' => "Youtube logo", "class" => "my-2
@@ -206,11 +211,6 @@
                     </a>
                     <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
                         @svg('fab-github',['width'=> 48,'height'=> 48, 'alt' => "Github logo", "class" => "my-2 mx-2"])
-                    </a>
-                    <a aria-label="Fitzwilliam Museum linkedin account"
-                       href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
-                        @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkedin logo", "class" => "my-2
-                        mx-2"])
                     </a>
                 </p>
             </div>
