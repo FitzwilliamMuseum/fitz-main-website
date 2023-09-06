@@ -80,7 +80,7 @@ class Highlights extends Model
         if ($period == 'italy-1400-1700') {
             $query = 'Italy 1400 - 1700';
         } elseif ($period == 'northern-europe-1400-1700') {
-            $query = 'Italy 1400 - 1700';
+            $query = 'Northern Europe 1400 - 1700';
         } else {
             $query = str_replace('-', ' ', $period);
         }

@@ -23,11 +23,11 @@
                 @endif
                 @if($project['project_start_date'])
                     <li>Project start
-                        date: {{ Carbon\Carbon::parse($project['project_start_date'])->format('l dS F Y') }}</li>
+                        date: {{ Carbon\Carbon::parse($project['project_start_date'])->format('j F Y') }}</li>
                 @endif
                 @if($project['project_end_date'])
                     <li>Project end
-                        date: {{  Carbon\Carbon::parse($project['project_end_date'])->format('l dS F Y')}}</li>
+                        date: {{  Carbon\Carbon::parse($project['project_end_date'])->format('j F Y')}}</li>
                 @endif
                 @if($project['project_url'])
                     <li>Project website: <a href="{{ $project['project_url']}}">{{ $project['project_url']}}</a></li>

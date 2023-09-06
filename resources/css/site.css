@@ -792,3 +792,56 @@ a.text-center.btn.btn-outline-light.btn__book {
     height: 100%;
     object-fit: cover;
 }
+
+.acknowledgement-notice {
+    position: relative;
+    margin-bottom: 2rem;
+
+}
+.acknowledgement-notice .wrapper {
+    max-width: 840px;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.5625rem;
+    padding-left: 2.56rem;
+}
+
+.acknowledgement-notice h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.acknowledgement-notice p {
+    margin: 0;
+}
+
+.acknowledgement-notice::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 16px;
+    width: 8px;
+    height: 100%;
+    background: #B50E5E;
+    display: block;
+}
+
+.acknowledgement-collection-form {
+    padding: 1.25rem 1rem 1rem 1rem;
+}
+
+.acknowledgement-highlights-form {
+    padding: 1.25rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.acknowledgement-collection-form label[for="collection-query"],
+.acknowledgement-highlights-form label[for="highlights-query"] {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.acknowledgement-highlights-form .form-field{
+    display: flex;
+}

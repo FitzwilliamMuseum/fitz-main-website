@@ -44,7 +44,7 @@
                 :alt="'A segment of a manuscript'"
                 :params="[]"></x-static-image-card>
             <x-static-image-card
-                :title="'Affiliated Researchers'"
+                :title="'Affiliated researchers'"
                 :route="'research-affiliates'"
                 :image="'https://content.fitz.ms/fitz-website/assets/25th_november_131_2000x1000.jpg?key=exhibition'"
                 :alt="'The Founders Entrance Portico'"

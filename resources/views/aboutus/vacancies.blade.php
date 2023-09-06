@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Work for us - Current Vacancies')
+@section('title', 'Join our team')
 @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'An overview of current job vacancies')
@@ -15,8 +15,7 @@
   @else
     <div class="col-12 shadow-sm p-3 mx-auto mb-3">
       <p>
-        We do not have any vacancies in our workforce at the moment.
-        Thank you for your interest.
+        We currently have no vacancies, please check back again soon.
       </p>
     </div>
   @endif

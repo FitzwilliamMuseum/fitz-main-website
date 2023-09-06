@@ -1,6 +1,6 @@
 @extends('layouts.exhibitions')
 
-@section('title', 'Past Exhibitions and Displays')
+@section('title', 'Past exhibitions and displays')
 @section('description', 'An archived overview of exhibitions and displays')
 @section('keywords', 'exhibition,archive,displays')
 @section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')

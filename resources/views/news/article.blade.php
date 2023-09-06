@@ -25,7 +25,7 @@
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 article">
         @include('includes.structure.oldnews')
         @markdown($news['article_body'])
-        <h3 class="text-info lead">{{  Carbon\Carbon::parse($news['publication_date'])->format('l dS F Y') }}</h3>
+        <h3 class="text-info lead">{{  Carbon\Carbon::parse($news['publication_date'])->format('j F Y') }}</h3>
     </div>
 
     @if($news['youtube_id'])

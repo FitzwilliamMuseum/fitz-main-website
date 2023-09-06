@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Our Galleries')
+@section('title', 'Our galleries')
 @section('description', 'A page documenting the galleries of the Fitzwilliam Museum')
 @section('keywords', 'gallery,description,360,3d,models')
 @foreach($pages['data'] as $page)

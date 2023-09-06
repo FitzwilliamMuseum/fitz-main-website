@@ -36,7 +36,8 @@
                     $coll         = $pagesController::injectPages('about-us','collections');
                     $press        = $pagesController::injectPages('about-us','press-room');
                     $jobs         = $pagesController::injectPages('about-us','work-for-us');
-                    $research     = $pagesController::injectPages('research','research-and-impact')
+                    $research     = $pagesController::injectPages('research','discover-our-research');
+                    $equity       = $pagesController::injectPages('about-us','equity-diversity-and-inclusion');
                 @endphp
                 @include('includes.structure.cards',      $data = $governance )
                 @include('includes.structure.commercial', $data = $comm )
@@ -59,6 +60,7 @@
                     :alt="'La ronde enfantine image'"></x-static-image-card>
                 @include('includes.structure.cards', $data = $jobs)
                 @include('includes.structure.cards', $data =  $research)
+                @include('includes.structure.cards', $data = $equity)
             @endif
             @foreach($associated['data'] as $project)
                 <x-image-card

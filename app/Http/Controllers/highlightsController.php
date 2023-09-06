@@ -88,11 +88,15 @@ class highlightsController extends Controller
         $periodsGrouped = $this->group_by("period_assigned", $periods['data']);
         $contexts = HighlightPages::getContexts();
         $contextsGrouped = $this->group_by("section", $contexts['data']);
+        
+        $page = Stubs::getHighlightPage(9);
+
         return view('highlights.landing', [
             'pharos' => HighlightThemes::list(),
             'periods'=> $periodsGrouped,
             'contexts' => $contextsGrouped,
-            'page' => Stubs::getHighlightPage(9)
+            'subtitle' => $page['subtitle'],
+            'page' => $page['body']
         ]);
     }
 

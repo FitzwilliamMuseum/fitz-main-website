@@ -19,7 +19,7 @@
                     <a href="{{ route('vacancy', $vacancy['slug'])}}">{{ $vacancy['job_title']}}</a>
                 </h2>
                 <p class="text-info">Closing
-                    Date: {{ Carbon\Carbon::parse($vacancy['expires'])->format('l dS F Y') }}</p>
+                    Date: {{ Carbon\Carbon::parse($vacancy['expires'])->format('j F Y') }}</p>
                 @if(isset($vacancy['salary_range']))
                     <span class="badge bg-dark">£{{ $vacancy['salary_range'] }}</span>
                 @endif
