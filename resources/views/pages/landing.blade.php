@@ -35,7 +35,7 @@
                     $depart       = $pagesController::injectPages('about-us','departments');
                     $coll         = $pagesController::injectPages('about-us','collections');
                     $press        = $pagesController::injectPages('about-us','press-room');
-                    $jobs         = $pagesController::injectPages('about-us','work-for-us');
+                    $jobs         = $pagesController::injectPages('about-us','work-with-us');
                     $research     = $pagesController::injectPages('research','discover-our-research');
                     $equity       = $pagesController::injectPages('about-us','equity-diversity-and-inclusion');
                 @endphp
