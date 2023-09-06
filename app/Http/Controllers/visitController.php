@@ -46,7 +46,7 @@ class visitController extends Controller
      */
     public function groupVisits(): View|Response
     {
-        $page = Stubs::getPage('plan-yor-visit', 'group-visits');
+        $page = Stubs::getPage('plan-your-visit', 'group-visits');
 
         return view('pages.index', [
                 'page' => Collect($page['data'])->first(),
