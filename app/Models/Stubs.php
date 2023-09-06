@@ -150,7 +150,7 @@ class Stubs extends Model
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
-                'filter[section][eq]' => 'visit-us',
+                'filter[section][eq]' => 'plan-your-visit',
                 'filter[landing_page][null]' => '',
                 'filter[associate_with_landing_page][eq]' => '1'
             )
@@ -165,7 +165,7 @@ class Stubs extends Model
             array(
                 'fields' => '*.*.*.*',
                 'meta' => 'result_count,total_count,type',
-                'filter[section][eq]' => 'visit-us',
+                'filter[section][eq]' => 'plan-your-visit',
                 'filter[landing_page][eq]' => '1',
             )
         );

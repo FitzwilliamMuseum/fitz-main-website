@@ -518,7 +518,7 @@ Breadcrumbs::for('theme', function (BreadcrumbTrail $trail, string $theme): void
     $trail->parent('home');
     $trail->push('Objects and Artworks', route('objects'));
     $trail->push('Highlights', route('highlights'));
-    $trail->push('By Theme', route('periods'));
+    $trail->push('By Theme', route('themes'));
     $trail->push(Str::title(str_replace('-', ' ', $theme)) , route('theme',[$theme]));
 });
 
@@ -526,7 +526,7 @@ Breadcrumbs::for('context-sections', function (BreadcrumbTrail $trail, string $s
     $trail->parent('home');
     $trail->push('Objects and Artworks', route('objects'));
     $trail->push('Highlights', route('highlights'));
-    $trail->push('By Context Theme ', route('periods'));
+    $trail->push('By Context Theme ', route('context'));
     $trail->push(Str::title(str_replace('-', ' ', $section)), route('context-sections',[$section]));
 });
 
@@ -534,7 +534,7 @@ Breadcrumbs::for('context-section-detail', function (BreadcrumbTrail $trail, str
     $trail->parent('home');
     $trail->push('Objects and Artworks', route('objects'));
     $trail->push('Highlights', route('highlights'));
-    $trail->push('By Context Theme ', route('periods'));
+    $trail->push('By Context Theme ', route('context'));
     $trail->push(Str::title(str_replace('-', ' ', $section)), route('context-sections',[$section]));
     $trail->push(Str::title(str_replace('-', ' ', $slug)), route('context-section-detail',[$section, $slug]));
 });
