@@ -196,7 +196,7 @@ Breadcrumbs::for('governance', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
     $trail->push('About us',route('landing',['about-us']));
-    $trail->push( 'Our Governance Policies', route('governance'));
+    $trail->push( 'Governance, policies and reports', route('governance'));
 
 });
 Breadcrumbs::for('press.hockney', function (BreadcrumbTrail $trail): void
@@ -469,84 +469,84 @@ Breadcrumbs::for('gallery-activity', function (BreadcrumbTrail $trail, string $s
 /** Object and highlight routes **/
 Breadcrumbs::for('objects', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
 });
 
 Breadcrumbs::for('highlight-search', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
-    $trail->push('Your seclection', route('highlight-search'));
+    $trail->push('Collection', route('objects'));
+    $trail->push('Your selection', route('highlight-search'));
 });
 Breadcrumbs::for('highlights', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
 });
 Breadcrumbs::for('highlight', function (BreadcrumbTrail $trail, string $slug): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
     $trail->push('Detail', route('highlight', [$slug]));
 });
 Breadcrumbs::for('periods', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
     $trail->push('By Period', route('periods'));
 });
 Breadcrumbs::for('themes', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
     $trail->push('By Themes', route('themes'));
 });
 Breadcrumbs::for('context', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
     $trail->push('By Context', route('context'));
 });
 
 Breadcrumbs::for('period', function (BreadcrumbTrail $trail, string $period): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
     $trail->push('By Period', route('periods'));
     $trail->push(Str::title(str_replace('-', ' ', $period)), route('period',[$period]));
 });
 Breadcrumbs::for('theme', function (BreadcrumbTrail $trail, string $theme): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
-    $trail->push('By Theme', route('periods'));
+    $trail->push('By Theme', route('themes'));
     $trail->push(Str::title(str_replace('-', ' ', $theme)) , route('theme',[$theme]));
 });
 
 Breadcrumbs::for('context-sections', function (BreadcrumbTrail $trail, string $section): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
-    $trail->push('By Context Theme ', route('periods'));
+    $trail->push('By Context Theme ', route('context'));
     $trail->push(Str::title(str_replace('-', ' ', $section)), route('context-sections',[$section]));
 });
 
 Breadcrumbs::for('context-section-detail', function (BreadcrumbTrail $trail, string $section, string $slug): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Highlights', route('highlights'));
-    $trail->push('By Context Theme ', route('periods'));
+    $trail->push('By Context Theme ', route('context'));
     $trail->push(Str::title(str_replace('-', ' ', $section)), route('context-sections',[$section]));
     $trail->push(Str::title(str_replace('-', ' ', $slug)), route('context-section-detail',[$section, $slug]));
 });
 
 Breadcrumbs::for('audio-guide', function (BreadcrumbTrail $trail): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Audio Guide', route('audio-guide'));
 });
 Breadcrumbs::for('audio-stop', function (BreadcrumbTrail $trail, string $slug): void {
     $trail->parent('home');
-    $trail->push('Objects and Artworks', route('objects'));
+    $trail->push('Collection', route('objects'));
     $trail->push('Audio Guide', route('audio-guide'));
     $trail->push('Stop details', route('audio-stop', $slug));
 });

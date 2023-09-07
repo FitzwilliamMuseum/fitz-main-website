@@ -33,14 +33,14 @@
     Redirect 301 /plan-your-visit/family-visiting-tips /plan-your-visit/families
     Redirect 301 /about-us/the-fitzwilliam-today /about-us/syndicate-and-supporters
     Redirect 301 /about-us/our-mission /about-us/our-mission-and-values
-    Redirect 301 /objects-and-artworks/highlights/themes/religious-art /objects-and-artworks/highlights/themes/religion
-    Redirect 301 /objects-and-artworks/highlights/themes/domestic-art /objects-and-artworks/highlights/themes/domestic
-    Redirect 301 /objects-and-artworks/highlights/themes/perceptions-of-people /objects-and-artworks/highlights/themes/people
-    Redirect 301 /objects-and-artworks/highlights/themes/perceptions-of-places /objects-and-artworks/highlights/themes/places
+    Redirect 301 /objects-and-artworks/highlights/themes/religious-art /explore-our-collection/highlights/themes/religion
+    Redirect 301 /objects-and-artworks/highlights/themes/domestic-art /explore-our-collection/highlights/themes/domestic
+    Redirect 301 /objects-and-artworks/highlights/themes/perceptions-of-people /explore-our-collection/highlights/themes/people
+    Redirect 301 /objects-and-artworks/highlights/themes/perceptions-of-places /explore-our-collection/highlights/themes/places
     Redirect 301 /learning/planning-a-school-visit /learning/plan-your-school-visit
-    Redirect 301 /objects-and-artworks/highlights/periods/20th-century /objects-and-artworks/highlights/periods/1900s
-    Redirect 301 /objects-and-artworks/highlights/periods/19th-century /objects-and-artworks/highlights/periods/1800s
-    Redirect 301 /objects-and-artworks/highlights/periods/18th-century /objects-and-artworks/highlights/periods/1700s
+    Redirect 301 /objects-and-artworks/highlights/periods/20th-century /explore-our-collection/highlights/periods/1900s
+    Redirect 301 /objects-and-artworks/highlights/periods/19th-century /explore-our-collection/highlights/periods/1800s
+    Redirect 301 /objects-and-artworks/highlights/periods/18th-century /explore-our-collection/highlights/periods/1700s
     Redirect 301 /visit-us/library-regulations /visit-us/reference-library
     Redirect 301 /support-us/friends-of-the-fitzwilliam /support-us/become-a-friend
     Redirect 301 /support-us/donate /support-us/make-a-donation
