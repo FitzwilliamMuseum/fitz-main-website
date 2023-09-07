@@ -26,7 +26,7 @@
 
         @markdown($page['body'])
 
-        @if(Request::is('support-us/friends-of-the-fitzwilliam'))
+        @if(Request::is('support-us/become-a-friend'))
             @include('includes.elements.payment-options')
         @endif
 
