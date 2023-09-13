@@ -22,7 +22,7 @@
 @endsection
 
 @section('associated_pages')
-    @if(Request::is('learning'))
+    @if(Request::is('learn-with-us'))
         @include('includes.elements.schools-project')
     @endif
     <div class="container">
