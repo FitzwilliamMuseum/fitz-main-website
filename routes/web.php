@@ -113,17 +113,17 @@ Route::get('news/{slug}/', 'newsController@article')->name('article');
 /*
 learning routes
 */
-Route::get('learn-with-us/look-think-do/', 'learn-with-usController@lookThinkDoMain')->name('ltd');
-Route::get('learn-with-us/look-think-do/{slug}', 'learn-with-usController@lookThinkDoActivity')->name('ltd-activity');
-Route::get('learn-with-us/resources/', 'learn-with-usController@resources')->name('learn-with-us-resources');
-Route::get('learn-with-us/resources/{slug}', 'learn-with-usController@resource')->name('learn-with-us-resource');
-Route::get('learn-with-us/school-sessions/{slug}', 'learn-with-usController@session')->name('school-sessions');
-Route::get('learn-with-us/community-programming/{slug}', 'learn-with-usController@community')->name('community-programming');
+Route::get('learn-with-us/look-think-do/', 'learningController@lookThinkDoMain')->name('ltd');
+Route::get('learn-with-us/look-think-do/{slug}', 'learningController@lookThinkDoActivity')->name('ltd-activity');
+Route::get('learn-with-us/resources/', 'learningController@resources')->name('learn-with-us-resources');
+Route::get('learn-with-us/resources/{slug}', 'learningController@resource')->name('learn-with-us-resource');
+Route::get('learn-with-us/school-sessions/{slug}', 'learningController@session')->name('school-sessions');
+Route::get('learn-with-us/community-programming/{slug}', 'learningController@community')->name('community-programming');
 
-Route::get('learn-with-us/young-people/{slug}', 'learn-with-usController@young')->name('young-people');
-Route::get('learn-with-us/contact-us/', 'learn-with-usController@profiles')->name('learn-with-us-profiles');
-Route::get('learn-with-us/adult-programming/{slug}', 'learn-with-usController@adult')->name('adult-activity');
-Route::get('learn-with-us/gallery-activities/{slug}', 'learn-with-usController@galleryActivity')->name('gallery-activity');
+Route::get('learn-with-us/young-people/{slug}', 'learningController@young')->name('young-people');
+Route::get('learn-with-us/contact-us/', 'learningController@profiles')->name('learn-with-us-profiles');
+Route::get('learn-with-us/adult-programming/{slug}', 'learningController@adult')->name('adult-activity');
+Route::get('learn-with-us/gallery-activities/{slug}', 'learningController@galleryActivity')->name('gallery-activity');
 
 /*
 * Object and highlight routes
