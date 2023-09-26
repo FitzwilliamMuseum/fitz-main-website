@@ -61,12 +61,14 @@
             <h3>Funders and partners</h3>
             <div class="row">
                 @foreach($project['project_partnerships'] as $partner)
-                    <x-partner-card
-                        :altTag="$partner['partner']['partner_full_name']"
-                        :title="$partner['partner']['partner_full_name']"
-                        :image="$partner['partner']['partner_logo']"
-                        :url="$partner['partner']['partner_url']">
-                    </x-partner-card>
+                    @isset($partner['partner'])
+                        <x-partner-card
+                            :altTag="$partner['partner']['partner_full_name']"
+                            :title="$partner['partner']['partner_full_name']"
+                            :image="$partner['partner']['partner_logo']"
+                            :url="$partner['partner']['partner_url']">
+                        </x-partner-card>
+                    @endisset
                 @endforeach
             </div>
         </div>
