@@ -15,7 +15,31 @@
     <x-home-page-hero :hero="$hero"></x-home-page-hero>
 @endSection
 
-@section('news')
+@section('custom-third-row')
+    @foreach ( $thirdRow['data'] as $item )
+        <x-image-home-card
+            :altTag="$item['image_alt_text']"
+            :title="$item['title']"
+            :image="$item['image']"
+            :route="'custom'"
+            :params="[$item['slug']]"
+            ></x-image-home-card>
+    @endforeach
+@endsection
+
+@section('custom-fourth-row')
+    @foreach ( $fourthRow['data'] as $item )
+        <x-image-home-card
+            :altTag="$item['image_alt_text']"
+            :title="$item['title']"
+            :image="$item['image']"
+            :route="'custom'"
+            :params="[$item['slug']]"
+            ></x-image-home-card>
+    @endforeach
+@endsection
+
+{{-- @section('news')
     @foreach($news['data'] as $news)
         <x-image-home-card
             :altTag="$news['field_image_alt_text']"
@@ -24,9 +48,9 @@
             :route="'article'"
             :params="[$news['slug']]"></x-image-home-card>
     @endforeach
-@endsection
+@endsection --}}
 
-@section('fundraising')
+{{-- @section('fundraising')
     <div class="container container-home-cards">
             <h3><a href="{{ route('landing', 'support-us') }}">Support us</a></h3>
             <div class="row row-home">
@@ -35,9 +59,9 @@
                 @endforeach
             </div>
     </div>
-@endsection
+@endsection --}}
 
-@section('research')
+{{-- @section('research')
     @foreach($research['data'] as $project)
         <x-image-home-card
             :altTag="$project['hero_image_alt_text']"
@@ -46,9 +70,9 @@
             :route="'research-project'"
             :params="[$project['slug']]"></x-image-home-card>
     @endforeach
-@endsection
+@endsection --}}
 
-@section('themes')
+{{-- @section('themes')
     @foreach($objects['data'] as $theme)
         <x-image-home-card
             :altTag="$theme['image_alt_text']"
@@ -57,7 +81,7 @@
             :route="'highlight'"
             :params="[$theme['slug']]"></x-image-home-card>
     @endforeach
-@endsection
+@endsection --}}
 
 @if(!empty($shopify))
     @section('shopify')
