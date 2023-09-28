@@ -39,33 +39,47 @@
 <div class="container-fluid parallax parallax-home"></div>
 
 <div class="container container-home-cards">
+    <div class="row row-home">
+        @yield('custom-third-row')
+    </div>
+</div>
+
+<div class="container-fluid parallax parallax-home"></div>
+
+<div class="container container-home-cards">
+    <div class="row row-home">
+        @yield('custom-fourth-row')
+    </div>
+</div>
+
+{{-- <div class="container container-home-cards">
     <h3><a href="{{ route('news') }}">Latest news</a></h3>
     <div class="row row-home">
         @yield('news')
     </div>
-</div>
+</div> --}}
 
-<div class="container-fluid parallax parallax-home"></div>
+{{-- <div class="container-fluid parallax parallax-home"></div> --}}
 
-<div class="container container-home-cards">
+{{-- <div class="container container-home-cards">
     <h3><a href="{{  route('objects') }}">Collections highlights</a></h3>
     <div class="row row-home">
         @yield('themes')
     </div>
-</div>
+</div> --}}
 
-<div class="container-fluid parallax parallax-home"></div>
+{{-- <div class="container-fluid parallax parallax-home"></div> --}}
 
-<div class="container container-home-cards">
+{{-- <div class="container container-home-cards">
     <h3><a href="{{ route('research') }}">Our research</a></h3>
     <div class="row row-home">
         @yield('research')
     </div>
-</div>
+</div> --}}
 
-<div class="container-fluid parallax parallax-home"></div>
+{{-- <div class="container-fluid parallax parallax-home"></div> --}}
 
-@yield('fundraising')
+{{-- @yield('fundraising') --}}
 
 <div class="container-fluid parallax parallax-home"></div>
 

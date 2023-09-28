@@ -27,11 +27,13 @@ class homeController extends Controller
     {
         return view('home.index', [
                 'carousel' => Carousels::findBySection('home'),
-                'news' => NewsArticles::feature(),
-                'research' => ResearchProjects::listSimple('?', 3),
-                'objects' => Highlights::homeList(),
-                'things' => ThingsToDo::list(),
-                'fundraising' => FundRaising::list(4),
+                'thirdRow' => HomePage::returnThirdRow(),
+                'fourthRow' => HomePage::returnFourthRow(),
+                // 'news' => NewsArticles::feature(),
+                // 'research' => ResearchProjects::listSimple('?', 3),
+                // 'objects' => Highlights::homeList(),
+                // 'things' => ThingsToDo::list(),
+                // 'fundraising' => FundRaising::list(4),
                 'shopify' => Shopify::list(),
                 'galleries' => Galleries::list(3, '?', 'Open'),
                 'exhibitions' => Exhibitions::listHome('current', 'tessitura_string', 3),
