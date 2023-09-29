@@ -13,19 +13,19 @@
                 :alt="$exhibition['hero_image_alt_text']"
                 :route="'exhibitions'"
                 :params="[]"
-                :title="'Exhibitions'"
+                :title="'Exhibitions and displays'"
                 :colWidth="'3'"></x-visit-us-static-card>
         <?php endif; ?>
 
-        <?php if(!empty($display)): ?>
-            <x-visit-us-static-card
+        <?php # if(!empty($display)): ?>
+            {{-- <x-visit-us-static-card
                 :image="$display['hero_image']['data']['thumbnails'][13]['url']"
                 :alt="$display['hero_image_alt_text']"
                 :route="'exhibitions'"
                 :params="[]"
                 :title="'New Displays'"
-                :colWidth="'3'"></x-visit-us-static-card>
-        <?php endif; ?>
+                :colWidth="'3'"></x-visit-us-static-card> --}}
+        <?php # endif; ?>
 
         <x-visit-us-static-card
             :image="'https://content.fitz.ms/fitz-website/assets/Fitzwilliam Museum_GalleryOne_Panorama_02_0.jpg?key=exhibition'"
