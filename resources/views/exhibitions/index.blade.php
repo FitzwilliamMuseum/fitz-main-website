@@ -14,9 +14,8 @@
 @section('current')
     <div class="container-fluid py-3 bg-gdbo">
         <div class="container">
-            @if(!empty($current['data']))
-
-                <h3>Our current exhibitions</h3>
+            @if(!empty($current['data']) && !empty($displays['data']))
+                <h3>Current exhibitions and displays</h3>
                 <div class="row">
                     @foreach($current['data'] as $current)
                         <x-exhibition-card
@@ -32,36 +31,33 @@
                             :tessitura="$current['tessitura_string']"
                             :copyright="$current['copyright_text']"></x-exhibition-card>
                     @endforeach
-                </div>
-            @endif
-            @if(!empty($displays['data']))
-                <h3 id="displays">Exhibitions and displays</h3>
-                <div class="row">
+
                     @foreach($displays['data'] as $display)
-                        <x-exhibition-card
-                            :altTag="$display['hero_image_alt_text']"
-                            :title="$display['exhibition_title']"
-                            :image="$display['hero_image']"
-                            :route="'exhibition'"
-                            :params="[$display['slug']]"
-                            :startDate="$display['exhibition_start_date']"
-                            :endDate="$display['exhibition_end_date']"
-                            :status="'current'"
-                            :ticketed="$display['ticketed']"
-                            :tessitura="$display['tessitura_string']"
-                            :copyright="$display['copyright_text']"></x-exhibition-card>
+                    <x-exhibition-card
+                        :altTag="$display['hero_image_alt_text']"
+                        :title="$display['exhibition_title']"
+                        :image="$display['hero_image']"
+                        :route="'exhibition'"
+                        :params="[$display['slug']]"
+                        :startDate="$display['exhibition_start_date']"
+                        :endDate="$display['exhibition_end_date']"
+                        :status="'current'"
+                        :ticketed="$display['ticketed']"
+                        :tessitura="$display['tessitura_string']"
+                        :copyright="$display['copyright_text']"></x-exhibition-card>
                     @endforeach
                 </div>
             @endif
         </div>
     </div>
 @endsection
+
 @if(!empty($future['data'] ))
     @section('future')
         <div class="container-fluid py-3 bg-grey">
 
             <div class="container">
-                <h3>Forthcoming exhibitions and displays</h3>
+                <h3>Upcoming exhibitions and displays</h3>
                 <div class="row">
                     @foreach($future['data'] as $future)
 
