@@ -117,9 +117,9 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/lustreware-for-gc-page 2.jpg?key=exhibition',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/Courtyard%20(2)%20(1).jpg?key=exhibition',
                                 'width' => 416,
-                                'height' => 416
+                                'height' => 416,
                             ]
                         ]
                     ]
