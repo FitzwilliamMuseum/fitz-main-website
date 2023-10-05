@@ -83,9 +83,9 @@
 
 <div class="container-fluid parallax parallax-home"></div>
 
-<div class="container-fluid bg-gdbo py-3">
+{{-- <div class="container-fluid bg-gdbo py-3">
     @yield('shopify')
-</div>
+</div> --}}
 
 @include('includes.structure.email-signup')
 @include('includes.structure.footer')
