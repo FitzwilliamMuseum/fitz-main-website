@@ -40,7 +40,7 @@
             :alt="'An image depicting St Augustine, St Jerome and St Benedict'"
             :route="'events'"
             :params="[]"
-            :title="'Events and talks'"
+            :title="'Events'"
             :colWidth="'3'"></x-visit-us-static-card>
     </div>
 
