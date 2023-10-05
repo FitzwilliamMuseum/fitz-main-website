@@ -845,3 +845,59 @@ a.text-center.btn.btn-outline-light.btn__book {
 .acknowledgement-highlights-form .form-field{
     display: flex;
 }
+
+.bg-white-subscribe {
+    padding: 28px 16px 24px;
+}
+
+.container-subscribre {
+    max-width: 1290px;
+    background-color: #B50E5E !important;
+    border-radius: 4px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.container-subscribre .wrapper h5 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.container-subscribre .wrapper p {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+.container-subscribre .subscribre-button {
+    margin-top: 8px;
+    margin-right: auto;
+    padding: 16px;
+    background: black;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.container-subscribre .subscribre-button svg {
+    margin-right: 8px;
+}
+
+@media screen and (min-width: 756px) {
+    .container-subscribre {
+        flex-direction: row;
+        align-items: center;
+    }
+    .container-subscribre .subscribre-button {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: 0
+    }
+}
