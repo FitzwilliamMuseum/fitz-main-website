@@ -38,6 +38,7 @@
                     $jobs         = $pagesController::injectPages('about-us','work-with-us');
                     $research     = $pagesController::injectPages('research','discover-our-research');
                     $equity       = $pagesController::injectPages('about-us','equity-diversity-and-inclusion');
+                    $sustain      = $pagesController::injectPages('about-us','sustainability');
                 @endphp
                 @include('includes.structure.cards',      $data = $governance )
                 @include('includes.structure.commercial', $data = $comm )
@@ -61,6 +62,7 @@
                 @include('includes.structure.cards', $data = $jobs)
                 @include('includes.structure.cards', $data =  $research)
                 @include('includes.structure.cards', $data = $equity)
+                @include('includes.structure.cards', $data = $sustain)
             @endif
             @foreach($associated['data'] as $project)
                 <x-image-card
