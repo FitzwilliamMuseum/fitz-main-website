@@ -28,13 +28,18 @@
     "listing_source" => "homepage"
     ))
 
-<div class="container-fluid parallax parallax-home"></div>
 
-@include('includes.structure.exhibitions', array(
-    "listing_type" => "future",
-    "listing_title" => "Coming soon",
-    "listing_source" => "homepage"
-))
+@if(!empty($settings['coming_soon']))
+    <div class="container-fluid parallax parallax-home"></div>
+    @include('includes.structure.exhibitions', array(
+        "listing_type" => "future",
+        "listing_title" => "Coming soon",
+        "listing_source" => "homepage"
+    ))
+@endif
+
+
+
 
 <div class="container-fluid parallax parallax-home"></div>
 
