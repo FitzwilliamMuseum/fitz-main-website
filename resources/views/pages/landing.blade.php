@@ -38,12 +38,20 @@
                     $jobs         = $pagesController::injectPages('about-us','work-with-us');
                     $research     = $pagesController::injectPages('research','discover-our-research');
                     $equity       = $pagesController::injectPages('about-us','equity-diversity-and-inclusion');
+                    $sustain      = $pagesController::injectPages('about-us','sustainability');
                 @endphp
                 @include('includes.structure.cards',      $data = $governance )
                 @include('includes.structure.commercial', $data = $comm )
                 @include('includes.structure.cards',      $data = $depart)
                 @include('includes.structure.cards',      $data = $coll)
                 @include('includes.structure.cards',      $data = $press)
+
+                <x-static-image-card
+                    :title="'Latest news'"
+                    :route="'news'"
+                    :params="[]"
+                    :image="'https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=exhibition'"
+                    :alt="'Fitzwilliam Museum ceiling'"></x-static-image-card>
 
                 <x-static-image-card
                     :title="'Our staff'"
@@ -61,6 +69,7 @@
                 @include('includes.structure.cards', $data = $jobs)
                 @include('includes.structure.cards', $data =  $research)
                 @include('includes.structure.cards', $data = $equity)
+                @include('includes.structure.cards', $data = $sustain)
             @endif
             @foreach($associated['data'] as $project)
                 <x-image-card
