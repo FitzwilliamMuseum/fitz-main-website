@@ -47,6 +47,13 @@
                 @include('includes.structure.cards',      $data = $press)
 
                 <x-static-image-card
+                    :title="'Latest news'"
+                    :route="'news'"
+                    :params="[]"
+                    :image="'https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=exhibition'"
+                    :alt="'Fitzwilliam Museum ceiling'"></x-static-image-card>
+
+                <x-static-image-card
                     :title="'Our staff'"
                     :route="'about.our.staff'"
                     :params="[]"
