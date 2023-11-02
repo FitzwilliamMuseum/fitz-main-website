@@ -57,7 +57,7 @@
                             <div class="contents-label mb-3">
                                 <h2>
                                     <a href="{{ route('objects') }}/immunity-from-seizure" class="stretched-link">
-                                        Immunity from Seizure
+                                        Immunity from seizure
                                     </a>
                                 </h2>
                             </div>
