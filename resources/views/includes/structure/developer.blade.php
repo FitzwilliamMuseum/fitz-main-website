@@ -43,6 +43,27 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card card-fitz h-100">
+                        <a href="{{ route('objects') }}/immunity-from-seizure">
+                            <img class="card-img-top"
+                                 src="https://content.fitz.ms/fitz-website/assets/gotgs-deer.jpg?key=exhibition"
+                                 alt="Gold recumbent stag plaque with inlays of turquoise and lapis lazuli"
+                                 loading="lazy"
+                            />
+                        </a>
+                        <div class="card-body h-100">
+                            <div class="contents-label mb-3">
+                                <h2>
+                                    <a href="{{ route('objects') }}/immunity-from-seizure" class="stretched-link">
+                                        Immunity from Seizure
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </section>
 @endsection
