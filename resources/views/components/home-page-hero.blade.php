@@ -22,14 +22,10 @@
                 @endif
             </div>
             @if (!empty($hero['ticket_link']))
-                <button class="hero-cta">
-                    <a href="{{ $hero['ticket_link'] }}">{{ $hero['exhibition_link_text'] }}</a>
-                </button>
+                    <a class="hero-cta" href="{{ $hero['ticket_link'] }}">{{ $hero['exhibition_link_text'] }}</a>
             @else
                 @if (!empty($hero['exhibition_link']))
-                    <button class="hero-cta">
-                        <a href="{{ route('exhibition', $hero['exhibition_link']['slug']) }}">{{ $hero['exhibition_link_text'] }}</a>
-                    </button>
+                        <a class="hero-cta" href="{{ route('exhibition', $hero['exhibition_link']['slug']) }}">{{ $hero['exhibition_link_text'] }}</a>
                 @endif
             @endif
         </div>
