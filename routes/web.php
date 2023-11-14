@@ -35,8 +35,6 @@ Route::get('about-us/departments/', 'departmentsController@index')->name('depart
 Route::get('about-us/departments/{slug}', 'departmentsController@details')->name('department');
 Route::get('about-us/departments/conservation-and-collections-care/{slug}', 'departmentsController@conservation')->name('conservation-care');
 Route::get('about-us/our-staff', 'aboutusController@staff')->name('about.our.staff');
-Route::get('about-us/spoliation', 'aboutusController@spoliation')->name('about.spoliation');
-Route::get('about-us/spoliation/{slug}', 'aboutusController@spoliationClaim')->name('about.spoliation.claim');
 
 /*
 Research section routes
