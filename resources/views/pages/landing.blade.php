@@ -59,13 +59,7 @@
                     :params="[]"
                     :image="'https://content.fitz.ms/fitz-website/assets/img_20191219_184304_832.jpeg?key=exhibition'"
                     :alt="'Eye of the minotaur'"></x-static-image-card>
-
-                <x-static-image-card
-                    :title="'Spoliation claims'"
-                    :route="'about.spoliation'"
-                    :params="[]"
-                    :image="'https://content.fitz.ms/fitz-website/assets/pd_28_1951_dc2-2.jpg?key=exhibition'"
-                    :alt="'La ronde enfantine image'"></x-static-image-card>
+                    
                 @include('includes.structure.cards', $data = $jobs)
                 @include('includes.structure.cards', $data =  $research)
                 @include('includes.structure.cards', $data = $equity)
