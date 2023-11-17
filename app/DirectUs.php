@@ -33,7 +33,7 @@ class DirectUs
     {
         $url = env('DIRECTUS_URL') . $this->_endpoint . $this->buildQuery();
         $key = md5($url);
-        $expiresAt = now()->addMinutes(20);
+        $expiresAt = now()->addMinutes(30);
         if (Cache::has($key)) {
             $data = Cache::get($key);
         } else {
