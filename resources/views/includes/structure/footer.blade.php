@@ -107,6 +107,9 @@
                                     of Cambridge Museums</a>
                             </li>
                             <li>
+                                <a href="https://www.fitzmuseum.cam.ac.uk/about-us/equity-diversity-and-inclusion">Equity, diversity and inclusion</a>
+                            </li>
+                            <li>
                                 <a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
                                    aria-label="Modern Slavery Act statement of compliance">Modern Slavery Act
                                     statement</a>

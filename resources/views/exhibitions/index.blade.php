@@ -14,38 +14,42 @@
 @section('current')
     <div class="container-fluid py-3 bg-gdbo">
         <div class="container">
-            @if(!empty($current['data']) && !empty($displays['data']))
+            @if(!empty($current['data']) || !empty($displays['data']))
                 <h3>Current exhibitions and displays</h3>
                 <div class="row">
-                    @foreach($current['data'] as $current)
-                        <x-exhibition-card
-                            :altTag="$current['hero_image_alt_text']"
-                            :title="$current['exhibition_title']"
-                            :image="$current['hero_image']"
-                            :route="'exhibition'"
-                            :params="[$current['slug']]"
-                            :startDate="$current['exhibition_start_date']"
-                            :endDate="$current['exhibition_end_date']"
-                            :status="'current'"
-                            :ticketed="$current['ticketed']"
-                            :tessitura="$current['tessitura_string']"
-                            :copyright="$current['copyright_text']"></x-exhibition-card>
-                    @endforeach
+                    @if(!empty($current['data']))
+                        @foreach($current['data'] as $current)
+                            <x-exhibition-card
+                                :altTag="$current['hero_image_alt_text']"
+                                :title="$current['exhibition_title']"
+                                :image="$current['hero_image']"
+                                :route="'exhibition'"
+                                :params="[$current['slug']]"
+                                :startDate="$current['exhibition_start_date']"
+                                :endDate="$current['exhibition_end_date']"
+                                :status="'current'"
+                                :ticketed="$current['ticketed']"
+                                :tessitura="$current['tessitura_string']"
+                                :copyright="$current['copyright_text']"></x-exhibition-card>
+                        @endforeach
+                    @endif
 
-                    @foreach($displays['data'] as $display)
-                    <x-exhibition-card
-                        :altTag="$display['hero_image_alt_text']"
-                        :title="$display['exhibition_title']"
-                        :image="$display['hero_image']"
-                        :route="'exhibition'"
-                        :params="[$display['slug']]"
-                        :startDate="$display['exhibition_start_date']"
-                        :endDate="$display['exhibition_end_date']"
-                        :status="'current'"
-                        :ticketed="$display['ticketed']"
-                        :tessitura="$display['tessitura_string']"
-                        :copyright="$display['copyright_text']"></x-exhibition-card>
-                    @endforeach
+                    @if(!empty($displays['data']))
+                        @foreach($displays['data'] as $display)
+                        <x-exhibition-card
+                            :altTag="$display['hero_image_alt_text']"
+                            :title="$display['exhibition_title']"
+                            :image="$display['hero_image']"
+                            :route="'exhibition'"
+                            :params="[$display['slug']]"
+                            :startDate="$display['exhibition_start_date']"
+                            :endDate="$display['exhibition_end_date']"
+                            :status="'current'"
+                            :ticketed="$display['ticketed']"
+                            :tessitura="$display['tessitura_string']"
+                            :copyright="$display['copyright_text']"></x-exhibition-card>
+                        @endforeach
+                    @endif
                 </div>
             @endif
         </div>
