@@ -7,7 +7,7 @@
 @section('keywords', $page['meta_keywords'])
 @endforeach
 @section('departments')
-    <div class="container-fluid bg-grey py-4">
+    <div class="container-fluid py-4">
         <div class="container">
             <div class="row">
                 @foreach($departments['data'] as $department)
