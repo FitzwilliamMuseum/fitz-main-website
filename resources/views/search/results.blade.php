@@ -51,7 +51,8 @@
     @else
 
         <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-            Search is not supported by this website
+            <p>We are currently experiencing issues with our search pages.</p>
+            <p>We apologise for any inconvenience and this will be re-enabled as soon as possible.</p>
         </div>
 
     @endif
