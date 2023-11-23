@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #fff;
     font-size: 1rem;
     text-rendering: optimizeLegibility;
@@ -48,7 +48,6 @@ body {
     .shout {
         font-size: 2.6rem;
         font-weight: 500;
-
     }
 }
 
@@ -57,15 +56,20 @@ body {
 }
 
 .bg-fade {
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(163, 193, 173));
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 0, 0, 0),
+        rgb(163, 193, 173)
+    );
 }
 
 .bg-maroon {
     background-color: maroon !important;
 }
 
-h3, h2 {
-    font-family: 'Roboto', sans-serif;
+h3,
+h2 {
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 1.25rem;
 }
@@ -109,7 +113,7 @@ a.share {
 @media (max-width: 440px) {
     .shorten-words {
         max-width: 300px;
-        display: inline-block
+        display: inline-block;
     }
 }
 
@@ -128,9 +132,8 @@ a.share {
     background-color: rgba(000, 0, 0, 0.7) !important;
 }
 
-
 .gnw-map.fade {
-    transition: opacity .15s linear;
+    transition: opacity 0.15s linear;
 }
 
 .gnw-map.fade:not(.show) {
@@ -149,13 +152,13 @@ a.share {
 blockquote {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    font-family: 'Libre Baskerville', serif;
+    font-family: "Libre Baskerville", serif;
     padding: 0 1rem;
     font-weight: 400;
     font-style: italic;
 }
 
-@media screen and ( max-width: 440px ) {
+@media screen and (max-width: 440px) {
     li.page-item {
         display: none;
     }
@@ -167,7 +170,8 @@ blockquote {
     }
 }
 
-.card, .shadow-sm {
+.card,
+.shadow-sm {
     box-shadow: none !important;
 }
 
@@ -216,13 +220,15 @@ img.img-fluid.twitter {
 }
 
 @media only screen and (max-width: 1024px) {
-    .head, .parallax {
+    .head,
+    .parallax {
         background-attachment: scroll !important;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .head, .parallax {
+    .head,
+    .parallax {
         background-attachment: scroll !important;
     }
 }
@@ -232,11 +238,9 @@ img.img-fluid.twitter {
     margin-right: -20px !important;
 }
 
-
 .col-md-6.mb-3.mt-3.mx-auto.d-block.book {
     margin-top: 100px !important;
 }
-
 
 h2 > a,
 h3 > a,
@@ -254,7 +258,7 @@ h5 > a:hover {
 h2 > a::before,
 h3 > a::before,
 h5 > a::before,
-a.free_ticket::before{
+a.free_ticket::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -373,7 +377,7 @@ img.results_image__thumbnail {
 }
 
 .btn-sign {
-    position: relative
+    position: relative;
 }
 
 .btn-sign-text {
@@ -381,7 +385,7 @@ img.results_image__thumbnail {
     text-align: center;
     vertical-align: middle;
     position: relative;
-    padding: 20px 30px
+    padding: 20px 30px;
 }
 
 .btn-sign-box {
@@ -392,18 +396,17 @@ img.results_image__thumbnail {
     height: 100%;
     width: 100%;
     border-radius: 10px !important;
-
 }
 
 .btn-sign:hover .btn-sign-box {
-    background-color: #D3D3D3;
+    background-color: #d3d3d3;
     width: 100%;
     opacity: 1;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
-    top: auto
+    top: auto;
 }
 
 @media (max-width: 992px) {
@@ -416,7 +419,8 @@ img.results_image__thumbnail {
     background-color: white;
 }
 
-.panel-title > a, .panel-title > a:active {
+.panel-title > a,
+.panel-title > a:active {
     display: block;
     color: #000;
     font-weight: bold;
@@ -440,7 +444,7 @@ li.nav-item.active {
 }
 
 a.nav-link {
-    color: hsla(0, 0%, 100%, .5);
+    color: hsla(0, 0%, 100%, 0.5);
     background-color: transparent;
 }
 
@@ -449,7 +453,7 @@ a.nav-link {
 }
 
 .bg-gdbo {
-    background-color: #E0EBE2;
+    background-color: #e0ebe2;
 }
 
 .bg-grey {
@@ -472,7 +476,7 @@ a.nav-link {
     -o-transform: scale(1.02);
     transform: scale(1.02);
     background: #fff;
-    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.50);
+    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.5);
     /*box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);*/
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
@@ -508,7 +512,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .hockney-dates {
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 .hockney_sub {
@@ -545,39 +549,70 @@ a.text-center.btn.btn-outline-light.btn__book {
     color: white;
 }
 
-.hockney__link a:hover,.hockney__link a:visited,.hockney__link a:focus {
+.hockney__link a:hover,
+.hockney__link a:visited,
+.hockney__link a:focus {
     text-decoration: none;
     color: white;
 }
 
 .hockney__link {
     min-height: 400px;
-    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg') no-repeat center;
+    background: url("https://fitz-cms-images.s3.eu-west-2.amazonaws.com/banner-text-hockney.jpg")
+        no-repeat center;
     background-size: contain;
 }
 .ttn__link {
     min-height: 400px;
-    background: url('https://fitz-cms-images.s3.eu-west-2.amazonaws.com/ttn_right_panel.jpg') no-repeat center;
+    background: url("https://fitz-cms-images.s3.eu-west-2.amazonaws.com/ttn_right_panel.jpg")
+        no-repeat center;
     background-size: contain;
 }
 
 .hockney__link__href {
     display: block;
     height: 100%;
-    width:100%;
+    width: 100%;
 }
 .carousel-caption {
     position: initial;
 }
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
     color: black;
 }
-.btn-hockney{color:#fff;background-color:#299942;border-color:#299942}
-.btn-hockney:hover{color:#fff;background-color:#299942;border-color:#299942}
-.btn-hockney:focus,.btn-hockney.focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
-.btn-hockney.disabled,.btn-hockney:disabled{color:#fff;background-color:#299942;border-color:#299942}
-.btn-hockney:not(:disabled):not(.disabled):active,.btn-hockney:not(:disabled):not(.disabled).active,.show>.btn-hockney.dropdown-toggle{color:#fff;background-color:#299942;border-color:#299942}
-.btn-hockney:not(:disabled):not(.disabled):active:focus,.btn-hockney:not(:disabled):not(.disabled).active:focus,.show>.btn-hockney.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)}
+.btn-hockney {
+    color: #fff;
+    background-color: #299942;
+    border-color: #299942;
+}
+.btn-hockney:hover {
+    color: #fff;
+    background-color: #299942;
+    border-color: #299942;
+}
+.btn-hockney:focus,
+.btn-hockney.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 90, 90, 0.5);
+}
+.btn-hockney.disabled,
+.btn-hockney:disabled {
+    color: #fff;
+    background-color: #299942;
+    border-color: #299942;
+}
+.btn-hockney:not(:disabled):not(.disabled):active,
+.btn-hockney:not(:disabled):not(.disabled).active,
+.show > .btn-hockney.dropdown-toggle {
+    color: #fff;
+    background-color: #299942;
+    border-color: #299942;
+}
+.btn-hockney:not(:disabled):not(.disabled):active:focus,
+.btn-hockney:not(:disabled):not(.disabled).active:focus,
+.show > .btn-hockney.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 90, 90, 0.5);
+}
 
 .star_rating {
     font-size: 1.5rem;
@@ -586,19 +621,44 @@ a.text-center.btn.btn-outline-light.btn__book {
     color: #299942;
 }
 
-.btn-ttn{color:#fff;background-color:#8695be;border-color:#8695be}
-.btn-ttn:hover{color:#fff;background-color:#8695be;border-color:#8695be}
-.btn-ttn:focus,.btn-ttn.focus{box-shadow:0 0 0 .2rem rgb(126, 143, 187)
+.btn-ttn {
+    color: #fff;
+    background-color: #8695be;
+    border-color: #8695be;
 }
-.btn-ttn.disabled,.btn-ttn:disabled{color:#fff;background-color:#8695be;border-color:#8695be}
-.btn-ttn:not(:disabled):not(.disabled):active,.btn-ttn:not(:disabled):not(.disabled).active,.show>.btn-ttn.dropdown-toggle{color:#fff;background-color:#8695be;border-color:#8695be}
-.btn-ttn:not(:disabled):not(.disabled):active:focus,.btn-ttn:not(:disabled):not(.disabled).active:focus,.show>.btn-ttn.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgb(119, 138, 184)
+.btn-ttn:hover {
+    color: #fff;
+    background-color: #8695be;
+    border-color: #8695be;
+}
+.btn-ttn:focus,
+.btn-ttn.focus {
+    box-shadow: 0 0 0 0.2rem rgb(126, 143, 187);
+}
+.btn-ttn.disabled,
+.btn-ttn:disabled {
+    color: #fff;
+    background-color: #8695be;
+    border-color: #8695be;
+}
+.btn-ttn:not(:disabled):not(.disabled):active,
+.btn-ttn:not(:disabled):not(.disabled).active,
+.show > .btn-ttn.dropdown-toggle {
+    color: #fff;
+    background-color: #8695be;
+    border-color: #8695be;
+}
+.btn-ttn:not(:disabled):not(.disabled):active:focus,
+.btn-ttn:not(:disabled):not(.disabled).active:focus,
+.show > .btn-ttn.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgb(119, 138, 184);
 }
 .footer__info {
     width: 330px;
 }
 .eden {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(100deg) brightness(100%) contrast(100%);
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(100deg)
+        brightness(100%) contrast(100%);
 }
 .card-img-top {
     height: 100% !important;
@@ -606,44 +666,44 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .p-heading {
     font-weight: 500;
-  }
+}
 
-  .p-container .card {
+.p-container .card {
     width: 100%;
-  }
-  .p-container--joint figure,
-  .p-container--single figure {
+}
+.p-container--joint figure,
+.p-container--single figure {
     margin: 1rem 0 !important;
-  }
+}
 
-  .p-image {
+.p-image {
     margin: 0 auto;
     object-fit: cover;
     min-height: 100%;
-  }
+}
 
-  .btn-credit,
-  .btn-direct {
+.btn-credit,
+.btn-direct {
     margin-top: 16px;
     font-size: 1.15rem;
     padding: 18px 36px;
-  }
+}
 
-  .btn-direct:focus {
+.btn-direct:focus {
     background: #299942;
     color: #fff;
-  }
+}
 
-  @media screen and (min-width: 993px) {
+@media screen and (min-width: 993px) {
     .btn-credit,
     .btn-direct {
         margin: 0 auto;
         max-width: 85%;
         width: 100%;
     }
-  }
+}
 
-  .home-hero {
+.home-hero {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -661,7 +721,11 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .home-hero .bg-overlay {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8) 10%, transparent);
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 10%,
+        transparent
+    );
     grid-column: 1 / -1;
     grid-row: 1 / 2;
     z-index: 101;
@@ -701,7 +765,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .home-hero .wrapper h1 {
-    color: #FFF;
+    color: #fff;
     font-size: 44px;
     font-weight: 500;
 }
@@ -711,7 +775,6 @@ a.text-center.btn.btn-outline-light.btn__book {
         font-size: 80px;
     }
 }
-
 
 .home-hero .wrapper p {
     font-size: 24px;
@@ -796,7 +859,6 @@ a.text-center.btn.btn-outline-light.btn__book {
 .acknowledgement-notice {
     position: relative;
     margin-bottom: 2rem;
-
 }
 .acknowledgement-notice .wrapper {
     max-width: 840px;
@@ -817,13 +879,13 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .acknowledgement-notice::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 16px;
     width: 8px;
     height: 100%;
-    background: #B50E5E;
+    background: #b50e5e;
     display: block;
 }
 
@@ -842,7 +904,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-weight: 500;
     margin-bottom: 1rem;
 }
-.acknowledgement-highlights-form .form-field{
+.acknowledgement-highlights-form .form-field {
     display: flex;
 }
 
@@ -852,7 +914,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .container-subscribre {
     max-width: 1290px;
-    background-color: #B50E5E !important;
+    background-color: #b50e5e !important;
     border-radius: 4px;
     padding: 20px;
     color: white;
@@ -898,6 +960,39 @@ a.text-center.btn.btn-outline-light.btn__book {
     .container-subscribre .subscribre-button {
         margin-top: 0;
         margin-left: auto;
-        margin-right: 0
+        margin-right: 0;
     }
+}
+
+/*
+    Fitz small improvements list - 23/11/2023
+    1. - .bg-gray classes removed in templates - background colour set to white.
+    2. - .shout.leads font-size set to 4.1rem
+    3. - .navbar .container-fluid max-width set to 1320px
+    4. - .fitz-footer max-width set to 1680px and horizontal scroll removed
+
+*/
+
+.col-12 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.shout.lead {
+    font-size: 4.1rem;
+    margin-top: 40px;
+}
+
+.navbar .container-fluid {
+    max-width: 1320px;
+}
+
+.fitz-footer {
+    max-width: 1680px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fitz-footer div {
+    flex: 1 1 420px;
 }
