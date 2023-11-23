@@ -55,7 +55,7 @@
 @include('includes.elements.fitzwilliam-map')
 
 @section('associated_pages')
-    <div class="container-fluid py-4 bg-grey">
+    <div class="container-fluid py-4">
         <div class="container">
             <div class="row">
                 <x-static-image-card

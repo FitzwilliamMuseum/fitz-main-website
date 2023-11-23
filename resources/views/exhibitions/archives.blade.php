@@ -7,7 +7,7 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 
 @section('archive')
-<div class="container-fluid bg-grey py-3">
+<div class="container-fluid py-3">
   <div class="container">
     <h3>
       Archived exhibitions and displays

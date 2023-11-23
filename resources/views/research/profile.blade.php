@@ -205,7 +205,7 @@
 @endif
 @if(!empty($profile['departments_affiliated']))
     @section('departments-affiliated')
-        <div class="container-fluid bg-grey py-3">
+        <div class="container-fluid py-3">
             <div class="container">
                 <h3>
                     Associated Departments

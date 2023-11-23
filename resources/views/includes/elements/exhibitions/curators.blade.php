@@ -1,6 +1,6 @@
 @if(!empty($exhibition['associated_curators']) || !empty($exhibition['external_curators']))
     @section('curators')
-        <div class="container-fluid bg-grey py-3">
+        <div class="container-fluid py-3">
             <div class="container">
                 <h3>Curators and experts behind this exhibition</h3>
                 <div class="row">
