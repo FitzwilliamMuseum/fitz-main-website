@@ -901,3 +901,21 @@ a.text-center.btn.btn-outline-light.btn__book {
         margin-right: 0
     }
 }
+
+.fitz-footer {
+    max-width: 1680px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    padding-bottom: 24px;
+}
+
+.fitz-footer div {
+    max-width: fit-content;
+}
+
+.fitz-footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 33.333%));
+}
