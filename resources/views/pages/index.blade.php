@@ -52,7 +52,7 @@
 
     @include('includes.structure.learning-blocks')
 
-    @include('includes.structure.related-pages')
+    {{-- @include('includes.structure.related-pages') --}}
 
 @endsection
 
