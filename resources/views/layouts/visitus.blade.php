@@ -23,7 +23,9 @@
         </div>
 
         <div class="container-fluid py-3 bg-dark">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
 
         <div class="container py-2">

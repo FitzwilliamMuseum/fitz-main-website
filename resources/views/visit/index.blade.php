@@ -6,7 +6,7 @@
     @section('keyword', 'cambridge,museums,visit')
 
 @section('content')
-    <div class="row justify-content-md-center">
+    <div class="row">
         <?php if(!empty($exhibition)): ?>
             <x-visit-us-static-card
                 :image="$exhibition['hero_image']['data']['thumbnails'][13]['url']"
