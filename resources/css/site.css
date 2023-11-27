@@ -964,7 +964,6 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
-<<<<<<< HEAD
 /*
     Fitz small improvements list - 23/11/2023
     1. - .bg-gray classes removed in templates - background colour set to white.
@@ -990,16 +989,6 @@ a.text-center.btn.btn-outline-light.btn__book {
 .fitz-footer {
     max-width: 1680px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.fitz-footer div {
-    flex: 1 1 420px;
-=======
-.fitz-footer {
-    max-width: 1680px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-items: center;
@@ -1014,5 +1003,4 @@ a.text-center.btn.btn-outline-light.btn__book {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 16px;
->>>>>>> origin/master
 }
