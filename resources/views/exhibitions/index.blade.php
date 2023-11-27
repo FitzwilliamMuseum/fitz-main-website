@@ -58,7 +58,7 @@
 
 @if(!empty($future['data'] ))
     @section('future')
-        <div class="container-fluid py-3 bg-grey">
+        <div class="container-fluid py-3">
 
             <div class="container">
                 <h3>Upcoming exhibitions and displays</h3>

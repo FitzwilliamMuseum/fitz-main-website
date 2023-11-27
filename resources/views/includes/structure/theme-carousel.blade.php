@@ -1,6 +1,6 @@
 @section('theme-carousel')
     <section">
-        <div class="container-fluid bg-grey">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
                     <h3 class="my-3">Explore themes</h3>

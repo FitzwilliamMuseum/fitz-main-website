@@ -964,21 +964,35 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
+/*
+    Fitz small improvements list - 23/11/2023
+    1. - .bg-gray classes removed in templates - background colour set to white.
+    2. - .shout.leads font-size set to 4.1rem
+    3. - .navbar .container-fluid max-width set to 1320px
+    4. - .fitz-footer max-width set to 1680px and horizontal scroll removed
+
+*/
+
+.col-12 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.shout.lead {
+    font-size: 4.1rem;
+    margin-top: 40px;
+}
+
+.navbar .container-fluid {
+    max-width: 1320px;
+}
+
 .fitz-footer {
     max-width: 1680px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-items: center;
-    padding-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .fitz-footer div {
-    max-width: fit-content;
-}
-
-.fitz-footer-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 16px;
+    flex: 1 1 420px;
 }
