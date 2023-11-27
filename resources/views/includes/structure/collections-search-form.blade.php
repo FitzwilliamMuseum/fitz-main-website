@@ -81,7 +81,6 @@
                 {!! Form::close() !!}
             </div>
 
-            <div class="col-12 shadow-sm mx-auto">
                 {{ Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'acknowledgement-highlights-form']) }}
                 <div class="row">
                         <label for="highlights-query">Search our highlights</label>
@@ -102,7 +101,6 @@
                     </div>
                 @endif
                 {!! Form::close() !!}
-            </div>
         </div>
     </div>
 @endsection

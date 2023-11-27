@@ -182,7 +182,7 @@
                     </a>
                     <a aria-label="Fitzwilliam Museum sketchfab account"
                         href="https://www.sketchfab.com/fitzwilliammuseum/">
-                        <img src="{{ asset( " /images/logos/sketchfab-logo.svg") }}" width="48" height="48"
+                        <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" width="48" height="48"
                             alt="Sketchfab logo" class="my-2 mx-2 eden" />
                     </a>
                     <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
