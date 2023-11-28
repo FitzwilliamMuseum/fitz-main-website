@@ -28,10 +28,8 @@
             </div>
         </div>
 
-        <div class="container py-2">
-            <h3>
-                Find us
-            </h3>
+        <div class="container py-3">
+            <h3>Find us</h3>
         </div>
 
         <div class="container map-box ">
@@ -41,7 +39,7 @@
         @include('includes.elements.directions')
 
         <div class="container mt-2">
-            <h3>Floorplans and guides</h3>
+            <h3 class="mb-3">Floorplans and guides</h3>
             <div class="col-md-12 mb-2">
                 <div class="mb-3 text-center">
                     @yield('floorplans')

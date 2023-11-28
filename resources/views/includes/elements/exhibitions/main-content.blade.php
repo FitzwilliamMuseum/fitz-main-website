@@ -21,7 +21,7 @@
         @endif --}}
 
         @if(isset($exhibition['exhibition_narrative']) || isset($exhibition['exhibition_abstract']))
-            <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+            <div class="col-12 shadow-sm p-3 mx-auto mb-3">
                 @if(isset($exhibition['exhibition_narrative']))
                     @markdown($exhibition['exhibition_narrative'])
                 @endif
