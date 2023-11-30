@@ -48,7 +48,7 @@
     @if($page['youtube_playlist_id'])
         @include('includes.social.community-youtube-playlist')
     @endif
-    @include('includes.structure.related-pages')
+    {{-- @include('includes.structure.related-pages') --}}
 
 @endsection
 
