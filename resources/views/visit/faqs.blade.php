@@ -28,4 +28,4 @@
 
 @endsection
 
-@include('includes.structure.related-pages')
+{{-- @include('includes.structure.related-pages') --}}
