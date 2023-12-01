@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
         <div class="shadow-sm p-3 mx-auto mb-3">
             <div class="plyr">
                 <div class="ratio audio-player">

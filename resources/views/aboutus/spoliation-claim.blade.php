@@ -5,15 +5,12 @@
 @section('keywords', 'spoliation,stories,museum,cambridge')
 @section('title','Spoliation claim: ' . $claims['alt_text'])
 @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 article">
-        @markdown($claims['text'])
-        <a class="btn btn-info py-3 d-block" href="{{ route('article',[$claims['news_slug']]) }}">
-            Learn more about this claim
-        </a>
-    </div>
-    <img class="card-img-top"
-         src="{{ $claims['image']['data']['url']}}"
-         alt="{{ $claims['alt_text'] }}"
-         width="{{ $claims['image']['width'] }}"
-         loading="lazy"/>
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 article">
+    @markdown($claims['text'])
+    <a class="btn btn-info py-3 d-block" href="{{ route('article',[$claims['news_slug']]) }}">
+        Learn more about this claim
+    </a>
+</div>
+<img class="card-img-top" src="{{ $claims['image']['data']['url']}}" alt="{{ $claims['alt_text'] }}"
+    width="{{ $claims['image']['width'] }}" loading="lazy" />
 @endsection

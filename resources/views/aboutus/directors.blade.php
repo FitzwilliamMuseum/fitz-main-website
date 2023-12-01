@@ -5,29 +5,27 @@
 @section('description', 'A list and timeline of our directors')
 @section('keywords', 'directors,timeline,museum,cambridge,fitzwilliam')
 @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead class="thead-dark">
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
                 <tr>
                     <th scope="col">Date from</th>
                     <th scope="col">Date to</th>
                     <th scope="col">Director</th>
                 </tr>
-                </thead>
-                <tbody>
+            </thead>
+            <tbody>
                 @foreach($directors['data'] as $director)
-                    <tr>
-                        <td>{{ $director['date_from'] }}</td>
-                        <td>{{ $director['date_to'] }}</td>
-                        <td><a href="{{ route('director',[$director['slug']] ) }}">{{ $director['display_name'] }}</a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ $director['date_from'] }}</td>
+                    <td>{{ $director['date_to'] }}</td>
+                    <td><a href="{{ route('director',[$director['slug']] ) }}">{{ $director['display_name'] }}</a>
+                    </td>
+                </tr>
                 @endforeach
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
     </div>
+</div>
 @endsection
-
-

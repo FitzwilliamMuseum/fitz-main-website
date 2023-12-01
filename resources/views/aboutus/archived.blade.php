@@ -7,19 +7,19 @@
 @section('keywords', 'work,museum,jobs')
 @section('content')
 
-    @if(!empty($vacancies->total() > 0))
-        <div class="row">
-            @foreach($vacancies->items()['data'] as $vacancy)
-                <x-vacancy :vacancy="$vacancy"></x-vacancy>
-            @endforeach
-        </div>
-    @else
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-            <p>
-                We currently have no vacancies, please check back again soon.
-            </p>
-        </div>
-    @endif
-    {{ $vacancies->appends(request()->except('page'))->setPath(route('vacancy.archive'))->links() }}
+@if(!empty($vacancies->total() > 0))
+<div class="row">
+    @foreach($vacancies->items()['data'] as $vacancy)
+    <x-vacancy :vacancy="$vacancy"></x-vacancy>
+    @endforeach
+</div>
+@else
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
+    <p>
+        We currently have no vacancies, please check back again soon.
+    </p>
+</div>
+@endif
+{{ $vacancies->appends(request()->except('page'))->setPath(route('vacancy.archive'))->links() }}
 
 @endsection

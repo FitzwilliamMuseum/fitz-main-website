@@ -6,18 +6,18 @@
 @section('description', 'An overview of current job vacancies')
 @section('keywords', 'work,museum,jobs')
 @section('content')
-  @if(!empty($vacancies['data']))
-    <div class="row">
-      @foreach($vacancies['data'] as $vacancy)
-        <x-vacancy :vacancy="$vacancy"></x-vacancy>
-      @endforeach
-    </div>
-  @else
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-      <p>
+@if(!empty($vacancies['data']))
+<div class="row">
+    @foreach($vacancies['data'] as $vacancy)
+    <x-vacancy :vacancy="$vacancy"></x-vacancy>
+    @endforeach
+</div>
+@else
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
+    <p>
         We currently have no vacancies, please check back again soon.
-      </p>
-    </div>
-  @endif
-  <a href="{{ route('vacancy.archive') }}" class="btn btn-dark d-block my-2">View our archived vacancies</a>
+    </p>
+</div>
+@endif
+<a href="{{ route('vacancy.archive') }}" class="btn btn-dark d-block my-2">View our archived vacancies</a>
 @endsection

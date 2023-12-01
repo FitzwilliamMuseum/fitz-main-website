@@ -6,22 +6,20 @@
 @include('includes.elements.page-meta', $data = $director)
 @section('title', $director['display_name'])
 @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
-        @if(!is_null($director['hero_image']))
-            <figure class="figure">
-                <img src="{{ $director['hero_image']['data']['url'] }}"
-                     alt="{{$director['hero_image_alt_text']}}"
-                     loading="lazy" class="img-fluid"
-                />
-                <figcaption class="figure-caption text-right">{{$director['hero_image_alt_text']}}</figcaption>
-            </figure>
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+    @if(!is_null($director['hero_image']))
+    <figure class="figure">
+        <img src="{{ $director['hero_image']['data']['url'] }}" alt="{{$director['hero_image_alt_text']}}"
+            loading="lazy" class="img-fluid" />
+        <figcaption class="figure-caption text-right">{{$director['hero_image_alt_text']}}</figcaption>
+    </figure>
+    @endif
+    <p>
+        Dates of office: {{ $director['date_from'] }}
+        @if(!is_null($director['date_to']))
+        - {{ $director['date_to'] }}
         @endif
-        <p>
-            Dates of office: {{ $director['date_from'] }}
-            @if(!is_null($director['date_to']))
-                - {{ $director['date_to'] }}
-            @endif
-        </p>
-        @markdown($director['biography'] ?? 'No content available')
-    </div>
+    </p>
+    @markdown($director['biography'] ?? 'No content available')
+</div>
 @endsection
