@@ -1004,3 +1004,62 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 16px;
 }
+
+/* TNEW 2024 updates */
+
+/* navigation start  */
+.nav-item {
+    border-bottom: solid 5px transparent;
+    transition: all .3s ease;
+}
+
+.nav-item:hover:not(.active) {
+    border-bottom: solid 5px #fff;
+}
+
+.nav-links-container,
+.search-donate-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+
+    .nav-links-container,
+    .search-donate-container {
+        flex-direction: row;
+    }
+
+    .search-donate-container {
+        margin-left: auto;
+        gap: 40px;
+    }
+
+    .navbar-expand-lg .navbar-nav,
+    .nav-links-container {
+        width: 100%;
+        justify-content: center;
+        position: relative;
+        isolation: isolate;
+    }
+    .nav-item-donate::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: -22px;
+        right: -20px;
+        width: 114px;
+        height: 88px;
+        background: #B50E5E;
+        z-index: -1;
+    }
+    .nav-link-donate {
+        padding-left: 28px;
+        padding-right: 28px;
+        font-weight: 500;
+        font-size: 18px;
+        max-width: fit-content;
+    }
+}
+/* end navigation */
+
