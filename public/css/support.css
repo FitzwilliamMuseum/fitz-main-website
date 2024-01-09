@@ -1,0 +1,299 @@
+@import url('./app.css');
+@import url('./fitzwilliam.css');
+@import url('./site.css');
+@import url('./top.css');
+
+/* hero image start */
+
+.parallax,
+.parallax.hero-su-parallax {
+    min-height: 0;
+    height: 638px;
+    background: url('https://s3-alpha-sig.figma.com/img/f030/8039/d7f6fd7765af49cd451a48a2d107d67e?Expires=1705881600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PowNMdL7T5DxnJkAYWTyWdJsYmsTNinH~10JJJ99UXflWTc827QoilUhyxzO2aVWj62EpejcuOsr2PLX6PBFbsd4efnYG2nxsAALFDnxwyMiKl5wqG0gTSrOxZnECTpLl7-EmWOXJqq9eDLZP325-6YJ5T1SV6eDxDW5V0a~WzajUxR9AyZjNJi1U8J7kjSptnEmahEmXeM01Gdk~kOux0IUGXNcwWDfuBQl4a--9xQLLMcOWmkHpgxDR2p6w3odIMW-EybJKKprR~fpdaLY4VBvrPq4Sz1Z6~zOGa59auKRobSDFmfP-TuesjJS7iOgoLwDXY9bMPxNXS9Y9H0xcg__') no-repeat 50% 45% / cover;
+}
+
+/* hero image end  */
+
+/* breadcrumbs start */
+.breadcrumbs-su {
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs-su ol.breadcrumb {
+    margin: 0;
+    padding: 6px 0;
+}
+
+/* breadcrumbs end */
+
+/* hero title start */
+.hero-su  {
+    margin: 60px 0;
+
+}
+.hero-su .shout.lead {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.hero-su p {
+    font-size: 24px;
+    font-weight: 400;
+}
+/* hero title end */
+
+
+/* container-support-card */
+.card-fitz-support {
+    max-width: 406px;
+}
+
+.card-img-top-support {
+    max-height: 342px;
+    height: 100%;
+    object-fit: cover;
+}
+/* container-support-card end */
+
+/* support-grid start */
+.support-grid {
+    margin-bottom: 60px;
+}
+
+.support-grid-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+/* support-grid-end */
+
+/* card-fitz support  start */
+.card-fitz-support .card-body .contents-label h3 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    }
+/*  card-fitz support end */
+
+/* support-text-component start */
+
+.support-text-component h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+.support-text-component p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+}
+/* support-text-component end */
+
+/* 50/50 start */
+    .component-ff {
+        margin: 60px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .component-ff {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .component-ff .content .container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .component-ff .image img {
+            min-height: 460px;
+        }
+    }
+
+    .component-ff .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #B50E5E;
+    }
+
+    .component-ff .content .container {
+        color: white;
+        padding: 40px;
+    }
+
+    .component-ff .content .container h3 {
+        font-size: 36px;
+        font-weight: 500;
+    }
+
+    .component-ff .content .container p {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 28px; /* 164.706% */
+    }
+
+    .component-ff .content .container a.nav-link {
+        width: max-content;
+        padding: 12px 24px;
+        color: #000;
+        background: #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .component-ff .content .container a.nav-link svg path {
+        font-weight: 600;
+    }
+
+    .component-ff .image {
+        width: 100%;
+    }
+
+    .component-ff .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* 50/50 end */
+
+/* container-support-cards start */
+.container-support-cards {
+    margin: 60px auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* container-support-cards end */
+
+/* container-support-card start */
+.container-support-card .card-image {
+    min-height: 267px;
+}
+
+.container-support-card .card-image .card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+.container-support-card .card-body {
+    padding-left: 0;
+}
+.container-support-card .card-body .contents-label {
+    padding: 16px 20px 32px 0;
+}
+
+.container-support-card .card .card-body .contents-label p.text-dark {
+    font-size: 18px;
+}
+
+/* container-support-card end */
+
+/* faq start */
+    .faq {
+        padding: 36px 0;
+    }
+    .faq-title {
+        font-size: 60px;
+        font-weight: 500;
+        margin-bottom: 24px;
+    }
+
+    .card-header.faq-card-header {
+        padding: 20px 20px 20px 0px;
+        border-color: #000;
+        border-width: 1.5px;
+    }
+    .accordion .faq-card:first-of-type .faq-card-header {
+        border-top: 1.5px solid #000;
+    }
+
+    .faq-card-header.card-header:first-child {
+        border-radius: 0;
+    }
+
+    .card-header .faq-card-btn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border: 0;
+        background: transparent;
+        text-align: left;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px; /* 125% */
+    }
+/* faq end */
+
+/* support cta start */
+    .support-cta {
+        margin: 60px 0;
+    }
+
+    .support-cta .cta-title {
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+    .support-cta .cta-copy {
+        margin-bottom: 28px;
+    }
+
+    .support-cta .cta-btn {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        background: #000;
+        color: #fff;
+        padding: 12px 24px;
+    }
+/* support cta end */
+
+/* related content start */
+    .related {
+        margin: 60px auto;
+        padding: 48px 0;
+        background: #F4F3F0;
+    }
+
+    .related .related-container {
+        max-width: 852px;
+        width: 100%;
+        padding: 12px;
+
+        @media (min-width: 993px) {
+            padding: 0;
+        }
+
+    }
+
+    .related .related-title {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 24px;
+    }
+
+    .related .related-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+    }
+
+    .related .related-card {
+        padding: 0;
+    }
+
+    .related .card {
+        background: transparent;
+    }
+/* related content end */
