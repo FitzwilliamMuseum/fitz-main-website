@@ -25,12 +25,16 @@
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
 
     @markdown($page['body'])
-
-    @if(Request::is('support-us/become-a-friend'))
-    @include('includes.elements.payment-options')
-    @endif
-
+    
 </div>
+
+@if(Request::is('support-us/become-a-friend'))
+        @include('includes.elements.payment-options')
+@endif
+
+@if(Request::is('support-us/the-marlay-group'))
+    @include('includes.elements.payment-options', ['variant' => 'the-marlay-group'])
+@endif
 
 @if($page['vimeo_id'])
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
