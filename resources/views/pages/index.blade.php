@@ -22,7 +22,7 @@
         @endif
     @endif
 
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
+    <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
 
         @markdown($page['body'])
 
@@ -30,22 +30,28 @@
             @include('includes.elements.payment-options')
         @endif
 
+        @if(Request::is('support-us/the-marlay-group'))
+            @include('includes.elements.payment-options', ['variant' => 'the-marlay-group'])
+        @endif
+
     </div>
 
+
+
     @if($page['vimeo_id'])
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
             @include('includes.social.vimeo')
         </div>
     @endif
 
     @if($page['youtube_id'])
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
             @include('includes.social.youtube')
         </div>
     @endif
 
     @if($page['sms_id'])
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3 ">
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
             @include('includes.social.sms')
         </div>
     @endif
@@ -65,13 +71,13 @@
 
         @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
         @php
-            $data  = $exhibitionsController::injectImmunity()
+            $data = $exhibitionsController::injectImmunity()
         @endphp
 
         @include('includes.structure.immunity')
         @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
         @php
-            $data  = $exhibitionsController::injectLoanImmunity()
+            $data = $exhibitionsController::injectLoanImmunity()
         @endphp
         @include('includes.structure.immunity-loans' )
     @endif
