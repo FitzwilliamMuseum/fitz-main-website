@@ -12,31 +12,52 @@
 @endif
 
 @section('content')
-@if(!empty($page['carousel_associated']))
-@if($page['carousel_associated'][0]['carousels_id'])
-<div class="container-fluid">
-    <div class="negative-padding">
-        @include('includes.structure.carousel-pages')
+    @if(!empty($page['carousel_associated']))
+        @if($page['carousel_associated'][0]['carousels_id'])
+            <div class="container-fluid">
+                <div class="negative-padding">
+                    @include('includes.structure.carousel-pages')
+                </div>
+            </div>
+        @endif
+    @endif
+
+    <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
+
+        @markdown($page['body'])
+
+        @if(Request::is('support-us/become-a-friend'))
+            @include('includes.elements.payment-options')
+        @endif
+
+        @if(Request::is('support-us/the-marlay-group'))
+            @include('includes.elements.payment-options', ['variant' => 'the-marlay-group'])
+        @endif
+
     </div>
 </div>
 @endif
 @endif
 
-<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
 
-    @markdown($page['body'])
 
-    @if(Request::is('support-us/become-a-friend'))
-    @include('includes.elements.payment-options')
+    @if($page['vimeo_id'])
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+            @include('includes.social.vimeo')
+        </div>
     @endif
 
-</div>
+    @if($page['youtube_id'])
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+            @include('includes.social.youtube')
+        </div>
+    @endif
 
-@if($page['vimeo_id'])
-<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
-    @include('includes.social.vimeo')
-</div>
-@endif
+    @if($page['sms_id'])
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+            @include('includes.social.sms')
+        </div>
+    @endif
 
 @if($page['youtube_id'])
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
@@ -63,18 +84,18 @@
 @section('immunity')
 @if(Request::is('explore-our-collection/immunity-from-seizure'))
 
-@inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
-@php
-$data = $exhibitionsController::injectImmunity()
-@endphp
+        @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
+        @php
+            $data = $exhibitionsController::injectImmunity()
+        @endphp
 
-@include('includes.structure.immunity')
-@inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
-@php
-$data = $exhibitionsController::injectLoanImmunity()
-@endphp
-@include('includes.structure.immunity-loans' )
-@endif
+        @include('includes.structure.immunity')
+        @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
+        @php
+            $data = $exhibitionsController::injectLoanImmunity()
+        @endphp
+        @include('includes.structure.immunity-loans' )
+    @endif
 @endsection
 @if($page['youtube_playlist_id'])
 @section('youtube-playlist')

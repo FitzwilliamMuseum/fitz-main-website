@@ -38,7 +38,7 @@
                     @if($tmp[0]->Price > 0 )
                         <p class="text-info">
                             @svg('fas-pound-sign',['width' => 20, 'height' => 20]) @svg('fas-ticket-alt',['width' => 20, 'height' => 20])<br/>
-                            From £{{ $tmp[0]->Price }}
+                            From &pound;{{ $tmp[0]->Price }}
                         </p>
                     @else
                         <p class="text-info">FREE ENTRY/ Suggested Donation</p>

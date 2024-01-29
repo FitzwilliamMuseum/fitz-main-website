@@ -23,7 +23,7 @@
                         {{ $result['title'][0] }}
                     </a>
                 </h2>
-                <p class="text-dark">£{{ number_format((float)$result['price'][0], 2, '.', '') }}</p>
+                <p class="text-dark">&pound;{{ number_format((float)$result['price'][0], 2, '.', '') }}</p>
             </div>
         </div>
     </div>
