@@ -1,0 +1,148 @@
+main {
+    margin-top: 85px;
+}
+
+.component-list,
+.support-text-component {
+    margin: 56px auto;
+}
+/* breadcrumbs start */
+.container-breadcrumb {
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.container-breadcrumb > div.p-3.mx-auto.mb-3 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.container-breadcrumb div ol {
+    margin-bottom: 0;
+}
+
+/* breadcrumbs end */
+
+
+/* featured image start*/
+.featured_image {
+    margin: 0 auto;
+    max-width: 1290px;
+    margin-bottom: 56px;
+}
+
+.featured_image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+.featured_image figcaption {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+}
+/* featured image end */
+
+/* featured video start */
+.featured_video {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 120px;
+    margin-bottom: 56px;
+}
+/* featured video end*/
+
+/* component list start */
+
+.component-list {
+    margin-bottom: 56px;
+}
+
+.component-list .list-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.component-list .item {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px; /* 161.111% */
+}
+/* component list end */
+
+/* text-wrapper  start */
+.text-wrapper > * {
+    margin: 56px auto;
+}
+
+.text-wrapper h2 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 29px; /* 111.538% */
+}
+/* text-wrapper end */
+
+/* payment start */
+.payment {
+    max-width: 1290px;
+    margin: 0 auto;
+}
+.payment h2 {
+    margin-bottom: 24px;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.grid-container {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 36px;
+    margin-bottom: 60px;
+}
+
+.grid-item {
+    padding: 36px 32px;
+    background: #F0EEE9;
+}
+
+.grid-card {
+    text-align: center;
+}
+
+.grid-card > * {
+    margin-top: 20px;
+}
+
+.grid-card h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.grid-card p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px; /* 161.111% */
+}
+
+.grid-card p span {
+    display: block;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.grid-card a {
+    display: inline-flex;
+    padding: 12px 12px 12px 24px;
+    align-items: center;
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    gap: 8px;
+}
+
+/* payment end */

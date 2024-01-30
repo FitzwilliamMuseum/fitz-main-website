@@ -6,7 +6,7 @@
                     <a class="card-image"
                         href="https://fitzmuseum.cam.ac.uk/plan-your-visit/exhibitions/tensions-of-belonging-connecting-cambridge">
                         <img class="card-img-top"
-                            src="https://s3-alpha-sig.figma.com/img/df7b/82b8/f807bfdcb551efbf8bc6c7faef90d835?Expires=1705881600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C-nxuf500DdV57s0QkdOeDwUeLijvuDHRoKmLXE3WXc5w7oOt76V-lOfTdA~ayJimS0MLRcHJKpiKJyaI-wOeLkYuQ~qnL4b4OymTAKGsGc86UW1m~OQtreDEPDV6VOZbeR0tjg0RnxUAweVuuhffXanXC3g7l1lsCCE-Wx8NwQBCgGyVlShfNhFFZYksk9n8mVpKs0svLc6~rp2LwLhKdd9D73-F5qmO5pq13~OPJa-vbANZttTVkZXDy6qYcQbodGbCzwipPj3F8HL~7YawAbGISA75HM6fHvE-5TUqy6MaNgAFh8E9y~A48KWISLP04luWnsJ1hhueok2Xp7NYQ__"
+                            src="https://s3-alpha-sig.figma.com/img/df7b/82b8/f807bfdcb551efbf8bc6c7faef90d835?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JCnqS1jxE~4NR9RPOZZyH9sMB0OMYL84IjQH3q3de868cPyjMpRoG5bGgqjEVnIYffc2NTMiTH6AyJQ7MxiAm4HiE86nO2NnbJVaPF5rT--t5KGzQGpwrtiusc3~LeAnF6Jm9DCX2q5AVZ5Yn2878VS9rwSJCzC3YTzwxtBEBHu4ZfbCogexraNBx9VHIsISbgwPNbSa~qF21UGx~jcXMuW~JNbi-n0KIJy0xZIcwVzovkJbfo89ET4ny~2UTMYkntxWkA3H1gFqZOxlihLH8KpSvMTRv-TQaduw~2CtLtLCrDm-ZGrdj2Alw~R7jNGehs~v7dWRJqObDBh6QQ0F-Q__"
                             alt="An image of a patterned ceramic plate which has a pixelated dotted effect overlaid with a blue tone wash."
                             width="416" height="416" loading="lazy">
                     </a>
@@ -30,7 +30,7 @@
                 <div class="card card-fitz h-100">
                     <a class="card-image" href="https://fitzmuseum.cam.ac.uk/plan-your-visit/exhibitions/what-s-new">
                         <img class="card-img-top"
-                            src="https://s3-alpha-sig.figma.com/img/a855/43bb/4e9699b8e27d7a1cd1d25567ea42fc28?Expires=1705881600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=F5NtH~m4j7wfggBSOH84BFVZ61WNMtUfcGx8NGriqOBarE4H~TCKpyDWNFjWPcCqYMy-aOK427aCKAdpvmAxPDDkVJhfcB4YyL38YZsN83kGLPKT90Dg48fDE~n0uYznrYmu5ah59YySWzIzbKr6NdSncwF2SqxrEGbDLcTmkbgy6Cu9g5Ca9gnpClv-EJeLcTcR8V8xJlziXFcctUBeVDFyJYeMIsDvUATofK96a02Q~y2gVXWTNkWmtv5rFTelMtzhRWYDmfH7RqOeDU5TzoUlmkdqUGVfdQI5pRt3UeGKPFy~0O7KbYV5tTofFa8zMex6VSnNvUbcQqIRbJ6Skg__"
+                            src="https://s3-alpha-sig.figma.com/img/a855/43bb/4e9699b8e27d7a1cd1d25567ea42fc28?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=n-r~pBKxupEWniY0ac54Vfksy-PLW0zScLKkEnFfodF0xuNE3r9fwOtCdbgbKDGfX~MZuCt1E2abiCCtb9D1OF1fNv8g7DQE2RkFoHbS8iyDDBlYoYfoKdC94x1iWdGS4BGHiAxGG2fNh1SLoakbOhuhStcH8C6EMB~rvnu2rgOY~wcTv2Lnv2fDHc3cTF2EfWJWs0j5sh1eIT2xR3K98KGcrKTMxYzY1myYNtRnhRD4JIpWmfx0JJaS8vIA9hFlv~QJycIM8u0qTG1a~ezn~WS0TiEQ1QW0KNVpE26vNTdFyPf3x9jIvnCH2i6UVKzLU5f3c2YlGaQcTLmbc7dOzg__"
                             alt="Screenprint by the artist Soheila Sokhanvari. A grayscale portrait of a young woman smoking with a colourful abstract background"
                             width="416" height="416" loading="lazy">
                     </a>
