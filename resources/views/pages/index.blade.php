@@ -4,11 +4,11 @@
 @section('description', $page['meta_description'])
 @section('keywords', $page['meta_keywords'])
 @if(!empty($page['hero_image']))
-@section('hero_image', $page['hero_image']['data']['url'])
-@section('hero_image_title', $page['hero_image_alt_text'])
+    @section('hero_image', $page['hero_image']['data']['url'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
 @else
-@section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
-@section('hero_image_title', "The inside of our Founder's entrance")
+    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+    @section('hero_image_title', "The inside of our Founder's entrance")
 @endif
 
 @section('content')
@@ -35,9 +35,6 @@
         @endif
 
     </div>
-</div>
-@endif
-@endif
 
 
 
@@ -59,30 +56,18 @@
         </div>
     @endif
 
-@if($page['youtube_id'])
-<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
-    @include('includes.social.youtube')
-</div>
-@endif
+    @include('includes.structure.learning-blocks')
 
-@if($page['sms_id'])
-<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
-    @include('includes.social.sms')
-</div>
-@endif
-
-@include('includes.structure.learning-blocks')
-
-{{-- @include('includes.structure.related-pages') --}}
+    {{-- @include('includes.structure.related-pages') --}}
 
 @endsection
 
 @if($page['slug'] === 'group-visits')
-@include('includes.elements.group-visits')
+    @include('includes.elements.group-visits')
 @endif
 
 @section('immunity')
-@if(Request::is('explore-our-collection/immunity-from-seizure'))
+    @if(Request::is('explore-our-collection/immunity-from-seizure'))
 
         @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
         @php
@@ -98,7 +83,7 @@
     @endif
 @endsection
 @if($page['youtube_playlist_id'])
-@section('youtube-playlist')
-@include('includes.social.youtube-playlist')
-@endsection
+    @section('youtube-playlist')
+        @include('includes.social.youtube-playlist')
+    @endsection
 @endif

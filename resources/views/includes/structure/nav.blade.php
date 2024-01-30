@@ -76,7 +76,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
 
         @else
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
             <div class="container-fluid">
 
                 @endif
@@ -92,53 +92,39 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <div class="nav-links-container">
-                            <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('home') }}">Home <span
-                                        class="visually-hidden">(current)</span></a>
-                            </li>
-                            <li class="nav-item {{ (request()->is('plan-your-visit*')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('visit') }}">Visit us</a>
-                            </li>
-                            <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('events') }}">Events</a>
-                            </li>
-
-                            <li class="nav-item {{ (Request()->is('explore-our-collection*')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('objects') }}">Collection</a>
-                            </li>
-                            <li class="nav-item {{ (Request()->is('learn-with-us*')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('landing', ['learn-with-us']) }}">
-                                    Learning</a>
-                            </li>
-                            <li class="nav-item {{ (Request()->is('about-us*')) ? 'active' : '' }}">
-                                <a class="nav-link " href="{{ route('landing', ['about-us']) }}">
-                                    About us</a>
-                            </li>
-                            <li class="nav-item {{ (Request()->is('support-us*')) ? 'active' : '' }}">
-                                <a class="nav-link " href="{{ route('landing', ['support-us']) }}">
-                                    Support us</a>
-                            </li>
-                            <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('landing', ['research']) }}">Research</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link"
-                                    href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
-                            </li>
-                        </div>
-                        <div class="search-donate-container">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('landing', ['support-us']) }}">
-                                    @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false', 'color' => '#fff', 'width' => 20, 'height' => 20])
-                                </a>
-                            </li>
-                            <li class="nav-item nav-item-donate">
-                                <a class="nav-link nav-link-donate" href="{{ route('landing', ['support-us']) }}">Donate</a>
-                            </li>
-                        </div>
+                        <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('home') }}">Home <span
+                                    class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item {{ (request()->is('plan-your-visit*')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('visit') }}">Visit us</a>
+                        </li>
+                        <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('events') }}">Events</a>
+                        </li>
+                        <li class="nav-item {{ (Request()->is('explore-our-collection*')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('objects') }}">Collection</a>
+                        </li>
+                        <li class="nav-item {{ (Request()->is('learn-with-us*')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('landing', ['learn-with-us']) }}">
+                                Learning</a>
+                        </li>
+                        <li class="nav-item {{ (Request()->is('about-us*')) ? 'active' : '' }}">
+                            <a class="nav-link " href="{{ route('landing', ['about-us']) }}">
+                                About us</a>
+                        </li>
+                        <li class="nav-item {{ (Request()->is('support-us*')) ? 'active' : '' }}">
+                            <a class="nav-link " href="{{ route('landing', ['support-us']) }}">
+                                Support us</a>
+                        </li>
+                        <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('landing', ['research']) }}">Research</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                                href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
+                        </li>
                     </ul>
-
                     {{--
                     TNEW updates 2024 - search bar removed from header
                     {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'class' => 'd-flex']) }}
@@ -151,7 +137,15 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                     {!! Form::close() !!}
 
                     --}}
-
+                </div>
+                <div id="search-donate-container">
+                    <a class="nav-link" href="{{ route('landing', ['support-us']) }}">
+                        @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
+                        'color' => '#fff', 'width' => 20, 'height' => 20])
+                    </a>
+                    <div class="nav-link-donate">
+                        <a class="nav-link" href="{{ route('landing', ['support-us']) }}">Donate</a>
+                    </div>
                 </div>
             </div>
         </nav>

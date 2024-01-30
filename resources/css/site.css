@@ -1008,58 +1008,64 @@ a.text-center.btn.btn-outline-light.btn__book {
 /* TNEW 2024 updates */
 
 /* navigation start  */
-.nav-item {
-    border-bottom: solid 5px transparent;
-    transition: all .3s ease;
+
+.nav {
+    height: 88px;
+}
+.navbar .container-fluid {
+    max-width: 1320px;
+    height: 100%;
 }
 
-.nav-item:hover:not(.active) {
-    border-bottom: solid 5px #fff;
-}
-
-.nav-links-container,
-.search-donate-container {
-    display: flex;
-    flex-direction: column;
-}
-
-@media (min-width: 992px) {
-
-    .nav-links-container,
-    .search-donate-container {
-        flex-direction: row;
-    }
-
-    .search-donate-container {
-        margin-left: auto;
-        gap: 40px;
-    }
-
-    .navbar-expand-lg .navbar-nav,
-    .nav-links-container {
-        width: 100%;
+@media screen and (min-width: 992px) {
+    .collapse.navbar-collapse{
         justify-content: center;
-        position: relative;
-        isolation: isolate;
-    }
-    .nav-item-donate::after {
-        content: '';
-        position: absolute;
-        display: block;
-        top: -22px;
-        right: -20px;
-        width: 114px;
-        height: 88px;
-        background: #B50E5E;
-        z-index: -1;
-    }
-    .nav-link-donate {
-        padding-left: 28px;
-        padding-right: 28px;
-        font-weight: 500;
-        font-size: 18px;
-        max-width: fit-content;
     }
 }
-/* end navigation */
 
+#search-donate-container {
+    margin-left: auto;
+    opacity: 0;
+    align-self: stretch;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    padding-right: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    transition: opacity 3s linear;
+}
+
+#search-donate-container a.nav-link,
+#search-donate-container a.nav-link:hover,
+#search-donate-container a.nav-link:focus {
+    color: white;
+}
+
+#search-donate-container > a.nav-link {
+    display: none;
+}
+
+@media screen and (min-width: 759px) {
+    #search-donate-container > a.nav-link {
+        display: inline-block;
+
+    }
+}
+
+.nav-link-donate {
+    background: #b50e5e;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 28px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+
+
+
+/* end navigation */
