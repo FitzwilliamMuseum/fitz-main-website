@@ -56,7 +56,7 @@
                         <p class="text-info event-price">
                             @svg('fas-ticket-alt',['width' => 20, 'height' => 20]) From
                             <meta property="priceCurrency" content="GBP"/>
-                            £
+                            &pound;
                             <meta property="price"
                                   content="{{ $tmp[0]->Price }}"/>{{ $tmp[0]->Price }}
                         </p>

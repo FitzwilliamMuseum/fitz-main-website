@@ -15,7 +15,7 @@
                         {{ $result['title'] }}
                     </a>
                 </h2>
-                <p class="text-info">£{{ number_format((float)$result['variants'][0]['price'], 2, '.', '') }}</p>
+                <p class="text-info">&pound;{{ number_format((float)$result['variants'][0]['price'], 2, '.', '') }}</p>
             </div>
         </div>
     </div>

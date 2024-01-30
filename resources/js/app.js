@@ -6,3 +6,4 @@ import "bootstrap/js/dist/tooltip";
 import "bootstrap/js/dist/popover";
 import "bootstrap/js/dist/modal";
 import "@popperjs/core";
+import "./nav";

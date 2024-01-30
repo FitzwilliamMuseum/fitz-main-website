@@ -964,6 +964,28 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
+/*
+    Fitz small improvements list - 23/11/2023
+    1. - .bg-gray classes removed in templates - background colour set to white.
+    2. - .shout.leads font-size set to 4.1rem
+    3. - .navbar .container-fluid max-width set to 1320px
+    4. - .fitz-footer max-width set to 1680px and horizontal scroll removed
+
+*/
+
+.col-max-800 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.shout.lead {
+    font-size: 4.1rem;
+    margin-top: 40px;
+}
+
+.navbar .container-fluid {
+    max-width: 1320px;
+}
+
 .fitz-footer {
     max-width: 1680px;
     margin: 0 auto;
@@ -982,3 +1004,68 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 16px;
 }
+
+/* TNEW 2024 updates */
+
+/* navigation start  */
+
+.nav {
+    height: 88px;
+}
+.navbar .container-fluid {
+    max-width: 1320px;
+    height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .collapse.navbar-collapse{
+        justify-content: center;
+    }
+}
+
+#search-donate-container {
+    margin-left: auto;
+    opacity: 0;
+    align-self: stretch;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    padding-right: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    transition: opacity 3s linear;
+}
+
+#search-donate-container a.nav-link,
+#search-donate-container a.nav-link:hover,
+#search-donate-container a.nav-link:focus {
+    color: white;
+}
+
+#search-donate-container > a.nav-link {
+    display: none;
+}
+
+@media screen and (min-width: 759px) {
+    #search-donate-container > a.nav-link {
+        display: inline-block;
+
+    }
+}
+
+.nav-link-donate {
+    background: #b50e5e;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 28px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+
+
+
+/* end navigation */

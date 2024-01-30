@@ -5,21 +5,21 @@
 @section('hero_image', $resources['hero_image']['data']['url'])
 @section('hero_image_title', $resources['hero_image_alt_text'])
 @section('content')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-        @markdown($resources['description'])
-    </div>
-    @if(!is_null($resources['project_url']))
-        <h3>
-            Project information
-        </h3>
-        <div class="col-12 shadow-sm p-3 mx-auto mb-3">
-            <ul>
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
+    @markdown($resources['description'])
+</div>
+@if(!is_null($resources['project_url']))
+<h3>
+    Project information
+</h3>
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
+    <ul>
 
-                <li>
-                    Project website: <a href="{{ $resources['project_url']}}">{{ $resources['project_url']}}</a>
-                </li>
-            </ul>
-        </div>
-    @endif
+        <li>
+            Project website: <a href="{{ $resources['project_url']}}">{{ $resources['project_url']}}</a>
+        </li>
+    </ul>
+</div>
+@endif
 
 @endsection

@@ -2,7 +2,7 @@
     @section('research-funders')
         <div class="container-fluid py-3">
             <div class="container">
-                <h3>Funders and partners</h3>
+                <h3 class="mb-3">Funders and partners</h3>
                 <div class="row">
                     @foreach($exhibition['exhibition_partners'] as $partner)
                         <x-partner-card

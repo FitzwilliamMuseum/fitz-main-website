@@ -50,7 +50,7 @@ class pagesController extends Controller
         if (empty($page['data'])) {
             return response()->view('errors.404', [], 404);
         } else {
-            return view('pages.landing', [
+            return view('support.index', [
                 'page' => Collect($page['data'])->first(),
                 'associated' => Stubs::getAssociated($section)
             ]);
