@@ -28,7 +28,7 @@
 
     @include('includes.structure.nav')
 
-    @include('support.components.head')
+    @include('support.components.head', ['hero' => true, 'title'=> 'Support us'])
 
     @include('support.components.grid')
 

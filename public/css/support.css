@@ -9,7 +9,7 @@
 .parallax.hero-su-parallax {
     min-height: 0;
     height: 638px;
-    background: url('https://s3-alpha-sig.figma.com/img/f030/8039/d7f6fd7765af49cd451a48a2d107d67e?Expires=1705881600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PowNMdL7T5DxnJkAYWTyWdJsYmsTNinH~10JJJ99UXflWTc827QoilUhyxzO2aVWj62EpejcuOsr2PLX6PBFbsd4efnYG2nxsAALFDnxwyMiKl5wqG0gTSrOxZnECTpLl7-EmWOXJqq9eDLZP325-6YJ5T1SV6eDxDW5V0a~WzajUxR9AyZjNJi1U8J7kjSptnEmahEmXeM01Gdk~kOux0IUGXNcwWDfuBQl4a--9xQLLMcOWmkHpgxDR2p6w3odIMW-EybJKKprR~fpdaLY4VBvrPq4Sz1Z6~zOGa59auKRobSDFmfP-TuesjJS7iOgoLwDXY9bMPxNXS9Y9H0xcg__') no-repeat 50% 45% / cover;
+    background: url('https://s3-alpha-sig.figma.com/img/f030/8039/d7f6fd7765af49cd451a48a2d107d67e?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gE767HYzWc~kgVHpLCzaGilofYpH51o8lg2o4WsbsBbTCDuVr7VQ68BjG4U7CSlo2MwQCxCqUkc5fDADggIixwv3y9FmjihnFRFb35txoIbymKonvxXzv55Ci1nRXCSOr-icD9IqXQgIst5Isd9-oQYNVA53yL6at7REiTOMWPCn8WEUgfSg4UETG2wlP52m9ZdOm8HdEm-~JBzoEfESxB7bE5uz8Fji-ZGdOlNa5HfIfBsl4v0enVJ39tgaj81rJGP8JSLYCt5sQfv5QyD~mrHhDtx6ECIUgk0mFKA6~a-ZdGlBpae~Xeb5z4GnamCYkh2fWGV1RsTvlr99GUMj4Q__') no-repeat 50% 45% / cover;
 }
 
 /* hero image end  */
@@ -42,6 +42,25 @@
     font-weight: 400;
 }
 /* hero title end */
+
+/* hero support us secondary start */
+.hero-su-secondary{
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.hero-su-secondary h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.hero-su-secondary p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+}
+/* hero secondary end */
 
 
 /* container-support-card */
