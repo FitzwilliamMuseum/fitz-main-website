@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card card-fitz card-fitz-support h-100">
-                    <a href="https://tickets.museums.cam.ac.uk/events?kid=119">
+                    <a href="/support-us/corporate-support">
                         <img class="card-img-top"
                             src="https://fitz-content.studio24.dev/fitz-website/assets/Friends 4.jpg?key=exhibition"
                             alt="Friends events" width="406" height="342" loading="lazy">
@@ -84,7 +84,7 @@
                     <div class="card-body h-100">
                         <div class="contents-label mb-3">
                             <h3>
-                                <a href="https://tickets.museums.cam.ac.uk/events?kid=119" class="stretched-link">
+                                <a href="/support-us/corporate-support" class="stretched-link">
                                     Corporate support
                                 </a>
                             </h3>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/support.css') }}">
 
     @hasSection('map')
-    @mapstyles
+        @mapstyles
     @endif
 
     @include('includes.structure.manifest')
@@ -28,7 +28,7 @@
 
     @include('includes.structure.nav')
 
-    @include('support.components.head', ['hero' => true, 'title'=> 'Support us'])
+    @include('support.components.head', ['hero' => true, 'title' => 'Support us'])
 
     @include('support.components.grid')
 
@@ -43,6 +43,8 @@
     @include('support.components.cta')
 
     @include('support.components.related')
+
+    @include('includes.structure.email-signup')
 
     @include('includes.structure.footer')
 
