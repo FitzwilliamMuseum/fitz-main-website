@@ -1053,6 +1053,12 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
+@media screen and (min-width: 992px) {
+    #search-donate-container {
+        padding-right: 0;
+    }
+}
+
 .nav-link-donate {
     background: #b50e5e;
     color: white;

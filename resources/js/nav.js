@@ -5,7 +5,7 @@ function moveSearchDonateContainer() {
     const element = document.querySelector("#search-donate-container");
 
 
-    if (window.innerWidth <= 990) {
+    if (window.innerWidth < 992) {
         // On small screens, insert the container before the navbar
         navbar.parentNode.insertBefore(container, toggle);
         element.style.opacity = 1;

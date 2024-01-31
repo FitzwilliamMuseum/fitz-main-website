@@ -8,7 +8,7 @@
                     <a href="https://tickets.museums.cam.ac.uk/events?kid=60">
                         <img class="card-img-top"
                             src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition"
-                            alt="Families" width="406" height="342" loading="lazy">
+                            alt="Families" width="374" height="342" loading="lazy">
                     </a>
                     <div class="card-body h-100">
                         <div class="contents-label mb-3">
@@ -24,7 +24,39 @@
                     <a href="https://tickets.museums.cam.ac.uk/events?kid=61">
                         <img class="card-img-top"
                             src="https://fitz-content.studio24.dev/fitz-website/assets/Young People.1jpg.PNG?key=exhibition"
-                            alt="Young people" width="406" height="342" loading="lazy">
+                            alt="Young people" width="374" height="342" loading="lazy">
+                    </a>
+                    <div class="card-body h-100">
+                        <div class="contents-label mb-3">
+                            <h3>
+                                <a href="https://tickets.museums.cam.ac.uk/events?kid=61" class="stretched-link">
+                                    Become a friend (membership)
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-fitz related-card h-100">
+                    <a href="https://tickets.museums.cam.ac.uk/events?kid=61">
+                        <img class="card-img-top"
+                            src="https://fitz-content.studio24.dev/fitz-website/assets/Young People.1jpg.PNG?key=exhibition"
+                            alt="Young people" width="374" height="342" loading="lazy">
+                    </a>
+                    <div class="card-body h-100">
+                        <div class="contents-label mb-3">
+                            <h3>
+                                <a href="https://tickets.museums.cam.ac.uk/events?kid=61" class="stretched-link">
+                                    Become a friend (membership)
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-fitz related-card h-100">
+                    <a href="https://tickets.museums.cam.ac.uk/events?kid=61">
+                        <img class="card-img-top"
+                            src="https://fitz-content.studio24.dev/fitz-website/assets/Young People.1jpg.PNG?key=exhibition"
+                            alt="Young people" width="374" height="342" loading="lazy">
                     </a>
                     <div class="card-body h-100">
                         <div class="contents-label mb-3">
