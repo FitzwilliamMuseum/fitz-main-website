@@ -265,6 +265,13 @@ Breadcrumbs::for('things', function (BreadcrumbTrail $trail): void
     $trail->push('Things to Do',route('things'));
 });
 
+/* New Landing Page Template -- TEMP */
+Breadcrumbs::for('support-us-new', function (BreadcrumbTrail $trail): void
+{
+    $trail->parent('home');
+    $trail->push('Support Us - New Landing Template',route('support-us-new'));
+});
+
 /* Visit us Routes */
 Breadcrumbs::for('visit', function (BreadcrumbTrail $trail): void
 {

@@ -30,13 +30,14 @@
 
     @include('support.components.head', ['hero' => true, 'title' => 'Support us'])
 
+    {{-- TODO - Make pages in directus for grid --}}
     @include('support.components.grid')
 
     @include('support.components.text')
 
-    @include('support.components.fiftyfifty')
+    @include('support.components.banner')
 
-    @include('support.components.cards')
+    @include('support.components.fiftyfifty')
 
     @include('support.components.faq')
 
