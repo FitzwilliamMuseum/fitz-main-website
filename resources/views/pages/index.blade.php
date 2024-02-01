@@ -5,11 +5,9 @@
     @include('includes.structure.meta')
 
     @include('includes.css.css')
-    <link rel="stylesheet" href="{{ URL::asset('css/support.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/support-default.css') }}">
 
     @hasSection('map')
-    @mapstyles
+        @mapstyles
     @endif
 
     @include('includes.structure.manifest')
@@ -29,23 +27,24 @@
     @include('includes.structure.accessibility')
 
     @include('includes.structure.nav')
-    <main>
 
-
-        @if(Request::is('support-us/pay-what-you-wish'))
+        @if (Request::is('support-us/pay-what-you-wish'))
             @include('support.pages.pay-what-you-wish')
         @endif
 
-        @if(Request::is('support-us/make-a-donation'))
+        @if (Request::is('support-us/make-a-donation'))
             @include('support.pages.ways-to-donate')
         @endif
 
-        @if(Request::is('support-us/become-a-friend'))
+        @if (Request::is('support-us/become-a-friend'))
             @include('support.pages.become-a-friend')
         @endif
 
-    </main>
+        @if (Request::is('support-us/corporate-support'))
+            @include('support.pages.corporate-support')
+        @endif
 
+    @include('includes.structure.email-signup')
 
     @include('includes.structure.footer')
 

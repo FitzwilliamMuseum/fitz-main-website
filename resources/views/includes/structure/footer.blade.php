@@ -31,7 +31,7 @@
 </div>
 
 <footer class="container-fluid pt-3 text-black bg-pastel">
-    <div class="container fitz-footer-links">
+    <div class="fitz-footer-links">
         <div class="pt-2">
             <h3 class="visually-hidden">Contact us</h3>
             <p>
