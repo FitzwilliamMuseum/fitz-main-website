@@ -5,8 +5,6 @@
     @include('includes.structure.meta')
 
     @include('includes.css.css')
-    <link rel="stylesheet" href="{{ URL::asset('css/support.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/support-default.css') }}">
 
     @hasSection('map')
         @mapstyles
@@ -29,8 +27,6 @@
     @include('includes.structure.accessibility')
 
     @include('includes.structure.nav')
-    <main>
-
 
         @if (Request::is('support-us/pay-what-you-wish'))
             @include('support.pages.pay-what-you-wish')
@@ -47,8 +43,6 @@
         @if (Request::is('support-us/corporate-support'))
             @include('support.pages.corporate-support')
         @endif
-
-    </main>
 
     @include('includes.structure.email-signup')
 

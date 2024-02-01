@@ -30,10 +30,7 @@ body {
     .head {
         padding-top: 100px;
         background-repeat: no-repeat;
-        /* background-size: cover; */
         background-position: center center;
-        /* display: none; */
-        /* visibility: hidden; */
     }
 
     .second-parallax-home {
@@ -758,6 +755,12 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1290px;
+    }
+}
+
 .home-hero .wrapper {
     width: 100%;
     display: flex;
@@ -964,15 +967,6 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
-/*
-    Fitz small improvements list - 23/11/2023
-    1. - .bg-gray classes removed in templates - background colour set to white.
-    2. - .shout.leads font-size set to 4.1rem
-    3. - .navbar .container-fluid max-width set to 1320px
-    4. - .fitz-footer max-width set to 1680px and horizontal scroll removed
-
-*/
-
 .col-max-800 {
     max-width: 800px;
     margin: 0 auto;
@@ -982,17 +976,11 @@ a.text-center.btn.btn-outline-light.btn__book {
     margin-top: 40px;
 }
 
-.navbar .container-fluid {
-    max-width: 1320px;
-}
-
 .fitz-footer {
-    max-width: 1680px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-items: center;
-    padding-bottom: 24px;
+    padding: 0 12px 24px 12px;
 }
 
 .fitz-footer div {
@@ -1000,20 +988,29 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .fitz-footer-links {
+    max-width: 1290px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
+    justify-items: start;
     grid-gap: 16px;
+}
+
+@media screen and (min-width: 756px) {
+    .fitz-footer-links {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        justify-items: center;
+    }
 }
 
 /* TNEW 2024 updates */
 
 /* navigation start  */
-
 .nav {
     height: 88px;
 }
 .navbar .container-fluid {
-    max-width: 1320px;
+    max-width: 1290px;
     height: 100%;
 }
 
@@ -1070,8 +1067,450 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-style: normal;
     font-weight: 500;
 }
+/* navigation end */
 
+/* hero-image start */
+.parallax,
+.parallax.hero-su-parallax {
+    min-height: 0;
+    height: 638px;
+    background: url("https://s3-alpha-sig.figma.com/img/f030/8039/d7f6fd7765af49cd451a48a2d107d67e?Expires=1707696000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gE767HYzWc~kgVHpLCzaGilofYpH51o8lg2o4WsbsBbTCDuVr7VQ68BjG4U7CSlo2MwQCxCqUkc5fDADggIixwv3y9FmjihnFRFb35txoIbymKonvxXzv55Ci1nRXCSOr-icD9IqXQgIst5Isd9-oQYNVA53yL6at7REiTOMWPCn8WEUgfSg4UETG2wlP52m9ZdOm8HdEm-~JBzoEfESxB7bE5uz8Fji-ZGdOlNa5HfIfBsl4v0enVJ39tgaj81rJGP8JSLYCt5sQfv5QyD~mrHhDtx6ECIUgk0mFKA6~a-ZdGlBpae~Xeb5z4GnamCYkh2fWGV1RsTvlr99GUMj4Q__")
+        no-repeat 50% 45% / cover;
+}
+/* hero-image end  */
 
+/* hero-title start */
+.hero-su {
+    margin: 60px 0;
+}
+.hero-su .shout.lead {
+    font-size: 60px;
+    font-weight: 500;
+}
 
+.hero-su p {
+    font-size: 24px;
+    font-weight: 400;
+}
+/* hero-title end */
 
-/* end navigation */
+/* hero-secondary start */
+.hero-su-secondary {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.hero-su-secondary h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.hero-su-secondary p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+}
+/* hero-secondary end */
+
+/* breadcrumbs start */
+.breadcrumbs-su {
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs-su ol.breadcrumb {
+    margin: 0;
+    padding: 6px 0;
+}
+
+.container-breadcrumb {
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.container-breadcrumb > div.p-3.mx-auto.mb-3 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.container-breadcrumb div ol {
+    margin-bottom: 0;
+}
+/* breadcrumbs end */
+
+/* support-grid start */
+.support-grid {
+    margin-bottom: 60px;
+}
+
+.support-grid-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+/* support-grid end */
+
+/* support-grid-card start */
+.card-fitz-support {
+    max-width: 406px;
+}
+
+.card-img-top-support {
+    max-height: 342px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-support-cards {
+    margin: 60px auto;
+    padding: 0 12px;
+}
+
+.container-support-card .card-image {
+    min-height: 267px;
+}
+
+.container-support-card .card-image .card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+.container-support-card .card-body {
+    padding-left: 0;
+}
+.container-support-card .card-body .contents-label {
+    padding: 16px 20px 32px 0;
+}
+
+.container-support-card .card .card-body .contents-label p.text-dark {
+    font-size: 18px;
+}
+
+.card-fitz-support .card-body .contents-label h3 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+}
+/* support-grid-card end */
+
+/* text-component start */
+.support-text-component h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+.support-text-component p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.text-wrapper > * {
+    margin: 56px auto;
+}
+
+.text-wrapper h2 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 29px;
+}
+/* text-component end */
+
+/* featured-image-component start*/
+.featured_imge {
+    margin: 0 auto;
+    max-width: 1290px;
+    margin-bottom: 56px;
+}
+
+.featured_image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+.featured_image figcaption {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+}
+/* featured-image-component end */
+
+/* featured-video-component start */
+.featured_video {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 120px;
+    margin-bottom: 56px;
+}
+/* featured-video-component end*/
+
+/* list-component start */
+.component-list {
+    margin-bottom: 56px;
+    padding: 12px;
+}
+
+.component-list,
+.support-text-component {
+    margin: 56px auto;
+}
+
+.component-list .list-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.component-list .item {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+}
+/* list-component end */
+
+/* payment-grid-card start */
+.payment {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 12px;
+}
+.payment h2 {
+    margin-bottom: 24px;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.grid-container {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 36px;
+    margin-bottom: 60px;
+}
+
+.grid-item {
+    padding: 36px 32px;
+    background: #F0EEE9;
+}
+
+.grid-card {
+    text-align: center;
+}
+
+.grid-card > * {
+    margin-top: 20px;
+}
+
+.grid-card h3 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.grid-card p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.grid-card p span {
+    display: block;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.grid-card a {
+    display: inline-flex;
+    padding: 12px 12px 12px 24px;
+    align-items: center;
+    background: black;
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    gap: 8px;
+}
+/* payment-grid-card end */
+
+/* 50/50-component start */
+.component-ff {
+    margin: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+@media (min-width: 768px) {
+    .component-ff {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .component-ff .content .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-width: 300px;
+        max-width: 500px;
+    }
+
+    .component-ff .image img {
+        min-height: 460px;
+    }
+}
+
+.component-ff .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b50e5e;
+}
+
+.component-ff .content .container {
+    color: white;
+    padding: 40px;
+}
+
+.component-ff .content .container h3 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.component-ff .content .container p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.component-ff .content .container a.nav-link {
+    width: max-content;
+    padding: 12px 24px;
+    color: #000;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.component-ff .content .container a.nav-link svg path {
+    font-weight: 600;
+}
+
+.component-ff .image {
+    width: 100%;
+}
+
+.component-ff .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 50/50-component end */
+
+/* faq-component start */
+.faq {
+    padding: 36px 0;
+}
+.faq-title {
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.card-header.faq-card-header {
+    padding: 20px 20px 20px 0px;
+    border-color: #000;
+    border-width: 1.5px;
+}
+.accordion .faq-card:first-of-type .faq-card-header {
+    border-top: 1.5px solid #000;
+}
+
+.faq-card-header.card-header:first-child {
+    border-radius: 0;
+}
+
+.card-header .faq-card-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+}
+/* faq-component end */
+
+/* cta-component start */
+.support-cta {
+    margin: 60px 0;
+}
+
+.support-cta .cta-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.support-cta .cta-copy {
+    margin-bottom: 28px;
+}
+
+.support-cta .cta-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+}
+/* cta-component end */
+
+/* related-content-component start */
+.container.related-container {
+    padding: 0;
+}
+.related {
+    margin: 60px auto;
+    padding: 48px 0;
+    background: #f4f3f0;
+}
+
+.related .related-container {
+    max-width: 1314px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.related .related-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.related .related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.related .related-card {
+    padding: 0;
+}
+
+.related .card {
+    background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+    .related .related-grid.less-than-four {
+        grid-template-columns: repeat(auto-fit, minmax(auto, 306px));
+        justify-content: center;
+        grid-gap: 36px;
+    }
+
+    .related .related-grid.four {
+        grid-template-columns: repeat(auto-fit, minmax(auto, 295.5px));
+        justify-content: center;
+        grid-gap: 36px;
+    }
+}
+/* related-content-component end */
