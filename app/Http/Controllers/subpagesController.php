@@ -19,7 +19,7 @@ class subpagesController extends Controller
         if (empty($page['data'])) {
             return response()->view('errors.404', [], 404);
         } else {
-            return view('support.index', [
+            return view('support.subpage', [
                 'page' => Collect($page['data'])->first()
             ]);
         }
