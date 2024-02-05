@@ -1,7 +1,11 @@
     {{-- FAQ --}}
     @php
-        $faq_heading = $page['faq_section_heading'];
-        $faq_accordion = $page['accordion'];
+        if(!empty($page['faq_section_heading'])) {
+            $faq_heading = $page['faq_section_heading'];
+        }
+        if(!empty($page['faq_section_heading'])) {
+            $faq_accordion = $page['accordion'];
+        }
     @endphp
     <div class="container-fluid col-max-800 faq">
         <div class="container faq-container">

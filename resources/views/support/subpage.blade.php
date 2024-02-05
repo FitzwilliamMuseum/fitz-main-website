@@ -31,7 +31,19 @@
 
         @include('includes.structure.email-signup')
 
-        <h1>Subpage under construction - Check back later!</h1>
+        @include('support.components.head')
+
+        @include('support.components.featured-image')
+
+        @include('support.components.cta')
+
+        @include('support.components.featured-video')
+
+        @include('support.components.content-block')
+
+        @include('support.components.banner')
+
+        @include('support.components.related')
 
         @include('includes.structure.footer')
 
