@@ -45,6 +45,8 @@
 
         @include('support.components.related')
 
+        @include('support.components.components-repeater')
+
         @include('includes.structure.footer')
 
         @include('includes.scripts.javascript')
