@@ -20,6 +20,5 @@
 </div>
 
 
-
 @include('support.components.related')
 

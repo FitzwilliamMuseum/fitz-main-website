@@ -1,65 +1,71 @@
-@extends('layouts.exhibitions')
-@section('keywords', $exhibition['meta_keywords'])
-@section('description', $exhibition['meta_description'])
-@section('title', $exhibition['exhibition_title'])
+@php
+    $hero = [
+        'hero_title' => $exhibition['exhibition_title'],
+        'hero_subtitle' => $exhibition['exhibition_title'],
+        'start' => $exhibition["exhibition_start_date"],
+        'end' => $exhibition["exhibition_end_date"]
+    ]
 
-@if(!empty($banners))
-    @section('banner')
-        <x-home-page-banner :banners="$banners"></x-home-page-banner>
-    @endSection
-    @section('hero_image_title', $exhibition['hero_image_alt_text'])
-    @section('hero_image', $exhibition['hero_image']['data']['url'])
-@else
-    @section('hero_image', $exhibition['hero_image']['data']['url'])
-    @section('hero_image_title', $exhibition['hero_image_alt_text'])
-@endif
+@endphp
+@include('includes.structure.name-spaces')
 
+<head>
 
-@if($exhibition['slug'] === 'true-to-nature-open-air-painting-in-europe-1780-1870')
-    @if (\Carbon\Carbon::now()->diffInHours('2022-04-28 00:00:01', false) <= 0)
-        @include('includes.structure.true')
+    @include('includes.structure.meta')
+
+    @include('includes.css.css')
+
+    @hasSection('map')
+        @mapstyles
     @endif
-@endif
 
-@include('includes.elements.exhibitions.main-content')
+    @include('includes.structure.manifest')
 
-@include('includes.elements.exhibitions.cases')
+    @yield('jsonld')
 
-@include('includes.elements.exhibitions.podcasts')
+    <x-feed-links></x-feed-links>
 
-@include('includes.elements.exhibitions.films')
+    @include('googletagmanager::head')
 
-@include('includes.elements.exhibitions.artworks')
+</head>
 
-@include('includes.elements.exhibitions.curators')
+<body class="doc-body c_darkmode">
+@include('googletagmanager::body')
 
-@include('includes.elements.exhibitions.partners')
+@include('includes.structure.accessibility')
 
-@include('includes.elements.exhibitions.departments')
+<x-exhibition-hero :hero="$hero"></x-exhibition-hero>
 
-@include('includes.elements.exhibitions.carousel')
+<x-exhibition-cta></x-exhibition-cta>
 
-@include('includes.elements.exhibitions.galleries')
+@include('support.components.featured-image')
 
-@include('includes.elements.exhibitions.360')
+@include('support.components.cta')
 
-@include('includes.elements.exhibitions.faqs')
+@include('support.components.featured-video')
 
-@include('includes.elements.exhibitions.sketchfab')
+@include('support.components.cta')
 
-@if($exhibition['slug'] === 'islanders')
-    @include('includes.elements.exhibitions.shopify')
-@endif
+@include('support.components.related')
 
-@include('includes.elements.exhibitions.files')
+@include('support.components.featured-image')
 
-@include('includes.elements.exhibitions.thanks')
+@include('support.components.cta')
 
-@include('includes.elements.exhibitions.products')
+@include('support.components.faq')
 
-@include('includes.elements.exhibitions.events')
+@include('support.components.related')
 
-@include('includes.elements.exhibitions.events-url')
+@include('includes.structure.nav')
 
-@include('includes.elements.exhibitions.similar-exhibits')
+@include('includes.structure.email-signup')
+
+@include('includes.structure.footer')
+
+@include('includes.scripts.javascript')
+
+</body>
+
+</html>
+
 

@@ -1,0 +1,39 @@
+/* faq-component start */
+.faq {
+    padding: 36px 0;
+    margin: 56px auto;
+}
+
+.faq-title {
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.card-header.faq-card-header {
+    padding: 20px 20px 20px 0;
+    border-color: #000;
+    border-width: 1.5px;
+}
+
+.accordion .faq-card:first-of-type .faq-card-header {
+    border-top: 1.5px solid #000;
+}
+
+.faq-card-header.card-header:first-child {
+    border-radius: 0;
+}
+
+.card-header .faq-card-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+/* faq-component end */
