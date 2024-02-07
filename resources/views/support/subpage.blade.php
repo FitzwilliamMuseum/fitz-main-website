@@ -33,13 +33,13 @@
 
         @include('includes.structure.nav')
 
-        @include('includes.structure.email-signup')
-
         @include('support.components.head')
 
         @include('support.components.components-repeater')
 
         @include('support.components.related')
+
+        @include('includes.structure.email-signup')
 
         @include('includes.structure.footer')
 
