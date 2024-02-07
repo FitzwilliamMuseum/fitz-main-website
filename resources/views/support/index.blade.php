@@ -1,4 +1,17 @@
+{{-- SEO --}}
+@section('title', $page['title'])
+@section('description', $page['meta_description'])
+@section('keywords', $page['meta_keywords'])
+
 @include('includes.structure.name-spaces')
+
+@php
+    foreach($page['page_components'] as $component) {
+        if(!empty($component['related_pages_positioning']) && $component['related_pages_positioning'] == true) {
+            $listing_pos = true;
+        }
+    }
+@endphp
 
 <head>
 
@@ -30,18 +43,12 @@
 
     @include('support.components.head', ['hero' => true, 'title' => 'Support us'])
 
-    {{-- TODO - Make pages in directus for grid --}}
-    @include('support.components.grid')
-
-    @include('support.components.text')
-
-    @include('support.components.banner')
-
-    @include('support.components.fiftyfifty')
-
-    @include('support.components.faq')
-
-    @include('support.components.cta')
+    @include('support.components.components-repeater')
+    
+    {{-- If a custom position for the page listing hasn't been specified --}}
+    @if(!isset($listing_pos))
+        @include('support.components.grid')
+    @endif
 
     @include('support.components.related')
 

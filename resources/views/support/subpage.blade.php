@@ -1,4 +1,8 @@
-{{-- Subpage Template - WIP --}}
+{{-- SEO --}}
+@section('title', $page['title'])
+@section('description', $page['meta_description'])
+@section('keywords', $page['meta_keywords'])
+
 @include('includes.structure.name-spaces')
 
 <head>
@@ -33,19 +37,9 @@
 
         @include('support.components.head')
 
-        @include('support.components.featured-image')
-
-        @include('support.components.cta')
-
-        @include('support.components.featured-video')
-
-        @include('support.components.content-block')
-
-        @include('support.components.banner')
+        @include('support.components.components-repeater')
 
         @include('support.components.related')
-
-        @include('support.components.components-repeater')
 
         @include('includes.structure.footer')
 

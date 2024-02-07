@@ -1,4 +1,5 @@
     {{-- Banner --}}
+
     @php
         if(!empty($page['banner_heading'])) {
             $banner_heading = $page['banner_heading'];
@@ -12,12 +13,6 @@
         }
         if(!empty($page['banner_cta_link'])) {
             $banner_link = $page['banner_cta_link'];
-        }
-        if(!empty($page['banner_image'])) {
-            $banner_image = $page['banner_image'];
-        }
-        if(!empty($page['banner_image_alt_text'])) {
-            $banner_image_alt_text = $page['banner_image_alt_text'];
         }
     @endphp
     <div class="container container-fluid">
