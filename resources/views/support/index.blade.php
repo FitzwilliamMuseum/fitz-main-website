@@ -18,7 +18,6 @@
     @include('includes.structure.meta')
 
     @include('includes.css.css')
-    <link rel="stylesheet" href="{{ URL::asset('css/support.css') }}">
 
     @hasSection('map')
         @mapstyles
@@ -35,28 +34,28 @@
 </head>
 
 <body class="doc-body c_darkmode">
-    @include('googletagmanager::body')
+@include('googletagmanager::body')
 
-    @include('includes.structure.accessibility')
+@include('includes.structure.accessibility')
 
-    @include('includes.structure.nav')
+@include('includes.structure.nav')
 
-    @include('support.components.head', ['hero' => true, 'title' => 'Support us'])
+@include('support.components.head', ['hero' => true, 'title' => 'Support us'])
 
     @include('support.components.components-repeater')
-    
+
     {{-- If a custom position for the page listing hasn't been specified --}}
     @if(!isset($listing_pos))
         @include('support.components.grid')
     @endif
 
-    @include('support.components.related')
+@include('support.components.related')
 
-    @include('includes.structure.email-signup')
+@include('includes.structure.email-signup')
 
-    @include('includes.structure.footer')
+@include('includes.structure.footer')
 
-    @include('includes.scripts.javascript')
+@include('includes.scripts.javascript')
 
 </body>
 

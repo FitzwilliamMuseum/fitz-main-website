@@ -1,12 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
-    const grid = document.querySelector(".related .related-grid");
+    const grid = document.querySelectorAll(".related .related-grid");
     if (!grid) return;
-    
-    const numItems = grid.children.length;
-    if (numItems < 4) {
-        grid.classList.add("less-than-four");
-    } else {
-        grid.classList.add("four");
-    }
-
+    grid.forEach((el) => {
+        const numItems = el.children.length;
+        if (numItems < 4) {
+            el.classList.add("less-than-four");
+        } else {
+            el.classList.add("four");
+        }
+    });
 });

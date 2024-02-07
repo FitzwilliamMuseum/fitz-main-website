@@ -1,0 +1,34 @@
+/* breadcrumbs start */
+.navbar ~ .breadcrumbs-su {
+    margin: 88px 0 0 0;
+}
+
+.navbar:has(#global-announcement) ~ .breadcrumbs-su {
+    margin: 130px 0 0 0;
+}
+
+.navbar + .container-fluid.head.parallax.hero-su-parallax + .breadcrumbs-su,
+.navbar:has(#global-announcement) + .container-fluid.head.parallax.hero-su-parallax + .breadcrumbs-su {
+    margin: 0;
+}
+
+.breadcrumbs-su {
+    padding: 0;
+}
+
+.breadcrumbs-su ol.breadcrumb {
+    margin: 0;
+    padding: 6px 0;
+}
+
+.container-breadcrumb {
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.container-breadcrumb div ol {
+    margin-bottom: 0;
+}
+
+
+/* breadcrumbs end */
