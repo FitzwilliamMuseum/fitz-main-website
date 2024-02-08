@@ -5,11 +5,18 @@
 
 .navbar .container-fluid {
     max-width: 1290px;
-    padding: 8px 12px 0 12px;
+    padding: 0 12px;
     height: 100%;
 
     @media screen and (min-width: 1290px) {
-        padding: 8px 0 0 0;
+        padding: 0
+    }
+}
+
+.navbar:has(#global-announcement) .container-fluid {
+    padding-top: 8px;
+    @media screen and (min-width: 1290px) {
+        padding-top: 8px;
     }
 }
 
