@@ -38,25 +38,7 @@
 
 <x-exhibition-cta></x-exhibition-cta>
 
-@include('support.components.featured-image')
 
-@include('support.components.cta')
-
-@include('support.components.featured-video')
-
-@include('support.components.cta')
-
-@include('support.components.related')
-
-@include('support.components.featured-image')
-
-@include('support.components.cta')
-
-@include('support.components.faq')
-
-@include('support.components.related')
-
-@include('includes.structure.nav')
 
 @include('includes.structure.email-signup')
 

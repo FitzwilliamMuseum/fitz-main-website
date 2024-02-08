@@ -40,7 +40,7 @@
 
 @include('includes.structure.nav')
 
-@include('support.components.head', ['hero' => true, 'title' => 'Support us'])
+@include('support.components.head', ['hero' => true])
 
     @include('support.components.components-repeater')
 

@@ -10,7 +10,7 @@
     @include('googletagmanager::head')
 
 </head>
-<body class="doc-body bg-pastel c_darkmode">
+<body class="doc-body c_darkmode exhibition">
 @include('googletagmanager::body')
 
 @include('includes.structure.accessibility')
@@ -23,7 +23,7 @@
     @include('includes.structure.head')
 @endif
 
-    @include('includes.structure.open')
+@include('includes.structure.open')
 
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')
