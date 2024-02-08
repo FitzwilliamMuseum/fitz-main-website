@@ -7,7 +7,7 @@
         /**
          * Accidentally named the listing differently in the subpage
          * and landing page templates!
-         * 
+         *
          * To remove and stick to either pages_listing or page_listing
          * on both templates.
         **/

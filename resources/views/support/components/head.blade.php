@@ -1,9 +1,5 @@
 @php
     $title = $page['title'];
-    if (!empty($page['hero_image'])) {
-        $hero = $page['hero_image'];
-    }
-
     $page_header_heading = $page['page_header_heading'];
     $page_header_subheading = $page['page_header_subheading'];
 
@@ -43,8 +39,8 @@
         $relevant_page_listing = $page['relevant_page_listing'];
     }
 @endphp
-@if (isset($hero))
-    <div class="container-fluid head parallax hero-su-parallax" style="background: url({{ $hero['data']['url'] }})"></div>
+@if (isset($hero) && $hero == true)
+    <div class="container-fluid head parallax hero-su-parallax" style=""></div>
     <div class="breadcrumbs-su">
         @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
     </div>
