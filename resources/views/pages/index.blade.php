@@ -1,54 +1,89 @@
-@include('includes.structure.name-spaces')
+@extends('layouts.layout')
 
-<head>
+@section('title', $page['title'])
+@section('description', $page['meta_description'])
+@section('keywords', $page['meta_keywords'])
+@if(!empty($page['hero_image']))
+    @section('hero_image', $page['hero_image']['data']['url'])
+    @section('hero_image_title', $page['hero_image_alt_text'])
+@else
+    @section('hero_image','https://fitz-cms-images.s3.eu-west-2.amazonaws.com/img_20190105_153947.jpg')
+    @section('hero_image_title', "The inside of our Founder's entrance")
+@endif
 
-    @include('includes.structure.meta')
-
-    @include('includes.css.css')
-
-    @hasSection('map')
-        @mapstyles
+@section('content')
+    @if(!empty($page['carousel_associated']))
+        @if($page['carousel_associated'][0]['carousels_id'])
+            <div class="container-fluid">
+                <div class="negative-padding">
+                    @include('includes.structure.carousel-pages')
+                </div>
+            </div>
+        @endif
     @endif
 
-    @include('includes.structure.manifest')
+    <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
 
-    @yield('jsonld')
+        @markdown($page['body'])
 
-    <x-feed-links></x-feed-links>
-
-    @include('googletagmanager::head')
-
-</head>
-
-<body class="doc-body c_darkmode">
-
-    @include('googletagmanager::body')
-
-    @include('includes.structure.accessibility')
-
-    @include('includes.structure.nav')
-
-        @if (Request::is('support-us/pay-what-you-wish'))
-            @include('support.pages.pay-what-you-wish')
+        @if(Request::is('support-us/become-a-friend'))
+            @include('includes.elements.payment-options')
         @endif
 
-        @if (Request::is('support-us/make-a-donation'))
-            @include('support.pages.ways-to-donate')
+        @if(Request::is('support-us/the-marlay-group'))
+            @include('includes.elements.payment-options', ['variant' => 'the-marlay-group'])
         @endif
 
-        @if (Request::is('support-us/become-a-friend'))
-            @include('support.pages.become-a-friend')
-        @endif
+    </div>
 
-        @if (Request::is('support-us/corporate-support'))
-            @include('support.pages.corporate-support')
-        @endif
 
-    @include('includes.structure.email-signup')
 
-    @include('includes.structure.footer')
+    @if($page['vimeo_id'])
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+            @include('includes.social.vimeo')
+        </div>
+    @endif
 
-    @include('includes.scripts.javascript')
-</body>
+    @if($page['youtube_id'])
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+            @include('includes.social.youtube')
+        </div>
+    @endif
 
-</html>
+    @if($page['sms_id'])
+        <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
+            @include('includes.social.sms')
+        </div>
+    @endif
+
+    @include('includes.structure.learning-blocks')
+
+    {{-- @include('includes.structure.related-pages') --}}
+
+@endsection
+
+@if($page['slug'] === 'group-visits')
+    @include('includes.elements.group-visits')
+@endif
+
+@section('immunity')
+    @if(Request::is('explore-our-collection/immunity-from-seizure'))
+
+        @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
+        @php
+            $data = $exhibitionsController::injectImmunity()
+        @endphp
+
+        @include('includes.structure.immunity')
+        @inject('exhibitionsController', 'App\Http\Controllers\exhibitionsController')
+        @php
+            $data = $exhibitionsController::injectLoanImmunity()
+        @endphp
+        @include('includes.structure.immunity-loans' )
+    @endif
+@endsection
+@if($page['youtube_playlist_id'])
+    @section('youtube-playlist')
+        @include('includes.social.youtube-playlist')
+    @endsection
+@endif
