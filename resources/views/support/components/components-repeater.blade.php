@@ -21,6 +21,8 @@
                 @include('support.components.payment-grid')
             @elseif(!empty($component['video']))
                 @include('support.components.featured-video')
+            @elseif(!empty($component['50_50_content']))
+                @include('support.components.fiftyfifty')
             @elseif(!empty($component['curators']))
                 @include('exhibitions.components.curators')
             @endif
