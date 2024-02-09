@@ -19,10 +19,10 @@
                             <a href="{{ $page_root }}/{{ $card['slug'] }}">
                                 {{-- Check for preview image --}}
                                 @if(!empty($card['preview_image']))
-                                <img src="{{ $card['preview_image']['data']['url'] }}" alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}" class="card-img-top" width="374" height="342" loading="lazy">
+                                <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}" alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}" class="card-img-top" width="374" height="342" loading="lazy">
                                 {{-- If no preview, check for hero image --}}
                                 @elseif(!empty($card['hero_image']))
-                                    <img src="{{ $card['hero_image']['data']['url'] }}" alt="{{ isset($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}" class="card-img-top" width="374" height="342" loading="lazy">
+                                    <img src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}" alt="{{ isset($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}" class="card-img-top" width="374" height="342" loading="lazy">
                                 {{-- Default --}}
                                 @else
                                     <img class="card-img-top"

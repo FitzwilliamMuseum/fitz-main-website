@@ -42,7 +42,7 @@
                         alt="{{ $banner_image_alt_text }}">
                     @endif
                 @else
-                    <img src="https://www.figma.com/file/xj7JfJKleVQrFYzW9Tk6wA/image/543672b12c0d99c9dd327de4acf977f9c89094e6" alt="">
+                    <img src="{{ env('MISSING_IMAGE_URL') }}" alt="">
                 @endif
             </div>
         </div>

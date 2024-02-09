@@ -35,7 +35,7 @@ $pages_listing = $page['page_listing'];
                 <a href="{{ $card['slug'] }}">
                     @endif
                     @if(!empty($card['preview_image']))
-                    <img src="{{ $card['preview_image']['data']['url'] }}"
+                    <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
                         alt="{{ !empty($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
                         class="card-img-top">
                     @else
