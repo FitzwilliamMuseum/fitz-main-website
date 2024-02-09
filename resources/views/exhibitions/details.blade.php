@@ -8,7 +8,8 @@
         'hero_title' => $exhibition['exhibition_title'],
         'hero_subtitle' => $exhibition_tagline,
         'start' => $exhibition["exhibition_start_date"],
-        'end' => $exhibition["exhibition_end_date"]
+        'end' => $exhibition["exhibition_end_date"],
+        'image' => $exhibition["hero_image"]
     ];
     if(!empty($exhibition['page_template'])) {
         $page_template = $exhibition['page_template'];
