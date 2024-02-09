@@ -1,6 +1,18 @@
 /* support-grid start */
 .support-grid {
-    margin-bottom: 60px;
+    margin: 60px auto;
+}
+
+@media screen and (min-width: 576px) {
+    .container.support-grid {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container.support-grid {
+        max-width: 1290px;
+    }
 }
 
 .support-grid-title {
@@ -13,8 +25,11 @@
 
 /* support-grid-card start */
 .card-fitz-support {
-    max-width: 406px;
     margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        max-width: 406px;
+    }
 }
 
 .card-img-top-support {

@@ -10,7 +10,6 @@
     @include('includes.structure.meta')
 
     @include('includes.css.css')
-    <link rel="stylesheet" href="{{ URL::asset('css/support.css') }}">
 
     @hasSection('map')
         @mapstyles
