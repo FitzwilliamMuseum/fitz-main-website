@@ -1,11 +1,15 @@
     {{-- FAQ --}}
 
     @php
-        $accordion_heading = $component['accordion_component'][0]['accordion_heading']
+        if(!empty($component['accordion_component'][0]['accordion_heading'])) {
+            $accordion_heading = $component['accordion_component'][0]['accordion_heading']
+        }
     @endphp
     <div class="container-fluid col-max-800 faq">
         <div class="container faq-container">
-            <h3 class="faq-title">{{ $accordion_heading }}</h3>
+            @if(!empty($accordion_heading))
+                <h3 class="faq-title">{{ $accordion_heading }}</h3>
+            @endif
             <div class="accordion mt-2" id="accordionDirections">
                 @php
                     $iteration = 1;

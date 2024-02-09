@@ -1,20 +1,24 @@
 <div class="component-list mx-auto col-max-800">
-    <h2 class="list-title">{{ isset($title) ? $title : '' }}</h2>
-    @if (isset($ordered) && $ordered)
+    <h2 class="list-title">{{ !empty($title) ? $title : '' }}</h2>
+    @if (!empty($ordered) && $ordered)
     <ol class="o-list">
-        @foreach($items as $item)
-            <li class="item">{{ $item }}</li>
-        @endforeach
+        @if(!empty($items))
+            @foreach($items as $item)
+                <li class="item">{{ $item }}</li>
+            @endforeach
+        @endif
     </ol>
-    <p class="info">{{ isset($info) ? $info : '' }}</p>
-    <p class="additional-info">{{ isset($additional_info) ? $additional_info : '' }}</p>
+    <p class="info">{{ !empty($info) ? $info : '' }}</p>
+    <p class="additional-info">{{ !empty($additional_info) ? $additional_info : '' }}</p>
     @else
     <ul class="u-list">
-        @foreach($items as $item)
-            <li class="item">{{ $item }}</li>
-        @endforeach
+        @if(!empty($items))
+            @foreach($items as $item)
+                <li class="item">{{ $item }}</li>
+            @endforeach
+        @endif
     </ul>
-    <p class="info">{{ isset($info) ? $info : '' }}</p>
-    <p class="additional-info">{{ isset($additional_info) ? $additional_info : '' }}</p>
+    <p class="info">{{ !empty($info) ? $info : '' }}</p>
+    <p class="additional-info">{{ !empty($additional_info) ? $additional_info : '' }}</p>
     @endif
 </div>

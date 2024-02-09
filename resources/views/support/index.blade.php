@@ -45,7 +45,7 @@
     @include('support.components.components-repeater')
 
     {{-- If a custom position for the page listing hasn't been specified --}}
-    @if(!isset($listing_pos))
+    @if(empty($listing_pos))
         @include('support.components.grid')
     @endif
 

@@ -8,12 +8,14 @@
         $content_block_link = $component['content_block'][0]['cta'][0]['link'];
     }
 @endphp
-@if(isset($content_block_body))
+@if(!empty($content_block_body))
     <div class="container mx-auto col-max-800 support-content-block-component support-cta">
         @markdown($content_block_body)
-        @if(isset($content_block_link))
+        @if(!empty($content_block_link))
             <a href="{{ $content_block_link }}" class="cta-btn">
-                {{ $content_block_link_text }}
+                @if(!empty($content_block_link_text))
+                    {{ $content_block_link_text }}
+                @endif
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
         @endif

@@ -4,6 +4,8 @@
         if(!empty($page['relevant_page_listing'])) {
             $pages_listing = $page['relevant_page_listing'];
         }
+
+        $page_root = Request::url();
     @endphp
     @if(isset($pages_listing))
         <div class="container support-grid">
@@ -14,7 +16,7 @@
                     @endphp
                     <div class="col-md-4 mb-3">
                         <div class="card card-fitz card-fitz-support h-100">
-                            <a href="{{ $card['slug'] }}">
+                            <a href="{{ $page_root }}/{{ $card['slug'] }}">
                                 {{-- Check for preview image --}}
                                 @if(!empty($card['preview_image']))
                                 <img src="{{ $card['preview_image']['data']['url'] }}" alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}" class="card-img-top" width="374" height="342" loading="lazy">
@@ -28,15 +30,17 @@
                                     alt="Families" width="374" height="342" loading="lazy">
                                 @endif
                             </a>
-                            <div class="card-body h-100">
-                                <div class="contents-label mb-3">
-                                    <h3>
-                                        <a href="/{{ $card['slug'] }}" class="stretched-link">
-                                            {{ $card['title'] }}
-                                        </a>
-                                    </h3>
+                            @if(!empty($card['title']))
+                                <div class="card-body h-100">
+                                    <div class="contents-label mb-3">
+                                        <h3>
+                                            <a href="{{ $page_root }}/{{ $card['slug'] }}" class="stretched-link">
+                                                {{ $card['title'] }}
+                                            </a>
+                                        </h3>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

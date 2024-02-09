@@ -33,6 +33,8 @@
 
         @include('includes.structure.nav')
 
+        {{-- <h1>This is the subpage</h1> --}}
+
         @include('support.components.head')
 
         @include('support.components.components-repeater')

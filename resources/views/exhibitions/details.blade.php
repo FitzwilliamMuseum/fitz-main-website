@@ -1,71 +1,91 @@
 @php
+    if(!empty($exhibition['exhibition_tagline'])) {
+        $exhibition_tagline = $exhibition['exhibition_tagline'];
+    } else {
+        $exhibition_tagline = $exhibition['exhibition_title'];
+    }
     $hero = [
         'hero_title' => $exhibition['exhibition_title'],
-        'hero_subtitle' => $exhibition['exhibition_title'],
+        'hero_subtitle' => $exhibition_tagline,
         'start' => $exhibition["exhibition_start_date"],
         'end' => $exhibition["exhibition_end_date"]
-    ]
-
+    ];
+    if(!empty($exhibition['page_template'])) {
+        $page_template = $exhibition['page_template'];
+    }
 @endphp
-@include('includes.structure.name-spaces')
 
-<head>
+@extends('layouts.exhibitions')
+@section('keywords', $exhibition['meta_keywords'])
+@section('description', $exhibition['meta_description'])
+@section('title', $exhibition['exhibition_title'])
 
-    @include('includes.structure.meta')
+{{-- Start template check --}}
 
-    @include('includes.css.css')
-
-    @hasSection('map')
-        @mapstyles
+{{-- Exhibitions - 2024 template --}}
+@if(isset($page_template) && $page_template == 'exhibitions-2024')
+    @include('exhibitions/templates/details-2024')
+@else
+{{-- Default template --}}
+    @if(!empty($banners))
+        @section('banner')
+            <x-home-page-banner :banners="$banners"></x-home-page-banner>
+        @endSection
+        @section('hero_image_title', $exhibition['hero_image_alt_text'])
+        @section('hero_image', $exhibition['hero_image']['data']['url'])
+    @else
+        @section('hero_image', $exhibition['hero_image']['data']['url'])
+        @section('hero_image_title', $exhibition['hero_image_alt_text'])
     @endif
 
-    @include('includes.structure.manifest')
 
-    @yield('jsonld')
+    @if($exhibition['slug'] === 'true-to-nature-open-air-painting-in-europe-1780-1870')
+        @if (\Carbon\Carbon::now()->diffInHours('2022-04-28 00:00:01', false) <= 0)
+            @include('includes.structure.true')
+        @endif
+    @endif
 
-    <x-feed-links></x-feed-links>
+    @include('includes.elements.exhibitions.main-content')
 
-    @include('googletagmanager::head')
+    @include('includes.elements.exhibitions.cases')
 
-</head>
+    @include('includes.elements.exhibitions.podcasts')
 
-<body class="doc-body c_darkmode">
-@include('googletagmanager::body')
+    @include('includes.elements.exhibitions.films')
 
-@include('includes.structure.accessibility')
+    @include('includes.elements.exhibitions.artworks')
 
-<x-exhibition-hero :hero="$hero"></x-exhibition-hero>
+    @include('includes.elements.exhibitions.curators')
 
-<x-exhibition-cta></x-exhibition-cta>
+    @include('includes.elements.exhibitions.partners')
 
-@include('support.components.featured-image')
+    @include('includes.elements.exhibitions.departments')
 
-@include('support.components.cta')
+    @include('includes.elements.exhibitions.carousel')
 
-@include('support.components.featured-video')
+    @include('includes.elements.exhibitions.galleries')
 
-@include('support.components.cta')
+    @include('includes.elements.exhibitions.360')
 
-@include('support.components.related')
+    @include('includes.elements.exhibitions.faqs')
 
-@include('support.components.featured-image')
+    @include('includes.elements.exhibitions.sketchfab')
 
-@include('support.components.cta')
+    @if($exhibition['slug'] === 'islanders')
+        @include('includes.elements.exhibitions.shopify')
+    @endif
 
-@include('support.components.faq')
+    @include('includes.elements.exhibitions.files')
 
-@include('support.components.related')
+    @include('includes.elements.exhibitions.thanks')
 
-@include('includes.structure.nav')
+    @include('includes.elements.exhibitions.products')
 
-@include('includes.structure.email-signup')
+    @include('includes.elements.exhibitions.events')
 
-@include('includes.structure.footer')
+    @include('includes.elements.exhibitions.events-url')
 
-@include('includes.scripts.javascript')
+    @include('includes.elements.exhibitions.similar-exhibits')
 
-</body>
-
-</html>
-
-
+{{-- End template check --}}
+@endif

@@ -18,6 +18,8 @@
             @include('support.components.payment-grid')
         @elseif(!empty($component['video']))
             @include('support.components.featured-video')
+        @elseif(!empty($component['curators']))
+            @include('exhibitions.components.curators')
         @endif
     @endif
 @endforeach

@@ -27,18 +27,16 @@ Breadcrumbs::for('landing-section', function (BreadcrumbTrail $trail, string $se
 /**
  * New landing page template
  */
-// Breadcrumbs::for('subpage', function (BreadcrumbTrail $trail, string $section = 'support-us-new', string $slug): void
-// {
-//     $trail->parent('home');
-//     $trail->push(Str::title(str_replace('-', ' ', $section)), route('support-us-new',[$section]));
-//     $trail->push(Str::title(str_replace('-', ' ', $slug)), route('subpage',[$section, $slug]));
-
-// });
+Breadcrumbs::for('support-us', function (BreadcrumbTrail $trail): void
+{
+    $trail->parent('home');
+    $trail->push('Support Us', route('support-us'));
+});
 Breadcrumbs::for('subpage', function (BreadcrumbTrail $trail, string $slug): void
 {
     $trail->parent('home');
-    $trail->push('Support Us New',route('support-us-new'));
-    $trail->push(Str::title(str_replace('-', ' ', $slug)), route('support-us-new', $slug));
+    $trail->push('Support Us',route('support-us'));
+    $trail->push(Str::title(str_replace('-', ' ', $slug)), route('support-us', $slug));
 });
 /**
  * RESEARCH BREADCRUMBS

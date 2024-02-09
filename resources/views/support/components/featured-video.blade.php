@@ -16,20 +16,20 @@
 @endphp
 <div class="container featured_video mx-auto">
     <video controls width="100%">
-        @if(isset($video_asset_webm))
+        @if(!empty($video_asset_webm))
             <source src="{{ $video_asset_webm['data']['url'] }}" type="video/webm">
         @endif
-        @if(isset($video_asset_mp4))
+        @if(!empty($video_asset_mp4))
             <source src="{{ $video_asset_mp4['data']['url'] }}" type="video/mp4">
         @endif
             Download the
-        @if(isset($video_asset_webm))
+        @if(!empty($video_asset_webm))
             <a href="{{ $video_asset_webm['data']['url'] }}">WEBM</a>
         @endif
-        @if(isset($video_asset_webm) && isset($video_asset_mp4))
+        @if(!empty($video_asset_webm) && !empty($video_asset_mp4))
             or
         @endif
-        @if(isset($video_asset_mp4))
+        @if(!empty($video_asset_mp4))
             <a href="{{ $video_asset_mp4['data']['url'] }}">MP4</a>
         @endif
         video.
