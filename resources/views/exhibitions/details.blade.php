@@ -23,7 +23,7 @@
 {{-- Start template check --}}
 
 {{-- Exhibitions - 2024 template --}}
-@if(isset($page_template) && $page_template == 'exhibitions-2024')
+@if(!empty($page_template) && $page_template == 'exhibitions-2024')
     @include('exhibitions/templates/details-2024')
 @else
 {{-- Default template --}}
