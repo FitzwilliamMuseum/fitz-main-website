@@ -7,7 +7,7 @@
         if(!empty($component['content_block'][0]['cta'][0]['link_text'])) {
             $content_block_link_text = $component['content_block'][0]['cta'][0]['link_text'];
         }
-        if(!empty($component['content_block'][0]['cta'][0]['link'];)) {
+        if(!empty($component['content_block'][0]['cta'][0]['link'])) {
             $content_block_link = $component['content_block'][0]['cta'][0]['link'];
         }
     }
