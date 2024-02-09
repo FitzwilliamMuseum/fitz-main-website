@@ -12,7 +12,7 @@
                     <p><span>{{ !empty($card['highlighted_text']) ? $card['highlighted_text'] : '' }}{{ !empty($card['highlighted_subtext']) ? $card['highlighted_subtext'] : '' }}</span></p>
                     @if(!empty($card['cta_link']))
                         <a href="{{ $card['cta_link'] }}">
-                            @if($card['card_text'])
+                            @if(!empty($card['card_text']))
                                 {{ $card['cta_text'] }}
                             @endif
                             @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
