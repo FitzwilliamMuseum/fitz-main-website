@@ -60,9 +60,9 @@
 SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
 )
     <nav class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid"
-         style="padding-top: 0; flex-direction: column;">
+        style="padding-top: 0; flex-direction: column;">
         <div id="global-announcement" class="global-announcement"
-             style="background: #fff; color: black; padding: 10px; text-align: center; width: 100%;">
+            style="background: #fff; color: black; padding: 10px; text-align: center; width: 100%;">
             <style>
                 #global-announcement a {
                     color: inherit;
@@ -83,7 +83,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
 
                         <a class="navbar-brand" href="{{ route('home') }}">
                             <img src="{{ asset("/images/logos/FitzLogo.svg") }}" alt="The Fitzwilliam Museum Logo" height="60"
-                                 width="66.66" class="ml-1 mr-1" loading="lazy"/>
+                                width="66.66" class="ml-1 mr-1" loading="lazy"/>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -122,7 +122,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link"
-                                       href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
+                                        href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
                                 </li>
                             </ul>
                             {{--
@@ -144,7 +144,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                 'color' => '#fff', 'width' => 20, 'height' => 20])
                             </a>
                             <div class="nav-link-donate">
-                                <a class="nav-link" href="{{ route('landing', ['support-us']) }}">Donate</a>
+                                <a class="nav-link" href="https://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam">Donate</a>
                             </div>
                         </div>
                     </div>
