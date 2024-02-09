@@ -12,11 +12,11 @@
 @if(!empty($exhibition['associated_curators']) || !empty($exhibition['external_curators']))
     <div class="container-fluid related">
         <div class="container related-container">
-            @if(isset($heading))
+            @if(!empty($heading))
                 <h2 class="related-title text-center">{{ $heading }}</h2>
             @endif
             <div class="related-grid">
-                @if(isset($associated_curators))
+                @if(!empty($associated_curators))
                     @foreach($associated_curators as $a_curator)
                         @php
                             $a_curator = $a_curator['staff_profiles_id']
@@ -38,7 +38,7 @@
                         @endif
                     @endforeach
                 @endif
-                @if(isset($external_curators))
+                @if(!empty($external_curators))
                     {{-- {{ dd($external_curators) }} --}}
                     @foreach($external_curators as $e_curator)
                         @php

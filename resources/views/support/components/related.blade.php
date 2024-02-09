@@ -23,7 +23,7 @@ $pages_listing = $page['page_listing'];
 }
 @endphp
 
-@if(isset($pages_listing))
+@if(!empty($pages_listing))
 <div class="container-fluid related">
     <div class="container related-container">
         @if(!empty($suggested_pages_heading))
