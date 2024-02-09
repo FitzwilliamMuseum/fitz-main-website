@@ -23,7 +23,7 @@
                 @include('support.components.featured-video')
             @elseif(!empty($component['50_50_content']))
                 @include('support.components.fiftyfifty')
-            @elseif(!empty($component['curators']))
+            @elseif(!empty($component['curators_positioning']))
                 @include('exhibitions.components.curators')
             @endif
         @endif
