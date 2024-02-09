@@ -14,8 +14,8 @@
                             @endif
                             <p>
                                 <span>
-                                    {{ !empty($card['highlighted_text']) ? $card['highlighted_text'] : '' }} 
-                                </span> 
+                                    {{ !empty($card['highlighted_text']) ? $card['highlighted_text'] : '' }}
+                                </span>
                                 {{ !empty($card['highlighted_subtext']) ? $card['highlighted_subtext'] : '' }}
                             </p>
                             @if(!empty($card['cta_link']))
