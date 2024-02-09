@@ -2,7 +2,7 @@
 
     @php
         if(!empty($component['accordion_component'][0]['accordion_heading'])) {
-            $accordion_heading = $component['accordion_component'][0]['accordion_heading']
+            $accordion_heading = $component['accordion_component'][0]['accordion_heading'];
         }
     @endphp
     <div class="container-fluid col-max-800 faq">
