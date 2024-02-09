@@ -29,7 +29,7 @@
                                 'curator_type_slug' => 'about-us/our-staff',
                                 'slug' => !empty($a_curator['slug'])? $a_curator['slug'] : '',
                                 'profile_image' => !empty($a_curator['profile_image'])? $a_curator['profile_image'] : '',
-                                'firstname' => !empty($a_curator['first_name'])? $a_curator['first_name'] : '',
+                                'display_name' => !empty($a_curator['display_name'])? $a_curator['display_name'] : '',
                                 'lastname' => !empty($a_curator['last_name'])? $a_curator['last_name'] : '',
                                 'role' => !empty($a_curator['job_title']) ? $a_curator['job_title'] : '',
                                 )
@@ -50,8 +50,7 @@
                                 'curator_type_slug' => 'research/external-curators',
                                 'slug' => !empty($e_curator['slug']) ? $e_curator['slug'] : '',
                                 'profile_image' => !empty($e_curator['profile_image']) ? $e_curator['profile_image'] : '',
-                                'firstname' => !empty($e_curator['firstname']) ? $e_curator['firstname'] : '',
-                                'lastname' => !empty($e_curator['lastname']) ? $e_curator['lastname'] : '',
+                                'display_name' => !empty($e_curator['display_name']) ? $e_curator['display_name'] : '',
                                 'role' => !empty($e_curator['associated_role']) ? $e_curator['associated_role'] : '',
                                 )
                             ])

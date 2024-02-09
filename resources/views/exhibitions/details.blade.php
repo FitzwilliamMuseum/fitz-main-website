@@ -24,7 +24,7 @@
 
 {{-- Exhibitions - 2024 template --}}
 @if(!empty($page_template) && $page_template == 'exhibitions-2024')
-    @include('exhibitions/templates/details-2024')
+    @include('exhibitions.templates.details-2024')
 @else
 {{-- Default template --}}
     @if(!empty($banners))

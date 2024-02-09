@@ -11,7 +11,7 @@
     <div class="card-body h-100">
         <div class="contents-label mb-3">
             <h3>
-                <a href="/{{ !empty($curator['curator_type_slug']) ? $curator['curator_type_slug'] : ''}}/{{ $curator['slug'] }}">{{ $curator['firstname'] }} {{ $curator['lastname'] }}</a>
+                <a href="/{{ !empty($curator['curator_type_slug']) ? $curator['curator_type_slug'] : ''}}/{{ $curator['slug'] }}">{{ $curator['display_name'] }}</a>
             </h3>
             <p>{{ $curator['role'] }}</p>
         </div>
