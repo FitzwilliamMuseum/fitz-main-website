@@ -32,7 +32,7 @@
                 load="lazy" alt="">
         @endif
         @if (!empty($caption))
-            <figcaption class="col-max-800 mx-auto">{{ !empty($caption) ? $caption : '' }}</figcaption>
+            <figcaption class="col-max-800">{{ !empty($caption) ? $caption : '' }}</figcaption>
         @endif
     </figure>
 @endif
