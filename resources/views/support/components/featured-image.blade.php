@@ -8,7 +8,7 @@
         }
 
         foreach($image_source as $image_block) {
-            if($image_block['directus_files_id']) {
+            if(!empty($image_block['directus_files_id'])) {
                 $image_block['asset_id'] = $image_block['directus_files_id'];
             }
             if($image_block['asset_id']['id'] == $component['image'][0]['image_block_id']) {
