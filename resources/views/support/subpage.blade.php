@@ -7,10 +7,11 @@
 
 @php
 
-
-    foreach($page['page_components'] as $component) {
-        if(!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
-            $banner_pos = true;
+    if(!empty($page['page_components'])) {
+        foreach($page['page_components'] as $component) {
+            if(!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
+                $banner_pos = true;
+            }
         }
     }
 
