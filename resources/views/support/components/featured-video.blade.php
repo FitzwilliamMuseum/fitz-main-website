@@ -1,19 +1,27 @@
 @php
-    if(!empty($component['video'][0]['video_block_id'])) {
+    if(!empty($component['video'][0]['mp4_id']) || !empty($component['video'][0]['mp4_id'])) {
         if(!empty($page['video_blocks'])) {
-            foreach($page['video_blocks'] as $video_block) {
-                if($video_block['asset_id']['id'] == $component['video'][0]['mp4_id']) {
-                    $video_asset_mp4 = $video_block['asset_id'];
-                } elseif($video_block['asset_id']['id'] == $component['video'][0]['webm_id']) {
-                    $video_asset_webm = $video_block['asset_id'];
-                }
-            } 
+            $video_source = $page['video_blocks'];
+        }
+        if(!empty($exhibition['exhibition_files'])) {
+            $video_source = $exhibition['exhibition_files'];
+        }
+        foreach($video_source as $video_block) {
+            if($video_block['directus_files_id']) {
+                $video_block['asset_id'] = $video_block['directus_files_id'];
+            }
+            if(!empty($component['video']['0']['mp4_id']) && $video_block['asset_id']['id'] == $component['video'][0]['mp4_id']) {
+                $video_asset_mp4 = $video_block['asset_id'];
+            } elseif(!empty($component['video']['0']['webm_id']) && $video_block['asset_id']['id'] == $component['video'][0]['webm_id']) {
+                $video_asset_webm = $video_block['asset_id'];
+            }
+        }
+        if(!empty($component['video'][0]['video_caption'])) {
+            $caption = $component['video'][0]['video_caption'];
         }
     }
-    if(!empty($component['video'][0]['video_caption'])) {
-        $caption = $component['video'][0]['video_caption'];
-    }
 @endphp
+{{-- {{ dd($exhibition['exhibition_files']) }} --}}
 <div class="container featured_video mx-auto">
     <video controls width="100%">
         @if(!empty($video_asset_webm))

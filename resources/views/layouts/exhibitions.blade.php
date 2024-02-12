@@ -1,3 +1,8 @@
+@php
+    if(!empty($exhibition['page_template'])) {
+        $page_template = $exhibition['page_template'];
+    }
+@endphp
 @include('includes.structure.name-spaces')
 <head>
 
@@ -16,43 +21,48 @@
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
 
-@hasSection('banner')
-    @yield('banner')
-    @include('includes.structure.exhibition-title')
+@if(empty($page_template))
+
+    @hasSection('banner')
+        @yield('banner')
+        @include('includes.structure.exhibition-title')
+    @else
+        @include('includes.structure.head')
+    @endif
+
+    @include('includes.structure.open')
+
+    <div class="container mt-3">
+        @include('includes.structure.breadcrumb')
+    </div>
+    @yield('content')
+    @yield('ttn-actions')
+    @yield('events-url')
+    @yield('exhibition-shopify')
+    @yield('exhibitions-files')
+    @yield('exhibition-faqs')
+    @yield('shopify')
+    @yield('exhibitionCaseCards')
+    @yield('exhibition-objects')
+    @yield('exhibition-labels')
+    @yield('exhibitionAudio')
+    @yield('excarousel')
+    @yield('youtube')
+    @yield('curators')
+    @yield('research-funders')
+    @yield('current')
+    @yield('sketchfab')
+    @yield('displays')
+    @yield('future')
+    @yield('archive')
+    @yield('galleries')
+    @yield('departments')
+    @yield('exhibition-thanks')
+    @yield('360')
+    @yield('mlt')
 @else
-    @include('includes.structure.head')
+    @include('includes.elements.exhibitions.shopify')
 @endif
-
-@include('includes.structure.open')
-
-<div class="container mt-3">
-    @include('includes.structure.breadcrumb')
-</div>
-@yield('content')
-@yield('ttn-actions')
-@yield('events-url')
-@yield('exhibition-shopify')
-@yield('exhibitions-files')
-@yield('exhibition-faqs')
-@yield('shopify')
-@yield('exhibitionCaseCards')
-@yield('exhibition-objects')
-@yield('exhibition-labels')
-@yield('exhibitionAudio')
-@yield('excarousel')
-@yield('youtube')
-@yield('curators')
-@yield('research-funders')
-@yield('current')
-@yield('sketchfab')
-@yield('displays')
-@yield('future')
-@yield('archive')
-@yield('galleries')
-@yield('departments')
-@yield('exhibition-thanks')
-@yield('360')
-@yield('mlt')
 @include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.structure.modal')

@@ -8,7 +8,8 @@
         'hero_title' => $exhibition['exhibition_title'],
         'hero_subtitle' => $exhibition_tagline,
         'start' => $exhibition["exhibition_start_date"],
-        'end' => $exhibition["exhibition_end_date"]
+        'end' => $exhibition["exhibition_end_date"],
+        'image' => $exhibition["hero_image"]
     ];
     if(!empty($exhibition['page_template'])) {
         $page_template = $exhibition['page_template'];
@@ -24,7 +25,7 @@
 
 {{-- Exhibitions - 2024 template --}}
 @if(!empty($page_template) && $page_template == 'exhibitions-2024')
-    @include('exhibitions/templates/details-2024')
+    @include('exhibitions.templates.details-2024')
 @else
 {{-- Default template --}}
     @if(!empty($banners))

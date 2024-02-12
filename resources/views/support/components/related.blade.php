@@ -4,6 +4,11 @@
 if(!empty($page['suggested_pages_heading'])) {
 $suggested_pages_heading = $page['suggested_pages_heading'];
 }
+if(!empty($page['relevant_page_listing'])) {
+    $pages_listing = $page['relevant_page_listing'];
+}
+
+$page_root = Request::url();
 /**
 * Accidentally named the listing differently in the subpage
 * and landing page templates!
@@ -18,7 +23,7 @@ $pages_listing = $page['page_listing'];
 }
 @endphp
 
-@if(isset($pages_listing))
+@if(!empty($pages_listing))
 <div class="container-fluid related">
     <div class="container related-container">
         @if(!empty($suggested_pages_heading))
@@ -50,7 +55,7 @@ $pages_listing = $page['page_listing'];
                     <div class="contents-label mb-3">
                         <h3>
                             @if(!empty($card['slug']))
-                            <a href="{{ $card['slug'] }}">
+                            <a href="{{ $page_root }}/{{ $card['slug'] }}">
                                 @endif
                                 @if(!empty($card['title']))
                                 {{ $card['title'] }}
