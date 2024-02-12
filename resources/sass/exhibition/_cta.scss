@@ -1,6 +1,6 @@
 .exhibition-cta {
     max-width: 1290px;
-    margin: 56px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 
@@ -11,8 +11,13 @@
 
     &-copy.cta-copy {
         max-width: 297px;
+        margin-bottom: 20px;
         width: 100%;
     }
+}
+
+div.mb-0 {
+    margin-bottom: 0;
 }
 
 .exhibition-cta-link {
@@ -34,7 +39,7 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    margin-bottom: 36px;
+    // margin-bottom: 36px;
 }
 
 .exhibiton-text-compoment p {
