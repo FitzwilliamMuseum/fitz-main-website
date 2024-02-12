@@ -5,6 +5,17 @@
 
 @include('includes.structure.name-spaces')
 
+@php
+
+
+    foreach($page['page_components'] as $component) {
+        if(!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
+            $banner_pos = true;
+        }
+    }
+
+@endphp
+
 <head>
 
     @include('includes.structure.meta')
@@ -37,6 +48,11 @@
         @include('support.components.head')
 
         @include('support.components.components-repeater')
+
+        {{-- If a custom position for the banner hasn't been specified --}}
+        @if(empty($banner_pos))
+            @include('support.components.banner')
+        @endif
 
         @include('support.components.related')
 

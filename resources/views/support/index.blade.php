@@ -11,6 +11,11 @@
             $listing_pos = true;
         }
     }
+    foreach($page['page_components'] as $component) {
+        if(!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
+            $banner_pos = true;
+        }
+    }
 @endphp
 
 <head>
@@ -43,6 +48,11 @@
 @include('support.components.head', ['hero' => true])
 
     @include('support.components.components-repeater')
+
+    {{-- If a custom position for the banner hasn't been specified --}}
+    @if(empty($banner_pos))
+        @include('support.components.banner')
+    @endif
 
     {{-- If a custom position for the page listing hasn't been specified --}}
     @if(empty($listing_pos))
