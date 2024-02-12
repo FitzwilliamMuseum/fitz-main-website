@@ -7,7 +7,7 @@
             $video_source = $exhibition['exhibition_files'];
         }
         foreach($video_source as $video_block) {
-            if($video_block['directus_files_id']) {
+            if(!empty($video_block['directus_files_id'])) {
                 $video_block['asset_id'] = $video_block['directus_files_id'];
             }
             if(!empty($component['video']['0']['mp4_id']) && $video_block['asset_id']['id'] == $component['video'][0]['mp4_id']) {
