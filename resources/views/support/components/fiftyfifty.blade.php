@@ -36,7 +36,7 @@
                                         <div class="contents-label mb-3">
                                             <h2>
                                                 @if(!empty($card_content['card_link']))
-                                                    <a href="/">
+                                                    <a href="{{ $card_content['card_link'] }}">
                                                 @endif
                                                         {{ $card_content['heading'] }}
                                                 @if(!empty($card_content['card_link']))
