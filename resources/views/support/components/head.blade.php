@@ -16,7 +16,7 @@
         @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
     </div>
     @if (!empty($page_header_heading))
-        <div class="container-fluid bg-white text-black text-center">
+        <div class="container-fluid text-black text-center">
             <div class="hero-su mx-auto  col-max-800">
                 <h1 class="shout lead" id="doc-main-h1">
                     {{ !empty($page_header_heading) ? $page_header_heading : 'Support us' }}
@@ -32,7 +32,7 @@
         @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
     </div>
 
-    <div class="container-fluid bg-white text-black text-center">
+    <div class="container-fluid text-black text-center">
         <div class="hero-su mx-auto  col-max-800">
             <h1 class="shout lead" id="doc-main-h1">
                 {{ !empty($page_header_heading) ? $page_header_heading : 'Support us' }}

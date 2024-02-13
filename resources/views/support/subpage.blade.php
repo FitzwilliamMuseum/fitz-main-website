@@ -7,9 +7,9 @@
 
 @php
 
-    if(!empty($page['page_components'])) {
-        foreach($page['page_components'] as $component) {
-            if(!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
+    if (!empty($page['page_components'])) {
+        foreach ($page['page_components'] as $component) {
+            if (!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
                 $banner_pos = true;
             }
         }
@@ -37,32 +37,32 @@
 
 </head>
 
-    <body class="doc-body c_darkmode">
-        @include('googletagmanager::body')
+<body class="doc-body support c_darkmode">
+    @include('googletagmanager::body')
 
-        @include('includes.structure.accessibility')
+    @include('includes.structure.accessibility')
 
-        @include('includes.structure.nav')
+    @include('includes.structure.nav')
 
-        {{-- <h1>This is the subpage</h1> --}}
+    {{-- <h1>This is the subpage</h1> --}}
 
-        @include('support.components.head')
+    @include('support.components.head')
 
-        @include('support.components.components-repeater')
+    @include('support.components.components-repeater')
 
-        {{-- If a custom position for the banner hasn't been specified --}}
-        @if(empty($banner_pos))
-            @include('support.components.banner')
-        @endif
+    {{-- If a custom position for the banner hasn't been specified --}}
+    @if (empty($banner_pos))
+        @include('support.components.banner')
+    @endif
 
-        @include('support.components.related')
+    @include('support.components.related')
 
-        @include('includes.structure.email-signup')
+    @include('includes.structure.email-signup')
 
-        @include('includes.structure.footer')
+    @include('includes.structure.footer')
 
-        @include('includes.scripts.javascript')
+    @include('includes.scripts.javascript')
 
-    </body>
+</body>
 
 </html>

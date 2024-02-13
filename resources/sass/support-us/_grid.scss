@@ -1,6 +1,11 @@
 /* support-grid start */
 .support-grid {
     margin: 60px auto;
+    & .row > * {
+        padding-left: 12px;
+        padding-right: 12px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (min-width: 576px) {
@@ -24,44 +29,42 @@
 /* support-grid end */
 
 /* support-grid-card start */
-.card-fitz-support {
-    margin: 0 auto;
-
-    @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    .card-fitz-support {
+        margin: 0 auto;
         max-width: 406px;
     }
 }
 
+.card-fitz-support a {
+    display: inline-block;
+}
 .card-img-top-support {
-    max-height: 342px;
+    max-height: 276px;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
-.container-support-cards {
+.container.support-grid {
     margin: 60px auto;
     padding: 0 12px;
 }
 
-.container-support-card .card-image {
-    min-height: 267px;
+.container.support-grid .card-body {
+    padding: 0;
 }
 
-.container-support-card .card-image .card-img-top {
-    height: 100%;
-    object-fit: cover;
-}
-
-.container-support-card .card-body {
-    padding-left: 0;
-}
-
-.container-support-card .card-body .contents-label {
-    padding: 16px 20px 32px 0;
+.container.support-grid .card-body .contents-label {
+    padding-top: 16px;
 }
 
 .container-support-card .card .card-body .contents-label p.text-dark {
     font-size: 18px;
+}
+
+.support .card-fitz .card-body {
+    padding-left: 0;
 }
 
 .card-fitz-support .card-body .contents-label h3 {
