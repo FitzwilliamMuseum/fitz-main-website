@@ -5,8 +5,8 @@
             $accordion_heading = $component['accordion_component'][0]['accordion_heading'];
         }
     @endphp
-    <div class="container-fluid col-max-800 faq">
-        <div class="container faq-container">
+    <div class="container-fluid  faq">
+        <div class="container col-max-800 faq-container">
             @if(!empty($accordion_heading))
                 <h3 class="faq-title">{{ $accordion_heading }}</h3>
             @endif
