@@ -9,13 +9,7 @@ if(!empty($page['relevant_page_listing'])) {
 }
 
 $page_root = Request::url();
-/**
-* Accidentally named the listing differently in the subpage
-* and landing page templates!
-*
-* To remove and stick to either pages_listing or page_listing
-* on both templates.
-**/
+
 if(!empty($page['pages_listing'])) {
 $pages_listing = $page['pages_listing'];
 } elseif(!empty($page['page_listing'])) {
@@ -37,7 +31,7 @@ $pages_listing = $page['page_listing'];
             @endphp
             <div class="card card-fitz related-card h-100">
                 @if(!empty($card['slug']))
-                <a href="{{ $card['slug'] }}">
+                <a href="{{ $page_root }}/{{ $card['slug'] }}">
                     @endif
                     @if(!empty($card['preview_image']))
                     <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
