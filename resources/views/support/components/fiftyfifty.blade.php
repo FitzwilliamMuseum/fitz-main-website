@@ -21,7 +21,7 @@
                         <div class="col-md-4 mb-3 container-home-card container-support-card">
                             <div class="card card-fitz h-100">
                                 @if(!empty($card_content['card_link']))
-                                    <a href="" class="card-image">
+                                    <a href="{{ $card_content['card_link'] }}" class="card-image">
                                 @endif
                                         @if(!empty($image_asset))
                                             <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $image_asset['data']['description'] : '' }}" width="416" height="416" load="lazy">
@@ -35,9 +35,13 @@
                                     <div class="card-body h-100">
                                         <div class="contents-label mb-3">
                                             <h2>
-                                                <a href="/">
-                                                    {{ $card_content['heading'] }}
-                                                </a>
+                                                @if(!empty($card_content['card_link']))
+                                                    <a href="/">
+                                                @endif
+                                                        {{ $card_content['heading'] }}
+                                                @if(!empty($card_content['card_link']))
+                                                    </a>
+                                                @endif
                                             </h2>
                                             <p class="text-dark">
                                                 {{ $card_content['body'] }}

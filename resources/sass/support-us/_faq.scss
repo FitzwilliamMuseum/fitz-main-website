@@ -41,4 +41,15 @@
     height: 65px;
 }
 
+.faq-card-btn {
+    transition: all 0.3s ease-in-out;
+}
+.faq-card-btn[aria-expanded="true"] svg {
+    transform: rotate(0);
+}
+
+.faq-card-btn[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
 /* faq-component end */
