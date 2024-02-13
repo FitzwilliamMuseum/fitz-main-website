@@ -5,12 +5,28 @@
             $pages_listing = $page['relevant_page_listing'];
         }
 
+        $pages_listing_order = [];
+
+        if(!empty($page['relevant_pages_order'])) {
+            $custom_order = true;
+            if(!empty($pages_listing)) {
+                foreach($page['relevant_pages_order'] as $page_order) {
+                    foreach($pages_listing as $page_item) {
+                        if($page_order['page_id'] == $page_item['landing_relevant_page_id']['id']) {
+                            $page_item['card_heading'] = $page_order['page_heading'];
+                            array_push($pages_listing_order, $page_item);
+                        }
+                    }
+                } 
+            }
+        }
+
         $page_root = Request::url();
     @endphp
-    @if(isset($pages_listing))
+    @if(!empty($pages_listing_order))
         <div class="container support-grid">
             <div class="row">
-                @foreach($pages_listing as $card)
+                @foreach($pages_listing_order as $card)
                     @php
                         $card = $card['landing_relevant_page_id']
                     @endphp
