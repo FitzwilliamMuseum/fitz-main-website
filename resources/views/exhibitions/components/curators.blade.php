@@ -26,7 +26,7 @@
 
                             @include('exhibitions.components.curator-card', 
                             ['curator' => array(
-                                'curator_type_slug' => 'about-us/our-staff',
+                                'curator_type_slug' => 'about-us/our-staff/profile',
                                 'slug' => !empty($a_curator['slug'])? $a_curator['slug'] : '',
                                 'profile_image' => !empty($a_curator['profile_image'])? $a_curator['profile_image'] : '',
                                 'display_name' => !empty($a_curator['display_name'])? $a_curator['display_name'] : '',
