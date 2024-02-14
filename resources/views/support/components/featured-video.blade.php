@@ -20,9 +20,12 @@
             $caption = $component['video'][0]['video_caption'];
         }
     }
+    if(!empty($component['video'][0]['youtube_id'])) {
+        $youtube_id = $component['video'][0]['youtube_id'];
+    }
 @endphp
-{{-- {{ dd($exhibition['exhibition_files']) }} --}}
 <div class="container featured_video mx-auto">
+    @if(!empty($video_asset_webm) || !empty($video_asset_mp4))
     <video controls width="100%">
         @if(!empty($video_asset_webm))
             <source src="{{ $video_asset_webm['data']['url'] }}" type="video/webm">
@@ -42,4 +45,11 @@
         @endif
         video.
     </video>
+    @elseif(!empty($youtube_id))
+        <div class="ratio ratio-16x9">
+            <iframe title="A YouTube video from the Fitzwilliam Museum"
+                src="https://www.youtube.com/embed/{{ $youtube_id }}"
+                allowfullscreen></iframe>
+        </div>
+    @endif
 </div>
