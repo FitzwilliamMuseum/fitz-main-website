@@ -4,4 +4,10 @@
 
 @include('support.components.components-repeater', ['page' => $exhibition])
 
+{{-- {{ dd($exhibition) }} --}}
+
+@if(!empty($exhibition['pages_listing']))
+    @include('support.components.related', ['page' => $exhibition])
+@endif
+
 

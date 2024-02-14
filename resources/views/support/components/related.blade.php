@@ -8,7 +8,9 @@
         $pages_listing = $page['relevant_page_listing'];
     }
 
-    $page_root = Request::url();
+    if(!str_contains(Request::url(), 'exhibition')) {
+        $page_root = Request::url();
+    }
 
     if(!empty($page['pages_listing'])) {
         $pages_listing = $page['pages_listing'];
@@ -31,16 +33,20 @@
                 @endphp
                 <div class="card card-fitz related-card h-100">
                     @if(!empty($card['slug']))
-                    <a href="{{ $page_root }}/{{ $card['slug'] }}">
+                    <a href="{{ !empty($page_root) ? $page_root : '.' }}/{{ $card['slug'] }}">
                         @endif
                         @if(!empty($card['preview_image']))
-                        <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
-                            alt="{{ !empty($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
-                            class="card-img-top">
+                            <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
+                                alt="{{ !empty($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
+                                class="card-img-top">
+                        @elseif(!empty($card['hero_image']))
+                            <img src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}"
+                                alt="{{ !empty($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}"
+                                class="card-img-top">
                         @else
-                        <img class="card-img-top"
-                            src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition"
-                            alt="Families" width="374" height="342" loading="lazy">
+                            <img class="card-img-top"
+                                src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition"
+                                alt="Families" width="374" height="342" loading="lazy">
                         @endif
                         @if(!empty($card['slug']))
                     </a>
@@ -49,12 +55,14 @@
                         <div class="contents-label mb-3">
                             <h3>
                                 @if(!empty($card['slug']))
-                                <a href="{{ $page_root }}/{{ $card['slug'] }}">
+                                <a href="{{ !empty($page_root) ? $page_root : '.' }}/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
-                                    {{ $card['title'] }}
+                                        {{ $card['title'] }}
+                                    @elseif(!empty($card['exhibition_title']))
+                                        {{ $card['exhibition_title'] }}
                                     @endif
-                                    @if(!empty($card['slug']))
+                                @if(!empty($card['slug']))
                                 </a>
                                 @endif
                             </h3>
