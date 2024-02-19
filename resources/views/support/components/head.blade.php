@@ -12,30 +12,15 @@
 @endphp
 @if (!empty($hero))
     <div class="container-fluid head parallax hero-su-parallax" style="background: url({{ $hero }}) no-repeat center center / cover;"></div>
-    <div class="breadcrumbs-su">
-        @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
-    </div>
-    @if (!empty($page_header_heading))
-        <div class="container-fluid text-black text-center">
-            <div class="hero-su mx-auto  col-max-800">
-                <h1 class="shout lead" id="doc-main-h1">
-                    {{ !empty($page_header_heading) ? $page_header_heading : 'Support us' }}
-                </h1>
-                @if (!empty($page_header_subheading))
-                    <p>{{ $page_header_subheading }}</p>
-                @endif
-            </div>
-        </div>
-    @endif
-@else
-    <div class="breadcrumbs-su">
-        @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
-    </div>
-
+@endif
+<div class="breadcrumbs-su">
+    @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
+</div>
+@if (!empty($page_header_heading))
     <div class="container-fluid text-black text-center">
-        <div class="hero-su mx-auto  col-max-800">
+        <div class="hero-su mx-auto col-max-800">
             <h1 class="shout lead" id="doc-main-h1">
-                {{ !empty($page_header_heading) ? $page_header_heading : 'Support us' }}
+                {{ $page_header_heading }}
             </h1>
             @if (!empty($page_header_subheading))
                 <p>{{ $page_header_subheading }}</p>
