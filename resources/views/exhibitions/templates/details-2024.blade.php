@@ -1,6 +1,7 @@
 @php
     $reposition_curators = false;
     if(!empty($exhibition['page_components'])) {
+        $page_components = $exhibition['page_components'];
         foreach($page_components as $component) {
             if(!empty($component['curators_positioning'])) {
                 $reposition_curators = true;
