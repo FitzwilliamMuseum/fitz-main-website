@@ -1,7 +1,7 @@
 function moveSearchDonateContainer() {
     const toggle = document.querySelector(".navbar-toggler");
-    const navbar = document.getElementById("navbarSupportedContent");
-    const container = document.getElementById("search-donate-container");
+    const navbar = document.querySelector("#navbarSupportedContent");
+    const container = document.querySelector("#search-donate-container");
     const element = document.querySelector("#search-donate-container");
 
 

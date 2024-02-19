@@ -138,7 +138,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
 
                             --}}
                         </div>
-                        <div id="search-donate-container">
+                        <div class="donate-container" id="search-donate-container">
                             <a class="nav-link" href="{{ route('search.index') }}">
                                 @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                 'color' => '#fff', 'width' => 20, 'height' => 20])

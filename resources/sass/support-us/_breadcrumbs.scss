@@ -7,8 +7,8 @@
     margin: 130px 0 0 0;
 }
 
-.navbar + .container-fluid.head.parallax.hero-su-parallax + .breadcrumbs-su,
-.navbar:has(#global-announcement) + .container-fluid.head.parallax.hero-su-parallax + .breadcrumbs-su {
+.navbar + .hero-su-parallax + .breadcrumbs-su,
+.navbar:has(#global-announcement) + .hero-su-parallax + .breadcrumbs-su {
     margin: 0;
 }
 
