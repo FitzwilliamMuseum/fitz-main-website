@@ -13,7 +13,7 @@
                     {{ $hero['hero_subtitle'] }}
                 </p>
             @endif
-            @if ($hero['exhibition_link'] && $hero['exhibition_start_date'])
+            @if ($hero['exhibition_link'] && $hero['exhibition_link']['exhibition_start_date'])
                 <p>
                     {{ Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('j F Y') }}
                     -

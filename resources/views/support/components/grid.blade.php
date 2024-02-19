@@ -12,7 +12,7 @@
         if (!empty($pages_listing)) {
             foreach ($page['related_pages_order'] as $page_order) {
                 foreach ($pages_listing as $page_item) {
-                    if ($page_order['page_id'] == $page_item['landing_related_page_id']['id']) {
+                    if ($page_order['page_id'] == $page_item['landing_relevant_page_id']['id']) {
                         $page_item['card_heading'] = $page_order['page_heading'];
                         array_push($pages_listing_order, $page_item);
                     }
@@ -28,7 +28,7 @@
         <div class="row">
             @foreach ($pages_listing_order as $card)
                 @php
-                    $card = $card['landing_related_page_id'];
+                    $card = $card['landing_relevant_page_id'];
                 @endphp
                 <div class="col-md-4 mb-3">
                     <div class="card card-fitz card-fitz-support h-100">
