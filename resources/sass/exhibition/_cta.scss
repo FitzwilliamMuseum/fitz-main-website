@@ -28,20 +28,35 @@ div.mb-0 {
     font-size: 18px;
 }
 
-.container.col-max-800.mx-auto.support-text-component.exhibiton-text-compoment {
+.container.col-max-800.mx-auto.support-text-component.exhibition-text-component {
     max-width: 720px;
     padding-right: 65px;
     width: 100%;
 }
 
 .support-text-component h2,
-.exhibiton-text-compoment h2 {
+.exhibition-text-component h2 {
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
     // margin-bottom: 36px;
 }
 
-.exhibiton-text-compoment p {
+.exhibition-text-component p {
     font-size: 17px;
+}
+
+// Promo CTA - Exhibition Single Page
+.exhibition-text-component .exhibition-cta--promo {
+    background-color: #b50e5e;
+    color: #fff;
+    padding: 20px 30px;
+    p {
+        margin-bottom: 0;
+    }
+    a {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: underline;
+    }
 }
