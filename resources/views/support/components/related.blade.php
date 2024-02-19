@@ -4,8 +4,8 @@
     if (!empty($page['suggested_pages_heading'])) {
         $suggested_pages_heading = $page['suggested_pages_heading'];
     }
-    if (!empty($page['relevant_page_listing'])) {
-        $pages_listing = $page['relevant_page_listing'];
+    if (!empty($page['related_page_listing'])) {
+        $pages_listing = $page['related_page_listing'];
     }
 
     if(!str_contains(Request::url(), 'exhibition')) {
