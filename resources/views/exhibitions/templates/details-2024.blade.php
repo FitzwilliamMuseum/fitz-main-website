@@ -18,7 +18,7 @@
 
 {{-- {{ dd($exhibition) }} --}}
 
-@if($reposition_curators != false && !empty($exhibition['associated_curators']) || !empty($exhibition['external_curators']))
+@if($reposition_curators == false && !empty($exhibition['associated_curators']) || !empty($exhibition['external_curators']))
     @include('exhibitions.components.curators')
 @endif
 
