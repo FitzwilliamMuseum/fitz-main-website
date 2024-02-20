@@ -38,14 +38,18 @@
                                                 @if(!empty($card_content['card_link']))
                                                     <a href="{{ $card_content['card_link'] }}">
                                                 @endif
-                                                        {{ $card_content['heading'] }}
+                                                @if(!empty($card_content['card_link']))
+                                                    {{ $card_content['heading'] }}
+                                                @endif
                                                 @if(!empty($card_content['card_link']))
                                                     </a>
                                                 @endif
                                             </h2>
-                                            <p class="text-dark">
-                                                {{ $card_content['body'] }}
-                                            </p>
+                                            @if(!empty($card_content['body']))
+                                                <p class="text-dark">
+                                                    {{ $card_content['body'] }}
+                                                </p>
+                                            @endif
                                         </div>
                                     </div>
                                 @endif
