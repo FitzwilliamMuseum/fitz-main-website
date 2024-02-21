@@ -33,7 +33,7 @@
                 @endphp
                 <div class="card card-fitz related-card h-100">
                     @if(!empty($card['slug']))
-                    <a href="{{ $card['slug'] }}">
+                    <a href="/support-us/{{ $card['slug'] }}">
                         @endif
                         @if(!empty($card['preview_image']))
                             <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
@@ -55,7 +55,7 @@
                         <div class="contents-label mb-3">
                             <h3>
                                 @if(!empty($card['slug']))
-                                <a href="{{ $card['slug'] }}">
+                                <a href="{{ $page_root }}/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
                                         {{ $card['title'] }}
