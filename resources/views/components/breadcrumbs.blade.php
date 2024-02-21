@@ -7,18 +7,30 @@
     ];
 
     if(!empty($parent_page)) {
+        if(!empty($parent_page['title'])) {
+            $parent_title = $parent_page['title'];
+        }
+        if(!empty($parent_page['slug'])) {
+            $parent_slug = $parent_page['slug'];
+        }
         array_push($breadcrumbs, 
             [
-                'title' => $parent_page['title'],
-                'url' => $parent_page['slug'],
+                'title' => !empty($parent_title) ? $parent_title : '',
+                'url' => !empty($parent_slug) ? $parent_slug : '',
             ]);
     }
 
     if(!empty($page)) {
+        if(!empty($page['title'])) {
+            $page_title = $page['title'];
+        }
+        if(!empty($page['slug'])) {
+            $page_slug = $page['slug'];
+        }
         array_push($breadcrumbs, 
             [
-                'title' => $page['title'],
-                'url' => $page['slug'],
+                'title' => !empty($page_title) ? $page_title : '',
+                'url' => !empty($page_slug) ? $page_slug : '',
             ]);
     }
 @endphp
