@@ -28,7 +28,7 @@
         @if(Request::is('about-us/terms/hockney'))
             @include('includes.structure.hockney-header')
         @else
-            @if(!request()->is('search*'))
+            @if(!\Request::is('search*'))
                 @include('includes.structure.head')
             @endif
         @endif
