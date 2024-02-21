@@ -16,10 +16,7 @@
 }
 
 .navbar:has(#global-announcement) .container-fluid {
-    padding-top: 8px;
-    @media screen and (min-width: 1290px) {
-        padding-top: 12px;
-    }
+    padding-top: 12px;
 }
 
 @media screen and (min-width: 992px) {
