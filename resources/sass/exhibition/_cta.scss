@@ -1,0 +1,62 @@
+.exhibition-cta {
+    max-width: 1290px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    & .wrapper {
+        max-width: 341px;
+        width: 100%;
+    }
+
+    &-copy.cta-copy {
+        max-width: 297px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+div.mb-0 {
+    margin-bottom: 0;
+}
+
+.exhibition-cta-link {
+    display: inline-block;
+    margin-top: 28px;
+    color: #000;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.exhibition .exhibition-text-component {
+    max-width: 720px;
+    padding-right: 65px;
+    width: 100%;
+}
+
+.support-text-component h2,
+.exhibition-text-component h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    // margin-bottom: 36px;
+}
+
+.exhibition-text-component p {
+    font-size: 17px;
+}
+
+// Promo CTA - Exhibition Single Page
+.exhibition-text-component .exhibition-cta--promo {
+    background-color: #b50e5e;
+    color: #fff;
+    padding: 20px 30px;
+    p {
+        margin-bottom: 0;
+    }
+    a {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}

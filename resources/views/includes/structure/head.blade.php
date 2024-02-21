@@ -1,5 +1,4 @@
-<div class="container-fluid head parallax">
-</div>
+<div class="container-fluid head parallax"></div>
 <div class="container-fluid bg-white text-black text-center">
     <div class="py-2">
         @if(Request::segment(1) === "learning")

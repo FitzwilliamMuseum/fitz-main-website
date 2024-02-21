@@ -6,20 +6,21 @@
 @section('keywords', 'press,release,fitzwilliam')
 
 @section('press-contact')
-    <div class="col-12 shadow-sm p-3 mx-auto mb-3 rounded">
-        <p>
-            Contact the press team: @svg('fas-phone',['width' => 20, 'height' => 20]) 01223 332941 @svg('fas-at',['width' => 20, 'height' => 20])
-            <a href="mailto:press@fitzmuseum.cam.ac.uk">press@fitzmuseum.cam.ac.uk</a>
-        </p>
-    </div>
+<div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 rounded">
+    <p>
+        Contact the press team: @svg('fas-phone',['width' => 20, 'height' => 20]) 01223 332941 @svg('fas-at',['width' =>
+        20, 'height' => 20])
+        <a href="mailto:press@fitzmuseum.cam.ac.uk">press@fitzmuseum.cam.ac.uk</a>
+    </p>
+</div>
 @endsection
 @section('releases')
-    <div class="container">
-        <div class="row">
-            @foreach($press->items()['data'] as $release)
-                <x-press-card :release="$release"></x-press-card>
-            @endforeach
-        </div>
-        {{ $press->appends(request()->except('page'))->links() }}
+<div class="container">
+    <div class="row">
+        @foreach($press->items()['data'] as $release)
+        <x-press-card :release="$release"></x-press-card>
+        @endforeach
     </div>
+    {{ $press->appends(request()->except('page'))->links() }}
+</div>
 @endsection

@@ -1,0 +1,11 @@
+.container-home-cards.container-support-cards {
+    padding: 0 12px;
+}
+
+.row.row-home.row-support {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    @media screen and (min-width: 1045px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
