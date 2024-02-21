@@ -55,7 +55,7 @@
                         <div class="contents-label mb-3">
                             <h3>
                                 @if(!empty($card['slug']))
-                                <a href="{{ $page_root }}/{{ $card['slug'] }}">
+                                <a href="/support-us/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
                                         {{ $card['title'] }}
