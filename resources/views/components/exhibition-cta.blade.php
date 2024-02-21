@@ -15,7 +15,7 @@
         <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
     </div>
     @if(!empty($exhibition['exhibition_narrative']) || !empty($exhibition['promo_cta']))
-        <div class="container col-max-800 mx-auto support-text-component exhibition-text-component">
+        <div class="col-max-800 mx-auto support-text-component exhibition-text-component">
             @if(!empty($exhibition['exhibition_narrative']))
                 @markdown($exhibition['exhibition_narrative'])
             @endif
