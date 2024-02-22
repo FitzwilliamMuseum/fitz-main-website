@@ -1,11 +1,11 @@
 <div class="exhibition-cta">
     <div class="wrapper">
         <div class="container col-max-800 mx-auto support-text-component support-cta mb-0">
-            <h2 class="cta-title exhibition-cta-title">Free</h2>
-            <p class="cta-copy exhibition-cta-copy">Our exhibitions are free but we welcome donations</p>
+            <h2 class="cta-title exhibition-cta-title">Pay what you wish</h2>
+            <p class="cta-copy exhibition-cta-copy">Our exhibitions and displays remain free but you can now choose to make a donation.</p>
             @if(!empty($exhibition['exhibition_url']))
                 <a href="{{ $exhibition['exhibition_url'] }}" class="cta-btn">
-                    Book your free ticket
+                    Book now
                     @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
                 </a>
             @else
