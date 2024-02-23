@@ -19,9 +19,9 @@
                 @endif
                 @if($hero['start'])
                     <p>
-                        {{  Carbon\Carbon::parse($hero['start'])->format('l jS F Y') }}
+                        {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
                         -
-                        {{  Carbon\Carbon::parse($hero['end'])->format('l jS F Y') }}
+                        {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
                     </p>
                 @endif
             </div>
