@@ -24,7 +24,7 @@
                 @if($exhibition['promo_cta'])
                     <div class="exhibition-cta--promo">
                         <p>Become a Friend and enjoy unlimited exhibition entry with no need to book.</p>
-                        <a href="/become-a-friend">Find out more</a>
+                        <a href="/support-us/become-a-friend">Find out more</a>
                     </div>
                 @endif
             @endif
