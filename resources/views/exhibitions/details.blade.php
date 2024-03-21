@@ -28,7 +28,9 @@
         @section('exhibitions-2024')
             @include('exhibitions.templates.details-2024')
         @endsection
-        @include('includes.elements.exhibitions.products')
+        @section('shopify')
+            @include('includes.elements.exhibitions.products')
+        @endsection
     @else
 {{-- Default template --}}
     @if(!empty($banners))
