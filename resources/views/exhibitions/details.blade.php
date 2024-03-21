@@ -28,6 +28,7 @@
         @section('exhibitions-2024')
             @include('exhibitions.templates.details-2024')
         @endsection
+        @include('includes.elements.exhibitions.products')
     @else
 {{-- Default template --}}
     @if(!empty($banners))

@@ -62,7 +62,7 @@
     @yield('mlt')
 @else
     @yield('exhibitions-2024')
-    @yield('exhibition-shopify')
+    @yield('shopify')
 @endif
 @include('includes.structure.email-signup')
 @include('includes.structure.footer')
