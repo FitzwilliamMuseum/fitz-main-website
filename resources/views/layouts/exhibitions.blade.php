@@ -61,7 +61,8 @@
     @yield('360')
     @yield('mlt')
 @else
-    @include('includes.elements.exhibitions.shopify')
+    @yield('exhibitions-2024')
+    @yield('shopify')
 @endif
 @include('includes.structure.email-signup')
 @include('includes.structure.footer')
