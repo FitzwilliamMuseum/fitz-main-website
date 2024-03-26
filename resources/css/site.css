@@ -1065,13 +1065,6 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
-@media screen and (min-width: 1290px) {
-    .container:not(.container.container-subscribre),
-    .container-fluid {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
 .exhibition .card-header,
 .exhibition .card,
 .exhibition .card:hover,

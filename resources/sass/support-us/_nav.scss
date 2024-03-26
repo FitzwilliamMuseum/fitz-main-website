@@ -7,10 +7,9 @@
 }
 .navbar .container-fluid {
     max-width: 1290px;
-    padding: 0 16px;
     height: 100%;
 
-    @media screen and (min-width: 1290px) {
+    @media screen and (min-width: 1320px) {
         padding: 0;
     }
 }

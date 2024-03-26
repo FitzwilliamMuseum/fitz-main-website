@@ -25,11 +25,6 @@
 
 .exhibition-cta .support-cta {
     margin-top: 0;
-    & > * {
-        max-width: 297px;
-        width: 100%;
-    }
-
     & .cta-btn,
     & .exhibition-cta-link {
         max-width: fit-content;
@@ -37,11 +32,30 @@
     }
 }
 
-.exhibition-text-component {
-    & > * {
+.exhibition-cta .container.support-text-component.support-cta {
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        max-width: 297px;
+        width: 100%;
+        padding: 0 16px;
+    }
+    @media screen and (min-width: 1320px) {
+        padding: 0;
+    }
+}
+.exhibition-cta .container.support-text-component.exhibition-text-component {
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 768px){
         max-width: 664px;
         width: 100%;
+        padding: 0 16px;
     }
+    @media screen and (min-width: 1320px) {
+        padding: 0;
+    }
+
 }
 
 .exhibition-cta-link {
