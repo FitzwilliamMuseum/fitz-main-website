@@ -5,3 +5,8 @@
 .mb-4-5 {
     margin-bottom: 28px;
 }
+
+.container,
+.container-fluid {
+    --bs-gutter-x: 2rem;
+}

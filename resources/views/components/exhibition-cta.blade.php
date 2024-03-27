@@ -1,6 +1,5 @@
 <div class="exhibition-cta">
-    <div class="wrapper">
-        <div class="container col-max-800 mx-auto support-text-component support-cta mb-0">
+        <div class="container support-text-component support-cta mb-0">
             <h2 class="cta-title exhibition-cta-title">Pay what you wish</h2>
             <p class="cta-copy exhibition-cta-copy">Our exhibitions and displays remain free but you can now choose to make a donation.</p>
             @if(!empty($exhibition['exhibition_url']))
@@ -11,11 +10,10 @@
             @else
                 <p class="cta-btn">Tickets available soon...</p>
             @endif
+            <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
         </div>
-        <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
-    </div>
     @if(!empty($exhibition['exhibition_narrative']) || !empty($exhibition['promo_cta']))
-        <div class="col-max-800 mx-auto support-text-component exhibition-text-component">
+        <div class="container support-text-component exhibition-text-component">
             @if(!empty($exhibition['exhibition_narrative']))
                 @markdown($exhibition['exhibition_narrative'])
             @endif

@@ -1,49 +1,70 @@
 .exhibition-cta {
-    max-width: 1290px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    margin: 60px auto 0 auto;
+    max-width: 1290px;
+    padding: 32px 0;
+    width: 100%;
 
-    & .wrapper {
-        max-width: 341px;
-        width: 100%;
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: 36px;
+
+        & > :first-child {
+            max-width: 341px;
+            width: 100%;
+        }
+
+        & > :nth-child(2) {
+            max-width: 720px;
+            width: 100%;
+            margin: 0;
+        }
     }
+}
 
-    &-copy.cta-copy {
-        max-width: 297px;
-        margin-bottom: 20px;
+.exhibition-cta .support-cta {
+    margin-top: 0;
+    & .cta-btn,
+    & .exhibition-cta-link {
+        max-width: fit-content;
         width: 100%;
     }
 }
 
-div.mb-0 {
-    margin-bottom: 0;
+.exhibition-cta .container.support-text-component.support-cta {
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        max-width: 297px;
+        width: 100%;
+        padding: 0 16px;
+    }
+    @media screen and (min-width: 1320px) {
+        padding: 0;
+    }
+}
+.exhibition-cta .container.support-text-component.exhibition-text-component {
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 768px){
+        max-width: 664px;
+        width: 100%;
+        padding: 0 16px;
+    }
+    @media screen and (min-width: 1320px) {
+        padding: 0;
+    }
+
 }
 
 .exhibition-cta-link {
-    display: inline-block;
-    margin-top: 28px;
     color: #000;
-    text-decoration: underline;
+    display: block;
     font-size: 18px;
-}
-
-.exhibition .exhibition-text-component {
-    max-width: 720px;
-    padding-right: 65px;
-    width: 100%;
-}
-
-.support-text-component h2,
-.exhibition-text-component h2 {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-    // margin-bottom: 36px;
-}
-
-.exhibition-text-component p {
-    font-size: 17px;
+    margin-bottom: 56px;
+    margin-top: 28px;
+    text-decoration: underline;
 }
 
 // Promo CTA - Exhibition Single Page
