@@ -55,11 +55,13 @@
                                 'url' => ''
                             );
 
-                            if(!empty($exhibition['related_exhibitions'])) {
-                                foreach($exhibition['related_exhibitions'] as $related_exhibition) {
-                                    $related_exhibition = $related_exhibition['related_exhibition_id'];
-                                    if($related_exhibition['id'] == $event['exhibition_id']) {
-                                        $event_item['url'] = $related_exhibition['slug'];
+                            if(!empty($event['exhibition_id'])) {
+                                if(!empty($exhibition['related_exhibitions'])) {
+                                    foreach($exhibition['related_exhibitions'] as $related_exhibition) {
+                                        $related_exhibition = $related_exhibition['related_exhibition_id'];
+                                        if($related_exhibition['id'] == $event['exhibition_id']) {
+                                            $event_item['url'] = $related_exhibition['slug'];
+                                        }
                                     }
                                 }
                             } elseif(!empty($event['link_url'])) {
