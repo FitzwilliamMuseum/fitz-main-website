@@ -1,33 +1,81 @@
+@if(!empty($component['related_events']))
+@php
+    $related_events = $component['related_events'][0];
+@endphp
 <div class="related-events">
-    <h3 class="related-events-title">Related events</h3>
-    <div class="related-events-wrapper">
-        <div class="support-cta related-event-cta">
-            <div class="related-event-img">
-                <img src="https://s3-alpha-sig.figma.com/img/1441/0ab1/d76748400b1909f6180998fee91666d3?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QwM3zcSECbN6C1Ng0~4dVA7KPOTKedInLsGm5EXQ1rP~OMjsBXlK3x1p2iUgTbHSINV39Mxa7SnRnArW2mW1q2RRg7lCCFbbDnNQaFeLW98qVS~7i3a3BiQUE6GyFpdXNUjCQbBJXxrsbGimVPFGic~IGDF8vUuFCZfzMpuF1ej3dn1x2bNpU5VEZCaZqRRP05e67b2hRXjtNjZy1nIao8zY~NK2GeB-rKAmjlsCrxvA3LhFhQkbq7OoGMH65aU23nnt5n~~T4PcZA~mQdT-Q~den0Z1SIAdPJRxkzb29xbmjuCYDVkk7QXsR9sbQQf7XsRobamSyAJud87vyz-EBQ__" alt="">
-            </div>
-            <div class="related-event-wrapper">
-                <h4 class="cta-title">Lunchtime Talk: Christian Classical</h4>
-                <p class="cta-copy">What does it mean to look at Graeco-Roman art through Christian eyes? Does an admiration of classical ‘beauty’ come at theological cost? Join us to explore these questions  in relation to William Blake.</p>
-                <a href="#" class="cta-btn">
-                    Example link
-                    @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
-                </a>
-            </div>
+    @if(!empty($related_events['heading']))
+        <h3 class="related-events-title">{{ $related_events['heading'] }}</h3>
+    @endif
+    @if(!empty($related_events['events_listing']))
+        <div class="related-events-wrapper">
+            @foreach($related_events['events_listing'] as $event)
+                <article class="support-cta related-event-cta">
+                    @if(!empty($event['image_id']))
+                        @php
+                            if(!empty($exhibition['exhibition_files'])) {
+                                $image_source = $exhibition['exhibition_files'];
+                            }
+
+                            foreach($image_source as $image_block) {
+                                if(!empty($image_block['directus_files_id'])) {
+                                    $image_block['asset_id'] = $image_block['directus_files_id'];
+                                }
+                                if($image_block['asset_id']['id'] == $event['image_id']) {
+                                    $image_asset = $image_block['asset_id'];
+                                }
+                            }
+                        @endphp
+                        <div class="related-event-img">
+                            @if(!empty($image_asset))
+                                <img src="{{ $image_asset['data']['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
+                            @else
+                                <img
+                                    src="{{ env('MISSING_IMAGE_URL') }}"
+                                    load="lazy" alt="">
+                            @endif
+                        </div>
+                    @else
+                        <div class="related-event-img">
+                            <img
+                                src="{{ env('MISSING_IMAGE_URL') }}"
+                                load="lazy" alt="">
+                        </div>
+                    @endif
+                    <div class="related-event-wrapper">
+                        @if(!empty($event['heading']))
+                            <h4 class="cta-title">{{ $event['heading'] }}</h4>
+                        @endif
+                        @if(!empty($event['excerpt']))
+                            <p class="cta-copy">
+                                {{ $event['excerpt'] }}
+                            </p>
+                        @endif
+                        @php
+                            $event_item = array(
+                                'url' => ''
+                            );
+
+                            if(!empty($exhibition['related_exhibitions'])) {
+                                foreach($exhibition['related_exhibitions'] as $related_exhibition) {
+                                    $related_exhibition = $related_exhibition['related_exhibition_id'];
+                                    if($related_exhibition['id'] == $event['exhibition_id']) {
+                                        $event_item['url'] = $related_exhibition['slug'];
+                                    }
+                                }
+                            } elseif(!empty($event['link_url'])) {
+                                $event_item['url'] = $event['link_url'];
+                            }
+                        @endphp
+                        @if(!empty($event['link_text']))
+                            <a href="{{ $event_item['url'] }}" class="cta-btn">
+                                {{ $event['link_text'] }}
+                                @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+                            </a>
+                        @endif
+                    </div>
+                </article>
+            @endforeach
         </div>
-        <div class="support-cta related-event-cta">
-            <div class="related-event-img">
-                <img src="https://s3-alpha-sig.figma.com/img/1441/0ab1/d76748400b1909f6180998fee91666d3?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QwM3zcSECbN6C1Ng0~4dVA7KPOTKedInLsGm5EXQ1rP~OMjsBXlK3x1p2iUgTbHSINV39Mxa7SnRnArW2mW1q2RRg7lCCFbbDnNQaFeLW98qVS~7i3a3BiQUE6GyFpdXNUjCQbBJXxrsbGimVPFGic~IGDF8vUuFCZfzMpuF1ej3dn1x2bNpU5VEZCaZqRRP05e67b2hRXjtNjZy1nIao8zY~NK2GeB-rKAmjlsCrxvA3LhFhQkbq7OoGMH65aU23nnt5n~~T4PcZA~mQdT-Q~den0Z1SIAdPJRxkzb29xbmjuCYDVkk7QXsR9sbQQf7XsRobamSyAJud87vyz-EBQ__" alt="">
-            </div>
-            <div class="related-event-wrapper">
-                <h4 class="cta-title">Some text</h4>
-                <p class="cta-copy">
-                    Sometext as well
-                </p>
-                <a href="#" class="cta-btn">
-                    Link Text
-                    @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
-                </a>
-            </div>
-        </div>
-    </div>
+    @endif
 </div>
+@endif
