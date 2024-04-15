@@ -25,5 +25,3 @@
 @if(!empty($exhibition['pages_listing']))
     @include('support.components.related', ['page' => $exhibition])
 @endif
-
-

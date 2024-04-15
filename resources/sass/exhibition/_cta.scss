@@ -47,7 +47,7 @@
 .exhibition-cta .container.support-text-component.exhibition-text-component {
     max-width: 100%;
     width: 100%;
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 768px) {
         max-width: 664px;
         width: 100%;
         padding: 0 16px;
@@ -55,7 +55,6 @@
     @media screen and (min-width: 1320px) {
         padding: 0;
     }
-
 }
 
 .exhibition-cta-link {
@@ -81,3 +80,5 @@
         text-decoration: underline;
     }
 }
+
+
