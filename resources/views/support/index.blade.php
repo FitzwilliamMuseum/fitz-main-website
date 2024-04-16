@@ -10,6 +10,8 @@
 
 @include('includes.structure.name-spaces')
 
+@include('includes.elements.fitzwilliam-map')
+
 @php
     foreach ($page['page_components'] as $component) {
         if (!empty($component['related_pages_positioning']) && $component['related_pages_positioning'] == true) {
@@ -28,7 +30,7 @@
     @include('includes.structure.meta')
 
     @include('includes.css.css')
-
+    
     @hasSection('map')
         @mapstyles
     @endif
