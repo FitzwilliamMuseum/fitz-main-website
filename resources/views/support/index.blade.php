@@ -1,3 +1,8 @@
+
+@inject('landingPageController', 'App\Http\Controllers\landingPageController')
+@php
+    $landingPageController::injectPages($page['slug'], $page['slug']);
+@endphp
 {{-- SEO --}}
 @section('title', $page['title'])
 @section('description', $page['meta_description'])

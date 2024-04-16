@@ -25,6 +25,8 @@
                 @include('support.components.fiftyfifty')
             @elseif(!empty($component['curators_positioning']))
                 @include('exhibitions.components.curators')
+            @elseif(!empty($component['map_positioning']))
+                @include('support.components.map')
             @endif
         @endif
     @endforeach
