@@ -60,8 +60,8 @@ Route::get('research/opportunities/{slug}', 'researchController@opportunity')->n
 Visit us Route
 */
 // Route::get('plan-your-visit/', 'visitController@index')->name('visit');
-// Route::get('plan-your-visit/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
-// Route::get('plan-your-visit/group-visits','visitController@groupVisits')->name('visit.groupvisits');
+Route::get('plan-your-visit/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
+Route::get('plan-your-visit/group-visits','visitController@groupVisits')->name('visit.groupvisits');
 
 Route::get('/galleries', function () {
     return redirect('plan-your-visit/galleries');
@@ -86,10 +86,10 @@ Route::get('plan-your-visit/exhibitions/{exhibition}/cases/', 'exhibitionsContro
 Route::get('plan-your-visit/exhibitions/labels/{slug}', 'exhibitionsController@label')->name('exhibition.label');
 
 // New Landing Page Template
-Route::get('/support-us', 'landingPageController@index')->name('support-us');
-Route::get('/support-us/{slug}', 'subpagesController@index')->name('subpage');
-
-Route::get('/{slug}', 'landingPageController@index')->name('landing-section');
+Route::group(['page_template' => 'landing'], function() {
+    Route::get('{slug}', 'landingPageController@index')->name('{slug}');
+    Route::get('{parent_page}/{slug}', 'subpagesController@index')->name('{slug}');
+});
 
 /** True to Nature routes */
 Route::get('plan-your-visit/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists', 'exhibitionsController@ttnArtists')->name('exhibition.ttn.artists');
