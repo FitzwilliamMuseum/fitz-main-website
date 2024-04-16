@@ -135,7 +135,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                 <span class="visually-hidden">Search the Fitzwilliam</span>
                                 <div class="main-search-wrapper">
                                     <label class="main-search-label" for="query">Search <span>the Fitzwilliam</span></label>
-                                    <div class="search-container" style="position: relative;">
+                                    <div style="position: relative;">
                                         <input id="query" name="query" type="text" class="main-search-input" placeholder="What are you looking for?"
                                         required value="{{ old('query') }}" aria-label="Your query">
                                         <button class="main-search-btn" type="submit" id="searchButton" aria-label="Submit your search" style="background: transparent; border: none;">
