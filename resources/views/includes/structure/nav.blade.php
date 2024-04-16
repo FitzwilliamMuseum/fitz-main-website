@@ -125,24 +125,27 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                         href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
                                 </li>
                             </ul>
-                            {{--
-                            TNEW updates 2024 - search bar removed from header
-                            {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'class' => 'd-flex']) }}
-                            <label for="search" class="visually-hidden">Search: </label>
-                            <input id="query" name="query" type="text" class="form-control me-2" placeholder="Search our site"
-                                required value="{{ old('query') }}" aria-label="Your query">
-                            <button type="submit" class="btn btn-outline-light my-2 my-sm-0 fa fa-download" id="searchButton"
-                                aria-label="Submit your search">Search
-                            </button>
-                            {!! Form::close() !!}
-
-                            --}}
                         </div>
                         <div class="donate-container" id="search-donate-container">
-                            <a class="nav-link" href="{{ route('search.index') }}">
+                            <button id="search-btn" style="background: transparent; border: none;">
                                 @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                 'color' => '#fff', 'width' => 20, 'height' => 20])
-                            </a>
+                            </button>
+                            {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'id' => 'main-search', 'hidden']) }}
+                                <span class="visually-hidden">Search the Fitzwilliam</span>
+                                <div class="main-search-wrapper">
+                                    <label class="main-search-label" for="query">Search <span>the Fitzwilliam</span></label>
+                                    <div class="search-container" style="position: relative;">
+                                        <input id="query" name="query" type="text" class="main-search-input" placeholder="What are you looking for?"
+                                        required value="{{ old('query') }}" aria-label="Your query">
+                                        <button class="main-search-btn" type="submit" id="searchButton" aria-label="Submit your search" style="background: transparent; border: none;">
+                                            @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
+                                            'color' => '#fff', 'width' => 20, 'height' => 20])
+                                        </button>
+                                    </div>
+                                </div>
+                            {!! Form::close() !!}
+
                             <div class="nav-link-donate">
                                 <a class="nav-link" href="https://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam">Donate</a>
                             </div>
