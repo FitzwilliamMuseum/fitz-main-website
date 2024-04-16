@@ -1109,7 +1109,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     }
 }
 
-.main-search-input {
+input#query.main-search-input {
     padding: 26.5px 0 26.5px 20px;
     border: 1px solid white;
     background: transparent !important;
@@ -1118,7 +1118,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     width: 100%;
 }
 
-.main-search-input::placeholder {
+input#query.main-search-input::placeholder {
     color: white !important;
 }
 
