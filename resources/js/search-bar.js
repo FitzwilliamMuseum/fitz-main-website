@@ -39,10 +39,10 @@
                 main_search.style.minHeight = 0;
                 main_search.style.padding = "0 16px 40px 16px";
                 head.style.setProperty("margin-top", (navbarHeight) + "px", "important");
-            } else {
-                main_search.setAttribute("hidden", "true");
-                head.style.setProperty("margin-top", 0);
             }
+                main_search.setAttribute("hidden", "true");
+                main_search.style.top = 0;
+                head.style.setProperty("margin-top", 0);
         });
 
         window.addEventListener("resize", updateMargins);
