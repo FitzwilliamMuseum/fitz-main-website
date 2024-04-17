@@ -11,12 +11,7 @@
 }
 
 .card-header.faq-card-header {
-    border-color: #000;
-    border-width: 1.5px;
-}
-
-.accordion .faq-card:first-of-type .faq-card-header {
-    border-top: 1.5px solid #000;
+    border: none;
 }
 
 .faq-card-header.card-header:first-child {
@@ -39,11 +34,17 @@
     font-weight: 400;
     line-height: 25px;
     height: 65px;
+    margin: 4px 0;
+    border-top: 1.5px solid black;
 }
 
-.faq-card-btn {
-    transition: all 0.3s ease-in-out;
+.faq-card:last-child .collapse .card-body {
+    border-bottom: 1.5px solid black;
 }
+.faq-card:last-child .faq-card-header .faq-card-btn[aria-expanded="false"] {
+    border-bottom: 1.5px solid black;
+}
+
 .faq-card-btn[aria-expanded="true"] svg {
     transform: rotate(0);
 }
