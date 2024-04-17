@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\LandingPageTemplate;
 use App\Models\Stubs;
 
+use App\Models\FloorPlans;
+
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
 
@@ -41,7 +43,8 @@ class landingPageController extends Controller
             }
         } else {
             return view('support.index', [
-                    'page' => Collect($page['data'])->first()
+                    'page' => Collect($page['data'])->first(),
+                    'floors' => FloorPlans::list(),
                 ]
             );
         }
