@@ -85,11 +85,7 @@ Route::get('plan-your-visit/exhibitions/{exhibition}/cases/{slug}', 'exhibitions
 Route::get('plan-your-visit/exhibitions/{exhibition}/cases/', 'exhibitionsController@cases')->name('exhibition.cases');
 Route::get('plan-your-visit/exhibitions/labels/{slug}', 'exhibitionsController@label')->name('exhibition.label');
 
-// New Landing Page Template
-Route::group(['page_template' => 'landing'], function() {
-    Route::get('{slug}', 'landingPageController@index')->name('{slug}');
-    Route::get('{parent_page}/{slug}', 'subpagesController@index')->name('{slug}');
-});
+
 
 /** True to Nature routes */
 Route::get('plan-your-visit/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists', 'exhibitionsController@ttnArtists')->name('exhibition.ttn.artists');
@@ -205,6 +201,11 @@ Route::get('/clear-cache', [
     'uses' => 'Controller@clearCache'
 ])->middleware('auth.very_basic', 'doNotCacheResponse');
 
+// New Landing Page Template
+Route::group(['page_template' => 'landing'], function() {
+    Route::get('{slug}', 'landingPageController@index')->name('{slug}');
+    Route::get('{parent_page}/{slug}', 'subpagesController@index')->name('{slug}');
+});
 
 /*
 * Catch all route
