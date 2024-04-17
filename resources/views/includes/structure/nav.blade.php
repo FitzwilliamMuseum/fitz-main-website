@@ -97,7 +97,8 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                             class="visually-hidden">(current)</span></a>
                                 </li>
                                 <li class="nav-item {{ (request()->is('plan-your-visit*')) ? 'active' : '' }}">
-                                    <a class="nav-link" href="{{ route('visit') }}">Visit us</a>
+                                    {{-- <a class="nav-link" href="{{ route('visit') }}">Visit us</a> --}}
+                                    <a class="nav-link" href="/plan-your-visit">Visit us</a>
                                 </li>
                                 <li class="nav-item {{ (Request()->is('events*')) ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('events') }}">Events</a>

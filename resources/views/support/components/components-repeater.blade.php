@@ -25,6 +25,10 @@
                 @include('support.components.fiftyfifty')
             @elseif(!empty($component['curators_positioning']))
                 @include('exhibitions.components.curators')
+            @elseif(!empty($component['map_positioning']) && $component['map_positioning'] == true)
+                @include('support.components.map')
+            @elseif(!empty($component['floorplan_positioning']) && $component['floorplan_positioning'] == true)
+                @include('support.components.floorplans')
             @elseif(!empty($component['related_events']))
                 @include('exhibitions.components.related-events')
             @endif

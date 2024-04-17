@@ -1,9 +1,16 @@
+
+@inject('landingPageController', 'App\Http\Controllers\landingPageController')
+@php
+    $landingPageController::injectPages($page['slug'], $page['slug']);
+@endphp
 {{-- SEO --}}
 @section('title', $page['title'])
 @section('description', $page['meta_description'])
 @section('keywords', $page['meta_keywords'])
 
 @include('includes.structure.name-spaces')
+
+@include('includes.elements.fitzwilliam-map')
 
 @php
     foreach ($page['page_components'] as $component) {
@@ -23,7 +30,7 @@
     @include('includes.structure.meta')
 
     @include('includes.css.css')
-
+    
     @hasSection('map')
         @mapstyles
     @endif
