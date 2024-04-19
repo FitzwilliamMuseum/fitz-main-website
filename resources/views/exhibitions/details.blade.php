@@ -91,7 +91,7 @@
 
     @include('includes.elements.exhibitions.events-url')
 
-    @include('includes.elements.exhibitions.similar-exhibits')
+    {{-- @include('includes.elements.exhibitions.similar-exhibits') --}}
 
 {{-- End template check --}}
 @endif
