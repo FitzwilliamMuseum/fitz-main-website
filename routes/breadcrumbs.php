@@ -326,7 +326,7 @@ Breadcrumbs::for('exhibitions', function (BreadcrumbTrail $trail): void
 Breadcrumbs::for('exhibition', function (BreadcrumbTrail $trail, string $slug): void
 {
     $trail->parent('home');
-    $trail->push('Visit Us',route('visit'));
+    $trail->push('Visit Us','/plan-your-visit');
     $trail->push('Exhibition listing',route('exhibitions'));
     $trail->push('Details', route('exhibition', $slug));
 });
