@@ -3,25 +3,18 @@
         <h2 class="cta-title exhibition-cta-title">Pay what you wish</h2>
         <p class="cta-copy exhibition-cta-copy">Our exhibitions and displays remain free but you can now choose to make a
             donation.</p>
-        @if (!empty($exhibition['exhibition_url']))
+        @if ($exhibition['slug'] == 'rembrandt-rubens-van-dyck')
+            <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
+                Donate now
+                @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+            </a>
+        @elseif(!empty($exhibition['exhibition_url']))
             <a href="{{ $exhibition['exhibition_url'] }}" class="cta-btn">
                 Book now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
         @else
-            @if ($exhibition['slug'] == 'rembrandt-rubens-van-dyck')
-                <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
-                    Donate now
-                    @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
-                </a>
-            @elseif(!empty($exhibition['exhibition_url']))
-                <a href="{{ $exhibition['exhibition_url'] }}" class="cta-btn">
-                    Book now
-                    @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
-                </a>
-            @else
-                <p class="cta-btn">Tickets available soon...</p>
-            @endif
+            <p class="cta-btn">Tickets available soon...</p>
         @endif
         <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
     </div>
