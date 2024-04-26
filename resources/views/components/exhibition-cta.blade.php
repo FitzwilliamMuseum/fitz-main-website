@@ -9,7 +9,7 @@
                 </a>
             @else
                 @if ($exhibition['slug'] == 'rembrandt-rubens-van-dyck')
-                    <a href="https://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam" class="cta-btn">
+                    <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
                         Donate now
                         @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
                     </a>
