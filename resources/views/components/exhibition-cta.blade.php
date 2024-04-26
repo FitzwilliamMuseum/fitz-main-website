@@ -8,7 +8,14 @@
                     @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
                 </a>
             @else
-                <p class="cta-btn">Tickets available soon...</p>
+                @if ($exhibition['slug'] == 'rembrandt-rubens-van-dyck')
+                    <a href="https://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam" class="cta-btn">
+                        Donate now
+                        @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+                    </a>
+                @else
+                    <p class="cta-btn">Tickets available soon...</p>
+                @endif
             @endif
             <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
         </div>
