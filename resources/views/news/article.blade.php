@@ -63,7 +63,7 @@
 @endsection
 
 @section('mlt')
-@if(!empty($records))
+{{-- @if(!empty($records))
 <div class="container">
     <h3>Other recommended articles</h3>
     <div class="row">
@@ -72,5 +72,5 @@
         @endforeach
     </div>
 </div>
-@endif
+@endif --}}
 @endsection
