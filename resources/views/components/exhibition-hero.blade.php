@@ -1,7 +1,7 @@
 @if (!empty($hero))
     <div class="parallax home-hero exhibition-hero">
         @if(!empty($hero['image']))
-            <div class="bg-overlay" style="background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 10%, transparent ), url({{ $hero['image']['data']['url'] }})"></div>
+            <div class="bg-overlay" style="background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 10%, transparent ), url({{ $hero['image']['data']['url'] }}) no-repeat center center / cover"></div>
         @else
             <div class="bg-overlay"></div>
         @endif
