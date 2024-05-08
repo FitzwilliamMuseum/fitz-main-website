@@ -1,7 +1,7 @@
 body {
     font-family: "Roboto", sans-serif;
     background-color: #fbfbfb;
-    font-size: 1rem;
+    font-size: 1.125rem;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
@@ -313,6 +313,7 @@ a {
 
 .navbar-dark .navbar-nav .nav-link {
     color: #ffffff !important;
+    font-size: 1rem;
 }
 
 .navbar-toggler-icon {
@@ -1019,6 +1020,11 @@ a.text-center.btn.btn-outline-light.btn__book {
 .col-max-800 {
     max-width: 800px;
     margin: 56px auto;
+
+    @media screen and (min-width: 800px) {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 .shout.lead {
