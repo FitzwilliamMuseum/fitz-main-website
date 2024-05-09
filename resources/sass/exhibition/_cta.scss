@@ -37,7 +37,8 @@
     padding: 0 16px;
 
     @media screen and (min-width: 1320px) {
-        padding: 0;
+        padding-left: 0;
+        padding-right: 40px;
     }
 }
 .exhibition-cta .container.support-text-component.exhibition-text-component {
