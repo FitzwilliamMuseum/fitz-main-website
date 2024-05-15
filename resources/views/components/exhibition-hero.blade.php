@@ -1,7 +1,9 @@
 @if (!empty($hero))
     <div class="parallax home-hero exhibition-hero">
-        @if(!empty($hero['image']))
-            <div class="bg-overlay" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 10%, transparent), url({{ $hero['image']['data']['url'] }}) no-repeat center center / cover;"></div>
+        @if (!empty($hero['image']))
+            <div class="bg-overlay"
+                style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 10%, transparent), url({{ $hero['image']['data']['url'] }}) no-repeat center center / cover;">
+            </div>
         @else
             <div class="bg-overlay"></div>
         @endif
@@ -14,14 +16,22 @@
                 @endif
                 @if (!empty($hero['hero_subtitle']))
                     <p>
-                        {{ $hero['hero_subtitle'] }}
+                        @if (!empty($status) && $status == 'archived')
+                            Closed
+                        @else
+                            {{ $hero['hero_subtitle'] }}
+                        @endif
                     </p>
                 @endif
-                @if($hero['start'])
+                @if ($hero['start'])
                     <p>
-                        {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
-                        -
-                        {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
+                        @if (!empty($status) && $status == 'archived')
+                            This exhibition is now part of our archive
+                        @else
+                            {{ Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
+                            -
+                            {{ Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
+                        @endif
                     </p>
                 @endif
             </div>
