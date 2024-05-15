@@ -38,16 +38,16 @@
                     {{  Carbon\Carbon::parse($endDate)->format('j F Y') }}
                 </p>
                 @if($status === 'archived')
-                    <span class="badge bg-dark p-2 d-block">
-                        This is now closed
+                    <span class="archived-btn">
+                        Now closed
                     </span>
                 @endif
+                @isset($copyright)
+                    <div class="my-2 text-dark">
+                        {{ $copyright }}
+                    </div>
+                @endisset
             </div>
         </div>
-        @isset($copyright)
-            <div class="copyright copyright-text mx-2 my-2 text-dark">
-                {{ $copyright }}
-            </div>
-        @endisset
     </div>
 </div>

@@ -1081,3 +1081,16 @@ a.text-center.btn.btn-outline-light.btn__book {
         padding-left: 0;
     }
 }
+
+.archived-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+}
+
+.archived-btn:hover {
+    color: #fff;
+}
