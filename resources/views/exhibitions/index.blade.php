@@ -105,7 +105,7 @@
                         :copyright="$archived['copyright_text']"></x-exhibition-card>
                 @endforeach
             </div>
-            <a class="archived-btn" href="{{ route('archive') }}">View our exhibition archive</a>
+            <a class="btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
         </div>
     </div>
 @endsection
