@@ -6,7 +6,6 @@
     */
     $exhibitionStatus = (!empty($exhibition["exhibition_end_date"]) && \Carbon\Carbon::createFromFormat('Y-m-d', $exhibition["exhibition_end_date"])->endOfDay()->isPast()) ? 'display: none;' : '';
 @endphp
-@dump($exhibition)
 <div class="exhibition-cta">
     <div class="container support-text-component support-cta mb-0"
     style="{{ $exhibitionStatus }}">
