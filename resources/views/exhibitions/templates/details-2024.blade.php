@@ -10,7 +10,7 @@
     }
 @endphp
 
-<x-exhibition-hero :hero="$hero" :status="$exhibition['exhibition_status']"></x-exhibition-hero>
+<x-exhibition-hero :hero="$hero"></x-exhibition-hero>
 
 <x-exhibition-cta :exhibition="$exhibition"></x-exhibition-cta>
 
