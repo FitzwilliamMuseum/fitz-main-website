@@ -333,7 +333,7 @@ Breadcrumbs::for('exhibition', function (BreadcrumbTrail $trail, string $slug): 
 Breadcrumbs::for('archive', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
-    $trail->push('Visit Us', '/plan-your-visit');
+    $trail->push('Visit Us', route('visit'));
     $trail->push('Exhibition listing',route('exhibitions'));
     $trail->push('Archives',route('archive'));
 });
