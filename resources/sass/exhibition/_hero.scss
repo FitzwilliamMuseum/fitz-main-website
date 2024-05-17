@@ -2,3 +2,8 @@
     height: 550px;
     background-color: black;
 }
+
+.exhibiton .navbar +.exhibition-hero+.breadcrumbs-su,
+.navbar:has(#global-announcement)+.exhibition-hero+.breadcrumbs-su {
+    margin: 0;
+}

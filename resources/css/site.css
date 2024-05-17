@@ -1081,3 +1081,12 @@ a.text-center.btn.btn-outline-light.btn__book {
         padding-left: 0;
     }
 }
+
+.archived-btn {
+    background:  #EEF3F4;
+    color: #000;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+}

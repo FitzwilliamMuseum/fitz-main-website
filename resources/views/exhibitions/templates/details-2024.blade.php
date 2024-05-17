@@ -11,7 +11,9 @@
 @endphp
 
 <x-exhibition-hero :hero="$hero"></x-exhibition-hero>
-
+<div class="breadcrumbs-su">
+    @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
+</div>
 <x-exhibition-cta :exhibition="$exhibition"></x-exhibition-cta>
 
 @include('support.components.components-repeater', ['page' => $exhibition])
