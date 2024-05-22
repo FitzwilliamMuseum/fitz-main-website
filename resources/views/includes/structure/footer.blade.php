@@ -157,8 +157,8 @@
                         mx-2"])
                     </a>
                     <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
-                        <img src="{{ asset( "/images/logos/x.svg") }}" width="48" height="48"
-                            alt="Sketchfab logo" class="my-2 mx-2 eden" />
+                        @svg('fab-x-twitter',['width'=> 48,'height'=> 48, 'alt' => "X logo", "class" => "my-2
+                        mx-2"])
                     </a>
                     <a aria-label="Fitzwilliam Museum linkedin account"
                         href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
