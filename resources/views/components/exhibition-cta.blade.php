@@ -20,6 +20,11 @@
                 Donate now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
+        @elseif($exhibition['slug'] == 'paris-1924-sport-art-and-the-body')
+            <a href="{{ url('https://tickets.museums.cam.ac.uk/overview/8294') }}" class="cta-btn">
+                Book now
+                @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+            </a>
         @elseif(!empty($exhibition['exhibition_url']))
             <a href="{{ $exhibition['exhibition_url'] }}" class="cta-btn">
                 Book now
