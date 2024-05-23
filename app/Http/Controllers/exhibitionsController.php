@@ -89,6 +89,7 @@ class exhibitionsController extends Controller
             abort(404);
         } else {
             $exhibition = Collect($exhibitions['data'])->first();
+
             $adlib = CIIM::findByExhibition($exhibition['adlib_id_exhibition']);
             $records = FindMoreLikeThis::find($slug, 'exhibitions');
             $podcasts = NULL;
@@ -109,6 +110,12 @@ class exhibitionsController extends Controller
 
             if(!empty($exhibition['exhibition_banner']['id'])) {
                 $banners = HomePageBanners::getBannerByID($exhibition['exhibition_banner']['id']);
+            }
+
+            // Check if the exhibition has ended and update the status accordingly
+            if(!empty($exhibition['exhibition_end_date'])) {
+                // Update the exhibition status if the end date is in the past and the status is not already set to archived
+                Exhibitions::setExhibitionStatus($exhibition);
             }
 
             $faqs = Faqs::list('exhibition', $exhibition['id']);

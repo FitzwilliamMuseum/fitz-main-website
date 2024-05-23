@@ -95,11 +95,11 @@ class Exhibitions extends Model
         $results = Collect($api->getData()['data'])->first();
 
         /**
-         * The Directus query can return `null`, but this causes errors as this 
+         * The Directus query can return `null`, but this causes errors as this
          * method is set to return an array, and a `null` return value is
-         * erroneous 
+         * erroneous
          */
-        if(empty($results)) {
+        if (empty($results)) {
             $results = [];
         }
 
@@ -128,11 +128,11 @@ class Exhibitions extends Model
         $results = Collect($api->getData()['data'])->first();
 
         /**
-         * The Directus query can return `null`, but this causes errors as this 
+         * The Directus query can return `null`, but this causes errors as this
          * method is set to return an array, and a `null` return value is
-         * erroneous 
+         * erroneous
          */
-        if(empty($results)) {
+        if (empty($results)) {
             $results = [];
         }
 
@@ -225,5 +225,23 @@ class Exhibitions extends Model
             )
         );
         return $api->getData();
+    }
+    /**
+     *  Set the exhibition status to archived if the end date is in the past
+     *  and the status is current
+     * @param array $exhibition
+     * @return array
+     */
+    public static function setExhibitionStatus(array $exhibition): array
+    {
+        if (
+            isset($exhibition['exhibition_end_date'])
+            && \Carbon\Carbon::createFromFormat('Y-m-d', $exhibition['exhibition_end_date'])->endOfDay()->isPast()
+            && $exhibition['exhibition_status'] === 'current'
+        ) {
+            $exhibition['exhibition_status'] = 'archived';
+        }
+
+        return $exhibition;
     }
 }
