@@ -50,11 +50,18 @@
     width: 100%;
     & .cta-title {
         font-size: 20px;
+        font-weight: 600;
     }
+    
     & .cta-copy {
         font-size: 18px;
         font-weight: 400;
         margin-bottom: 8px;
+    }
+
+    & .cta-title-date {
+        font-size: 18px;
+        font-weight: 600;
     }
 
     & .cta-btn {
