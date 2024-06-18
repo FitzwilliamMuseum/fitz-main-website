@@ -45,6 +45,9 @@
                         @if(!empty($event['heading']))
                             <h4 class="cta-title">{{ $event['heading'] }}</h4>
                         @endif
+                        @if(!empty($event['event_date']))
+                            <h5 class="cta-title-date">{{ $event['event_date'] }}</h5>
+                        @endif
                         @if(!empty($event['excerpt']))
                             <p class="cta-copy">
                                 {{ $event['excerpt'] }}
