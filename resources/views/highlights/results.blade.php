@@ -14,7 +14,7 @@
     @php
         $url = $result['url'][0];
         $is_social = false;
-        if(str_contains($url, 'x.com') || str_contains($url, 'facebook') || str_contains($url, 'linkedin') || str_contains($url, 'youtube') || str_contains($url, 'instagram') ) {
+        if(str_contains($url, 'x.com') || str_contains($url, 'facebook.com') || str_contains($url, 'linkedin.com') || str_contains($url, 'youtube.com') || str_contains($url, 'instagram.com') ) {
             $is_social = true;
         }
         if($is_social === true) {
@@ -32,7 +32,7 @@
 @if(!empty($records))
 <div class="row">
     @foreach($records as $result)
-    {{-- Only display results if their url  --}}
+    {{-- Only display results if their url doesn't go to social media  --}}
     @php
         $url = $result['url'][0];
         $is_social = false;
