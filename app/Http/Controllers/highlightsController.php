@@ -158,6 +158,12 @@ class highlightsController extends Controller
 
         $number = $data->getNumFound();
         $records = $data->getDocuments();
+        foreach($records as $index=>$record) {
+            $url = $record['url']['0'];
+            if(str_contains($url, 'x.com') || str_contains($url, 'facebook.com') || str_contains($url, 'linkedin.com') || str_contains($url, 'youtube.com') || str_contains($url, 'instagram.com') ) {
+                unset($records[$index]);
+            }
+        }
         $paginate = new LengthAwarePaginator($records, $number, $perPage);
         $paginate->setPath($request->getBaseUrl() . '?query=' . $queryString);
         return view('highlights.results', compact('records', 'number', 'paginate', 'queryString'));
