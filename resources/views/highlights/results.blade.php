@@ -19,7 +19,7 @@
     @php
         $url = $result['url'][0];
         $is_social = false;
-        if(str_contains($url, 'twitter') || str_contains($url, 'facebook') || str_contains($url, 'linkedin') || str_contains($url, 'youtube') ) {
+        if(str_contains($url, 'x.com') || str_contains($url, 'facebook') || str_contains($url, 'linkedin') || str_contains($url, 'youtube') ) {
             $is_social = true;
         }
     @endphp
