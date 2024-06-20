@@ -333,7 +333,7 @@ Breadcrumbs::for('exhibition', function (BreadcrumbTrail $trail, string $slug): 
 Breadcrumbs::for('archive', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
-    $trail->push('Visit Us',route('visit'));
+    $trail->push('Visit Us', route('visit'));
     $trail->push('Exhibition listing',route('exhibitions'));
     $trail->push('Archives',route('archive'));
 });
@@ -682,4 +682,3 @@ Breadcrumbs::for('search.results', function (BreadcrumbTrail $trail): void
     $trail->push('Search',route('search.index'));
     $trail->push('Results',route('search.results'));
 });
-
