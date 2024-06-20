@@ -1,7 +1,7 @@
 @if(!empty($component['image_gallery']))
     <div class="container image-gallery">
         <div class="row">
-            <div class="carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
+            <div id="image-gallery" class="carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
                 <div class="carousel-inner">
                     @foreach(array_chunk($component['image_gallery'],3,true) as $slides)
                         <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
@@ -42,11 +42,11 @@
                         </div>
                     @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#contexts" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#image-gallery" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#contexts" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#image-gallery" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
