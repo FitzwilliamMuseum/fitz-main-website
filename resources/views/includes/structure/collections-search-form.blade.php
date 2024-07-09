@@ -36,15 +36,15 @@
                             <h3>Operator</h3>
                         </legend>
                         <div class="form-check form-check-inline mb-3">
-                            <input class="form-check-input" type="radio" name="operator" id="operator" value="AND"
+                            <input class="form-check-input" type="radio" name="operator" id="and" value="AND"
                                    checked>
-                            <label class="form-check-label" for="operator">
+                            <label class="form-check-label" for="and">
                                 AND
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="operator" id="operator" value="OR">
-                            <label class="form-check-label" for="operator">
+                            <input class="form-check-input" type="radio" name="operator" id="or" value="OR">
+                            <label class="form-check-label" for="or">
                                 OR
                             </label>
                         </div>
@@ -54,14 +54,14 @@
                             <h3>Sort by last update</h3>
                         </legend>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sort" id="sort" value="desc" checked>
-                            <label class="form-check-label" for="sort">
+                            <input class="form-check-input" type="radio" name="sort" id="desc" value="desc" checked>
+                            <label class="form-check-label" for="asc">
                                 Descending
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sort" id="sort" value="asc">
-                            <label class="form-check-label" for="sort">
+                            <input class="form-check-input" type="radio" name="sort" id="asc" value="asc">
+                            <label class="form-check-label" for="asc">
                                 Ascending
                             </label>
                         </div>
