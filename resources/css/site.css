@@ -696,9 +696,9 @@ a.text-center.btn.btn-outline-light.btn__book {
         brightness(100%) contrast(100%);
 }
 
-.card-img-top {
+/* .card-img-top {
     height: 100% !important;
-}
+} */
 
 .p-heading {
     font-weight: 500;
