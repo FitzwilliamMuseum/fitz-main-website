@@ -954,6 +954,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     display: flex;
 }
 
+.acknowledgement-highlights-form fieldset {
+    border: 0;
+}
+
 .bg-white-subscribe {
     padding: 28px 16px 24px;
 }
