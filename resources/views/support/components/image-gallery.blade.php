@@ -8,7 +8,7 @@
                             <div class="row">
                                 @foreach($slides as $image)
                                     @php
-                                        if(!empty($image[0]['image_id'])) {
+                                        if(!empty($image['image_id'])) {
                                             if(!empty($page['image_blocks'])) {
                                                 $image_source = $page['image_blocks'];
                                             }
@@ -20,7 +20,7 @@
                                                 if(!empty($image_block['directus_files_id'])) {
                                                     $image_block['asset_id'] = $image_block['directus_files_id'];
                                                 }
-                                                if($image_block['asset_id']['id'] == $image[0]['image_id']) {
+                                                if($image_block['asset_id']['id'] == $image['image_id']) {
                                                     $image_asset = $image_block['asset_id'];
                                             }
                                             }
