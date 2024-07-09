@@ -20,16 +20,10 @@
                         @endphp
                         <div class="col-md-4 mb-3 container-home-card container-support-card">
                             <div class="card card-fitz h-100">
-                                @if(!empty($card_content['card_link']))
-                                    <a href="{{ $card_content['card_link'] }}" class="card-image">
-                                @endif
-                                        @if(!empty($image_asset))
-                                            <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $image_asset['data']['description'] : '' }}" width="416" height="416" load="lazy">
-                                        @else
-                                            <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
-                                        @endif
-                                @if(!empty($card_content['card_link']))
-                                    </a>
+                                @if(!empty($image_asset))
+                                    <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $image_asset['data']['description'] : '' }}" width="416" height="416" load="lazy">
+                                @else
+                                    <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
                                 @endif
                                 @if(!empty($card_content))
                                     <div class="card-body h-100">

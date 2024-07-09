@@ -1,21 +1,17 @@
 <div class="col-md-4 mb-3">
     <div class="card card-fitz h-100">
         @if(!empty($viewpoint['associated_artworks'][0]['ttn_labels_id']['image']))
-            <a href="{{ route('exhibition.ttn.viewpoint', $viewpoint['id']) }}">
-                <img class="card-img-top"
-                     src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['url']}}"
-                     alt="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['alt_text'] }}"
-                     width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['width'] }}"
-                     height="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['height'] }}"
-                     loading="lazy"/>
-            </a>
+            <img class="card-img-top"
+                    src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['url']}}"
+                    alt="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['alt_text'] }}"
+                    width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['width'] }}"
+                    height="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['height'] }}"
+                    loading="lazy"/>
         @else
-            <a href="{{ route('exhibition.ttn.viewpoint', $viewpoint['id']) }}">
-                <img class="card-img-top"
-                     src="{{ env('MISSING_IMAGE_URL') }}"
-                     alt="A stand in image for {{ $viewpoint['title'] }}"
-                     loading="lazy"/>
-            </a>
+            <img class="card-img-top"
+                    src="{{ env('MISSING_IMAGE_URL') }}"
+                    alt="A stand in image for {{ $viewpoint['title'] }}"
+                    loading="lazy"/>
         @endisset
         <div class="card-body h-100">
             <div class="contents-labels mb-3">

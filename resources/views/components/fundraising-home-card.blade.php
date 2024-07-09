@@ -1,24 +1,20 @@
 <div class="col-md-3 mb-3 container-home-card">
     <div class="card card-fitz h-100">
         @isset($donate['hero_image'])
-            <a href="{{ $donate['url'] }}">
-                <img class="card-img-top"
-                     src="{{ $donate['hero_image']['data']['thumbnails'][13]['url']}}"
-                     alt="{{ $donate['hero_image_alt_text'] }}"
-                     loading="lazy"
-                     width="{{ $donate['hero_image']['data']['thumbnails'][13]['width'] }}"
-                     height="{{ $donate['hero_image']['data']['thumbnails'][13]['height'] }}"
+            <img class="card-img-top"
+                    src="{{ $donate['hero_image']['data']['thumbnails'][13]['url']}}"
+                    alt="{{ $donate['hero_image_alt_text'] }}"
+                    loading="lazy"
+                    width="{{ $donate['hero_image']['data']['thumbnails'][13]['width'] }}"
+                    height="{{ $donate['hero_image']['data']['thumbnails'][13]['height'] }}"
 
-                />
-            </a>
+            />
         @else
-            <a href="{{ $donate['url'] }}">
-                <img class="card-img-top"
-                     src="{{ env('MISSING_IMAGE_URL') }}"
-                     alt="A stand in image for {{ $donate['title'] }}"
-                     loading="lazy"
-                />
-            </a>
+            <img class="card-img-top"
+                    src="{{ env('MISSING_IMAGE_URL') }}"
+                    alt="A stand in image for {{ $donate['title'] }}"
+                    loading="lazy"
+            />
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
