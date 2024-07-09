@@ -30,6 +30,7 @@
 <div class="container mt-3">
     @include('includes.structure.breadcrumb')
 </div>
+<span id="site-content" class="visually-hidden"></span>
 <div class="container-fluid bg-white py-3">
     <div class="container bg-white">
         @yield('press-contact')

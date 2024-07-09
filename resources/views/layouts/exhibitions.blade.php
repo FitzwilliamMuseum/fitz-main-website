@@ -35,6 +35,7 @@
     <div class="container mt-3">
         @include('includes.structure.breadcrumb')
     </div>
+    <span id="site-content" class="visually-hidden"></span>
     @yield('content')
     @yield('ttn-actions')
     @yield('events-url')

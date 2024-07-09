@@ -23,7 +23,7 @@
         {{-- @dd($hero['parallax_one']['data']['url']); --}}
     @endif
 
-
+    <span id="site-content" class="visually-hidden"></span>
     @include('includes.structure.exhibitions', [
         'listing_type' => 'upcoming',
         'listing_title' => "What's on",

@@ -23,6 +23,23 @@ body {
     display: none;
 }
 
+.visually-hidden--focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    z-index: -1;
+    opacity: 0;
+}
+.visually-hidden--focus:focus,
+.visually-hidden--focus-visible,
+.visually-hidden--focus:focus-within {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    opacity: 1;
+    z-index: 10;
+}
 .card-header {
     background-color: white;
 }

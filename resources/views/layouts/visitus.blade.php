@@ -22,7 +22,7 @@
             @include('includes.structure.breadcrumb')
         </div>
 
-        <div class="container-fluid py-3 bg-dark">
+        <div class="container-fluid py-3 bg-dark" id="site-content">
             <div class="container">
                 @yield('content')
             </div>

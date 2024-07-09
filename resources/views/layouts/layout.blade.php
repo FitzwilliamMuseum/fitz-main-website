@@ -37,6 +37,7 @@
         <div class="container mt-3 p-3">
             @include('includes.structure.breadcrumb')
             @yield('press-contact')
+            <span id="site-content" class="visually-hidden"></span>
             @yield('content')
             @yield('group-visits')
             @yield('adlib')
