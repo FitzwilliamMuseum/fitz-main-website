@@ -17,8 +17,11 @@
 <x-exhibition-cta :exhibition="$exhibition"></x-exhibition-cta>
 
 @include('support.components.components-repeater', ['page' => $exhibition])
-
 {{-- {{ dd($exhibition) }} --}}
+
+@if (!empty($exhibition['exhibition_files']))
+    @include('includes.elements.exhibitions.files')
+@endif
 
 @if($reposition_curators == false && (!empty($exhibition['associated_curators']) || !empty($exhibition['external_curators'])))
     @include('exhibitions.components.curators')
