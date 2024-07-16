@@ -1111,3 +1111,23 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-weight: 600;
     padding: 12px 24px;
 }
+
+.collection-carousel button.carousel-control-prev {
+  background: linear-gradient(to right, black, rgba(0,0,0,0));
+  transform: translateX(10px)
+}
+
+.collection-carousel .carousel-control-prev:hover,
+.collection-carousel .carousel-control-prev:focus {
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
+
+.collection-carousel button.carousel-control-next {
+  background: linear-gradient(to left, black, rgba(0,0,0,0));
+  transform: translateX(-10px)
+}
+
+.collection-carousel .carousel-control-next:hover,
+.collection-carousel .carousel-control-next:focus {
+  background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
