@@ -156,10 +156,10 @@
                         @svg('fab-facebook',['width'=> 48,'height'=> 48, 'alt' => "Facebook logo", "class" => "my-2
                         mx-2"])
                     </a>
-                    {{-- <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
+                    <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
                         @svg('fab-x-twitter',['width'=> 48,'height'=> 48, 'alt' => "X logo", "class" => "my-2
                         mx-2"])
-                    </a> --}}
+                    </a>
                     <a aria-label="Fitzwilliam Museum linkedin account"
                         href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
                         @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkedin logo", "class" => "my-2

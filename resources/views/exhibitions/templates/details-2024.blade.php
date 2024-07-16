@@ -18,7 +18,9 @@
 
 @include('support.components.components-repeater', ['page' => $exhibition])
 
-{{-- {{ dd($exhibition) }} --}}
+@if (!empty($exhibition['related_documents']))
+    @include('includes.elements.exhibitions.files', ['source' => $exhibition['related_documents']])
+@endif
 
 @if($reposition_curators == false && (!empty($exhibition['associated_curators']) || !empty($exhibition['external_curators'])))
     @include('exhibitions.components.curators')

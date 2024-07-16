@@ -5,9 +5,15 @@
         <ul>
             @foreach($files as $file)
             <li>
+                @if(!empty($file['directus_files_id']))
                 <a href="{{ $file['directus_files_id']['data']['full_url'] }}">
                     {{ $file['directus_files_id']['title'] }}
                 </a>
+                @elseif(!empty($file['related_document_id']))
+                <a href="{{ $file['related_document_id']['data']['full_url'] }}">
+                    {{ $file['related_document_id']['title'] }}
+                </a>
+                @endif
             </li>
             @endforeach
         </ul>
