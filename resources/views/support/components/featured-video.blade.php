@@ -23,6 +23,9 @@
     if(!empty($component['video'][0]['youtube_id'])) {
         $youtube_id = $component['video'][0]['youtube_id'];
     }
+    if(!empty($component['video'][0]['label'])) {
+        $video_title = $component['video'][0]['label'];
+    }
 @endphp
 <div class="container featured_video mx-auto">
     @if(!empty($video_asset_webm) || !empty($video_asset_mp4))
@@ -47,7 +50,8 @@
     </video>
     @elseif(!empty($youtube_id))
         <div class="ratio ratio-16x9">
-            <iframe title="A YouTube video from the Fitzwilliam Museum"
+            @if(!empty())
+            <iframe title="{{ !empty($video_title) ? $video_title : 'A video from the Fitzwilliam Museum' }}"
                 src="https://www.youtube.com/embed/{{ $youtube_id }}"
                 allowfullscreen></iframe>
         </div>
