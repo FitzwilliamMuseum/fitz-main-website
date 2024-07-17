@@ -33,7 +33,7 @@
 <footer class="container-fluid pt-3 text-black bg-pastel">
     <div class="fitz-footer-links">
         <div class="pt-2">
-            <h3 class="visually-hidden">Contact us</h3>
+            <h2 class="visually-hidden">Contact us</h2>
             <p>
                 Fitzwilliam Museum<br />
                 Trumpington Street<br />
@@ -44,7 +44,7 @@
             </p>
         </div>
         <div class="pt-2">
-            <h3 class="visually-hidden">Useful links</h3>
+            <h2 class="visually-hidden">Useful links</h2>
             <ul class="share">
                 <li>
                     <a href="{{ route('visit') }}">
@@ -93,7 +93,7 @@
             </ul>
         </div>
         <div class="pt-2">
-            <h3 class="visually-hidden">About the University and licenses</h3>
+            <h2 class="visually-hidden">About the University and licenses</h2>
             <ul class="share">
                 <li>
                     <a href="{{ route('landing-section', ['about-us', 'privacy-and-cookies'])}}">Cookies,
@@ -145,7 +145,7 @@
     <div class="container">
         <div class="row pt-2">
             <div class="col-md-6 mx-auto">
-                <h3 class="visually-hidden">Join our conversations</h3>
+                <h2 class="visually-hidden">Join our conversations</h2>
                 <p class="share text-center">
                     <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
                         @svg('fab-instagram',['width'=> 48,'height'=> 48, 'alt' => "Instagram logo", "class" => "my-2

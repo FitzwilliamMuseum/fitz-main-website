@@ -17,11 +17,19 @@
 
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h2>
+                @if(!empty($headingLevel))
+                    <h{{ $headingLevel }}>
+                @else
+                    <h2>
+                @endif
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h2>
+                @if(!empty($headingLevel))
+                    </h{{ $headingLevel }}>
+                @else
+                    </h2>
+                @endif
                 @if(in_array($status, array('current','future')) && $ticketed === true && !is_null($tessitura))
                     <p class="text-dark">Ticket and timed entry</p>
                     <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura }}">Book
