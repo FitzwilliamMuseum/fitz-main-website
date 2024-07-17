@@ -50,7 +50,6 @@
     </video>
     @elseif(!empty($youtube_id))
         <div class="ratio ratio-16x9">
-            @if(!empty())
             <iframe title="{{ !empty($video_title) ? $video_title : 'A video from the Fitzwilliam Museum' }}"
                 src="https://www.youtube.com/embed/{{ $youtube_id }}"
                 allowfullscreen></iframe>
