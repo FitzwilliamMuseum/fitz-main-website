@@ -96,7 +96,6 @@ h2 {
 a {
     background-color: transparent;
     color: #731100;
-    text-decoration: none;
 }
 
 article {
@@ -311,12 +310,6 @@ h5 > a:hover::before {
 
 .form-control {
     border-radius: 0;
-}
-
-a {
-    background-color: transparent;
-    color: #731100;
-    text-decoration: none;
 }
 
 .free_ticket a {
@@ -1130,4 +1123,10 @@ a.text-center.btn.btn-outline-light.btn__book {
 .collection-carousel .carousel-control-next:hover,
 .collection-carousel .carousel-control-next:focus {
   background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
+
+@media (max-width: 480px) {
+    .fixed-top {
+        position: static; 
+    }
 }
