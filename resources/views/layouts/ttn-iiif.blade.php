@@ -16,8 +16,10 @@
 </head>
 <body class="doc-body c_darkmode">
 @include('googletagmanager::body')
-<span id="site-content" class="visually-hidden"></span>
-@yield('content')
+    <main>
+        <span id="site-content" class="visually-hidden"></span>
+        @yield('content')
+    </main>
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
