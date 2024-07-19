@@ -24,7 +24,7 @@
             <div class="col-md-4">
                 <img
                     src="https://content.fitz.ms/fitz-website/assets/young people in Egyptian gallery.jpg?key=directus-medium-crop"
-                    class="card-img-top" width="369" height="369" alt="Human touch">
+                    class="card-img-top" width="369" height="369" alt="">
             </div>
         </div>
     </div>
