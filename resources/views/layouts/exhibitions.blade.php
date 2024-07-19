@@ -29,41 +29,43 @@
     @else
         @include('includes.structure.head')
     @endif
+    <main>
+        @include('includes.structure.open')
 
-    @include('includes.structure.open')
-
-    <div class="container mt-3">
-        @include('includes.structure.breadcrumb')
-    </div>
-    @yield('content')
-    @yield('ttn-actions')
-    @yield('events-url')
-    @yield('exhibition-shopify')
-    @yield('exhibitions-files')
-    @yield('exhibition-faqs')
-    @yield('shopify')
-    @yield('exhibitionCaseCards')
-    @yield('exhibition-objects')
-    @yield('exhibition-labels')
-    @yield('exhibitionAudio')
-    @yield('excarousel')
-    @yield('youtube')
-    @yield('curators')
-    @yield('research-funders')
-    @yield('current')
-    @yield('sketchfab')
-    @yield('displays')
-    @yield('future')
-    @yield('archive')
-    @yield('galleries')
-    @yield('departments')
-    @yield('exhibition-thanks')
-    @yield('360')
-    @yield('mlt')
-@else
-    @yield('exhibitions-2024')
-    @yield('shopify')
-@endif
+        <div class="container mt-3">
+            @include('includes.structure.breadcrumb')
+        </div>
+        <span id="site-content" class="visually-hidden"></span>
+        @yield('content')
+        @yield('ttn-actions')
+        @yield('events-url')
+        @yield('exhibition-shopify')
+        @yield('exhibitions-files')
+        @yield('exhibition-faqs')
+        @yield('shopify')
+        @yield('exhibitionCaseCards')
+        @yield('exhibition-objects')
+        @yield('exhibition-labels')
+        @yield('exhibitionAudio')
+        @yield('excarousel')
+        @yield('youtube')
+        @yield('curators')
+        @yield('research-funders')
+        @yield('current')
+        @yield('sketchfab')
+        @yield('displays')
+        @yield('future')
+        @yield('archive')
+        @yield('galleries')
+        @yield('departments')
+        @yield('exhibition-thanks')
+        @yield('360')
+        @yield('mlt')
+    @else
+        @yield('exhibitions-2024')
+        @yield('shopify')
+    @endif
+</main>
 @include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.structure.modal')

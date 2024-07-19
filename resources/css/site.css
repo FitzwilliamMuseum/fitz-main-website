@@ -23,6 +23,23 @@ body {
     display: none;
 }
 
+.visually-hidden--focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    z-index: -1;
+    opacity: 0;
+}
+.visually-hidden--focus:focus,
+.visually-hidden--focus-visible,
+.visually-hidden--focus:focus-within {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    opacity: 1;
+    z-index: 10;
+}
 .card-header {
     background-color: white;
 }
@@ -79,7 +96,6 @@ h2 {
 a {
     background-color: transparent;
     color: #731100;
-    text-decoration: none;
 }
 
 article {
@@ -294,12 +310,6 @@ h5 > a:hover::before {
 
 .form-control {
     border-radius: 0;
-}
-
-a {
-    background-color: transparent;
-    color: #731100;
-    text-decoration: none;
 }
 
 .free_ticket a {
@@ -696,9 +706,9 @@ a.text-center.btn.btn-outline-light.btn__book {
         brightness(100%) contrast(100%);
 }
 
-.card-img-top {
+/* .card-img-top {
     height: 100% !important;
-}
+} */
 
 .p-heading {
     font-weight: 500;
@@ -954,6 +964,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     display: flex;
 }
 
+.acknowledgement-highlights-form fieldset {
+    border: 0;
+}
+
 .bg-white-subscribe {
     padding: 28px 16px 24px;
 }
@@ -1089,4 +1103,30 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-size: 16px;
     font-weight: 600;
     padding: 12px 24px;
+}
+
+.collection-carousel button.carousel-control-prev {
+  background: linear-gradient(to right, black, rgba(0,0,0,0));
+  transform: translateX(10px)
+}
+
+.collection-carousel .carousel-control-prev:hover,
+.collection-carousel .carousel-control-prev:focus {
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
+
+.collection-carousel button.carousel-control-next {
+  background: linear-gradient(to left, black, rgba(0,0,0,0));
+  transform: translateX(-10px)
+}
+
+.collection-carousel .carousel-control-next:hover,
+.collection-carousel .carousel-control-next:focus {
+  background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
+
+@media (max-width: 480px) {
+    .fixed-top {
+        position: static; 
+    }
 }

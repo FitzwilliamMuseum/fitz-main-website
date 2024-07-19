@@ -10,3 +10,14 @@
 .container-fluid {
     --bs-gutter-x: 2rem;
 }
+
+.btn:focus,
+.form-check-input:focus,
+.form-control:focus,
+.form-control:focus-visible {
+    border-width: 3px;
+    border-color: rgb(37, 77, 235);
+    box-shadow: none;
+    // box-shadow: 0 0 0 0.25rem rgba(37, 77, 235, .55);
+    outline: 0;
+}

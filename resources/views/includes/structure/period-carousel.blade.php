@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <h3 class="my-3">Explore periods</h3>
-            <div id="periods" class="carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
+            <div id="periods" class="collection-carousel carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
                 <div class="carousel-inner">
                     @foreach(array_chunk($periods,3,true) as $slides)
                     @if($loop->first)

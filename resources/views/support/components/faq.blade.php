@@ -28,7 +28,7 @@
                     <div class="card faq-card">
                         <div class="card-header faq-card-header" id="heading{{ ucfirst(trans($iterationNumber)) }}">
                             <button class="faq-card-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse{{ ucfirst(trans($iterationNumber)) }}" aria-expanded="false" aria-controls="collapse">
+                                data-bs-target="#collapse{{ ucfirst(trans($iterationNumber)) }}" aria-expanded="false" aria-controls="#collapse{{ ucfirst(trans($iterationNumber)) }}">
                                 {{ $heading }}
                                 @svg('fas-chevron-down', ['width' => '25px', 'height' => '25px'])
                             </button>

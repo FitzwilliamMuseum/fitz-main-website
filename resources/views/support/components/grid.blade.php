@@ -32,23 +32,21 @@
                 @endphp
                 <div class="col-md-4 mb-3">
                     <div class="card card-fitz card-fitz-support h-100">
-                        <a href="{{ $page_root }}/{{ $card['slug'] }}">
-                            {{-- Check for preview image --}}
-                            @if (!empty($card['preview_image']))
-                                <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
-                                    alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
-                                    class="card-img-top-support" width="374" height="342" loading="lazy">
-                                {{-- If no preview, check for hero image --}}
-                            @elseif(!empty($card['hero_image']))
-                                <img class="card-img-top-support"
-                                    src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}"
-                                    alt="{{ isset($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}">
-                                {{-- Default --}}
-                            @else
-                                <img class="card-img-top-support"
-                                    src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition">
-                            @endif
-                        </a>
+                        {{-- Check for preview image --}}
+                        @if (!empty($card['preview_image']))
+                            <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
+                                alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
+                                class="card-img-top-support" width="374" height="342" loading="lazy">
+                            {{-- If no preview, check for hero image --}}
+                        @elseif(!empty($card['hero_image']))
+                            <img class="card-img-top-support"
+                                src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}"
+                                alt="{{ isset($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}">
+                            {{-- Default --}}
+                        @else
+                            <img class="card-img-top-support"
+                                src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition">
+                        @endif
                         @if (!empty($card['title']))
                             <div class="card-body h-100">
                                 <div class="contents-label mb-3">
