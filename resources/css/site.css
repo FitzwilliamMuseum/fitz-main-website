@@ -886,8 +886,14 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-gap: 10px;
 }
 
-.container-home-cards h3 a {
+.container-home-cards h2 a {
     font-size: 24px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.container-home-cards h3 a {
+    font-size: 20px;
     font-weight: 500;
     display: inline-block;
 }
@@ -1115,6 +1121,10 @@ a.text-center.btn.btn-outline-light.btn__book {
   background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
 }
 
+.collection-carousel .carousel-control-prev:focus {
+    outline: 2px solid #007aff;
+}
+
 .collection-carousel button.carousel-control-next {
   background: linear-gradient(to left, black, rgba(0,0,0,0));
   transform: translateX(-10px)
@@ -1123,6 +1133,10 @@ a.text-center.btn.btn-outline-light.btn__book {
 .collection-carousel .carousel-control-next:hover,
 .collection-carousel .carousel-control-next:focus {
   background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
+
+.collection-carousel .carousel-control-next:focus {
+    outline: 2px solid #007aff;
 }
 
 @media (max-width: 480px) {
