@@ -13,9 +13,10 @@
         <p class="cta-copy exhibition-cta-copy">Our exhibitions and displays remain free but you can now choose to make a
             donation.</p>
         @if (
-            $exhibition['slug'] == 'rembrandt-rubens-van-dyck' ||
+                $exhibition['slug'] == 'rembrandt-rubens-van-dyck' ||
                 $exhibition['slug'] == 'rembrandt-rubens-van-dyck-drawings-by-dutch-and-flemish-masters' ||
-                $exhibition['slug'] == 'national-treasures-botticelli-in-cambridge')
+                $exhibition['slug'] == 'national-treasures-botticelli-in-cambridge' ||
+                $exhibition['slug'] == 'women-in-japanese-prints')
             <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
                 Donate now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
