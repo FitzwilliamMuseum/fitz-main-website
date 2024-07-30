@@ -32,7 +32,7 @@
                 @endphp
                 <div class="col-md-4 mb-3">
                     <div class="card card-fitz card-fitz-support h-100">
-                        <a href="{{ $page_root }}/{{ $card['slug'] }}">
+                        <div>
                             {{-- Check for preview image --}}
                             @if (!empty($card['preview_image']))
                                 <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
@@ -48,7 +48,7 @@
                                 <img class="card-img-top-support"
                                     src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition">
                             @endif
-                        </a>
+                        </div>
                         @if (!empty($card['title']))
                             <div class="card-body h-100">
                                 <div class="contents-label mb-3">

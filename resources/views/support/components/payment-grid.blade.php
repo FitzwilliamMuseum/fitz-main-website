@@ -7,7 +7,11 @@
                     <li class="grid-item">
                         <div class="grid-card">
                             @if(!empty($card['heading']))
-                                <h3>{{ $card['heading'] }}</h3>
+                                @php
+                                    $heading_clean = str_replace(array( '(', ')' ), '', strtolower($card['heading']));
+                                    $heading_slugified = str_replace(' ', '-', $heading_clean);
+                                @endphp
+                                <h3 id="{{ $heading_slugified }}">{{ $card['heading'] }}</h3>
                             @endif
                             @if(!empty($card['subheading']))
                                 <p>{{ $card['subheading'] }}</p>
@@ -20,7 +24,7 @@
                             </p>
                             @if(!empty($card['cta_options']))
                                 @foreach($card['cta_options'] as $cta_option)
-                                    <a href="{{ $cta_option['cta_link'] }}">
+                                    <a href="{{ $cta_option['cta_link'] }}" aria-labelledby="{{ isset($heading_slugified) ? $heading_slugified : '' }}">
                                         @if(!empty($cta_option['cta_text']))
                                             {{ $cta_option['cta_text'] }}
                                         @endif

@@ -3,7 +3,7 @@
     <div class="container">
         <h3 class="my-3">Explore Contexts</h3>
         <div class="row">
-            <div id="contexts" class="carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
+            <div id="contexts" class="collection-carousel carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
                 <div class="carousel-inner">
                     @foreach(array_chunk($contexts,3,true) as $slides)
                     @if($loop->first)

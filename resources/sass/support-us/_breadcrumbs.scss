@@ -30,5 +30,21 @@
     margin-bottom: 0;
 }
 
+li.breadcrumb-item + .breadcrumb-item::before {
+    border-color: var(--bs-body-color);
+    border-style: solid;
+    border-width: 4px 4px 0 0;
+    content: '';
+    display: block;
+    float: left;
+    height: 12px;
+    padding-right: var(--bs-breadcrumb-item-padding-x);
+    position: relative;
+    transform: rotate(45deg) scale(45%);
+    width: 12px;
+    left: -5px;
+    top: 10px;
+}
+
 
 /* breadcrumbs end */
