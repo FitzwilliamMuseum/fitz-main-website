@@ -17,3 +17,10 @@
     box-shadow: 0 0 0 0.25rem rgb(37, 77, 235);
     outline: 0.25rem solid rgb(37, 77, 235);
 }
+
+.card-img-top {
+    max-height: 267px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
