@@ -170,6 +170,7 @@ Route::get('/conversations/podcasts/', 'podcastsController@index')->name('podcas
 Route::get('/conversations/podcasts/{slug}', 'podcastsController@series')->name('podcasts.series');
 Route::get('/conversations/podcasts/episode/{slug}', 'podcastsController@episode')->name('podcasts.episode');
 
+Route::get('/promo-pages/{slu}', 'promopagesController@page')->name('landing');
 
 Route::get('/events', 'tessituraController@index')->name('events');
 
@@ -207,5 +208,6 @@ Route::get('/clear-cache', [
 /*
 * Catch all route
 */
+Route::get('/{slug}', 'pagesController@promo')->name('promo');
 Route::get('/{section}/{slug}/', 'pagesController@index')->name('landing-section');
 Route::get('/{section}', 'pagesController@landing')->name('landing');
