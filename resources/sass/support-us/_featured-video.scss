@@ -1,0 +1,11 @@
+/* featured-video-component start */
+.featured_video {
+    max-width: 1290px;
+    margin: 56px auto;
+
+    @media screen and (min-width: 1320px) {
+        padding: 0;
+    }
+}
+
+/* featured-video-component end */

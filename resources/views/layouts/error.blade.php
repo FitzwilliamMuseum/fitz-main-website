@@ -11,9 +11,11 @@
     @include('includes.structure.accessibility')
     @include('includes.structure.nav')
     @include('includes.structure.head')
-    <div class="container">
-        @yield('content')
-    </div>
+    <main>
+        <div class="container">
+            @yield('content')
+        </div>
+    </main>
     @include('includes.structure.footer')
     @include('includes.scripts.javascript')
     </body>

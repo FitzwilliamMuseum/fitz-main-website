@@ -1,7 +1,7 @@
 <div class="container mt-3 container-home-cards">
-    <h3>
+    <h2>
         <a href="{{ route('galleries') }}">Discover our galleries</a>
-    </h3>
+    </h2>
     <div class="row row-home">
         @foreach($galleries['data'] as $gallery)
             <x-image-card

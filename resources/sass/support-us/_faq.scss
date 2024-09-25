@@ -1,0 +1,66 @@
+/* faq-component start */
+
+.faq {
+    padding: 0;
+    margin: 56px auto;
+}
+
+.faq-title {
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.card-header.faq-card-header {
+    border: none;
+}
+
+.faq-card-header.card-header:first-child {
+    border-radius: 0;
+}
+
+.card-header.faq-card-header {
+    padding: 0;
+}
+
+.card-header .faq-card-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    height: 65px;
+    border-top: 1.5px solid black;
+    padding: 0;
+}
+
+.faq-card .card-body {
+    padding: 0;
+}
+
+
+.faq-card:last-child .faq-card-header .faq-card-btn[aria-expanded="false"] {
+    border-bottom: 1.5px solid black;
+    transition: all 0.4s ease;
+    transition-delay: 50ms;
+}
+
+.faq-card:last-child .collapsing,
+.faq-card:last-child .collapse.show {
+    border-bottom: 1.5px solid black;
+}
+
+.faq-card-btn[aria-expanded="true"] svg {
+    transform: rotate(0);
+}
+
+.faq-card-btn[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* faq-component end */

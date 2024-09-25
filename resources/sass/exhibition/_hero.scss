@@ -1,0 +1,12 @@
+.parallax.exhibition-hero {
+    height: 550px;
+    background-color: black;
+}
+
+.exhibition-hero + .breadcrumbs-su {
+    margin: 0;
+}
+
+.navbar:has(#global-announcement) + .exhibition-hero + .breadcrumbs-su {
+    margin: 0;
+}

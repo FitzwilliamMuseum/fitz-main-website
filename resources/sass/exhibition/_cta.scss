@@ -1,0 +1,83 @@
+.exhibition-cta {
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto 0 auto;
+    max-width: 1290px;
+    padding: 32px 0;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+
+        & > :first-child {
+            max-width: 341px;
+            width: 100%;
+        }
+
+        & > :nth-child(2) {
+            max-width: 720px;
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.exhibition-cta .support-cta {
+    margin-top: 0;
+    max-width: 341px;
+    width: 100%;
+    padding: 0 16px;
+    & .cta-btn,
+    & .exhibition-cta-link {
+        max-width: fit-content;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1320px) {
+        padding-left: 0;
+        padding-right: 40px;
+    }
+}
+
+.exhibition-cta .exhibition-text-component {
+    max-width: 100%;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        max-width: 720px;
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+.exhibition-cta .exhibition-text-component--archived {
+    max-width: 800px;
+    padding: 0 16px;
+    margin: 0 auto;
+    @media screen and (min-width: 850px) {
+        padding: 0;
+    }
+}
+
+.exhibition-cta-link {
+    color: #000;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 56px;
+    margin-top: 28px;
+    text-decoration: underline;
+}
+
+// Promo CTA - Exhibition Single Page
+.exhibition-text-component .exhibition-cta--promo {
+    background-color: #b50e5e;
+    color: #fff;
+    padding: 20px 30px;
+    p {
+        margin-bottom: 0;
+    }
+    a {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}

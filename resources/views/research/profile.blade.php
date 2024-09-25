@@ -190,13 +190,15 @@
                 </h3>
                 <div class="row">
                     @foreach($profile['research_projects'] as $project)
-                        <x-image-card
-                            :altTag="$project['research_projects_id']['hero_image_alt_text']"
-                            :title="$project['research_projects_id']['title']"
-                            :image="$project['research_projects_id']['hero_image']"
-                            :route="'research-project'"
-                            :params="[$project['research_projects_id']['slug']]">
-                        </x-image-card>
+                        @if(!empty($project['research_projects_id']))
+                            <x-image-card
+                                :altTag="$project['research_projects_id']['hero_image_alt_text']"
+                                :title="$project['research_projects_id']['title']"
+                                :image="$project['research_projects_id']['hero_image']"
+                                :route="'research-project'"
+                                :params="[$project['research_projects_id']['slug']]">
+                            </x-image-card>
+                        @endif
                     @endforeach
                 </div>
             </div>
@@ -205,20 +207,22 @@
 @endif
 @if(!empty($profile['departments_affiliated']))
     @section('departments-affiliated')
-        <div class="container-fluid bg-grey py-3">
+        <div class="container-fluid py-3">
             <div class="container">
                 <h3>
                     Associated Departments
                 </h3>
                 <div class="row">
                     @foreach($profile['departments_affiliated'] as $department)
-                        <x-image-card
-                            :altTag="$department['department']['hero_image_alt_text']"
-                            :title="$department['department']['title']"
-                            :image="$department['department']['hero_image']"
-                            :route="'department'"
-                            :params="[$department['department']['slug']]">
-                        </x-image-card>
+                        @if(!empty($department['department']))
+                            <x-image-card
+                                :altTag="$department['department']['hero_image_alt_text']"
+                                :title="$department['department']['title']"
+                                :image="$department['department']['hero_image']"
+                                :route="'department'"
+                                :params="[$department['department']['slug']]">
+                            </x-image-card>
+                        @endif
                     @endforeach
                 </div>
             </div>

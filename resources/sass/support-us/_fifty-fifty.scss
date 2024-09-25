@@ -1,0 +1,79 @@
+/* 50/50-component start */
+.component-ff {
+    margin: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+@media (min-width: 768px) {
+    .component-ff {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .component-ff .content .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-width: 300px;
+        max-width: 500px;
+    }
+
+    .component-ff .image img {
+        min-height: 460px;
+    }
+}
+
+.component-ff .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b50e5e;
+}
+
+.component-ff .content .container {
+    color: white;
+    padding: 40px 20px;
+
+    @media screen and (min-width: 768px) {
+        padding: 40px;
+    }
+}
+
+.component-ff .content .container h3 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.component-ff .content .container p {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.component-ff .content .container a.nav-link {
+    width: max-content;
+    padding: 12px 24px;
+    color: #000;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.component-ff .content .container a.nav-link svg path {
+    font-weight: 600;
+}
+
+.component-ff .image {
+    width: 100%;
+}
+
+.component-ff .image img {
+    width: 100%;
+    max-height: 460px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 50/50-component end */

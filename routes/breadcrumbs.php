@@ -25,6 +25,20 @@ Breadcrumbs::for('landing-section', function (BreadcrumbTrail $trail, string $se
 
 });
 /**
+ * New landing page template
+ */
+Breadcrumbs::for('support-us', function (BreadcrumbTrail $trail): void
+{
+    $trail->parent('home');
+    $trail->push('Support Us', route('support-us'));
+});
+Breadcrumbs::for('subpage', function (BreadcrumbTrail $trail, string $slug): void
+{
+    $trail->parent('home');
+    $trail->push('Support Us',route('support-us'));
+    $trail->push(Str::title(str_replace('-', ' ', $slug)), route('support-us', $slug));
+});
+/**
  * RESEARCH BREADCRUMBS
  */
 Breadcrumbs::for('research', function (BreadcrumbTrail $trail): void
@@ -265,6 +279,13 @@ Breadcrumbs::for('things', function (BreadcrumbTrail $trail): void
     $trail->push('Things to Do',route('things'));
 });
 
+/* New Landing Page Template -- TEMP */
+Breadcrumbs::for('support-us-new', function (BreadcrumbTrail $trail): void
+{
+    $trail->parent('home');
+    $trail->push('Support Us - New Landing Template',route('support-us-new'));
+});
+
 /* Visit us Routes */
 Breadcrumbs::for('visit', function (BreadcrumbTrail $trail): void
 {
@@ -312,7 +333,7 @@ Breadcrumbs::for('exhibition', function (BreadcrumbTrail $trail, string $slug): 
 Breadcrumbs::for('archive', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
-    $trail->push('Visit Us',route('visit'));
+    $trail->push('Visit Us', route('visit'));
     $trail->push('Exhibition listing',route('exhibitions'));
     $trail->push('Archives',route('archive'));
 });
@@ -661,4 +682,3 @@ Breadcrumbs::for('search.results', function (BreadcrumbTrail $trail): void
     $trail->push('Search',route('search.index'));
     $trail->push('Results',route('search.results'));
 });
-

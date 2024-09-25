@@ -1,8 +1,8 @@
 @if(!empty($exhibition['associated_galleries']))
     @section('galleries')
-        <div class="container-fluid bg-dark text-white py-2 mb-2">
+        <div class="container-fluid bg-dark text-white py-3">
             <div class="container">
-                <h3>
+                <h3 class="mb-3">
                     Associated Galleries
                 </h3>
                 <div class="row">

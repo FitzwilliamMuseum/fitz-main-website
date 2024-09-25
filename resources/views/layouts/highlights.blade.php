@@ -18,57 +18,62 @@
     @include('googletagmanager::head')
 
 </head>
-<body class="doc-body bg-pastel c_darkmode">
+<body class="doc-body c_darkmode">
 @include('googletagmanager::body')
 
 @include('includes.structure.accessibility')
 
 @include('includes.structure.nav')
 
-@include('includes.structure.highlight')
+<main>
 
-<div class="container mt-3">
-    @include('includes.structure.breadcrumb')
-</div>
-<div class="container-fluid bg-white py-3">
-    <div class="container bg-white">
-        @yield('press-contact')
-        @yield('content')
-        @yield('adlib')
+    @include('includes.structure.highlight')
+
+    <div class="container mt-3">
+        @include('includes.structure.breadcrumb')
     </div>
-</div>
-
-
-@hasSection('collection-parallax')
-    @include('includes.structure.parallax')
-@endif
-
-@hasSection('map')
-    <div class="container-fluid map-box mb-3">
-        @yield('map')
+    <span id="site-content" class="visually-hidden"></span>
+    <div class="container-fluid bg-white py-3">
+        <div class="container bg-white">
+            @yield('press-contact')
+            @yield('content')
+            @yield('adlib')
+        </div>
     </div>
-@endif
-@hasSection('associated_pages')
-<div class="container-fluid bg-gbdo">
-    @yield('associated_pages')
-</div>
-@endif
 
-@hasSection('cons-areas')
-    @yield('cons-areas')
-@endif
 
-@yield('sketchfab-collection')
-@yield('sketchfab')
-@yield('audio-guide')
+    @hasSection('collection-parallax')
+        @include('includes.structure.parallax')
+    @endif
 
-<div class="container-fluid bg-gdbo py-3">
-    @yield('pharos-pages')
-    @yield('highlight')
-    @yield('mlt')
-</div>
-@yield('artistsSimilar')
-@yield('shopify')
+    @hasSection('map')
+        <div class="container-fluid map-box mb-3">
+            @yield('map')
+        </div>
+    @endif
+    @hasSection('associated_pages')
+    <div class="container-fluid bg-gbdo">
+        @yield('associated_pages')
+    </div>
+    @endif
+
+    @hasSection('cons-areas')
+        @yield('cons-areas')
+    @endif
+
+    @yield('sketchfab-collection')
+    @yield('sketchfab')
+    @yield('audio-guide')
+
+    <div class="container-fluid bg-gdbo py-3">
+        @yield('pharos-pages')
+        @yield('highlight')
+        @yield('mlt')
+    </div>
+    @yield('artistsSimilar')
+    @yield('shopify')
+
+</main>
 
 @include('includes.structure.email-signup')
 
