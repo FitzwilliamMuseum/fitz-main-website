@@ -170,7 +170,6 @@ Route::get('/conversations/podcasts/', 'podcastsController@index')->name('podcas
 Route::get('/conversations/podcasts/{slug}', 'podcastsController@series')->name('podcasts.series');
 Route::get('/conversations/podcasts/episode/{slug}', 'podcastsController@episode')->name('podcasts.episode');
 
-Route::get('/promo-pages/{slu}', 'promopagesController@page')->name('landing');
 
 Route::get('/events', 'tessituraController@index')->name('events');
 
