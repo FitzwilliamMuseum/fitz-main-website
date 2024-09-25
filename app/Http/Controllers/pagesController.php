@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\FindMoreLikeThis;
-use App\Models\Stubs;
 use App\Models\Promopage;
+use App\Models\Stubs;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -27,16 +27,16 @@ class pagesController extends Controller
      * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function index(string $section, string $slug): View|Response
+    public function index(string $section, string $slug): View | Response
     {
         $page = Stubs::getPage($section, $slug);
         if (empty($page['data'])) {
             return response()->view('errors.404', [], 404);
         } else {
             return view('pages.index', [
-                    'page' => Collect($page['data'])->first(),
-                    'records' => FindMoreLikeThis::find($slug, 'pages'),
-                ]
+                'page' => Collect($page['data'])->first(),
+                'records' => FindMoreLikeThis::find($slug, 'pages'),
+            ]
             );
         }
     }
@@ -45,31 +45,27 @@ class pagesController extends Controller
      * @param string $section
      * @return View|Response
      */
-    public function landing(string $section): View|Response
+    public function landing(string $section): View | Response
     {
         $page = Stubs::getLanding($section);
-        if (empty($page['data'])) {
+        $promoPage = Promopage::getSubpage($section);
+
+        if (empty($page['data']) && empty($promoPage['data'])) {
             return response()->view('errors.404', [], 404);
-        } else {
+        }
+
+        if (!empty($page['data'])) {
             return view('pages.landing', [
                 'page' => Collect($page['data'])->first(),
-                'associated' => Stubs::getAssociated($section)
+                'associated' => Stubs::getAssociated($section),
             ]);
         }
-    }
-        /**
-     * @param string $section
-     * @return View|Response
-     */
-    public function promo(string $section): View|Response
-    {
-        $promoPage = Promopage::getSubpage($section);
-        if (empty($promoPage['data'])) {
-            return response()->view('errors.404', [], 404);
-        } else {
+
+        if (!empty($promoPage['data'])) {
             return view('promopage.subpage', [
-                'page' => collect($promoPage['data'])->first(),
+                'page' => Collect($promoPage['data'])->first(),
             ]);
         }
+
     }
 }
