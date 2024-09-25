@@ -207,6 +207,6 @@ Route::get('/clear-cache', [
 /*
 * Catch all route
 */
-Route::get('/{slug}', 'pagesController@promo')->name('promo');
-Route::get('/{section}/{slug}/', 'pagesController@index')->name('landing-section');
+// Route::get('/{slug}', 'pagesController@promo')->name('promo');
 Route::get('/{section}', 'pagesController@landing')->name('landing');
+Route::get('/{section}/{slug}/', 'pagesController@index')->name('landing-section');
