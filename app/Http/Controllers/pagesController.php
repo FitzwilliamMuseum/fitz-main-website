@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FindMoreLikeThis;
 use App\Models\Stubs;
+use App\Models\Promopage;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -53,6 +54,21 @@ class pagesController extends Controller
             return view('pages.landing', [
                 'page' => Collect($page['data'])->first(),
                 'associated' => Stubs::getAssociated($section)
+            ]);
+        }
+    }
+        /**
+     * @param string $section
+     * @return View|Response
+     */
+    public function promo(string $section): View|Response
+    {
+        $promoPage = Promopage::getSubpage($section);
+        if (empty($promoPage['data'])) {
+            return response()->view('errors.404', [], 404);
+        } else {
+            return view('promopage.subpage', [
+                'page' => collect($promoPage['data'])->first(),
             ]);
         }
     }

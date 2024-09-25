@@ -1,5 +1,4 @@
 {{-- related content --}}
-
 @php
     if (!empty($page['suggested_pages_heading'])) {
         $suggested_pages_heading = $page['suggested_pages_heading'];
