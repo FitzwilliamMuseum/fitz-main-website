@@ -69,11 +69,13 @@
 <div class="container">
     <h2>3D scan</h2>
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
-        <div class="ratio ratio-4x3">
+        <div class="ratio ratio-4x3 mb-3">
             <iframe title="A 3D model of {{ $pharos['title'] }}"
                 src="https://sketchfab.com/models/{{ $pharos['sketchfab_id']}}/embed?" allow="autoplay; fullscreen; vr"
                 mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>
+        <h3 class="mb-3">Accessibility Notice:</h3>
+        <p>The 3D model on this page is hosted on Sketchfab and may not be fully accessible to everyone, including users of assistive technologies. We apologize for any inconvenience.</p>
     </div>
 </div>
 @endif
