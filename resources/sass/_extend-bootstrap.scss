@@ -24,6 +24,10 @@
     width: 100%;
     object-fit: cover;
 }
+.form-check-input,
+.form-control {
+    border-color: #212529;
+}
 
 .fixed-top {
     position: static;
