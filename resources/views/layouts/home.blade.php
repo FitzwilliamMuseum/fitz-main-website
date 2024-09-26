@@ -13,17 +13,18 @@
 <body class="doc-body c_darkmode">
     @include('googletagmanager::body')
     @include('includes.structure.accessibility')
-    @include('includes.structure.nav')
 
+    @include('includes.structure.nav')
     {{-- include temporary banner for the site --}}
     {{-- @include('includes.structure.defaced-header') --}}
 
-    @hasSection('homepage-hero')
-        @yield('homepage-hero')
-        {{-- @dd($hero['parallax_one']['data']['url']); --}}
-    @endif
     <main>
         <span id="site-content" class="visually-hidden"></span>
+        @hasSection('homepage-hero')
+            @yield('homepage-hero')
+            {{-- @dd($hero['parallax_one']['data']['url']); --}}
+        @endif
+
         @include('includes.structure.exhibitions', [
             'listing_type' => 'upcoming',
             'listing_title' => "What's on",
@@ -93,8 +94,8 @@
         {{-- <div class="container-fluid bg-gdbo py-3">
         @yield('shopify')
     </div> --}}
-</main>
-    @include('includes.structure.email-signup')
+        @include('includes.structure.email-signup')
+    </main>
     @include('includes.structure.footer')
     @include('includes.scripts.javascript')
 

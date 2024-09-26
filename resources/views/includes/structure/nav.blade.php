@@ -55,6 +55,7 @@
 
 <!-- Nav bars -->
 {{-- If the client has a global announcement published in the CMS, then output it at the top of the page --}}
+<header>
 @if(
 (!empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) &&
 SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
@@ -151,3 +152,4 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                 </nav>
         </div>
     </nav>
+</header>
