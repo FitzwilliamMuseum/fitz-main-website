@@ -24,3 +24,13 @@
     width: 100%;
     object-fit: cover;
 }
+
+.fixed-top {
+    position: static;
+    @media screen and (min-height: 480px) {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+    }
+}

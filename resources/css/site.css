@@ -882,7 +882,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-row: 2 / 3;
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     grid-gap: 10px;
 }
 
@@ -952,6 +952,16 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .acknowledgement-collection-form {
     padding: 1.25rem 1rem 1rem 1rem;
+}
+
+.acknowledgement-collection-form .row {
+    flex-direction: column;
+}
+
+@media screen and (min-width: 756px) {
+    .acknowledgement-collection-form .row {
+        flex-direction: row;
+    }
 }
 
 .acknowledgement-highlights-form {
@@ -1038,7 +1048,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .shout.lead {
-    font-size: 4.1rem;
+    font-size: 52px;
     margin-top: 40px;
 }
 
@@ -1137,10 +1147,4 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .collection-carousel .carousel-control-next:focus {
     outline: 2px solid #007aff;
-}
-
-@media (max-width: 480px) {
-    .fixed-top {
-        position: static; 
-    }
 }
