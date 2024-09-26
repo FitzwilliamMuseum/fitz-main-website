@@ -7,12 +7,12 @@
 
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h2>
+                <h3>
                     <a href="{{ env('SHOPIFY_FME_PROTOCOL') }}{{ env('SHOPIFY_FME_LIVE_URL') }}{{ env('SHOPIFY_FME_CATALOGUE') }}{{ $result['handle'] }}"
                        class="stretched-link">
                         {{ $result['title'] }}
                     </a>
-                </h2>
+                </h3>
                 <p class="text-info">&pound;{{ number_format((float)$result['variants'][0]['price'], 2, '.', '') }}</p>
             </div>
         </div>

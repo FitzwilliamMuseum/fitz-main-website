@@ -11,7 +11,7 @@
                                     $heading_clean = str_replace(array( '(', ')' ), '', strtolower($card['heading']));
                                     $heading_slugified = str_replace(' ', '-', $heading_clean);
                                 @endphp
-                                <h3 id="{{ $heading_slugified }}">{{ $card['heading'] }}</h3>
+                                <h2 id="{{ $heading_slugified }}">{{ $card['heading'] }}</h2>
                             @endif
                             @if(!empty($card['subheading']))
                                 <p>{{ $card['subheading'] }}</p>

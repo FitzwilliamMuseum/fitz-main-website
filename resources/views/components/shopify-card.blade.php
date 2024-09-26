@@ -14,11 +14,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h2>
+                <h3>
                     <a href="{{ $result['url'][0] }}" class="stretched-link">
                         {{ $result['title'][0] }}
                     </a>
-                </h2>
+                </h3>
                 <p class="text-dark">&pound;{{ number_format((float)$result['price'][0], 2, '.', '') }}</p>
             </div>
         </div>

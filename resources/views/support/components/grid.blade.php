@@ -52,11 +52,11 @@
                         @if (!empty($card['title']))
                             <div class="card-body h-100">
                                 <div class="contents-label mb-3">
-                                    <h3>
+                                    <h2>
                                         <a href="{{ $page_root }}/{{ $card['slug'] }}" class="stretched-link">
                                             {{ $card['title'] }}
                                         </a>
-                                    </h3>
+                                    </h2>
                                 </div>
                             </div>
                         @endif

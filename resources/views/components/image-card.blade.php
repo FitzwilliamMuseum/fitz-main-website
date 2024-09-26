@@ -17,11 +17,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h2 {{ Request::segment(1) === "learn-with-us" ? 'class=learning-heading' : '' }}>
+                <h3 {{ Request::segment(1) === "learn-with-us" ? 'class=learning-heading' : '' }}>
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h2>
+                </h3>
             </div>
         </div>
     </div>

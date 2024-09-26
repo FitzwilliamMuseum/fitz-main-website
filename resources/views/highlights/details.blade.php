@@ -164,7 +164,7 @@
 @if(!empty($shopify))
 @section('shopify')
 <div class="container py-3">
-    <h3>Suggested Curating Cambridge products</h3>
+    <h2>Suggested Curating Cambridge products</h2>
     <div class="row">
         @foreach($shopify as $record)
         <x-shopify-card :result="$record"></x-shopify-card>
