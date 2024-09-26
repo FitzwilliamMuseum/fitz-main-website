@@ -1120,15 +1120,33 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-weight: 600;
     padding: 12px 24px;
 }
+.collection-carousel button.carousel-control-prev,
+.collection-carousel button.carousel-control-next {
+    position: absolute;
+    transform: translate(-50%, 5%);
+    border: none;
+    width: 48px;
+    height: 48px;
+    opacity: 1;
 
+}
 .collection-carousel button.carousel-control-prev {
-  background: linear-gradient(to right, black, rgba(0,0,0,0));
-  transform: translateX(10px)
+    background: #000;
+    transform: translateX(10px);
+    top: 35%;
+    left: -5%;
+}
+.collection-carousel button.carousel-control-prev svg {
+    transform: rotate(-90deg);
+}
+
+.collection-carousel button.carousel-control-next svg {
+    transform: rotate(90deg);
 }
 
 .collection-carousel .carousel-control-prev:hover,
 .collection-carousel .carousel-control-prev:focus {
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    background: #000;
 }
 
 .collection-carousel .carousel-control-prev:focus {
@@ -1136,13 +1154,15 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .collection-carousel button.carousel-control-next {
-  background: linear-gradient(to left, black, rgba(0,0,0,0));
-  transform: translateX(-10px)
+    background: #000;
+    transform: translateX(-10px);
+    top: 35%;
+    right: -5%;
 }
 
 .collection-carousel .carousel-control-next:hover,
 .collection-carousel .carousel-control-next:focus {
-  background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    background: #000;
 }
 
 .collection-carousel .carousel-control-next:focus {

@@ -66,6 +66,12 @@
     font-style: normal;
     font-weight: 600;
     gap: 8px;
+
+    &:focus,
+    &:active {
+        outline: 2px solid #007aff;
+        outline-offset: 3px;
+    }
 }
 
 /* payment-grid-card end */
