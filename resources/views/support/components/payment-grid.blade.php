@@ -24,7 +24,7 @@
                             </p>
                             @if(!empty($card['cta_options']))
                                 @foreach($card['cta_options'] as $cta_option)
-                                    <a href="{{ $cta_option['cta_link'] }}" aria-labelledby="{{ isset($heading_slugified) ? $heading_slugified : '' }}">
+                                    <a href="{{ $cta_option['cta_link'] }}" aria-describedby="{{ isset($heading_slugified) ? $heading_slugified : '' }}">
                                         @if(!empty($cta_option['cta_text']))
                                             {{ $cta_option['cta_text'] }}
                                         @endif
