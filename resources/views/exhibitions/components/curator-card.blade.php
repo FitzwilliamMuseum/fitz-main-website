@@ -1,4 +1,4 @@
-<div class="card card-fitz related-card h-100">
+<div class="card card-fitz related-card h-100" data-component="card">
     @if(!empty($curator['profile_image']))
         <img src="{{ $curator['profile_image']['data']['thumbnails'][13]['url'] }}" alt="{{ isset($curator['profile_image']['data']['description']) ? $curator['profile_image']['data']['description'] : '' }}" class="card-img-top">
     @else

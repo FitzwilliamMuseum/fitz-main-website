@@ -31,7 +31,7 @@
                     $card = $card['landing_relevant_page_id'];
                 @endphp
                 <div class="col-md-4 mb-3">
-                    <div class="card card-fitz card-fitz-support h-100">
+                    <div class="card card-fitz card-fitz-support h-100" data-component="card">
                         <div>
                             {{-- Check for preview image --}}
                             @if (!empty($card['preview_image']))

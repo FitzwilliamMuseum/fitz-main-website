@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card card-fitz h-100">
         @isset($result['thumbnail'][0])
             <img class="card-img-top" src="{{ str_replace('.jpg?v','_300x300.jpg?v',$result['thumbnail'][0]) }}"
