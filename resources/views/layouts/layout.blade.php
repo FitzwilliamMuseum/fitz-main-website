@@ -25,6 +25,8 @@
 
         @include('includes.structure.nav')
 
+        <main>
+            <span id="site-content" class="visually-hidden"></span>
         @if(Request::is('about-us/terms/hockney'))
             @include('includes.structure.hockney-header')
         @else
@@ -32,7 +34,6 @@
                 @include('includes.structure.head')
             @endif
         @endif
-        <main>
             @include('includes.structure.open')
             <div class="container mt-3 p-3">
                 @include('includes.structure.breadcrumb')
@@ -118,8 +119,8 @@
             @yield('shopifyPrints')
             @yield('shopify')
 
+            @include('includes.structure.email-signup')
         </main>
-        @include('includes.structure.email-signup')
         @include('includes.structure.footer')
         @hasSection('lookanswers')
             @yield('lookanswers')

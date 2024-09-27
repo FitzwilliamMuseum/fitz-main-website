@@ -4,7 +4,7 @@
     $pris= Arr::flatten($pris)
 @endphp
 
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card card-fitz h-100">
         @if(array_key_exists('multimedia', $record['_source']))
             <img class="results_image__thumbnail"

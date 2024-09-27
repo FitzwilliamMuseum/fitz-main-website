@@ -30,7 +30,7 @@
                 @php
                 $card = $card['page_id']
                 @endphp
-                <div class="card card-fitz related-card h-100">
+                <div class="card card-fitz related-card h-100" data-component="card">
                         @if(!empty($card['preview_image']))
                             <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
                                 alt="{{ !empty($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
