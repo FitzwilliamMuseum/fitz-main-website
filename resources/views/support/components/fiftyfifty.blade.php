@@ -28,17 +28,17 @@
                                 @if(!empty($card_content))
                                     <div class="card-body h-100">
                                         <div class="contents-label mb-3">
-                                            <h2>
-                                                @if(!empty($card_content['card_link']))
-                                                    <a href="{{ $card_content['card_link'] }}">
-                                                @endif
-                                                @if(!empty($card_content['card_link']))
-                                                    {{ $card_content['heading'] }}
-                                                @endif
-                                                @if(!empty($card_content['card_link']))
-                                                    </a>
-                                                @endif
-                                            </h2>
+                                            @if(!empty($card_content['heading']))
+                                                <h2>
+                                                    @if(!empty($card_content['card_link']))
+                                                        <a href="{{ $card_content['card_link'] }}">
+                                                            {{ $card_content['heading'] }}
+                                                        </a>
+                                                    @else
+                                                        {{ $card_content['heading'] }}
+                                                    @endif
+                                                </h2>
+                                            @endif
                                             @if(!empty($card_content['body']))
                                                 <p class="text-dark">
                                                     {{ $card_content['body'] }}
