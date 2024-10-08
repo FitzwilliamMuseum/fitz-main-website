@@ -44,7 +44,7 @@ class exhibitionCard extends Component
      *
      * @return void
      */
-    
+
     public function __construct(
         string $route, array $params, string $title,
         string $altTag = NULL, string $headingLevel = NULL, array $image = NULL,

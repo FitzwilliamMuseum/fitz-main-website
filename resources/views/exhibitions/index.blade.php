@@ -15,11 +15,12 @@
     <div class="container-fluid py-3">
         <div class="container">
             @if(!empty($current['data']) || !empty($displays['data']))
-                <h3 class="mb-3">Current exhibitions and displays</h3>
+                <h2 class="mb-3">Current exhibitions and displays</h2>
                 <div class="row">
                     @if(!empty($current['data']))
                         @foreach($current['data'] as $current)
                             <x-exhibition-card
+                                :headingLevel="3"
                                 :altTag="$current['hero_image_alt_text']"
                                 :title="$current['exhibition_title']"
                                 :image="$current['hero_image']"
@@ -37,6 +38,7 @@
                     @if(!empty($displays['data']))
                         @foreach($displays['data'] as $display)
                             <x-exhibition-card
+                                :headingLevel="3"
                                 :altTag="$display['hero_image_alt_text']"
                                 :title="$display['exhibition_title']"
                                 :image="$display['hero_image']"
@@ -61,11 +63,12 @@
         <div class="container-fluid py-3">
 
             <div class="container">
-                <h3 class="mb-3">Upcoming exhibitions and displays</h3>
+                <h2 class="mb-3">Upcoming exhibitions and displays</h2>
                 <div class="row">
                     @foreach($future['data'] as $future)
 
                         <x-exhibition-card
+                            :headingLevel="3"
                             :altTag="$future['hero_image_alt_text']"
                             :title="$future['exhibition_title']"
                             :image="$future['hero_image']"
@@ -88,11 +91,12 @@
     <div class="container-fluid py-3">
 
         <div class="container">
-            <h3 class="mb-3">Archived exhibitions and displays</h3>
+            <h2 class="mb-3">Archived exhibitions and displays</h2>
             <div class="row">
                 @foreach($archive['data'] as $archived)
                     <x-exhibition-card
                         :altTag="$archived['hero_image_alt_text']"
+                        :headingLevel="3"
                         :title="$archived['exhibition_title']"
                         :image="$archived['hero_image']"
                         :route="'exhibition'"

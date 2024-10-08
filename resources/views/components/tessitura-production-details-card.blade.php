@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3 event-wrapper" typeof="Event" vocab="https://schema.org/">
+<div class="col-md-4 mb-3 event-wrapper" typeof="Event" vocab="https://schema.org/" data-component="card">
     <div class="card h-100">
         @if($production->Facility->Id === 21)
             <a class="stretched-link"

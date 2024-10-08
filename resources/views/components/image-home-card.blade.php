@@ -10,7 +10,7 @@
 
 ?>
 
-<div class="col-md-4 mb-3 container-home-card">
+<div class="col-md-4 mb-3 container-home-card" data-component="card">
     <div class="card card-fitz h-100">
         @isset($image)
             <img class="card-img-top"

@@ -11,7 +11,7 @@
     <div class="container-fluid  faq">
         <div class="container col-max-800 faq-container">
             @if(!empty($accordion_heading))
-                <h3 class="faq-title">{{ $accordion_heading }}</h3>
+                <h2 class="faq-title">{{ $accordion_heading }}</h2>
             @endif
             <div class="accordion mt-2" id="accordionDirections">
                 @php

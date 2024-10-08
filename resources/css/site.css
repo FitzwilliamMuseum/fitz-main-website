@@ -871,6 +871,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     width: 100%;
 }
 
+[data-component="card"]:hover {
+    cursor: pointer;
+}
+
 .container-home-cards h3 {
     grid-row: 1 / 2;
     grid-column: 1 / -1;
@@ -882,12 +886,12 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-row: 2 / 3;
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 10px;
 }
 
 .container-home-cards h2 a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     display: inline-block;
 }
@@ -952,6 +956,16 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .acknowledgement-collection-form {
     padding: 1.25rem 1rem 1rem 1rem;
+}
+
+.acknowledgement-collection-form .row {
+    flex-direction: column;
+}
+
+@media screen and (min-width: 756px) {
+    .acknowledgement-collection-form .row {
+        flex-direction: row;
+    }
 }
 
 .acknowledgement-highlights-form {
@@ -1038,44 +1052,48 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .shout.lead {
-    font-size: 4.1rem;
+    font-size: 52px;
     margin-top: 40px;
 }
-
-.fitz-footer {
-    margin: 0 auto;
-    max-width: 1310px;
+.main-footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
-    justify-content: space-between;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+    .footer-wrapper {
+        max-width: 1322px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.fitz-footer .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 0 16px 24px 16px;
 }
 
-.fitz-footer:nth-child(2),
-.fitz-footer:nth-child(3) {
-    justify-self: center;
+@media screen and (min-width: 756px) {
+    .fitz-footer .footer-wrapper div:nth-child(1) {
+        justify-self: start;
+    }
+
+    .fitz-footer .footer-wrapper div:last-child {
+        justify-self: end;
+    }
 }
 
-.fitz-footer:first-child,
-.fitz-footer:last-child {
-    justify-self: end;
-}
-
-.fitz-footer div {
-    max-width: fit-content;
-}
-
-.fitz-footer-links {
-    max-width: 1290px;
-    margin: 0 auto;
+.fitz-footer-links .footer-wrapper {
+    padding: 16px;
     display: grid;
+    grid-column: 1/-1;
     grid-template-columns: 1fr;
-    justify-items: start;
     grid-gap: 16px;
 }
 
 @media screen and (min-width: 756px) {
-    .fitz-footer-links {
+    .fitz-footer-links .footer-wrapper {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         justify-items: center;
     }
@@ -1110,15 +1128,33 @@ a.text-center.btn.btn-outline-light.btn__book {
     font-weight: 600;
     padding: 12px 24px;
 }
+.collection-carousel button.carousel-control-prev,
+.collection-carousel button.carousel-control-next {
+    position: absolute;
+    transform: translate(-50%, 5%);
+    border: none;
+    width: 48px;
+    height: 48px;
+    opacity: 1;
 
+}
 .collection-carousel button.carousel-control-prev {
-  background: linear-gradient(to right, black, rgba(0,0,0,0));
-  transform: translateX(10px)
+    background: #000;
+    transform: translateX(10px);
+    top: 35%;
+    left: -5%;
+}
+.collection-carousel button.carousel-control-prev svg {
+    transform: rotate(-90deg);
+}
+
+.collection-carousel button.carousel-control-next svg {
+    transform: rotate(90deg);
 }
 
 .collection-carousel .carousel-control-prev:hover,
 .collection-carousel .carousel-control-prev:focus {
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    background: #000;
 }
 
 .collection-carousel .carousel-control-prev:focus {
@@ -1126,21 +1162,17 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .collection-carousel button.carousel-control-next {
-  background: linear-gradient(to left, black, rgba(0,0,0,0));
-  transform: translateX(-10px)
+    background: #000;
+    transform: translateX(-10px);
+    top: 35%;
+    right: -5%;
 }
 
 .collection-carousel .carousel-control-next:hover,
 .collection-carousel .carousel-control-next:focus {
-  background: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+    background: #000;
 }
 
 .collection-carousel .carousel-control-next:focus {
     outline: 2px solid #007aff;
-}
-
-@media (max-width: 480px) {
-    .fixed-top {
-        position: static; 
-    }
 }

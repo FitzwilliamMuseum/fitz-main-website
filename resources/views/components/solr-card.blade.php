@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card card-fitz h-100">
         @if(!is_null($result['smallimage']))
             <img src="{{ $result['smallimage'][0]}}"
@@ -33,4 +33,3 @@
         </div>
     </div>
 </div>
-

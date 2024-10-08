@@ -1,7 +1,7 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card card-fitz h-100">
 
-        
+
             @isset($image)
                 <img class="card-img-top"
                      src="{{ $image['data']['thumbnails'][13]['url']}}"

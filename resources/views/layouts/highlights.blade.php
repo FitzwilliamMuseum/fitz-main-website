@@ -26,7 +26,7 @@
 @include('includes.structure.nav')
 
 <main>
-
+    <span id="site-content" class="visually-hidden"></span>
     @include('includes.structure.highlight')
 
     <div class="container mt-3">
@@ -73,9 +73,9 @@
     @yield('artistsSimilar')
     @yield('shopify')
 
+    @include('includes.structure.email-signup')
 </main>
 
-@include('includes.structure.email-signup')
 
 @include('includes.structure.footer')
 

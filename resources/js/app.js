@@ -8,3 +8,4 @@ import "bootstrap/js/dist/modal";
 import "@popperjs/core";
 import "./nav";
 import './related-content-grid';
+import './cards';

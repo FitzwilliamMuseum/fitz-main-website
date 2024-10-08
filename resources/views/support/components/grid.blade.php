@@ -31,7 +31,7 @@
                     $card = $card['landing_relevant_page_id'];
                 @endphp
                 <div class="col-md-4 mb-3">
-                    <div class="card card-fitz card-fitz-support h-100">
+                    <div class="card card-fitz card-fitz-support h-100" data-component="card">
                         <div>
                             {{-- Check for preview image --}}
                             @if (!empty($card['preview_image']))
@@ -52,11 +52,11 @@
                         @if (!empty($card['title']))
                             <div class="card-body h-100">
                                 <div class="contents-label mb-3">
-                                    <h3>
+                                    <h2>
                                         <a href="{{ $page_root }}/{{ $card['slug'] }}" class="stretched-link">
                                             {{ $card['title'] }}
                                         </a>
-                                    </h3>
+                                    </h2>
                                 </div>
                             </div>
                         @endif

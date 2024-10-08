@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card card-fitz h-100">
         @isset($image)
             <img class="card-img-top"
@@ -17,11 +17,11 @@
         @endisset
         <div class="card-body h-100">
             <div class="contents-label mb-3">
-                <h2 {{ Request::segment(1) === "learn-with-us" ? 'class=learning-heading' : '' }}>
+                <h3 {{ Request::segment(1) === "learn-with-us" ? 'class=learning-heading' : '' }}>
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h2>
+                </h3>
             </div>
         </div>
     </div>
