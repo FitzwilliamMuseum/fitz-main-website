@@ -130,9 +130,9 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                             <button id="search-btn" style="background: transparent; border: none;">
                                 @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                 'color' => '#fff', 'width' => 20, 'height' => 20])
+                                <span class="visually-hidden">Toggle Search Box</span>
                             </button>
                             {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'id' => 'main-search', 'hidden']) }}
-                                <span class="visually-hidden">Search the Fitzwilliam</span>
                                 <div class="main-search-wrapper">
                                     <label class="main-search-label" for="query">Search <span>the Fitzwilliam</span></label>
                                     <div style="position: relative;">
@@ -141,6 +141,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                         <button class="main-search-btn" type="submit" id="searchButton" aria-label="Submit your search" style="background: transparent; border: none;">
                                             @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                             'color' => '#fff', 'width' => 20, 'height' => 20])
+                                            <span class="visually-hidden">Search the Fitzwilliam</span>
                                         </button>
                                     </div>
                                 </div>
