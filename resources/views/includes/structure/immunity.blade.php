@@ -5,6 +5,26 @@
             (protection of cultural objects on loan).</p>
     </div>
     <div class="row">
+        {{-- Client request to place additional card - https://studio24.zendesk.com/agent/tickets/14626 --}}
+        <div class="col-md-4 mb-3">
+            <div class="card  h-100">
+                <a href="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/immunity-from-seizure-de-heem.pdf"><img class="img-fluid"
+                                src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/deheem.jpg?key=directus-large-crop"
+                                loading="lazy"
+                                alt="Picturing Excess: Jan Davidsz de Heem"
+                                width="800"
+                                height="600"
+                    /></a>
+                <div class="card-body h-100">
+                    <div class="contents-label mb-3">
+                        <h3>
+                            <a class="stretched-link" href="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/immunity-from-seizure-de-heem.pdf">Picturing Excess: Jan Davidsz de Heem</a>
+                        </h3>
+                        <p class="text-info">PDF 262kB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         @foreach($data['data'] as $immunity)
             <div class="col-md-4 mb-3">
                 <div class="card  h-100">
@@ -30,25 +50,6 @@
                 </div>
             </div>
         @endforeach
-        {{-- Client request to place additional card - https://studio24.zendesk.com/agent/tickets/14626 --}}
-        <div class="col-md-4 mb-3">
-            <div class="card  h-100">
-                <a href="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/immunity-from-seizure-de-heem.pdf"><img class="img-fluid"
-                                src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/deheem.jpg?key=directus-large-crop"
-                                loading="lazy"
-                                alt="Picturing Excess: Jan Davidsz de Heem"
-                                width="800"
-                                height="600"
-                    /></a>
-                <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                        <h3>
-                            <a class="stretched-link" href="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/immunity-from-seizure-de-heem.pdf">Picturing Excess: Jan Davidsz de Heem</a>
-                        </h3>
-                        <p class="text-info">PDF 262kB</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
