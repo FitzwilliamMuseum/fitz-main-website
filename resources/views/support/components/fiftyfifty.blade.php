@@ -18,33 +18,31 @@
                                 }
                             }
                         @endphp
-                        <div class="col-md-4 mb-3 container-home-card container-support-card">
-                            <div class="card card-fitz h-100">
-                                @if(!empty($card_content['card_link']))
-                                    <a href="{{ $card_content['card_link'] }}" class="card-image">
-                                @endif
-                                        @if(!empty($image_asset))
-                                            <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $image_asset['data']['description'] : '' }}" width="416" height="416" load="lazy">
-                                        @else
-                                            <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
-                                        @endif
-                                @if(!empty($card_content['card_link']))
-                                    </a>
+                        <div class="col-md-4 mb-3 container-home-card container-support-card"
+                            @if(!empty($card_content['card_link']))
+                                data-component="card"
+                            @endif
+                        >
+                            <div class="card {{ !empty($card_content['card_link']) ? 'card-fitz' : '' }} h-100">
+                                @if(!empty($image_asset))
+                                    <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $image_asset['data']['description'] : '' }}" width="416" height="416" load="lazy">
+                                @else
+                                    <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
                                 @endif
                                 @if(!empty($card_content))
                                     <div class="card-body h-100">
                                         <div class="contents-label mb-3">
-                                            <h2>
-                                                @if(!empty($card_content['card_link']))
-                                                    <a href="{{ $card_content['card_link'] }}">
-                                                @endif
-                                                @if(!empty($card_content['card_link']))
-                                                    {{ $card_content['heading'] }}
-                                                @endif
-                                                @if(!empty($card_content['card_link']))
-                                                    </a>
-                                                @endif
-                                            </h2>
+                                            @if(!empty($card_content['heading']))
+                                                <h2>
+                                                    @if(!empty($card_content['card_link']))
+                                                        <a href="{{ $card_content['card_link'] }}">
+                                                            {{ $card_content['heading'] }}
+                                                        </a>
+                                                    @else
+                                                        {{ $card_content['heading'] }}
+                                                    @endif
+                                                </h2>
+                                            @endif
                                             @if(!empty($card_content['body']))
                                                 <p class="text-dark">
                                                     {{ $card_content['body'] }}

@@ -4,22 +4,18 @@
     $pris= Arr::flatten($pris)
 @endphp
 
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card card-fitz h-100">
         @if(array_key_exists('multimedia', $record['_source']))
-            <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
-                <img class="results_image__thumbnail"
-                     src="{{ env('COLLECTION_URL') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
-                     loading="lazy" alt="An image of {{ ucfirst($record['_source']['summary_title']) }}"
-                />
-            </a>
+            <img class="results_image__thumbnail"
+                    src="{{ env('COLLECTION_URL') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
+                    loading="lazy" alt="An image of {{ ucfirst($record['_source']['summary_title']) }}"
+            />
         @else
-            <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
-                <img class="results_image__thumbnail"
-                     src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"
-                     alt="A stand in image for {{ ucfirst($record['_source']['summary_title']) }}}"
-                />
-            </a>
+            <img class="results_image__thumbnail"
+                    src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"
+                    alt="A stand in image for {{ ucfirst($record['_source']['summary_title']) }}}"
+            />
         @endif
         <div class="card-body ">
             <div class="contents-label mb-3">

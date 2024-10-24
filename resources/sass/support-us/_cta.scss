@@ -19,6 +19,13 @@
     background: #000;
     color: #fff;
     padding: 12px 24px;
+
+    &:focus,
+    &:active {
+        outline: 2px solid #007aff;
+        outline-offset: 3px;
+    }
+
 }
 
 /* cta-component end */

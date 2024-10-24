@@ -1,31 +1,35 @@
-<div class="col-md-4 mb-3 {{ !empty($source) && $source == "homepage" ? 'container-home-card' : ''}}">
+<div class="col-md-4 mb-3 {{ !empty($source) && $source == "homepage" ? 'container-home-card' : ''}}" data-component="card">
     <div class="card card-fitz h-100">
         @isset($image)
-            <a class="card-image" href="{{ route($route, $params) }}">
-                <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
-                     alt="{{ $altTag }}"
-                     width="{{ $image['data']['thumbnails'][13]['width'] }}"
-                     height="{{ $image['data']['thumbnails'][13]['height'] }}"
-                     loading="lazy"
-                />
-            </a>
+            <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
+                    alt="{{ $altTag }}"
+                    width="{{ $image['data']['thumbnails'][13]['width'] }}"
+                    height="{{ $image['data']['thumbnails'][13]['height'] }}"
+                    loading="lazy"
+            />
         @else
-            <a href="{{ route($route, $params) }}">
-                <img class="card-img-top"
-                     src="{{ env('MISSING_IMAGE_URL') }}"
-                     alt="A stand in image for {{ $title }}"
-                     loading="lazy"
-                />
-            </a>
+            <img class="card-img-top"
+                    src="{{ env('MISSING_IMAGE_URL') }}"
+                    alt="A stand in image for {{ $title }}"
+                    loading="lazy"
+            />
         @endisset
 
-        <div class="card-body h-100">
+        <div class="card-body h-100" >
             <div class="contents-label mb-3">
-                <h2>
+                @if(!empty($headingLevel))
+                    <h{{ $headingLevel }}>
+                @else
+                    <h2>
+                @endif
                     <a href="{{ route($route, $params) }}" class="stretched-link">
                         {{ $title }}
                     </a>
-                </h2>
+                @if(!empty($headingLevel))
+                    </h{{ $headingLevel }}>
+                @else
+                    </h2>
+                @endif
                 @if(in_array($status, array('current','future')) && $ticketed === true && !is_null($tessitura))
                     <p class="text-dark">Ticket and timed entry</p>
                     <a class="btn btn-dark mb-2" href="https://tickets.museums.cam.ac.uk/overview/{{ $tessitura }}">Book
@@ -38,16 +42,16 @@
                     {{  Carbon\Carbon::parse($endDate)->format('j F Y') }}
                 </p>
                 @if($status === 'archived')
-                    <span class="badge bg-dark p-2 d-block">
-                        This is now closed
+                    <span class="archived-btn">
+                        Now closed
                     </span>
                 @endif
+                @isset($copyright)
+                    <div class="my-2 text-dark">
+                        {{ $copyright }}
+                    </div>
+                @endisset
             </div>
         </div>
-        @isset($copyright)
-            <div class="copyright copyright-text mx-2 my-2 text-dark">
-                {{ $copyright }}
-            </div>
-        @endisset
     </div>
 </div>

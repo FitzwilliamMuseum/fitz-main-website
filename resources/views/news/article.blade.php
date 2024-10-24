@@ -53,6 +53,7 @@
 <div class="container">
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
         <div class="ratio ratio-4x3">
+            <span>Please note that this content is currently not keyboard accessible. We are working to get this resolved as soon as possible.</span>
             <iframe title="A 3D model related to this story"
                 src="https://sketchfab.com/models/{{ $news['sketchfab_id']}}/embed?" allow="autoplay; fullscreen; vr"
                 mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
@@ -63,7 +64,7 @@
 @endsection
 
 @section('mlt')
-@if(!empty($records))
+{{-- @if(!empty($records))
 <div class="container">
     <h3>Other recommended articles</h3>
     <div class="row">
@@ -72,5 +73,5 @@
         @endforeach
     </div>
 </div>
-@endif
+@endif --}}
 @endsection

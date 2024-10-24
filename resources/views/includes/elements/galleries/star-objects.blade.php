@@ -1,7 +1,7 @@
 @if(!empty($gallery['star_objects']))
-    <h3>
+    <h2>
         Object stories
-    </h3>
+    </h2>
     <div class="row">
         @foreach($gallery['star_objects'] as $object)
             <x-image-card

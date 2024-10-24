@@ -529,6 +529,32 @@ class solrImportController extends Controller
     /**
      * @return ResultInterface|Result
      */
+    public function twitterPurge(): Result|ResultInterface
+    {
+        $configSolr = Config::get('solarium');
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+        $delete = $client->createUpdate();
+        $delete->addDeleteQuery('contentType:twitter');
+        $delete->addCommit();
+        return $client->update($delete);
+    }
+
+    /**
+     * @return ResultInterface|Result
+     */
+    public function instagramPurge(): Result|ResultInterface
+    {
+        $configSolr = Config::get('solarium');
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+        $delete = $client->createUpdate();
+        $delete->addDeleteQuery('contentType:instagram');
+        $delete->addCommit();
+        return $client->update($delete);
+    }
+
+    /**
+     * @return ResultInterface|Result
+     */
     public function sessionsRefresh(): Result|ResultInterface
     {
         $configSolr = Config::get('solarium');

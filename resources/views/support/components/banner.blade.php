@@ -29,7 +29,7 @@
             <div class="content">
                 <div class="container">
                     @if (!empty($banner_heading))
-                        <h3>{{ $banner_heading }}</h3>
+                        <h2>{{ $banner_heading }}</h2>
                     @endif
                     @if (!empty($banner_subheading))
                         <p>{{ $banner_subheading }}</p>
@@ -47,7 +47,7 @@
             <div class="image">
                 @if (!empty($banner_image))
                     <img src="{{ $banner_image['data']['url'] }}"
-                    @if (!empty($banner_image_alt_text)) alt="{{ $banner_image_alt_text }}"> @endif @else <img
+                    alt="{{ !empty($banner_image_alt_text) ? $banner_image_alt_text : '' }}"> @else <img
                         src="{{ env('MISSING_IMAGE_URL') }}" alt="">
                 @endif
             </div>

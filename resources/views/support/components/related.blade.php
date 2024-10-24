@@ -1,5 +1,4 @@
 {{-- related content --}}
-
 @php
     if (!empty($page['suggested_pages_heading'])) {
         $suggested_pages_heading = $page['suggested_pages_heading'];
@@ -31,10 +30,7 @@
                 @php
                 $card = $card['page_id']
                 @endphp
-                <div class="card card-fitz related-card h-100">
-                    @if(!empty($card['slug']))
-                    <a href="/support-us/{{ $card['slug'] }}">
-                        @endif
+                <div class="card card-fitz related-card h-100" data-component="card">
                         @if(!empty($card['preview_image']))
                             <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
                                 alt="{{ !empty($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
@@ -48,9 +44,6 @@
                                 src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition"
                                 alt="Families" width="374" height="342" loading="lazy">
                         @endif
-                        @if(!empty($card['slug']))
-                    </a>
-                    @endif
                     <div class="card-body h-100">
                         <div class="contents-label mb-3">
                             <h3>
