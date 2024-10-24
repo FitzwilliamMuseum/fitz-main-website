@@ -11,7 +11,7 @@
                                     $heading_clean = str_replace(array( '(', ')' ), '', strtolower($card['heading']));
                                     $heading_slugified = str_replace(' ', '-', $heading_clean);
                                 @endphp
-                                <h3 id="{{ $heading_slugified }}">{{ $card['heading'] }}</h3>
+                                <h2 id="{{ $heading_slugified }}">{{ $card['heading'] }}</h2>
                             @endif
                             @if(!empty($card['subheading']))
                                 <p>{{ $card['subheading'] }}</p>
@@ -24,7 +24,7 @@
                             </p>
                             @if(!empty($card['cta_options']))
                                 @foreach($card['cta_options'] as $cta_option)
-                                    <a href="{{ $cta_option['cta_link'] }}" aria-labelledby="{{ isset($heading_slugified) ? $heading_slugified : '' }}">
+                                    <a href="{{ $cta_option['cta_link'] }}" aria-describedby="{{ isset($heading_slugified) ? $heading_slugified : '' }}">
                                         @if(!empty($cta_option['cta_text']))
                                             {{ $cta_option['cta_text'] }}
                                         @endif

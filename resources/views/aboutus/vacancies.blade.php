@@ -19,5 +19,5 @@
     </p>
 </div>
 @endif
-<a href="{{ route('vacancy.archive') }}" class="btn btn-dark d-block my-2">View our archived vacancies</a>
+<a href="{{ route('vacancy.archive') }}" class="btn btn-dark my-2">View our archived vacancies</a>
 @endsection

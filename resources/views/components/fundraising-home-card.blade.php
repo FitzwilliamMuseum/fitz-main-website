@@ -1,4 +1,4 @@
-<div class="col-md-3 mb-3 container-home-card">
+<div class="col-md-3 mb-3 container-home-card" data-component="card">
     <div class="card card-fitz h-100">
         @isset($donate['hero_image'])
             <img class="card-img-top"
