@@ -213,8 +213,8 @@
     @endsection
 @endif
 
-
-@if(!empty($similar))
+{{-- https://trello.com/c/3x305zMG/93-remove-staff-profiles-related-profiles --}}
+{{-- @if(!empty($similar))
     @section('mlt')
         <div class="container py-3">
             <h3>Researchers with similar profiles</h3>
@@ -225,4 +225,4 @@
             </div>
         </div>
     @endsection
-@endif
+@endif --}}
