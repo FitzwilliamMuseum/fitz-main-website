@@ -34,7 +34,7 @@
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
         @else
-            <p class="cta-btn">Tickets available soon...</p>
+            <p class="cta-btn">Tickets available soon</p>
         @endif
         <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
     </div>
