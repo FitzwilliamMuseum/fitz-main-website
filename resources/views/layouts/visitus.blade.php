@@ -15,8 +15,8 @@
         @include('googletagmanager::body')
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
+        <main id="site-content">
         @include('includes.structure.head')
-        <main>
             @include('includes.structure.open')
 
             <div class="container mt-3">
@@ -48,8 +48,8 @@
                 </div>
             </div>
             @yield('associated_pages')
+            @include('includes.structure.email-signup')
         </main>
-        @include('includes.structure.email-signup')
         @include('includes.structure.footer')
         @include('includes.scripts.javascript')
     </body>

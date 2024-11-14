@@ -5,6 +5,7 @@
         If the end date is today, it will return false until the end of the day (23:59:59).
     */
     $exhibitionStatus = (!empty($hero["end"]) && \Carbon\Carbon::createFromFormat('Y-m-d', $hero["end"])->endOfDay()->isPast());
+    $riseUp = $_SERVER['REQUEST_URI'] === '/plan-your-visit/exhibitions/rise-up' ? 'rise-up' : '';
 @endphp
 @if (!empty($hero))
     <div class="parallax home-hero exhibition-hero">
@@ -13,8 +14,8 @@
         @else
             <div class="bg-overlay"></div>
         @endif
-        <div class="addon">
-            <div class="wrapper">
+        <div class="addon {{ $riseUp }}">
+            <div class="wrapper {{ $riseUp }}">
                 @if (!empty($hero['hero_title']))
                     <h1>{{ $hero['hero_title'] }}</h1>
                 @else

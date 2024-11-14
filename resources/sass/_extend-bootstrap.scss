@@ -17,3 +17,24 @@
     box-shadow: 0 0 0 0.25rem rgb(37, 77, 235);
     outline: 0.25rem solid rgb(37, 77, 235);
 }
+
+.card-img-top {
+    max-height: 267px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.form-check-input,
+.form-control {
+    border-color: #212529;
+}
+
+.fixed-top {
+    position: static;
+    @media screen and (min-height: 480px) {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+    }
+}

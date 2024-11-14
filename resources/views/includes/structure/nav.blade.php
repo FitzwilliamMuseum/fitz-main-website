@@ -55,6 +55,7 @@
 
 <!-- Nav bars -->
 {{-- If the client has a global announcement published in the CMS, then output it at the top of the page --}}
+<header>
 @if(
 (!empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) &&
 SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
@@ -128,12 +129,12 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                             </ul>
                         </div>
                         <div class="donate-container" id="search-donate-container">
-                            <a class="nav-link" href="{{ route('search.index') }}" aria-label="Search" >
+                            <button id="search-btn" style="background: transparent; border: none;">
                                 @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                 'color' => '#fff', 'width' => 20, 'height' => 20])
+                                <span class="visually-hidden">Toggle Search Box</span>
                             </button>
                             {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'id' => 'main-search', 'hidden']) }}
-                                <span class="visually-hidden">Search the Fitzwilliam</span>
                                 <div class="main-search-wrapper">
                                     <label class="main-search-label" for="query">Search <span>the Fitzwilliam</span></label>
                                     <div style="position: relative;">
@@ -142,6 +143,7 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                         <button class="main-search-btn" type="submit" id="searchButton" aria-label="Submit your search" style="background: transparent; border: none;">
                                             @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                             'color' => '#fff', 'width' => 20, 'height' => 20])
+                                            <span class="visually-hidden">Search the Fitzwilliam</span>
                                         </button>
                                     </div>
                                 </div>
@@ -155,3 +157,4 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                 </nav>
         </div>
     </nav>
+</header>

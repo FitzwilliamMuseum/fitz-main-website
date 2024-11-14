@@ -29,7 +29,7 @@
             <div class="content">
                 <div class="container">
                     @if (!empty($banner_heading))
-                        <h3>{{ $banner_heading }}</h3>
+                        <h2>{{ $banner_heading }}</h2>
                     @endif
                     @if (!empty($banner_subheading))
                         <p>{{ $banner_subheading }}</p>

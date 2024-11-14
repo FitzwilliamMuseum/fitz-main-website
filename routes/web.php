@@ -210,5 +210,5 @@ Route::group(['page_template' => 'landing'], function() {
 /*
 * Catch all route
 */
-Route::get('/{section}/{slug}/', 'pagesController@index')->name('landing-section');
 Route::get('/{section}', 'pagesController@landing')->name('landing');
+Route::get('/{section}/{slug}/', 'pagesController@index')->name('landing-section');
