@@ -11,6 +11,92 @@
     margin: 0;
 }
 
+/**
+ * Styles for a hero image that determines the height 
+ * of the hero image based on the height of the image.
+ */
+ .exhibition-hero--variable-height {
+
+    // we revert to the default styles on mobile (which uses a CSS background image)
+    img {
+        display: none;
+    }
+
+    // the variable height styles only apply to larger screens
+    @media screen and (min-width: 768px) {
+        height: auto !important;
+
+        .bg-overlay {
+            background-image: none;
+            height: auto;
+            // margin-top takes account of the global navigation bar
+            margin-top: 90px;
+            position: relative;
+
+            img {
+                display: block;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            // semi-transparent background behind the text for improved colour contrast (accessibility)
+            &:after {
+                background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 10%, transparent );
+                bottom: 0;
+                content: "";
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+}
+
+/**
+ * Styles for a hero image that determines the height 
+ * of the hero image based on the height of the image.
+ */
+ .exhibition-hero--variable-height {
+
+    // we revert to the default styles on mobile (which uses a CSS background image)
+    img {
+        display: none;
+    }
+
+    // the variable height styles only apply to larger screens
+    @media screen and (min-width: 768px) {
+        height: auto !important;
+
+        .bg-overlay {
+            background-image: none;
+            height: auto;
+            // margin-top takes account of the global navigation bar
+            margin-top: 90px;
+            position: relative;
+
+            img {
+                display: block;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            // semi-transparent background behind the text for improved colour contrast (accessibility)
+            &:after {
+                background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 10%, transparent );
+                bottom: 0;
+                content: "";
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+}
+
 @media screen and ( min-width: 800px ) {
     .home-hero .addon.rise-up {
         align-items: flex-start;

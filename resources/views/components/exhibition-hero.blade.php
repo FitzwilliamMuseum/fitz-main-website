@@ -5,12 +5,24 @@
         If the end date is today, it will return false until the end of the day (23:59:59).
     */
     $exhibitionStatus = (!empty($hero["end"]) && \Carbon\Carbon::createFromFormat('Y-m-d', $hero["end"])->endOfDay()->isPast());
-    $riseUp = $_SERVER['REQUEST_URI'] === '/plan-your-visit/exhibitions/rise-up' ? 'rise-up' : '';
+    $heroClasses = '';
+
+    if('rise-up' === $hero['exhibition_slug']) {
+        $heroClasses = 'exhibition-hero--variable-height';
+    }
 @endphp
 @if (!empty($hero))
-    <div class="parallax home-hero exhibition-hero">
+
+    <div class="parallax home-hero exhibition-hero {{ $heroClasses }}">
         @if(!empty($hero['image']))
-            <div class="bg-overlay" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 10%, transparent), url({{ $hero['image']['data']['url'] }}) no-repeat center center / cover;"></div>
+            {{-- @TODO: We should refactor this so that it uses an img element for both of these instances - background image isn't ideal here --}}
+            @if(str_contains($heroClasses, 'exhibition-hero--variable-height'))
+                <div class="bg-overlay" style="background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 10%, transparent ), url({{ $hero['image']['data']['url'] }}) no-repeat center center / cover">
+                    <img src="{{ $hero['image']['data']['url'] }}" alt="">
+                </div>
+            @else
+                <div class="bg-overlay" style="background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 10%, transparent ), url({{ $hero['image']['data']['url'] }}) no-repeat center center / cover"></div>
+            @endif
         @else
             <div class="bg-overlay"></div>
         @endif
