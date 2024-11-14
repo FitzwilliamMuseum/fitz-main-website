@@ -5,6 +5,7 @@
         If the end date is today, it will return false until the end of the day (23:59:59).
     */
     $exhibitionStatus = (!empty($hero["end"]) && \Carbon\Carbon::createFromFormat('Y-m-d', $hero["end"])->endOfDay()->isPast());
+
     $heroClasses = '';
 
     if('rise-up' === $hero['exhibition_slug']) {
@@ -26,8 +27,8 @@
         @else
             <div class="bg-overlay"></div>
         @endif
-        <div class="addon {{ $riseUp }}">
-            <div class="wrapper {{ $riseUp }}">
+        <div class="addon">
+            <div class="wrapper">
                 @if (!empty($hero['hero_title']))
                     <h1>{{ $hero['hero_title'] }}</h1>
                 @else
