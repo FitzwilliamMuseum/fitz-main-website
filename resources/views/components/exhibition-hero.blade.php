@@ -12,7 +12,6 @@
         $heroClasses = 'exhibition-hero--variable-height';
     }
 @endphp
-@dump($hero['exhibition_slug'] == 'rise-up')
 @if (!empty($hero))
 
     <div class="parallax home-hero exhibition-hero {{ $heroClasses }}">
