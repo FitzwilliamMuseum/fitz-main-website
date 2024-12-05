@@ -12,6 +12,7 @@
         $heroClasses = 'exhibition-hero--variable-height';
     }
 @endphp
+@dump($hero['exhibition_slug'] == 'rise-up')
 @if (!empty($hero))
 
     <div class="parallax home-hero exhibition-hero {{ $heroClasses }}">
@@ -40,11 +41,20 @@
                     </p>
                 @endif
                 @if($hero['start'])
+                    {{-- #14664 - upcoming new exhibition - end date 
+                        When slug of exhibiton is confirmed please insert the slug into line below
+                        to show the date withouth the end date for the exhibition --}}
+                    @if ($hero['exhibition_slug'] == '###')
+                        <p style="{{ !empty($exhibitionStatus) ? "display: none;": '' }}">
+                            {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
+                        </p>
+                    @else
                     <p style="{{ !empty($exhibitionStatus) ? "display: none;": '' }}">
                         {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
                         -
                         {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
                     </p>
+                    @endif
                 @endif
             </div>
         </div>
