@@ -43,6 +43,11 @@
                                                     @endif
                                                 </h2>
                                             @endif
+                                            
+                                            @if(!empty($card_content['sub_heading']))
+                                                <p class="mb-2">{{ $card_content['sub_heading'] }}</p>
+                                            @endif
+
                                             @if(!empty($card_content['body']))
                                                 <p class="text-dark">
                                                     {{ $card_content['body'] }}
