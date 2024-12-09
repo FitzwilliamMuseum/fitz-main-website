@@ -14,7 +14,7 @@
                          src="{{ env('CONTENT_STORE') }}searle_cat.jpg?key=exhibition"
                     />
                     <figcaption class="figure-caption">
-                        One of Ronald Searle's cats, given to the Fiztwilliam Museum in 2014 by his family.
+                        One of Ronald Searle's cats, given to the Fitzwilliam Museum in 2014 by his family.
                     </figcaption>
                 </figure>
             </div>
