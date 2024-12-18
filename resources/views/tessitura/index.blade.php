@@ -1,45 +1,106 @@
-@extends('layouts.layout')
 @section('title', 'Events')
 @section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'The Fitzwilliam Museum runs a rich programme of events')
 @section('keywords', 'events,fitzwilliam')
-@section('content')
 
-    {{--
+@include('includes.structure.name-spaces')
 
-    This alert box was previously used to display contact info, but it could also be used
-    to display other information if needed.
+<head>
 
-    <div class="alert alert-info mb-3 text-center">
-        For assistance with booking and ticketing enquiries, please contact us.<br />
-        @svg('fas-envelope', ['width' => 20, 'height' => 20]): <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a> @svg('fas-phone', ['width' => 20, 'height' => 20]): +44
-        (0)1223
-        333 230
-        <br />
-        Available 10:00 - 17:00 Tuesday to Saturday, 12:00 - 17:00 Sunday, closed Monday.
-    </div>
-    --}}
+    @include('includes.structure.meta')
 
+    @include('includes.css.css')
 
-    <div class="container">
-        @php
-            use Illuminate\Support\Arr;
-            $types = Arr::pluck($productions, 'FacilityDescription');
-            $ids = Arr::pluck($productions, 'Facility');
-            $tags = array_count_values($types);
-            usort($productions, function ($a, $b) {
-                return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
-            });
-        @endphp
+    @include('includes.structure.manifest')
 
-        <div class="row">
-            <div class="row">
+    @yield('jsonld')
+
+    <x-feed-links></x-feed-links>
+
+    @include('googletagmanager::head')
+
+</head>
+
+<body class="doc-body c_darkmode support">
+
+    @include('googletagmanager::body')
+
+    @include('includes.structure.accessibility')
+
+    @include('includes.structure.nav')
+
+    @include('support.components.head', ['hero' => env('CONTENT_STORE') . 'img_20190105_153947.jpg'])
+
+    <div class="container-fluid related">
+        <div class="container related-container">
+            <div class="related-grid">
+                @php
+                    use Illuminate\Support\Arr;
+                    $types = Arr::pluck($productions, 'FacilityDescription');
+                    $ids = Arr::pluck($productions, 'Facility');
+                    $tags = array_count_values($types);
+                    usort($productions, function ($a, $b) {
+                        return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
+                    });
+                @endphp
                 @foreach ($events['data'] as $type)
-                    <x-image-card :altTag="$type['title']" :title="$type['title']" :image="$type['hero_image']" :route="'events.type'" :params="['kid' => $type['event_id']]">
-                    </x-image-card>
+                    @php
+                        if(!empty($type['hero_image'])) {
+                            $image = $type['hero_image'];
+                        }
+                        if(!empty($type['title'])) {
+                            $altTag = $type['title'];
+                            $title = $type['title'];
+                        }
+                        $route = 'events.type';
+                        if(!empty($type['event_id'])) {
+                            $params = [
+                                'kid' => $type['event_id']
+                            ];
+                        }
+                    @endphp
+                    <div class="card card-fitz h-100">
+                        @isset($image)
+                            <a href="{{ route($route, $params) }}">
+                                <img class="card-img-top"
+                                    src="{{ $image['data']['thumbnails'][13]['url']}}"
+                                    alt="{{ $altTag }}"
+                                    width="{{ $image['data']['thumbnails'][13]['width']}}"
+                                    height="{{ $image['data']['thumbnails'][13]['height']}}"
+                                    loading="lazy"
+                                />
+                            </a>
+                        @else
+                            <a href="{{ route($route, $params) }}">
+                                <img class="card-img-top"
+                                    src="{{ env('MISSING_IMAGE_URL') }}"
+                                    alt="A stand in image for {{ $title }}"
+                                    loading="lazy"
+                                />
+                            </a>
+                        @endisset
+                        <div class="card-body h-100">
+                            <div class="contents-label mb-3">
+                                <h3 {{ Request::segment(1) === "learn-with-us" ? 'class=learning-heading' : '' }}>
+                                    <a href="{{ route($route, $params) }}" class="stretched-link">
+                                        {{ $title }}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             </div>
         </div>
     </div>
-@endsection
+
+    @include('includes.structure.email-signup')
+
+    @include('includes.structure.footer')
+
+    @include('includes.scripts.javascript')
+
+</body>
+
+</html>

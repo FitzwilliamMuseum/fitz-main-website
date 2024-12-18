@@ -9,15 +9,21 @@
 <div class="exhibition-cta">
     <div class="container support-text-component support-cta mb-0"
     style="{{ $exhibitionStatus }}">
-        <h2 class="cta-title exhibition-cta-title">Pay what you wish</h2>
-        <p class="cta-copy exhibition-cta-copy">Our exhibitions and displays remain free but you can now choose to make a
-            donation.</p>
+        @if ($exhibition['slug'] == 'made-in-egypt')
+            <h2 class="cta-title exhibition-cta-title">Tickets</h2>
+            <p class="cta-copy exhibition-cta-copy">Book your tickets and timed entry slot online.</p>
+        @else
+            <h2 class="cta-title exhibition-cta-title">Pay what you wish</h2>
+            <p class="cta-copy exhibition-cta-copy">Our exhibitions and displays remain free but you can now choose to make a donation.</p>
+        @endif
         @if (
                 $exhibition['slug'] == 'rembrandt-rubens-van-dyck' ||
                 $exhibition['slug'] == 'rembrandt-rubens-van-dyck-drawings-by-dutch-and-flemish-masters' ||
                 $exhibition['slug'] == 'national-treasures-botticelli-in-cambridge' ||
                 $exhibition['slug'] == 'women-in-japanese-prints' ||
-                $exhibition['slug'] == 'glenn-ligon-all-over-the-place' )
+                $exhibition['slug'] == 'glenn-ligon-all-over-the-place' ||
+                $exhibition['slug'] == 'picturing-excess-jan-davidsz-de-heem' ||
+                $exhibition['slug'] == 'whats-new-2')
             <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
                 Donate now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
@@ -28,7 +34,7 @@
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
         @else
-            <p class="cta-btn">Tickets available soon...</p>
+            <p class="cta-btn">Tickets available soon</p>
         @endif
         <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
     </div>
