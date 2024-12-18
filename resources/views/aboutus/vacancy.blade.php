@@ -14,7 +14,7 @@
 
 @section('content')
     <div class="col-12 shadow-sm p-3 mx-auto mb-3 article">
-        @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
+        @if(Carbon\Carbon::parse($vacancy['expires'])->endOfDay()->isPast())
             @include('includes.structure.jobexpired')
         @endif
         @if(isset($vacancy['salary_range']))
@@ -30,7 +30,7 @@
         @endisset
         @markdown($vacancy['job_description'])
 
-    @if(!Carbon\Carbon::parse($vacancy['expires'])->isPast())
+    @if(!Carbon\Carbon::parse($vacancy['expires'])->endOfDay()->isPast())
     @include('includes.structure.jobLink')
     @endif
 
