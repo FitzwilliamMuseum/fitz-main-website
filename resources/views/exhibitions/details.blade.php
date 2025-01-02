@@ -5,6 +5,7 @@
         $exhibition_tagline = $exhibition['exhibition_title'];
     }
     $hero = [
+        'exhibition_slug' => $exhibition['slug'],
         'hero_title' => $exhibition['exhibition_title'],
         'hero_subtitle' => $exhibition_tagline,
         'start' => $exhibition["exhibition_start_date"],

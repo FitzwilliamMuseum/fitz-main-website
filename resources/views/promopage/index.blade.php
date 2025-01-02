@@ -6,15 +6,16 @@
 @include('includes.structure.name-spaces')
 
 @php
-
-    if (!empty($page['page_components'])) {
-        foreach ($page['page_components'] as $component) {
-            if (!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
-                $banner_pos = true;
-            }
+    foreach ($page['page_components'] as $component) {
+        if (!empty($component['related_pages_positioning']) && $component['related_pages_positioning'] == true) {
+            $listing_pos = true;
         }
     }
-
+    foreach ($page['page_components'] as $component) {
+        if (!empty($component['banner_positioning']) && $component['banner_positioning'] == true) {
+            $banner_pos = true;
+        }
+    }
 @endphp
 
 <head>
@@ -37,16 +38,14 @@
 
 </head>
 
-<body class="doc-body support c_darkmode">
+<body class="doc-body c_darkmode support">
     @include('googletagmanager::body')
 
     @include('includes.structure.accessibility')
 
     @include('includes.structure.nav')
 
-    {{-- <h1>This is the subpage</h1> --}}
-
-    @include('support.components.head')
+    @include('support.components.head', ['hero' => true])
 
     <span id="site-content" class="visually-hidden"></span>
     @include('support.components.components-repeater')
@@ -54,6 +53,11 @@
     {{-- If a custom position for the banner hasn't been specified --}}
     @if (empty($banner_pos))
         @include('support.components.banner')
+    @endif
+
+    {{-- If a custom position for the page listing hasn't been specified --}}
+    @if (empty($listing_pos))
+        @include('support.components.grid')
     @endif
 
     @include('support.components.related')

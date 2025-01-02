@@ -35,6 +35,15 @@
     font-weight: 400;
     line-height: 25px;
     height: 65px;
+    margin: 4px 0;
+    border-top: 1.5px solid black;
+}
+
+.faq-card:last-child .collapse .card-body {
+    border-bottom: 1.5px solid black;
+}
+.faq-card:last-child .faq-card-header .faq-card-btn[aria-expanded="false"] {
+    border-bottom: 1.5px solid black;
     border-top: 1.5px solid black;
     padding: 0;
 }

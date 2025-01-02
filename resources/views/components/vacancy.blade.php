@@ -10,7 +10,7 @@
                      loading="lazy"/>
             </a>
         @endif
-        @if(Carbon\Carbon::parse($vacancy['expires'])->isPast())
+        @if(Carbon\Carbon::parse($vacancy['expires'])->endOfDay()->isPast())
             @include('includes.structure.jobexpired')
         @endif
         <div class="card-body h-100">

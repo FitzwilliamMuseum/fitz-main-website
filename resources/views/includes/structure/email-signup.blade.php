@@ -1,7 +1,7 @@
 <div class="bg-white bg-white-subscribe">
     <div class="container container-subscribre">
         <div class="wrapper">
-            <h5>Sign up to our emails</h5>
+            <h2>Sign up to our emails</h2>
             <p>Be the first to hear about our news, exhibitions, events and more…</p>
         </div>
         <a class="subscribre-button" href="https://tickets.museums.cam.ac.uk/account/create/brief">

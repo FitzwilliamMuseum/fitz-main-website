@@ -1,4 +1,4 @@
-<div class="col-md-4 mb-3">
+<div class="col-md-4 mb-3" data-component="card">
     <div class="card h-100">
         @if(isset($tweet->extended_entities))
             @foreach($tweet->extended_entities as $entity)
