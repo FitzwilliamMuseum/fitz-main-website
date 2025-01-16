@@ -4,38 +4,35 @@
 
 <title>The Fitzwilliam Museum - @yield('title')</title>
 
-<meta name="description" content="@yield('description')"/>
+<meta name="description" content="@yield('description')" />
 @hasSection('keywords')
-    <meta name="keywords" content="@yield('keywords')"/>
+    <meta name="keywords" content="@yield('keywords')" />
 @endif
 <!-- Canonical link -->
-<link rel="canonical" href="{{ URL::current() }}"/>
-<link rel="shortcut icon" href="{{secure_url('/')}}/favicon.ico">
+<link rel="canonical" href="{{ URL::current() }}" />
+<link rel="shortcut icon" href="{{ secure_url('/') }}/favicon.ico">
 
 <!-- Open graph -->
-<meta property="og:locale" content="{{ app()->getLocale() }}"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="@yield('title')"/>
-<meta property="og:description" content="@yield('description')"/>
-<meta property="og:url" content="{{ URL::current() }}"/>
-<meta property="og:site_name" content="The Fitzwilliam Museum"/>
+<meta property="og:locale" content="{{ app()->getLocale() }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="@yield('title')" />
+<meta property="og:description" content="@yield('description')" />
+<meta property="og:url" content="{{ URL::current() }}" />
+<meta property="og:site_name" content="The Fitzwilliam Museum" />
 
-@hasSection('social_thumbnail')
-    <meta property="og:image" content="@yield('hero_image')"/>
-    <meta name="twitter:image" content="@yield('hero_image')"/>
-@else
-    <meta property="og:image" content="@yield('hero_image')"/>
-    <meta name="twitter:image" content="@yield('hero_image')"/>
+@if (View::hasSection('hero_image'))
+    <meta property="og:image" content="@yield('hero_image')" />
+    <meta property="twitter:image" content="@yield('hero_image')" />
 @endif
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Twitter card -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:description" content="@yield('description')"/>
-<meta name="twitter:title" content="@yield('title')"/>
-<meta name="twitter:site" content="@yield('twitter_id', '@fitzmuseum_uk')"/>
-<meta name="twitter:creator" content="@yield('twitter_id', '@fitzmuseum_uk')"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="@yield('description')" />
+<meta name="twitter:title" content="@yield('title')" />
+<meta name="twitter:site" content="@yield('twitter_id', '@fitzmuseum_uk')" />
+<meta name="twitter:creator" content="@yield('twitter_id', '@fitzmuseum_uk')" />
 
 <!-- DNS prefetches -->
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -54,7 +51,7 @@ dP    dP    dP `88888P'     dP        dP   dP   d888888P 8888P Y8P  dP dP dP dP 
 -->
 
 <!-- Humans text -->
-<link type="text/plain" rel="author" href="{{ URL::to('/humans.txt') }}"/>
+<link type="text/plain" rel="author" href="{{ URL::to('/humans.txt') }}" />
 <!-- end of humans.txt -->
 
 <script type="application/ld+json">
