@@ -48,7 +48,7 @@
                             {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
                         </p>
                     @else
-                    <p style="{{ !empty($exhibitionStatus) ? "display: none;": '' }}">
+                    <p>
                         {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
                         -
                         {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
