@@ -1,0 +1,27 @@
+.image-gallery .carousel-control-prev {
+  background: linear-gradient(to right, black, rgba(0,0,0,0));
+}
+
+.image-gallery .carousel-control-prev:hover,
+.image-gallery .carousel-control-prev:focus {
+  background: linear-gradient(to right, black, rgba(0,0,0,0.5));
+}
+
+.image-gallery .carousel-control-next {
+  background: linear-gradient(to left, black, rgba(0,0,0,0));
+}
+
+.image-gallery .carousel-control-next:hover,
+.image-gallery .carousel-control-next:focus {
+  background: linear-gradient(to left, black, rgba(0,0,0,0.5));
+}
+
+.gallery-card {
+  height: 400px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

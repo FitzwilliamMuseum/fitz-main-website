@@ -1177,3 +1177,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 .collection-carousel .carousel-control-next:focus {
     outline: 2px solid #007aff;
 }
+
+.exhibition .collection-carousel {
+    /* margin: 56px 0; */
+}
