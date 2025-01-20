@@ -21,7 +21,7 @@
 @section('keywords', $exhibition['meta_keywords'])
 @section('description', $exhibition['meta_description'])
 @section('title', $exhibition['exhibition_title'])
-
+@section('hero_image', $exhibition['hero_image']['data']['thumbnails'][10]['url'])
 {{-- Start template check --}}
 
 {{-- Exhibitions - 2024 template --}}
