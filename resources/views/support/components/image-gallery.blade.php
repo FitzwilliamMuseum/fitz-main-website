@@ -3,7 +3,55 @@
         <div class="row">
             <div id="image-gallery" class="collection-carousel carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
                 <div class="carousel-inner">
-                    @foreach(array_chunk($component['image_gallery'],3,true) as $slides)
+                    @php
+                        $carousel_placement = $loop->index;
+
+                        $imgPerSlide = 3;
+                        // .col-md-4
+                        $colClassNum = 4;
+
+                        if(!empty($page['image_gallery_carousel_settings'])) {
+                            /*
+                                Image Gallery Settings field:
+
+                                First Number: Max images per slide
+                                Second Number: Index of targeted gallery component in the Page Components list
+                            */
+                            $carousel_settings = $page['image_gallery_carousel_settings'];
+                            foreach($carousel_settings as $setting) {
+                                // gallery_index and max_slides
+                                // dd($setting['max_slides']);
+                                if($setting['gallery_index'] == $carousel_placement) {
+                                    if(!empty($setting['max_slides']) && $setting['max_slides'] <= 3) {
+                                        $imgPerSlide = $setting['max_slides'];
+                                    }
+                                }
+                                // Enforce max of 3
+                                if($setting['gallery_index'] > 3) {
+                                    $imgPerSlide = 3;
+                                }
+                            }
+                        } else {
+                            $imgPerSlide = 3;
+                        }
+
+                        switch($imgPerSlide) {
+                            case 1:
+                                // .col-md-12
+                                $colClassNum = 12;
+                                break;
+                            case 2:
+                                $colClassNum = 6;
+                                break;
+                            case 3:
+                                $colClassNum = 4;
+                                break;
+                            default:
+                                $colClassNum = 4;
+                                break;
+                        }
+                    @endphp
+                    @foreach(array_chunk($component['image_gallery'],$imgPerSlide,true) as $slides)
                         <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                             <div class="row">
                                 @foreach($slides as $image)
@@ -26,7 +74,7 @@
                                             }
                                         }
                                     @endphp
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-{{ $colClassNum }} mb-3">
                                         <div class="card gallery-card">
                                             @if(!empty($image_asset))
                                                 <img src="{{ $image_asset['data']['full_url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
