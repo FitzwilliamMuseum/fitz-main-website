@@ -1,94 +1,96 @@
 @if(!empty($component['image_gallery']))
-    <div class="container image-gallery">
+    @php
+        $image_gallery = $component['image_gallery'][0];
+    @endphp
+    <div class="image-gallery">
+        @if(!empty($image_gallery['section_heading']))
+            <div class="row image-gallery__header">
+                <h2>{{ $image_gallery['section_heading'] }}</h2>
+            </div>
+        @endif
         <div class="row">
-            <div id="image-gallery" class="collection-carousel carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
+            <div id="image-gallery" class="collection-carousel carousel" data-interval="false" data-wrap="false" data-pause="false">
                 <div class="carousel-inner">
                     @php
                         $carousel_placement = $loop->index;
+                        $slides = null;
 
-                        $imgPerSlide = 3;
-                        // .col-md-4
-                        $colClassNum = 4;
+                        if(!empty($image_gallery['gallery_images'])) {
+                            $slides = $image_gallery['gallery_images'];
+                        }
 
-                        if(!empty($page['image_gallery_carousel_settings'])) {
-                            /*
-                                Image Gallery Settings field:
+                        $image_source = null;
+                        if(!empty($page['image_blocks'])) {
+                            $image_source = $page['image_blocks'];
+                        } elseif(!empty($exhibition['exhibition_files'])) {
+                            $image_source = $exhibition['exhibition_files'];
+                        }
 
-                                First Number: Max images per slide
-                                Second Number: Index of targeted gallery component in the Page Components list
-                            */
-                            $carousel_settings = $page['image_gallery_carousel_settings'];
-                            foreach($carousel_settings as $setting) {
-                                // gallery_index and max_slides
-                                // dd($setting['max_slides']);
-                                if($setting['gallery_index'] == $carousel_placement) {
-                                    if(!empty($setting['max_slides']) && $setting['max_slides'] <= 3) {
-                                        $imgPerSlide = $setting['max_slides'];
+                        function getImageData($image_source, $image_id) {
+                            if(!empty($image_id)) {
+                                foreach($image_source as $image_block) {
+                                    if(!empty($image_block['directus_files_id'])) {
+                                        $image_block['asset_id'] = $image_block['directus_files_id'];
+                                    }
+                                    if($image_block['asset_id']['id'] == $image_id) {
+                                        $image_asset = $image_block['asset_id'];
                                     }
                                 }
-                                // Enforce max of 3
-                                if($setting['gallery_index'] > 3) {
-                                    $imgPerSlide = 3;
-                                }
                             }
-                        } else {
-                            $imgPerSlide = 3;
-                        }
-
-                        switch($imgPerSlide) {
-                            case 1:
-                                // .col-md-12
-                                $colClassNum = 12;
-                                break;
-                            case 2:
-                                $colClassNum = 6;
-                                break;
-                            case 3:
-                                $colClassNum = 4;
-                                break;
-                            default:
-                                $colClassNum = 4;
-                                break;
+                            return $image_asset;
                         }
                     @endphp
-                    @foreach(array_chunk($component['image_gallery'],$imgPerSlide,true) as $slides)
-                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                            <div class="row">
-                                @foreach($slides as $image)
-                                    @php
-                                        if(!empty($image['image_id'])) {
-                                            if(!empty($page['image_blocks'])) {
-                                                $image_source = $page['image_blocks'];
-                                            }
-                                            if(!empty($exhibition['exhibition_files'])) {
-                                                $image_source = $exhibition['exhibition_files'];
-                                            }
-
-                                            foreach($image_source as $image_block) {
-                                                if(!empty($image_block['directus_files_id'])) {
-                                                    $image_block['asset_id'] = $image_block['directus_files_id'];
-                                                }
-                                                if($image_block['asset_id']['id'] == $image['image_id']) {
-                                                    $image_asset = $image_block['asset_id'];
-                                            }
-                                            }
-                                        }
-                                    @endphp
-                                    <div class="col-md-{{ $colClassNum }} mb-3">
+                    @if($slides != null)
+                        @foreach($slides as $slide)
+                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                <div class="row">
+                                    <div class="carousel-track w-100">
                                         <div class="card gallery-card">
-                                            @if(!empty($image_asset))
-                                                <img src="{{ $image_asset['data']['full_url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
-                                            @else
-                                                <img
-                                                    src="{{ env('MISSING_IMAGE_URL') }}"
-                                                    load="lazy" alt="">
+                                            @php
+                                                $index = $loop->index;
+                                                $prev_index = $index - 1;
+                                                $prev_image = null;
+                                                $next_index = $index + 1;
+                                                $next_image = null;
+
+                                                if($prev_index >= 0) {
+                                                    $prev_image = getImageData($image_source, $slides[$prev_index]['image_id']);
+                                                }
+                                                
+                                                $current_image = getImageData($image_source, $slide['image_id']);
+                                                
+                                                if(!empty($slides[$next_index])) {
+                                                    $next_image = getImageData($image_source, $slides[$next_index]['image_id']);
+                                                }
+                                            @endphp
+                                            
+                                            @if(!empty($prev_image))
+                                                <div class="gallery-card__image gallery-card__image--inactive">
+                                                    <img src="{{ $prev_image['data']['full_url'] }}" alt="{{ !empty($prev_image['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
+                                                </div>
+                                            @endif
+
+                                            <div class="gallery-card__image">
+                                                @if(!empty($slide['image_caption'])) <figure> @endif
+
+                                                <img src="{{ $current_image['data']['full_url'] }}" alt="{{ !empty($current_image['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
+
+                                                @if(!empty($slide['image_caption'])) 
+                                                    <figcaption>{{ $slide['image_caption'] }}</figcaption>
+                                                @endif
+                                                @if(!empty($slide['image_caption'])) </figure> @endif
+                                            </div>
+                                            @if(!empty($next_image))
+                                                <div class="gallery-card__image gallery-card__image--inactive">
+                                                    <img src="{{ $next_image['data']['full_url'] }}" alt="{{ !empty($next_image['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
+                                                </div>
                                             @endif
                                         </div>
                                     </div>
-                                @endforeach
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endif
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#image-gallery" data-bs-slide="prev">
                     <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg">

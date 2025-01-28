@@ -1,27 +1,67 @@
-.image-gallery .carousel-control-prev {
-  background: linear-gradient(to right, black, rgba(0,0,0,0));
+.image-gallery {
+  padding: 50px 0;
 }
 
-.image-gallery .carousel-control-prev:hover,
-.image-gallery .carousel-control-prev:focus {
-  background: linear-gradient(to right, black, rgba(0,0,0,0.5));
+.image-gallery .collection-carousel button.carousel-control-prev {
+  left: 12px;
+}
+.image-gallery .collection-carousel button.carousel-control-next {
+  right: 12px;
 }
 
-.image-gallery .carousel-control-next {
-  background: linear-gradient(to left, black, rgba(0,0,0,0));
+.image-gallery .row div.carousel-track {
+  padding: 0 36px;
 }
 
-.image-gallery .carousel-control-next:hover,
-.image-gallery .carousel-control-next:focus {
-  background: linear-gradient(to left, black, rgba(0,0,0,0.5));
+.image-gallery .carousel-item {
+  transition: none;
 }
 
 .gallery-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   height: 100%;
+  justify-content: flex-end;
+  figure {
+    margin-bottom: 0;
+  }
+  figcaption {
+    text-align: left;
+    padding-top: 16px;
+  }
+}
 
+.gallery-card__image {
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+  }
+  @media (min-width: 600px) {
+    width: 33.333333%;
+  }
+}
+
+.gallery-card__image--inactive {
+  display: none;
+  height: fit-content;
+  opacity: .5;
+  img {
+    height: 100%;
+  }
+  @media (min-width: 600px) {
+    display: block;
+  }
+}
+
+.image-gallery {
+  background-color: #F4F3F0;
+  text-align: center;
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0 0 22px;
   }
 }
