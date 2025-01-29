@@ -30,6 +30,7 @@
     @include('includes.scripts.mapjs')
 @endif
 
+@stack('fitzwilliamScripts')
 
 {{--
     @TODO: Modify this code so that it works by launching the modal 

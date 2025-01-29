@@ -1,5 +1,47 @@
 .image-gallery {
   padding: 50px 0;
+  .splide {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.splide__slide,
+.splide__slide figure {
+  transition: .4s all;
+}
+.splide__slide:not(.is-active) figure {
+  @media (min-width: 600px) {
+    opacity: .2;
+    transform: scale(.8);
+    transform-origin: top;
+  }
+}
+
+.splide__slide:not(.is-active) figcaption {
+  opacity: 0;
+}
+
+figure {
+  margin: 0;
+  img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+figcaption {
+  display: block;
+  padding-top: 16px;
+}
+}
+
+.image-gallery .collection-carousel button.splide__arrow {
+  svg {
+    height: auto;
+    width: auto;
+  }
 }
 
 .image-gallery .collection-carousel button.carousel-control-prev {
@@ -9,51 +51,51 @@
   right: 12px;
 }
 
-.image-gallery .row div.carousel-track {
-  padding: 0 36px;
-}
+// .image-gallery .row div.carousel-track {
+//   padding: 0 36px;
+// }
 
-.image-gallery .carousel-item {
-  transition: none;
-}
+// .image-gallery .carousel-item {
+//   transition: none;
+// }
 
-.gallery-card {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  height: 100%;
-  justify-content: flex-end;
-  figure {
-    margin-bottom: 0;
-  }
-  figcaption {
-    text-align: left;
-    padding-top: 16px;
-  }
-}
+// .gallery-card {
+//   display: flex;
+//   flex-direction: row;
+//   gap: 20px;
+//   height: 100%;
+//   justify-content: flex-end;
+//   figure {
+//     margin-bottom: 0;
+//   }
+//   figcaption {
+//     text-align: left;
+//     padding-top: 16px;
+//   }
+// }
 
-.gallery-card__image {
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  @media (min-width: 600px) {
-    width: 33.333333%;
-  }
-}
+// .gallery-card__image {
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: contain;
+//   }
+//   @media (min-width: 600px) {
+//     width: 33.333333%;
+//   }
+// }
 
-.gallery-card__image--inactive {
-  display: none;
-  height: fit-content;
-  opacity: .5;
-  img {
-    height: 100%;
-  }
-  @media (min-width: 600px) {
-    display: block;
-  }
-}
+// .gallery-card__image--inactive {
+//   display: none;
+//   height: fit-content;
+//   opacity: .5;
+//   img {
+//     height: 100%;
+//   }
+//   @media (min-width: 600px) {
+//     display: block;
+//   }
+// }
 
 .image-gallery {
   background-color: #F4F3F0;
