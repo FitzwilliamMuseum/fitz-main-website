@@ -4,7 +4,7 @@
     @endphp
     <div class="image-gallery">
         @if(!empty($image_gallery['section_heading']))
-            <div class="row image-gallery__header">
+            <div class="image-gallery__header">
                 <h2>{{ $image_gallery['section_heading'] }}</h2>
             </div>
         @endif
@@ -37,8 +37,8 @@
                 return $image_asset;
             }
         @endphp
-        <div class="row">
-            <section class="collection-carousel splide">
+        <div class="image-gallery__wrap row">
+            <section class="collection-carousel splide p-0">
                 <div class="splide__arrows splide__arrows--ltr">
                     <button class="splide__arrow splide__arrow--prev carousel-control-prev" type="button" aria-label="Previous slide" aria-controls="splide01-track">
                         <svg height="48" viewBox="0 0 48 48" width="64" xmlns="http://www.w3.org/2000/svg">
