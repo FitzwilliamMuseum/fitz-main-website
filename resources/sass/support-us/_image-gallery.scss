@@ -54,14 +54,14 @@
 }
 
 .image-gallery .collection-carousel button.carousel-control-prev {
-  left: 0;
-  @media (min-width: 600px) {
+  left: 16px;
+  @media (min-width: 1290px) {
     left: -9px;
   }
 }
 .image-gallery .collection-carousel button.carousel-control-next {
-  right: 0;
-  @media (min-width: 600px) {
+  right: 16px;
+  @media (min-width: 1290px) {
     right: -9px;
   }
 }
