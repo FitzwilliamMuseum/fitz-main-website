@@ -6,7 +6,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
    focus  : 'center',
    type   : 'loop',
    updateOnMove: true,
-   perPage: 3,
     reducedMotion: {
       speed      : 0,
       rewindSpeed: 0,
@@ -14,6 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
     mediaQuery: 'min',
     breakpoints: {
       600: {
+      perPage: 3,
        height: '100%',
        focus: 'center',
        gap: '30px',

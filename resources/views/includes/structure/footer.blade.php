@@ -47,11 +47,11 @@
                 <div class="pt-2">
                     <h2 class="visually-hidden">Useful links</h2>
                     <ul class="share">
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('visit') }}">
                                 Plan your visit
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('objects') }}">
                                 Explore our collection
