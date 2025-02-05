@@ -45,7 +45,7 @@
                                             @endif
                                             
                                             @if(!empty($card_content['sub_heading']))
-                                                <p>{{ $card_content['sub_heading'] }}</p>
+                                                <p class="mb-2">{{ $card_content['sub_heading'] }}</p>
                                             @endif
 
                                             @if(!empty($card_content['body']))

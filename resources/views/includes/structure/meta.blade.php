@@ -20,12 +20,9 @@
 <meta property="og:url" content="{{ URL::current() }}"/>
 <meta property="og:site_name" content="The Fitzwilliam Museum"/>
 
-@hasSection('social_thumbnail')
+@if (View::hasSection('hero_image'))
     <meta property="og:image" content="@yield('hero_image')"/>
-    <meta name="twitter:image" content="@yield('hero_image')"/>
-@else
-    <meta property="og:image" content="@yield('hero_image')"/>
-    <meta name="twitter:image" content="@yield('hero_image')"/>
+    <meta property="twitter:image" content="@yield('hero_image')"/>
 @endif
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
