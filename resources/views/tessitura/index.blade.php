@@ -25,8 +25,8 @@
     <div class="container">
         @php
             use Illuminate\Support\Arr;
-            $types = Arr::pluck($productions, 'FacilityDescription');
-            $ids = Arr::pluck($productions, 'Facility');
+            $types = Arr::pluck($productions, 'Facility.Description');
+            $ids = Arr::pluck($productions, 'Facility.Id');
             $tags = array_count_values($types);
             usort($productions, function ($a, $b) {
                 return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
