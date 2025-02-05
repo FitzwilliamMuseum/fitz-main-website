@@ -5,6 +5,7 @@
         If the end date is today, it will return false until the end of the day (23:59:59).
     */
     $exhibitionStatus = (!empty($exhibition["exhibition_end_date"]) && \Carbon\Carbon::createFromFormat('Y-m-d', $exhibition["exhibition_end_date"])->endOfDay()->isPast()) ? 'display: none;' : '';
+    $exhibitionType = (!empty($exhibition['event_type']) && $exhibition['event_type'] == 'display' ? 'display' : 'exhibition');
 @endphp
 <div class="exhibition-cta">
     <div class="container support-text-component support-cta mb-0"
@@ -23,12 +24,13 @@
                 $exhibition['slug'] == 'women-in-japanese-prints' ||
                 $exhibition['slug'] == 'glenn-ligon-all-over-the-place' ||
                 $exhibition['slug'] == 'picturing-excess-jan-davidsz-de-heem' ||
-                $exhibition['slug'] == 'whats-new-2')
-            <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
-                Donate now
-                @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
-            </a>
-        @elseif(!empty($exhibition['exhibition_url']))
+                $exhibition['slug'] == 'whats-new-2' ||
+                $exhibitionType == 'display')
+                    <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
+                        Donate now
+                        @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+                    </a>
+        @elseif(!empty($exhibition['exhibition_url']) and $exhibitionType == 'exhibition')
             <a href="{{ $exhibition['exhibition_url'] }}" class="cta-btn">
                 Book now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
