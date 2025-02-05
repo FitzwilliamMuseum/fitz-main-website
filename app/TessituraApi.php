@@ -122,7 +122,7 @@ class TessituraApi
         $facilities = TessituraFacilities::listIds();
 
         $payload = array(
-            "PerformanceStartDate" => Carbon::now(),
+            "PerformanceStartDate" => Carbon::now()->toDateTimeLocalString(),
             "PerformanceEndDate" => Carbon::now()->addDays(120),
             "BusinessUnitId" => 1,
             "FacilityIds" => implode(',', array_column($facilities, 'facility_id')),
@@ -266,6 +266,7 @@ class TessituraApi
     public function getPayload(string $key, array $payload): mixed
     {
         $expiresAt = now()->addMinutes(60);
+
         if (Cache::has($key)) {
             $data = Cache::get($key);
         } else {
@@ -274,11 +275,14 @@ class TessituraApi
                 'body' => json_encode($payload),
                 'headers' => [
                     'Content-Type' => 'application/json',
+                    'Accept' => 'text/json'
                 ]
             ]);
+            
             $data = json_decode($response->getBody()->getContents());
             Cache::put($key, $data, $expiresAt);
         }
+        
         return $data;
     }
 
