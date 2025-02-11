@@ -36,7 +36,7 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.54.5",
         "sass-loader": "^13.0.2",
-        "serialize-javascript": "^6.0.0",
+        "serialize-javascript": "^6.0.2",
         "ssri": "^9.0.1",
         "url-parse": "^1.5.10",
         "vue-template-compiler": "^2.7.9",
