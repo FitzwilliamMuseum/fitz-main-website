@@ -1,12 +1,21 @@
 <div class="col-md-4 mb-3 {{ !empty($source) && $source == "homepage" ? 'container-home-card' : ''}}" data-component="card">
     <div class="card card-fitz h-100">
         @isset($image)
-            <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
+            @if ($title === 'Rise Up')
+                <img class="card-img-top" src="{{ $image['data']['url']}}"
+                    alt="{{ $altTag }}"
+                    width="{{ $image['width'] }}"
+                    height="{{ $image['height'] }}"
+                    loading="lazy"
+                />
+            @else
+                <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
                     alt="{{ $altTag }}"
                     width="{{ $image['data']['thumbnails'][13]['width'] }}"
                     height="{{ $image['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"
-            />
+                />
+            @endif
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
