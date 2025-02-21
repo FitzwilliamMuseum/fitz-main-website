@@ -17,12 +17,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
        height: '100%',
        focus: 'center',
        gap: '30px',
-       padding: {
-         //Add padding to end of carousel to compensate for last slide
-         //right: '20%',
-       },
+       fixedWidth: '650px',
        trimSpace: 'false',
-       //autoWidth: 'true',
       }
     }
   });

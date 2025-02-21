@@ -16,6 +16,7 @@
 
   .splide__slide,
   .splide__slide figure {
+    align-self: center;
     transition: .4s all;
   }
   .splide__slide:not(.is-active) figure {
@@ -45,23 +46,33 @@
   }
 }
 
-.image-gallery .collection-carousel button.splide__arrow {
-  border-radius: 0;
-  svg {
-    height: auto;
-    width: auto;
-  }
-}
+.image-gallery .collection-carousel {
+  .splide__arrow {
+    border-radius: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
 
-.image-gallery .collection-carousel button.carousel-control-prev {
-  left: 16px;
-  @media (min-width: 1290px) {
-    left: -9px;
-  }
-}
-.image-gallery .collection-carousel button.carousel-control-next {
-  right: 16px;
-  @media (min-width: 1290px) {
-    right: -9px;
+    svg {
+      height: auto;
+      width: auto;
+    }
+
+    &--prev {
+      left: -50px;
+      @media (max-width: 1440px) {
+        left: 10px;
+      }
+    }
+    
+    &--next {
+      right: -50px;
+      @media (max-width: 1440px) {
+        right: 10px;
+      }
+    }
   }
 }
