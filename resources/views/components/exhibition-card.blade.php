@@ -3,7 +3,7 @@
         @if(!empty($listingImage))
             <img class="card-img-top" 
                 src="{{ $listingImage['data']['full_url'] }}"
-                alt="{{ $listingImageAlt }}"
+                alt="A stand in image for {{ $title }}"
                 width="{{ $listingImage['width'] }}"
                 height="{{ $listingImage['height'] }}"
                 loading="lazy"
