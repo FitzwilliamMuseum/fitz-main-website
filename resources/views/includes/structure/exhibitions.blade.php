@@ -11,6 +11,7 @@
                         :title="$current['exhibitions_id']['exhibition_title']"
                         :headingLevel=3
                         :image="$current['exhibitions_id']['hero_image']"
+                        :listingImage="$current['exhibitions_id']['listing_image']"
                         :route="'exhibition'"
                         :params="[$current['exhibitions_id']['slug']]"
                         :startDate="$current['exhibitions_id']['exhibition_start_date']"
@@ -30,6 +31,7 @@
                         :title="$current['exhibitions_id']['exhibition_title']"
                         :headingLevel=3
                         :image="$current['exhibitions_id']['hero_image']"
+                        :listingImage="$current['exhibitions_id']['listing_image']"
                         :route="'exhibition'"
                         :params="[$current['exhibitions_id']['slug']]"
                         :startDate="$current['exhibitions_id']['exhibition_start_date']"
