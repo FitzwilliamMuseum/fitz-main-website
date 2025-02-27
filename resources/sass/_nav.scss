@@ -8,6 +8,7 @@
     position: fixed;
     width: 100%;
     z-index: 1000;
+    isolation: isolate;
 }
 
 .main-search-wrapper {
@@ -40,6 +41,13 @@
     color: white !important;
     font-size: 18px;
     width: 100%;
+    position: relative;
+    z-index: 9999;
+}
+
+.main-search-input:focus,
+.main-search-input:focus-visable {
+    outline: 2px solid #4d90fe;
 }
 
 .main-search-input::placeholder {
