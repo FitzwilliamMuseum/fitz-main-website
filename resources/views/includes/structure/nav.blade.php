@@ -138,8 +138,8 @@ SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published')
                                 <div class="main-search-wrapper">
                                     <label class="main-search-label" for="query">Search <span>the Fitzwilliam</span></label>
                                     <div style="position: relative;">
-                                        <input id="query" name="query" type="text" class="main-search-input" placeholder="What are you looking for?"
-                                        required value="{{ old('query') }}" aria-label="Your query">
+                                        <input id="query" name="query" type="search" class="main-search-input" placeholder="What are you looking for?"
+                                        required value="{{ old('query') }}" aria-label="Search the site">
                                         <button class="main-search-btn" type="submit" id="searchButton" aria-label="Submit your search" style="background: transparent; border: none;">
                                             @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
                                             'color' => '#fff', 'width' => 20, 'height' => 20])
