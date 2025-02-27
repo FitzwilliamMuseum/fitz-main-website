@@ -6,8 +6,8 @@
     margin: 0;
     padding: 40px 16px;
     position: fixed;
+    z-index: 1031;
     width: 100%;
-    z-index: 1000;
     isolation: isolate;
 }
 
@@ -41,8 +41,6 @@
     color: white !important;
     font-size: 18px;
     width: 100%;
-    position: relative;
-    z-index: 9999;
 }
 
 .main-search-input:focus,
