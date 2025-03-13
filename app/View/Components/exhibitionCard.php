@@ -14,6 +14,8 @@ class exhibitionCard extends Component
     public $headingLevel;
     public $params;
     public $image;
+    public $listingImage;
+    public $listingImageAlt;
     public $route;
     public $startDate;
     public $endDate;
@@ -30,6 +32,8 @@ class exhibitionCard extends Component
      * @param string $headingLevel
      * @param string|NULL $altTag
      * @param array|NULL $image
+     * @param array|NULL $listingImage
+     * @param string|NULL $listingImageAlt
      * @param $startDate
      * @param $endDate
      * @param $ticketed
@@ -47,7 +51,7 @@ class exhibitionCard extends Component
 
     public function __construct(
         string $route, array $params, string $title,
-        string $altTag = NULL, string $headingLevel = NULL, array $image = NULL,
+        string $altTag = NULL, string $headingLevel = NULL, array $image = NULL, array $listingImage = NULL, string $listingImageAlt = NULL,
                $startDate = NULL, $endDate = NULL, $ticketed = NULL,
         string $status = 'current', $source = NULL, $tessitura = NULL, string $copyright = NULL
     )
@@ -58,6 +62,8 @@ class exhibitionCard extends Component
         $this->altTag = $altTag;
         $this->headingLevel = $headingLevel;
         $this->image = $image;
+        $this->listingImage = $listingImage;
+        $this->listingImageAlt = $listingImageAlt;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->ticketed = $ticketed;
