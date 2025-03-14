@@ -23,7 +23,8 @@
                 $exhibition['slug'] == 'women-in-japanese-prints' ||
                 $exhibition['slug'] == 'glenn-ligon-all-over-the-place' ||
                 $exhibition['slug'] == 'picturing-excess-jan-davidsz-de-heem' ||
-                $exhibition['slug'] == 'whats-new-2')
+                $exhibition['slug'] == 'whats-new-2' ||
+                $exhibition['slug'] == 'discovering-duerer')
             <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
                 Donate now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
