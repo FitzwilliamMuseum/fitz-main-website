@@ -1,30 +1,40 @@
 import Splide from '@splidejs/splide'
-document.addEventListener( 'DOMContentLoaded', function() {
-  let splide = new Splide( '.splide', {
-   keyboard: 'true',
-   pagination: false,
-   focus  : 'center',
-   type   : 'loop',
-   updateOnMove: true,
-    reducedMotion: {
-      speed      : 0,
-      rewindSpeed: 0,
+  let splide = new Splide('.splide', {
+    type: 'loop',
+    perPage: 1,
+    focus: 'center',
+    updateOnMove: true,
+    pagination: false,
+    autoplay: false,
+    keyboard: true,
+    padding: {
+        right: '25%',
+        left: '5%',
     },
+    fixedWidth: '100%',
     mediaQuery: 'min',
     breakpoints: {
       600: {
-      perPage: 3,
-       height: '100%',
-       focus: 'center',
-       gap: '30px',
-       padding: {
-         //Add padding to end of carousel to compensate for last slide
-         //right: '20%',
-       },
-       trimSpace: 'false',
-       //autoWidth: 'true',
+        perPage: 3,
+        fixedWidth: '55%',
+        padding: {
+            left: '3.2%',
+            right: '18.5%'
+        }
       }
     }
-  });
+});
+  function updateSlideScale() {
+    const slides = document.querySelectorAll('.splide__slide');
+    slides.forEach(slide => {
+      slide.style.transform = 'scale(0.7)';
+    });
+
+    const activeSlide = splide.Components.Elements.slides[splide.index];
+    if (activeSlide) {
+      activeSlide.style.transform = 'scale(1)';
+    }
+  }
+
+  splide.on('mounted moved', updateSlideScale);
   splide.mount();
-} );

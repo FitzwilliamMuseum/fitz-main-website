@@ -37,7 +37,7 @@
                 return $image_asset;
             }
         @endphp
-        <div class="image-gallery__wrap row">
+        <div class="image-gallery__wrap">
             <section class="collection-carousel splide p-0">
                 <div class="splide__arrows splide__arrows--ltr">
                     <button class="splide__arrow splide__arrow--prev carousel-control-prev" type="button" aria-label="Previous slide" aria-controls="splide01-track">
@@ -67,7 +67,7 @@
                                         <img src="{{ $current_image['data']['full_url'] }}" alt="{{ !empty($current_image['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
                                     @endif
 
-                                    @if(!empty($image['image_caption'])) 
+                                    @if(!empty($image['image_caption']))
                                         <figcaption>{{ $image['image_caption'] }}</figcaption>
                                     @endif
                                 @if(!empty($image['image_caption'])) </figure> @endif

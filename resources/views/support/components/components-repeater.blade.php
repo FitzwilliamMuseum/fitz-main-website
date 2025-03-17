@@ -31,11 +31,11 @@
                 @include('support.components.fiftyfifty')
             @elseif(!empty($component['image_gallery']))
                 @pushOnce('fitzwilliamStyles')
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">    
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
                 @endPushOnce
-                
+
                 @include('support.components.image-gallery')
-                
+
                 @pushOnce('fitzwilliamScripts')
                     <script defer type="text/javascript" src="{{ asset("/js/image-gallery.js") }}"></script>
                 @endPushOnce
