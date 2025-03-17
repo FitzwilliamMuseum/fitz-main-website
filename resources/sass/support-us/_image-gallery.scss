@@ -1,27 +1,75 @@
-.image-gallery .carousel-control-prev {
-  background: linear-gradient(to right, black, rgba(0,0,0,0));
+.image-gallery {
+  background-color: #f4f3f0;
+  text-align: center;
+  padding: 50px 0;
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0 0 22px;
+  }
 }
 
-.image-gallery .carousel-control-prev:hover,
-.image-gallery .carousel-control-prev:focus {
-  background: linear-gradient(to right, black, rgba(0,0,0,0.5));
+.splide {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  overflow: visible;
 }
 
-.image-gallery .carousel-control-next {
-  background: linear-gradient(to left, black, rgba(0,0,0,0));
+.splide__track {
+  overflow: hidden;
 }
 
-.image-gallery .carousel-control-next:hover,
-.image-gallery .carousel-control-next:focus {
-  background: linear-gradient(to left, black, rgba(0,0,0,0.5));
+.splide__slide {
+  align-self: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+  transform: scale(0.7);
+  transform-origin: center center;
 }
 
-.gallery-card {
-  height: 400px;
+.splide__slide.is-active {
+  transform: scale(1);
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.splide__slide img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.splide__arrow {
+  background: rgba(0, 0, 0, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.image-gallery .collection-carousel button.splide__arrow {
+  border-radius: 0;
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.image-gallery .collection-carousel button.carousel-control-prev {
+  top: 50%;
+  left: 0;
+  @media (min-width: 1290px) {
+    left: -45px;
+  }
+}
+.image-gallery .collection-carousel button.carousel-control-next {
+  top: 50%;
+  right: 0;
+  @media (min-width: 1290px) {
+    right: -45px;
   }
 }
