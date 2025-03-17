@@ -201,11 +201,12 @@ Route::get('/clear-cache', [
     'uses' => 'Controller@clearCache'
 ])->middleware('auth.very_basic', 'doNotCacheResponse');
 
+/* This is disabled on staging because staging doesn't have SOLR instance attached to it */
 // New Landing Page Template
-Route::group(['page_template' => 'landing'], function() {
-    Route::get('{slug}', 'landingPageController@index')->name('{slug}');
-    Route::get('{parent_page}/{slug}', 'subpagesController@index')->name('{slug}');
-});
+// Route::group(['page_template' => 'landing'], function() {
+//     Route::get('{slug}', 'landingPageController@index')->name('{slug}');
+//     Route::get('{parent_page}/{slug}', 'subpagesController@index')->name('{slug}');
+// });
 
 /*
 * Catch all route
