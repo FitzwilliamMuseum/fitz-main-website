@@ -1,9 +1,9 @@
 <div class="col-md-4 mb-3 {{ !empty($source) && $source == "homepage" ? 'container-home-card' : ''}}" data-component="card">
-    <div class="card card-fitz h-100">
+    <div class="card card-fitz">
         {{-- REF: https://studio24.zendesk.com/agent/tickets/14909
             Additional image field was required for exhibition cards to support different image sizes. --}}
         @if(!empty($listingImage))
-            <img class="card-img-top" 
+            <img class="card-img-top"
                 src="{{ $listingImage['data']['full_url'] }}"
                 alt="{{ !empty($listingImageAlt) ? $listingImageAlt : '' }}"
                 width="{{ $listingImage['width'] }}"
@@ -11,7 +11,7 @@
                 loading="lazy"
             />
         @elseif(!empty($image))
-            <img class="card-img-top" 
+            <img class="card-img-top"
                 src="{{ $image['data']['thumbnails'][13]['url'] }}"
                 alt="{{ !empty($altTag) ? $altTag : '' }}"
                 width="{{ $image['data']['thumbnails'][13]['width'] }}"
@@ -26,7 +26,7 @@
             />
         @endif
 
-        <div class="card-body h-100" >
+        <div class="card-body" >
             <div class="contents-label mb-3">
                 @if(!empty($headingLevel))
                     <h{{ $headingLevel }}>
