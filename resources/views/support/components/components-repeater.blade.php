@@ -1,12 +1,6 @@
 @php
     if(!empty($page['page_components'])) {
         $components = $page['page_components'];
-
-
-        foreach ($page['page_components'] as $component) {
-            if (!empty($component['image_gallery'])) {
-            }
-        }
     }
 @endphp
 
@@ -30,7 +24,7 @@
             @elseif(!empty($component['50_50_content']))
                 @include('support.components.fiftyfifty')
             @elseif(!empty($component['image_gallery']))
-            
+
                 @include('support.components.image-gallery')
 
                 @pushOnce('fitzwilliamScripts')
