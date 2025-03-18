@@ -1,4 +1,5 @@
 {{-- SEO --}}
+@extends('layouts.exhibitions')
 @section('title', $page['title'])
 @section('description', $page['meta_description'])
 @section('keywords', $page['meta_keywords'])
@@ -46,7 +47,7 @@
     @include('includes.structure.nav')
 
     @include('support.components.head', ['hero' => true])
-
+    <main>
     <span id="site-content" class="visually-hidden"></span>
     @include('support.components.components-repeater')
 
@@ -60,8 +61,7 @@
         @include('support.components.grid')
     @endif
 
-    @include('support.components.related')
-
+    </main>
     @include('includes.structure.email-signup')
 
     @include('includes.structure.footer')

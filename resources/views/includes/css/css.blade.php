@@ -22,4 +22,5 @@
 @hasSection('360')
     <link rel="stylesheet" href="{{ asset('/css/pannellum.css') }}" />
 @endif
-@stack('fitzwilliamStyles')
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />

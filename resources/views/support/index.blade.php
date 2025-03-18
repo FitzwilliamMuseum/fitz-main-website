@@ -46,7 +46,7 @@
     @include('includes.structure.nav')
 
     @include('support.components.head', ['hero' => true])
-    
+
     <span id="site-content" class="visually-hidden"></span>
     @include('support.components.components-repeater')
 
