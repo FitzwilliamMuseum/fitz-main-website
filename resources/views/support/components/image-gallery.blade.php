@@ -66,7 +66,7 @@
                                 @if (!empty($image['image_caption']))
                                     <figure>
                                 @endif
-                                @if (!empty($current_image))
+                                @if (!empty($current_image['data']['full_url']))
                                     <img src="{{ !empty($current_image['data']['full_url']) }}"
                                         alt="{{ !empty($current_image['data']['description']) ? $block_image['data']['description'] : '' }}"
                                         load="lazy">
