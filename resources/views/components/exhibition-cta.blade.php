@@ -25,12 +25,12 @@
                 $exhibition['slug'] == 'glenn-ligon-all-over-the-place' ||
                 $exhibition['slug'] == 'picturing-excess-jan-davidsz-de-heem' ||
                 $exhibition['slug'] == 'whats-new-2' ||
-                $exhibitionType == 'display')
-                    <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
-                        Donate now
-                        @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
-                    </a>
-        @elseif(!empty($exhibition['exhibition_url']) and $exhibitionType == 'exhibition')
+                $exhibition['slug'] == 'discovering-duerer')
+            <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
+                Donate now
+                @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+            </a>
+        @elseif(!empty($exhibition['exhibition_url']))
             <a href="{{ $exhibition['exhibition_url'] }}" class="cta-btn">
                 Book now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
