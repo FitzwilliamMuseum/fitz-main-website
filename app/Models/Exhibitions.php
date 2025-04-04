@@ -156,7 +156,6 @@ class Exhibitions extends Model
                 'fields' => '*.*.*.*',
                 'filter[exhibition_status][eq]' => $status,
                 'meta' => 'result_count,total_count,type',
-                'filter[status][eq]' => 'published',
                 'sort' => $sort,
                 'limit' => $limit
             )
@@ -175,6 +174,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*.*.*',
                 'filter[slug][eq]' => $slug,
+                'filter[status][eq]' => 'published',
                 'meta' => '*'
             )
         );
@@ -226,6 +226,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[associated_people_id][in]' => $curator,
+                'filter[status][eq]' => 'published',
             )
         );
         return $api->getData();
