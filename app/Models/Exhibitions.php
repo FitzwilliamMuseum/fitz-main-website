@@ -22,6 +22,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[exhibition_status][eq]' => $status,
+                'filter[status][eq]' => 'published',
                 'filter[type][eq]' => $type,
                 'meta' => '*',
                 'sort' => $sort,
@@ -44,6 +45,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[exhibition_status][eq]' => $status,
+                'filter[status][eq]' => 'published',
                 'meta' => '*',
                 'sort' => $sort,
                 'limit' => $limit
@@ -65,6 +67,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[featured_home][eq]' => 'yes',
+                'filter[status][eq]' => 'published',
                 'meta' => 'result_count,total_count,type',
                 'sort' => $sort,
                 'limit' => $limit
@@ -153,6 +156,7 @@ class Exhibitions extends Model
                 'fields' => '*.*.*.*',
                 'filter[exhibition_status][eq]' => $status,
                 'meta' => 'result_count,total_count,type',
+                'filter[status][eq]' => 'published',
                 'sort' => $sort,
                 'limit' => $limit
             )
