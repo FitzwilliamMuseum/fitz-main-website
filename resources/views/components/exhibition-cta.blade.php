@@ -9,7 +9,7 @@
 <div class="exhibition-cta">
     <div class="container support-text-component support-cta mb-0"
     style="{{ $exhibitionStatus }}">
-        @if ($exhibition['slug'] == 'made-in-egypt')
+        @if ($exhibition['slug'] == 'made-in-ancient-egypt')
             <h2 class="cta-title exhibition-cta-title">Tickets</h2>
             <p class="cta-copy exhibition-cta-copy">Book your tickets and timed entry slot online.</p>
         @else
@@ -35,7 +35,10 @@
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
         @else
-            <p class="cta-btn">Tickets available soon</p>
+            @if ($exhibition['slug'] == 'made-in-ancient-egypt')
+                <p class="cta-btn">Coming soon</p>
+            @endif
+                <p class="cta-btn">Tickets available soon</p>
         @endif
         <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
     </div>
