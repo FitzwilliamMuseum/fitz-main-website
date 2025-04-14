@@ -35,10 +35,9 @@
                 Book now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
             </a>
-        @else
-            @if ($exhibition['slug'] == 'made-in-ancient-egypt')
+        @elseif ($exhibition['slug'] == 'made-in-ancient-egypt')
                 <p class="cta-btn">Coming soon</p>
-            @endif
+        @else
                 <p class="cta-btn">Tickets available soon</p>
         @endif
         <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
