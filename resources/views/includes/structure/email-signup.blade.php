@@ -1,16 +1,8 @@
-@php
-    $currentUrl = Request::url();
-    $isMadeInEgypt = str_contains($currentUrl, 'made-in-ancient-egypt');
-@endphp
 <div class="bg-white bg-white-subscribe">
     <div class="container container-subscribre">
         <div class="wrapper">
             <h2>Sign up to our emails</h2>
-            @if ($isMadeInEgypt)
-                <p>Be the first to hear about ticket releases, sign up to our emails.</p>
-            @else
-                <p>Be the first to hear about our news, exhibitions, events and more…</p>
-            @endif
+            <p>Be the first to hear about our news, exhibitions, events and more…</p>
         </div>
         <a class="subscribre-button" href="https://tickets.museums.cam.ac.uk/account/create/brief">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="24" height="25" viewBox="0 0 24 25" fill="none">

@@ -61,13 +61,17 @@
         @else
             <p class="cta-btn">{{ $madeInEgyptExhibition ? 'Coming soon' : 'Tickets available soon' }}</p>
         @endif
+        @if($madeInEgyptExhibition)
+                <p class="exhibition-cta-link exhibition-cta-link--egypt">
+                    Be the first to hear about ticket releases,
+                    <a href="https://tickets.museums.cam.ac.uk/account/create/brief">
+                        sign up to our emails
+                    </a>
+                </p>
 
-        <a class="exhibition-cta-link"
-           href="{{ $madeInEgyptExhibition
-                    ? 'https://tickets.museums.cam.ac.uk/account/create/brief'
-                    : '/plan-your-visit' }}">
-            {{ $madeInEgyptExhibition ? 'Sign up to our emails' : 'Plan your visit' }}
-        </a>
+        @else
+            <a class="exhibition-cta-link" href="/plan-your-visit">Plan your visit</a>
+        @endif
     </div>
 
     @if (!empty($exhibition['exhibition_narrative']) || !empty($exhibition['promo_cta']))
