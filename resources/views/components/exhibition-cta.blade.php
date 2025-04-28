@@ -82,8 +82,7 @@
 
             @if (!empty($exhibition['promo_cta']) && $exhibition['promo_cta'])
                 <div class="exhibition-cta--promo">
-                    <p>Become a Friend and enjoy unlimited {{ $madeInEgyptExhibition ? 'free ' : '' }}exhibition entry with no need to book.</p>
-                    <a href="/support-us/become-a-friend">Find out more</a>
+                    <p>Become a Friend and enjoy unlimited {{ $madeInEgyptExhibition ? 'free ' : '' }}exhibition entry with no need to book. <a href="/support-us/become-a-friend" style="white-space: nowrap;">Find out more</a></p>
                 </div>
             @endif
         </div>
