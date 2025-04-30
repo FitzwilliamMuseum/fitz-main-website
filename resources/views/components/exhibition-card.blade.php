@@ -49,8 +49,11 @@
                     <p class="text-dark">Included in General admission</p> --}}
                 @endif
                 <p class="text-dark">
-                    {{  Carbon\Carbon::parse($startDate)->format('j F Y') }} to
-                    {{  Carbon\Carbon::parse($endDate)->format('j F Y') }}
+                    {{  Carbon\Carbon::parse($startDate)->format('j F Y') }}
+                    @unless($displayEndDate)
+                    to
+                    {{ Carbon\Carbon::parse($endDate)->format('j F Y') }}
+                @endunless
                 </p>
                 @if($status === 'archived')
                     <span class="archived-btn">
