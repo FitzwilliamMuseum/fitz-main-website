@@ -41,6 +41,7 @@
                         Cambridge<br />
                         CB2 1RB<br />
                         +44 (0)1223 332 900<br />
+                        @svg('fas-at',['width'=> 20]) <a href="mailto:enquiries@fitzmuseum.cam.ac.uk">enquiries@fitzmuseum.cam.ac.uk</a><br />
                         @svg('fas-at',['width'=> 20]) <a href="mailto:tickets@museums.cam.ac.uk">tickets@museums.cam.ac.uk</a>
                     </p>
                 </div>

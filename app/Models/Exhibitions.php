@@ -22,6 +22,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[exhibition_status][eq]' => $status,
+                'filter[status][eq]' => 'published',
                 'filter[type][eq]' => $type,
                 'meta' => '*',
                 'sort' => $sort,
@@ -44,6 +45,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[exhibition_status][eq]' => $status,
+                'filter[status][eq]' => 'published',
                 'meta' => '*',
                 'sort' => $sort,
                 'limit' => $limit
@@ -65,6 +67,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[featured_home][eq]' => 'yes',
+                'filter[status][eq]' => 'published',
                 'meta' => 'result_count,total_count,type',
                 'sort' => $sort,
                 'limit' => $limit
@@ -171,6 +174,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*.*.*',
                 'filter[slug][eq]' => $slug,
+                'filter[status][eq]' => 'published',
                 'meta' => '*'
             )
         );
@@ -222,6 +226,7 @@ class Exhibitions extends Model
             array(
                 'fields' => '*.*.*.*',
                 'filter[associated_people_id][in]' => $curator,
+                'filter[status][eq]' => 'published',
             )
         );
         return $api->getData();
