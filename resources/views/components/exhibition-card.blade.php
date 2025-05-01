@@ -51,9 +51,9 @@
                 <p class="text-dark">
                     {{  Carbon\Carbon::parse($startDate)->format('j F Y') }}
                     @unless($displayEndDate)
-                    to
-                    {{ Carbon\Carbon::parse($endDate)->format('j F Y') }}
-                @endunless
+                        to
+                        {{ Carbon\Carbon::parse($endDate)->format('j F Y') }}
+                    @endunless
                 </p>
                 @if($status === 'archived')
                     <span class="archived-btn">
