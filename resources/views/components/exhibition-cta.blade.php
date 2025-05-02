@@ -24,17 +24,8 @@
            - others: omits "free"
     */
     $madeInEgyptExhibition = $exhibition['slug'] == 'made-in-ancient-egypt';
-
-    $donateNowSlugs = [
-        'rembrandt-rubens-van-dyck',
-        'rembrandt-rubens-van-dyck-drawings-by-dutch-and-flemish-masters',
-        'national-treasures-botticelli-in-cambridge',
-        'women-in-japanese-prints',
-        'glenn-ligon-all-over-the-place',
-        'picturing-excess-jan-davidsz-de-heem',
-        'whats-new-2',
-        'discovering-duerer'
-    ];
+    
+    $exhibitionTypeIsDisplay = $exhibition['type'] === 'display';
 @endphp
 
 <div class="exhibition-cta">
@@ -48,7 +39,7 @@
                 : 'Our exhibitions and displays remain free but you can now choose to make a donation.' }}
         </p>
 
-        @if (in_array($exhibition['slug'], $donateNowSlugs))
+        @if ($exhibitionTypeIsDisplay)
             <a href="{{ url('support-us/make-a-donation') }}" class="cta-btn">
                 Donate now
                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
