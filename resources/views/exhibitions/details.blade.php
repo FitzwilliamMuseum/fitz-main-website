@@ -10,6 +10,7 @@
         'hero_subtitle' => $exhibition_tagline,
         'start' => $exhibition["exhibition_start_date"],
         'end' => $exhibition["exhibition_end_date"],
+        'display_end_date' => $exhibition['display_end_date'],
         'image' => $exhibition["hero_image"]
     ];
     if(!empty($exhibition['page_template'])) {

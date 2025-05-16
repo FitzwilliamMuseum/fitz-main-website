@@ -14,12 +14,14 @@
                 </p>
             @endif
             @if ($hero['exhibition_link'] && $hero['exhibition_link']['exhibition_start_date'])
-                <p>
-                    {{ Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('j F Y') }}
+            <p>
+                {{ Carbon\Carbon::parse($hero['exhibition_link']['exhibition_start_date'])->format('j F Y') }}
+                @if(!$hero['exhibition_link']['display_end_date'])
                     -
                     {{ Carbon\Carbon::parse($hero['exhibition_link']['exhibition_end_date'])->format('j F Y') }}
-                </p>
-            @endif
+                @endif
+            </p>
+        @endif
         </div>
         @if (!empty($hero['ticket_link']))
             <a class="hero-cta" href="{{ $hero['ticket_link'] }}">
