@@ -25,6 +25,7 @@
 
             function getImageData($image_source, $image_id)
             {
+                $image_asset = [];
                 if (!empty($image_id)) {
                     foreach ($image_source as $image_block) {
                         if (!empty($image_block['directus_files_id'])) {
