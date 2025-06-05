@@ -566,6 +566,20 @@ class solrImportController extends Controller
     }
 
     /**
+     * Refresh the Solr index for staff profiles.
+     *
+     * @return Result|ResultInterface
+     */
+    public function staffRefresh(): Result|ResultInterface
+    {
+        $configSolr = Config::get('solarium');
+        $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
+        $delete = $client->createUpdate();
+        $delete->addDeleteQuery('contentType:staff_profile');
+        $delete->addCommit();
+        return $client->update($delete);
+    }
+    /**
      * @return ResultInterface|Result
      * @throws ApiException
      * @throws CurlException
