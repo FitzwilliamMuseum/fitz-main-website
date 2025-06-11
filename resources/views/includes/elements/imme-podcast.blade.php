@@ -3,7 +3,7 @@
         <a href="{{ route('mindeyes')}}">
             <img class=" card-img-top img-fluid"
                  src="https://content.fitz.ms/fitz-website/assets/IMME.jpg?key=directus-medium-crop"
-                 alt="In My Mind's Eye logo"
+                 alt=""
                  loading="lazy"/>
         </a>
         <div class="card-body h-100">

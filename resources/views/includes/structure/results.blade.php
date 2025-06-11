@@ -3,11 +3,11 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100">
         @if(isset($result['searchImage']))
-            <a href="{{ $result['url'][0]}}"><img src="{{$result['searchImage'][0]}}" class="card-img-top"  alt="Fitzwilliam Museum logo"
+            <a href="{{ $result['url'][0]}}"><img src="{{$result['searchImage'][0]}}" class="card-img-top"  alt=""
               loading="lazy"/></a>
           @else
             <a href="{{ $result['url'][0]}}"><img src="https://content.fitz.ms/fitz-website/assets/portico.jpg"
-              class="card-img-top"  alt="FitzVirtual Logo" loading="lazy"/></a>
+              class="card-img-top"  alt="" loading="lazy"/></a>
             @endif
             <div class="card-body ">
               <h3>

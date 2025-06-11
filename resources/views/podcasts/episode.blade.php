@@ -203,7 +203,7 @@
                             <a href="{{ $record['url'][0] }}">
                                 <img class="card-img-top "
                                      src="{{ $record['searchImage'][0]}}"
-                                     alt="Highlight image for {{ $record['title'][0] }}"
+                                     alt=""
                                      loading="lazy"/>
                             </a>
                         @endif

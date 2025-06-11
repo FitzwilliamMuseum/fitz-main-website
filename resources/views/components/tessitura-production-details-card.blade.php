@@ -5,7 +5,7 @@
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img class="card-img-top" property="image"
                      src="@tessitura($production->ProductionSeason->Id)"
-                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"
+                     alt=""
                 />
             </a>
         @elseif($production->Facility->Id === 56)
@@ -13,7 +13,7 @@
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img property="image" class="card-img-top"
                      src="@tessitura($production->PerformanceId )"
-                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"
+                     alt=""
                 />
             </a>
         @else
@@ -21,7 +21,7 @@
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img class="card-img-top" property="image"
                      src="@tessitura($production->ProductionSeason->Id)"
-                     alt="A stand in image for {{ $production->PerformanceStatusDescription }}"
+                     alt=""
                 />
             </a>
         @endif
