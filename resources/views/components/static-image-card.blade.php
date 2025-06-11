@@ -1,25 +1,11 @@
-<div class="col-md-4 mb-3" data-component="card">
-    <div class="card card-fitz h-100">
-        @isset($image)
-            <img class="card-img-top" src="{{ $image}}"
-                    alt=""
-                    loading="lazy"
-            />
-        @else
-            <img class="card-img-top"
-                    src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt=""
-                    loading="lazy"
-            />
-        @endisset
-        <div class="card-body h-100">
-            <div class="contents-label mb-3">
-                <h2>
-                    <a href="{{ route($route, $params) }}" class="stretched-link">
-                        {{ $title }}
-                    </a>
-                </h2>
-            </div>
+<div class="col-md-4 mb-3">
+    <div class="card" data-component="card">
+        <div class="l-box l-box--no-border card__text">
+            <h3 class="card__heading"><a class="card__link" href="{{ route($route, $params) }}">{{ $title }}</a>
+            </h3>
+        </div>
+        <div class="l-frame l-frame--3-2 card__image">
+            <img src="{{ isset($image) ? $image : env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
         </div>
     </div>
 </div>
