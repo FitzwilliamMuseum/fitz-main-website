@@ -1,5 +1,5 @@
 @if(array_key_exists('inscription', $record['_source']))
-<h3>Inscription or legend</h3>
+<h2>Inscription or legend</h2>
 @foreach($record['_source']['inscription'] as $inscription)
 @if(array_key_exists('description', $inscription))
 <p><strong>Inscription present:</strong> {{ $inscription['description'][0]['value'] }}</p>

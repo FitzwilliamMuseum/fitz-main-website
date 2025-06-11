@@ -1,5 +1,5 @@
 @if(array_key_exists('measurements', $record['_source']))
-    <h3>Measurements and weight</h3>
+    <h2>Measurements and weight</h2>
     <div class="alert alert-dark" role="alert">
         <p>
             At the moment, our system does not display units or type of measurements below. We will rectify

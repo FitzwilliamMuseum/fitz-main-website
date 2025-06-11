@@ -4,9 +4,9 @@
         $records = $galleriesController::getObjects($gallery['object_id_numbers']);
     @endphp
     @if(!empty($records))
-        <h3>
+        <h2>
             Selected objects in gallery {{ $gallery['gallery_name'] }}
-        </h3>
+        </h2>
         <div class="row">
             @foreach($records as $record)
                 <x-ciim-card :record="$record"></x-ciim-card>

@@ -12,7 +12,7 @@
 @section('collections')
 
     <div class="container">
-        <h3 class="text-center mb-2">Events in the next 120 days</h3>
+        <h2 class="text-center mb-2">Events in the next 120 days</h2>
         @php
             usort($productions, function($a, $b) {
               return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-3 shadow-sm mx-auto mb-3">
                 <div class="card-body">
-                    <h3>Filter events</h3>
+                    <h2>Filter events</h2>
                     @include('includes.elements.filters-tessitura')
                 </div>
             </div>
