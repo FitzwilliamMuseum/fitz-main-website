@@ -71,7 +71,7 @@
                         <span class="panel-title ">
                             <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne"
                                aria-expanded="true" aria-controls="collapseOne">
-                                <h3>Publications</h3>
+                                <h2>Publications</h2>
                             </a>
                         </span>
                             </div>
@@ -91,7 +91,7 @@
                                 <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
                                    href="#collapseTwo"
                                    aria-expanded="true" aria-controls="collapseOne">
-                                    <h3>Professional Memberships</h3>
+                                    <h2>Professional Memberships</h2>
                                 </a>
                             </span>
                                 </div>
@@ -111,7 +111,7 @@
                                 <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
                                    href="#collapseThree"
                                    aria-expanded="true" aria-controls="collapseOne">
-                                    <h3>Affiliations</h3>
+                                    <h2>Affiliations</h2>
                                 </a>
                             </span>
                                 </div>
@@ -134,7 +134,7 @@
                                 <span class="panel-title">
                                     <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
                                        href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                        <h3>Research and social profiles</h3>
+                                        <h2>Research and social profiles</h2>
                                     </a>
                                 </span>
                                     </div>
@@ -185,9 +185,9 @@
     @section('research-projects')
         <div class="container-fluid bg-gdbo py-3">
             <div class="container">
-                <h3>
+                <h2>
                     Associated Research Projects
-                </h3>
+                </h2>
                 <div class="row">
                     @foreach($profile['research_projects'] as $project)
                         @if(!empty($project['research_projects_id']))
@@ -209,9 +209,9 @@
     @section('departments-affiliated')
         <div class="container-fluid py-3">
             <div class="container">
-                <h3>
+                <h2>
                     Associated Departments
-                </h3>
+                </h2>
                 <div class="row">
                     @foreach($profile['departments_affiliated'] as $department)
                         @if(!empty($department['department']))
@@ -234,9 +234,9 @@
     @section('exhibitions-curated')
         <div class="container-fluid bg-pastel p-3">
             <div class="container">
-                <h3>
+                <h2>
                     Associated Exhibitions
-                </h3>
+                </h2>
                 <div class="row">
                     @foreach($profile['exhibitions_curated'] as $exhibition)
                         <x-image-card

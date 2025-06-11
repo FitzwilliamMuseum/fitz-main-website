@@ -31,7 +31,7 @@
 @if(!empty($profile['associated_institution']))
 @section('research-funders')
     <div class="container">
-        <h3>Associated institutions</h3>
+        <h2>Associated institutions</h2>
         <div class="row">
             @foreach($profile['associated_institution'] as $partner)
                 <x-partner-card
@@ -48,9 +48,9 @@
 @section('exhibitions-curated')
     <div class="container-fluid bg-pastel p-3">
         <div class="container">
-            <h3>
+            <h2>
                 Associated Exhibitions
-            </h3>
+            </h2>
             <div class="row">
                 @foreach($exhibitions as $exhibition)
                     <x-image-card

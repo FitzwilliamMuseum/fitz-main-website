@@ -1,9 +1,9 @@
 @section('sketchfab')
 @if(!empty($gallery['sketchfab_sketchup_id']))
 <div class="container">
-    <h3>
+    <h2>
         Sketchup model of this gallery
-    </h3>
+    </h2>
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
         <div class="ratio ratio-4x3">
             <iframe title="A 3D sketchup model related to {{ $gallery['gallery_name']  }}"

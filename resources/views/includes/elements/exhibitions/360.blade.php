@@ -2,9 +2,9 @@
 @if(!empty($exhibition['image_360_pano']))
 <div class="container-fluid">
     <div class="container">
-        <h3>
+        <h2>
             360 gallery image
-        </h3>
+        </h2>
         <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
             <div id="panorama"></div>
         </div>

@@ -23,9 +23,9 @@
 </div>
 @endif
 @if(!empty($podcasts))
-<h3>
+<h2>
     Episodes
-</h3>
+</h2>
 <div class="row">
     @foreach($podcasts as $podcast)
     <x-image-card :altTag="$podcast['hero_image_alt_tag'] " :title="$podcast['title']" :image="$podcast['hero_image']"
@@ -39,7 +39,7 @@
 @if(!empty($ids['partners']))
 @section('research-funders')
 <div class="container">
-    <h3>Partners</h3>
+    <h2>Partners</h2>
     <div class="row">
         @foreach($ids['partners'] as $partner)
         <x-partner-card :altTag="$partner['partner_organisations_id']['partner_full_name']"
@@ -55,7 +55,7 @@
 @if(!empty($ids['presenters']))
 @section('presenters')
 <div class="container">
-    <h3>Presenters</h3>
+    <h2>Presenters</h2>
     <div class="row">
         @foreach($ids['presenters'] as $presenter)
         <x-image-card :altTag="$presenter['associated_people_id']['display_name']"
@@ -71,7 +71,7 @@
 @if(!empty($suggest))
 @section('mlt')
 <div class="container">
-    <h3>Other podcast series you might like</h3>
+    <h2>Other podcast series you might like</h2>
     <div class="row">
         @foreach($suggest as $record)
         <x-solr-card :result="$record"></x-solr-card>

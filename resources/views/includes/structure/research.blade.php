@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Our research projects</h3>
+    <h2>Our research projects</h2>
     <div class="row">
         @foreach($research['data'] as $project)
             <x-image-card
