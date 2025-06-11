@@ -3,13 +3,13 @@
         @if(empty($artists['image']))
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $artists['display_name'] }}"
+                    alt=""
                     loading="lazy"
             />
         @else
             <img class="card-img-top"
                     src="{{ $artists['image']['data']['thumbnails'][13]['url'] }}"
-                    alt="{{ $artists['display_name'] }}"
+                    alt=""
                     width="{{ $artists['image']['data']['thumbnails'][13]['width'] }}"
                     height="{{ $artists['image']['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"

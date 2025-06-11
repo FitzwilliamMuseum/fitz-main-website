@@ -5,7 +5,7 @@
             @isset($image)
                 <img class="card-img-top"
                      src="{{ $image['data']['thumbnails'][13]['url']}}"
-                     alt="{{ $altTag }}"
+                     alt=""
                      loading="lazy"
                      width="{{ $image['data']['thumbnails'][13]['width'] }}"
                      height="{{ $image['data']['thumbnails'][13]['height'] }}"
@@ -13,7 +13,7 @@
             @else
                 <img class="card-img-top"
                      src="{{ env('MISSING_IMAGE_URL') }}"
-                     alt="A stand in image for {{ $title }}"
+                     alt=""
                      loading="lazy"
                 />
             @endisset

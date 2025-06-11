@@ -7,7 +7,7 @@
                     <div class="card card-fitz h-100">
                         <img class="card-img-top"
                                 src="https://content.fitz.ms/fitz-website/assets/json-peep.png?key=exhibition"
-                                alt="An image showing a JSON response "
+                                alt=""
                                 loading="lazy"
                         />
                         <div class="card-body h-100">
@@ -25,7 +25,7 @@
                     <div class="card card-fitz h-100">
                         <img class="card-img-top"
                                 src="https://content.fitz.ms/fitz-website/assets/XRF analysis of an illuminated mss at the Fitz.jpg?key=exhibition"
-                                alt="An image showing one of the objects in Shannon and Ricketts Collection"
+                                alt=""
                                 loading="lazy"
                         />
                         <div class="card-body h-100">
@@ -44,7 +44,7 @@
                     <div class="card card-fitz h-100">
                         <img class="card-img-top"
                                 src="https://content.fitz.ms/fitz-website/assets/gotgs-deer.jpg?key=exhibition"
-                                alt="Gold recumbent stag plaque with inlays of turquoise and lapis lazuli"
+                                alt=""
                                 loading="lazy"
                         />
                         <div class="card-body h-100">

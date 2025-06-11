@@ -2,7 +2,7 @@
     <div class="card card-fitz h-100">
         @if(!is_null($result['smallimage']))
             <img src="{{ $result['smallimage'][0]}}"
-                    alt="Highlight image for {{ $result['title'][0] }}"
+                    alt=""
                     loading="lazy"
                     width="416"
                     height="416"
@@ -11,7 +11,7 @@
         @else
             <img class="card-img-top"
                  src="{{ env('MISSING_IMAGE_URL') }}"
-                 alt="A stand in image for {{ $result['title'][0] }}"
+                 alt=""
                  loading="lazy"
             />
         @endif

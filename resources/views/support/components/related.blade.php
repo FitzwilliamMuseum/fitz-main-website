@@ -33,16 +33,16 @@
                 <div class="card card-fitz related-card h-100" data-component="card">
                         @if(!empty($card['preview_image']))
                             <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
-                                alt="{{ !empty($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
+                                alt=""
                                 class="card-img-top">
                         @elseif(!empty($card['hero_image']))
                             <img src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}"
-                                alt="{{ !empty($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}"
+                                alt=""
                                 class="card-img-top">
                         @else
                             <img class="card-img-top"
                                 src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition"
-                                alt="Families" width="374" height="342" loading="lazy">
+                                alt="" width="374" height="342" loading="lazy">
                         @endif
                     <div class="card-body h-100">
                         <div class="contents-label mb-3">

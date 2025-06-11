@@ -3,7 +3,7 @@
         @isset($curator['associated_people_id']['profile_image'])
             <img class="card-img-top"
                     src="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['url']}}"
-                    alt="A profile image of {{ $curator['associated_people_id']['display_name'] }}"
+                    alt=""
                     width="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['width'] }}"
                     height="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"
@@ -11,7 +11,7 @@
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $curator['associated_people_id']['display_name'] }}"
+                    alt=""
                     loading="lazy"
             />
         @endisset

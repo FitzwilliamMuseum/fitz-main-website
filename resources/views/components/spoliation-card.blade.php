@@ -3,7 +3,7 @@
         @isset($claim['image'])
             <img class="card-img-top"
                     src="{{ $claim['image']['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $claim['alt_text'] }}"
+                    alt=""
                     width="{{ $claim['image']['data']['thumbnails'][13]['width'] }}"
                     height="{{ $claim['image']['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"
@@ -11,7 +11,7 @@
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $claim['accession_number'] }}"
+                    alt=""
                     loading="lazy"
             />
         @endisset

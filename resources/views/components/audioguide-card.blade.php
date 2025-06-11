@@ -2,7 +2,7 @@
     <div class="card card-fitz h-100">
         @isset($image)
             <img class="card-img-top" src="{{ $image['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $altTag }}"
+                    alt=""
                     width="{{ $image['data']['thumbnails'][13]['width'] }}"
                     height="{{ $image['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"
@@ -10,7 +10,7 @@
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $title }}"
+                    alt=""
                     loading="lazy"
             />
         @endisset

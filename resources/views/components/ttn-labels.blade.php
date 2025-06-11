@@ -2,14 +2,14 @@
     <div class="card card-fitz h-100">
         @if(!empty($labels['image']))
             <img class="card-img-top" src="{{$labels['image']['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $labels['alt_text'] }}"
+                    alt=""
                     width="{{ $labels['image']['data']['thumbnails'][13]['width'] }}"
                     height="{{ $labels['image']['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"/>
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $labels['title'] }}"
+                    alt=""
                     loading="lazy"/>
         @endisset
         <div class="card-body h-100">
@@ -32,4 +32,3 @@
         </div>
     </div>
 </div>
-

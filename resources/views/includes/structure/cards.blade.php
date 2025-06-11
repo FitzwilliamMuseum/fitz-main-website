@@ -9,7 +9,7 @@
             @if(!is_null($datum['hero_image']))
                 <a href="{{ route('landing-section', [$datum['section'],$datum['slug']]) }}">
                     <img class="card-img-top" src="{{ $datum['hero_image']['data']['thumbnails'][2]['url']}}"
-                         alt="{{ $datum['hero_image_alt_text']}}" loading="lazy"
+                         alt="" loading="lazy"
                          width="{{ $datum['hero_image']['data']['thumbnails'][2]['width'] }}"/></a>
             @endif
             <div class="card-body h-100">

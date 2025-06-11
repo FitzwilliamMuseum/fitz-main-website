@@ -3,7 +3,7 @@
         @isset($donate['hero_image'])
             <img class="card-img-top"
                     src="{{ $donate['hero_image']['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $donate['hero_image_alt_text'] }}"
+                    alt=""
                     loading="lazy"
                     width="{{ $donate['hero_image']['data']['thumbnails'][13]['width'] }}"
                     height="{{ $donate['hero_image']['data']['thumbnails'][13]['height'] }}"
@@ -12,7 +12,7 @@
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $donate['title'] }}"
+                    alt=""
                     loading="lazy"
             />
         @endisset

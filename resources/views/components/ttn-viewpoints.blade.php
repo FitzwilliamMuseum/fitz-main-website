@@ -3,14 +3,14 @@
         @if(!empty($viewpoint['associated_artworks'][0]['ttn_labels_id']['image']))
             <img class="card-img-top"
                     src="{{$viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['alt_text'] }}"
+                    alt=""
                     width="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['width'] }}"
                     height="{{ $viewpoint['associated_artworks'][0]['ttn_labels_id']['image']['data']['thumbnails'][13]['height'] }}"
                     loading="lazy"/>
         @else
             <img class="card-img-top"
                     src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $viewpoint['title'] }}"
+                    alt=""
                     loading="lazy"/>
         @endisset
         <div class="card-body h-100">
@@ -39,4 +39,3 @@
         </div>
     </div>
 </div>
-
