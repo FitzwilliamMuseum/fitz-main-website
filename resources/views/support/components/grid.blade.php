@@ -33,11 +33,11 @@
                 <div class="col-md-4 mb-3">
                     <div class="card card-fitz card-fitz-support" data-component="card">
                         <div class="l-box l-box--no-border card__text">
-                            <h3 class="card__heading">
+                            <h2 class="card__heading">
                                 <a class="card__link" href="{{ $page_root }}/{{ $card['slug'] }}">
                                     {{ $card['title'] }}
                                 </a>
-                            </h3>
+                            </h2>
                         </div>
                         <div class="l-frame l-frame--3-2 card__image">
                             {{-- Check for preview image --}}
