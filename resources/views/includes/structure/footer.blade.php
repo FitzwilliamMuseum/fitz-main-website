@@ -147,34 +147,24 @@
                 <div class="row pt-2">
                     <div class="col-md-6 mx-auto">
                         <h2 class="visually-hidden">Join our conversations</h2>
-                        <p class="share text-center">
+                        <p class="share share-icons text-center">
                             <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
-                                @svg('fab-instagram',['width'=> 48,'height'=> 48, 'alt' => "Instagram logo", "class" => "my-2
-                                mx-2"])
+                                @svg('fab-instagram',['width'=> 48,'height'=> 48, 'alt' => "Instagram logo", "class" => "my-2 mx-2"])
                             </a>
-                            <a aria-label="Fitzwilliam Museum facebook account"
-                                href="https://www.facebook.com/fitzwilliammuseum/">
-                                @svg('fab-facebook',['width'=> 48,'height'=> 48, 'alt' => "Facebook logo", "class" => "my-2
-                                mx-2"])
+                            <a aria-label="Fitzwilliam Museum facebook account" href="https://www.facebook.com/fitzwilliammuseum/">
+                                @svg('fab-facebook',['width'=> 48,'height'=> 48, 'alt' => "Facebook logo", "class" => "my-2 mx-2"])
                             </a>
                             <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
-                                {{-- @svg('fab-x-twitter',['width'=> 48,'height'=> 48, 'alt' => "X logo", "class" => "my-2
-                                mx-2"]) --}}
+                                @svg('fab-x-twitter',['width'=> 48,'height'=> 48, 'alt' => "X logo", "class" => "my-2 mx-2"])
                             </a>
-                            <a aria-label="Fitzwilliam Museum linkedin account"
-                                href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
-                                @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkedin logo", "class" => "my-2
-                                mx-2"])
+                            <a aria-label="Fitzwilliam Museum linkedin account" href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
+                                @svg('fab-linkedin',['width'=> 48,'height'=> 48, 'alt' => "Linkedin logo", "class" => "my-2 mx-2"])
                             </a>
-                            <a aria-label="Watch our YouTube videos"
-                                href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
-                                @svg('fab-youtube',['width'=> 48,'height'=> 48, 'alt' => "Youtube logo", "class" => "my-2
-                                mx-2"])
+                            <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
+                                @svg('fab-youtube',['width'=> 48,'height'=> 48, 'alt' => "Youtube logo", "class" => "my-2 mx-2"])
                             </a>
-                            <a aria-label="Fitzwilliam Museum sketchfab account"
-                                href="https://www.sketchfab.com/fitzwilliammuseum/">
-                                <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" width="48" height="48"
-                                    alt="Sketchfab logo" class="my-2 mx-2 eden" />
+                            <a aria-label="Fitzwilliam Museum sketchfab account" href="https://www.sketchfab.com/fitzwilliammuseum/">
+                                <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" width="48" height="48" alt="Sketchfab logo" class="my-2 mx-2 eden" />
                             </a>
                             <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
                                 @svg('fab-github',['width'=> 48,'height'=> 48, 'alt' => "Github logo", "class" => "my-2 mx-2"])
