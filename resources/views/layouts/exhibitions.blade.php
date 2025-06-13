@@ -23,13 +23,13 @@
 
 @if(empty($page_template))
 
+<main>
     @hasSection('banner')
         @yield('banner')
         @include('includes.structure.exhibition-title')
     @else
         @include('includes.structure.head')
     @endif
-    <main>
         @include('includes.structure.open')
 
         <div class="container mt-3">
@@ -65,8 +65,8 @@
         @yield('exhibitions-2024')
         @yield('shopify')
     @endif
+    @include('includes.structure.email-signup')
 </main>
-@include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.structure.modal')
 @include('includes.scripts.javascript')

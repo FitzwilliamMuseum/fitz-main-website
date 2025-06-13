@@ -126,6 +126,10 @@ a.share {
     text-decoration: underline;
 }
 
+.share-icons a {
+    text-decoration: none;
+}
+
 @media (max-width: 440px) {
     .shorten-words {
         max-width: 300px;
@@ -1070,18 +1074,9 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .fitz-footer .footer-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(auto, 225px));
     padding: 0 16px 24px 16px;
-}
-
-@media screen and (min-width: 756px) {
-    .fitz-footer .footer-wrapper div:nth-child(1) {
-        justify-self: start;
-    }
-
-    .fitz-footer .footer-wrapper div:last-child {
-        justify-self: end;
-    }
+    justify-content: space-between;
 }
 
 .fitz-footer-links .footer-wrapper {
@@ -1094,8 +1089,9 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 @media screen and (min-width: 756px) {
     .fitz-footer-links .footer-wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(auto, 315px));
+            justify-content: space-around;
+
     }
 }
 

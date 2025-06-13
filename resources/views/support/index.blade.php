@@ -52,6 +52,8 @@
 
     @include('includes.structure.nav')
 
+<main>
+
     @include('support.components.head', ['hero' => true])
 
     <span id="site-content" class="visually-hidden"></span>
@@ -70,6 +72,8 @@
     @include('support.components.related')
 
     @include('includes.structure.email-signup')
+    
+</main>
 
     @include('includes.structure.footer')
 
