@@ -890,7 +890,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-row: 2 / 3;
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     grid-gap: 10px;
 }
 
@@ -1085,6 +1085,10 @@ a.text-center.btn.btn-outline-light.btn__book {
     grid-column: 1/-1;
     grid-template-columns: 1fr;
     grid-gap: 16px;
+}
+
+.footer-wrapper > * {
+    overflow-wrap: anywhere;
 }
 
 @media screen and (min-width: 756px) {
