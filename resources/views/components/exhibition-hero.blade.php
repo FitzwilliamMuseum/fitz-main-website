@@ -13,7 +13,6 @@
     }
 @endphp
 @if (!empty($hero))
-
     <div class="parallax home-hero exhibition-hero {{ $heroClasses }}">
         @if(!empty($hero['image']))
             {{-- @TODO: We should refactor this so that it uses an img element for both of these instances - background image isn't ideal here --}}
@@ -40,12 +39,14 @@
                     </p>
                 @endif
                 @if($hero['start'])
-                    <p>
-                        {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
+                <p>
+                    {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
+                    @if(!$hero['display_end_date'])
                         -
                         {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
-                    </p>
-                @endif
+                    @endif
+                </p>
+            @endif
             </div>
         </div>
     </div>

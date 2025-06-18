@@ -22,6 +22,7 @@
         :params="[$archived['slug']]"
         :startDate="$archived['exhibition_start_date']"
         :endDate="$archived['exhibition_end_date']"
+        :displayEndDate="$archived['display_end_date']"
         :status="'archived'"
         :ticketed="$archived['ticketed']"></x-exhibition-card>
       @endforeach
