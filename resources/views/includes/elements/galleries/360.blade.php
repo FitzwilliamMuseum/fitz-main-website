@@ -1,8 +1,8 @@
 @section('360')
 @if(!empty($gallery['image_360_pano']))
 <div class="container">
-    <h3>
-        {{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h3>
+    <h2>
+        {{ $gallery['360_pano_title'] }}: {{ Carbon\Carbon::parse($gallery['360_pano_date'])->format('F Y') }}</h2>
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
         <div id="panorama"></div>
     </div>

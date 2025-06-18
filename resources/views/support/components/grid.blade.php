@@ -31,35 +31,29 @@
                     $card = $card['landing_relevant_page_id'];
                 @endphp
                 <div class="col-md-4 mb-3">
-                    <div class="card card-fitz card-fitz-support h-100" data-component="card">
-                        <div>
+                    <div class="card card-fitz card-fitz-support" data-component="card">
+                        <div class="l-box l-box--no-border card__text">
+                            <h2 class="card__heading">
+                                <a class="card__link" href="{{ $page_root }}/{{ $card['slug'] }}">
+                                    {{ $card['title'] }}
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="l-frame l-frame--3-2 card__image">
                             {{-- Check for preview image --}}
                             @if (!empty($card['preview_image']))
-                                <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
-                                    alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
-                                    class="card-img-top-support" width="374" height="342" loading="lazy">
+                                <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}" alt=""
+                                    loading="lazy">
                                 {{-- If no preview, check for hero image --}}
                             @elseif(!empty($card['hero_image']))
-                                <img class="card-img-top-support"
-                                    src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}"
-                                    alt="{{ isset($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}">
+                                <img src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}" alt=""
+                                    loading="lazy">
                                 {{-- Default --}}
                             @else
-                                <img class="card-img-top-support"
-                                    src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition">
+                                <img src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition"
+                                    alt="" loading="lazy">
                             @endif
                         </div>
-                        @if (!empty($card['title']))
-                            <div class="card-body h-100">
-                                <div class="contents-label mb-3">
-                                    <h2>
-                                        <a href="{{ $page_root }}/{{ $card['slug'] }}" class="stretched-link">
-                                            {{ $card['title'] }}
-                                        </a>
-                                    </h2>
-                                </div>
-                            </div>
-                        @endif
                     </div>
                 </div>
             @endforeach

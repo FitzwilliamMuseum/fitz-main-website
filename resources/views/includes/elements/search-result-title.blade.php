@@ -1,15 +1,15 @@
 @if(str_contains($result['contentType'][0], 'instagram'))
-    <h3>
+    <h2>
         An Instagram post
-    </h3>
+    </h2>
 @elseif (str_contains($result['contentType'][0], 'twitter'))
-    <h3>
+    <h2>
         A Twitter post
-    </h3>
+    </h2>
 @else
-    <h3>
+    <h2>
         <a href="{{ $result['url'][0]}}" class="stretched-link">
             {{ html_entity_decode($result['title'][0]) }}
         </a>
-    </h3>
+    </h2>
 @endif

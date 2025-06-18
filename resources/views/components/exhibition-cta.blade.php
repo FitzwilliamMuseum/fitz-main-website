@@ -5,7 +5,27 @@
         If the end date is today, it will return false until the end of the day (23:59:59).
     */
     $exhibitionStatus = (!empty($exhibition["exhibition_end_date"]) && \Carbon\Carbon::createFromFormat('Y-m-d', $exhibition["exhibition_end_date"])->endOfDay()->isPast()) ? 'display: none;' : '';
-    $exhibitionType = (!empty($exhibition['event_type']) && $exhibition['event_type'] == 'display' ? 'display' : 'exhibition');
+    /*
+        Changes introduced by $madeInEgyptExhibition flag:
+        1. CTA Title:
+           - made-in-ancient-egypt: "Tickets"
+           - others: "Pay what you wish"
+        2. Sub text:
+           - made-in-ancient-egypt: "Book your tickets and timed entry slot online"
+           - others: "Our exhibitions and displays remain free but you can now choose to make a donation"
+        3. CTA Button copy:
+           - made-in-ancient-egypt (no URL): "Coming soon"
+           - others (no URL): "Tickets available soon"
+        4. Secondary Link:
+           - made-in-ancient-egypt: "Sign up to our emails" -> tickets.museums.cam.ac.uk/account/create/brief
+           - others: "Plan your visit" -> /plan-your-visit
+        5. Promo text:
+           - made-in-ancient-egypt: adds "free" before "exhibition entry"
+           - others: omits "free"
+    */
+    $madeInEgyptExhibition = $exhibition['slug'] == 'made-in-ancient-egypt';
+    
+    $exhibitionTypeIsDisplay = $exhibition['type'] === 'display';
 @endphp
 
 <div class="exhibition-cta">
