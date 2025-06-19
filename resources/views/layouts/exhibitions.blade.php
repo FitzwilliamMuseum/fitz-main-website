@@ -23,7 +23,7 @@
 
 @if(empty($page_template))
 
-<main>
+<main id="site-content">
     @hasSection('banner')
         @yield('banner')
         @include('includes.structure.exhibition-title')
@@ -35,7 +35,6 @@
         <div class="container mt-3">
             @include('includes.structure.breadcrumb')
         </div>
-        <span id="site-content" class="visually-hidden"></span>
         @yield('content')
         @yield('ttn-actions')
         @yield('events-url')
