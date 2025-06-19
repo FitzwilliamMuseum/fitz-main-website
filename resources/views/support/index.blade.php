@@ -45,11 +45,10 @@
 
     @include('includes.structure.nav')
 
-<main>
+<main id="site-content">
 
     @include('support.components.head', ['hero' => true])
 
-    <span id="site-content" class="visually-hidden"></span>
     @include('support.components.components-repeater')
 
     {{-- If a custom position for the banner hasn't been specified --}}
@@ -65,7 +64,7 @@
     @include('support.components.related')
 
     @include('includes.structure.email-signup')
-    
+
 </main>
 
     @include('includes.structure.footer')

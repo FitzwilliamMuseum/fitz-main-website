@@ -18,8 +18,7 @@
     {{-- include temporary banner for the site --}}
     {{-- @include('includes.structure.defaced-header') --}}
 
-    <main>
-        <span id="site-content" class="visually-hidden"></span>
+    <main id="site-content">
         @hasSection('homepage-hero')
             @yield('homepage-hero')
             {{-- @dd($hero['parallax_one']['data']['url']); --}}
