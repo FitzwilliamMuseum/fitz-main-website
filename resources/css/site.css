@@ -165,6 +165,12 @@ a.share {
     height: 500px;
 }
 
+#panorama:focus {
+    outline: 2px solid #007aff;
+    outline-offset: 4px;
+    outline-color: #007aff;
+}
+
 .floor-plans > li {
     list-style: none;
 }
