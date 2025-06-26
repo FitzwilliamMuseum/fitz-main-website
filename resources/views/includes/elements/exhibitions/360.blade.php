@@ -2,11 +2,11 @@
 @if(!empty($exhibition['image_360_pano']))
 <div class="container-fluid">
     <div class="container">
-        <h3>
+        <h2 id="panorama-title">
             360 gallery image
-        </h3>
+        </h2>
         <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
-            <div id="panorama"></div>
+            <div id="panorama" aria-labelledby="panorama-title"></div>
         </div>
     </div>
 </div>

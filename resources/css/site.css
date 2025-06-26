@@ -161,6 +161,10 @@ a.share {
     height: 500px;
 }
 
+#panorama:focus {
+    outline: 2px solid white;
+}
+
 .floor-plans > li {
     list-style: none;
 }
