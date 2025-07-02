@@ -575,7 +575,7 @@ class solrImportController extends Controller
         $configSolr = Config::get('solarium');
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $delete = $client->createUpdate();
-        $delete->addDeleteQuery('contentType:staff_profile');
+        $delete->addDeleteQuery('contentType:staffProfile');
         $delete->addCommit();
         return $client->update($delete);
     }
