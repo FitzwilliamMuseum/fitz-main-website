@@ -58,7 +58,7 @@ class HomePage extends Model
                    'data' => [
                        'thumbnails' => [
                            13 => [
-                               'url' => 'https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=exhibition',
+                               'url' => 'https://content.fitz.ms/fitz-website/assets/events-home-page.jpg?key=exhibition',
                                'width' => 416,
                                'height' => 416
                            ]
