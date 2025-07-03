@@ -101,7 +101,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/european-pottery-bond.jpg?key=exhibition',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/plan-your-visit-final-.png?key=exhibition',
                                 'width' => 416,
                                 'height' => 416
                             ]
