@@ -30,7 +30,7 @@
 
     @include('includes.structure.nav')
 
-    @include('support.components.head', ['hero' => env('CONTENT_STORE') . 'img_20190105_153947.jpg'])
+    @include('support.components.head', ['hero' => env('CONTENT_STORE') . 'tnew-homepage.png'])
 
     <div class="container-fluid related">
         <div class="container related-container">
