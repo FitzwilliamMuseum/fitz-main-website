@@ -42,7 +42,7 @@ class HomePage extends Model
                    'data' => [
                        'thumbnails' => [
                            13 => [
-                               'url' => 'https://content.fitz.ms/fitz-website/assets/large_PD_8_1979_1_201709.jpg?key=exhibition',
+                               'url' => 'https://content.fitz.ms/fitz-website/assets/DISCOVER%20OUR%20COLLECTION%20(FINAL).png?key=exhibition',
                                'width' => 416,
                                'height' => 416
                            ]
@@ -58,7 +58,7 @@ class HomePage extends Model
                    'data' => [
                        'thumbnails' => [
                            13 => [
-                               'url' => 'https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=exhibition',
+                               'url' => 'https://content.fitz.ms/fitz-website/assets/events-home-page.jpg?key=exhibition',
                                'width' => 416,
                                'height' => 416
                            ]
@@ -74,7 +74,7 @@ class HomePage extends Model
                    'data' => [
                        'thumbnails' => [
                            13 => [
-                               'url' => 'https://content.fitz.ms/fitz-website/assets/XRF%20analysis%20of%20an%20illuminated%20mss%20at%20the%20Fitz.jpg?key=exhibition',
+                               'url' => 'https://content.fitz.ms/fitz-website/assets/RESEARCH%20(FINAL).png?key=exhibition',
                                'width' => 416,
                                'height' => 416
                            ]
@@ -101,7 +101,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/european-pottery-bond.jpg?key=exhibition',
+                                'url' => 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/visit-final-.png',
                                 'width' => 416,
                                 'height' => 416
                             ]
@@ -117,7 +117,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/Courtyard%20(2)%20(1).jpg?key=exhibition',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/BROWSE%20OUR%20SHOP%20(FINAL).png?key=exhibition',
                                 'width' => 416,
                                 'height' => 416,
                             ]
@@ -133,7 +133,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/happy_faces_scholars_reception_optimised.jpg?key=exhibition',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/SUPPORT%20US%20(FINAL).png?key=exhibition',
                                 'width' => 416,
                                 'height' => 416
                             ]
