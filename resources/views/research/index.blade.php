@@ -2,7 +2,7 @@
 @foreach($pages['data'] as $page)
 @section('title', $page['title'])
 
-@section('hero_image',env('CONTENT_STORE') . 'RESEARCH%20(FINAL).png')
+@section('hero_image',env('CONTENT_STORE') . 'RESEARCH-(FINAL).png')
 @section('hero_image_title', "An artist displaying his painting")
 
 @section('description', $page['meta_description'])

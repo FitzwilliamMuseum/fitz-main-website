@@ -42,7 +42,7 @@ class HomePage extends Model
                    'data' => [
                        'thumbnails' => [
                            13 => [
-                               'url' => 'https://content.fitz.ms/fitz-website/assets/DISCOVER%20OUR%20COLLECTION%20(FINAL).png?key=exhibition',
+                               'url' => 'https://content.fitz.ms/fitz-website/assets/DISCOVER-OUR-COLLECTION-(FINAL).png?key=exhibition',
                                'width' => 416,
                                'height' => 416
                            ]
@@ -74,7 +74,7 @@ class HomePage extends Model
                    'data' => [
                        'thumbnails' => [
                            13 => [
-                               'url' => 'https://content.fitz.ms/fitz-website/assets/RESEARCH%20(FINAL).png?key=exhibition',
+                               'url' => 'https://content.fitz.ms/fitz-website/assets/RESEARCH-(FINAL).png?key=exhibition',
                                'width' => 416,
                                'height' => 416
                            ]
@@ -117,7 +117,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/BROWSE%20OUR%20SHOP%20(FINAL).png?key=exhibition',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/BROWSE-OUR-SHOP-(FINAL).png?key=exhibition',
                                 'width' => 416,
                                 'height' => 416,
                             ]
@@ -133,7 +133,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://content.fitz.ms/fitz-website/assets/SUPPORT%20US%20(FINAL).png?key=exhibition',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/SUPPORT-US-(FINAL).png?key=exhibition',
                                 'width' => 416,
                                 'height' => 416
                             ]
