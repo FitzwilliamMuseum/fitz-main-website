@@ -35,6 +35,8 @@ View [deployment information](https://github.com/FitzwilliamMuseum/fitz-web-docs
 
 ## Installation
 
+Details on DDEV setup are below these instructions
+
 1. Install php 8.1 into your environment
 2. Install composer and then do the following:
 ```
@@ -98,6 +100,51 @@ To cache icons and routes:
 php artisan icons:cache
 php artisan route:cache
 ```
+
+## DDEV Setup
+Clone the repo
+```
+git clone git@github.com:FitzwilliamMuseum/fitz-main-website.git
+```
+
+Run composer install
+```
+ddev composer install
+```
+
+DDEV will create a new .env file.
+
+Generate a new application key
+```
+ddev php artisan key:generate
+```
+### Env setup
+
+Fill in variables for your instance (Cache etc), values from the production version of the websites are on
+the main network drive.
+
+```
+nano .env
+```
+
+### A few notes on env settings
+`CACHE_DRIVER` is set to `file` 
+Redis is installed as part of DDEV but currently errors, further troubleshooting is required.
+
+Currently Solr is not installed on the DDEV environment, so you will need to set the `SOLR_ENABLED` flag to `false` in your `.env` file.
+
+Download a copy of the live database and import it into your local DDEV environment. This produced an ASCII character error:
+```
+ddev tableplus
+```
+Then import the DB via the  with File->Import menu
+
+Run the project
+```
+ddev start
+```
+The site can be viewed at http://fitz-main.ddev.site or with `ddev launch`
+
 
 ## License
 
