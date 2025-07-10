@@ -101,7 +101,7 @@ class HomePage extends Model
                     'data' => [
                         'thumbnails' => [
                             13 => [
-                                'url' => 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/visit-final-.png',
+                                'url' => 'https://content.fitz.ms/fitz-website/assets/visit(final).png?key=exhibition',
                                 'width' => 416,
                                 'height' => 416
                             ]

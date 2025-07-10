@@ -75,6 +75,8 @@ class Kernel extends ConsoleKernel
         # Clear sessions/shopify
         $schedule->call('App\Http\Controllers\solrImportController@shopifyRefresh')->cron('1 */12 * * */3');
         $schedule->call('App\Http\Controllers\solrImportController@sessionsRefresh')->cron('1 */12 * * */3');
+        # Clear staff profiles
+        $schedule->call('App\Http\Controllers\solrImportController@staffRefresh')->cron('0 2 * * *');
         # Sitemap generation
         $schedule->command('sitemap:generate')->daily();
         # Long form
