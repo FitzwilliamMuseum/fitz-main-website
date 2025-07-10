@@ -5,10 +5,12 @@
         <h3 class="mb-3">Curators and experts behind this exhibition</h3>
         <div class="row">
             @foreach($exhibition['associated_curators'] as $curator)
-            <x-image-card :altTag="$curator['staff_profiles_id']['display_name']"
-                :title="$curator['staff_profiles_id']['display_name']"
-                :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'"
-                :params="[$curator['staff_profiles_id']['slug']]"></x-image-card>
+                @if($curator['staff_profiles_id'])
+                    <x-image-card :altTag="$curator['staff_profiles_id']['display_name']"
+                        :title="$curator['staff_profiles_id']['display_name']"
+                        :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'"
+                        :params="[$curator['staff_profiles_id']['slug']]"></x-image-card>
+                @endif
             @endforeach
             @foreach($exhibition['external_curators'] as $curator)
             <x-associated-curator :curator="$curator"></x-associated-curator>
