@@ -13,7 +13,7 @@
             </div>
         @endif
 
-  <h3>Location</h3>
+  <h2>Location</h2>
   <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
     <label class="btn btn-sm btn-outline-secondary active">
       <input type="radio" name="location" id="option1" autocomplete="off" value="physical" checked> Museum
@@ -25,7 +25,7 @@
   </div>
   <hr />
 
-  <h3>Choose your dates</h3>
+  <h2>Choose your dates</h2>
   <div class="form-group">
     <label for="datefrom" >Date from: </label>
     <input id="datefrom" type="date" class="date col-md-12" name="datefrom" type="text" class="form-control mr-sm-2 mr-2"

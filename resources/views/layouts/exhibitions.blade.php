@@ -23,19 +23,18 @@
 
 @if(empty($page_template))
 
+<main id="site-content">
     @hasSection('banner')
         @yield('banner')
         @include('includes.structure.exhibition-title')
     @else
         @include('includes.structure.head')
     @endif
-    <main>
         @include('includes.structure.open')
 
         <div class="container mt-3">
             @include('includes.structure.breadcrumb')
         </div>
-        <span id="site-content" class="visually-hidden"></span>
         @yield('content')
         @yield('ttn-actions')
         @yield('events-url')
@@ -65,8 +64,8 @@
         @yield('exhibitions-2024')
         @yield('shopify')
     @endif
+    @include('includes.structure.email-signup')
 </main>
-@include('includes.structure.email-signup')
 @include('includes.structure.footer')
 @include('includes.structure.modal')
 @include('includes.scripts.javascript')

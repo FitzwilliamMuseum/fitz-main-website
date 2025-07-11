@@ -9,9 +9,9 @@
     @markdown($resources['description'])
 </div>
 @if(!is_null($resources['project_url']))
-<h3>
+<h2>
     Project information
-</h3>
+</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
     <ul>
 

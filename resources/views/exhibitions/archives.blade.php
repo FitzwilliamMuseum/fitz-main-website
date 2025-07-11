@@ -9,9 +9,9 @@
 @section('archive')
 <div class="container-fluid py-3">
   <div class="container">
-    <h3>
+    <h2>
       Archived exhibitions and displays
-    </h3>
+    </h2>
     <div class="row">
       @foreach($archive['data'] as $archived)
         <x-exhibition-card

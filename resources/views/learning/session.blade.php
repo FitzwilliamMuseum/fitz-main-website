@@ -5,7 +5,7 @@
 @section('description', $session['meta_description'])
 @section('keywords', $session['meta_keywords'])
 @section('content')
-<h3>Session Description</h3>
+<h2>Session Description</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($session['description'])
     <p>
@@ -13,7 +13,7 @@
         to book, or to discuss your needs.
     </p>
 </div>
-<h3>Format of the session</h3>
+<h2>Format of the session</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
     @markdown($session['format_session'])
 </div>
@@ -26,7 +26,7 @@
 </div>
 @endif
 
-<h3>More about this session</h3>
+<h2>More about this session</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 ">
     <ul>
         @if(isset($session['key_stages']) && !empty($session['key_stages']))
@@ -48,7 +48,7 @@
 </div>
 
 @if(!empty($session['associated_learning_files']))
-<h3>Fact sheets and related files</h3>
+<h2>Fact sheets and related files</h2>
 <div class="row">
     @foreach($session['associated_learning_files'] as $file)
     <x-learning-file-card :file="$file"></x-learning-file-card>
@@ -59,7 +59,7 @@
 @if(!empty($records))
 @section('mlt')
 <div class="container">
-    <h3>Other related schools sessions</h3>
+    <h2>Other related schools sessions</h2>
     <div class="row">
         @foreach($records as $record)
         <x-solr-card :result="$record"></x-solr-card>

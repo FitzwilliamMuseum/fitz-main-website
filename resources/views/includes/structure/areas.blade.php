@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Areas of expertise</h3>
+    <h2>Areas of expertise</h2>
     <div class="row">
         @foreach($areas['data'] as $area)
             <x-image-card

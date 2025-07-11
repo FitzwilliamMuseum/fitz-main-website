@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="collection-query">Search our objects and artworks</label>
-                        <input type="text" id="collection-query" name="query" value="" class="form-control input-lg mr-4" placeholder="Search our collection" required value="{{ old('query') }}">
+                        <input type="text" id="collection-query" name="query" value="" class="form-control input-lg mr-4" required value="{{ old('query') }}">
                     </div>
                 </div>
                 <div class="row">
@@ -91,7 +91,7 @@
                 <div class="row">
                         <label for="highlights-query">Search our highlights</label>
                         <div class="col-lg-12 mb-3 form-field">
-                            <input type="text" id="highlights-query" name="query" value="" class="form-control input-lg me-4" placeholder="Search our highlight objects" required value="{{ old('query') }}&contentType:pharos">
+                            <input type="text" id="highlights-query" name="query" value="" class="form-control input-lg me-4" required value="{{ old('query') }}&contentType:pharos">
                             <button class="btn btn-dark" type="submit">Search...</button>
                         </div>
                 </div>

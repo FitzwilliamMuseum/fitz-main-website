@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Incoming loan due diligence</h3>
+    <h2>Incoming loan due diligence</h2>
     <div class="container shadow-sm p-3 mb-3">
         <p>Lists of objects proposed for protection under Part 6 of the Tribunals, Courts and Enforcement Act 2007
             (protection of cultural objects on loan).</p>
@@ -7,25 +7,29 @@
     <div class="row">
         @foreach($data['data'] as $immunity)
             <div class="col-md-4 mb-3">
-                <div class="card  h-100">
-                    @if(!is_null($immunity['hero_image']))
-                        <a href="{{ $immunity['immunity_from_seizure']['data']['full_url']}}"><img class="img-fluid"
-                                                                                                   src="{{ $immunity['hero_image']['data']['thumbnails'][4]['url']}}"
-                                                                                                   loading="lazy"
-                                                                                                   alt="{{ $immunity['hero_image_alt_text'] }}"
-                                                                                                   width="{{ $immunity['hero_image']['data']['thumbnails'][4]['width'] }}"
-                                                                                                   height="{{ $immunity['hero_image']['data']['thumbnails'][4]['height'] }}"
-                            /></a>
-                    @endif
-                    <div class="card-body h-100">
-                        <div class="contents-label mb-3">
-                            <h3>
-                                <a class="stretched-link"
-                                   href="{{ $immunity['immunity_from_seizure']['data']['full_url'] }}">{{ $immunity['title']}}</a>
-                            </h3>
-                            <p class="text-info">@mime($immunity['immunity_from_seizure']['type'])
-                                @humansize($immunity['immunity_from_seizure']['filesize'])</p>
-                        </div>
+                <div class="card" data-component="card">
+                    <div class="l-box l-box--no-border card__text">
+                        <h3 class="card__heading">
+                            <a class="card__link" href="{{ $immunity['immunity_from_seizure']['data']['full_url'] }}">
+                                {{ $immunity['title'] }}
+                            </a>
+                        </h3>
+                        <p class="text-info">
+                            @mime($immunity['immunity_from_seizure']['type'])
+                            @humansize($immunity['immunity_from_seizure']['filesize'])
+                        </p>
+                    </div>
+
+                    <div class="l-frame l-frame--3-2 card__image">
+                        @if(!is_null($immunity['hero_image']))
+                            <img src="{{ $immunity['hero_image']['data']['thumbnails'][13]['url'] }}"
+                                 alt=""
+                                 loading="lazy" />
+                        @else
+                            <img src="{{ env('MISSING_IMAGE_URL') }}"
+                                 alt=""
+                                 loading="lazy" />
+                        @endif
                     </div>
                 </div>
             </div>

@@ -8,6 +8,10 @@
     }
 }
 
+.support-grid .card__heading {
+    background: transparent;
+}
+
 @media screen and (min-width: 576px) {
     .container.support-grid {
         max-width: 100%;
@@ -72,5 +76,6 @@
     font-weight: 600;
     font-size: 20px;
 }
+
 
 /* support-grid-card end */

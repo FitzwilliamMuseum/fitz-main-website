@@ -21,7 +21,7 @@
                 </div>
             @endif
             @if(!empty($mindseye['author_response']))
-                <h3>The artist's response</h3>
+                <h2>The artist's response</h2>
                 <div class="col shadow-sm p-3 mx-auto mb-3">
                     <figure class="figure">
                         <img class="img-fluid" src="{{ $mindseye['author_response']['data']['thumbnails'][4]['url'] }}"
@@ -38,9 +38,9 @@
             </div>
 
             @if(!empty($mindseye['transcript']))
-                <h3>
+                <h2>
                     Podcast transcript
-                </h3>
+                </h2>
                 <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
                     <p>
                         <em>
@@ -119,9 +119,9 @@
 
             @if(!empty($adlib))
                 @foreach($adlib as $record)
-                    <h3>
+                    <h2>
                         About the object
-                    </h3>
+                    </h2>
                     <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
 
                         @include('includes.elements.descriptive')
@@ -165,21 +165,28 @@
 @if(!empty($suggest))
     @section('mlt')
         <div class="container">
-            <h3>Similar podcasts to listen to</h3>
+            <h2>Similar podcasts to listen to</h2>
             <div class="row">
                 @foreach($suggest as $record)
                     <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            @if(!is_null($record['searchImage']))
-                                <img class="img-fluid " src="{{ $record['searchImage'][0]}}"
-                                     alt="Highlight image for {{ $record['title'][0] }}" loading="lazy"/>
-                            @endif
-                            <div class="card-body ">
-                                <div class="contents-label mb-3">
-                                    <h3>
-                                        <a href="{{ $record['url'][0] }}">{{ $record['title'][0] }}</a>
-                                    </h3>
-                                </div>
+                        <div class="card" data-component="card">
+                            <div class="l-box l-box--no-border card__text">
+                                <h3 class="card__heading">
+                                    <a class="card__link" href="{{ $record['url'][0] }}">
+                                        {{ $record['title'][0] }}
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="l-frame l-frame--3-2 card__image">
+                                @if(!is_null($record['searchImage']))
+                                    <img src="{{ $record['searchImage'][0] }}"
+                                         alt=""
+                                         loading="lazy" />
+                                @else
+                                    <img src="{{ env('MISSING_IMAGE_URL') }}"
+                                         alt=""
+                                         loading="lazy" />
+                                @endif
                             </div>
                         </div>
                     </div>

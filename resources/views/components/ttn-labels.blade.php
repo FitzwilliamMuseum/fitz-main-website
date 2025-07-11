@@ -1,35 +1,27 @@
 <div class="col-md-4 mb-3">
-    <div class="card card-fitz h-100">
-        @if(!empty($labels['image']))
-            <img class="card-img-top" src="{{$labels['image']['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $labels['alt_text'] }}"
-                    width="{{ $labels['image']['data']['thumbnails'][13]['width'] }}"
-                    height="{{ $labels['image']['data']['thumbnails'][13]['height'] }}"
-                    loading="lazy"/>
-        @else
-            <img class="card-img-top"
-                    src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $labels['title'] }}"
-                    loading="lazy"/>
-        @endisset
-        <div class="card-body h-100">
-            <div class="contents-labels mb-3">
-                <h2>
-                    @if(isset($labels['display_id_number']))
-                        {{ $labels['display_id_number'] }}:
-                    @endif
-                    <a href="{{ route('exhibition.ttn.label', $labels['slug']) }}" class="stretched-link">
-                        {{ $labels['title'] }}
-                    </a>
-                </h2>
-               <p class="text-info">
-                   {{$labels['artist']['display_name'] ?? 'Anon'}}
-               </p>
-                <p class="text-black-50">
-                    {{ $labels['institution'] ?? 'Private collection' }}
-                </p>
-            </div>
+    <div class="card" data-component="card">
+        <div class="l-box l-box--no-border card__text">
+            <h3 class="card__heading">
+                @if (isset($labels['display_id_number']))
+                    {{ $labels['display_id_number'] }}:
+                @endif
+                <a class="card__link" href="{{ route('exhibition.ttn.label', $labels['slug']) }}">
+                    {{ $labels['title'] }}
+                </a>
+            </h3>
+            <p class="text-info">
+                {{ $labels['artist']['display_name'] ?? 'Anon' }}
+            </p>
+            <p class="text-black-50">
+                {{ $labels['institution'] ?? 'Private collection' }}
+            </p>
+        </div>
+        <div class="l-frame l-frame--3-2 card__image">
+            @if (!empty($labels['image']))
+                <img src="{{ $labels['image']['data']['thumbnails'][13]['url'] }}" alt="" loading="lazy" />
+            @else
+                <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
+            @endif
         </div>
     </div>
 </div>
-

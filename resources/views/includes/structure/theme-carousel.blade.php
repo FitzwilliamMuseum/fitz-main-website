@@ -2,7 +2,7 @@
 <section class="container-fluid py-2">
     <div class="container">
         <div class="row">
-            <h3 class="my-3">Explore themes</h3>
+            <h2 class="my-3">Explore themes</h2>
             <div id="pharos" class="collection-carousel carousel slide" data-ride="carousel" data-bs-interval="false" data-pause="hover">
                 <div class="carousel-inner">
                     @foreach(array_chunk($pharos['data'],3,true) as $slides)

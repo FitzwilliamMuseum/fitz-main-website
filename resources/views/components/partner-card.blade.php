@@ -1,39 +1,25 @@
-<div class="col-md-4 mb-3" data-component="card">
-    <div class="card card-fitz h-100">
-
-
-            @isset($image)
-                <img class="card-img-top"
-                     src="{{ $image['data']['thumbnails'][13]['url']}}"
-                     alt="{{ $altTag }}"
-                     loading="lazy"
-                     width="{{ $image['data']['thumbnails'][13]['width'] }}"
-                     height="{{ $image['data']['thumbnails'][13]['height'] }}"
-                />
-            @else
-                <img class="card-img-top"
-                     src="{{ env('MISSING_IMAGE_URL') }}"
-                     alt="A stand in image for {{ $title }}"
-                     loading="lazy"
-                />
-            @endisset
-
-
-        <div class="card-body h-100">
-            <div class="contents-label mb-3">
-                <h2>
-                    @isset($url)
-                        <a href="{{ $url }}" class="stretched-link">
-                            {{ $title }}
-                        </a>
-                    @else
+<div class="col-md-4 mb-3">
+    <div class="card" data-component="card">
+        <div class="l-box l-box--no-border card__text">
+            <h3 class="card__heading">
+                @isset($url)
+                    <a class="card__link" href="{{ $url }}">
                         {{ $title }}
-                    @endisset
-                </h2>
-                @isset($subtitle)
-                    <p class="text-info">{{ $subtitle }}</p>
+                    </a>
+                @else
+                    {{ $title }}
                 @endisset
-            </div>
+            </h3>
+            @isset($subtitle)
+                <p class="text-info">{{ $subtitle }}</p>
+            @endisset
+        </div>
+        <div class="l-frame l-frame--3-2 card__image">
+            @isset($image)
+                <img src="{{ $image['data']['thumbnails'][13]['url'] }}" alt="" loading="lazy" />
+            @else
+                <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
+            @endisset
         </div>
     </div>
 </div>

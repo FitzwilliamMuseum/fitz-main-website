@@ -3,7 +3,7 @@ const cardsArray = document.querySelectorAll('[data-component="card"]');
 if (cardsArray.length > 0) {
     // Loop through cards adding a click event and identifying the main link
     cardsArray.forEach(function (card) {
-        const mainLink = card.querySelector('.stretched-link');
+        const mainLink = card.querySelector('.card__link') || card.querySelector('.stretched-link');
         const clickableElems = Array.prototype.slice.call(card.querySelectorAll('[data-click]'));
         // Allow other links/buttons in the card to still be "clickable"
         if (clickableElems) {

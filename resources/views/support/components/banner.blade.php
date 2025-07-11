@@ -47,7 +47,7 @@
             <div class="image">
                 @if (!empty($banner_image))
                     <img src="{{ $banner_image['data']['url'] }}"
-                    alt="{{ !empty($banner_image_alt_text) ? $banner_image_alt_text : '' }}"> @else <img
+                    alt=""> @else <img
                         src="{{ env('MISSING_IMAGE_URL') }}" alt="">
                 @endif
             </div>

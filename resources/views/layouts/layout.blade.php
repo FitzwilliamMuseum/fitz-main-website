@@ -25,8 +25,7 @@
 
         @include('includes.structure.nav')
 
-        <main>
-            <span id="site-content" class="visually-hidden"></span>
+        <main id="site-content">
         @if(Request::is('about-us/terms/hockney'))
             @include('includes.structure.hockney-header')
         @else
@@ -38,7 +37,6 @@
             <div class="container mt-3 p-3">
                 @include('includes.structure.breadcrumb')
                 @yield('press-contact')
-                <span id="site-content" class="visually-hidden"></span>
                 @yield('content')
                 @yield('group-visits')
                 @yield('adlib')

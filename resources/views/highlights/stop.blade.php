@@ -23,12 +23,12 @@
 
 </div>
 
-<h3>
+<h2>
     Crowdsourced transcription of the audio file
-</h3>
+</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 article">
     <figure class="figure float-right p-3">
-        <img src="{{ $stop['hero_image']['data']['thumbnails']['7']['url']}}" alt="{{ $stop['hero_image_alt_text'] }}"
+        <img src="{{ $stop['hero_image']['data']['thumbnails']['7']['url']}}" alt=""
             class="img-fluid" loading="lazy" height="{{ $stop['hero_image']['data']['thumbnails']['7']['height'] }}"
             width="{{ $stop['hero_image']['data']['thumbnails']['7']['width'] }}" />
         <figcaption class="figure-caption text-right">{{$stop['hero_image_alt_text']}}</figcaption>
@@ -39,10 +39,10 @@
     </figure>
     @markdown($stop['transcription'])
 </div>
-<h3>Co-production of this resource</h3>
+<h2>Co-production of this resource</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
     <img src="https://content.fitz.ms/fitz-website/assets/MP_SQUARE_notype.png?key=directus-medium-crop"
-        class="float-end img-fluid p-2" alt="The MicroPasts logo" width="100" height="100" />
+        class="float-end img-fluid p-2" alt="" width="100" height="100" />
     <p>
         The transcription of the audio file for this stop was enabled by the AHRC
         funded crowd-sourcing platform <a href="https://crowdsourced.micropasts.org">MicroPasts</a>.
@@ -56,7 +56,7 @@
 @if(!empty($stop['associated_pharos_object']))
 @section('pharos-pages')
 <div class="container">
-    <h3>Associated highlight record</h3>
+    <h2>Associated highlight record</h2>
     <div class="row">
         @foreach($stop['associated_pharos_object'] as $pharosassoc)
         <x-image-card :image="$pharosassoc['pharos_id']['image']" :altTag="$pharosassoc['pharos_id']['image_alt_text']"
@@ -71,7 +71,7 @@
 @if(!empty($records))
 @section('mlt')
 <div class="container">
-    <h3>Other audio guide stops you might like</h3>
+    <h2>Other audio guide stops you might like</h2>
     <div class="row">
         @foreach($records as $record)
         <x-solr-card :result="$record"></x-solr-card>

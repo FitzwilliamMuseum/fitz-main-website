@@ -16,7 +16,7 @@
     <figure class="figure ">
         <a href="{{ route('context-section-detail', [$pharos['section'] , $pharos['slug'] ]) }}">
             <img class="img-fluid" src="{{ $pharos['hero_image']['data']['url']}}"
-                alt="{{ $pharos['hero_image_alt_text'] }}" loading="lazy" width="{{ $pharos['hero_image']['width'] }}"
+                alt="" loading="lazy" width="{{ $pharos['hero_image']['width'] }}"
                 height="{{ $pharos['hero_image']['height'] }}" />
         </a>
         <figcaption class="text-info figure-caption">
@@ -33,9 +33,9 @@
 @if(!empty($highlights))
 @section('highlight')
 <div class="container">
-    <h3>
+    <h2>
         Other highlight objects you might like
-    </h3>
+    </h2>
     <div class="row">
         @foreach($highlights as $record)
         <x-solr-card :result="$record"></x-solr-card>
@@ -49,9 +49,9 @@
 @if(!empty($records))
 @section('mlt')
 <div class="container">
-    <h3>
+    <h2>
         Other pathways and stories you might like
-    </h3>
+    </h2>
     <div class="row">
         @foreach($records as $record)
         <x-solr-card :result="$record"></x-solr-card>

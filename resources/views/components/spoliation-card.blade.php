@@ -1,29 +1,19 @@
-<div class="col-md-4 mb-3" data-component="card">
-    <div class="card card-fitz h-100">
-        @isset($claim['image'])
-            <img class="card-img-top"
-                    src="{{ $claim['image']['data']['thumbnails'][13]['url']}}"
-                    alt="{{ $claim['alt_text'] }}"
-                    width="{{ $claim['image']['data']['thumbnails'][13]['width'] }}"
-                    height="{{ $claim['image']['data']['thumbnails'][13]['height'] }}"
-                    loading="lazy"
-            />
-        @else
-            <img class="card-img-top"
-                    src="{{ env('MISSING_IMAGE_URL') }}"
-                    alt="A stand in image for {{ $claim['accession_number'] }}"
-                    loading="lazy"
-            />
-        @endisset
-        <div class="card-body h-100">
-            <div class="contents-label mb-3">
-                <h2>
-                    <a href="{{ route('about.spoliation.claim', $claim['priref']) }}" class="stretched-link">
-                        {{ $claim['accession_number'] }}: {{ $claim['alt_text'] }}
-                    </a>
-                </h2>
-                <p class="text-info">Call for information expires on: {{ $claim['expiry_date'] }}</p>
-            </div>
+<div class="col-md-4 mb-3">
+    <div class="card" data-component="card">
+        <div class="l-box l-box--no-border card__text">
+            <h3 class="card__heading">
+                <a class="card__link" href="{{ route('about.spoliation.claim', $claim['priref']) }}">
+                    {{ $claim['accession_number'] }}: {{ $claim['alt_text'] }}
+                </a>
+            </h3>
+            <p class="text-info">Call for information expires on: {{ $claim['expiry_date'] }}</p>
+        </div>
+        <div class="l-frame l-frame--3-2 card__image">
+            @isset($claim['image'])
+                <img src="{{ $claim['image']['data']['thumbnails'][13]['url'] }}" alt="" loading="lazy" />
+            @else
+                <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
+            @endisset
         </div>
     </div>
 </div>

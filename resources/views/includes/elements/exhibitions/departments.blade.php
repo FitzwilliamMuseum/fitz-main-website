@@ -1,7 +1,7 @@
 @if(!empty($exhibition['associated_departments']))
     @section('departments')
         <div class="container">
-            <h3>Associated departments</h3>
+            <h2>Associated departments</h2>
             <div class="row">
                 @foreach($exhibition['associated_departments'] as $department)
                     <x-image-card

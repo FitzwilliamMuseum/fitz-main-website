@@ -10,9 +10,9 @@
     @markdown($project['project_overview'])
 </div>
 @if(!@empty ($project['project_principal']))
-<h3>
+<h2>
     Project information
-</h3>
+</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
     <ul>
         @if($project['project_principal'])
@@ -42,14 +42,14 @@
 </div>
 @endif
 @if($project['publications'])
-<h3>Related publications</h3>
+<h2>Related publications</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['publications'])
 </div>
 @endif
 
 @if(!empty($project['project_team']))
-<h3>Project team</h3>
+<h2>Project team</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
     @markdown($project['project_team'])
 </div>
@@ -58,7 +58,7 @@
 @if(!empty($project['project_partnerships'] ))
 @section('research-funders')
 <div class="container">
-    <h3>Funders and partners</h3>
+    <h2>Funders and partners</h2>
     <div class="row">
         @foreach($project['project_partnerships'] as $partner)
         @isset($partner['partner'])
@@ -76,7 +76,7 @@
 @if(isset($project['outcomes']))
 @section('research-projects')
 <div class="container">
-    <h3>Outcomes of the project</h3>
+    <h2>Outcomes of the project</h2>
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
         {!! $project['outcomes'] !!}
     </div>
@@ -102,7 +102,7 @@
 @if(!empty($records))
 @section('mlt')
 <div class="container">
-    <h3>Other research projects you might like</h3>
+    <h2>Other research projects you might like</h2>
     <div class="row">
         @foreach($records as $record)
         <x-solr-card :result="$record"></x-solr-card>

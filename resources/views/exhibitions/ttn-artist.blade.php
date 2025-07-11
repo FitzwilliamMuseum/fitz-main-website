@@ -8,7 +8,7 @@
 @if(!empty($works))
     @section('mlt')
         <div class="container">
-            <h3>Associated paintings in this exhibition</h3>
+            <h2>Associated paintings in this exhibition</h2>
             <div class="row">
                 @foreach($works as $label)
                     <x-ttn-labels :labels="$label"></x-ttn-labels>
@@ -22,7 +22,7 @@
     @section('artistsSimilar')
         <div class="container-fluid bg-pastel my-2">
             <div class="container">
-                <h3>Other artists that may interest you</h3>
+                <h2>Other artists that may interest you</h2>
                 <div class="row">
                     @foreach($records as $record)
                         <x-solr-card :result="$record"></x-solr-card>
@@ -32,4 +32,3 @@
         </div>
     @endSection
 @endif
-

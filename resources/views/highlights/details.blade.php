@@ -7,7 +7,7 @@
 @section('content')
 <div class="text-center">
     <figure class="figure">
-        <img src="{{ $pharos['image']['data']['url']}}" alt="{{ $pharos['image_alt_text'] }}" class="img-fluid"
+        <img src="{{ $pharos['image']['data']['url']}}" alt="" class="img-fluid"
             loading="lazy" height="{{ $pharos['image']['height'] }}" width="{{ $pharos['image']['width'] }}" />
         <figcaption class="figure-caption text-info text-right">{{$pharos['image_alt_text']}}</figcaption>
     </figure>
@@ -16,7 +16,7 @@
     @markdown($pharos['description'])
 </div>
 
-<h3>Themes and periods</h3>
+<h2>Themes and periods</h2>
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
 
     @if(isset($pharos['period_assigned']))
@@ -91,7 +91,7 @@
 @if(!empty($pharos['associated_pharos_content']))
 @section('pharos-pages')
 <div class="container">
-    <h3>Stories, Contexts and Themes</h3>
+    <h2>Stories, Contexts and Themes</h2>
     <div class="row">
         @foreach($pharos['associated_pharos_content'] as $pharosassoc)
         <x-image-card :image="$pharosassoc['pharos_pages_id']['hero_image']"
@@ -107,7 +107,7 @@
 @if(!empty($records))
 @section('mlt')
 <div class="container">
-    <h3>Other highlight objects you might like</h3>
+    <h2>Other highlight objects you might like</h2>
     <div class="row">
         @foreach($records as $record)
         <x-solr-card :result="$record"></x-solr-card>
@@ -120,7 +120,7 @@
 @section('adlib')
 @if(!empty($adlib))
 @foreach($adlib as $record)
-<h3 class="visually-hidden">Data from our collections database</h3>
+<h2 class="visually-hidden">Data from our collections database</h2>
 @include('includes.elements.expander')
 <div id="expand-more" class="collapse">
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
@@ -138,7 +138,7 @@
 @else
 
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
-    <h3>Further information</h3>
+    <h2>Further information</h2>
     <ul>
         <li>Collections ID: {{$pharos['adlib_id']}}</li>
         @if(!is_null($pharos['place_of_origin']))

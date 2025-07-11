@@ -11,6 +11,6 @@
         Learn more about this claim
     </a>
 </div>
-<img class="card-img-top" src="{{ $claims['image']['data']['url']}}" alt="{{ $claims['alt_text'] }}"
+<img class="card-img-top" src="{{ $claims['image']['data']['url']}}" alt=""
     width="{{ $claims['image']['width'] }}" loading="lazy" />
 @endsection

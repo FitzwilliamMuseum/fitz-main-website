@@ -38,6 +38,9 @@
 </head>
 
 <body class="doc-body support c_darkmode">
+
+    <main id="site-content">
+
     @include('googletagmanager::body')
 
     @include('includes.structure.accessibility')
@@ -48,7 +51,6 @@
 
     @include('support.components.head')
 
-    <span id="site-content" class="visually-hidden"></span>
     @include('support.components.components-repeater')
 
     {{-- If a custom position for the banner hasn't been specified --}}
@@ -63,6 +65,8 @@
     @include('includes.structure.footer')
 
     @include('includes.scripts.javascript')
+
+    </main>
 
 </body>
 

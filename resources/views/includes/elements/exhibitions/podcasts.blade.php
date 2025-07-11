@@ -2,7 +2,7 @@
     @section('exhibitionAudio')
         <div class="container-fluid bg-gdbo py-2 mb-2">
             <div class="container">
-                <h3>Audio</h3>
+                <h2>Audio</h2>
                 <div class="row">
                     @foreach($podcasts['data'] as $podcast)
                         <x-image-card
