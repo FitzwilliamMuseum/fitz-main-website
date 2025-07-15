@@ -9,13 +9,14 @@
             </div>
         @endif
         @php
-            $carousel_placement = $loop->index;
+            if(!empty($loop)) {
+                $carousel_placement = $loop->index;
+            }
             $slides = null;
 
             if (!empty($image_gallery['gallery_images'])) {
                 $slides = $image_gallery['gallery_images'];
             }
-
             $image_source = null;
             if (!empty($page['image_blocks'])) {
                 $image_source = $page['image_blocks'];
@@ -59,10 +60,14 @@
                 </div>
                 <div class="splide__track">
                     <div class="splide__list">
-                        @foreach ($image_gallery['gallery_images'] as $image)
+                        @foreach ($slides as $image)
                             <li class="splide__slide">
                                 @php
-                                    $current_image = getImageData($image_source, $image['image_id']);
+                                    if(!empty($image['image_id'])) {
+                                        $current_image = getImageData($image_source, $image['image_id']);
+                                    } else {
+                                        $current_image = $image;
+                                    }
                                 @endphp
                                 @if (!empty($image['image_caption']))
                                     <figure>

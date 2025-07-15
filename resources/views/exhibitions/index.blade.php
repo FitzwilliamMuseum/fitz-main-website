@@ -6,12 +6,142 @@
     @section('hero_image', $page['hero_image']['data']['url'])
     @section('hero_image_title', $page['hero_image_alt_text'])
 @endforeach
-
-@section('banner')
+{{-- @section('banner')
     <x-home-page-banner :banners="$banners"></x-home-page-banner>
+@endSection --}}
+
+@php
+    $text_components = array(
+        'first' => array(
+            'heading' => 'About the exhibition',
+            'copy' => '<p>Artists Jim Goldberg, Tracey Emin and Paula Rego are among those whose work challenges the typical ideas of ‘happy’ and ‘unhappy’ families, instead revealing how families are a product of relationships between family members and the environments they live in. Cathy Wilkes, Hardeep Pandhal and others look at how each family leaves its imprint on the next generation – through biological, social and cultural </p>'
+        ),
+        'second' => array(
+            'heading' => 'Example heading',
+            'copy' => '<p>Explore our latest What’s New display, packed with a selection of supersized works which have joined our collection of prints and drawings over the last five years.</p>
+            <p>Showcasing various painting, printmaking and drawing techniques from the 1600s to today, our fascinating new display brings together large-scale works on paper that reveal the artists’ creativity and the media’s versatility.</p>
+            <p>Discover the contrasts and crossovers between images which are realistic and abstract, urban and rural, organic and human-made, old and new. What’s New XXL features works by historic printmakers William Hogarth and Wenceslaus Hollar alongside British modern artists such as Lucian Freud and Howard Hodgkin, and leading contemporary artists Lubaina Himid and Grayson Perry.</p>'
+        ),
+        'third' => array(
+            'heading' => 'Meet the Artist',
+            'copy' => '<p>Explore our latest What’s New display, packed with a selection of supersized works which have</p>'
+        )
+    );
+
+    $accordion_section = array(
+        'accordion_component' => array(
+            ['accordion_heading' => 'FAQ',
+            'accordion' => array(
+                '1' => array(
+                    'heading' => 'How accessible is the exhibition',
+                    'body' => '<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta eius sint facilis? Minima aperiam illo libero optio error impedit deserunt debitis ut, nihil laudantium fugiat perferendis repellendus molestiae suscipit neque!</p>'
+                ),
+                '2' => array(
+                    'heading' => 'Can my money go to a specific collection',
+                    'body' => '<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta eius sint facilis? Minima aperiam illo libero optio error impedit deserunt debitis ut, nihil laudantium fugiat perferendis repellendus molestiae suscipit neque!</p>'
+                ),
+                '3' => array(
+                    'heading' => 'Is it suitable for children?',
+                    'body' => '<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta eius sint facilis? Minima aperiam illo libero optio error impedit deserunt debitis ut, nihil laudantium fugiat perferendis repellendus molestiae suscipit neque!</p>'
+                ),
+            )]
+        )
+    );
+    $related_events = array(
+        'heading' => 'Related events',
+        'events_listing' => array(
+            '1' => array(
+                'heading' => 'Unlock your imagination as we creatively',
+                'excerpt' => 'Unlock your imagination as we creatively explore the spiritual and the divine in a printmaking workshop led by artist Alison Hunte.
+                Alison Hunte is a printmaker and painter living in Cambridge. Her work explores how various states of consciousness and emotions can be expressed through art making.',
+                'link_text' => 'Example link',
+                'link_url' => '/'
+            ),
+            '2' => array(
+                'heading' => 'Unlock your imagination as we creatively',
+                'excerpt' => 'Unlock your imagination as we creatively explore the spiritual and the divine in a printmaking workshop led by artist Alison Hunte.
+                Alison Hunte is a printmaker and painter living in Cambridge. Her work explores how various states of consciousness and emotions can be expressed through art making.',
+                'link_text' => 'Example link',
+                'link_url' => '/'
+            )
+        )
+    );
+    $image_gallery = array(
+        'section_heading' => 'Take a look at the exhibition',
+        'gallery_images' => array(
+            '1' => array(
+                'data' => array(
+                    'full_url' => 'https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg'
+                ),
+                'image_caption' => 'West Africa, the Caribbean, South America and Europe, this landmark exhibition also reveals the histories that have been silenced'
+            ),
+            '2' => array(
+                'data' => array(
+                    'full_url' => 'https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg'
+                ),
+                'image_caption' => 'West Africa, the Caribbean, South America and Europe, this landmark exhibition also reveals the histories that have been silenced'
+            ),
+            '3' => array(
+                'data' => array(
+                    'full_url' => 'https://content.fitz.ms/fitz-website/assets/gallery3_roof.jpg'
+                ),
+                'image_caption' => 'West Africa, the Caribbean, South America and Europe, this landmark exhibition also reveals the histories that have been silenced'
+            ),
+        )
+    )
+@endphp
+
+@section('exhibitions-landing-2025')
+    @include('exhibitions.components.hero')
+    @include('exhibitions.components.text-component', $content = $text_components['first'])
+    @include('exhibitions.components.details-component')
+    @include('exhibitions.components.text-component', $content = $text_components['second'])
+    @include('exhibitions.components.text-component', $content = $text_components['third'])
+    <div class="container mx-auto col-max-800">
+        @include('support.components.featured-video', [
+            'youtube_id' => '7fIaWBNFPkc'
+        ] )
+    </div>
+    @include('support.components.image-gallery', [
+        'component' => array(
+            'image_gallery' => [$image_gallery]
+        )
+    ])
+    @pushOnce('fitzwilliamScripts')
+        <script defer type="text/javascript" src="{{ asset("/js/image-gallery.js") }}"></script>
+    @endPushOnce
+    @include('exhibitions.components.quote')
+    <div class="container mx-auto col-max-800">
+        @include('support.components.featured-image', [
+            'caption' => 'West Africa, the Caribbean, South America and Europe, this landmark exhibition also reveals the histories that have been silenced'
+        ])
+    </div>
+    @include('support.components.faq', [
+        'component' => $accordion_section
+    ] )
+    @include('exhibitions.components.related-events', [
+        'related_events' => $related_events
+    ])
+    @include('support.components.related', [
+        'page' => array(
+            'suggested_pages_heading' => "We thought you'd like",
+            'pages_listing' => array(
+                '1' => array(
+                    'page_id' => 1
+                ),
+                '2' => array(
+                    'page_id' => 1
+                ),
+                '3' => array(
+                    'page_id' => 1
+                )
+            )
+        )
+    ])
 @endSection
 
-@section('current')
+
+{{-- @section('current')
     <div class="container-fluid py-3">
         <div class="container">
             @if(!empty($current['data']) || !empty($displays['data']))
@@ -58,9 +188,9 @@
             @endif
         </div>
     </div>
-@endsection
+@endsection --}}
 
-@if(!empty($future['data'] ))
+{{-- @if(!empty($future['data'] ))
     @section('future')
         <div class="container-fluid py-3">
 
@@ -88,9 +218,9 @@
             </div>
         </div>
     @endsection
-@endif
+@endif --}}
 
-@section('archive')
+{{-- @section('archive')
     <div class="container-fluid py-3">
 
         <div class="container">
@@ -116,4 +246,4 @@
             <a class="btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
         </div>
     </div>
-@endsection
+@endsection --}}

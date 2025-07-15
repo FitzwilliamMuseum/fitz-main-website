@@ -21,20 +21,23 @@
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
 
+
+
 @if(empty($page_template))
 
-    @hasSection('banner')
+    {{-- @hasSection('banner')
         @yield('banner')
         @include('includes.structure.exhibition-title')
     @else
         @include('includes.structure.head')
-    @endif
+    @endif --}}
     <main>
-        @include('includes.structure.open')
+        {{-- @include('includes.structure.open') --}}
 
         <div class="container mt-3">
             @include('includes.structure.breadcrumb')
         </div>
+        @yield('exhibitions-landing-2025')
         <span id="site-content" class="visually-hidden"></span>
         @yield('content')
         @yield('ttn-actions')

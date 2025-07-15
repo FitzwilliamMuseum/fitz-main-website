@@ -1,0 +1,106 @@
+.exhibition-hero {
+    background-color: #F4F3F0;
+}
+
+.exhibition-hero-inner {
+    padding: 30px 0 40px;
+
+    .hero-text {
+        padding: 30px;
+    }
+    
+    .hero-image,
+    .hero-text {
+        flex: 1;
+    }
+    
+    .hero-inner h1 {
+        font-size: 60px;
+        margin: 0;
+    }
+    
+    .hero-image img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    
+    .hero-image--lg {
+        display: none;
+    }
+    
+    .hero-image--sm {
+        display: block;
+    }
+    
+    .hero__exhibition-date p {
+        font-size: 24px;
+        margin-top: 10px; /* May need tweaking once the proper fonts are in */
+    }
+    
+    .hero__exhibition-price {
+        font-size: 18px;
+    }
+    
+    .hero-footer {
+        margin-top: 18px;
+    }
+    
+    .hero-buttons {
+        align-items: center;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .button {
+        align-items: center;
+        color: inherit;
+        display: flex;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px;
+        padding-left: 20px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .button svg {
+        margin-left: 12px;
+        transition: .2s all;
+    }
+    
+    .button:hover svg {
+        transform: translateX(5px);
+    }
+    
+    .button--pink {
+        background-color: #B50E5E;
+        color: white;
+    }
+    
+    .button--border {
+        border: 1.5px solid black;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .exhibition-hero-inner {
+        align-items: center;
+        display: flex;
+        gap: 60px;
+        padding: 60px 90px;
+
+        .hero-image--lg {
+            display: block;
+        }
+    
+        .hero-image--sm {
+            display: none;
+        }
+    
+        .hero-text {
+            padding: 0;
+        }
+    }
+}
