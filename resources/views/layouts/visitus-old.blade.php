@@ -16,40 +16,38 @@
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
         <main id="site-content">
-            @include('visit.components.hero')
-            @include('visit.components.museum-information')
-            {{-- @include('includes.structure.head') --}}
-            {{-- @include('includes.structure.open') --}}
+        @include('includes.structure.head')
+            @include('includes.structure.open')
 
-            {{-- <div class="container mt-3">
+            <div class="container mt-3">
                 @include('includes.structure.breadcrumb')
-            </div> --}}
+            </div>
 
-            {{-- <div class="container-fluid py-3 bg-dark" id="site-content">
+            <div class="container-fluid py-3 bg-dark" id="site-content">
                 <div class="container">
                     @yield('content')
                 </div>
-            </div> --}}
+            </div>
 
-            {{-- <div class="container py-3">
+            <div class="container py-3">
                 <h3>Find us</h3>
-            </div> --}}
+            </div>
 
-            {{-- <div class="container map-box ">
+            <div class="container map-box ">
                 @yield('map')
-            </div> --}}
+            </div>
 
-            {{-- @include('includes.elements.directions') --}}
+            @include('includes.elements.directions')
 
-            {{-- <div class="container mt-2">
+            <div class="container mt-2">
                 <h3 class="mb-3">Floorplans and guides</h3>
                 <div class="col-md-12 mb-2">
                     <div class="mb-3 text-center">
                         @yield('floorplans')
                     </div>
                 </div>
-            </div> --}}
-            {{-- @yield('associated_pages') --}}
+            </div>
+            @yield('associated_pages')
             @include('includes.structure.email-signup')
         </main>
         @include('includes.structure.footer')

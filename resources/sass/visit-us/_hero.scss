@@ -1,0 +1,43 @@
+.landing-hero--simple {
+    position: relative;
+    z-index: 1;
+
+    h1 {
+        color: white;
+        padding-bottom: 40px;
+        padding-top: 35%;
+        padding-left: 16px;
+        position: relative;
+        margin-inline: auto;
+        max-inline-size: 1400px;
+        z-index: 1;
+        @media (min-width: 600px) {
+            padding-bottom: 80px;
+        }
+    }
+}
+.landing-hero--simple:after {
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 30%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+.landing-hero__image {
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}
