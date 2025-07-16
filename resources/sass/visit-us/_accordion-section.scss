@@ -1,0 +1,44 @@
+.accordion-section .container {
+    margin-block: 60px;
+    @media (min-width: 600px) {
+        display: flex;
+        gap: 60px;
+    }
+}
+
+.accordion-section__image {
+    @media (min-width: 600px) {
+        flex: 1;
+    }
+}
+
+.accordion-section__text {
+    margin-top: 24px;
+    h2 {
+        font-size: 34px;
+        font-weight: bold;
+        margin: 0;
+    }
+    h2 + p {
+        margin-top: 24px;
+    }
+    @media (min-width: 600px) {
+        flex: 2;
+        margin-top: 0;
+    }
+}
+
+.accordion-section__accordion {
+    margin-top: 40px;
+}
+
+.accordion-section__footer {
+    margin-top: 30px;
+    @media (min-width: 600px) {
+        margin-top: 60px;
+    }
+}
+
+.accordion-item__links {
+    margin-bottom: 20px;
+}

@@ -13,11 +13,11 @@
             </div>
             <div class="hero-footer">
                 <div class="hero-buttons">
-                    <a class="button button--pink" href="/become-a-friend">
+                    <a class="button--block button--pink" href="/become-a-friend">
                         Become a Friend
                         @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
                     </a>
-                    <a href="/" class="button button--border">
+                    <a href="/" class="button--block button--border">
                         Book tickets
                         @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#000'])
                     </a>

@@ -51,18 +51,6 @@
         display: flex;
         gap: 20px;
     }
-    
-    .button {
-        align-items: center;
-        color: inherit;
-        display: flex;
-        font-size: 1rem;
-        font-weight: 600;
-        padding: 12px;
-        padding-left: 20px;
-        text-align: center;
-        text-decoration: none;
-    }
 
     .button svg {
         margin-left: 12px;
@@ -72,15 +60,34 @@
     .button:hover svg {
         transform: translateX(5px);
     }
+}
+
+
     
-    .button--pink {
-        background-color: #B50E5E;
-        color: white;
+.button--block {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px;
+    padding-left: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    svg {
+        margin-top: -2px;
+        margin-left: 2px;
     }
+}
     
-    .button--border {
-        border: 1.5px solid black;
-    }
+.button--pink {
+    background-color: #B50E5E;
+    color: white;
+}
+
+.button--border {
+    border: 1.5px solid black;
 }
 
 
