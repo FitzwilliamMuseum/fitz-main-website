@@ -1,12 +1,11 @@
 <div class="accordion-section">
-    <div class="container" @if($section['is_anchor']) data-is-anchor @endif>
+    <div class="container" @if($section['is_anchor']) data-is-anchor @endif @if($section['is_anchor'])id="{{ $section['slug'] }}"@endif>
         <div class="accordion-section__image">
             <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
         </div>
         <div class="accordion-section__text">
             @if(!empty($section['heading']))
-                <h2 
-                @if($section['is_anchor'])id="{{ $section['slug'] }}"@endif>
+                <h2>
                     {{ $section['heading'] }}
                 </h2>
             @endif

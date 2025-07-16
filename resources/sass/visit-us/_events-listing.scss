@@ -1,0 +1,80 @@
+.events-listing {
+    background-color: #F4F3F0;
+}
+
+.events-listing .container {
+    padding: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem); /* 40px -> 60px */
+    h2 {
+        font-size: 34px;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+.events-listing__events {
+    margin-top: 36px;
+    .splide__arrow {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 0;
+        height: 40px;
+        opacity: 1;
+        width: 40px;
+
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .splide__arrow--prev {
+        transform: rotate(-90deg)
+    }
+
+    .splide__arrow--next {
+        transform: rotate(90deg)
+    }
+}
+
+.events-listing__event-card {
+    background-color: white;
+
+    .event-card__image {
+        max-height: 225px;
+        overflow: hidden;
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+    }
+
+    .event-card__text {
+        padding: 1rem 1rem 28px;
+
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+        p {
+            font-size: 17px;
+            margin-top: 12px;
+        }
+        
+        a.tag {
+            text-decoration: none;
+            transition: .2s all;
+        }
+
+        a.tag:hover {
+            background-color: darken(#F4F3F0, 10%);
+        }
+    }
+}
+
+.button--white {
+    background-color: white;
+    color: black;
+    margin-top: 50px;
+    margin-left: auto;
+}

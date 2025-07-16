@@ -1,5 +1,4 @@
 import Splide from '@splidejs/splide'
-  console.log('Loaded image-gallery js')
   let splide = new Splide('.splide', {
     type: 'loop',
     perPage: 1,

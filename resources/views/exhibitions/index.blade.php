@@ -91,57 +91,59 @@
     )
 @endphp
 
-@section('exhibitions-landing-2025')
-    @include('exhibitions.components.hero')
-    @include('exhibitions.components.text-component', $content = $text_components['first'])
-    @include('exhibitions.components.details-component')
-    @include('exhibitions.components.text-component', $content = $text_components['second'])
-    @include('exhibitions.components.text-component', $content = $text_components['third'])
-    <div class="container mx-auto col-max-800">
-        @include('support.components.featured-video', [
-            'youtube_id' => '7fIaWBNFPkc'
-        ] )
-    </div>
-    @include('support.components.image-gallery', [
-        'component' => array(
-            'image_gallery' => [$image_gallery]
-        )
-    ])
-    @pushOnce('fitzwilliamScripts')
-        <script defer type="text/javascript" src="{{ asset("/js/image-gallery.js") }}"></script>
-    @endPushOnce
-    @include('exhibitions.components.quote')
-    <div class="container mx-auto col-max-800">
-        @include('support.components.featured-image', [
-            'caption' => 'West Africa, the Caribbean, South America and Europe, this landmark exhibition also reveals the histories that have been silenced'
+@if(request()->get('template') && request()->get('template') == 'new')
+    @section('exhibitions-landing-2025')
+        @include('exhibitions.components.hero')
+        @include('exhibitions.components.text-component', $content = $text_components['first'])
+        @include('exhibitions.components.details-component')
+        @include('exhibitions.components.text-component', $content = $text_components['second'])
+        @include('exhibitions.components.text-component', $content = $text_components['third'])
+        <div class="container mx-auto col-max-800">
+            @include('support.components.featured-video', [
+                'youtube_id' => '7fIaWBNFPkc'
+            ] )
+        </div>
+        @include('support.components.image-gallery', [
+            'component' => array(
+                'image_gallery' => [$image_gallery]
+            )
         ])
-    </div>
-    @include('support.components.faq', [
-        'component' => $accordion_section
-    ] )
-    @include('exhibitions.components.related-events', [
-        'related_events' => $related_events
-    ])
-    @include('support.components.related', [
-        'page' => array(
-            'suggested_pages_heading' => "We thought you'd like",
-            'pages_listing' => array(
-                '1' => array(
-                    'page_id' => 1
-                ),
-                '2' => array(
-                    'page_id' => 1
-                ),
-                '3' => array(
-                    'page_id' => 1
+        @pushOnce('fitzwilliamScripts')
+            <script defer type="text/javascript" src="{{ asset("/js/image-gallery.js") }}"></script>
+        @endPushOnce
+        @include('exhibitions.components.quote')
+        <div class="container mx-auto col-max-800">
+            @include('support.components.featured-image', [
+                'caption' => 'West Africa, the Caribbean, South America and Europe, this landmark exhibition also reveals the histories that have been silenced'
+            ])
+        </div>
+        @include('support.components.faq', [
+            'component' => $accordion_section
+        ] )
+        @include('exhibitions.components.related-events', [
+            'related_events' => $related_events
+        ])
+        @include('support.components.related', [
+            'page' => array(
+                'suggested_pages_heading' => "We thought you'd like",
+                'pages_listing' => array(
+                    '1' => array(
+                        'page_id' => 1
+                    ),
+                    '2' => array(
+                        'page_id' => 1
+                    ),
+                    '3' => array(
+                        'page_id' => 1
+                    )
                 )
             )
-        )
-    ])
-@endSection
+        ])
+    @endSection
+@endif
 
 
-{{-- @section('current')
+@section('current')
     <div class="container-fluid py-3">
         <div class="container">
             @if(!empty($current['data']) || !empty($displays['data']))
@@ -188,9 +190,9 @@
             @endif
         </div>
     </div>
-@endsection --}}
+@endsection
 
-{{-- @if(!empty($future['data'] ))
+@if(!empty($future['data'] ))
     @section('future')
         <div class="container-fluid py-3">
 
@@ -218,9 +220,9 @@
             </div>
         </div>
     @endsection
-@endif --}}
+@endif
 
-{{-- @section('archive')
+@section('archive')
     <div class="container-fluid py-3">
 
         <div class="container">
@@ -246,4 +248,4 @@
             <a class="btn btn-dark" href="{{ route('archive') }}">View our exhibition archive</a>
         </div>
     </div>
-@endsection --}}
+@endsection
