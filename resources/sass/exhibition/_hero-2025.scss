@@ -3,7 +3,7 @@
 }
 
 .exhibition-hero-inner {
-    padding: 30px 0 40px;
+    padding: 72px 0 40px;
 
     .hero-text {
         padding: 30px;
@@ -52,13 +52,16 @@
         gap: 20px;
     }
 
-    .button svg {
+    .button--block svg {
         margin-left: 12px;
         transition: .2s all;
     }
     
-    .button:hover svg {
+    .button--block:hover svg {
         transform: translateX(5px);
+    }
+    @media (min-width: 600px) {
+        padding-top: 30px;
     }
 }
 
@@ -86,8 +89,18 @@
     color: white;
 }
 
+.button--pink:hover,
+.button--pink:focus {
+    color: white;
+}
+
 .button--border {
     border: 1.5px solid black;
+}
+
+.button--border:hover,
+.button--border:focus {
+    color: inherit;
 }
 
 

@@ -264,55 +264,57 @@
                 @include('visit.components.anchor-navigation', [
                     'anchors' => $anchor_menu['anchors']
                 ])
-                @include('visit.components.museum-information')
-                @include('visit.components.events-listing', [
-                    'data' => $upcoming_events
-                ])
-                @include('visit.components.getting-here')
-                <div class="fifty-fifty--background">
-                    <div class="container">
-                        <h2>Example heading</h2>
+                <div class="visit-us-landing">
+                    @include('visit.components.museum-information')
+                    @include('visit.components.events-listing', [
+                        'data' => $upcoming_events
+                    ])
+                    @include('visit.components.getting-here')
+                    <div class="fifty-fifty--background">
+                        <div class="container">
+                            <h2>Example heading</h2>
+                        </div>
+                        @include('support.components.fiftyfifty', [
+                            'component' => array(
+                                '50_50_content' => $fiftyfifty
+                            )
+                        ])
                     </div>
-                    @include('support.components.fiftyfifty', [
-                        'component' => array(
-                            '50_50_content' => $fiftyfifty
+                    @include('visit.components.accordion-section', [
+                        'section' => $accordion_section_one
+                    ])
+                    @include('visit.components.accordion-section', [
+                        'section' => $accordion_section_two
+                    ])
+                    @include('support.components.banner', [
+                        'page' => $banner
+                    ])
+                    @include('visit.components.accordion-section', [
+                        'section' => $accordion_section_three
+                    ])
+                    @include('visit.components.accordion-section', [
+                        'section' => $accordion_section_four
+                    ])
+                    @include('visit.components.accordion-section', [
+                        'section' => $accordion_section_five
+                    ])
+                    @include('support.components.related', [
+                        'page' => array(
+                            'suggested_pages_heading' => "We thought you'd like",
+                            'pages_listing' => array(
+                                '1' => array(
+                                    'page_id' => 1
+                                ),
+                                '2' => array(
+                                    'page_id' => 1
+                                ),
+                                '3' => array(
+                                    'page_id' => 1
+                                )
+                            )
                         )
                     ])
                 </div>
-                @include('visit.components.accordion-section', [
-                    'section' => $accordion_section_one
-                ])
-                @include('visit.components.accordion-section', [
-                    'section' => $accordion_section_two
-                ])
-                @include('support.components.banner', [
-                    'page' => $banner
-                ])
-                @include('visit.components.accordion-section', [
-                    'section' => $accordion_section_three
-                ])
-                @include('visit.components.accordion-section', [
-                    'section' => $accordion_section_four
-                ])
-                @include('visit.components.accordion-section', [
-                    'section' => $accordion_section_five
-                ])
-                @include('support.components.related', [
-                    'page' => array(
-                        'suggested_pages_heading' => "We thought you'd like",
-                        'pages_listing' => array(
-                            '1' => array(
-                                'page_id' => 1
-                            ),
-                            '2' => array(
-                                'page_id' => 1
-                            ),
-                            '3' => array(
-                                'page_id' => 1
-                            )
-                        )
-                    )
-                ])
             @else
                 @include('includes.structure.head')
                 @include('includes.structure.open')
