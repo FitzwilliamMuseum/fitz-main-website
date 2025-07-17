@@ -21,45 +21,55 @@
 @include('includes.structure.accessibility')
 @include('includes.structure.nav')
 
-@if(empty($page_template))
 
-<main id="site-content">
-    @hasSection('banner')
-        @yield('banner')
-        @include('includes.structure.exhibition-title')
-    @else
-        @include('includes.structure.head')
+
+@if(empty($page_template))
+    @if(!request()->get('template'))
+        @hasSection('banner')
+            @yield('banner')
+            @include('includes.structure.exhibition-title')
+        @else
+            @include('includes.structure.head')
+        @endif
     @endif
-        @include('includes.structure.open')
+    <main id="site-content">
+        @if(!request()->get('template'))
+            @include('includes.structure.open')
+        @endif
 
         <div class="container mt-3">
             @include('includes.structure.breadcrumb')
         </div>
-        @yield('content')
-        @yield('ttn-actions')
-        @yield('events-url')
-        @yield('exhibition-shopify')
-        @yield('exhibitions-files')
-        @yield('exhibition-faqs')
-        @yield('shopify')
-        @yield('exhibitionCaseCards')
-        @yield('exhibition-objects')
-        @yield('exhibition-labels')
-        @yield('exhibitionAudio')
-        @yield('excarousel')
-        @yield('youtube')
-        @yield('curators')
-        @yield('research-funders')
-        @yield('current')
-        @yield('sketchfab')
-        @yield('displays')
-        @yield('future')
-        @yield('archive')
-        @yield('galleries')
-        @yield('departments')
-        @yield('exhibition-thanks')
-        @yield('360')
-        @yield('mlt')
+        @if(request()->get('template') && request()->get('template') == 'new')
+            @yield('exhibitions-landing-2025')
+        @else
+        <span id="site-content" class="visually-hidden"></span>
+            @yield('content')
+            @yield('ttn-actions')
+            @yield('events-url')
+            @yield('exhibition-shopify')
+            @yield('exhibitions-files')
+            @yield('exhibition-faqs')
+            @yield('shopify')
+            @yield('exhibitionCaseCards')
+            @yield('exhibition-objects')
+            @yield('exhibition-labels')
+            @yield('exhibitionAudio')
+            @yield('excarousel')
+            @yield('youtube')
+            @yield('curators')
+            @yield('research-funders')
+            @yield('current')
+            @yield('sketchfab')
+            @yield('displays')
+            @yield('future')
+            @yield('archive')
+            @yield('galleries')
+            @yield('departments')
+            @yield('exhibition-thanks')
+            @yield('360')
+            @yield('mlt')
+        @endif
     @else
         @yield('exhibitions-2024')
         @yield('shopify')

@@ -1,0 +1,70 @@
+.museum-information {
+    margin-block: 30px;
+    padding-inline: 14px;
+}
+.museum-information .container {
+    @media (min-width: 600px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.information-intro {
+    max-inline-size: 700px;
+    h2 {
+        font-size: 34px;
+        font-weight: 500;
+        margin: 0;
+    }
+    p {
+        margin-top: 12px;
+    }
+}
+
+.information-hours {
+    max-inline-size: 400px;
+    h3 {
+        font-size: 26px;
+        font-weight: 500;
+        margin: 0;
+    }
+    p {
+        font-size: 18px;
+    }
+}
+
+.hours-listing {
+    margin-top: 12px;
+}
+
+.hours-item {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.hours-label p {
+    font-weight: bold;
+}
+
+.information-hours__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    a {
+        color: black;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+p.tag,
+a.tag {
+    background-color: #F4F3F0;
+    border-radius: 28px;
+    color: black;
+    font-size: 14px;
+    padding: 12px;
+    width: fit-content;
+}

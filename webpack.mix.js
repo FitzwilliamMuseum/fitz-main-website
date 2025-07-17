@@ -15,6 +15,7 @@ mix.styles(['resources/css/site.css','resources/css/top.css', 'resources/css/coo
 mix.js(['resources/js/app.js','resources/js/backtotop.js','resources/js/cookieconsent.js', 'resources/js/config.js'], 'public/js')
     .sass('resources/sass/app.scss', 'public/css').purgeCss({safelist: { deep: [/carousel/,/breadcrumb/,/badge/,/parallax/] }}).version();
     mix.js('resources/js/image-gallery.js', 'public/js/image-gallery.js');
+    mix.js('resources/js/events-carousel.js', 'public/js/events-carousel.js');
 mix.webpackConfig({
     stats: {
         children: true,

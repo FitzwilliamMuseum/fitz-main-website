@@ -1,0 +1,70 @@
+.anchor-navigation {
+    position: sticky;
+    top: 90px;
+    z-index: 500; /*High number I know, but the leaflet map overlays it otherwise*/
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li a {
+            color: black;
+            display: block;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+        }
+    }
+}
+
+.anchor-navigation--large {
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+    display: none;
+    ul {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        padding-block: 1rem;
+        li a {
+            text-align: center;
+        }
+        li a:first-child {
+            padding-left: 0;
+        }
+    }
+    @media (min-width: 600px) {
+        display: block;
+    }
+}
+
+.anchor-navigation--small {
+    background-color: #F4F3F0;
+    display: block;
+    top: 199px;
+    @media (min-width: 600px) {
+        display: none;
+    }
+}
+
+.anchor-navigation__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+    }
+    button {
+        background: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+.anchor-nav-toggle__text {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
