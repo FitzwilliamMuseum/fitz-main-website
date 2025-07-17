@@ -5,3 +5,15 @@
 @import '_text-component.scss';
 @import '_details-component.scss';
 @import '_quote.scss';
+
+.single-exhibition {
+    padding-inline: 30px;
+}
+.single-exhibition > div:not(.related-events),
+.single-exhibition > div .container {
+    padding-inline: 0;
+}
+
+.single-exhibition .image-gallery {
+    margin-inline: -30px;
+}

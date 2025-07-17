@@ -1,5 +1,6 @@
 .events-listing {
     background-color: #F4F3F0;
+    margin-inline: -30px;
 }
 
 .events-listing .container {
@@ -8,6 +9,10 @@
         font-size: 34px;
         font-weight: bold;
         margin: 0;
+        padding-inline: 30px;
+        @media (min-width: 600px) {
+            padding-inline: 0;
+        }
     }
 }
 .events-listing__events {

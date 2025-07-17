@@ -13,3 +13,11 @@
         font-size: 34px;
     }
 }
+
+.visit-us-landing > div:not(.full-width, .banner-component) {
+    padding-inline: 30px;
+}
+
+.visit-us-landing > div:not(.full-width, .banner-component) .container {
+    padding-inline: 0;
+}
