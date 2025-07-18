@@ -129,13 +129,16 @@
                     'suggested_pages_heading' => "We thought you'd like",
                     'pages_listing' => array(
                         '1' => array(
-                            'page_id' => 1
+                            'title' => 'Example card',
+                            'slug' => '/'
                         ),
                         '2' => array(
-                            'page_id' => 1
+                            'title' => 'Example card',
+                            'slug' => '/'
                         ),
                         '3' => array(
-                            'page_id' => 1
+                            'title' => 'Example card',
+                            'slug' => '/'
                         )
                     )
                 )
