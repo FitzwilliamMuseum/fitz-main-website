@@ -19,7 +19,7 @@
 @endphp
 
 @if(!empty($pages_listing))
-    <div class="container-fluid related">
+    <div class="related">
         <div class="container related-container">
             @if(!empty($suggested_pages_heading))
             <h2 class="related-title text-center">{{ $suggested_pages_heading }}</h2>
@@ -28,7 +28,9 @@
                 @if(!empty($pages_listing))
                 @foreach($pages_listing as $card)
                 @php
-                $card = $card['page_id']
+                if(!empty($card['page_id'])) {
+                    $card = $card['page_id'];
+                }
                 @endphp
                 <div class="card card-fitz related-card h-100" data-component="card">
                         @if(!empty($card['preview_image']))
