@@ -1,3 +1,8 @@
+
+@inject('landingPageController', 'App\Http\Controllers\landingPageController')
+@php
+    $landingPageController::injectPages($page['slug'], $page['slug']);
+@endphp
 @include('includes.structure.name-spaces')
 <head>
 
@@ -16,6 +21,7 @@
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
         <main id="site-content">
+            @yield('title')
             @if(request()->get('template') && request()->get('template') == 'new')
                 @php
                     $fiftyfifty = array(
@@ -265,7 +271,8 @@
                     'anchors' => $anchor_menu['anchors']
                 ])
                 <div class="visit-us-landing">
-                    @include('visit.components.museum-information')
+                    @include('support.components.components-repeater');
+                    {{-- @include('visit.components.museum-information')
                     @include('visit.components.events-listing', [
                         'data' => $upcoming_events
                     ])
@@ -313,7 +320,7 @@
                                 )
                             )
                         )
-                    ])
+                    ]) --}}
                 </div>
             @else
                 @include('includes.structure.head')

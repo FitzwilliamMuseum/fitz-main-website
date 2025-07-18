@@ -38,6 +38,15 @@
                 @include('support.components.floorplans')
             @elseif(!empty($component['related_events']))
                 @include('exhibitions.components.related-events')
+            {{-- Visit us components --}}
+            @elseif(!empty($component['museum_information']))
+                @include('visit.components.museum-information')
+            @elseif(!empty($component['getting_here']))
+                {{-- Include the fitzwilliam-map to gain access to the @section('map') for the @yield('map') in the component file --}}
+                @include('includes.elements.fitzwilliam-map')
+                @include('visit.components.getting-here')
+            @elseif(!empty($component['accordion_section']))
+                @include('visit.components.accordion-section')
             @endif
         @endif
     @endforeach

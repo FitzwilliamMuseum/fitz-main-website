@@ -6,6 +6,9 @@
 @section('keyword', 'cambridge,museums,visit')
 
 @section('content')
+
+@if(request()->get('template') && request()->get('template') == 'new')
+@else
 <div class="row">
     <?php if(!empty($exhibition)): ?>
     <x-visit-us-static-card :image="$exhibition['hero_image']['data']['thumbnails'][13]['url']"
@@ -68,3 +71,4 @@
     @endforeach
 </div>
 @endsection
+@endif
