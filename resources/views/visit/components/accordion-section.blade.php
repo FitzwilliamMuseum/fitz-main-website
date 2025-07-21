@@ -39,7 +39,7 @@
                             aria-labelledby="{{ $slug }}-heading-{{ $loop->index }}"
                             data-parent="accordion-{{ $slug }}">
                                 @if(!empty($item['body']))
-                                    {{ $item['body'] }}
+                                    @markdown($item['body'])
                                 @endif
                                 <div class="accordion-item__links">
                                     @if(!empty($item['links']))
@@ -62,7 +62,7 @@
             @endif
             <div class="accordion-section__footer">
                 @if(!empty($component['addendum']))
-                    <p>{{ $component['addendum'] }}</p>
+                    @markdown($component['addendum'])
                 @endif
                 @if(!empty($component['link']))
                     @php

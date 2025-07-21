@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\LandingPageTemplate;
 
+/** Temporary includes until the new visit us template goes live */
+use App\Models\Stubs;
+use App\Models\Directions;
+use App\Models\CoronaVirusNotes;
+use App\Models\Transport;
+use App\Models\VisitUsComponents;
+use App\Models\Exhibitions;
+
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
+use App\Models\FloorPlans;
 
 class landingPageController extends Controller
 {
@@ -21,10 +30,26 @@ class landingPageController extends Controller
         }
         $page = LandingPageTemplate::getLanding($slug);
         if($slug == 'plan-your-visit') {
-            return view('visit.index', [
-                    'page' => Collect($page['data'])->first(),
-                ]
-            );
+            // Temporary - Adds protection for first deployment
+            // dd($page);
+            if(isset($page['data'][0]['page_components'])) {
+                return view('visit.index', [
+                        'page' => Collect($page['data'])->first(),
+                    ]
+                );
+            } else {
+                return view('visit.index-old', [
+                    'pages' => Stubs::visitUsLanding(),
+                    'associated' => Stubs::visitUsAssociated(),
+                    'directions' => Directions::list(),
+                    'floors' => FloorPlans::list(),
+                    'corona' => CoronaVirusNotes::list(),
+                    'transport' => Transport::list(),
+                    'measures' => VisitUsComponents::find(2),
+                    'exhibition' => Exhibitions::tileVisit('current', 'tessitura_string', 1),
+                    'display' => Exhibitions::tileDisplay('current',  1)
+                ]);
+            }
         }
         if (empty($page['data'])) {
             /**
