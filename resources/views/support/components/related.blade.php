@@ -50,7 +50,10 @@
                         <div class="contents-label mb-3">
                             <h3>
                                 @if(!empty($card['slug']))
-                                <a href="/support-us/{{ $card['slug'] }}">
+                                    @php
+                                        $parent_page = $card['parent_page'];
+                                    @endphp
+                                    <a href="/{{ $parent_page != null ? $parent_page['slug'] : 'support-us' }}/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
                                         {{ $card['title'] }}

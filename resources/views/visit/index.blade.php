@@ -7,6 +7,8 @@
 
 @section('content')
     <div class="visit-us-landing">
-        @include('support.components.components-repeater');
+        @include('support.components.components-repeater', [
+            'current' => $current
+        ]);
     </div>
 @endsection

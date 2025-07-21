@@ -47,6 +47,8 @@
                 @include('visit.components.getting-here')
             @elseif(!empty($component['accordion_section']))
                 @include('visit.components.accordion-section')
+            @elseif(!empty($component['quote']))
+                @include('exhibitions.components.quote')
             @endif
         @endif
     @endforeach

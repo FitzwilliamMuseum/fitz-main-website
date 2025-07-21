@@ -35,6 +35,7 @@ class landingPageController extends Controller
             if(isset($page['data'][0]['page_components'])) {
                 return view('visit.index', [
                         'page' => Collect($page['data'])->first(),
+                        'current' => Exhibitions::list()
                     ]
                 );
             } else {
