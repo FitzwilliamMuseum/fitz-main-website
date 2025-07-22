@@ -1,11 +1,12 @@
 @php 
-    $heading = $data['heading'];
-    $events = $data['events'];
-    $footer_link = $data['footer_link'];
+    // $heading = $data['heading'];
+    // $events = $data['events'];
+    $footer_link = isset($page['exhibitions_listing_link']) ? $page['exhibitions_listing_link'][0] : null;
 @endphp
+{{-- @dd($page) --}}
 <div class="events-listing">
     <div class="container">
-        <h2>{{ $heading }}</h2>
+        <h2>What's on and upcoming</h2>
         @if(!empty($events))
             <section id="events-listing" class="events-listing__events splide">
                 <div class="splide__arrows splide__arrows--ltr">
@@ -26,29 +27,76 @@
                 </div>
                 <div class="splide__track">
                     <div class="splide__list">
-                        @foreach($events as $event)
-                            <li class="splide__slide events-listing__event-card">
+                        {{-- @dd($events) --}}
+                        @foreach($events['data'] as $event)
+                            <li class="splide__slide events-listing__event-card" data-component="card">
                                 <div class="event-card__image">
-                                    <img src="{{ env('MISSING_IMAGE_URL') }}" alt="">
+                                    @php
+                                        $listingImage = !empty($event['listing_image']) ? $event['listing_image'] : null;
+                                        $listingImageAlt = !empty($event['listing_image_alt']) ? $event['listing_image_alt'] : null;
+
+                                        if(empty($listingImage) && !empty($event['hero_image'])) {
+                                            $image = $event['hero_image'];
+                                            $altTag = $event['hero_image_alt_text'];
+                                        }
+                                    @endphp
+                                    @if(!empty($listingImage))
+                                        <img class="card-img-top"
+                                            src="{{ $listingImage['data']['thumbnails'][13]['url'] }}"
+                                            alt="{{ !empty($listingImageAlt) ? $listingImageAlt : '' }}"
+                                            width="{{ $listingImage['data']['thumbnails'][13]['width'] }}"
+                                            height="{{ $listingImage['data']['thumbnails'][13]['height'] }}"
+                                            loading="lazy"
+                                        />
+                                    @elseif(isset($image))
+                                        <img class="card-img-top"
+                                            src="{{ $image['data']['thumbnails'][13]['url'] }}"
+                                            alt="{{ !empty($altTag) ? $altTag : '' }}"
+                                            width="{{ $image['data']['thumbnails'][13]['width'] }}"
+                                            height="{{ $image['data']['thumbnails'][13]['height'] }}"
+                                            loading="lazy"
+                                        />
+                                    @else
+                                        <img class="card-img-top"
+                                            src="{{ env('MISSING_IMAGE_URL') }}"
+                                            alt="A stand in image for {{ $event['exhibition_title'] }}"
+                                            loading="lazy"
+                                        />
+                                    @endif
                                 </div>
                                 <div class="event-card__text">
                                     @php
-                                        $heading = isset($event['heading']) ? $event['heading'] : null;
-                                        $date = isset($event['date']) ? $event['date'] : null;
-                                        $optional_text = isset($event['optional_text']) ? $event['optional_text'] : null;
+                                        $heading = isset($event['exhibition_title']) ? $event['exhibition_title'] : null;
+                                        $start_date = isset($event['exhibition_start_date']) ? $event['exhibition_start_date'] : null;
+                                        $end_date = isset($event['exhibition_end_date']) ? $event['exhibition_end_date'] : null;
+                                        $optional_text = (isset($event['ticketed']) && !$event['ticketed']) ? 'Free entry' : null;
                                         $tag = isset($event['tag']) ? $event['tag'] : null;
+                                        $linked_tag = true;
+
+                                        if(isset($event['ticketed']) && $event['ticketed']) {
+                                            $tag = 'Ticketed exhibition';
+                                            $linked_tag = false;
+                                        }
                                     @endphp
                                     @if(!empty($heading))
-                                        <h3>{{ $heading }}</h3>
+                                        <h3 class="streched-link">
+                                            <a href="plan-your-visit/exhibitions/{{ $event['slug'] }}">
+                                                {{ $heading }}
+                                            </a>
+                                        </h3>
                                     @endif
-                                    @if(!empty($date))
-                                        <p>{{ $date }}</p>
+                                    @if(!empty($start_date))
+                                        <p>{{ Carbon\Carbon::parse($start_date)->format('j F Y') }} – {{ Carbon\Carbon::parse($end_date)->format('j F Y') }}</p>
                                     @endif
                                     @if(!empty($optional_text))
                                         <p>{{ $optional_text }}</p>
                                     @endif
                                     @if(!empty($tag))
-                                        <a class="tag" href="/events/{{ $tag }}">{{ $tag }}</a>
+                                        @if($linked_tag)
+                                            <a class="tag" href="/events/{{ $tag }}">{{ $tag }}</a>
+                                        @else
+                                            <p class="tag">{{ $tag }}</p>
+                                        @endif
                                     @endif
                                 </div>
                             </li>

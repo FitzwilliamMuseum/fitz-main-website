@@ -72,6 +72,7 @@
         @endif
     @else
         @yield('exhibitions-2024')
+        @yield('exhibitions-2025')
         @yield('shopify')
     @endif
 </main>

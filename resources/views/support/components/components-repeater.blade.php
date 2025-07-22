@@ -49,6 +49,12 @@
                 @include('visit.components.accordion-section')
             @elseif(!empty($component['quote']))
                 @include('exhibitions.components.quote')
+            @elseif(!empty($component['details_positioning']))
+                @include('exhibitions.components.details-component')
+            @elseif(!empty($component['events_positioning']))
+                @include('visit.components.events-listing', [
+                    'events' => $current
+                ]);
             @endif
         @endif
     @endforeach

@@ -1,3 +1,14 @@
+@php
+    $reposition_events = false;
+    if(!empty($exhibition['page_components'])) {
+        $page_components = $exhibition['page_components'];
+        foreach($page_components as $component) {
+            if(!empty($component['events_positioning'])) {
+                $reposition_events = true;
+            }
+        }
+    }
+@endphp
 @extends('layouts.visitus')
 
 @section('hero_image', 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/visit-final-.png')
@@ -7,8 +18,11 @@
 
 @section('content')
     <div class="visit-us-landing">
-        @include('support.components.components-repeater', [
-            'current' => $current
-        ]);
+        @include('support.components.components-repeater');
+        @if(!$reposition_events)
+            @include('visit.components.events-listing', [
+                'events' => $current
+            ]);
+        @endif
     </div>
 @endsection

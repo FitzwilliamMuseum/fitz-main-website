@@ -1,4 +1,5 @@
 @php
+    
     if(isset($exhibition)) {
         $quote_colour = 'green';
     } else {

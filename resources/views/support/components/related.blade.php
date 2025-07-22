@@ -51,9 +51,11 @@
                             <h3>
                                 @if(!empty($card['slug']))
                                     @php
-                                        $parent_page = $card['parent_page'];
+                                        if(isset($card['parent_page'])) {
+                                            $parent_page = $card['parent_page'];
+                                        }
                                     @endphp
-                                    <a href="/{{ $parent_page != null ? $parent_page['slug'] : 'support-us' }}/{{ $card['slug'] }}">
+                                    <a href="/{{ (isset($card['parent_page']) && $parent_page != null) ? $parent_page['slug'] : 'support-us' }}/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
                                         {{ $card['title'] }}
