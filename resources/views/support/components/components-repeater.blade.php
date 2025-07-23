@@ -38,6 +38,23 @@
                 @include('support.components.floorplans')
             @elseif(!empty($component['related_events']))
                 @include('exhibitions.components.related-events')
+            {{-- Visit us components --}}
+            @elseif(!empty($component['museum_information']))
+                @include('visit.components.museum-information')
+            @elseif(!empty($component['getting_here']))
+                {{-- Include the fitzwilliam-map to gain access to the @section('map') for the @yield('map') in the component file --}}
+                @include('includes.elements.fitzwilliam-map')
+                @include('visit.components.getting-here')
+            @elseif(!empty($component['accordion_section']))
+                @include('visit.components.accordion-section')
+            @elseif(!empty($component['quote']))
+                @include('exhibitions.components.quote')
+            @elseif(!empty($component['details_positioning']))
+                @include('exhibitions.components.details-component')
+            @elseif(!empty($component['events_positioning']))
+                @include('visit.components.events-listing', [
+                    'events' => $current
+                ]);
             @endif
         @endif
     @endforeach

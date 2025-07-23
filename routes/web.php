@@ -59,7 +59,7 @@ Route::get('research/opportunities/{slug}', 'researchController@opportunity')->n
 /*
 Visit us Route
 */
-Route::get('plan-your-visit/', 'visitController@index')->name('visit');
+// Route::get('plan-your-visit/', 'visitController@index')->name('visit');
 Route::get('plan-your-visit/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
 Route::get('plan-your-visit/group-visits','visitController@groupVisits')->name('visit.groupvisits');
 
@@ -88,6 +88,8 @@ Route::get('plan-your-visit/exhibitions/labels/{slug}', 'exhibitionsController@l
 // New Landing Page Template
 Route::get('/support-us', 'landingPageController@index')->name('support-us');
 Route::get('/support-us/{slug}', 'subpagesController@index')->name('subpage');
+Route::get('/plan-your-visit', 'landingPageController@index')->name('visit');
+Route::get('/plan-your-visit/{slug}', 'subpagesController@index')->name('visit-subpage');
 
 /** True to Nature routes */
 Route::get('plan-your-visit/exhibitions/true-to-nature-open-air-painting-in-europe-1780-1870/artists', 'exhibitionsController@ttnArtists')->name('exhibition.ttn.artists');

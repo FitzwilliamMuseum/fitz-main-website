@@ -72,6 +72,7 @@
         @endif
     @else
         @yield('exhibitions-2024')
+        @yield('exhibitions-2025')
         @yield('shopify')
     @endif
     @include('includes.structure.email-signup')

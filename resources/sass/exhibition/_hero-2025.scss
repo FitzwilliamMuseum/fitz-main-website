@@ -3,7 +3,7 @@
 }
 
 .exhibition-hero-inner {
-    padding: 72px 0 40px;
+    padding: 0 0 40px;
 
     .hero-text {
         padding: 30px;
@@ -32,10 +32,21 @@
     .hero-image--sm {
         display: block;
     }
+
+    .hero__exhibition-date {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        svg {
+            margin-top: -8px;
+        }
+    }
     
     .hero__exhibition-date p {
+        border-left: 1px solid #B50E5E;
         font-size: 24px;
         margin-top: 10px; /* May need tweaking once the proper fonts are in */
+        padding-left: 20px;
     }
     
     .hero__exhibition-price {

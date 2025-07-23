@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\LandingPageTemplate;
-use App\Models\Stubs;
 
-use App\Models\FloorPlans;
+/** Temporary includes until the new visit us template goes live */
+use App\Models\Stubs;
+use App\Models\Directions;
+use App\Models\CoronaVirusNotes;
+use App\Models\Transport;
+use App\Models\VisitUsComponents;
+use App\Models\Exhibitions;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Route;
+use App\Models\FloorPlans;
 
 class landingPageController extends Controller
 {
@@ -21,9 +28,35 @@ class landingPageController extends Controller
      * @return View|Response
      * @throws InvalidArgumentException
      */
-    public function index(string $slug): View|Response
+    public function index($slug = '')
     {
+        if(empty($slug)) {
+            $slug = Route::getFacadeRoot()->current()->uri();
+        }
         $page = LandingPageTemplate::getLanding($slug);
+        if($slug == 'plan-your-visit') {
+            // Temporary - Adds protection for first deployment
+            // dd($page);
+            if(isset($page['data'][0]['page_components'])) {
+                return view('visit.index', [
+                        'page' => Collect($page['data'])->first(),
+                        'current' => Exhibitions::list()
+                    ]
+                );
+            } else {
+                return view('visit.index-old', [
+                    'pages' => Stubs::visitUsLanding(),
+                    'associated' => Stubs::visitUsAssociated(),
+                    'directions' => Directions::list(),
+                    'floors' => FloorPlans::list(),
+                    'corona' => CoronaVirusNotes::list(),
+                    'transport' => Transport::list(),
+                    'measures' => VisitUsComponents::find(2),
+                    'exhibition' => Exhibitions::tileVisit('current', 'tessitura_string', 1),
+                    'display' => Exhibitions::tileDisplay('current',  1)
+                ]);
+            }
+        }
         if (empty($page['data'])) {
             /**
              * If the page data is empty at first,
