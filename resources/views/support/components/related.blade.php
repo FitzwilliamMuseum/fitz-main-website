@@ -51,11 +51,16 @@
                             <h3>
                                 @if(!empty($card['slug']))
                                     @php
+                                        // Initialise to support-us for now
+                                        $url_prefix = 'support-us';
+                                        // If it's got a parent page set, use that
                                         if(isset($card['parent_page'])) {
-                                            $parent_page = $card['parent_page'];
+                                            $url_prefix = $card['parent_page'];
+                                        } elseif(isset($card['exhibition_title'])) { // Check to see if it's an exhibition, if so use plan-your-visit/exhibitions/
+                                            $url_prefix = "plan-your-visit/exhibitions";
                                         }
                                     @endphp
-                                    <a href="/{{ (isset($card['parent_page']) && $parent_page != null) ? $parent_page['slug'] : 'support-us' }}/{{ $card['slug'] }}">
+                                    <a href="/{{ $url_prefix }}/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
                                         {{ $card['title'] }}

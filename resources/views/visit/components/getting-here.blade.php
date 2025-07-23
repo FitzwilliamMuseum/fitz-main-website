@@ -9,7 +9,7 @@
 @endphp
 <div class="getting-here">
     <div class="container">
-        <div class="getting-here__wrap"@if($isAnchor) data-is-anchor @endif>
+        <div class="getting-here__wrap"@if($isAnchor) data-is-anchor id="getting-here" @endif>
             <div class="getting-here__map">
                 @yield('map')
             </div>
