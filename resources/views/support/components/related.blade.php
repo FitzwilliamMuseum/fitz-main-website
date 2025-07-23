@@ -55,7 +55,7 @@
                                         $url_prefix = 'support-us';
                                         // If it's got a parent page set, use that
                                         if(isset($card['parent_page'])) {
-                                            $url_prefix = $card['parent_page'];
+                                            $url_prefix = $card['parent_page']['slug'];
                                         } elseif(isset($card['exhibition_title'])) { // Check to see if it's an exhibition, if so use plan-your-visit/exhibitions/
                                             $url_prefix = "plan-your-visit/exhibitions";
                                         }
