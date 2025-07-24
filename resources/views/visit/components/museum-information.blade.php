@@ -5,7 +5,7 @@
     $hours = $component['hours'];
 @endphp
 <div class="museum-information">
-    <div class="container">
+    <div class="wrapper">
         <div class="information-intro">
             @if(!empty($heading))
                 <h2>{{ $heading }}</h2>

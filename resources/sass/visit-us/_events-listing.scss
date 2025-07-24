@@ -1,10 +1,12 @@
 .events-listing {
     background-color: #F4F3F0;
-    margin-inline: -30px;
 }
 
-.events-listing .container {
-    padding: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem); /* 40px -> 60px */
+.events-listing .wrapper {
+    max-inline-size: 1290px;
+    margin: 0 auto;
+    // padding: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem); /* 40px -> 60px */
+    padding: 40px 16px;
     h2 {
         font-size: 34px;
         font-weight: bold;
@@ -65,7 +67,7 @@
             font-size: 17px;
             margin-top: 12px;
         }
-        
+
         a.tag {
             text-decoration: none;
             transition: .2s all;

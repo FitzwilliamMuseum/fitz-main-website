@@ -1,5 +1,5 @@
 <nav class="anchor-navigation anchor-navigation--large">
-    <div class="container">
+    <div class="wrapper">
         <ul>
             @foreach($anchors as $anchor)
                 <li>
@@ -12,7 +12,7 @@
 <nav class="anchor-navigation anchor-navigation--small" id="anchorNavigation">
     <div class="anchor-navigation__header">
         <h3 id="anchor-navigation-heading">On this page</h3>
-        <button id="anchor-nav-toggle" 
+        <button id="anchor-nav-toggle"
         data-bs-toggle="collapse"
         data-bs-target="#anchor-navigation-list"
         aria-expanded="false"
@@ -20,8 +20,8 @@
             <span class="anchor-nav-toggle__text">Show</span>
         </button>
     </div>
-    <ul class="collapse" 
-    id="anchor-navigation-list" 
+    <ul class="collapse"
+    id="anchor-navigation-list"
     aria-labelledby="anchor-navigation-heading"
     data-parent="anchorNavigation">
         @foreach($anchors as $anchor)

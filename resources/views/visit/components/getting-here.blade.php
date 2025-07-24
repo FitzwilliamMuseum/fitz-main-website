@@ -1,6 +1,6 @@
 @php
     $component = $component['getting_here'][0];
-    
+
     $heading = $component['heading'];
     $tagline = $component['tagline'];
     $location = $component['location'];
@@ -8,7 +8,7 @@
     $isAnchor = $component['include_in_anchor_links'];
 @endphp
 <div class="getting-here">
-    <div class="container">
+    <div class="wrapper">
         <div class="getting-here__wrap"@if($isAnchor) data-is-anchor id="getting-here" @endif>
             <div class="getting-here__map">
                 @yield('map')
@@ -50,7 +50,7 @@
                                                     @if($link['link_style'] == 'button')
                                                         @svg('fas-chevron-left', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
                                                     @endif
-                                                    
+
                                                 </a>
                                             @endforeach
                                         </div>

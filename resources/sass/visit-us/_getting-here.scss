@@ -1,4 +1,6 @@
-.getting-here .container {
+.getting-here .wrapper {
+    max-inline-size: 1290px;
+    margin: 0 auto;
     margin-block: 30px;
     @media (min-width: 600px) {
         margin-block: 40px;

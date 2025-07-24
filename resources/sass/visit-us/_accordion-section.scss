@@ -1,5 +1,6 @@
-.accordion-section .container {
-    margin-block: 60px;
+.accordion-section .wrapper {
+    max-inline-size: 1290px;
+    margin: 60px auto;
     @media (min-width: 600px) {
         display: flex;
         gap: 60px;

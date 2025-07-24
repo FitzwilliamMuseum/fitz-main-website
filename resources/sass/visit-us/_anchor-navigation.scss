@@ -14,6 +14,15 @@
             text-decoration: none;
         }
     }
+
+    .wrapper {
+        max-width: 1290px;
+        margin: 0 auto;
+        padding: 0 16px;
+        @media (min-width: 1330px) {
+            padding-inline-start: 0;
+        }
+    }
 }
 
 .anchor-navigation--large {
@@ -26,9 +35,7 @@
         display: flex;
         gap: 1rem;
         padding-block: 1rem;
-        li a {
-            text-align: center;
-        }
+
         li a:first-child {
             padding-left: 0;
         }
