@@ -10,10 +10,13 @@
         position: relative;
         margin-block: 0;
         margin-inline: auto;
-        max-inline-size: 1400px;
+        max-inline-size: 1290px;
         z-index: 1;
         @media (min-width: 600px) {
             padding-bottom: 80px;
+        }
+        @media (min-width: 1330px) {
+            padding-left: 0;
         }
     }
 }

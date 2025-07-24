@@ -54,7 +54,7 @@
             @elseif(!empty($component['events_positioning']))
                 @include('visit.components.events-listing', [
                     'events' => $current
-                ]);
+                ])
             @endif
         @endif
     @endforeach

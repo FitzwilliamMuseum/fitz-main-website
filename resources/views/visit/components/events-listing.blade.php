@@ -1,11 +1,11 @@
-@php 
+@php
     // $heading = $data['heading'];
     // $events = $data['events'];
     $footer_link = isset($page['exhibitions_listing_link']) ? $page['exhibitions_listing_link'][0] : null;
 @endphp
 {{-- @dd($page) --}}
 <div class="events-listing">
-    <div class="container">
+    <div class="wrapper">
         <h2>What's on and upcoming</h2>
         @if(!empty($events))
             <section id="events-listing" class="events-listing__events splide">

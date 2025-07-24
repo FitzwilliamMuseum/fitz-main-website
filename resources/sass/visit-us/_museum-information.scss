@@ -1,9 +1,11 @@
 .museum-information {
-    margin-block: 30px;
-    padding-inline: 14px;
+    margin-block: 32px;
+    padding-inline: 14px !important;
 }
-.museum-information .container {
-    @media (min-width: 600px) {
+.museum-information .wrapper {
+    max-inline-size: 1290px;
+    margin: 0 auto;
+    @media (min-width: 960px) {
         display: flex;
         justify-content: space-between;
     }
