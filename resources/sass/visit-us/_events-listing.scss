@@ -1,30 +1,33 @@
 .events-listing {
     background-color: #F4F3F0;
+    padding-inline: clamp(16px, 5vw, 32px);
+    padding-block-start: clamp(40px, 5vw, 60px);
+    padding-block-end: 1.75rem;
 }
 
 .events-listing .wrapper {
     max-inline-size: 1290px;
     margin: 0 auto;
     // padding: clamp(2.5rem, 2.1429rem + 1.7857vw, 3.75rem); /* 40px -> 60px */
-    padding: 40px 16px;
     h2 {
-        font-size: 34px;
+        font-size: 2.125rem;
         font-weight: bold;
         margin: 0;
-        padding-inline: 30px;
         @media (min-width: 600px) {
             padding-inline: 0;
         }
     }
 }
+
 .events-listing__events {
-    margin-top: 36px;
+    margin-top: 2.25rem;
+
     .splide__arrow {
         background: rgba(0, 0, 0, 0.8);
         border-radius: 0;
-        height: 40px;
+        height: 2.5rem;
         opacity: 1;
-        width: 40px;
+        width: 2.5rem;
 
         svg {
             height: 100%;
@@ -33,11 +36,13 @@
     }
 
     .splide__arrow--prev {
-        transform: rotate(-90deg)
+        transform: rotate(-90deg);
+        left: -1rem;
     }
 
     .splide__arrow--next {
-        transform: rotate(90deg)
+        transform: rotate(90deg);
+        right: -1rem;
     }
 }
 
@@ -56,16 +61,16 @@
     }
 
     .event-card__text {
-        padding: 1rem 1rem 28px;
+        padding: 1rem 1rem 1.75rem;
 
         h3 {
-            font-size: 20px;
+            font-size: 1.25rem;
             font-weight: bold;
             margin: 0;
         }
         p {
-            font-size: 17px;
-            margin-top: 12px;
+            font-size: 1.0625rem;
+            margin-top: 0.75rem;
         }
 
         a.tag {
@@ -82,6 +87,6 @@
 .button--white {
     background-color: white;
     color: black;
-    margin-top: 50px;
+    margin-top: 3.125rem;
     margin-left: auto;
 }

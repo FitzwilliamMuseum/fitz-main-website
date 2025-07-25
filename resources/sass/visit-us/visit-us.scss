@@ -14,8 +14,31 @@
     }
 }
 
-.visit-us-landing > div:not(.full-width, .banner-component) {
-    padding-inline: 30px;
+.visit-us-landing .breadcrumb {
+    max-inline-size: 1290px;
+    margin: 0 auto;
+}
+
+.visit-us-landing .support-grid {
+    padding-inline: clamp(16px, 5vw, 32px);
+
+    @media (min-width: 1330px) {
+        padding-inline: 0;
+    }
+}
+
+.visit-us-landing .banner-component {
+    padding-inline: clamp(16px, 5vw, 32px);
+
+    @media (min-width: 1330px) {
+        padding-inline: 0;
+    }
+    .container.mx-auto.component-ff {
+    padding: 0 !important;
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto !important;
+}
 }
 
 .visit-us-landing > div.container-home-cards {
@@ -23,8 +46,4 @@
     @media (min-width: 600px) {
         padding-inline: 0;
     }
-}
-
-.visit-us-landing > div:not(.full-width, .banner-component ) .container {
-    padding-inline: 0;
 }

@@ -1,15 +1,28 @@
 .accordion-section .wrapper {
     max-inline-size: 1290px;
     margin: 60px auto;
-    @media (min-width: 600px) {
-        display: flex;
+    padding-inline: clamp(16px, 5vw, 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 1045px) {
+        flex-direction: row;
         gap: 60px;
+    }
+
+    @media (min-width: 1330px) {
+        padding-inline: 0;
     }
 }
 
 .accordion-section__image {
     @media (min-width: 600px) {
         flex: 1;
+    }
+
+    .card-img-top {
+        max-height: 100%;
     }
 }
 
@@ -41,5 +54,15 @@
 }
 
 .accordion-item__links {
+        &:last-child {
+        margin-block-end: 28px;
+    }
+}
+
+.accordion-item__links a:not(.button) {
+    font-size: 1.125rem;
+    color: #000;
+}
+.accordion-item__links a {
     margin-bottom: 20px;
 }

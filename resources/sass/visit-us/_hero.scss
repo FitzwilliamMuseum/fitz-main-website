@@ -1,21 +1,23 @@
 .landing-hero--simple {
+    margin-block-start: 63px;
     position: relative;
     z-index: 1;
 
     h1 {
-        color: white;
-        padding-bottom: 40px;
-        padding-top: 35%;
-        padding-left: 16px;
+        color: #fff;
+        font-size: 3.75rem;
+        font-weight: 500;
+        padding: 385px 30px 40px 20px;
         position: relative;
         margin-block: 0;
         margin-inline: auto;
         max-inline-size: 1290px;
         z-index: 1;
-        @media (min-width: 600px) {
+        @media (min-width: 756px) {
             padding-bottom: 80px;
         }
         @media (min-width: 1330px) {
+            padding-top: 409px;
             padding-left: 0;
         }
     }

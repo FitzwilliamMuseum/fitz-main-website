@@ -9,7 +9,7 @@
         li a {
             color: black;
             display: block;
-            font-weight: bold;
+            font-weight: 500;
             padding: 10px;
             text-decoration: none;
         }
@@ -49,6 +49,18 @@
     background-color: #F4F3F0;
     display: block;
     top: 90px;
+    padding: 19px 11px;
+
+    div:first-child {
+        padding: 0;
+    }
+
+    ul {
+        li a {
+            font-weight: 600;
+        }
+    }
+
     @media (min-width: 600px) {
         display: none;
     }
@@ -61,7 +73,7 @@
     padding: 20px 10px;
     h3 {
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 500;
         margin: 0;
     }
     button {
@@ -70,9 +82,13 @@
         padding: 0;
         margin: 0;
     }
+
+    &:has(button[aria-expanded="true"]) {
+        padding-block-end: 20px;
+    }
 }
 .anchor-nav-toggle__text {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: underline;
 }

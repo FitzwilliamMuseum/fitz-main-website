@@ -21,8 +21,10 @@
                 @include('support.components.payment-grid')
             @elseif(!empty($component['video']))
                 @include('support.components.featured-video')
-            @elseif(!empty($component['50_50_content']))
-                @include('support.components.fiftyfifty')
+        @elseif(!empty($component['50_50_content']) && request()->is('plan-your-visit*'))
+            @include('support.components.grid')
+        @elseif(!empty($component['50_50_content']))
+            @include('support.components.fiftyfifty')
             @elseif(!empty($component['image_gallery']))
 
                 @include('support.components.image-gallery')
