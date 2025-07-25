@@ -12,8 +12,9 @@
 }
 .information-intro {
     max-inline-size: 700px;
+    margin-inline-end: 1.125rem;
     h2 {
-        font-size: 34px;
+        font-size: 2.25rem;
         font-weight: 500;
         margin: 0;
     }
@@ -23,14 +24,23 @@
 }
 
 .information-hours {
-    max-inline-size: 400px;
+
+    @media (min-width: 1050px) {
+        max-inline-size: 400px;
+    }
+
     h3 {
-        font-size: 26px;
+        font-size: 1.625rem;
         font-weight: 500;
         margin: 0;
+        margin-block-start: 1.125rem;
+
+        @media (min-width: 1050px) {
+            margin-block-start: 0;
+        }
     }
     p {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 }
 
@@ -66,7 +76,7 @@ a.tag {
     background-color: #F4F3F0;
     border-radius: 28px;
     color: black;
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 12px;
     width: fit-content;
 }
