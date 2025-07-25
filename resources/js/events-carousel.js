@@ -9,10 +9,10 @@ import Splide from '@splidejs/splide'
     keyboard: true,
     mediaQuery: 'min',
     breakpoints: {
-      600: {
-        perPage: 4,
-        fixedWidth: '25%',
-      }
+        600: {
+            perPage: 4,
+            fixedWidth: '400px',
+        }
     }
 });
   splide.mount();
