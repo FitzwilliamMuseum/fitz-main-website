@@ -53,6 +53,10 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
+
+    .hours-time {
+        white-space: nowrap;
+    }
 }
 
 .hours-label p {
