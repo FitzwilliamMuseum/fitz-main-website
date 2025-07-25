@@ -30,7 +30,7 @@
     display: none;
     top: 90px;
     ul {
-        align-items: center;
+        align-items: baseline;
         display: flex;
         gap: 1rem;
         padding-block: 1rem;
@@ -71,7 +71,7 @@
     justify-content: space-between;
     padding: 20px 10px;
     h3 {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: 500;
         margin: 0;
     }
@@ -87,7 +87,7 @@
     }
 }
 .anchor-nav-toggle__text {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
     text-decoration: underline;
 }

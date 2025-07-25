@@ -20,7 +20,31 @@
 }
 
 .visit-us-landing .support-grid {
+    background: #F4F3F0;
     padding-inline: clamp(16px, 5vw, 32px);
+    max-width: 100%;
+    padding-block: 60px;
+
+    .row {
+        max-width: 1290px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .card {
+        background-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+        .col-md-4:first-child:nth-last-child(2),
+        .col-md-4:first-child:nth-last-child(2) ~ .col-md-4 {
+            width: 50% !important;
+        }
+
+        .card-fitz-support {
+            max-width: 100%;
+        }
+    }
 
     @media (min-width: 1330px) {
         padding-inline: 0;
