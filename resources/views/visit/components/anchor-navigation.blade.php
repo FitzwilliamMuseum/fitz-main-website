@@ -1,7 +1,7 @@
 <nav class="anchor-navigation anchor-navigation--large">
     <div class="wrapper">
         <ul>
-            @foreach($anchors as $anchor)
+            @foreach ($anchors as $anchor)
                 <li>
                     <a href="#{{ $anchor['anchor_id'] }}">{{ $anchor['label'] }}</a>
                 </li>
@@ -12,19 +12,14 @@
 <nav class="anchor-navigation anchor-navigation--small" id="anchorNavigation">
     <div class="anchor-navigation__header">
         <h3 id="anchor-navigation-heading">On this page</h3>
-        <button id="anchor-nav-toggle"
-        data-bs-toggle="collapse"
-        data-bs-target="#anchor-navigation-list"
-        aria-expanded="false"
-        aria-controls="anchor-navigation-list">
+        <button id="anchor-nav-toggle" data-bs-toggle="collapse" data-bs-target="#anchor-navigation-list"
+            aria-expanded="false" aria-controls="anchor-navigation-list">
             <span class="anchor-nav-toggle__text">Show</span>
         </button>
     </div>
-    <ul class="collapse"
-    id="anchor-navigation-list"
-    aria-labelledby="anchor-navigation-heading"
-    data-parent="anchorNavigation">
-        @foreach($anchors as $anchor)
+    <ul class="collapse" id="anchor-navigation-list" aria-labelledby="anchor-navigation-heading"
+        data-parent="anchorNavigation">
+        @foreach ($anchors as $anchor)
             <li>
                 <a href="#{{ $anchor['anchor_id'] }}">{{ $anchor['label'] }}</a>
             </li>
@@ -36,11 +31,27 @@
         let navToggle = document.getElementById('anchor-nav-toggle');
         let navToggleText = document.querySelector('.anchor-nav-toggle__text');
         navToggle.addEventListener('click', function(e) {
-            if(navToggleText.innerHTML == 'Show') {
+            if (navToggleText.innerHTML == 'Show') {
                 navToggleText.innerHTML = 'Hide'
             } else {
                 navToggleText.innerHTML = 'Show'
             }
+        });
+
+        // Highlight active anchor link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#anchor-navigation-list a');
+            const secondNav = document.querySelector('.anchor-navigation.anchor-navigation--large');
+            const navLinks2 = secondNav.querySelectorAll('a');
+
+            const allNavLinks = [...navLinks, ...navLinks2];
+
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    allNavLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
         });
     </script>
 @endPushOnce

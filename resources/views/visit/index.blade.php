@@ -18,7 +18,6 @@
 
 @section('content')
     <div class="visit-us-landing">
-        @include('includes.structure.breadcrumb')
         @include('support.components.components-repeater')
         @if($reposition_events == "false")
             @include('visit.components.events-listing', [

@@ -1,6 +1,14 @@
+#anchor-navigation-list a.active {
+    color: #B50E5E;
+    text-decoration: underline;
+}
+.anchor-navigation--large a.active {
+    color: #B50E5E;
+    text-decoration: underline;
+}
 .anchor-navigation {
     position: sticky;
-    z-index: 500; /*High number I know, but it only works around this range*/
+    z-index: 9999;
     ul {
         list-style-type: none;
         margin: 0;
@@ -29,6 +37,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
     display: none;
     top: 90px;
+    z-index: 9999;
     ul {
         align-items: baseline;
         display: flex;

@@ -39,6 +39,7 @@
                     }
                 @endphp
                 @include('visit.components.hero')
+                @include('includes.structure.breadcrumb', ['class' => 'col-md-12 shadow-sm p-3 mx-auto'])
                 @include('visit.components.anchor-navigation', [
                     'anchors' => $anchor_menu
                 ])
