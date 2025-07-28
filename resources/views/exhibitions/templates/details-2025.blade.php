@@ -18,7 +18,7 @@
         }
     }
 @endphp
-<main>
+<main id="site-content">
 <div class="sticky-spacer"></div>
 
 @include('exhibitions.components.hero')
