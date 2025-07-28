@@ -15,9 +15,11 @@
             <div class="quote-text">
                 <p class="quote-text__quote">{{ $component['quote'][0]['quote_text'] }}</p>
                 @php
-                    $citation = $component['quote'][0]['quote_citation'][0];
+                    $citation = (!empty($component['quote'][0]['quote_citation'][0])) ? $component['quote'][0]['quote_citation'][0] : null;
                 @endphp
-                <p class="quote-text__accreditation">{{ $citation['name'] }}, {{ $citation['association'] }}</p>
+                @if(!empty($citation))
+                    <p class="quote-text__accreditation">{{ $citation['name'] }}, {{ $citation['association'] }}</p>
+                @endif
             </div>
         </div>
     </div>
