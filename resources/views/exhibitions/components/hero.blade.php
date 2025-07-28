@@ -1,12 +1,15 @@
 <div class="exhibition-hero">
     <div class="exhibition-hero-inner">
         <div class="hero-image hero-image--lg">
-            <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/pd.80-2022_1_202503_mfj22_mas.jpg" alt="">
+            {{-- <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/pd.80-2022_1_202503_mfj22_mas.jpg" alt=""> --}}
+            <img src="https://fitz-cms-images-staging.s3.eu-west-2.amazonaws.com/web-banners-young-people-1.png" alt="">
         </div>
         <div class="hero-text">
             <h1>{{ $exhibition['exhibition_title'] }}</h1>
             <div class="hero__exhibition-date">
-                @svg('far-calendar', ['width' => '20px', 'height' => '20px', 'color' => '#000'])
+                <div class="hero-svg-box">
+                    @svg('far-calendar', ['color' => '#000'])
+                </div>
                 <p>{{ Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('j F Y') }} – {{ Carbon\Carbon::parse($exhibition['exhibition_end_date'])->format('j F Y') }}</p>
             </div>
             @if(!empty($exhibition['hero_entry_information']))

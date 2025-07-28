@@ -20,13 +20,14 @@
 @endphp
 <main>
 <div class="sticky-spacer"></div>
-<div class="breadcrumbs-su">
-    @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
-</div>
+
 @include('exhibitions.components.hero')
 @if($reposition_details == false && (!empty($exhibition['exhibition_time_information']) || !empty($exhibition['exhibition_time_information'])))
     @include('exhibitions.components.details-component')
 @endif
+<div class="breadcrumbs-su">
+    @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])
+</div>
 @include('support.components.components-repeater', ['page' => $exhibition])
 
 @if(!empty($exhibition['pages_listing']))
