@@ -1,0 +1,32 @@
+.banner-component--home.container.mx-auto {
+    .component-ff .content {
+        background: #F0BB51;
+        .container {
+            color: black;
+            a.nav-link {
+                background: #000;
+                color: white;
+            }
+        }
+    }
+}
+
+.banner-component--home:not(.container.mx-auto) {
+    .component-ff {
+        margin-top: 0;
+    }
+}
+
+.banner-component--home .section-heading {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.banner-component--home .section-heading + .banner-component .component-ff {
+    margin-top: 30px;
+}
+
+.banner-component--home .banner-component > .container {
+    padding: 0;
+}
