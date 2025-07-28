@@ -23,6 +23,13 @@
     }
 }
 
+.information-intro:has(a.button--block) + .information-hours {
+    padding-top: 40px;
+    @media (min-width: 600px) {
+        padding-top: 0;
+    }
+}
+
 .information-hours {
 
     @media (min-width: 1050px) {

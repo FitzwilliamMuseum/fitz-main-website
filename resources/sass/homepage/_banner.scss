@@ -24,8 +24,9 @@
 }
 
 .banner-component--home .section-heading + .banner-component .component-ff {
-    margin-top: 60px;
-    @media (min-width: 600px) {
-        margin-top: 30px;
-    }
+    margin-top: 30px;
+}
+
+.banner-component--home .banner-component > .container {
+    padding: 0;
 }

@@ -27,6 +27,23 @@
             @include('support.components.grid')
         @elseif(!empty($component['50_50_content']))
             @include('support.components.fiftyfifty')
+        @elseif(!empty($component['50_50_section']))
+            <div class="container fifty-fifty-section">
+                {{-- @dd($component['50_50_section'][0]) --}}
+                @include('support.components.fiftyfifty', [
+                    'fiftyfifty_content' => $component['50_50_section'][0]['50_50_content']
+                ])
+                @if(!empty($component['50_50_section'][0]['section_link']))
+                    @php
+                        $section_link = !empty($component['50_50_section'][0]['section_link']) ? $component['50_50_section'][0]['section_link'][0] : null;
+                    @endphp
+                    @if(!empty($section_link))
+                        <div class="fifty-fifty-section__footer">
+                            <a class="{{ $section_link['link_style'] == 'button' ? 'button--block button--white' : '' }}" href="{{ $section_link['link_url'] }}">{{ $section_link['link_text'] }}</a>
+                        </div>
+                    @endif
+                @endif
+            </div>
             @elseif(!empty($component['image_gallery']))
 
                 @include('support.components.image-gallery')

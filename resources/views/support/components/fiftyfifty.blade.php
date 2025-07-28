@@ -1,8 +1,8 @@
     {{-- fiftyfifty --}}
-    @if(!empty($component['50_50_content']))
-        @php
-            $fiftyfifty_content = $component['50_50_content'];
-        @endphp
+    @php
+        $fiftyfifty_content = isset($fiftyfifty_content) ? $fiftyfifty_content : $component['50_50_content'];
+    @endphp
+    @if($fiftyfifty_content)
         <div class="container container-home-cards container-support-cards">
             <div class="row row-home row-support">
                 @if(!empty($fiftyfifty_content))

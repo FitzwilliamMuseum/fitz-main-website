@@ -18,7 +18,7 @@
     {{-- include temporary banner for the site --}}
     {{-- @include('includes.structure.defaced-header') --}}
 
-    <main>
+    <main class="main-homepage">
         <span id="site-content" class="visually-hidden"></span>
 
         @php
@@ -68,10 +68,27 @@
                 ])
             @endif
             @if($reposition_pages == false)
-                @include('support.components.grid', [
-                    'pages_listing_order' => $pages_listing_order,
-                    'is_component' => false
-                ])
+                <div class="homepage__page-listing">
+                    <div class="container mx-auto">
+                        @if(!empty($settings['page_listing_heading']))
+                        <div class="homepage__page-listing-header">
+                            <h2>{{ $settings['page_listing_heading'] }}</h2>
+                        </div>
+                        @endif
+                        @include('support.components.grid', [
+                            'pages_listing_order' => $pages_listing_order,
+                            'is_component' => false
+                        ])
+                        @if(!empty($settings['page_listing_link_text']))
+                            <div class="homepage__page-listing-footer">
+                                <a class="button--block button--white" href="{{ $settings['page_listing_link_url'] }}">
+                                    {{ $settings['page_listing_link_text'] }}
+                                    @svg('fas-chevron-right', ['width' => '16', 'height' => '16', 'color' => '#000'])
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+                </div>
             @endif
         @else
         {{-- OLD TEMPLATE --}}
