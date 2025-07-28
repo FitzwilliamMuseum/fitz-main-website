@@ -1,4 +1,12 @@
 /* 50/50-component start */
+div.banner-component {
+    .container {
+        padding-inline: 30px;
+        @media (min-width: 768px) {
+            padding-inline: 0;
+        }
+    }
+}
 .component-ff {
     margin: 60px 0;
     display: grid;

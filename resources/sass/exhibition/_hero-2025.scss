@@ -1,0 +1,137 @@
+.exhibition-hero {
+    background-color: #F4F3F0;
+}
+
+.exhibition-hero-inner {
+    padding: 0 0 40px;
+
+    .hero-text {
+        padding: 30px;
+    }
+    
+    .hero-image,
+    .hero-text {
+        flex: 1;
+    }
+    
+    .hero-inner h1 {
+        font-size: 60px;
+        margin: 0;
+    }
+    
+    .hero-image img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    
+    .hero-image--lg {
+        display: none;
+    }
+    
+    .hero-image--sm {
+        display: block;
+    }
+
+    .hero__exhibition-date {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        svg {
+            margin-top: -8px;
+        }
+    }
+    
+    .hero__exhibition-date p {
+        border-left: 1px solid #B50E5E;
+        font-size: 24px;
+        margin-top: 10px; /* May need tweaking once the proper fonts are in */
+        padding-left: 20px;
+    }
+    
+    .hero__exhibition-price {
+        font-size: 18px;
+    }
+    
+    .hero-footer {
+        margin-top: 18px;
+    }
+    
+    .hero-buttons {
+        align-items: center;
+        display: flex;
+        gap: 20px;
+    }
+
+    .button--block svg {
+        margin-left: 12px;
+        transition: .2s all;
+    }
+    
+    .button--block:hover svg {
+        transform: translateX(5px);
+    }
+    @media (min-width: 600px) {
+        padding-top: 30px;
+    }
+}
+
+
+    
+.button--block {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px;
+    padding-left: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    svg {
+        margin-top: -2px;
+        margin-left: 2px;
+    }
+}
+    
+.button--pink {
+    background-color: #B50E5E;
+    color: white;
+}
+
+.button--pink:hover,
+.button--pink:focus {
+    color: white;
+}
+
+.button--border {
+    border: 1.5px solid black;
+}
+
+.button--border:hover,
+.button--border:focus {
+    color: inherit;
+}
+
+
+@media (min-width: 600px) {
+    .exhibition-hero-inner {
+        align-items: center;
+        display: flex;
+        gap: 60px;
+        padding: 60px 90px;
+
+        .hero-image--lg {
+            display: block;
+        }
+    
+        .hero-image--sm {
+            display: none;
+        }
+    
+        .hero-text {
+            padding: 0;
+        }
+    }
+}

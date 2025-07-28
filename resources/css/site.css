@@ -304,7 +304,7 @@ h5 > a:hover::before {
     height: 50px;
     padding: 10px 16px;
     border-radius: 35px;
-    font-size: 12px;
+    font-size: 0.75rem;
     text-align: center;
 }
 
@@ -819,18 +819,18 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .home-hero .wrapper h1 {
     color: #fff;
-    font-size: 44px;
+    font-size: 2.75rem;
     font-weight: 500;
 }
 
 @media screen and (min-width: 768px) {
     .home-hero .wrapper h1 {
-        font-size: 80px;
+        font-size: 5rem;
     }
 }
 
 .home-hero .wrapper p {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -840,7 +840,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 
 .home-hero .hero-cta {
     white-space: nowrap;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
     display: flex;
     padding: 16px;
@@ -878,7 +878,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 .container-home-cards h3 {
     grid-row: 1 / 2;
     grid-column: 1 / -1;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -891,13 +891,13 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .container-home-cards h2 a {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
     display: inline-block;
 }
 
 .container-home-cards h3 a {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
     display: inline-block;
 }
@@ -1006,12 +1006,12 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .container-subscribre .wrapper h5 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
 .container-subscribre .wrapper p {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     margin: 0;
 }
@@ -1025,7 +1025,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     align-items: center;
     color: #fff;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
     white-space: nowrap;
 }
@@ -1052,7 +1052,7 @@ a.text-center.btn.btn-outline-light.btn__book {
 }
 
 .shout.lead {
-    font-size: 52px;
+    font-size: 3.25rem;
     margin-top: 40px;
 }
 .main-footer {
@@ -1125,7 +1125,7 @@ a.text-center.btn.btn-outline-light.btn__book {
     background:  #EEF3F4;
     color: #000;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     padding: 12px 24px;
 }

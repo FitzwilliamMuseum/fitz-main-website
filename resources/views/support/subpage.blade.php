@@ -44,7 +44,7 @@
 
     @include('includes.structure.nav')
 
-    {{-- <h1>This is the subpage</h1> --}}
+    <div class="sticky-spacer"></div>
 
     @include('support.components.head')
 

@@ -33,6 +33,13 @@
         @section('shopify')
             @include('includes.elements.exhibitions.products')
         @endsection
+    @elseif(!empty($page_template) && $page_template == 'exhibitions-2025')
+        @section('exhibitions-2025')
+            @include('exhibitions.templates.details-2025')
+        @endsection
+        @section('shopify')
+            @include('includes.elements.exhibitions.products')
+        @endsection
     @else
 {{-- Default template --}}
     @if(!empty($banners))

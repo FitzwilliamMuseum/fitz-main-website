@@ -24,7 +24,7 @@
     }
 @endphp
 @if (!empty($banner_heading) || !empty($banner_subheading))
-    <div>
+    <div class="banner-component">
         <div class="container mx-auto component-ff">
             <div class="content">
                 <div class="container">

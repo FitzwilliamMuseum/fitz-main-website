@@ -1,0 +1,118 @@
+#anchor-navigation-list-mobile li a.active {
+    border-color: #B50E5E;
+    color: #B50E5E;
+}
+
+.anchor-navigation--large a.active {
+    border-color: #B50E5E;
+    color: #B50E5E;
+}
+
+.anchor-navigation {
+
+    position: static;
+
+    @media (min-height: 480px) {
+        position: sticky;
+        z-index: 1029;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li a {
+            color: black;
+            display: inline-block;
+            width: max-content;
+            font-weight: 500;
+            padding: 8px 0 4px 10px;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+    }
+
+    .wrapper {
+        max-width: 1290px;
+        margin: 0 auto;
+        padding: 0 16px;
+        @media (min-width: 1330px) {
+            padding-inline-start: 0;
+        }
+    }
+}
+
+.anchor-navigation--large {
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+    display: none;
+    top: 90px;
+    z-index: 1029;
+    ul {
+        align-items: baseline;
+        display: flex;
+        gap: 1.2rem;
+        padding-block: 1rem;
+        li a {
+            border-bottom: 2px solid transparent;
+            padding: 8px 0 4px 10px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 23px;
+        }
+        li a:first-child {
+            padding-left: 0;
+        }
+    }
+    @media (min-width: 990px) {
+        display: block;
+    }
+}
+
+.anchor-navigation--small {
+    background-color: white;
+    display: block;
+    top: 90px;
+    padding: 19px 11px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+    div:first-child {
+        padding: 0;
+    }
+
+    ul {
+        li a {
+            font-weight: 600;
+        }
+    }
+
+    @media (min-width: 990px) {
+        display: none;
+    }
+}
+
+.anchor-navigation__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    button {
+        background: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    &:has(button[aria-expanded="true"]) {
+        padding-block-end: 20px;
+    }
+}
+.anchor-nav-toggle__text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: underline;
+}

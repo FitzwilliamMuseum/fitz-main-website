@@ -1,6 +1,8 @@
 /* featured-video-component start */
+.featured_video.container,
 .featured_video {
-    max-width: 1290px;
+    max-width: 800px;
+    width: 100%;
     margin: 56px auto;
 
     @media screen and (min-width: 1320px) {

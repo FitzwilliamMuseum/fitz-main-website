@@ -1,3 +1,24 @@
 @import "_hero";
+@import "_hero-2025";
 @import '_cta';
 @import '_related-events.scss';
+@import '_text-component.scss';
+@import '_details-component.scss';
+@import '_quote.scss';
+
+.single-exhibition {
+    padding-inline: 30px;
+}
+.single-exhibition > div:not(.related-events),
+.single-exhibition > div .container {
+    padding-inline: 0;
+}
+
+.single-exhibition .image-gallery,
+.single-exhibition .related {
+    margin-inline: -30px; 
+}
+
+.sticky-spacer {
+    padding-top: 92px;
+}
