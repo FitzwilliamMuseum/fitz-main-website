@@ -13,6 +13,8 @@
                 @include('support.components.content-block')
             @elseif(!empty($component['banner_positioning']) && $component['banner_positioning'] == true)
                 @include('support.components.banner')
+            @elseif(!empty($component['banner']))
+                @include('home.components.banner')
             @elseif(!empty($component['related_pages_positioning']) && $component['related_pages_positioning'] == true)
                 @include('support.components.grid')
             @elseif(!empty($component['accordion_component']))
