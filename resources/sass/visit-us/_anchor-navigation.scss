@@ -1,6 +1,6 @@
-#anchor-navigation-list a.active {
+#anchor-navigation-list-mobile li a.active {
     border-color: #B50E5E;
-    color:#B50E5E;
+    color: #B50E5E;
 }
 
 .anchor-navigation--large a.active {
@@ -64,7 +64,7 @@
             padding-left: 0;
         }
     }
-    @media (min-width: 600px) {
+    @media (min-width: 990px) {
         display: block;
     }
 }
@@ -85,7 +85,7 @@
         }
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 990px) {
         display: none;
     }
 }

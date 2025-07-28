@@ -5,7 +5,7 @@
 
     h1 {
         color: #fff;
-        font-size: 3.75rem;
+        font-size: 2.75rem;
         font-weight: 500;
         padding: 385px 30px 40px 20px;
         position: relative;
@@ -13,8 +13,10 @@
         margin-inline: auto;
         max-inline-size: 1290px;
         z-index: 1;
+
         @media (min-width: 756px) {
             padding-bottom: 80px;
+            font-size: 5rem;
         }
         @media (min-width: 1330px) {
             padding-top: 409px;
@@ -23,11 +25,11 @@
     }
 }
 .landing-hero--simple:after {
-    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    background: linear-gradient(to top, rgba(0, 0, 0, .8) 10%, transparent);
     bottom: 0;
     content: "";
     display: block;
-    height: 30%;
+    height: 100%;
     left: 0;
     position: absolute;
     right: 0;

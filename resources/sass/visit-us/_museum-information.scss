@@ -1,6 +1,11 @@
 .museum-information {
     padding-inline: 16px;
-    padding-block: 32px;
+    padding-block-start: 60px;
+    padding-block-end: 40px;
+
+    @media (min-width: 1340px) {
+        padding-inline: 0 !important;
+    }
 }
 .museum-information .wrapper {
     max-inline-size: 1290px;

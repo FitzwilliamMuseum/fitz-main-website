@@ -16,7 +16,6 @@
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
         <main id="site-content">
-            @yield('title')
                 @php
                     $anchor_menu = array();
 
