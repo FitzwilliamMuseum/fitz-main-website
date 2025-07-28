@@ -88,8 +88,8 @@ cc.run({
                             readonly: true          // cookie categories with readonly=true are all treated as "necessary cookies"
                         }
                     }, {
-                        title: 'Performance and Analytics cookies',
-                        description: 'These cookies allow the website to remember the choices you have made in the past',
+                        title: 'Analytics cookies',
+                        description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
                         toggle: {
                             value: 'analytics',     // there are no default categories => you specify them
                             enabled: true,
@@ -108,16 +108,70 @@ cc.run({
                                 col2: 'google.com',
                                 col3: '1 day',
                                 col4: 'This cookie is installed by Google Analytics. The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the website is doing.',
-                            }
+                            },
+                            {
+                                col1: 'dpr',
+                                col2: 'facebook.com',
+                                col3: '7 days',
+                                col4: 'This cookie is installed by Meta (Facebook). The cookie is used to record screen size, pixel ratio, and contrast settings to ensure optimal rendering of assets.',
+                            },
+                            {
+                                col1: 'wd',
+                                col2: 'facebook.com',
+                                col3: '7 days',
+                                col4: 'This cookie is installed by Meta (Facebook). The cookie is used to record screen size, pixel ratio, and contrast settings to ensure optimal rendering of assets.',
+                            },
+                            {
+                                col1: '_fbc',
+                                col2: 'facebook.com',
+                                col3: '2 years',
+                                col4: 'This cookie is installed by Meta (Facebook). The cookie is used to track users who interact with Facebook ads and land on external sites.',
+                            },
+                            {
+                                col1: '_fbp',
+                                col2: 'facebook.com',
+                                col3: '3 months',
+                                col4: 'This cookie is installed by Meta (Facebook). The cookie is used to track users who interact with Facebook ads and land on external sites.',
+                            },
+                            {
+                                col1: '_ttp',
+                                col2: 'fitzmuseum.cam.ac.uk',
+                                col3: '13 months',
+                                col4: 'This cookie is installed by TikTok. The cookie is used to measure and improve the performance of advertising campaigns and to personalize the customer experience (including ads) on TikTok.',
+                            },
+                            {
+                                col1: '_ttp',
+                                col2: '.tiktok.com',
+                                col3: '13 months',
+                                col4: 'This cookie is installed by TikTok. The cookie is used to measure and improve the performance of advertising campaigns and to personalize the customer experience (including ads) on TikTok.',
+                            },
+                            {
+                                col1: 'ttcsid_, ttcsid_{pixel code}',
+                                col2: 'fitzmuseum.cam.ac.uk',
+                                col3: '13 months',
+                                col4: 'This cookie is installed by TikTok. The cookie is used to measure and improve the performance of advertising campaigns and to personalize the customer experience (including ads) on TikTok.',
+                            },
+                            {
+                                col1: 'ttclid',
+                                col2: 'fitzmuseum.cam.ac.uk',
+                                col3: '13 months',
+                                col4: 'This cookie is installed by TikTok. The cookie is used to measure and improve the performance of advertising campaigns and to personalize the customer experience (including ads) on TikTok.',
+                            },
+                            {
+                                col1: '_pangle',
+                                col2: 'analytics.pangle-ads.com',
+                                col3: '13 months',
+                                col4: 'This cookie is installed by TikTok. The cookie is used to measure and improve the performance of your advertising campaigns and to personalize the customer\'s ad experiences delivered by the TikTok Pangle ad network.',
+                            },
                         ]
-                    }, {
-                        title: 'Advertisement and Targeting cookies',
-                        description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
-                        toggle: {
-                            value: 'targeting',
-                            enabled: false,
-                            readonly: false
-                        }
+                    // }, {
+                    //     title: 'Advertisement and Targeting cookies',
+                    //     description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+                    //     toggle: {
+                    //         value: 'targeting',
+                    //         enabled: false,
+                    //         readonly: false
+                    //     }
                     }, {
                         title: 'More information',
                         description: 'For any queries in relation to our policy on cookies and your choices, please review <a class="cc-link" href="https://fitzmuseum.cam.ac.uk/about-us/privacy-and-cookies">the University of Cambridge policy</a>.',
