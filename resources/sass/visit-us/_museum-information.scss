@@ -1,6 +1,6 @@
 .museum-information {
-    padding-inline: 0 !important;
-    margin: 32px 30px;
+    padding-inline: 16px;
+    padding-block: 32px;
 }
 .museum-information .wrapper {
     max-inline-size: 1290px;
@@ -12,7 +12,7 @@
 }
 .information-intro {
     max-inline-size: 700px;
-    margin-inline-end: 1.125rem;
+    margin-inline-end: 2.125rem;
     h2 {
         font-size: 2.25rem;
         font-weight: 500;
@@ -33,7 +33,7 @@
         font-size: 1.625rem;
         font-weight: 500;
         margin: 0;
-        margin-block-start: 1.125rem;
+        margin-block-start: 1.875rem;
 
         @media (min-width: 1050px) {
             margin-block-start: 0;
@@ -80,7 +80,8 @@ a.tag {
     background-color: #F4F3F0;
     border-radius: 28px;
     color: black;
-    font-size: 0.875rem;
-    padding: 12px;
+    font-size: 1rem;
+    padding: 4px 12px;
+    line-height: 29px;
     width: fit-content;
 }

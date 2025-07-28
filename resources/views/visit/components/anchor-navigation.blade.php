@@ -1,6 +1,6 @@
 <nav class="anchor-navigation anchor-navigation--large">
     <div class="wrapper">
-        <ul>
+        <ul id="anchor-navigation-list">
             @foreach ($anchors as $anchor)
                 <li>
                     <a href="#{{ $anchor['anchor_id'] }}">{{ $anchor['label'] }}</a>
@@ -38,19 +38,50 @@
             }
         });
 
-        // Highlight active anchor link
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('#anchor-navigation-list a');
             const secondNav = document.querySelector('.anchor-navigation.anchor-navigation--large');
-            const navLinks2 = secondNav.querySelectorAll('a');
-
+            const navLinks2 = secondNav ? secondNav.querySelectorAll('#anchor-navigation-list a') : [];
             const allNavLinks = [...navLinks, ...navLinks2];
 
+
+            const idToLinks = {};
             allNavLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                const id = link.getAttribute('href').replace('#', '');
+                if (!idToLinks[id]) idToLinks[id] = [];
+                idToLinks[id].push(link);
+            });
+
+            const sections = Object.keys(idToLinks)
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.7,
+            };
+
+            function observerCallback(entries, observer) {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        Object.values(idToLinks).forEach(links => links.forEach(l => l.classList.remove(
+                            'active')));
+                        idToLinks[entry.target.id].forEach(l => l.classList.add('active'));
+                    }
+                });
+            }
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            sections.forEach((sec) => observer.observe(sec));
+
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
                     allNavLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 });
+
+
             });
         });
     </script>
