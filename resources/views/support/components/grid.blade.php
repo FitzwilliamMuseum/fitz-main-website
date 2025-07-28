@@ -5,7 +5,7 @@
         $pages_listing = $page['related_page_listing'];
     }
 
-    $pages_listing_order = [];
+    $pages_listing_order = isset($pages_listing_order) ? $pages_listing_order : [];
 
     if (!empty($page['related_pages_order'])) {
         $custom_order = true;
@@ -23,7 +23,7 @@
 
     $page_root = Request::url();
 @endphp
-@if (!empty($component['50_50_content']))
+@if (!empty($component['50_50_content']) && !isset($is_component))
     <div class="container support-grid">
         <div class="row">
             @foreach ($component['50_50_content'] as $card_content)
@@ -64,7 +64,12 @@
         <div class="row">
             @foreach ($pages_listing_order as $card)
                 @php
-                    $card = $card['landing_relevant_page_id'];
+                    if(isset($card['landing_relevant_page_id'])) {
+                        $card = $card['landing_relevant_page_id'];
+                    }
+                    elseif(isset($card['subpages_id'])) {
+                        $card = $card['subpages_id'];
+                    }
                     $image_asset_url = '';
                     $image_asset_alt = '';
                     $image_asset_width = 374;

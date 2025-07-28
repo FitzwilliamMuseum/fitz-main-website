@@ -29,6 +29,7 @@ class homeController extends Controller
                 'carousel' => Carousels::findBySection('home'),
                 'thirdRow' => HomePage::returnThirdRow(),
                 'fourthRow' => HomePage::returnFourthRow(),
+                'current' => Exhibitions::list(),
                 // 'news' => NewsArticles::feature(),
                 // 'research' => ResearchProjects::listSimple('?', 3),
                 // 'objects' => Highlights::homeList(),

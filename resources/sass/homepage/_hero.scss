@@ -1,0 +1,77 @@
+.homepage-hero--new {
+    position: relative;
+    z-index: 3;
+
+    h1 {
+        font-size: 60px;
+        font-weight: 500;
+        margin: 0;
+        padding-top: 252px;
+        @media (min-width: 600px) {
+            padding-top: 456px;
+        }
+    }
+
+    .hero-image {
+        background-color: black;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .hero-body {
+        color: white;
+        padding-bottom: 60px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-body__exhibition-date {
+        align-items: center;
+        display: flex;
+        svg {
+            margin-top: -4px;
+            margin-right: 12px;
+        }
+        p {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+
+    .hero-body__footer {
+        padding-top: 36px;
+    }
+
+    .button {
+        color: #000;
+        background: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 12px 24px;
+        text-decoration: none;
+        width: max-content;
+    }
+    &:before {
+        background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 60%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
+}
