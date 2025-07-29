@@ -1,18 +1,16 @@
 @php
-    $heading = '';
-    $footer_link = null;
+    $heading = isset($component['listing_section'][0]['section_heading']) ? $component['listing_section'][0]['section_heading'] : null;
+    $footer_link = isset($component['listing_section'][0]['section_link'][0]) ? $component['listing_section'][0]['section_link'][0] : null;
     if(isset($page)) {
-        $heading = isset($page['exhibitions_listing_title']) ? $page['exhibitions_listing_title'] : null;
-        $footer_link = isset($page['exhibitions_listing_link']) ? $page['exhibitions_listing_link'][0] : null;
+        $images_source = isset($page['component_images']) ? $page['component_images'] : null;
     }
     elseif(isset($settings)) {
-        $heading = isset($settings['exhibitions_listing_heading']) ? $settings['exhibitions_listing_heading'] : null;
-        $footer_link = isset($settings['exhibitions_listing_link']) ? $settings['exhibitions_listing_link'][0] : null;
+        $images_source = isset($settings['component_images']) ? $settings['component_images'] : null;
     }
+    $events = $component['listing_section'][0]['listing'];
 @endphp
 <div class="events-listing">
     <div class="wrapper">
-        {{-- @dd($page); --}}
         <h2>{{ $heading }}</h2>
         @if(!empty($events))
             <section id="events-listing" class="events-listing__events splide">
@@ -34,79 +32,60 @@
                 </div>
                 <div class="splide__track">
                     <div class="splide__list">
-                        {{-- @dd($events) --}}
-                        @foreach($events['data'] as $event)
-                            <li class="splide__slide events-listing__event-card" data-component="card">
-                                <div class="event-card__image">
-                                    @php
-                                        $listingImage = !empty($event['listing_image']) ? $event['listing_image'] : null;
-                                        $listingImageAlt = !empty($event['listing_image_alt']) ? $event['listing_image_alt'] : null;
-
-                                        if(empty($listingImage) && !empty($event['hero_image'])) {
-                                            $image = $event['hero_image'];
-                                            $altTag = $event['hero_image_alt_text'];
-                                        }
-                                    @endphp
-                                    @if(!empty($listingImage))
-                                        <img class="card-img-top"
-                                            src="{{ $listingImage['data']['thumbnails'][13]['url'] }}"
-                                            alt="{{ !empty($listingImageAlt) ? $listingImageAlt : '' }}"
-                                            width="{{ $listingImage['data']['thumbnails'][13]['width'] }}"
-                                            height="{{ $listingImage['data']['thumbnails'][13]['height'] }}"
-                                            loading="lazy"
-                                        />
-                                    @elseif(isset($image))
-                                        <img class="card-img-top"
-                                            src="{{ $image['data']['thumbnails'][13]['url'] }}"
-                                            alt="{{ !empty($altTag) ? $altTag : '' }}"
-                                            width="{{ $image['data']['thumbnails'][13]['width'] }}"
-                                            height="{{ $image['data']['thumbnails'][13]['height'] }}"
-                                            loading="lazy"
-                                        />
-                                    @else
-                                        <img class="card-img-top"
-                                            src="{{ env('MISSING_IMAGE_URL') }}"
-                                            alt="A stand in image for {{ $event['exhibition_title'] }}"
-                                            loading="lazy"
-                                        />
-                                    @endif
-                                </div>
+                        @foreach($events as $event)
+                            <div class="splide__slide events-listing__event-card" data-component="card">
+                                @php
+                                    $image_id = isset($event['image_id']) ? $event['image_id'] : null;
+                                    $image_url = '';
+                                    $heading = isset($event['heading']) ? $event['heading'] : null;
+                                    $date = isset($event['date']) ? $event['date'] : null;
+                                    $copy_line = isset($event['copy_line']) ? $event['copy_line'] : null;
+                                    $tag = isset($event['tag']) ? $event['tag'] : null;
+                                    $exhibition_slug = isset($event['exhibition_slug']) ? $event['exhibition_slug'] : null;
+                                    $external_link = isset($event['external_link']) ? $event['external_link'] : null;
+                                @endphp
+                                @if(!empty($image_id))
+                                    {{-- @dd($images_source) --}}
+                                    <div class="event-card__image">
+                                        @php
+                                            if(!empty($images_source)) {
+                                                foreach($images_source as $image_item) {
+                                                    if($image_item['directus_files_id']['id'] == $image_id) {
+                                                        $image_url = $image_item['directus_files_id']['data']['thumbnails'][13]['url'];
+                                                    }
+                                                }
+                                            }
+                                        @endphp
+                                        @if(!empty($image_url))
+                                            <img class="card-img-top" src="{{ $image_url }}" alt=""> {{-- Check what the handle for alt text is --}}
+                                        @endif
+                                    </div>
+                                @endif
                                 <div class="event-card__text">
-                                    @php
-                                        $heading = isset($event['exhibition_title']) ? $event['exhibition_title'] : null;
-                                        $start_date = isset($event['exhibition_start_date']) ? $event['exhibition_start_date'] : null;
-                                        $end_date = isset($event['exhibition_end_date']) ? $event['exhibition_end_date'] : null;
-                                        $optional_text = (isset($event['ticketed']) && !$event['ticketed']) ? 'Free entry' : null;
-                                        $tag = isset($event['tag']) ? $event['tag'] : null;
-                                        $linked_tag = true;
-
-                                        if(isset($event['ticketed']) && $event['ticketed']) {
-                                            $tag = 'Ticketed exhibition';
-                                            $linked_tag = false;
-                                        }
-                                    @endphp
-                                    @if(!empty($heading))
-                                        <h3 class="streched-link">
-                                            <a href="plan-your-visit/exhibitions/{{ $event['slug'] }}">
+                                    <h3 class="streched-link">
+                                        @if(!empty($exhibition_slug))
+                                            <a href="plan-your-visit/exhibitions/{{ $exhibition_slug }}">
                                                 {{ $heading }}
                                             </a>
-                                        </h3>
+                                        @elseif(!empty($external_link) && empty($exhibition_slug))
+                                            <a href="{{ $external_link }}">
+                                                {{ $heading }}
+                                            </a>
+                                        @else
+                                            {{ $heading }}
+                                        @endif
+                                    </h3>
+                                    @if(!empty($date))
+                                        <p>{{ $date }}</p>
                                     @endif
-                                    @if(!empty($start_date))
-                                        <p>{{ Carbon\Carbon::parse($start_date)->format('j F Y') }} – {{ Carbon\Carbon::parse($end_date)->format('j F Y') }}</p>
-                                    @endif
-                                    @if(!empty($optional_text))
-                                        <p>{{ $optional_text }}</p>
+                                    @if(!empty($copy_line))
+                                        <p>{{ $copy_line }}</p>
                                     @endif
                                     @if(!empty($tag))
-                                        @if($linked_tag)
-                                            <a class="tag" href="/events/{{ $tag }}">{{ $tag }}</a>
-                                        @else
-                                            <p class="tag">{{ $tag }}</p>
-                                        @endif
+                                        <p class="tag">{{ $tag }}</p>
                                     @endif
                                 </div>
-                            </li>
+                            </div>
                         @endforeach
                     </div>
                 </div>
