@@ -2,6 +2,8 @@
     $component = $component['accordion_section'][0];
 
     $heading = !empty($component['heading']) ? $component['heading'] : '';
+    $image_id = !empty($component['image_id']) ? $component['image_id'] : '';
+    $image = env('MISSING_IMAGE_URL');
     $tagline = !empty($component['tagline']) ? $component['tagline'] : '';
     $accordion = !empty($component['accordion']) ? $component['accordion'] : '';
     $isAnchor = !empty($component['include_in_anchor_links']) ? $component['include_in_anchor_links'] : '';
@@ -10,7 +12,18 @@
 <div class="accordion-section">
     <div class="wrapper" @if($isAnchor) data-is-anchor id="{{ $slug }}" @endif>
         <div class="accordion-section__image">
-            <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
+             @php
+                if(!empty($image_id)) {
+                    if(!empty($page['component_images'])) {
+                        foreach($page['component_images'] as $image_block) {
+                            if($image_block['directus_files_id']['id'] == $image_id) {
+                                $image = $image_block['directus_files_id']['data']['url'];
+                            }
+                        }
+                    }
+                }
+            @endphp
+            <img src="{{ $image }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
         </div>
         <div class="accordion-section__text">
             @if(!empty($heading))
