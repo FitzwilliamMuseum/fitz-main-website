@@ -34,6 +34,13 @@
         padding-bottom: 60px;
         position: relative;
         z-index: 2;
+        max-width: 1290px;
+        margin: 0 auto;
+        padding-inline: 32px;
+
+        @media (min-width: 1350px) {
+            padding-inline: 0;
+        }
     }
 
     .hero-body__exhibition-date {
