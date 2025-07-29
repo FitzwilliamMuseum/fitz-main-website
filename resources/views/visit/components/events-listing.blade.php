@@ -2,7 +2,7 @@
     $heading = '';
     $footer_link = null;
     if(isset($page)) {
-        $heading = isset($page['exhibitions_listing_heading']) ? $page['exhibitions_listing_heading'] : null;
+        $heading = isset($page['exhibitions_listing_title']) ? $page['exhibitions_listing_title'] : null;
         $footer_link = isset($page['exhibitions_listing_link']) ? $page['exhibitions_listing_link'][0] : null;
     }
     elseif(isset($settings)) {
@@ -12,6 +12,7 @@
 @endphp
 <div class="events-listing">
     <div class="wrapper">
+        {{-- @dd($page); --}}
         <h2>{{ $heading }}</h2>
         @if(!empty($events))
             <section id="events-listing" class="events-listing__events splide">
