@@ -1,8 +1,7 @@
 <div class="exhibition-hero">
     <div class="exhibition-hero-inner">
         <div class="hero-image hero-image--lg">
-            {{-- @dd($exhibition) --}}
-            <img src="{{ $exhibition['hero_image']['data']['thumbnails'][13]['url'] }}" alt="" width="599" height="505">
+            <img src="{{ $exhibition['hero_image']['data']['thumbnails'][13]['url'] }}" alt="" width="{{ $exhibition['hero_image']['data']['thumbnails'][13]['width'] }}" height="{{ $exhibition['hero_image']['data']['thumbnails'][13]['height'] }}">
         </div>
         <div class="hero-text">
             <h1>{{ $exhibition['exhibition_title'] }}</h1>
