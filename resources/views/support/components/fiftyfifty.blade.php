@@ -9,7 +9,7 @@
                     @foreach($fiftyfifty_content as $card_content)
                         @php
                             if(!empty($card_content['image_id'])) {
-                                if(!empty($page['component_images'])) {
+                                  if(!empty($page['component_images'])) {
                                     foreach($page['component_images'] as $image_block) {
                                         if($image_block['directus_files_id']['id'] == $card_content['image_id']) {
                                             $image_asset = $image_block['directus_files_id'];

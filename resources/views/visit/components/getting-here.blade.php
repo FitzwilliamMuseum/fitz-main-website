@@ -1,15 +1,15 @@
 @php
     $component = $component['getting_here'][0];
 
-    $heading = $component['heading'];
-    $tagline = $component['tagline'];
-    $location = $component['location'];
-    $methods = $component['travel_methods'];
-    $isAnchor = $component['include_in_anchor_links'];
+    $heading = isset($component['heading']) ? $component['heading'] : null;
+    $tagline = isset($component['tagline']) ? $component['tagline'] : null;
+    $location =isset( $component['location']) ?  $component['location'] : null;
+    $methods = isset($component['travel_methods']) ? $component['travel_methods'] : null;
+    $isAnchor =isset( $component['include_in_anchor_links']) ?  $component['include_in_anchor_links'] : null;
 @endphp
 <div class="getting-here">
     <div class="wrapper">
-        <div class="getting-here__wrap"@if($isAnchor) data-is-anchor id="getting-here" @endif>
+        <div class="getting-here__wrap"@if(!empty($isAnchor) && $isAnchor) data-is-anchor id="getting-here" @endif>
             <div class="getting-here__map">
                 @yield('map')
             </div>

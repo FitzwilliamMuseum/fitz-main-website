@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </section>
-            @if(!empty($footer_link))
+            @if(!empty($footer_link && !empty($footer_link['link_url'])))
                 <div class="events-listing__footer">
                     <a href="{{ $footer_link['link_url'] }}"
                     @if($footer_link['link_style'] == 'button') class="button--block button--white"@endif>
