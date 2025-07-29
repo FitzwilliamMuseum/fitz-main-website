@@ -1,8 +1,7 @@
 <div class="exhibition-hero">
     <div class="exhibition-hero-inner">
         <div class="hero-image hero-image--lg">
-            {{-- <img src="https://fitz-cms-images.s3.eu-west-2.amazonaws.com/pd.80-2022_1_202503_mfj22_mas.jpg" alt=""> --}}
-            <img src="https://fitz-cms-images-staging.s3.eu-west-2.amazonaws.com/web-banners-young-people-1.png" alt="">
+            <img src="{{ $exhibition['hero_image']['data']['thumbnails'][13]['url'] }}" alt="" width="{{ $exhibition['hero_image']['data']['thumbnails'][13]['width'] }}" height="{{ $exhibition['hero_image']['data']['thumbnails'][13]['height'] }}">
         </div>
         <div class="hero-text">
             <h1>{{ $exhibition['exhibition_title'] }}</h1>
