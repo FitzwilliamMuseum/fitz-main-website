@@ -31,11 +31,11 @@ class landingPageController extends Controller
         $page = LandingPageTemplate::getLanding($slug);
         if($slug == 'plan-your-visit') {
             // Temporary - Adds protection for first deployment
-            // dd($page);
             if(isset($page['data'][0]['page_components'])) {
                 return view('visit.index', [
                         'page' => Collect($page['data'])->first(),
-                        'current' => Exhibitions::list()
+                        'current' => Exhibitions::list(),
+                        'displays' => Exhibitions::list('current', '-ticketed', 'display')
                     ]
                 );
             } else {

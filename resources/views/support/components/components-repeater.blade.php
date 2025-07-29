@@ -74,7 +74,7 @@
                 @include('exhibitions.components.details-component')
             @elseif(!empty($component['events_positioning']))
                 @include('visit.components.events-listing', [
-                    'events' => $current
+                    'events' => $events
                 ])
             @endif
         @endif
