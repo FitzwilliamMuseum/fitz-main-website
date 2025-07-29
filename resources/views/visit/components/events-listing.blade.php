@@ -10,7 +10,6 @@
         $footer_link = isset($settings['exhibitions_listing_link']) ? $settings['exhibitions_listing_link'][0] : null;
     }
 @endphp
-{{-- @dd($page) --}}
 <div class="events-listing">
     <div class="wrapper">
         <h2>{{ $heading }}</h2>

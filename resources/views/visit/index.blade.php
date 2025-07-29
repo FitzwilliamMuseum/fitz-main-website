@@ -15,13 +15,17 @@
 @section('title', 'Visit the Fitzwilliam Museum')
 @section('description', 'Visiting the Fitzwilliam Museum? What do you need to know?')
 @section('keyword', 'cambridge,museums,visit')
-
+@php
+    $all_events['data'] = array_merge($current['data'], $displays['data']);
+@endphp
 @section('content')
     <div class="visit-us-landing">
-        @include('support.components.components-repeater')
+        @include('support.components.components-repeater', [
+            'events' => $all_events
+        ])
         @if($reposition_events == "false")
             @include('visit.components.events-listing', [
-                'events' => $current
+                'events' => $all_events
             ])
         @endif
     </div>
