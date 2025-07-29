@@ -6,68 +6,91 @@
     padding: 0 0 40px;
 
     .hero-text {
-        padding: 30px;
+        padding-inline: 32px;
+        padding-block-start: 30px;
+        padding-block-end: 32px;
     }
-    
+
     .hero-image,
     .hero-text {
         flex: 1;
     }
-    
-    .hero-inner h1 {
-        font-size: 60px;
+
+    .hero-text h1 {
+        font-size: 3.75rem;
+        font-weight: 500;
         margin: 0;
     }
-    
+
     .hero-image img {
         height: 100%;
-        object-fit: cover;
         width: 100%;
+        object-fit: cover;
     }
-    
+
     .hero-image--lg {
         display: none;
     }
-    
+
     .hero-image--sm {
         display: block;
+        object-fit: cover;
+    }
+
+    .hero-image--sm img {
+        min-height: 615px;
     }
 
     .hero__exhibition-date {
         align-items: center;
         display: flex;
-        gap: 1rem;
-        svg {
+        gap: 20px;
+
+        .hero-svg-box {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-svg-box svg {
+            width: 28px;
+            height: 28px;
             margin-top: -8px;
+            display: block;
         }
     }
-    
+
     .hero__exhibition-date p {
         border-left: 1px solid #B50E5E;
-        font-size: 24px;
+        font-size: 1.5rem;
         margin-top: 10px; /* May need tweaking once the proper fonts are in */
         padding-left: 20px;
     }
-    
+
     .hero__exhibition-price {
-        font-size: 18px;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 29px;
     }
-    
+
     .hero-footer {
-        margin-top: 18px;
+        margin-top: 20px;
     }
-    
+
     .hero-buttons {
         align-items: center;
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
+        white-space: nowrap;
     }
 
     .button--block svg {
         margin-left: 12px;
         transition: .2s all;
     }
-    
+
     .button--block:hover svg {
         transform: translateX(5px);
     }
@@ -77,7 +100,7 @@
 }
 
 
-    
+
 .button--block {
     align-items: center;
     color: inherit;
@@ -94,7 +117,7 @@
         margin-left: 2px;
     }
 }
-    
+
 .button--pink {
     background-color: #B50E5E;
     color: white;
@@ -115,23 +138,48 @@
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 990px) {
     .exhibition-hero-inner {
         align-items: center;
         display: flex;
         gap: 60px;
-        padding: 60px 90px;
+        padding: 62px 16px;
+        max-width: 1290px;
+        margin: 0 auto;
+        width: 100%;
 
         .hero-image--lg {
             display: block;
+            aspect-ratio: 1.19;
+            min-height: 505px;
+            height: 100%;
+            max-width: 599px;
+            width: 100%;
         }
-    
+
+        .hero-image--lg img {
+            display: block;
+            width: 100%;
+        }
+
         .hero-image--sm {
             display: none;
         }
-    
+
         .hero-text {
             padding: 0;
         }
+    }
+}
+
+@media (min-width: 1290px) {
+    .exhibition .breadcrumbs-su .container,.container-fluid  {
+        padding-inline: 0;
+    }
+}
+
+@media (min-width: 1345px) {
+    .exhibition-hero-inner {
+        padding-inline: 0;
     }
 }
