@@ -72,10 +72,8 @@
                 @include('exhibitions.components.quote')
             @elseif(!empty($component['details_positioning']))
                 @include('exhibitions.components.details-component')
-            @elseif(!empty($component['events_positioning']))
-                @include('visit.components.events-listing', [
-                    'events' => $events
-                ])
+            @elseif(!empty($component['listing_section']))
+                @include('visit.components.events-listing')
             @endif
         @endif
     @endforeach
