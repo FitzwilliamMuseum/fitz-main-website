@@ -1,0 +1,19 @@
+@import "_hero";
+@import "_banner";
+@import "_page-listing";
+
+.main-homepage {
+    .quote-component {
+        width: 100%;
+        .col-max-800 {
+            max-width: inherit;
+            padding-inline: 0;
+            @media (min-width: 1400px) {
+                max-width: 1290px;
+            }
+            @media (min-width: 600px) {
+                padding-inline: 16px;
+            }
+        }
+    }
+}

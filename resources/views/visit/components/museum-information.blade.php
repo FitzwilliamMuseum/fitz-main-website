@@ -3,6 +3,7 @@
     $heading = $component['heading'];
     $subheading = $component['subheading'];
     $hours = $component['hours'];
+    $link = isset($component['info_link']) ? $component['info_link'][0] : '';
 @endphp
 <div class="museum-information">
     <div class="wrapper">
@@ -12,6 +13,12 @@
             @endif
             @if(!empty($subheading))
                 <p>{{ $subheading }}</p>
+            @endif
+            @if(!empty($link))
+                <a href="{{ $link['link_url'] }}" class="button--block button--black">
+                    {{ $link['link_text'] }}
+                    @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#fff'])
+                </a>
             @endif
         </div>
         @if(!empty($hours))

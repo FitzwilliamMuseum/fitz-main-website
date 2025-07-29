@@ -1,12 +1,19 @@
 @php
-    // $heading = $data['heading'];
-    // $events = $data['events'];
-    $footer_link = isset($page['exhibitions_listing_link']) ? $page['exhibitions_listing_link'][0] : null;
+    $heading = '';
+    $footer_link = null;
+    if(isset($page)) {
+        $heading = isset($page['exhibitions_listing_heading']) ? $page['exhibitions_listing_heading'] : null;
+        $footer_link = isset($page['exhibitions_listing_link']) ? $page['exhibitions_listing_link'][0] : null;
+    }
+    elseif(isset($settings)) {
+        $heading = isset($settings['exhibitions_listing_heading']) ? $settings['exhibitions_listing_heading'] : null;
+        $footer_link = isset($settings['exhibitions_listing_link']) ? $settings['exhibitions_listing_link'][0] : null;
+    }
 @endphp
 {{-- @dd($page) --}}
 <div class="events-listing">
     <div class="wrapper">
-        <h2>What's on and upcoming</h2>
+        <h2>{{ $heading }}</h2>
         @if(!empty($events))
             <section id="events-listing" class="events-listing__events splide">
                 <div class="splide__arrows splide__arrows--ltr">
