@@ -1,6 +1,9 @@
 .banner-component--home.container.mx-auto {
+    padding-left: 32px;
+    padding-right: 32px;
     .component-ff .content {
         background: #F0BB51;
+        justify-content: flex-start;
         .container {
             color: black;
             a.nav-link {

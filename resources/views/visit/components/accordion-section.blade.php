@@ -14,7 +14,6 @@
         <div class="accordion-section__image">
             @php
                 if(!empty($image_id)) {
-                    // dd($page);
                     if(!empty($page['component_images'])) {
                         foreach($page['component_images'] as $image_block) {
                             if($image_block['directus_files_id']['id'] == $image_id) {

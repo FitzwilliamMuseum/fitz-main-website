@@ -28,7 +28,7 @@
         @elseif(!empty($component['50_50_content']))
             @include('support.components.fiftyfifty')
         @elseif(!empty($component['50_50_section']))
-            <div class="container fifty-fifty-section">
+            <div class="{{ request()->is('/') ? 'fifty-fifty-section' : 'container fifty-fifty-section' }}">
                 {{-- @dd($component['50_50_section'][0]) --}}
                 @include('support.components.fiftyfifty', [
                     'fiftyfifty_content' => $component['50_50_section'][0]['50_50_content']
@@ -74,7 +74,7 @@
                 @include('exhibitions.components.details-component')
             @elseif(!empty($component['events_positioning']))
                 @include('visit.components.events-listing', [
-                    'events' => $current
+                    'events' => $events
                 ])
             @endif
         @endif

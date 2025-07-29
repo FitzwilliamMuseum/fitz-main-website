@@ -2,18 +2,64 @@
 @import "_banner";
 @import "_page-listing";
 
-.main-homepage {
-    .quote-component {
+.main-homepage .container {
+    max-width: 1290px;
+}
+
+.main-homepage .museum-information {
+    padding-inline: 32px;
+}
+
+.main-homepage .quote-component {
+    margin-block-end: 60px;
+    max-width: 1290px;
+    padding: 0 32px;
+}
+
+.main-homepage .quote-component .quote-text {
+    max-width: 650px;
+    width: 100%;
+}
+
+.main-homepage .fifty-fifty-section {
+    background: #F4F3F0;
+    padding-block-start: 60px;
+    .card {
+        background: transparent;
+    }
+
+    .card-body {
+        padding-inline: 0;
+        max-width: 480px;
         width: 100%;
-        .col-max-800 {
-            max-width: inherit;
-            padding-inline: 0;
-            @media (min-width: 1400px) {
-                max-width: 1290px;
-            }
-            @media (min-width: 600px) {
-                padding-inline: 16px;
-            }
+    }
+
+    .row {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+        > * {
+            padding-left: 32px;
+            padding-right: 32px;
         }
     }
+
+}
+
+.main-homepage .fifty-fifty-section__footer {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 32px;
+
+    a {
+        display: inline-block;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 29px;
+        margin-block-start: 22px;
+        color: #000;
+    }
+
 }
