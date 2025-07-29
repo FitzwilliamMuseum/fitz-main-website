@@ -7,7 +7,9 @@
         <div class="hero-text">
             <h1>{{ $exhibition['exhibition_title'] }}</h1>
             <div class="hero__exhibition-date">
-                @svg('far-calendar', ['width' => '20px', 'height' => '20px', 'color' => '#000'])
+                <div class="hero-svg-box">
+                    @svg('far-calendar', ['color' => '#000'])
+                </div>
                 <p>{{ Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('j F Y') }} – {{ Carbon\Carbon::parse($exhibition['exhibition_end_date'])->format('j F Y') }}</p>
             </div>
             @if(!empty($exhibition['hero_entry_information']))
