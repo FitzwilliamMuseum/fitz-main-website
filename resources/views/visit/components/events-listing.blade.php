@@ -45,7 +45,6 @@
                                     $external_link = isset($event['external_link']) ? $event['external_link'] : null;
                                 @endphp
                                 @if(!empty($image_id))
-                                    {{-- @dd($images_source) --}}
                                     <div class="event-card__image">
                                         @php
                                             if(!empty($images_source)) {
@@ -62,13 +61,13 @@
                                     </div>
                                 @endif
                                 <div class="event-card__text">
-                                    <h3 class="streched-link">
+                                    <h3 class="stretched-link">
                                         @if(!empty($exhibition_slug))
-                                            <a href="plan-your-visit/exhibitions/{{ $exhibition_slug }}">
+                                            <a class="card__link" href="plan-your-visit/exhibitions/{{ $exhibition_slug }}">
                                                 {{ $heading }}
                                             </a>
                                         @elseif(!empty($external_link) && empty($exhibition_slug))
-                                            <a href="{{ $external_link }}">
+                                            <a class="card__link" href="{{ $external_link }}" target="_blank">
                                                 {{ $heading }}
                                             </a>
                                         @else
