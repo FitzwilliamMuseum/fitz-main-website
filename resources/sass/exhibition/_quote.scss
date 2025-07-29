@@ -1,7 +1,27 @@
-.quote-component .container {
+.quote-component {
     margin-block: 40px;
     margin-inline: auto;
     max-inline-size: 800px;
+    padding: 0 16px;
+
+    @media (min-width: 880px) {
+        padding: 0;
+    }
+}
+
+[class~="quote-component"] {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+[class~="quote-component"] ~ [class~="quote-component"] {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+[class~="quote-component"]:last-of-type {
+    margin-bottom: 40px;
 }
 .quote-body {
     border-radius: 8px;
