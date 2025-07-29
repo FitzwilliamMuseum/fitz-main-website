@@ -8,9 +8,13 @@
                 @if(!empty($fiftyfifty_content))
                     @foreach($fiftyfifty_content as $card_content)
                         @php
+                            $component_images = isset($page['component_images']) ? $page['component_images'] : null;
+                            if(isset($settings['component_images'])) {
+                                $component_images = $settings['component_images'];
+                            }
                             if(!empty($card_content['image_id'])) {
-                                if(!empty($page['component_images'])) {
-                                    foreach($page['component_images'] as $image_block) {
+                                if(!empty($component_images)) {
+                                    foreach($component_images as $image_block) {
                                         if($image_block['directus_files_id']['id'] == $card_content['image_id']) {
                                             $image_asset = $image_block['directus_files_id'];
                                         }
