@@ -33,10 +33,10 @@
                     $image_asset_alt = '';
                     $image_asset_width = 416;
                     $image_asset_height = 416;
-                    if (!empty($card_content['image_id']) && !empty($page['50_50_content_images'])) {
-                        foreach ($page['50_50_content_images'] as $image_block) {
-                            if ($image_block['content_image_id']['id'] == $card_content['image_id']) {
-                                $image_asset = $image_block['content_image_id'];
+                    if (!empty($card_content['image_id']) && !empty($page['component_images'])) {
+                        foreach ($page['component_images'] as $image_block) {
+                            if ($image_block['directus_files_id']['id'] == $card_content['image_id']) {
+                                $image_asset = $image_block['directus_files_id'];
                                 $image_asset_url = $image_asset['data']['thumbnails'][10]['url'];
                                 $image_asset_alt = !empty($image_asset['data']['description'])
                                     ? $image_asset['data']['description']
