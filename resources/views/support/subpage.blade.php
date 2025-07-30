@@ -39,13 +39,14 @@
 
 <body class="doc-body support c_darkmode">
 
-    <main id="site-content">
 
     @include('googletagmanager::body')
 
     @include('includes.structure.accessibility')
 
     @include('includes.structure.nav')
+
+    <main id="site-content">
 
     <div class="sticky-spacer"></div>
 
@@ -62,11 +63,12 @@
 
     @include('includes.structure.email-signup')
 
+    </main>
+    
     @include('includes.structure.footer')
 
     @include('includes.scripts.javascript')
 
-    </main>
 
 </body>
 

@@ -22,7 +22,7 @@
                                     foreach($image_source as $image_block) {
                                         // Add a contingency for the different handles for this field on different page templates that use this component
                                         $image_block_id = '';
-                                        
+
                                         if(isset($image_block['directus_files_id'])) {
                                             $image_block_id = $image_block['directus_files_id'];
                                         } elseif(isset($image_block['content_image_id'])) {
@@ -43,7 +43,7 @@
                         >
                             <div class="card {{ !empty($card_content['card_link']) ? 'card-fitz' : '' }} h-100">
                                 @if(!empty($image_asset))
-                                    <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="" width="416" height="416" load="lazy">
+                                    <img class="card-img-top" src="{{ $image_asset['data']['thumbnails'][10]['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $image_asset['data']['description'] : '' }}" width="416" height="416" load="lazy">
                                 @else
                                     <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" class="card-img-top" width="416" height="416" load="lazy">
                                 @endif
