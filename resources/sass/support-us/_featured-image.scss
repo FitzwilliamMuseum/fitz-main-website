@@ -1,9 +1,11 @@
 /* featured-image-component start*/
+.featured_image.container,
 .featured_image {
-    max-width: 1290px;
+    max-width: 800px;
+    width: 100%;
     margin: 56px auto;
     padding: 0 16px;
-
+    aspect-ratio: 16/9;
     @media screen and (min-width: 1320px) {
         padding: 0;
     }

@@ -1,0 +1,99 @@
+.museum-information {
+    padding-inline: 16px;
+    padding-block-start: 60px;
+    padding-block-end: 40px;
+
+    @media (min-width: 1340px) {
+        padding-inline: 0 !important;
+    }
+}
+.museum-information .wrapper {
+    max-inline-size: 1290px;
+    margin: 0 auto;
+    @media (min-width: 1050px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.information-intro {
+    max-inline-size: 700px;
+    margin-inline-end: 2.125rem;
+    h2 {
+        font-size: 2.25rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    p {
+        margin: 12px 0;
+    }
+}
+
+.information-intro:has(a.button--block) + .information-hours {
+    padding-top: 40px;
+    @media (min-width: 600px) {
+        padding-top: 0;
+    }
+}
+
+.information-hours {
+
+    @media (min-width: 1050px) {
+        max-inline-size: 400px;
+    }
+
+    h3 {
+        font-size: 1.625rem;
+        font-weight: 500;
+        margin: 0;
+        margin-block-start: 1.875rem;
+
+        @media (min-width: 1050px) {
+            margin-block-start: 0;
+        }
+    }
+    p {
+        font-size: 1.125rem;
+    }
+}
+
+.hours-listing {
+    margin-top: 12px;
+}
+
+.hours-item {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    .hours-time {
+        white-space: nowrap;
+    }
+}
+
+.hours-label p {
+    font-weight: bold;
+}
+
+.information-hours__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    a {
+        color: black;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+p.tag,
+a.tag {
+    background-color: #F4F3F0;
+    border-radius: 28px;
+    color: black;
+    font-size: 1rem;
+    padding: 4px 12px;
+    line-height: 29px;
+    width: fit-content;
+}

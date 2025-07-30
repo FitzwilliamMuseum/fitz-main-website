@@ -16,38 +16,33 @@
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
         <main id="site-content">
-        @include('includes.structure.head')
-            @include('includes.structure.open')
+                @php
+                    $anchor_menu = array();
 
-            <div class="container mt-3">
-                @include('includes.structure.breadcrumb')
-            </div>
+                    if(!empty($page['page_components'])) {
+                        $components = $page['page_components'];
+                    }
 
-            <div class="container-fluid py-3 bg-dark" id="site-content">
-                <div class="container">
-                    @yield('content')
-                </div>
-            </div>
-
-            <div class="container py-3">
-                <h2>Find us</h2>
-            </div>
-
-            <div class="container map-box ">
-                @yield('map')
-            </div>
-
-            @include('includes.elements.directions')
-
-            <div class="container mt-2">
-                <h2 class="mb-3">Floorplans and guides</h2>
-                <div class="col-md-12 mb-2">
-                    <div class="mb-3 text-center">
-                        @yield('floorplans')
-                    </div>
-                </div>
-            </div>
-            @yield('associated_pages')
+                    foreach($components as $component) {
+                        $component = is_array(array_values($component)[1]) ? array_values($component)[1][0] : null;
+                        if($component && !empty($component['heading'])) {
+                            $heading = $component['heading'];
+                        }
+                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links']) {
+                            // label, anchor_id
+                            array_push($anchor_menu, array(
+                                'label' => $heading,
+                                'anchor_id' => Str::slug($heading, '-')
+                            ));
+                        }
+                    }
+                @endphp
+                @include('visit.components.hero')
+                @include('includes.structure.breadcrumb', ['class' => 'col-md-12 shadow-sm p-3 mx-auto'])
+                @include('visit.components.anchor-navigation', [
+                    'anchors' => $anchor_menu
+                ])
+                @yield('content')
             @include('includes.structure.email-signup')
         </main>
         @include('includes.structure.footer')

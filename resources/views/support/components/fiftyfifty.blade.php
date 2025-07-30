@@ -1,18 +1,32 @@
     {{-- fiftyfifty --}}
-    @if(!empty($component['50_50_content']))
-        @php
-            $fiftyfifty_content = $component['50_50_content'];
-        @endphp
+    @php
+        $fiftyfifty_content = isset($fiftyfifty_content) ? $fiftyfifty_content : $component['50_50_content'];
+
+        // Add a contingency for the different handles for this field on different page templates that use this component
+        $image_source = isset($page['component_images']) ? $page['component_images'] : null;
+
+        if(isset($page['50_50_content_images'])) {
+            $image_source = $page['50_50_content_images'];
+        } elseif (isset($settings['component_images'])) {
+            $image_source = $settings['component_images'];
+        }
+    @endphp
+    @if($fiftyfifty_content)
         <div class="container container-home-cards container-support-cards">
             <div class="row row-home row-support">
                 @if(!empty($fiftyfifty_content))
                     @foreach($fiftyfifty_content as $card_content)
                         @php
                             if(!empty($card_content['image_id'])) {
-                                if(!empty($page['50_50_content_images'])) {
-                                    foreach($page['50_50_content_images'] as $image_block) {
-                                        if($image_block['content_image_id']['id'] == $card_content['image_id']) {
-                                            $image_asset = $image_block['content_image_id'];
+<<<<<<< Updated upstream
+                                  if(!empty($page['component_images'])) {
+                                    foreach($page['component_images'] as $image_block) {
+=======
+                                if(!empty($image_source)) {
+                                    foreach($image_source as $image_block) {
+>>>>>>> Stashed changes
+                                        if($image_block['directus_files_id']['id'] == $card_content['image_id']) {
+                                            $image_asset = $image_block['directus_files_id'];
                                         }
                                     }
                                 }

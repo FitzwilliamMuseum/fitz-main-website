@@ -1,6 +1,8 @@
-@if(!empty($component['related_events']))
+@if(!empty($component['related_events']) || !empty($related_events))
 @php
-    $related_events = $component['related_events'][0];
+    if(empty($related_events)) {
+        $related_events = $component['related_events'][0];
+    }
 @endphp
 <div class="related-events">
     @if(!empty($related_events['heading']))

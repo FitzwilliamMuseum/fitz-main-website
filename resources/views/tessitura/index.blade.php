@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title', 'Events')
-@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
+@section('hero_image', env('CONTENT_STORE') . 'tnew-homepage.png')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'The Fitzwilliam Museum runs a rich programme of events')
 @section('keywords', 'events,fitzwilliam')

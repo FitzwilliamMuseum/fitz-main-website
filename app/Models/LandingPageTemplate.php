@@ -15,13 +15,14 @@ class LandingPageTemplate extends Model
     /**
      * @return array
      */
-    public static function getLanding(): array
+    public static function getLanding(string $slug = ''): array
     {
         $api = new DirectUs(
             'landing_page_template',
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
+                'filter[slug][eq]' => $slug,
                 'filter[page_template][eq]' => 'landing',
             )
         );
