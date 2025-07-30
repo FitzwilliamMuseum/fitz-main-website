@@ -45,7 +45,7 @@
 
     @include('includes.structure.nav')
 
-<main id="site-content">
+    <main id="site-content">
 
     @include('support.components.head', ['hero' => true])
 
@@ -65,7 +65,7 @@
 
     @include('includes.structure.email-signup')
 
-</main>
+    </main>
 
     @include('includes.structure.footer')
 

@@ -1,9 +1,11 @@
 @php
-    if(!empty($exhibition['page_template'])) {
+    if (!empty($exhibition['page_template'])) {
         $page_template = $exhibition['page_template'];
     }
+    $isNewTemplate = request()->get('template') && request()->get('template') == 'new';
 @endphp
 @include('includes.structure.name-spaces')
+
 <head>
 
     @include('includes.structure.meta')
@@ -15,35 +17,37 @@
     @include('googletagmanager::head')
 
 </head>
+
 <body class="doc-body c_darkmode exhibition">
-@include('googletagmanager::body')
+    @include('googletagmanager::body')
 
-@include('includes.structure.accessibility')
-@include('includes.structure.nav')
+    @include('includes.structure.accessibility')
+    @include('includes.structure.nav')
 
-
-
-@if(empty($page_template))
-    @if(!request()->get('template'))
-        @hasSection('banner')
-            @yield('banner')
-            @include('includes.structure.exhibition-title')
-        @else
-            @include('includes.structure.head')
-        @endif
+    @if (!$isNewTemplate)
+        <main id="site-content">
     @endif
-    <main>
-        @if(!request()->get('template'))
+
+    @if (empty($page_template))
+        @if (!request()->get('template'))
+            @hasSection('banner')
+                @yield('banner')
+                @include('includes.structure.exhibition-title')
+            @else
+                @include('includes.structure.head')
+            @endif
+        @endif
+        @if (!request()->get('template'))
             @include('includes.structure.open')
         @endif
 
         <div class="container mt-3">
             @include('includes.structure.breadcrumb')
         </div>
-        @if(request()->get('template') && request()->get('template') == 'new')
+        @if ($isNewTemplate)
             @yield('exhibitions-landing-2025')
         @else
-        <span id="site-content" class="visually-hidden"></span>
+            <span id="site-content" class="visually-hidden"></span>
             @yield('content')
             @yield('ttn-actions')
             @yield('events-url')
@@ -76,13 +80,16 @@
         @yield('shopify')
     @endif
     @include('includes.structure.email-signup')
-</main>
-@include('includes.structure.footer')
-@include('includes.structure.modal')
-@include('includes.scripts.javascript')
+    @if (!$isNewTemplate)
+        </main>
+    @endif
+    @include('includes.structure.footer')
+    @include('includes.structure.modal')
+    @include('includes.scripts.javascript')
 
-@hasSection('360')
-    @include('includes.scripts.photosphere-js')
-@endif
+    @hasSection('360')
+        @include('includes.scripts.photosphere-js')
+    @endif
 </body>
+
 </html>
