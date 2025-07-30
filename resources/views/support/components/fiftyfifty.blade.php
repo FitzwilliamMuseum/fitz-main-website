@@ -20,8 +20,17 @@
                             if(!empty($card_content['image_id'])) {
                                 if(!empty($image_source)) {
                                     foreach($image_source as $image_block) {
-                                        if($image_block['directus_files_id']['id'] == $card_content['image_id']) {
-                                            $image_asset = $image_block['directus_files_id'];
+                                        // Add a contingency for the different handles for this field on different page templates that use this component
+                                        $image_block_id = '';
+                                        
+                                        if(isset($image_block['directus_files_id'])) {
+                                            $image_block_id = $image_block['directus_files_id'];
+                                        } elseif(isset($image_block['content_image_id'])) {
+                                            $image_block_id = $image_block['content_image_id'];
+                                        }
+
+                                        if($image_block_id['id'] == $card_content['image_id']) {
+                                            $image_asset = $image_block_id;
                                         }
                                     }
                                 }
