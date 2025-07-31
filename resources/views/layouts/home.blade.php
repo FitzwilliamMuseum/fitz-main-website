@@ -75,10 +75,14 @@
                             <h2>{{ $settings['page_listing_heading'] }}</h2>
                         </div>
                         @endif
-                        @include('support.components.grid', [
-                            'pages_listing_order' => $pages_listing_order,
-                            'is_component' => false
-                        ])
+                        @if(!empty($pages_listing_order))
+                            @include('support.components.grid', [
+                                'pages_listing_order' => $pages_listing_order,
+                                'is_component' => false
+                            ])
+                        @elseif(!empty($settings['custom_page_listing']))
+                            @include('home.components.custom-listing')
+                        @endif
                         @if(!empty($settings['page_listing_link_text']))
                             <div class="homepage__page-listing-footer">
                                 <a class="button--block button--white" href="{{ $settings['page_listing_link_url'] }}">
