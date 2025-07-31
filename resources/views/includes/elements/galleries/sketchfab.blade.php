@@ -1,9 +1,9 @@
 @section('sketchfab-collection')
 @if(!empty($gallery['sketchfab_id_collection']))
 <div class="container">
-    <h3>
+    <h2>
         3D scans of objects in gallery
-    </h3>
+    </h2>
     <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
         <div class="ratio ratio-4x3">
             <iframe title="A 3D model of {{ $gallery['gallery_name'] }}"

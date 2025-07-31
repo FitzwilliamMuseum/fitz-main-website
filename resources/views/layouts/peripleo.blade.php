@@ -28,8 +28,7 @@
     </head>
     <body class="c_darkmode">
         @include('googletagmanager::body')
-        <main>
-            <span id="site-content" class="visually-hidden"></span>
+        <main id="site-content">
             @yield('content')
         </main>
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>

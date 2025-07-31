@@ -1,5 +1,5 @@
 @if(array_key_exists('institutions', $record['_source']))
-    <h3>Associated institutions</h3>
+    <h2>Associated institutions</h2>
     <ul>
         @foreach($record['_source']['institutions'] as $institution)
             <li>

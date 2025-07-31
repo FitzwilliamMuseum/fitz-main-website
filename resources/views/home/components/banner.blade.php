@@ -26,16 +26,16 @@
     }
 @endphp
 <div class="banner-component--home{{ $container_class }}">
-    @if($banner['section_heading'])
+    @if(!empty($banner['section_heading']))
       <h2 class="section-heading">{{ $banner['section_heading'] }}</h2>
     @endif
     @include('support.components.banner', [
-        'full_width' => $banner['full_width'],
-        'banner_heading' => $banner['heading'],
-        'banner_subheading' => $banner['subheading'],
-        'banner_link_text' => $banner['cta_text'],
-        'banner_link' => $banner['cta_link'],
-        'banner_image' => $image_asset,
-        'banner_image_alt_text' => $banner['image_alt_text']
+        'full_width' => isset($banner['full_width']) ? $banner['full_width'] : '',
+        'banner_heading' => isset($banner['heading']) ? $banner['heading'] : '',
+        'banner_subheading' => isset($banner['subheading']) ? $banner['subheading'] : '',
+        'banner_link_text' => isset($banner['cta_text']) ? $banner['cta_text'] : '',
+        'banner_link' => isset($banner['cta_link']) ? $banner['cta_link'] : '',
+        'banner_image' => isset($image_asset) ? $image_asset : '',
+        'banner_image_alt_text' => isset($banner['image_alt_text']) ? $banner['image_alt_text'] : ''
     ])
 </div>

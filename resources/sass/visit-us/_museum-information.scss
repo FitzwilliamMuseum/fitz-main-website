@@ -28,7 +28,7 @@
     p {
         margin: 12px 0;
     }
-    > a.button--block:not(p + a.button--block) {
+    a.button--block:not(p + a.button--block) {
         margin-top: auto;
     }
 }

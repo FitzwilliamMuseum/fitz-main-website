@@ -11,7 +11,7 @@
     @include('includes.structure.accessibility')
     @include('includes.structure.nav')
     @include('includes.structure.head')
-    <main>
+    <main id="site-content">
         <div class="container">
             @yield('content')
         </div>

@@ -15,6 +15,9 @@ use App\Models\HomePageBanner;
 use App\Models\Stubs;
 use App\Models\VisitUsComponents;
 
+use App\Models\LandingPageTemplate;
+use App\Models\Subpages;
+
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Response;
 
@@ -39,6 +42,42 @@ class visitController extends Controller
 //            'events' => ,
             ]
         );
+    }
+
+    /**
+     * 
+     * @param string $slug
+     * @return View
+     * 
+     * This function looks for a subpage from the 'Subpages' collection in Directus
+     * first, then looks for a subpage from the 'Stubs and Pages' collection in Directus
+     * if a page in the 'Subpages' collection couldn't be found.
+     * 
+     */
+    
+    public function getSubpage(string $slug) : View|Response
+    {
+        $parent_page = LandingPageTemplate::getLanding('plan-your-visit');
+        $subpage = Subpages::getSubpage($slug);
+        $stubs_page = Stubs::getPage('plan-your-visit', $slug);
+
+        // First, check the subpages collection
+        if(!empty($subpage['data'])) {
+            return view('support.subpage', [
+                'page' => Collect($subpage['data'])->first(),
+                'parent_page' => Collect($parent_page['data'])->first()
+            ]);
+        }
+        // If that fails, then check the pages collection 
+        else {
+            if(empty($subpage['data'] && !empty($stubs_page['data']))) {
+                return view('pages.index', [
+                    'page' => Collect($stubs_page['data'])->first()
+                    ]
+                );
+            }
+            return response()->view('errors.404', [], 404);
+        }
     }
 
     /**

@@ -42,7 +42,7 @@
             }
 
             $pages_listing = $settings['related_pages'];
-            
+
             $pages_listing_order = [];
             if (!empty($settings['related_pages_order'])) {
                 $custom_order = true;
@@ -59,7 +59,6 @@
                 }
             }
         @endphp
-        @if(request()->get('template') && request()->get('template') == 'new')
         {{-- NEW TEMPLATE --}}
             @include('home.components.hero')
             @if(!empty($settings['page_components']))
@@ -94,11 +93,9 @@
                     </div>
                 </div>
             @endif
-        @else
         {{-- OLD TEMPLATE --}}
-            @hasSection('homepage-hero')
+            {{-- @hasSection('homepage-hero')
                 @yield('homepage-hero')
-                {{-- @dd($hero['parallax_one']['data']['url']); --}}
             @endif
 
             @include('includes.structure.exhibitions', [
@@ -134,7 +131,7 @@
                 <div class="row row-home">
                     @yield('custom-fourth-row')
                 </div>
-            </div>
+            </div> --}}
 
             {{-- <div class="container container-home-cards">
             <h3><a href="{{ route('news') }}">Latest news</a></h3>
@@ -165,12 +162,11 @@
 
             {{-- @yield('fundraising') --}}
 
-            <div class="container-fluid parallax parallax-home"></div>
+            {{-- <div class="container-fluid parallax parallax-home"></div> --}}
 
             {{-- <div class="container-fluid bg-gdbo py-3">
             @yield('shopify')
         </div> --}}
-        @endif
         @include('includes.structure.email-signup')
     </main>
     @include('includes.structure.footer')
