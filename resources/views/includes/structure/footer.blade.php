@@ -7,25 +7,25 @@
                 <div class="text-center">
                     <a href="https://www.museums.cam.ac.uk">
                         <img class="mx-auto my-2" loading="lazy" width="200" height="62"
-                            alt src="{{ asset('/images/logos/ucm_logo.svg') }}" />
+                            alt="University of Cambridge Museums" src="{{ asset('/images/logos/ucm_logo.svg') }}" />
                     </a>
                 </div>
                 <div class="text-center">
                     <a href="https://www.cambridge.gov.uk/">
-                        <img class="mx-auto my-2" loading="lazy" width="60" height="73.85" alt
+                        <img class="mx-auto my-2" loading="lazy" width="60" height="73.85" alt="Cambridge City Council"
                             src="{{ asset('/images/logos/Cambridge_City.svg') }}" />
                     </a>
                 </div>
                 <div class="text-center">
                     <a href="https://www.artscouncil.org.uk/">
-                        <img class="mx-auto my-2" alt
+                        <img class="mx-auto my-2" alt="Arts Council England"
                             src="{{ asset('/images/logos/ace_grant_eps_black.svg')}}" loading="lazy" width="200"
                             height="63.3833" />
                     </a>
                 </div>
                 <div class="text-center">
                     <a href="https://re.ukri.org/">
-                        <img class="mx-auto my-2" alt loading="lazy" width="200" height="63.5"
+                        <img class="mx-auto my-2" alt="Research England" loading="lazy" width="200" height="63.5"
                             src="{{ asset('images/logos/UKRI_RE-Logo_Horiz-RGB.svg')}}" />
                     </a>
                 </div>
@@ -149,25 +149,25 @@
                         <h2 class="visually-hidden">Join our conversations</h2>
                         <p class="share share-icons text-center">
                             <a aria-label="Fitzwilliam Museum instagram account" href="https://www.instagram.com/fitzmuseum_uk">
-                                @svg('fab-instagram',['width'=> 48, 'height'=> 48, "class" => "my-2 mx-2"])
+                                @svg('fab-instagram',['width'=> 48, 'height'=> 48, 'alt' => 'Instagram', "class" => "my-2 mx-2"])
                             </a>
                             <a aria-label="Fitzwilliam Museum facebook account" href="https://www.facebook.com/fitzwilliammuseum/">
-                                @svg('fab-facebook',['width'=> 48, 'height'=> 48, "class" => "my-2 mx-2"])
+                                @svg('fab-facebook',['width'=> 48, 'height'=> 48, 'alt' => 'Facebook', "class" => "my-2 mx-2"])
                             </a>
                             <a aria-label="Fitzwilliam Museum twitter account" href="https://twitter.com/FitzMuseum_UK">
-                                @svg('fab-x-twitter',['width'=> 48, 'height'=> 48, "class" => "my-2 mx-2"])
+                                @svg('fab-x-twitter',['width'=> 48, 'height'=> 48, 'alt' => 'X (Twitter)', "class" => "my-2 mx-2"])
                             </a>
                             <a aria-label="Fitzwilliam Museum linkedin account" href="https://www.linkedin.com/company/the-fitzwilliam-museum/">
-                                @svg('fab-linkedin',['width'=> 48, 'height'=> 48, "class" => "my-2 mx-2"])
+                                @svg('fab-linkedin',['width'=> 48, 'height'=> 48, 'alt' => 'LinkedIn', "class" => "my-2 mx-2"])
                             </a>
                             <a aria-label="Watch our YouTube videos" href="https://www.youtube.com/channel/UCFwhw5uPJWb4wVEU3Y2nScg">
-                                @svg('fab-youtube',['width'=> 48, 'height'=> 48, "class" => "my-2 mx-2"])
+                                @svg('fab-youtube',['width'=> 48, 'height'=> 48, 'alt' => 'Youtube', "class" => "my-2 mx-2"])
                             </a>
                             <a aria-label="Fitzwilliam Museum sketchfab account" href="https://www.sketchfab.com/fitzwilliammuseum/">
-                                <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" width="48" height="48" class="my-2 mx-2 eden" />
+                                <img src="{{ asset( "/images/logos/sketchfab-logo.svg") }}" alt="Sketchfab" width="48" height="48" class="my-2 mx-2 eden" />
                             </a>
                             <a aria-label="Fitzwilliam Museum github account" href="https://www.github.com/fitzwilliammuseum/">
-                                @svg('fab-github',['width'=> 48, 'height'=> 48, "class" => "my-2 mx-2"])
+                                @svg('fab-github',['width'=> 48, 'height'=> 48, 'alt' => 'Github', "class" => "my-2 mx-2"])
                             </a>
                         </p>
                     </div>
@@ -178,7 +178,7 @@
                         <p class="text-center">
                             <a href="https://cam.ac.uk">
                                 <img src="{{ asset('/images/logos/cambridge_university2.svg')}}"
-                                    alt width="200" height="41.59"
+                                    alt="The University of Cambridge" width="200" height="41.59"
                                     class="img-fluid mx-auto mb-3" loading="lazy" />
                             </a>
                             <br />
