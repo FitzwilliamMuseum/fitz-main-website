@@ -32,7 +32,7 @@
                         if($component && !empty($component['heading'])) {
                             $heading = $component['heading'];
                         }
-                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links'] == true) {
+                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links'] === true) {
                             // label, anchor_id
                             array_push($anchor_menu, array(
                                 'label' => $heading,
