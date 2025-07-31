@@ -47,9 +47,9 @@
 
 
             @foreach($adlib as $record)
-              <h3>
+              <h2>
                 Collections database information
-              </h3>
+              </h2>
               <div class="shadow-sm p-3 mx-auto mb-3 mt-3 collections">
 
                 @include('includes.elements.descriptive')

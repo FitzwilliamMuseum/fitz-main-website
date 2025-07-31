@@ -47,8 +47,7 @@
     @include('includes.structure.nav')
 
     @include('support.components.head', ['hero' => true])
-    <main>
-    <span id="site-content" class="visually-hidden"></span>
+    <main id="site-content">
     @include('support.components.components-repeater')
 
     {{-- If a custom position for the banner hasn't been specified --}}

@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-3 shadow-sm  mx-auto mb-3 ">
                 <div class="card-body">
-                    <h3>Filter events</h3>
+                    <h2>Filter events</h2>
                     @include('includes.elements.filters-tessitura')
                 </div>
             </div>

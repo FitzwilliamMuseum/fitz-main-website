@@ -42,7 +42,7 @@
             }
 
             $pages_listing = $settings['related_pages'];
-            
+
             $pages_listing_order = [];
             if (!empty($settings['related_pages_order'])) {
                 $custom_order = true;

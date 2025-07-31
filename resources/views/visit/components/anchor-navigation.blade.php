@@ -1,4 +1,4 @@
-<nav class="anchor-navigation anchor-navigation--large">
+<nav aria-label="secondary navigation" class="anchor-navigation anchor-navigation--large">
     <div class="wrapper">
         <ul id="anchor-navigation-list-desktop">
             @foreach ($anchors as $anchor)
@@ -9,9 +9,9 @@
         </ul>
     </div>
 </nav>
-<nav class="anchor-navigation anchor-navigation--small" id="anchorNavigation">
+<nav aria-label="secondary navigation" class="anchor-navigation anchor-navigation--small" id="anchorNavigation">
     <div class="anchor-navigation__header">
-        <h3 id="anchor-navigation-heading">On this page</h3>
+        <h2 id="anchor-navigation-heading">On this page</h2>    
         <button id="anchor-nav-toggle" data-bs-toggle="collapse" data-bs-target="#anchor-navigation-list-mobile"
             aria-expanded="false" aria-controls="anchor-navigation-list-mobile">
             <span class="anchor-nav-toggle__text">Show</span>

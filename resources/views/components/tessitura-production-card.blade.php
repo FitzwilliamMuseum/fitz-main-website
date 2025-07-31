@@ -4,13 +4,13 @@
             <a class="stretched-link"
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img class="card-img-top" src="@tessitura($production->ProductionSeason->Id)"
-                     alt="A stand in image for {{ $production->PerformanceDescription }}"/>
+                     alt=""/>
             </a>
         @else
             <a class="stretched-link"
                href="https://tickets.museums.cam.ac.uk/{{ $production->ProductionSeason->Id }}/{{ $production->PerformanceId }}">
                 <img class="card-img-top" src="@tessitura($production->ProductionSeason->Id)"
-                     alt="A stand in image for {{ $production->PerformanceDescription }}"/>
+                     alt=""/>
             </a>
         @endif
         <div class="card-body ">
