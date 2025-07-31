@@ -22,9 +22,6 @@
                     if(!empty($page['page_components'])) {
                         $components = $page['page_components'];
                     }
-
-                    // dd($components);
-
                     foreach($components as $component) {
                         // Each array has metadata added by directus - the following filters it to just the component data
                         foreach($component as $item) {
@@ -44,7 +41,6 @@
                         }
                     }
                 @endphp
-                {{-- @dd($components) --}}
                 @include('visit.components.hero')
                 @include('includes.structure.breadcrumb', ['class' => 'col-md-12 shadow-sm p-3 mx-auto'])
                 @include('visit.components.anchor-navigation', [
