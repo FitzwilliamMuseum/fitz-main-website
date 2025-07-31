@@ -23,12 +23,19 @@
                         $components = $page['page_components'];
                     }
 
+                    // dd($components);
+
                     foreach($components as $component) {
-                        $component = is_array(array_values($component)[1]) ? array_values($component)[1][0] : null;
+                        // Each array has metadata added by directus - the following filters it to just the component data
+                        foreach($component as $item) {
+                            if(is_array($item)) {
+                                $component = $item[0];
+                            }
+                        }
                         if($component && !empty($component['heading'])) {
                             $heading = $component['heading'];
                         }
-                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links']) {
+                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links'] == true) {
                             // label, anchor_id
                             array_push($anchor_menu, array(
                                 'label' => $heading,
@@ -37,6 +44,7 @@
                         }
                     }
                 @endphp
+                {{-- @dd($components) --}}
                 @include('visit.components.hero')
                 @include('includes.structure.breadcrumb', ['class' => 'col-md-12 shadow-sm p-3 mx-auto'])
                 @include('visit.components.anchor-navigation', [
