@@ -1,8 +1,8 @@
 @php
     $component = $component['museum_information'][0];
-    $heading = $component['heading'];
-    $subheading = $component['subheading'];
-    $hours = $component['hours'];
+    $heading = isset($component['heading']) ? $component['heading'] : '';
+    $subheading = isset($component['subheading']) ? $component['subheading'] : '';
+    $hours = isset($component['hours']) ? $component['hours'] : '';
     $link = isset($component['info_link']) ? $component['info_link'][0] : '';
 @endphp
 <div class="museum-information">
