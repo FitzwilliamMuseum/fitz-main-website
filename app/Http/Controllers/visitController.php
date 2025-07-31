@@ -61,27 +61,21 @@ class visitController extends Controller
         $subpage = Subpages::getSubpage($slug);
         $stubs_page = Stubs::getPage('plan-your-visit', $slug);
 
-        /**
-         * Maybe this block should be an if { } else { if {} else {} } instead
-         * In-case of a similar naming scheme for a newer, but unrelated page
-         */
-
         // First, check the subpages collection
-        if(!empty($subpage['data'] && empty($stubs_page['data']))) {
+        if(!empty($subpage['data'])) {
             return view('support.subpage', [
                 'page' => Collect($subpage['data'])->first(),
                 'parent_page' => Collect($parent_page['data'])->first()
             ]);
         }
         // If that fails, then check the pages collection 
-        elseif(empty($subpage['data'] && !empty($stubs_page['data']))) {
-            return view('pages.index', [
-                'page' => Collect($stubs_page['data'])->first()
-                ]
-            );
-        }
-        // If both fail, return 404 
         else {
+            if(empty($subpage['data'] && !empty($stubs_page['data']))) {
+                return view('pages.index', [
+                    'page' => Collect($stubs_page['data'])->first()
+                    ]
+                );
+            }
             return response()->view('errors.404', [], 404);
         }
     }
