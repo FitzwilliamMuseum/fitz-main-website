@@ -30,7 +30,7 @@
                     alt="An image of {{ ucfirst($record['_source']['summary_title']) }}" loading="lazy" />
             @else
                 <img src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"
-                    alt="A stand in image for {{ ucfirst($record['_source']['summary_title']) }}}" loading="lazy" />
+                    alt="" loading="lazy" />
             @endif
         </div>
     </div>
