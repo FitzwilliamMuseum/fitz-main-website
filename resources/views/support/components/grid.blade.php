@@ -1,9 +1,20 @@
 {{-- related content --}}
 
 @php
+    $pages_listing = array();
+
     if (!empty($page['related_page_listing'])) {
         $pages_listing = $page['related_page_listing'];
     }
+
+    /*
+        If there are pages in the related page listing
+        create an array that looks like this:
+        array(
+            'collection' => 'stubs'
+        )
+            This option is here in the case of different pages in different collections with the same ID
+    */
 
     $pages_listing_order = isset($pages_listing_order) ? $pages_listing_order : [];
 
