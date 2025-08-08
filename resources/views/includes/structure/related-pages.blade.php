@@ -5,7 +5,7 @@ This excludes a specific card from the "Related to this page" section.
 @if(!empty($records))
 @section('associated_pages')
 <div class="container">
-    <h3>Related to this page</h3>
+    <h2>Related to this page</h2>
     <div class="row">
         @foreach($records as $record)
             @if (!isset($record['url']) || $record['url'] !== 'visiting-guidelines')

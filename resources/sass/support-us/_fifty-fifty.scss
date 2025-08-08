@@ -1,4 +1,12 @@
 /* 50/50-component start */
+div.banner-component {
+    .container {
+        padding-inline: 30px;
+        @media (min-width: 768px) {
+            padding-inline: 0;
+        }
+    }
+}
 .component-ff {
     margin: 60px 0;
     display: grid;
@@ -77,3 +85,15 @@
 }
 
 /* 50/50-component end */
+
+/* 50/50 section */
+
+// Sorry for the placement of this - tight deadline - plan to clean up later
+
+.fifty-fifty-section .container-home-cards.container-support-cards {
+    padding: 0;
+}
+
+.fifty-fifty-section__footer {
+    padding-bottom: 60px;
+}

@@ -38,17 +38,20 @@
 </head>
 
 <body class="doc-body support c_darkmode">
+
+
     @include('googletagmanager::body')
 
     @include('includes.structure.accessibility')
 
     @include('includes.structure.nav')
 
-    {{-- <h1>This is the subpage</h1> --}}
+    <main id="site-content">
+
+    <div class="sticky-spacer"></div>
 
     @include('support.components.head')
 
-    <span id="site-content" class="visually-hidden"></span>
     @include('support.components.components-repeater')
 
     {{-- If a custom position for the banner hasn't been specified --}}
@@ -60,9 +63,12 @@
 
     @include('includes.structure.email-signup')
 
+    </main>
+    
     @include('includes.structure.footer')
 
     @include('includes.scripts.javascript')
+
 
 </body>
 

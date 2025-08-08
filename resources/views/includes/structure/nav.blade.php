@@ -57,7 +57,7 @@
 {{-- If the client has a global announcement published in the CMS, then output it at the top of the page --}}
 <header>
     @if((!empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) && SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published'))
-            <nav class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
+            <nav aria-label="primary navigation" class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
                 <div id="global-announcement" class="global-announcement" style="background: #fff; color: black; padding: 10px; text-align: center; width: 100%;">
                     <style>#global-announcement a{color: inherit;text-decoration: underline;}</style>
                     {!! (SiteHelper::getGlobalAnnouncement()['data'][0]['announcement']) !!}
@@ -66,7 +66,7 @@
                 <div class="container-fluid">
                     <div class="container-fluid-inner">
             @else
-         <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+            <nav aria-label="primary navigation" id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
                 <div class="container-fluid">
                     <div class="container-fluid-inner">
             @endif

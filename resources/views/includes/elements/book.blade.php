@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-4">
                 <img src="https://content.fitz.ms/fitz-website/assets/img_20190105_153947.jpg?key=directus-medium-crop"
-                     class="card-img-top" width="369" height="369" alt="The interior roof of the Founder's Entrance">
+                     class="card-img-top" width="369" height="369" alt="">
             </div>
         </div>
     </div>

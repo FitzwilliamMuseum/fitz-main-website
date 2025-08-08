@@ -15,31 +15,15 @@ class LandingPageTemplate extends Model
     /**
      * @return array
      */
-    public static function getLanding(): array
+    public static function getLanding(string $slug = ''): array
     {
         $api = new DirectUs(
-            'landing_page_template',
+            self::$table,
             array(
                 'fields' => '*.*.*.*',
                 'meta' => '*',
-                'filter[page_template][eq]' => 'landing',
-            )
-        );
-        return $api->getData();
-    }
-
-    /**
-     * @param string $slug
-     * @return array
-     */
-    public static function getSubpage(string $slug): array
-    {
-        $api = new DirectUs(
-            'subpages',
-            array(
-                'fields' => '*.*.*.*',
                 'filter[slug][eq]' => $slug,
-                'meta' => '*',
+                'filter[page_template][eq]' => 'landing',
             )
         );
         return $api->getData();

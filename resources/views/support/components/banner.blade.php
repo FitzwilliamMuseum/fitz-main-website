@@ -24,8 +24,8 @@
     }
 @endphp
 @if (!empty($banner_heading) || !empty($banner_subheading))
-    <div>
-        <div class="container mx-auto component-ff">
+    <div class="banner-component">
+        <div @if(isset($full_width) && $full_width == false) class="container mx-auto component-ff" @else class="component-ff" @endif>
             <div class="content">
                 <div class="container">
                     @if (!empty($banner_heading))
@@ -39,7 +39,7 @@
                             @if (!empty($banner_link_text))
                                 {{ $banner_link_text }}
                             @endif
-                            @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#000'])
+                            @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => 'currentColor'])
                         </a>
                     @endif
                 </div>
@@ -47,7 +47,7 @@
             <div class="image">
                 @if (!empty($banner_image))
                     <img src="{{ $banner_image['data']['url'] }}"
-                    alt="{{ !empty($banner_image_alt_text) ? $banner_image_alt_text : '' }}"> @else <img
+                    alt=""> @else <img
                         src="{{ env('MISSING_IMAGE_URL') }}" alt="">
                 @endif
             </div>

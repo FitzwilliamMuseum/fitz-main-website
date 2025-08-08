@@ -1,6 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=985fce22a14ccbc67c0053e5b206b0fc",
-    "/js/image-gallery.js": "/js/image-gallery.js?id=70c0358c2355f21905a9464bcf6fb5ce",
-    "/css/app.css": "/css/app.css?id=83afc1a715f7a6ddb0b36bd0f52fa344",
-    "/css/fitzwilliam.css": "/css/fitzwilliam.css?id=36320d096c399350614b372ec7c4975b"
+    "/js/app.js": "/js/app.js?id=74bc71ec7bbcfdfd4dcd15d9dc83386e",
+    "/js/image-gallery.js": "/js/image-gallery.js?id=d69a0e28c98ea4361c052ddbf98dd62d",
+    "/js/events-carousel.js": "/js/events-carousel.js?id=89e31d3ded01942246c364c48d936947",
+    "/css/app.css": "/css/app.css?id=887e72e78da4b43eb08a8450ae98dbb6",
+    "/css/fitzwilliam.css": "/css/fitzwilliam.css?id=18b25805b5c643dc29002da3fa4933f4"
 }

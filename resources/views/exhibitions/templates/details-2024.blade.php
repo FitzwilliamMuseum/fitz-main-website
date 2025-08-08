@@ -9,7 +9,6 @@
         }
     }
 @endphp
-<main>
 <x-exhibition-hero :hero="$hero"></x-exhibition-hero>
 <div class="breadcrumbs-su">
     @include('includes.structure.breadcrumb', ['class' => 'container container-fluid'])

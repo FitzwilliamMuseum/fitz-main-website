@@ -16,38 +16,37 @@
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
         <main id="site-content">
-        @include('includes.structure.head')
-            @include('includes.structure.open')
+                @php
+                    $anchor_menu = array();
 
-            <div class="container mt-3">
-                @include('includes.structure.breadcrumb')
-            </div>
-
-            <div class="container-fluid py-3 bg-dark" id="site-content">
-                <div class="container">
-                    @yield('content')
-                </div>
-            </div>
-
-            <div class="container py-3">
-                <h3>Find us</h3>
-            </div>
-
-            <div class="container map-box ">
-                @yield('map')
-            </div>
-
-            @include('includes.elements.directions')
-
-            <div class="container mt-2">
-                <h3 class="mb-3">Floorplans and guides</h3>
-                <div class="col-md-12 mb-2">
-                    <div class="mb-3 text-center">
-                        @yield('floorplans')
-                    </div>
-                </div>
-            </div>
-            @yield('associated_pages')
+                    if(!empty($page['page_components'])) {
+                        $components = $page['page_components'];
+                    }
+                    foreach($components as $component) {
+                        // Each array has metadata added by directus - the following filters it to just the component data
+                        foreach($component as $item) {
+                            if(is_array($item)) {
+                                $component = $item[0];
+                            }
+                        }
+                        if($component && !empty($component['heading'])) {
+                            $heading = $component['heading'];
+                        }
+                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links'] === true) {
+                            // label, anchor_id
+                            array_push($anchor_menu, array(
+                                'label' => $heading,
+                                'anchor_id' => Str::slug($heading, '-')
+                            ));
+                        }
+                    }
+                @endphp
+                @include('visit.components.hero')
+                @include('includes.structure.breadcrumb', ['class' => 'col-md-12 shadow-sm p-3 mx-auto'])
+                @include('visit.components.anchor-navigation', [
+                    'anchors' => $anchor_menu
+                ])
+                @yield('content')
             @include('includes.structure.email-signup')
         </main>
         @include('includes.structure.footer')

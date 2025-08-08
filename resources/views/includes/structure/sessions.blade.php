@@ -1,32 +1,28 @@
-<h3>Our Schools sessions</h3>
+<h2>Our Schools sessions</h2>
 <div class="row">
     @foreach($sessions['data'] as $session)
         <div class="col-md-4 mb-3">
-            <div class="card h-100">
-                @if(!is_null($session['hero_image']))
-                    <a href="{{ route('school-sessions', $session['slug']) }}">
-                        <img class="img-fluid"
-                             src="{{ $session['hero_image']['data']['thumbnails'][4]['url']}}"
-                             alt="{{ $session['hero_image_alt_text'] }}"
-                             width="{{ $session['hero_image']['data']['thumbnails'][4]['height'] }}"
-                             height="{{ $session['hero_image']['data']['thumbnails'][4]['width'] }}"
-                             loading="lazy"/>
-                    </a>
-                @else
-                    <img class="img-fluid" src="{{ env('MISSING_IMAGE_URL') }}"
-                         alt="No image was provided for {{ $session['title'] }}"/>
-                @endif
-                <div class="card-body h-100">
-                    <div class="contents-label mb-3">
-                        <h3>
-                            <a href="{{ route('school-sessions', $session['slug']) }}">
-                                {{ $session['title'] }}
-                            </a>
-                        </h3>
-                        @if(isset($session['key_stages']))
-                            <p>Key stages: {{ implode(',',$session['key_stages']) }}</p>
-                        @endif
-                    </div>
+            <div class="card" data-component="card">
+                <div class="l-box l-box--no-border card__text">
+                    <h3 class="card__heading">
+                        <a class="card__link" href="{{ route('school-sessions', $session['slug']) }}">
+                            {{ $session['title'] }}
+                        </a>
+                    </h3>
+                    @if(isset($session['key_stages']))
+                        <p class="text-info">Key stages: {{ implode(', ', $session['key_stages']) }}</p>
+                    @endif
+                </div>
+                <div class="l-frame l-frame--3-2 card__image">
+                    @if(!is_null($session['hero_image']))
+                        <img src="{{ $session['hero_image']['data']['thumbnails'][13]['url']}}"
+                             alt=""
+                             loading="lazy" />
+                    @else
+                        <img src="{{ env('MISSING_IMAGE_URL') }}"
+                             alt=""
+                             loading="lazy" />
+                    @endif
                 </div>
             </div>
         </div>

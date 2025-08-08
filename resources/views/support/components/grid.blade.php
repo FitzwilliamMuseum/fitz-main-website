@@ -5,7 +5,7 @@
         $pages_listing = $page['related_page_listing'];
     }
 
-    $pages_listing_order = [];
+    $pages_listing_order = isset($pages_listing_order) ? $pages_listing_order : [];
 
     if (!empty($page['related_pages_order'])) {
         $custom_order = true;
@@ -23,45 +23,84 @@
 
     $page_root = Request::url();
 @endphp
-@if (!empty($pages_listing_order))
+@if (!empty($component['50_50_content']) && !isset($is_component))
+    <div class="container support-grid">
+        <div class="row">
+            @foreach ($component['50_50_content'] as $card_content)
+                @php
+                    $image_asset = null;
+                    $image_asset_url = env('MISSING_IMAGE_URL');
+                    $image_asset_alt = '';
+                    $image_asset_width = 416;
+                    $image_asset_height = 416;
+                    if (!empty($card_content['image_id']) && !empty($page['component_images'])) {
+                        foreach ($page['component_images'] as $image_block) {
+                            if ($image_block['directus_files_id']['id'] == $card_content['image_id']) {
+                                $image_asset = $image_block['directus_files_id'];
+                                $image_asset_url = $image_asset['data']['thumbnails'][10]['url'];
+                                $image_asset_alt = !empty($image_asset['data']['description'])
+                                    ? $image_asset['data']['description']
+                                    : '';
+                            }
+                        }
+                    }
+                @endphp
+                @include('support.components.card', [
+                    'image_asset_url' => $image_asset_url,
+                    'image_asset_alt' => $image_asset_alt,
+                    'image_asset_width' => $image_asset_width,
+                    'image_asset_height' => $image_asset_height,
+                    'missing_image_url' => env('MISSING_IMAGE_URL'),
+                    'heading' => $card_content['heading'] ?? null,
+                    'card_link' => $card_content['card_link'] ?? null,
+                    'sub_heading' => $card_content['sub_heading'] ?? null,
+                    'body' => $card_content['body'] ?? null,
+                ])
+            @endforeach
+        </div>
+    </div>
+@elseif (!empty($pages_listing_order))
     <div class="container support-grid">
         <div class="row">
             @foreach ($pages_listing_order as $card)
                 @php
-                    $card = $card['landing_relevant_page_id'];
+                    if(isset($card['landing_relevant_page_id'])) {
+                        $card = $card['landing_relevant_page_id'];
+                    }
+                    elseif(isset($card['subpages_id'])) {
+                        $card = $card['subpages_id'];
+                    }
+                    $image_asset_url = '';
+                    $image_asset_alt = '';
+                    $image_asset_width = 374;
+                    $image_asset_height = 342;
+                    if (!empty($card['preview_image'])) {
+                        $image_asset_url = $card['preview_image']['data']['thumbnails'][13]['url'];
+                        $image_asset_alt = isset($card['preview_image']['data']['description'])
+                            ? $card['preview_image']['data']['description']
+                            : '';
+                    } elseif (!empty($card['hero_image'])) {
+                        $image_asset_url = $card['hero_image']['data']['thumbnails'][13]['url'];
+                        $image_asset_alt = isset($card['hero_image']['data']['description'])
+                            ? $card['hero_image']['data']['description']
+                            : '';
+                    } else {
+                        $image_asset_url =
+                            'https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition';
+                    }
                 @endphp
-                <div class="col-md-4 mb-3">
-                    <div class="card card-fitz card-fitz-support h-100" data-component="card">
-                        <div>
-                            {{-- Check for preview image --}}
-                            @if (!empty($card['preview_image']))
-                                <img src="{{ $card['preview_image']['data']['thumbnails'][13]['url'] }}"
-                                    alt="{{ isset($card['preview_image']['data']['description']) ? $card['preview_image']['data']['description'] : '' }}"
-                                    class="card-img-top-support" width="374" height="342" loading="lazy">
-                                {{-- If no preview, check for hero image --}}
-                            @elseif(!empty($card['hero_image']))
-                                <img class="card-img-top-support"
-                                    src="{{ $card['hero_image']['data']['thumbnails'][13]['url'] }}"
-                                    alt="{{ isset($card['hero_image']['data']['description']) ? $card['hero_image']['data']['description'] : '' }}">
-                                {{-- Default --}}
-                            @else
-                                <img class="card-img-top-support"
-                                    src="https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition">
-                            @endif
-                        </div>
-                        @if (!empty($card['title']))
-                            <div class="card-body h-100">
-                                <div class="contents-label mb-3">
-                                    <h2>
-                                        <a href="{{ $page_root }}/{{ $card['slug'] }}" class="stretched-link">
-                                            {{ $card['title'] }}
-                                        </a>
-                                    </h2>
-                                </div>
-                            </div>
-                        @endif
-                    </div>
-                </div>
+                @include('support.components.card', [
+                    'image_asset_url' => $image_asset_url,
+                    'image_asset_alt' => $image_asset_alt,
+                    'image_asset_width' => $image_asset_width,
+                    'image_asset_height' => $image_asset_height,
+                    'missing_image_url' =>
+                        'https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition',
+                    'heading' => $card['title'] ?? null,
+                    'card_link' => isset($card['slug']) ? $page_root . '/' . $card['slug'] : null,
+                    'sub_heading' => null,
+                    'body' => null,
+                ])
             @endforeach
         </div>
     </div>

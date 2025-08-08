@@ -1,0 +1,68 @@
+.accordion-section .wrapper {
+    max-inline-size: 1290px;
+    margin: 60px auto;
+    padding-inline: clamp(16px, 5vw, 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 1045px) {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    @media (min-width: 1330px) {
+        padding-inline: 0;
+    }
+}
+
+.accordion-section__image {
+    @media (min-width: 600px) {
+        flex: 1;
+    }
+
+    .card-img-top {
+        max-height: 100%;
+    }
+}
+
+.accordion-section__text {
+    margin-top: 24px;
+    h2 {
+        font-size: 2.25rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    h2 + p {
+        margin-top: 24px;
+    }
+    @media (min-width: 600px) {
+        flex: 2;
+        margin-top: 0;
+    }
+}
+
+.accordion-section__accordion {
+    margin-top: 40px;
+}
+
+.accordion-section__footer {
+    margin-top: 30px;
+    @media (min-width: 600px) {
+        margin-top: 60px;
+    }
+}
+
+.accordion-item__links {
+        &:last-child {
+        margin-block-end: 28px;
+    }
+}
+
+.accordion-item__links a:not(.button) {
+    font-size: 1.125rem;
+    color: #000;
+}
+.accordion-item__links a {
+    margin-bottom: 20px;
+}

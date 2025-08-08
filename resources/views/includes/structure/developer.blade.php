@@ -4,57 +4,35 @@
             <h3 class="my-3">Explore more...</h3>
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <div class="card card-fitz h-100">
-                        <img class="card-img-top"
-                                src="https://content.fitz.ms/fitz-website/assets/json-peep.png?key=exhibition"
-                                alt="An image showing a JSON response "
-                                loading="lazy"
-                        />
-                        <div class="card-body h-100">
-                            <div class="contents-label mb-3">
-                                <h2>
-                                    <a href="{{ env('COLLECTION_URL') }}/api" class="stretched-link">
-                                        Our Collections API
-                                    </a>
-                                </h2>
-                            </div>
+                    <div class="card" data-component="card">
+                        <div class="l-box l-box--no-border card__text">
+                            <h3 class="card__heading"><a class="card__link" href="{{ env('COLLECTION_URL') }}/api">Our Collections API</a>
+                            </h3>
+                        </div>
+                        <div class="l-frame l-frame--3-2 card__image">
+                            <img src="https://content.fitz.ms/fitz-website/assets/json-peep.png?key=exhibition" alt="" loading="lazy" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card card-fitz h-100">
-                        <img class="card-img-top"
-                                src="https://content.fitz.ms/fitz-website/assets/XRF analysis of an illuminated mss at the Fitz.jpg?key=exhibition"
-                                alt="An image showing one of the objects in Shannon and Ricketts Collection"
-                                loading="lazy"
-                        />
-                        <div class="card-body h-100">
-                            <div class="contents-label mb-3">
-                                <h2>
-                                    <a href="{{ route('research-projects') }}" class="stretched-link">
-                                        Research projects
-                                    </a>
-                                </h2>
-                            </div>
+                    <div class="card" data-component="card">
+                        <div class="l-box l-box--no-border card__text">
+                            <h3 class="card__heading"><a class="card__link" href="{{ route('research-projects') }}">Research projects</a>
+                            </h3>
+                        </div>
+                        <div class="l-frame l-frame--3-2 card__image">
+                            <img src="https://content.fitz.ms/fitz-website/assets/XRF analysis of an illuminated mss at the Fitz.jpg?key=exhibition" alt="" loading="lazy" />
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4 mb-3">
-                    <div class="card card-fitz h-100">
-                        <img class="card-img-top"
-                                src="https://content.fitz.ms/fitz-website/assets/gotgs-deer.jpg?key=exhibition"
-                                alt="Gold recumbent stag plaque with inlays of turquoise and lapis lazuli"
-                                loading="lazy"
-                        />
-                        <div class="card-body h-100">
-                            <div class="contents-label mb-3">
-                                <h2>
-                                    <a href="{{ route('objects') }}/immunity-from-seizure" class="stretched-link">
-                                        Immunity from seizure
-                                    </a>
-                                </h2>
-                            </div>
+                    <div class="card" data-component="card">
+                        <div class="l-box l-box--no-border card__text">
+                            <h3 class="card__heading"><a class="card__link" href="{{ route('objects') }}/immunity-from-seizure">Immunity from seizure</a>
+                            </h3>
+                        </div>
+                        <div class="l-frame l-frame--3-2 card__image">
+                            <img src="https://content.fitz.ms/fitz-website/assets/gotgs-deer.jpg?key=exhibition" alt="" loading="lazy" />
                         </div>
                     </div>
                 </div>

@@ -26,7 +26,7 @@
 @if(!empty($profile['associated_institution']))
     @section('research-funders')
         <div class="container">
-            <h3>Associated institutions</h3>
+            <h2>Associated institutions</h2>
             <div class="row">
                 @foreach($profile['associated_institution'] as $partner)
                     <x-partner-card

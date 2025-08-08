@@ -25,9 +25,9 @@
         @if(!is_null($ltd['main_text_description']))
 
         <div class="shadow-sm p-3 mx-auto">
-            <h3 class="text-info">
+            <h2 class="text-info">
                 Description of this object or artwork
-            </h3>
+            </h2>
             @markdown($ltd['main_text_description'] ?? 'No description provided')
         </div>
         @endif
@@ -49,9 +49,9 @@
     <div class="col-md-5 mt-3">
 
         <div class="col shadow-sm p-3 mx-auto mb-3">
-            <h3 class="text-info">
+            <h2 class="text-info">
                 Look
-            </h3>
+            </h2>
             {!! $ltd['look_text'] !!}
             @if(isset($ltd['look_answers']))
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#lookanswers">Answers
@@ -59,9 +59,9 @@
             @endif
         </div>
         <div class="col shadow-sm p-3 mx-auto mb-3">
-            <h3 class="text-info">
+            <h2 class="text-info">
                 Think
-            </h3>
+            </h2>
             {!! $ltd['think_text'] !!}
             @if(isset($ltd['think_answers']))
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#thinkanswers">Answers
@@ -70,9 +70,9 @@
         </div>
 
         <div class="col shadow-sm p-3 mx-auto mb-3">
-            <h3 class="text-info">
+            <h2 class="text-info">
                 Do
-            </h3>
+            </h2>
             {!! $ltd['do_text'] !!}
             @if(isset($ltd['do_answers']))
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#doanswers">Answers
@@ -82,9 +82,9 @@
 
         @if(isset($ltd['adlib_id_number']))
         <div class="col shadow-sm p-3 mx-auto mb-3">
-            <h3 class="text-info">
+            <h2 class="text-info">
                 Collections record
-            </h3>
+            </h2>
             <p>
                 {!! $ltd['adlib_id_number'] !!}
                 @foreach($adlib as $record)
@@ -94,25 +94,29 @@
         </div>
 
         @if(!empty($ltd['associated_pharos']))
-        <h3>
+        <h2>
             Highlight record
-        </h3>
+        </h2>
 
-        <div class="card mb-3">
-            @if(!is_null($ltd['associated_pharos'][0]['pharos_id']['image']))
-            <a href="{{ route('highlight', $ltd['associated_pharos'][0]['pharos_id']['slug']) }}">
-                <img class="img-fluid"
-                    src="{{ $ltd['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['url']}}"
-                    alt="{{ $ltd['associated_pharos'][0]['pharos_id']['image_alt_text'] }}" loading="lazy"
-                    width="{{ $ltd['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['width'] }}"
-                    height="{{ $ltd['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][4]['height'] }}" /></a>
-            @endif
-            <div class="card-body h-100">
-                <div class="contents-label mb-3">
-                    <h3>
-                        <a href="{{ route('highlight', $ltd['associated_pharos'][0]['pharos_id']['slug']) }}">{{
-                            $ltd['associated_pharos'][0]['pharos_id']['title']}}</a>
+        <div class="col-md-4 mb-3">
+            <div class="card" data-component="card">
+                <div class="l-box l-box--no-border card__text">
+                    <h3 class="card__heading">
+                        <a class="card__link" href="{{ route('highlight', $ltd['associated_pharos'][0]['pharos_id']['slug']) }}">
+                            {{ $ltd['associated_pharos'][0]['pharos_id']['title'] }}
+                        </a>
                     </h3>
+                </div>
+                <div class="l-frame l-frame--3-2 card__image">
+                    @if(!is_null($ltd['associated_pharos'][0]['pharos_id']['image']))
+                        <img src="{{ $ltd['associated_pharos'][0]['pharos_id']['image']['data']['thumbnails'][13]['url'] }}"
+                             alt=""
+                             loading="lazy" />
+                    @else
+                        <img src="{{ env('MISSING_IMAGE_URL') }}"
+                             alt=""
+                             loading="lazy" />
+                    @endif
                 </div>
             </div>
         </div>
@@ -120,7 +124,7 @@
 
         <!-- Sketchfab include -->
         @if(!empty($ltd['sketchfab_id']))
-        <h3>3d model</h3>
+        <h2>3d model</h2>
         <div class="col shadow-sm p-3 mx-auto mb-3">
 
             <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">

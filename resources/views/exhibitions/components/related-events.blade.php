@@ -1,10 +1,12 @@
-@if(!empty($component['related_events']))
+@if(!empty($component['related_events']) || !empty($related_events))
 @php
-    $related_events = $component['related_events'][0];
+    if(empty($related_events)) {
+        $related_events = $component['related_events'][0];
+    }
 @endphp
 <div class="related-events">
     @if(!empty($related_events['heading']))
-        <h3 class="related-events-title">{{ $related_events['heading'] }}</h3>
+        <h2 class="related-events-title">{{ $related_events['heading'] }}</h2>
     @endif
     @if(!empty($related_events['events_listing']))
         <div class="related-events-wrapper">
@@ -43,10 +45,10 @@
                     @endif
                     <div class="related-event-wrapper">
                         @if(!empty($event['heading']))
-                            <h4 class="cta-title">{{ $event['heading'] }}</h4>
+                            <h3 class="cta-title">{{ $event['heading'] }}</h3>
                         @endif
                         @if(!empty($event['event_date']))
-                            <h5 class="cta-title-date">{{ $event['event_date'] }}</h5>
+                            <h4 class="cta-title-date">{{ $event['event_date'] }}</h4>
                         @endif
                         @if(!empty($event['excerpt']))
                             <p class="cta-copy">
