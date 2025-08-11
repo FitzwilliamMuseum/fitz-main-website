@@ -60,7 +60,7 @@ Route::get('research/opportunities/{slug}', 'researchController@opportunity')->n
 Visit us Route
 */
 // Route::get('plan-your-visit/', 'visitController@index')->name('visit');
-Route::get('plan-your-visit/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
+// Route::get('plan-your-visit/frequently-asked-questions','visitController@faqs')->name('visit.faqs');
 Route::get('plan-your-visit/group-visits','visitController@groupVisits')->name('visit.groupvisits');
 
 Route::get('/galleries', function () {
