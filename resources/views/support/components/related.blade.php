@@ -47,7 +47,7 @@
                                             $url_prefix = "plan-your-visit/exhibitions";
                                         }
                                     @endphp
-                                    <a href="/{{ $url_prefix }}/{{ $card['slug'] }}">
+                                    <a class="card__link" href="/{{ $url_prefix }}/{{ $card['slug'] }}">
                                     @endif
                                     @if(!empty($card['title']))
                                         {{ $card['title'] }}
