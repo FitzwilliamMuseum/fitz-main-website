@@ -36,13 +36,22 @@
                             aria-expanded="false"
                             aria-controls="details-content-{{ $loop->index }}"
                             id="details-heading-{{ $loop->index }}">
-                                {{ $item['heading'] }}
+                                @if(!empty($item['heading']))
+                                    {{ $item['heading'] }}
+                                @endif
                                 @svg('fas-chevron-down', ['width' => '16px', 'height' => '16px', 'color' => '#000'])
                             </button>
                             @if(!empty($item['body']))
                                 <div class="collapse" id="details-content-{{ $loop->index }}" aria-labelledby="details-heading-{{ $loop->index }}"
                                 data-parent="#accordionDetails">
                                     @markdown($item['body'])
+                                    @if (!empty($item['link']) && is_array($item['link']))
+                                        @foreach($item['link'] as $link)
+                                            @if(!empty($link['link_text']) && !empty($link['link_url']))
+                                                <a class="collapse-item-link" href="{{ $link['link_url'] }}">{{ $link['link_text'] }}</a>
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 </div>
                             @endif
                         </div>
