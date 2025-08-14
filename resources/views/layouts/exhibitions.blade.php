@@ -14,7 +14,9 @@
     @include('includes.css.css')
 
     @include('includes.structure.manifest')
+    @include('includes.scripts.gtagconsent')
     @include('googletagmanager::head')
+
 
 </head>
 

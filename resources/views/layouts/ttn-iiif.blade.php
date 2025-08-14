@@ -13,6 +13,7 @@
             height: 100vh;
         }
     </style>
+    @include('includes.scripts.gtagconsent')
 </head>
 <body class="doc-body c_darkmode">
 @include('googletagmanager::body')

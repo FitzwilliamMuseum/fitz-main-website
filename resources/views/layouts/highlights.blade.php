@@ -14,7 +14,7 @@
     @yield('jsonld')
 
     <x-feed-links></x-feed-links>
-
+    @include('includes.scripts.gtagconsent')
     @include('googletagmanager::head')
 
 </head>

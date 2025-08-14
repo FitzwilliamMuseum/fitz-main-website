@@ -114,8 +114,8 @@
                                 API</a>
                         </li>
                         <li>
-                            <a href="{{ route('landing-section', ['about-us', 'terms-of-sale'])}}"
-                                aria-label="Terms of sale for tickets">Terms of sale</a>
+                            <a href="{{ route('landing-section', ['about-us', 'terms-and-conditions'])}}"
+                                aria-label="Terms and Conditions">Terms & Conditions</a>
                         </li>
 
                         <li>
