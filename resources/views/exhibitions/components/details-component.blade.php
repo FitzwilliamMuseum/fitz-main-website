@@ -25,6 +25,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><g fill="#000" clip-path="url(#a)"><path d="M19.833 7.63a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667ZM16.334 19.833H14a3.51 3.51 0 0 1-3.5 3.5 3.51 3.51 0 0 1-3.5-3.5 3.51 3.51 0 0 1 3.5-3.5V14a5.836 5.836 0 0 0-5.833 5.833 5.835 5.835 0 0 0 5.833 5.834 5.835 5.835 0 0 0 5.834-5.834Zm3.5-4.083h-2.17l1.948-4.282c.712-1.552-.432-3.302-2.158-3.302h-6.067c-.945 0-1.797.549-2.182 1.4l-.781 2.1 2.24.619.758-1.785H14l-2.135 4.783c-.7 1.552.455 3.383 2.159 3.383h5.81V24.5h2.333v-6.417a2.34 2.34 0 0 0-2.333-2.333Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h28v28H0z"/></clipPath></defs></svg>
                     {{ $exhibition['exhbition_accessibility_information'] }}
                 </p>
+                <p class="details__location">
+                    <svg width="28" height="28" color="#000" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>
+                    {{ $exhibition['exhibition_location_information'] }}
+                </p>
             </div>
             @if(!empty($exhibition['exhibition_details_accordion']))
                 <div class="exhibition-accordion" id="accordionDetails">
