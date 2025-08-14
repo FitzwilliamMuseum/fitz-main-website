@@ -22,6 +22,10 @@
 .events-listing__events {
     margin-top: 1.875rem;
 
+    .splide__list {
+        height: auto;
+    }
+
     .splide__arrow {
         background: rgba(0, 0, 0, 0.8);
         border-radius: 0;
