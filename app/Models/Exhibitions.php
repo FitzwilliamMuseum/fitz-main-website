@@ -225,8 +225,7 @@ class Exhibitions extends Model
             'exhibitions_associated_people',
             array(
                 'fields' => '*.*.*.*',
-                'filter[associated_people_id][in]' => $curator,
-                'filter[status][eq]' => 'published',
+                'filter[associated_people_id][eq]' => $curator
             )
         );
         return $api->getData();

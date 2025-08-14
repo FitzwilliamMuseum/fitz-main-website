@@ -168,7 +168,11 @@ class exhibitionsController extends Controller
             return response()->view('errors.404', [], 404);
         } else {
             $exhibitions = Exhibitions::findByExternals($external['data'][0]['id'])['data'];
-            return view('exhibitions.externals', compact('external', 'exhibitions'));
+            if($exhibitions[0]['associated_people_id']['status'] == 'published') {
+                return view('exhibitions.externals', compact('external', 'exhibitions'));
+            } else {
+                return response()->view('errors.404', [], 404);
+            }
         }
     }
 
