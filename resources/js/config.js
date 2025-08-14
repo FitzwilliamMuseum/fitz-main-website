@@ -47,7 +47,7 @@ cc.run({
     },
 
     onAccept: function (cookie) {
-        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'denied', 'ad_personalization': 'denied', 'ad_user_data': 'denied'});
+        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
     },
 
     onChange: function (cookie, changed_preferences) {
