@@ -24,6 +24,7 @@
                 overflow-x: hidden;
             }
         </style>
+        @include('includes.scripts.gtagconsent')
         @include('googletagmanager::head')
     </head>
     <body class="c_darkmode">
