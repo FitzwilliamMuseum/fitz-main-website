@@ -14,7 +14,7 @@
                     {{ Carbon\Carbon::parse($exhibition['exhibition_start_date'])->format('j F Y') }} – {{ Carbon\Carbon::parse($exhibition['exhibition_end_date'])->format('j F Y') }}
                 </p>
                 <p class="details__time">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><g fill="#000" clip-path="url(#a)"><path d="M13.988 2.333C7.548 2.333 2.333 7.56 2.333 14c0 6.44 5.215 11.667 11.655 11.667 6.452 0 11.678-5.227 11.678-11.667 0-6.44-5.226-11.666-11.678-11.666Zm.012 21A9.33 9.33 0 0 1 4.666 14 9.33 9.33 0 0 1 14 4.667 9.33 9.33 0 0 1 23.333 14 9.33 9.33 0 0 1 14 23.334Z"/><path d="M14.583 8.166h-1.75v7l6.125 3.675.875-1.434-5.25-3.116V8.166Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h28v28H0z"/></clipPath></defs></svg>
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3997_4179)"><path d="M13.988 2.3335C7.54801 2.3335 2.33301 7.56016 2.33301 14.0002C2.33301 20.4402 7.54801 25.6668 13.988 25.6668C20.4397 25.6668 25.6663 20.4402 25.6663 14.0002C25.6663 7.56016 20.4397 2.3335 13.988 2.3335ZM13.9997 23.3335C8.84301 23.3335 4.66634 19.1568 4.66634 14.0002C4.66634 8.8435 8.84301 4.66683 13.9997 4.66683C19.1563 4.66683 23.333 8.8435 23.333 14.0002C23.333 19.1568 19.1563 23.3335 13.9997 23.3335Z" fill="black"/><path d="M14.583 8.1665H12.833V15.1665L18.958 18.8415L19.833 17.4065L14.583 14.2915V8.1665Z" fill="black"/></g><defs><clipPath id="clip0_3997_4179"><rect width="28" height="28" fill="white"/></clipPath></defs></svg>
                     {{ $exhibition['exhibition_time_information'] }}
                 </p>
                 <p class="details__ticket">
@@ -30,10 +30,10 @@
                 <div class="exhibition-accordion" id="accordionDetails">
                     @foreach($exhibition['exhibition_details_accordion'] as $item)
                         <div class="accordion-item">
-                            <button type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#details-content-{{ $loop->index }}" 
-                            aria-expanded="false" 
+                            <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#details-content-{{ $loop->index }}"
+                            aria-expanded="false"
                             aria-controls="details-content-{{ $loop->index }}"
                             id="details-heading-{{ $loop->index }}">
                                 {{ $item['heading'] }}
