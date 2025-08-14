@@ -48,17 +48,14 @@
         gap: 20px;
 
         .hero-svg-box {
-            width: 28px;
-            height: 28px;
+            height: 34px;
+            max-width: 34px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .hero-svg-box svg {
-            width: 28px;
-            height: 28px;
             margin-top: -8px;
-            display: block;
         }
     }
 
