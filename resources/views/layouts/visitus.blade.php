@@ -9,6 +9,7 @@
         @mapstyles
 
         @include('includes.structure.manifest')
+    @include('includes.scripts.gtagconsent')
         @include('googletagmanager::head')
     </head>
     <body class="doc-body c_darkmode">
