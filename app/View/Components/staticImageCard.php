@@ -17,13 +17,13 @@ class staticImageCard extends Component
      *
      * @return void
      */
-    public function __construct(string $image, string $route, array $params = [], string $alt, string $title)
+    public function __construct(string $image, string $route, string $alt, string $title, array $params = [])
     {
         $this->image = $image;
         $this->route = $route;
-        $this->params = $params;
         $this->alt = $alt;
         $this->title = $title;
+        $this->params = $params;
     }
 
     /**

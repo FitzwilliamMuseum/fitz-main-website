@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Spatie\Html\HtmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -230,7 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Str' => Illuminate\Support\Str::class,
         'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
-
+        'Html' => Spatie\Html\Facades\Html::class,
         'SiteHelper' => App\Helpers\helpers::class,
     ],
 
