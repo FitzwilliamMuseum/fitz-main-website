@@ -1,63 +1,74 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const searchButton = document.querySelector('#search-btn');
     const searchForm = document.querySelector('#main-search');
+    const searchButton = document.querySelector('#search-btn');
     const toggleButtons = document.querySelectorAll('[data-toggle="true"]');
+    
+    // An array to keep track of all expandable elements
+    const expandableElements = [
+        {
+            button: searchButton,
+            target: searchForm,
+            isSearch: true
+        }
+    ];
 
-    const closeDisclosures = () => {
-        toggleButtons.forEach(btn => {
-            if (btn.getAttribute('aria-expanded') === 'true') {
-                btn.setAttribute('aria-expanded', 'false');
-                const target = btn.previousElementSibling;
-                if (target) {
-                    target.removeAttribute('data-item-expanded');
-                }
-            }
+    toggleButtons.forEach(btn => {
+        const toggleTarget = btn.previousElementSibling;
+        if (toggleTarget) {
+            expandableElements.push({
+                button: btn,
+                target: toggleTarget,
+                isSearch: false
+            });
+        }
+    });
+
+    // Function to close all disclosures
+    const closeAll = () => {
+        expandableElements.forEach(item => {
+            item.button.setAttribute('aria-expanded', 'false');
+            item.target.removeAttribute('data-item-expanded');
         });
     };
 
-    if (toggleButtons.length) {
-        toggleButtons.forEach(btn => {
-            btn.setAttribute('aria-expanded', 'false');
-        });
+    // Initialize state
+    expandableElements.forEach(item => {
+        item.button.setAttribute('aria-expanded', 'false');
+        item.target.removeAttribute('data-item-expanded');
+    });
 
-        document.addEventListener('click', (event) => {
-            if (event.target.matches('#search-btn') || event.target.closest('#search-btn')) {
-                const isExpanded = searchButton.getAttribute('aria-expanded') === 'true';
-                closeDisclosures();
-                searchButton.setAttribute('aria-expanded', !isExpanded);
-                searchForm.setAttribute('data-item-expanded', !isExpanded);
+    document.addEventListener('click', (event) => {
+        const clickedButton = event.target.closest('[data-toggle="true"]') || event.target.closest('#search-btn');
+        const clickedInsideContainer = event.target.closest('[data-item-expanded]');
+
+        if (clickedButton) {
+            const isExpanded = clickedButton.getAttribute('aria-expanded') === 'true';
+
+            // Close all other disclosures
+            closeAll();
+
+            // Toggle the clicked button's state
+            clickedButton.setAttribute('aria-expanded', !isExpanded);
+
+            // Find the corresponding target and toggle its state
+            const item = expandableElements.find(el => el.button === clickedButton);
+            if (item) {
                 if (!isExpanded) {
-                    searchForm.querySelector('input').focus();
-                }
-                return;
-            }
-
-            if (!event.target.closest('#main-search') && !event.target.closest('#search-btn')) {
-                searchButton.setAttribute('aria-expanded', 'false');
-                searchForm.removeAttribute('data-item-expanded');
-            }
-
-            if (event.target.matches('[data-toggle="true"]')) {
-                const toggleTarget = event.target.previousElementSibling;
-                if (event.target.matches('[aria-expanded="false"]')) {
-                    closeDisclosures();
-                    event.target.setAttribute('aria-expanded', 'true');
-                    toggleTarget?.setAttribute('data-item-expanded', 'true');
-                } else {
-                    event.target.setAttribute('aria-expanded', 'false');
-                    toggleTarget?.removeAttribute('data-item-expanded');
+                    item.target.setAttribute('data-item-expanded', 'true');
+                    if (item.isSearch) {
+                        item.target.querySelector('input').focus();
+                    }
                 }
             }
-        });
+        } else if (!clickedInsideContainer) {
+            // Close all disclosures if the click is outside all of them
+            closeAll();
+        }
+    });
 
-        document.addEventListener('keyup', ({ key, defaultPrevented }) => {
-            if (defaultPrevented) return;
-
-            if (key === 'Escape' || key === 'Esc') {
-                closeDisclosures();
-                searchButton.setAttribute('aria-expanded', 'false');
-                searchForm.removeAttribute('data-item-expanded');
-            }
-        });
-    }
+    document.addEventListener('keyup', (event) => {
+        if (event.key === 'Escape') {
+            closeAll();
+        }
+    });
 });
