@@ -12,14 +12,14 @@ use Spatie\Feed\FeedItem;
 
 class ResearchOpportunitiesItem extends Model implements Feedable
 {
-    private string $link;
-    private string $title;
-    private Carbon $updated_at;
-    private string $authorName;
-    private string $body;
-    private string $summary;
-    private string $id;
-    private bool $exists;
+    public string $link;
+    public string $title;
+    public Carbon $updated_at;
+    public string $authorName;
+    public string $body;
+    public string $summary;
+    public string $id;
+    public bool $exists;
 
     public static function getFeedItems(): Collection
     {
