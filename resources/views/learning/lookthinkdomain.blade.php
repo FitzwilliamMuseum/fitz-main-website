@@ -7,8 +7,8 @@
 @section('hero_image_title', "The inside of our Founder's entrance")
 @endif
 @section('title', 'Look, Think, Do')
-@section('description', $page['meta_description'])
-@section('keywords', $page['meta_keywords'])
+@section('description', !empty($page['meta_description']) ? $page['meta_description'] : '')
+@section('keywords', !empty($page['meta_keywords']) ? $page['meta_keywords'] : '')
 
 @section('content')
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
