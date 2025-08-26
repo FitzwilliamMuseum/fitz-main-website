@@ -25,7 +25,7 @@ class learningController extends Controller
     public function lookThinkDoMain(): View|Response
     {
         $ltd = LookThinkDo::list();
-        $page = Stubs::getPage('learning', 'look-think-do');
+        $page = Stubs::getPage('learn-with-us', 'look-think-do');
         if (empty($ltd['data'])) {
             return response()->view('errors.404', [], 404);
         } else {
@@ -61,7 +61,7 @@ class learningController extends Controller
      */
     public function resources(): View
     {
-        $pages = Stubs::getLandingBySlug('learning', 'resources');
+        $pages = Stubs::getLandingBySlug('learn-with-us', 'resources');
         $res = LearningPages::filterByResource('Fact Sheets');
         $stages = LearningPages::filterByResourceNotEqual('Fact Sheets');
         return view('learning.resources', compact('pages', 'res', 'stages'));

@@ -426,18 +426,18 @@ Breadcrumbs::for('ltd-activity', function (BreadcrumbTrail $trail, string $slug)
     $trail->push('Activity', route('ltd-activity', $slug));
 });
 
-Breadcrumbs::for('learning-resources', function (BreadcrumbTrail $trail): void
+Breadcrumbs::for('learn-with-us-resources', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
     $trail->push('Learning',route('landing',['learning']));
-    $trail->push('Resources',route('learning-resources'));
+    $trail->push('Resources',route('learn-with-us-resources'));
 });
-Breadcrumbs::for('learning-resource', function (BreadcrumbTrail $trail, string $slug): void
+Breadcrumbs::for('learn-with-us-resource', function (BreadcrumbTrail $trail, string $slug): void
 {
     $trail->parent('home');
     $trail->push('Learning',route('landing',['learning']));
-    $trail->push('Resources',route('learning-resources'));
-    $trail->push('Activity', route('learning-resource', $slug));
+    $trail->push('Resources',route('learn-with-us-resources'));
+    $trail->push('Activity', route('learn-with-us-resource', $slug));
 });
 Breadcrumbs::for('school-sessions', function (BreadcrumbTrail $trail, string $slug): void
 {
@@ -466,11 +466,11 @@ Breadcrumbs::for('young-people', function (BreadcrumbTrail $trail, string $slug)
     $trail->push('Young People',route('landing-section',['learning','young-people']));
     $trail->push('Activity', route('young-people', $slug));
 });
-Breadcrumbs::for('learning-profiles', function (BreadcrumbTrail $trail): void
+Breadcrumbs::for('learn-with-us-profiles', function (BreadcrumbTrail $trail): void
 {
     $trail->parent('home');
     $trail->push('Learning',route('landing',['learning']));
-    $trail->push('Contacts', route('learning-profiles'));
+    $trail->push('Contacts', route('learn-with-us-profiles'));
 });
 Breadcrumbs::for('adult-activity', function (BreadcrumbTrail $trail, string $slug): void
 {
