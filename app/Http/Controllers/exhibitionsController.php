@@ -518,6 +518,6 @@ class exhibitionsController extends Controller
      */
     public function peripleo(): View
     {
-        return view('exhibitions.peripleo');
+        return view('exhibitions.peripleo-ttn');
     }
 }
