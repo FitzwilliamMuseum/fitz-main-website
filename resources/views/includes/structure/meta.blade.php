@@ -5,7 +5,7 @@
 <title>The Fitzwilliam Museum - @yield('title')</title>
 
 <meta name="description" content="@yield('description')"/>
-@hasSection('keywords')
+@if (View::hasSection('keywords'))
     <meta name="keywords" content="@yield('keywords')"/>
 @endif
 <!-- Canonical link -->
@@ -55,12 +55,19 @@ dP    dP    dP `88888P'     dP        dP   dP   d888888P 8888P Y8P  dP dP dP dP 
 <!-- end of humans.txt -->
 
 <script type="application/ld+json">
-      {"publisher":{"@type":"Organization",
-      "logo":{"@type":"ImageObject",
-      "url":"{{ URL::to('/images/logos/FitzLogo.svg') }}"}},
-      "headline":"The Fitzwilliam Museum","@type":"WebSite","url":"{{ URL::to('/')}}",
-      "name":"The Fitzwilliam Museum",
-      "description":"The Fitzwilliam Museum is the principal museum of the University of Cambridge",
-      "@context":"https://schema.org"}
-
+{!! json_encode([
+    'publisher' => [
+        '@type' => 'Organization',
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => URL::to('/images/logos/FitzLogo.svg')
+        ]
+    ],
+    'headline' => 'The Fitzwilliam Museum',
+    '@type' => 'WebSite',
+    'url' => URL::to('/'),
+    'name' => 'The Fitzwilliam Museum',
+    'description' => 'The Fitzwilliam Museum is the principal museum of the University of Cambridge',
+    '@context' => 'https://schema.org'
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
