@@ -230,7 +230,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Str' => Illuminate\Support\Str::class,
         'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
-        'Html' => Spatie\Html\Facades\Html::class,
+    'Html' => Spatie\Html\Facades\Html::class,
+    'Form' => Collective\Html\FormFacade::class,
+    'HtmlCollective' => Collective\Html\HtmlFacade::class,
         'SiteHelper' => App\Helpers\helpers::class,
     ],
 
