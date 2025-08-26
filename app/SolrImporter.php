@@ -28,6 +28,9 @@ class SolrImporter
     public function import(array $data, string $contentType, string $table, string $route, array $params, array $mapping): Result|ResultInterface
     {
         $configSolr = Config::get('solarium');
+        if (empty($configSolr)) {
+            throw new \Exception('Solarium configuration is not set.');
+        }
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $update = $client->createUpdate();
         $documents = array();
@@ -37,7 +40,8 @@ class SolrImporter
                 $parameters[] = $record[$param];
             }
             $title = Arr::get($record, $mapping['title']);
-            $content = strip_tags(Arr::get($record, $mapping['content']));
+            $recordValue = Arr::get($record, $mapping['content']);
+            $content = strip_tags(is_string($recordValue) ? $recordValue : ''); 
             if (array_key_exists('image', $mapping)) {
                 $image = $mapping['image'];
             } else {
