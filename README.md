@@ -64,7 +64,7 @@ If the versions have been updated you may need to run the below which will compr
 ```bash
 npm run production 
 ```
-### Solr setup
+## Solr setup
 
 To get a local copy of Solr indices working on a mac, run the following commands (assumption Homebrew is installed):
 
@@ -73,7 +73,7 @@ brew install solr
 brew services start solr
 solr create -c fitzwilliam -d _default
 ```
-#### Solr Config
+### Solr Config
 
 A small bit of extra config needs doing to solrconfig.xml and schema.xml.
 
@@ -154,6 +154,16 @@ If you are running locally you can preview the website via:
 
 ```bash
 php artisan serve
+```
+
+## Tests
+
+PHP unit tests are found in the tests folder, [documentation included](tests/README.md).
+
+Run all tests for controllers, models, routes, components, service classes etc:
+
+```bash
+php artisan test 
 ```
 
 ### I feel the need for speed
