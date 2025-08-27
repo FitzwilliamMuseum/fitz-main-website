@@ -52,7 +52,7 @@
                             aria-labelledby="{{ $slug }}-heading-{{ $loop->index }}"
                             data-parent="accordion-{{ $slug }}">
                                 @if(!empty($item['body']))
-                                    @markdown($item['body'])
+                                {!! $item['body'] !!}
                                 @endif
                                 <div class="accordion-item__links">
                                     @if(!empty($item['links']))
