@@ -8,7 +8,8 @@ use Tests\TestCase;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\Attributes\PreserveGlobalState;
 use Illuminate\Support\Facades\Config;
-
+use Mockery;
+use App\Http\Controllers\searchController;
 #[RunTestsInSeparateProcesses]
 #[PreserveGlobalState(false)] 
 class RouteParameterTest extends TestCase
@@ -170,6 +171,10 @@ class RouteParameterTest extends TestCase
         ];
 
         foreach ($slugRoutes as $route) {
+            // Should handle URL-safe characters
+            Mockery::mock('alias:' . searchController::class)
+                ->shouldReceive('injectResults')
+                ->andReturnNull();
             $response = $this->get($route);
             // These should either work (200) or return a valid 404 if the resource doesn't exist
             $this->assertContains($response->getStatusCode(), [200, 404], "Route {$route} should return 200 or 404");
@@ -258,7 +263,10 @@ class RouteParameterTest extends TestCase
      */
     public function test_route_model_binding_slug_format()
     {
-        // Slug format (letters, numbers, hyphens)
+        // Should handle URL-safe characters
+        Mockery::mock('alias:' . searchController::class)
+            ->shouldReceive('injectResults')
+            ->andReturnNull();
         $response = $this->get(route('directors', ['slug' => 'john-doe-123']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
@@ -266,6 +274,9 @@ class RouteParameterTest extends TestCase
     public function test_route_model_binding_url_safe_characters()
     {
         // Should handle URL-safe characters
+        Mockery::mock('alias:' . searchController::class)
+            ->shouldReceive('injectResults')
+            ->andReturnNull();
         $response = $this->get(route('article', ['slug' => 'article-with-underscores_and-dashes']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }

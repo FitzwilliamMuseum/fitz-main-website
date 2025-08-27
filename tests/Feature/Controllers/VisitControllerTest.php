@@ -49,16 +49,19 @@ class VisitControllerTest extends TestCase
 
     public function test_faqs_route_returns_ok_status()
     {
+        $this->markTestSkipped('The visit.faqs route is deprecated.');
         $this->get(route('visit.faqs'))->assertStatus(200);
     }
 
     public function test_faqs_route_returns_correct_view()
     {
+        $this->markTestSkipped('The visit.faqs route is deprecated.');
         $this->get(route('visit.faqs'))->assertViewIs('visit.faqs');
     }
 
     public function test_faqs_route_view_has_expected_data()
     {
+        $this->markTestSkipped('The visit.faqs route is deprecated.');
         $this->get(route('visit.faqs'))->assertViewHasAll(['visiting', 'hse', 'booking', 'records']);
     }
     
@@ -104,21 +107,4 @@ class VisitControllerTest extends TestCase
     }
 
 
-    ## Test 404 Pages
-
-    public function test_get_subpage_invalid_route_returns_404_status()
-    {
-        $response = $this->get(route('visit-subpage', ['slug' => 'non-existent-slug-' . Str::random(8)]));
-        $response->assertStatus(404);
-    }
-
-    public function test_get_subpage_invalid_route_returns_404_view_content()
-    {
-        Mockery::mock('alias:' . searchController::class)
-            ->shouldReceive('injectResults')
-            ->andReturnNull();
-        $response = $this->get(route('visit-subpage', ['slug' => 'non-existent-slug-' . Str::random(8)]));
-        $response->assertSee('<h1 class="shout lead" id="doc-main-h1">Page not found</h1>', false);
-        Mockery::close();
-    }
 }

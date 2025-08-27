@@ -458,25 +458,25 @@ class RoutesTest extends TestCase
      */
     public function test_director_route_with_slug()
     {
-        $response = $this->get(route('director', ['slug' => 'test-director']));
+        $response = $this->get(route('director', ['slug' => 'duncan-robinson']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 
     public function test_vacancy_route_with_slug()
     {
-        $response = $this->get(route('vacancy', ['slug' => 'test-vacancy']));
+        $response = $this->get(route('vacancy', ['slug' => 'membership-and-individual-giving-coordinator']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 
     public function test_collection_route_with_slug()
     {
-        $response = $this->get(route('collection', ['slug' => 'test-collection']));
+        $response = $this->get(route('collection', ['slug' => 'egypt']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 
     public function test_department_route_with_slug()
     {
-        $response = $this->get(route('department', ['slug' => 'test-department']));
+        $response = $this->get(route('department', ['slug' => 'curatorial']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 
@@ -488,7 +488,7 @@ class RoutesTest extends TestCase
 
     public function test_research_profile_route_with_slug()
     {
-        $response = $this->get(route('research-profile', ['slug' => 'vicky-avery']));
+        $response = $this->get(route('research-profile', ['slug' => 'victoria-avery']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 
@@ -540,13 +540,13 @@ class RoutesTest extends TestCase
      */
     public function test_catch_all_landing_route()
     {
-        $response = $this->get('/test-section');
+        $response = $this->get(route('landing','about-us'));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 
     public function test_catch_all_section_route()
     {
-        $response = $this->get('/test-section/test-slug/');
+        $response = $this->get(route('landing-section', ['section' => 'about-us', 'slug' => 'press-room']));
         $this->assertContains($response->getStatusCode(), [200, 404]);
     }
 }
