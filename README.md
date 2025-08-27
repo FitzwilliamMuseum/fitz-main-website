@@ -75,12 +75,21 @@ solr create -c fitzwilliam -d _default
 ```
 ### Solr Config
 
-A small bit of extra config needs doing to solrconfig.xml and schema.xml.
+A small bit of extra config needs doing to solrconfig.xml and managed-schema.xml.
+
+Pre silicon mac: 
 
 ```bash
 cd /usr/local/var/lib/solr/fitzwilliam/conf/
 nano solrconfig.xml
 ```
+Silicon mac:
+
+```bash
+cd /opt/homebrew/var/lib/solr/fitzwilliam/conf/
+nano solrconfig.xml
+```
+
 Change the search handler to use a catch all field:
 
 ```bash
@@ -106,7 +115,7 @@ Add the more like this handler:
 Save the file.
 
 ```bash 
-nano managedschema.xml
+nano managed-schema.xml
 ```
 Add the following:
 ```bash
