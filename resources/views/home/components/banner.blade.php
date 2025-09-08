@@ -11,6 +11,8 @@
 
     if(isset($settings)) {
         $image_source = $settings['component_images'];
+    } elseif(isset($exhibition)) {
+        $image_source = $exhibition['exhibition_files'];
     }
 
     if(isset($banner['image']) && isset($image_source)) {
