@@ -88,6 +88,25 @@
                         $image_asset_url =
                             'https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition';
                     }
+
+                    // Card links
+                    $card_link = null;
+
+                    // First check if the card has a parent page assigned to it
+                    if(isset($card['parent_page'])) {
+                        $parent_page = $card['parent_page'];
+                        $card_link = '/' . $parent_page['slug'] . '/' . $card['slug'];
+                    }
+                    /* 
+                    If not, and the card has a slug, 
+                    use the page_root in the URL and append the slug to the end of that
+                    
+                    For example, if we're on the visit us page it would be:
+                    https://[environment_here]/plan-your-visit/[slug of page here]
+                    */ 
+                    elseif(isset($card['slug'])) {
+                        $card_link = $page_root . '/' . $card['slug'];
+                    }
                 @endphp
                 @include('support.components.card', [
                     'image_asset_url' => $image_asset_url,
@@ -97,7 +116,7 @@
                     'missing_image_url' =>
                         'https://fitz-content.studio24.dev/fitz-website/assets/Families 2.jpg?key=exhibition',
                     'heading' => $card['title'] ?? null,
-                    'card_link' => isset($card['slug']) ? $page_root . '/' . $card['slug'] : null,
+                    'card_link' => $card_link,
                     'sub_heading' => null,
                     'body' => null,
                 ])
