@@ -98,6 +98,9 @@
                     <h2 class="visually-hidden">About the University and licenses</h2>
                     <ul class="share">
                         <li>
+                            <a href="https://fitzmuseum.cam.ac.uk/accessibility-statement">Accessibility statement</a>
+                        </li>
+                        <li>
                             <a href="{{ route('landing-section', ['about-us', 'privacy-and-cookies'])}}">Cookies,
                                 privacy and
                                 accessibility</a>

@@ -5,39 +5,23 @@
 @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 mt-3">
         <div class="row">
-            <div class="col-md-4">
-                <figure class="figure">
-                    <img alt="An image of a very grumpy cat"
-                         class="img-fluid"
-                         width="416"
-                         height="416"
-                         src="{{ env('CONTENT_STORE') }}searle_cat.jpg?key=exhibition"
-                    />
-                    <figcaption class="figure-caption">
-                        One of Ronald Searle's cats, given to the Fitzwilliam Museum in 2014 by his family.
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-md-8">
+            <div class="container">
                 <p>
-                    Sorry, we cannot seem to find what you’re looking for, and Ronald Searle's cat is grumpy because of
-                    this.
+                    Sorry, we cannot seem to find what you’re looking for.
                 </p>
                 <p>
                     Our website has been redeveloped and we are reorganising our information, so things you may want to
                     see could have been moved, archived or deleted.
                 </p>
                 <p>
-                    Based on the URL you used to trigger this error, we have suggested up to 3
-                    pages below that may meet what you were looking for. If these are not what you
-                    are looking for, please do try our search engine. If you are looking for object related information,
+                    If you are looking for object related information,
                     please visit the <a href="{{ route('objects') }}">collections pages</a>.
                 </p>
             </div>
         </div>
     </div>
 
-    @inject('searchController', 'App\Http\Controllers\searchController')
+    {{-- @inject('searchController', 'App\Http\Controllers\searchController')
     @php
         $records = $searchController::injectResults(Request::path())
     @endphp
@@ -46,5 +30,5 @@
             Suggested pages
         </h2>
         @include('includes.structure.results')
-    @endif
+    @endif --}}
 @endsection
