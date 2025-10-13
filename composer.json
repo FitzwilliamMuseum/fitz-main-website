@@ -70,6 +70,7 @@
         "mockery/mockery": "^1.5.0",
         "nunomaduro/collision": "^6.2",
         "phpunit/phpunit": "^9.5.22",
+        "studio24/deployer-recipes": "^2.2.1",
         "sven/artisan-view": "^3.5"
     },
     "config": {
