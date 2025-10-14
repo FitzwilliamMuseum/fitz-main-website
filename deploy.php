@@ -25,15 +25,15 @@ set('disk_space_filesystem', '/');
  */
 
 host('production')
-    ->set('hostname', '1.2.3.4')
-    ->set('http_user', 'production')
-    ->set('deploy_path', '/var/www/vhosts/DOMAIN.co.uk/production')
+    ->set('hostname', '13.134.144.10')
+    ->set('http_user', 'www-data')
+    ->set('deploy_path', '/var/www/vhosts/fitzmuseum.cam.uk/production')
     ->set('log_files', [
         'storage/logs/*.log',
-        '/logs/DOMAIN.co.uk.access.log',
-        '/logs/DOMAIN.co.uk.error.log',
+        '/logs/apache2/fitzmuseum.cam.uk.access.log',
+        '/logs/apache2/fitzmuseum.cam.uk.error.log',
     ])
-    ->set('url', 'https://www.DOMAIN.co.uk');
+    ->set('url', 'https://www.fitzmuseum.cam.uk');
 
 host('staging')
     ->set('hostname', '13.42.150.108')
