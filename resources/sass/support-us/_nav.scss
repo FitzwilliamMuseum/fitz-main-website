@@ -62,12 +62,15 @@
     align-items: baseline;
     display: flex;
     gap: 20px;
-    margin-bottom: -8px;
-    margin-left: auto;
-    margin-top: -8px;
-    margin-right: 16px;
+    margin: -8px 16px -8px auto;
     transition: opacity 3s linear;
     z-index: 999;
+
+    @media screen and (max-width: 370px) {
+        align-items: normal;
+        gap: 10px;
+        margin: -8px 16px -8px 70px;
+    }
 
     @media screen and (min-width: 992px) {
         margin-right: 0;
@@ -86,8 +89,17 @@
     justify-content: center;
     padding: 0 28px;
     width: 100%;
+    text-align: center;
 }
-
+@media screen and (max-width: 1110px) {
+    .donate-container a.nav-link,
+    .donate-container a.nav-link:hover,
+    .donate-container a.nav-link:focus {
+        font-size: 14px;
+        padding: 0 6px;
+        text-align: center;
+    }
+}
 @media screen and (min-width: 992px) {
     .donate-container {
         padding-right: 0;
