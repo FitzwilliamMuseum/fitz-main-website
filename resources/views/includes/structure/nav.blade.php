@@ -140,7 +140,7 @@
                         {!! Form::close() !!}
 
                         <div class="nav-link-donate">
-                            <a class="nav-link" href="https://tickets.museums.cam.ac.uk/donate/i/donate-to-the-fitzwilliam">Donate</a>
+                            <a class="nav-link" href="https://www.fitzmuseum.cam.ac.uk/support-us">Join and Support</a>
                         </div>
                     </div>
                 </div>
