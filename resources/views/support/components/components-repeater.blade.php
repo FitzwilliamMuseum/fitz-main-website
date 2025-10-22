@@ -72,6 +72,8 @@
                 @include('exhibitions.components.quote')
             @elseif(!empty($component['details_positioning']))
                 @include('exhibitions.components.details-component')
+            @elseif(!empty($component['soundcloud_embed']))
+                @include('exhibitions.components.soundcloud-embed')
             @elseif(!empty($component['listing_section']))
                 @include('visit.components.events-listing')
             @endif
