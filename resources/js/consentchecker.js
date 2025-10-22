@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let iframeEl = embed.querySelector('iframe');
             const iframeSrc = iframeEl.getAttribute('src');
             
-            if(window.cc && window.cc.hasConsented('analytics')) {
+            if(cc && cc.hasConsented('analytics')) {
                 // Remove any classes blocking interaction
                 if(embed.classList.contains('cookies-rejected')) {
                     embed.classList.remove('cookiesRejected');
