@@ -8,11 +8,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let embedContainer = embed.querySelector('.container');
             let iframeEl = embed.querySelector('iframe');
-            const iframeSrc = iframeEl.getAttribute('src');
+            const iframeSrc = iframeEl.src;
             
             if(cc) {
                 const preferences = cc.getUserPreferences();
-                if(preferences.acceptType == 'all') {
+                if(preferences.accept_type == 'all') {
                     // Remove any classes blocking interaction
                     if(embed.classList.contains('cookies-rejected')) {
                         embed.classList.remove('cookiesRejected');
@@ -20,12 +20,12 @@ window.addEventListener('DOMContentLoaded', () => {
                             let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
                             embedContainer.removeChild(cookiesMessage);
                         }
-                        if(iframeEl.getAttribute('src') == '') {
-                            iframeEl.setAttribute('src', iframeSrc);
+                        if(iframeEl.src == '') {
+                            iframeEl.src = iframeSrc;
                         }
                     }
                 } else {
-                    iframeEl.setAttribute('src', '');
+                    iframeEl.src = 'about:blank';
                     embed.classList.add('cookies-rejected')
                     let cookiesText = document.createElement('p');
                     cookiesText.classList.add('cookies-rejected__message');
