@@ -10,25 +10,27 @@ window.addEventListener('DOMContentLoaded', () => {
             let iframeEl = embed.querySelector('iframe');
             const iframeSrc = iframeEl.getAttribute('src');
             
-            if(cc && cc.getUserPreferences().accept_type == 'all') {
-                // Remove any classes blocking interaction
-                if(embed.classList.contains('cookies-rejected')) {
-                    embed.classList.remove('cookiesRejected');
-                    if(embedContainer.querySelector('.cookies-rejected__message')) {
-                        let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
-                        embedContainer.removeChild(cookiesMessage);
+            if(cc) {
+                if(cc.getUserPreferences().accept_type == 'all') {
+                    // Remove any classes blocking interaction
+                    if(embed.classList.contains('cookies-rejected')) {
+                        embed.classList.remove('cookiesRejected');
+                        if(embedContainer.querySelector('.cookies-rejected__message')) {
+                            let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
+                            embedContainer.removeChild(cookiesMessage);
+                        }
+                        if(iframeEl.getAttribute('src') == '') {
+                            iframeEl.setAttribute('src', iframeSrc);
+                        }
                     }
-                    if(iframeEl.getAttribute('src') == '') {
-                        iframeEl.setAttribute('src', iframeSrc);
-                    }
+                } else {
+                    iframeEl.setAttribute('src', '');
+                    embed.classList.add('cookies-rejected')
+                    let cookiesText = document.createElement('p');
+                    cookiesText.classList.add('cookies-rejected__message');
+                    cookiesText.innerHTML = 'You must accept analytics cookies to view this media';
+                    embedContainer.appendChild(cookiesText);
                 }
-            } else {
-                iframeEl.setAttribute('src', '');
-                embed.classList.add('cookies-rejected')
-                let cookiesText = document.createElement('p');
-                cookiesText.classList.add('cookies-rejected__message');
-                cookiesText.innerHTML = 'You must accept analytics cookies to view this media';
-                embedContainer.appendChild(cookiesText);
             }
 
         })
