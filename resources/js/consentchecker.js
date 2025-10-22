@@ -11,7 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
             const iframeSrc = iframeEl.getAttribute('src');
             
             if(cc) {
-                if(cc.getUserPreferences().accept_type == 'all') {
+                const preferences = cc.getUserPreferences();
+                if(preferences.acceptType == 'all') {
                     // Remove any classes blocking interaction
                     if(embed.classList.contains('cookies-rejected')) {
                         embed.classList.remove('cookiesRejected');
