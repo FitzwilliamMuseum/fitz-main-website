@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component');
+    let cc = initCookieConsent();
 
     if(soundcloudEmbeds && soundcloudEmbeds.length > 0) {
 
@@ -9,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let iframeEl = embed.querySelector('iframe');
             const iframeSrc = iframeEl.getAttribute('src');
             
-            if(cc && cc.hasConsented('analytics')) {
+            if(cc && cc.getUserPreferences().accept_type == 'all') {
                 // Remove any classes blocking interaction
                 if(embed.classList.contains('cookies-rejected')) {
                     embed.classList.remove('cookiesRejected');
