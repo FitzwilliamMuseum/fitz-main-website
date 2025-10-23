@@ -9,4 +9,3 @@ import "@popperjs/core";
 import "./nav";
 import './related-content-grid';
 import './cards';
-import './consentchecker';
