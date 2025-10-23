@@ -1,9 +1,5 @@
 @php
-    $embed_code = '';
-
-    if(isset($exhibition)) {
-        $embed_code = $component['soundcloud_embed'][0]['embed_code'];
-    }
+    $embed_code = $component['soundcloud_embed'][0]['embed_code'];
 @endphp
 @if(!empty($embed_code))
     <div class="component soundcloud-embed-component">
