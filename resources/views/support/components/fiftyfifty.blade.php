@@ -17,7 +17,9 @@
                 @if(!empty($fiftyfifty_content))
                     @foreach($fiftyfifty_content as $card_content)
                         @php
-                            $is_anchor = null !== $card_content['anchor_heading'] && !empty($card_content['anchor_heading']);
+                            if(isset($card_content['anchor_heading'])) {
+                                $is_anchor = $card_content['anchor_heading'];
+                            }
                             if(!empty($card_content['image_id'])) {
                                 if(!empty($image_source)) {
                                     foreach($image_source as $image_block) {
@@ -41,7 +43,7 @@
                             @if(!empty($card_content['card_link']))
                                 data-component="card"
                             @endif
-                            @if($is_anchor)
+                            @if(isset($is_anchor) && $is_anchor)
                                 id="{{Str::slug($card_content['anchor_heading'], '-')}}"
                             @endif
                         >
