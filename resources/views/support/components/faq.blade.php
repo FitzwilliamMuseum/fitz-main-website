@@ -8,7 +8,7 @@
             $accordion_heading_encoded = str_replace(' ', '-', $accordion_heading_encoded);
         }
     @endphp
-    <div class="container-fluid  faq">
+    <div class="container-fluid faq">
         <div class="container col-max-800 faq-container">
             @if(!empty($accordion_heading))
                 <h2 class="faq-title">{{ $accordion_heading }}</h2>
