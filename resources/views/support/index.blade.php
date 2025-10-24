@@ -38,7 +38,7 @@
 
 </head>
 
-<body class="doc-body c_darkmode support">
+<body class="doc-body cc--darkmode support">
     @include('googletagmanager::body')
 
     @include('includes.structure.accessibility')
