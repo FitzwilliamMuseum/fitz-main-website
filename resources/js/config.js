@@ -10,6 +10,7 @@ function gtag() {
 
 // run plugin with config object
 CookieConsent.run({
+    disablePageInteraction: true,
     cookie: {
         name: 'fitz-cookies',
         expiresAfterDays: 365,
