@@ -45,6 +45,13 @@
                                 data-parent="#accordionDirections">
                                 <div class="card-body">
                                     @markdown($body)
+                                    @if(isset($accordion_item['embed']) && !empty($accordion_item['embed']))
+                                        <div class="soundcloud-embed-component">
+                                            <div class="container">
+                                                {!! $accordion_item['embed'] !!}
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
