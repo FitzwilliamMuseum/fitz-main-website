@@ -41,7 +41,7 @@
                 @if($hero['start'])
                 <p>
                     {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
-                    @if(!$hero['display_end_date'])
+                    @if($hero['display_end_date'])
                         -
                         {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
                     @endif
