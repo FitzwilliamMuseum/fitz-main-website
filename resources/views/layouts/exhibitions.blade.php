@@ -39,9 +39,9 @@
                 @include('includes.structure.head')
             @endif
         @endif
-        @if (!request()->get('template'))
+        {{-- @if (!request()->get('template'))
             @include('includes.structure.open')
-        @endif
+        @endif --}}
 
         <div class="container mt-3">
             @include('includes.structure.breadcrumb')
