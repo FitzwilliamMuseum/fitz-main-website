@@ -38,15 +38,18 @@
                         {{ !empty($exhibitionStatus) ? 'Now closed' : $hero['hero_subtitle'] }}
                     </p>
                 @endif
-                @if($hero['start'])
-                <p>
-                    {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
-                    @if($hero['display_end_date'])
-                        -
-                        {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
+                {{dd($hero)}}
+                @if(isset($hero['display_dates']) && $hero['display_dates'])
+                    @if($hero['start'])
+                        <p>
+                            {{  Carbon\Carbon::parse($hero['start'])->format('j F Y') }}
+                            @if($hero['display_end_date'])
+                                -
+                                {{  Carbon\Carbon::parse($hero['end'])->format('j F Y') }}
+                            @endif
+                        </p>
                     @endif
-                </p>
-            @endif
+                @endif
             </div>
         </div>
     </div>
