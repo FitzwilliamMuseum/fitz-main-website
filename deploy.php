@@ -20,6 +20,11 @@ set('repository', 'git@github.com:FitzwilliamMuseum/fitz-main-website.git');
 // Filesystem volume we're deploying to
 set('disk_space_filesystem', '/');
 
+// Sets the version of PHP for Deployer to use (when running Composer Install etc)
+set('bin/php', function () {
+    return '/usr/bin/php8.1';
+});
+
 /**
  * 3. Hosts
  */
