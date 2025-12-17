@@ -22,7 +22,7 @@ set('disk_space_filesystem', '/');
 
 // Sets the version of PHP for Deployer to use (when running Composer Install etc)
 set('bin/php', function () {
-    return '/usr/bin/php8.2';
+    return '/usr/bin/php8.4';
 });
 
 /**

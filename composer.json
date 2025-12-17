@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "^8.0|^8.1|^8.2",
+        "php": "^8.4",
         "ext-iconv": "*",
         "ext-intl": "*",
         "ext-json": "*",
