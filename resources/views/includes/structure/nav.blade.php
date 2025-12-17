@@ -56,38 +56,39 @@
 <!-- Nav bars -->
 {{-- If the client has a global announcement published in the CMS, then output it at the top of the page --}}
 <header>
-    @if((!empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) && SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published'))
-            <nav aria-label="primary navigation" class="navbar  navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
-                <div id="global-announcement" class="global-announcement" style="background: #fff; color: black; padding: 10px; text-align: center; width: 100%;">
-                    <style>#global-announcement a{color: inherit;text-decoration: underline;}</style>
-                    {!! (SiteHelper::getGlobalAnnouncement()['data'][0]['announcement']) !!}
-                </div>
-
-                <div class="container-fluid">
-                    <div class="container-fluid-inner">
-            @else
-            <nav aria-label="primary navigation" id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-                <div class="container-fluid">
-                    <div class="container-fluid-inner">
-            @endif
+    @if(
+        !empty(SiteHelper::getGlobalAnnouncement()['data'][0]['status']) &&
+        SiteHelper::getGlobalAnnouncement()['data'][0]['status'] == 'published'
+    )
+        <nav aria-label="primary navigation" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top container-fluid" style="padding-top: 0; flex-direction: column;">
+            <div id="global-announcement" class="global-announcement" style="background: #fff; color: black; padding: 10px; text-align: center; width: 100%;">
+                <style>
+                    #global-announcement a {
+                        color: inherit;
+                        text-decoration: underline;
+                    }
+                </style>
+                {!! SiteHelper::getGlobalAnnouncement()['data'][0]['announcement'] !!}
+            </div>
+            <div class="container-fluid">
+                <div class="container-fluid-inner">
+    @else
+        <nav aria-label="primary navigation" id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+            <div class="container-fluid">
+                <div class="container-fluid-inner">
+    @endif
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="{{ asset("/images/logos/FitzLogo.svg") }}" alt="The Fitzwilliam Museum Logo" height="60"
-                            width="66.66" class="ml-1 mr-1" loading="lazy"/>
+                        <img src="{{ asset('/images/logos/FitzLogo.svg') }}" alt="The Fitzwilliam Museum Logo" height="60" width="66.66" class="ml-1 mr-1" loading="lazy"/>
                     </a>
-
-
-
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item {{ (Request()->is('/')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('home') }}">Home <span
-                                        class="visually-hidden">(current)</span></a>
+                                <a class="nav-link" href="{{ route('home') }}">Home <span class="visually-hidden">(current)</span></a>
                             </li>
                             <li class="nav-item {{ (request()->is('plan-your-visit*')) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('visit') }}">Visit us</a>
@@ -99,23 +100,19 @@
                                 <a class="nav-link" href="{{ route('objects') }}">Collection</a>
                             </li>
                             <li class="nav-item {{ (Request()->is('learn-with-us*')) ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('landing', ['learn-with-us']) }}">
-                                    Learning</a>
+                                <a class="nav-link" href="{{ route('landing', ['learn-with-us']) }}">Learning</a>
                             </li>
                             <li class="nav-item {{ (Request()->is('about-us*')) ? 'active' : '' }}">
-                                <a class="nav-link " href="{{ route('landing', ['about-us']) }}">
-                                    About us</a>
+                                <a class="nav-link" href="{{ route('landing', ['about-us']) }}">About us</a>
                             </li>
                             <li class="nav-item {{ (Request()->is('support-us*')) ? 'active' : '' }}">
-                                <a class="nav-link " href="{{ route('landing', ['support-us']) }}">
-                                    Support us</a>
+                                <a class="nav-link" href="{{ route('landing', ['support-us']) }}">Support us</a>
                             </li>
                             <li class="nav-item {{ (Request()->is('research*')) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('landing', ['research']) }}">Research</a>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link"
-                                    href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://curatingcambridge.co.uk/collections/the-fitzwilliam-museum">Shop</a>
                             </li>
                         </ul>
                     </div>
@@ -124,29 +121,47 @@
                             @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false', 'color' => '#fff', 'width' => 20, 'height' => 20])
                             <span class="visually-hidden">Toggle Search Box</span>
                         </button>
-                        {{ Form::open(['url' => url('/search/results'),'method' => 'GET', 'id' => 'main-search']) }}
-                        <div class="main-search-wrapper">
-                            <label class="main-search-label" for="query">Search <span>the Fitzwilliam</span></label>
-                            <div style="position: relative;">
-                                <input id="query" name="query" type="text" class="main-search-input" placeholder="What are you looking for?"
-                                required value="{{ old('query') }}" aria-label="Your query">
-                                <button class="main-search-btn" type="submit" id="searchButton" aria-label="Submit your search" style="background: transparent; border: none;">
-                                    @svg('fas-magnifying-glass', ['aria-hidden' => 'true', 'focusable' => 'false',
-                                    'color' => '#fff', 'width' => 20, 'height' => 20])
-                                    <span class="visually-hidden">Search</span>
-                                </button>
-                            </div>
-                        </div>
-                        {!! Form::close() !!}
+                        @php
+                            $searchIcon = (string) svg('fas-magnifying-glass', [
+                                'aria-hidden' => 'true',
+                                'focusable' => 'false',
+                                'color' => '#fff',
+                                'width' => 20,
+                                'height' => 20
+                            ])->toHtml();
 
+                            $buttonContent = $searchIcon . '<span class="visually-hidden">Search</span>';
+                        @endphp
+                        {!! html()->form('GET', route('search.results'))
+                            ->id('main-search')
+                            ->attribute('data-item-expanded', 'true')
+                            ->open() !!}
+                            {!! html()->div()->class('main-search-wrapper')->open() !!}
+                                {!! html()->label('Search ' . html()->span('the Fitzwilliam'), 'query')->class('main-search-label') !!}
+                                {!! html()->div()->style('position: relative;')->open() !!}
+                                    {!! html()->text('query')
+                                        ->id('query')
+                                        ->class('main-search-input')
+                                        ->placeholder('What are you looking for?')
+                                        ->required()
+                                        ->value('')
+                                        ->attribute('aria-label', 'Your query') !!}
+                                    {!! html()->button()
+                                        ->type('submit')
+                                        ->id('searchButton')
+                                        ->class('main-search-btn')
+                                        ->attribute('aria-label', 'Submit your search')
+                                        ->style('background: transparent; border: none;')
+                                        ->html($buttonContent)
+                                    !!}
+                                {!! html()->div()->close() !!}
+                            {!! html()->div()->close() !!}
+                        {!! html()->form()->close() !!}
                         <div class="nav-link-donate">
                             <a class="nav-link" href="https://www.fitzmuseum.cam.ac.uk/support-us">Join and Support</a>
                         </div>
                     </div>
                 </div>
-                </div>
-            </nav>
-        </div>
-        </div>
-    </nav>
-</header>
+            </div>
+        </nav>
+    </header>

@@ -6,7 +6,9 @@
                     {{ $result['title'][0] }}
                 </a>
             </h3>
-            <p class="text-dark">&pound;{{ number_format((float) $result['price'][0], 2, '.', '') }}</p>
+            @isset($result['price'][0])
+                <p class="text-dark">&pound;{{ number_format((float) $result['price'][0], 2, '.', '') }}</p>
+            @endisset
         </div>
         <div class="l-frame l-frame--3-2 card__image">
             @isset($result['thumbnail'][0])

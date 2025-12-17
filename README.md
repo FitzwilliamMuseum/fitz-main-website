@@ -35,9 +35,9 @@ View [deployment information](https://github.com/FitzwilliamMuseum/fitz-web-docs
 
 ## Installation
 
-1. Install php 8.1 into your environment
+1. Install php 8.1/8.2 into your environment
 2. Install composer and then do the following:
-```
+```bash
 git clone git@github.com:FitzwilliamMuseum/fitz-main-website.git
 cd fitz-main-website
 composer install
@@ -59,20 +59,95 @@ npm run copy-pannellum-css # "cp -R node_modules/pannellum/build/*.css ./public/
 npm run copy-pannellum-js # "cp -R node_modules/pannellum/build/*.js ./public/js/",
 ```
 
-If the versions have been updated you may need to run:
+If the versions have been updated you may need to run the below which will compress all the css and js files:
 
 ```bash
 npm run production 
 ```
+## Solr setup
 
-Which will compress all the css and js files. 
+To get a local copy of Solr indices working on a mac, run the following commands (assumption Homebrew is installed):
+
+```bash
+brew install solr
+brew services start solr
+solr create -c fitzwilliam -d _default
+```
+### Solr Config
+
+A small bit of extra config needs doing to solrconfig.xml and managed-schema.xml.
+
+Pre silicon mac: 
+
+```bash
+cd /usr/local/var/lib/solr/fitzwilliam/conf/
+nano solrconfig.xml
+```
+Silicon mac:
+
+```bash
+cd /opt/homebrew/var/lib/solr/fitzwilliam/conf/
+nano solrconfig.xml
+```
+
+Change the search handler to use a catch all field:
+
+```bash
+<requestHandler name="/select" class="solr.SearchHandler">
+    <lst name="defaults">
+      <str name="df">_text_</str>
+      <str name="defType">edismax</str>
+      <str name="echoParams">explicit</str>
+      <int name="rows">10</int>
+    </lst>
+  </requestHandler>
+  ```
+Add the more like this handler:
+```bash
+<requestHandler name="/mlt" class="solr.MoreLikeThisHandler">
+    <lst name="defaults">
+        <str name="mlt.fl">title,body</str>
+        <int name="mlt.mintf">1</int>
+        <int name="mlt.mindf">1</int>
+    </lst>
+</requestHandler>
+```
+Save the file.
+
+```bash 
+nano managed-schema.xml
+```
+Add the following:
+```bash
+    <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
+    <copyField source="*" dest="_text_"/>
+    <copyField source="*_t" dest="_text_"/>
+```
+Save the file.
+
+Reload cores:
+```bash
+curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=fitzwilliam"
+```
+Now you can import data:
+```bash
+php artisan solr:import-all
+```
+Your .env config should look like:
+
+```text
+SOLR_HOST="localhost"
+SOLR_PORT=8983
+SOLR_PATH="/"
+SOLR_CORE="fitzwilliam"
+SOLR_ENABLED=true
+```
 
 ### Env setup 
 
-Fill in variables for your instance (Cache etc), values from the production version of the websites are on
-the main network drive. 
+Fill in variables for your instance (Cache etc), values from the production version of the websites are on the main network drive. 
 
-```
+```bash
 nano .env
 ```
 
@@ -88,6 +163,16 @@ If you are running locally you can preview the website via:
 
 ```bash
 php artisan serve
+```
+
+## Tests
+
+PHP unit tests are found in the tests folder, [documentation included](tests/README.md).
+
+Run all tests for controllers, models, routes, components, service classes etc:
+
+```bash
+php artisan test 
 ```
 
 ### I feel the need for speed

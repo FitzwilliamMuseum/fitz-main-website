@@ -9,12 +9,26 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
+     * Optional checker for Solr enabled state (for testing).
+     * @var callable|null
+     */
+    protected $solrEnabledChecker = null;
+
+    /**
+     * Set a checker callback for Solr enabled state (for testing).
+     * @param callable $checker
+     */
+    public function setSolrEnabledChecker(callable $checker)
+    {
+        $this->solrEnabledChecker = $checker;
+    }
+    /**
      * The Artisan commands provided by your application.
      *
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\ImportAllSolrData::class,
     ];
 
     /**
@@ -25,7 +39,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        if (SolrSearch::isSolrEnabled()) {
+        $isSolrEnabled = $this->solrEnabledChecker
+            ? call_user_func($this->solrEnabledChecker)
+            : SolrSearch::isSolrEnabled();
+
+        if ($isSolrEnabled) {
             $this->solrTasks($schedule);
         }
     }

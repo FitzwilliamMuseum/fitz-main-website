@@ -23,3 +23,5 @@ cookieconsent.*
 pannellum.*
 public/uploads
 data/
+phpunit.xml.bak
+.phpunit.cache

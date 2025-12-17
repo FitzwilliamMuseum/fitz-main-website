@@ -17,7 +17,7 @@ class Galleries extends Model
      * @param string|null $status
      * @return array
      */
-    public static function list(int $limit = 100, string $sort = 'id', string $status = null): array
+    public static function list(int $limit = 100, string $sort = 'id', ?string $status = null): array
     {
         $args = array(
             'fields' => '*.*.*.*',

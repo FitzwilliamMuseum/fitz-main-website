@@ -11,13 +11,13 @@ use Spatie\Feed\FeedItem;
 
 class ExhibitionsItem extends Model implements Feedable
 {
-    private mixed $summary;
-    private mixed $authorName;
-    private mixed $body;
-    private mixed $id;
-    private mixed $title;
-    private mixed $link;
-    private mixed $updated_at;
+    public mixed $summary;
+    public mixed $authorName;
+    public mixed $body;
+    public mixed $id;
+    public mixed $title;
+    public mixed $link;
+    public mixed $updated_at;
 
     /**
      * @return Collection

@@ -1,14 +1,14 @@
 @extends('layouts.layout')
-@section('keywords', $resources['meta_keywords'])
-@section('description', $resources['meta_description'])
-@section('title', $resources['title'])
-@section('hero_image', $resources['hero_image']['data']['url'])
-@section('hero_image_title', $resources['hero_image_alt_text'])
+@section('keywords', $resources['meta_keywords'] ?? '')
+@section('description', $resources['meta_description'] ?? '')
+@section('title', $resources['title'] ?? '')
+@section('hero_image', $resources['hero_image']['data']['url'] ?? '')
+@section('hero_image_title', $resources['hero_image_alt_text'] ?? '')
 @section('content')
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3">
-    @markdown($resources['description'])
+    @markdown($resources['description'] ?? '')
 </div>
-@if(!is_null($resources['project_url']))
+@if(!empty($resources['project_url']))
 <h2>
     Project information
 </h2>
@@ -16,7 +16,7 @@
     <ul>
 
         <li>
-            Project website: <a href="{{ $resources['project_url']}}">{{ $resources['project_url']}}</a>
+            Project website: <a href="{{ $resources['project_url'] ?? '#' }}">{{ $resources['project_url'] ?? 'N/A' }}</a>
         </li>
     </ul>
 </div>

@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@php use Illuminate\Support\Arr; @endphp
 @section('keywords', $collection['meta_keywords'])
 @section('description', $collection['meta_description'])
 @section('title', $collection['collection_name'])
@@ -31,32 +32,30 @@ $records = $collectionsController::getObjects($collection['object_id_numbers']);
         @endphp
 
         <div class="col-md-4 mb-3">
-            <div class="col-md-4 mb-3">
-                <div class="card" data-component="card">
-                    <div class="l-box l-box--no-border card__text">
-                        <h3 class="card__heading">
-                            @if(array_key_exists('title',$record['_source']))
-                                <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
-                                    {{ ucfirst($record['_source']['title'][0]['value']) }}
-                                </a>
-                            @else
-                                <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
-                                    {{ ucfirst($record['_source']['summary_title']) }}
-                                </a>
-                            @endif
-                        </h3>
-                        <p class="text-info">{{ $record['_source']['identifier'][0]['accession_number'] }}</p>
-                    </div>
-                    <div class="l-frame l-frame--3-2 card__image">
-                        @if(array_key_exists('multimedia', $record['_source']))
-                            <img src="{{ env('COLLECTION_URL') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
-                                 loading="lazy"
-                                 alt="" />
+            <div class="card" data-component="card">
+                <div class="l-box l-box--no-border card__text">
+                    <h3 class="card__heading">
+                        @if(array_key_exists('title',$record['_source']))
+                            <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
+                                {{ ucfirst($record['_source']['title'][0]['value']) }}
+                            </a>
                         @else
-                            <img src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"
-                                 alt="" />
+                            <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
+                                {{ ucfirst($record['_source']['summary_title']) }}
+                            </a>
                         @endif
-                    </div>
+                    </h3>
+                    <p class="text-info">{{ $record['_source']['identifier'][0]['accession_number'] }}</p>
+                </div>
+                <div class="l-frame l-frame--3-2 card__image">
+                    @if(array_key_exists('multimedia', $record['_source']))
+                        <img src="{{ env('COLLECTION_URL') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
+                             loading="lazy"
+                             alt="" />
+                    @else
+                        <img src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"
+                             alt="" />
+                    @endif
                 </div>
             </div>
         </div>
@@ -67,9 +66,7 @@ $records = $collectionsController::getObjects($collection['object_id_numbers']);
 @endisset
 @endsection
 
-
 @if(!empty($collection['associated_galleries']))
-@section('galleries')
 <div class="container">
     <h2>
         Associated Galleries
@@ -82,22 +79,21 @@ $records = $collectionsController::getObjects($collection['object_id_numbers']);
         @endforeach
     </div>
 </div>
-@endsection
 @endif
 
-
-@if(!empty($collection['curators']))
-@section('curators')
+@if(isset($collection['curators']) && !empty($collection['curators']))
 <div class="container">
     <h2>Associated staff</h2>
     <div class="row">
+      
         @foreach($collection['curators'] as $curator)
-        <x-image-card :altTag="$curator['staff_profiles_id']['profile_image_alt_text']"
-            :title="$curator['staff_profiles_id']['display_name']"
-            :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'"
-            :params="[$curator['staff_profiles_id']['slug']]"></x-image-card>
+        @if(!is_null($curator['staff_profiles_id']))
+            <x-image-card :altTag="$curator['staff_profiles_id']['profile_image_alt_text']"
+                :title="$curator['staff_profiles_id']['display_name']"
+                :image="$curator['staff_profiles_id']['profile_image']" :route="'research-profile'"
+                :params="[$curator['staff_profiles_id']['slug']]"></x-image-card>
+        @endif
         @endforeach
     </div>
 </div>
-@endsection
 @endif

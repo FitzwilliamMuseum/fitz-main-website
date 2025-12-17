@@ -11,30 +11,29 @@
 
     @if ($enabled)
 
-    {{ Form::open(['url' => url('search/results'),'method' => 'GET']) }}
+    {{ html()->form('get', url('search/results'))->open() }}
     <div class="row center-block">
         <div class="col-lg-6 center-block searchform">
             <div class="input-group mr-3">
-                <input type="text" id="query" name="query" value="" class="form-control mr-4"
-                    placeholder="Search our site" required value="{{ old('query') }}">
+                {{ html()->text('query')->id('query')->class('form-control mr-4')->placeholder('Search our site')->required()->value(old('query')) }}
                 <span class="input-group-btn">
-                    <button class="btn btn-dark" type="submit">Search...</button>
+                    {{ html()->button('Search...')->class('btn btn-dark')->type('submit') }}
                 </span>
             </div>
         </div>
     </div>
-    @if(count($errors))
-    <div class="form-group">
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    @if($errors->any())
+        <div class="form-group">
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
-    </div>
     @endif
-    {!! Form::close() !!}
+{{ html()->form()->close() }}
 
     @else
 

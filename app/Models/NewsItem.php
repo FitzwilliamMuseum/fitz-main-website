@@ -15,31 +15,31 @@ class NewsItem extends Model implements Feedable
     /**
      * @var mixed
      */
-    private mixed $body;
+    public mixed $body;
     /**
      * @var mixed
      */
-    private mixed $link;
+    public mixed $link;
     /**
      * @var mixed
      */
-    private mixed $updated_at;
+    public mixed $updated_at;
     /**
      * @var mixed|string
      */
-    private mixed $authorName;
+    public mixed $authorName;
     /**
      * @var mixed|string
      */
-    private mixed $id;
+    public mixed $id;
     /**
      * @var mixed
      */
-    private mixed $title;
+    public mixed $title;
     /**
      * @var mixed
      */
-    private mixed $summary;
+    public mixed $summary;
 
     /**
      * @return Collection

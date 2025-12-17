@@ -24,7 +24,9 @@
 @section('content')
 <div class="col-12 col-max-800 shadow-sm p-3 mx-auto mb-3 article">
     @include('includes.structure.oldnews')
-    @markdown($news['article_body'])
+    @if(!empty($news['article_body']))
+        @markdown($news['article_body'])
+    @endif
     <h3 class="text-info lead">{{ Carbon\Carbon::parse($news['publication_date'])->format('j F Y') }}</h3>
 </div>
 

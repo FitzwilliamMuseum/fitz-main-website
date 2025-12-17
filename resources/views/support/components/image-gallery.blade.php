@@ -24,7 +24,7 @@
                 $image_source = $exhibition['exhibition_files'];
             }
 
-            function getImageData($image_source, $image_id)
+            $getImageData = function($image_source, $image_id)
             {
                 $image_asset = [];
                 if (!empty($image_id)) {
@@ -38,7 +38,7 @@
                     }
                 }
                 return $image_asset;
-            }
+            };
         @endphp
         <div class="image-gallery__wrap">
             <section class="collection-carousel splide p-0">
@@ -64,7 +64,7 @@
                             <li class="splide__slide">
                                 @php
                                     if(!empty($image['image_id'])) {
-                                        $current_image = getImageData($image_source, $image['image_id']);
+                                        $current_image = $getImageData($image_source, $image['image_id']);
                                     } else {
                                         $current_image = $image;
                                     }

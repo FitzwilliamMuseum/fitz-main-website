@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="mx-auto mb-3 bg-white">
-                {{ Form::open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET', 'class' => 'bg-white acknowledgement-collection-form']) }}
+                {{ Html::form()->open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET', 'class' => 'bg-white acknowledgement-collection-form']) }}
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="collection-query">Search our objects and artworks</label>
@@ -84,10 +84,10 @@
                         </div>
                     </div>
                 @endif
-                {!! Form::close() !!}
+                {!! Html::form()->close() !!}
             </div>
 
-                {{ Form::open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'acknowledgement-highlights-form']) }}
+                {{ Html::form()->open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'acknowledgement-highlights-form']) }}
                 <div class="row">
                         <label for="highlights-query">Search our highlights</label>
                         <div class="col-lg-12 mb-3 form-field">
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 @endif
-                {!! Form::close() !!}
+                {!! Html::form()->close() !!}
         </div>
     </div>
 @endsection
