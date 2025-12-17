@@ -38,7 +38,6 @@
                         {{ !empty($exhibitionStatus) ? 'Now closed' : $hero['hero_subtitle'] }}
                     </p>
                 @endif
-                {{dd($hero)}}
                 @if(isset($hero['display_dates']) && $hero['display_dates'])
                     @if($hero['start'])
                         <p>
