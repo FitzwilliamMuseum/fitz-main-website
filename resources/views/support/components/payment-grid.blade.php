@@ -14,13 +14,13 @@
                                 <h2 id="{{ $heading_slugified }}">{{ $card['heading'] }}</h2>
                             @endif
                             @if(!empty($card['subheading']))
-                                <p>{{ $card['subheading'] }}</p>
+                                <p>{!! $card['subheading'] !!}</p>
                             @endif
                             <p>
                                 <span>
-                                    {{ !empty($card['highlighted_text']) ? $card['highlighted_text'] : '' }}
+                                    {!! !empty($card['highlighted_text']) ? $card['highlighted_text'] : '' !!}
                                 </span>
-                                {{ !empty($card['highlighted_subtext']) ? $card['highlighted_subtext'] : '' }}
+                                {!! !empty($card['highlighted_subtext']) ? $card['highlighted_subtext'] : '' !!}
                             </p>
                             @if(!empty($card['cta_options']))
                                 @foreach($card['cta_options'] as $cta_option)
