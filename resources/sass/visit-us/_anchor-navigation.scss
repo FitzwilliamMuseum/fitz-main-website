@@ -12,7 +12,7 @@
 
     position: static;
 
-    @media (min-height: 480px) {
+    @media (min-height: 600px) {
         position: sticky;
         z-index: 1029;
     }
@@ -49,9 +49,11 @@
     display: block;
     top: 90px;
     z-index: 1029;
+
     ul {
         align-items: baseline;
         display: flex;
+        flex-flow: wrap;
         gap: 1.2rem;
         padding-block: 1rem;
         li a {
