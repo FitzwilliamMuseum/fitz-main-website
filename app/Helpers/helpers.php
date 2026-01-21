@@ -15,4 +15,9 @@ class helpers {
 
         return $globalAnnouncment;
     }
+
+    public static function hideEmbed($string): string
+    {
+        return str_replace('src="', 'src="about:blank" data-src="', $html);
+    }
 }

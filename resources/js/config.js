@@ -8,6 +8,22 @@ function gtag() {
     window.dataLayer.push(arguments);
 }
 
+const embeds = document.getElementsByClassName('embed');
+function showEmbed() {
+    for (let i = 0; i < embeds.length; i++) {
+        embeds[i].classList.add('--loaded');
+        let iframe = embeds[i].querySelector('iframe');
+        iframe.setAttribute('src', iframe.getAttribute('data-src'));
+    }
+};
+function hideEmbed() {
+    for (let i = 0; i < embeds.length; i++) {
+        embeds[i].classList.remove('--loaded');
+        let iframe = embeds[i].querySelector('iframe');
+        iframe.setAttribute('src', '');
+    }
+}
+
 // run plugin with config object
 CookieConsent.run({
     disablePageInteraction: true,
@@ -23,6 +39,7 @@ CookieConsent.run({
         analytics: {},
         marketing: {},
     },
+
     language: {
         default: 'en',
         translations: {
@@ -189,7 +206,7 @@ CookieConsent.run({
     onConsent: function (cookie) {
         gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
         // Find all soundcloud embeds on the page and block the src of their iframe if cookies aren't accepted
-        let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component'); 
+        let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component');
 
         if(soundcloudEmbeds && soundcloudEmbeds.length > 0) {
 
@@ -199,7 +216,7 @@ CookieConsent.run({
 
                 let embedContainer = embed.querySelector('.container');
                 let iframeEl = embed.querySelector('iframe');
-                const iframeSrc = iframeEl.src;
+                const iframeSrc = iframeEl.dataset.src;
 
                 if(cookie.cookie.categories.includes('analytics')) {
                     // Remove any classes blocking interaction
@@ -209,7 +226,7 @@ CookieConsent.run({
                             let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
                             embedContainer.removeChild(cookiesMessage);
                         }
-                        if(iframeEl.src == '') {
+                        if(iframeEl.src == 'about:blank') {
                             iframeEl.src = iframeSrc;
                         }
                     }
