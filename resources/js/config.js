@@ -10,7 +10,7 @@ if (typeof window.gtag === "undefined") {
     }
 }
 
-function toggleEmbeds() {
+function toggleEmbeds(cookie) {
     let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component');
 
     if (soundcloudEmbeds && soundcloudEmbeds.length > 0) {
@@ -233,7 +233,7 @@ CookieConsent.run({
 
     onConsent: function (cookie) {
         gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
-        toggleEmbeds();
+        toggleEmbeds(cookie);
     },
 
     onChange: function (cookie, changed_preferences) {
@@ -249,6 +249,6 @@ CookieConsent.run({
             gtag('consent', 'update', {'ad_storage': 'denied', 'ad_personalization': 'denied', 'ad_user_data': 'denied'});
         }
 
-        toggleEmbeds();
+        toggleEmbeds(cookie);
     }
 });
