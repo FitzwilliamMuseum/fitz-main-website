@@ -13,7 +13,7 @@ if (typeof window.gtag === "undefined") {
 function toggleEmbeds() {
     let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component');
 
-    if(soundcloudEmbeds && soundcloudEmbeds.length > 0) {
+    if (soundcloudEmbeds && soundcloudEmbeds.length > 0) {
 
         console.log(cookie.cookie);
 
@@ -23,25 +23,29 @@ function toggleEmbeds() {
             let iframeEl = embed.querySelector('iframe');
             const iframeSrc = iframeEl.dataset.src;
 
-            if(cookie.cookie.categories.includes('analytics')) {
-                // Remove any classes blocking interaction
-                if(embed.classList.contains('cookies-rejected')) {
-                    embed.classList.remove('cookiesRejected');
-                    if(embedContainer.querySelector('.cookies-rejected__message')) {
-                        let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
-                        embedContainer.removeChild(cookiesMessage);
-                    }
-                    if(iframeEl.src == 'about:blank') {
-                        iframeEl.src = iframeSrc;
-                    }
-                }
+            if (cookie.cookie.categories.includes('analytics')) {
+                // Remove class
+                embed.classList.remove('cookies-rejected');
+
+                // Remove message
+                let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
+                embedContainer.removeChild(cookiesMessage);
+
+                // Update source
+                iframeEl.src = iframeSrc;
+
             } else {
-                iframeEl.src = 'about:blank';
+                // Add class
                 embed.classList.add('cookies-rejected')
+
+                // Add message
                 let cookiesText = document.createElement('p');
                 cookiesText.classList.add('cookies-rejected__message');
                 cookiesText.innerHTML = 'You must accept analytics cookies to view this media';
                 embedContainer.appendChild(cookiesText);
+
+                // Update source
+                iframeEl.src = 'about:blank';
             }
 
         })
@@ -229,7 +233,6 @@ CookieConsent.run({
 
     onConsent: function (cookie) {
         gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
-        // Find all soundcloud embeds on the page and block the src of their iframe if cookies aren't accepted
         toggleEmbeds();
     },
 
