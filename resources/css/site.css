@@ -110,7 +110,15 @@ video {
 .w3w a {
     color: #000;
 }
+.share button {
+    appearance:  none;
+    background-color: transparent;
+    border: none;
+    display: inline;
+    padding: 0;
+    text-decoration:  underline;
 
+}
 .share a {
     color: #000;
 }
