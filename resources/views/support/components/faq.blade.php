@@ -26,6 +26,7 @@
                 }
                 return $image_asset;
             }
+
     @endphp
     <div class="container-fluid faq">
         <div class="container col-max-800 faq-container">
@@ -66,7 +67,7 @@
                                         $accordion_image = getImageData($image_source, $accordion_item['image']);
                                         $accordion_image_src = '';
                                         $accordion_image_alt = '';
-                                        
+
                                         if(!empty($accordion_image)) {
                                             $accordion_image_src = !empty($accordion_image['data']['full_url']) ? $accordion_image['data']['full_url'] : '';
                                             $accordion_image_alt = !empty($accodion_image['data']['description']) ? $accodion_image['data']['description'] : '';
@@ -78,7 +79,7 @@
                                 @if(isset($accordion_item['embed']) && !empty($accordion_item['embed']))
                                     <div class="soundcloud-embed-component">
                                         <div class="container">
-                                            {!! $accordion_item['embed'] !!}
+                                            {!! SiteHelper::hideEmbed($accordion_item['embed']) !!}
                                         </div>
                                     </div>
                                 @endif
