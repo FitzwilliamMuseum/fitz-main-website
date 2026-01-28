@@ -12,7 +12,7 @@
 <div class="accordion-section">
     <div class="wrapper" @if($isAnchor) data-is-anchor id="{{ $slug }}" @endif>
         <div class="accordion-section__image">
-             @php
+            @php
                 if(!empty($image_id)) {
                     if(!empty($page['component_images'])) {
                         foreach($page['component_images'] as $image_block) {

@@ -13,15 +13,20 @@ use App\Models\VisitUsComponents;
 use App\Models\Exhibitions;
 
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 use App\Models\FloorPlans;
 
 class landingPageController extends Controller
 {
+    public static function injectPages(string $slug = ''): array
+    {
+        return LandingPageTemplate::getLanding($slug);
+    }
     /**
-     * @return View
+     * @param string $slug
+     * @return View|Response
+     * @throws InvalidArgumentException
      */
     public function index($slug = '')
     {

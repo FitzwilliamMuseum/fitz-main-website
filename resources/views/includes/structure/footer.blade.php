@@ -49,7 +49,7 @@
                     <h2 class="visually-hidden">Useful links</h2>
                     <ul class="share">
                         <li>
-                            <a href="{{ route('visit') }}">
+                            <a href="/plan-your-visit">
                                 Plan your visit
                             </a>
                         </li>

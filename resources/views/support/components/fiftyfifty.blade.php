@@ -17,6 +17,9 @@
                 @if(!empty($fiftyfifty_content))
                     @foreach($fiftyfifty_content as $card_content)
                         @php
+                            if(isset($card_content['anchor_heading'])) {
+                                $is_anchor = $card_content['anchor_heading'];
+                            }
                             if(!empty($card_content['image_id'])) {
                                 if(!empty($image_source)) {
                                     foreach($image_source as $image_block) {
@@ -39,6 +42,9 @@
                         <div class="col-md-4 mb-3 container-home-card container-support-card"
                             @if(!empty($card_content['card_link']))
                                 data-component="card"
+                            @endif
+                            @if(isset($is_anchor) && $is_anchor)
+                                id="{{Str::slug($card_content['anchor_heading'], '-')}}"
                             @endif
                         >
                             <div class="card {{ !empty($card_content['card_link']) ? 'card-fitz' : '' }} h-100">

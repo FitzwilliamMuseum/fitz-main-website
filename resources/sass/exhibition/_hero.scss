@@ -53,3 +53,14 @@
     }
 
 }
+
+@media screen and ( min-width: 800px ) {
+    .home-hero .addon.rise-up {
+        align-items: flex-start;
+        margin-top: 200px;
+    }
+    
+    .wrapper.rise-up {
+        align-items: flex-end;
+    }
+}
