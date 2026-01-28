@@ -55,11 +55,12 @@ CookieConsent.run({
                         }, {
                             title: 'Analytics cookies',
                             description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
-                            toggle: {
-                                value: 'analytics',     // there are no default categories => you specify them
-                                enabled: true,
-                                readonly: false
-                            },
+                            // toggle: {
+                            //     value: 'analytics',     // there are no default categories => you specify them
+                            //     enabled: true,
+                            //     readonly: false
+                            // },
+                            linkedCategory: 'analytics',
                             cookieTable: {
                                 caption: 'Cookie table',
                                 headers: {
@@ -87,11 +88,12 @@ CookieConsent.run({
                         }, {
                             title: 'Marketing cookies',
                             description: "These cookies are used for advertising, including serving and rendering ads, personalizing ads (depending on your ad settings at <a href=\"https://g.co/adsettings\">g.co/adsettings</a>), limiting the number of times an ad is shown to a user, muting ads you have chosen to stop seeing, and measuring the effectiveness of ads.",
-                            toggle: {
-                                value: 'marketing',
-                                enabled: true,
-                                readonly: false
-                            },
+                            // toggle: {
+                            //     value: 'marketing',
+                            //     enabled: true,
+                            //     readonly: false
+                            // },
+                            linkedCategory: 'marketing',
                             cookieTable: {
                                 caption: 'Cookie table',
                                 headers: {
@@ -167,7 +169,7 @@ CookieConsent.run({
         }
     },
 
-    autoClearCookies : true,                   // default: false
+    autoClearCookies : false,                   // default: false
     mode: 'opt-in',
     hideFromBots: true,                   // default: false
 
