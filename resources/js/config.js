@@ -169,7 +169,7 @@ CookieConsent.run({
         }
     },
 
-    autoClearCookies : false,                   // default: false
+    autoClearCookies : true,                   // default: false
     mode: 'opt-in',
     hideFromBots: true,                   // default: false
 
