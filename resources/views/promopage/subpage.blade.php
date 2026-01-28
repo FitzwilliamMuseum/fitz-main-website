@@ -19,7 +19,7 @@
                 if(is_array($item)) {
                     if(count($item) > 1) {
                         foreach($item as $node) {
-                            if($node['anchor_heading']) {
+                            if(!empty($node['anchor_heading'])) {
                                 array_push($anchor_menu, array(
                                     'label' => $node['anchor_heading'],
                                     'anchor_id' => Str::slug($node['anchor_heading'], '-')
@@ -28,7 +28,7 @@
                         }
                     } else {
                         $component = $item[0];
-                        
+
                         if(isset($component['anchor_heading'])) {
                             array_push($anchor_menu, array(
                                 'label' => $component['anchor_heading'],
@@ -90,7 +90,7 @@
     {{-- <h1>This is the subpage</h1> --}}
 
     @include('support.components.head')
-    
+
     @include('visit.components.anchor-navigation', [
         'anchors' => $anchor_menu
     ])

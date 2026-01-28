@@ -13,7 +13,7 @@
 
 @section('content')
     @if(!empty($page['carousel_associated']))
-        @if($page['carousel_associated'][0]['carousels_id'])
+        @if(!empty($page['carousel_associated'][0]['carousels_id']))
             <div class="container-fluid">
                 <div class="negative-padding">
                     @include('includes.structure.carousel-pages')
