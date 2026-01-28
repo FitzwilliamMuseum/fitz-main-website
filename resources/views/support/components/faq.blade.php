@@ -11,7 +11,7 @@
         if(isset($exhibition)) {
             $image_source = $exhibition['exhibition_files'];
         }
-        function getImageData($image_source, $image_id)
+        function getFaqImageData($image_source, $image_id)
             {
                 $image_asset = [];
                 if (!empty($image_id)) {
@@ -63,10 +63,10 @@
                             <div class="card-body">
                                 @if(isset($accordion_item['image']) && !empty($accordion_item['image']))
                                     @php
-                                        $accordion_image = getImageData($image_source, $accordion_item['image']);
+                                        $accordion_image = getFaqImageData($image_source, $accordion_item['image']);
                                         $accordion_image_src = '';
                                         $accordion_image_alt = '';
-                                        
+
                                         if(!empty($accordion_image)) {
                                             $accordion_image_src = !empty($accordion_image['data']['full_url']) ? $accordion_image['data']['full_url'] : '';
                                             $accordion_image_alt = !empty($accodion_image['data']['description']) ? $accodion_image['data']['description'] : '';

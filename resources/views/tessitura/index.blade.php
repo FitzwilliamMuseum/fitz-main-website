@@ -36,10 +36,10 @@
         <div class="container related-container">
             <div class="related-grid">
                 @php
-                    use Illuminate\Support\Arr;
-                    $types = Arr::pluck($productions, 'FacilityDescription');
-                    $ids = Arr::pluck($productions, 'Facility');
-                    $tags = array_count_values($types);
+                    //use Illuminate\Support\Arr;
+                    //$types = Arr::pluck($productions, 'FacilityDescription');
+                    //$ids = Arr::pluck($productions, 'Facility');
+                    //$tags = array_count_values($types);
                     usort($productions, function ($a, $b) {
                         return strtotime($a->PerformanceDate) - strtotime($b->PerformanceDate);
                     });
