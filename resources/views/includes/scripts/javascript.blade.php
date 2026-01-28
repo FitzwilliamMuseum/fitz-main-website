@@ -15,13 +15,6 @@
         return new bootstrap.Popover(popoverTriggerEl);
     });
 </script>
-<script type="text/plain" data-cookiecategory="analytics" async  src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
-
-<script type="text/plain" data-cookiecategory="analytics">
-
-    gtag('js', new Date());
-    gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
-</script>
 @hasSection('map')
     @mapscripts
     @include('includes.scripts.mapjs')

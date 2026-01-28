@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="doc-body support c_darkmode">
+<body class="doc-body support cc--darkmode">
 
 
     @include('googletagmanager::body')
@@ -64,7 +64,7 @@
     @include('includes.structure.email-signup')
 
     </main>
-    
+
     @include('includes.structure.footer')
 
     @include('includes.scripts.javascript')

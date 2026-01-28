@@ -1,13 +1,15 @@
 @php
-    $title = $page['title'];
-    if (!empty($page['hero_image'])) {
-        $hero = $page['hero_image']['data']['full_url'];
-    }
-    if (!empty($page['page_header_heading'])) {
-        $page_header_heading = $page['page_header_heading'];
-    }
-    if (!empty($page['page_header_subheading'])) {
-        $page_header_subheading = $page['page_header_subheading'];
+    if(!empty($page)) {
+        $title = $page['title'];
+        if (!empty($page['hero_image'])) {
+            $hero = $page['hero_image']['data']['full_url'];
+        }
+        if (!empty($page['page_header_heading'])) {
+            $page_header_heading = $page['page_header_heading'];
+        }
+        if (!empty($page['page_header_subheading'])) {
+            $page_header_subheading = $page['page_header_subheading'];
+        }
     }
 @endphp
 @if (!empty($hero))
