@@ -8,9 +8,24 @@ function gtag() {
     window.dataLayer.push(arguments);
 }
 
+function updateConsent(cookie) {
+    if (cookie.categories.includes('analytics')) {
+        gtag('consent', 'update', {'analytics_storage': 'granted'});
+    } else {
+        gtag('consent', 'update', {'analytics_storage': 'denied'});
+    }
+
+    if (cookie.categories.includes('marketing')) {
+        gtag('consent', 'update', {'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
+    } else {
+        gtag('consent', 'update', {'ad_storage': 'denied', 'ad_personalization': 'denied', 'ad_user_data': 'denied'});
+    }
+}
+
 // run plugin with config object
 CookieConsent.run({
     disablePageInteraction: true,
+    revision: 1, // Update this whenever cookies need to change
     cookie: {
         name: 'fitz-cookies',
         expiresAfterDays: 365,
@@ -188,57 +203,11 @@ CookieConsent.run({
         }
     },
 
-    onConsent: function (cookie) {
-        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
-        // Find all soundcloud embeds on the page and block the src of their iframe if cookies aren't accepted
-        let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component'); 
-
-        if(soundcloudEmbeds && soundcloudEmbeds.length > 0) {
-
-            console.log(cookie.cookie);
-
-            soundcloudEmbeds.forEach(embed => {
-
-                let embedContainer = embed.querySelector('.container');
-                let iframeEl = embed.querySelector('iframe');
-                const iframeSrc = iframeEl.src;
-
-                if(cookie.cookie.categories.includes('analytics')) {
-                    // Remove any classes blocking interaction
-                    if(embed.classList.contains('cookies-rejected')) {
-                        embed.classList.remove('cookiesRejected');
-                        if(embedContainer.querySelector('.cookies-rejected__message')) {
-                            let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
-                            embedContainer.removeChild(cookiesMessage);
-                        }
-                        if(iframeEl.src == '') {
-                            iframeEl.src = iframeSrc;
-                        }
-                    }
-                } else {
-                    iframeEl.src = 'about:blank';
-                    embed.classList.add('cookies-rejected')
-                    let cookiesText = document.createElement('p');
-                    cookiesText.classList.add('cookies-rejected__message');
-                    cookiesText.innerHTML = 'You must accept analytics cookies to view this media';
-                    embedContainer.appendChild(cookiesText);
-                }
-
-            })
-        }
+    onConsent: function ({cookie}) {
+        updateConsent(cookie);
     },
 
-    onChange: function (cookie, changed_preferences) {
-        if (cookie.categories.includes('analytics')) {
-            gtag('consent', 'update', {'analytics_storage': 'granted'});
-        } else {
-            gtag('consent', 'update', {'analytics_storage': 'denied'});
-        }
-
-        if (cookie.categories.includes('marketing')) {
-            gtag('consent', 'update', {'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
-        } else {
-            gtag('consent', 'update', {'ad_storage': 'denied', 'ad_personalization': 'denied', 'ad_user_data': 'denied'});
-        }
+    onChange: function ({cookie}, changed_preferences) {
+        updateConsent(cookie);
     }
 });
