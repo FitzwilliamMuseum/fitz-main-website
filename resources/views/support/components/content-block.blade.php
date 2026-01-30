@@ -1,4 +1,7 @@
 @php
+    if(isset($component['content_block'][0]['anchor_heading']) && !empty($component['content_block'][0]['anchor_heading'])) {
+        $is_anchor = true;
+    }
     if (!empty($component['content_block'][0]['content'])) {
         $content_block_body = $component['content_block'][0]['content'];
     }
@@ -12,7 +15,11 @@
     }
 @endphp
 @if (!empty($content_block_body))
-    <div class="container mx-auto col-max-800 support-content-block-component support-cta">
+    <div class="container mx-auto col-max-800 support-content-block-component support-cta" 
+    @if(isset($is_anchor))
+        id="{{Str::slug($component['content_block'][0]['anchor_heading'], '-')}}"
+    @endif
+    >
         @markdown($content_block_body)
         @if (!empty($content_block_link))
             <a href="{{ $content_block_link }}" class="cta-btn">
