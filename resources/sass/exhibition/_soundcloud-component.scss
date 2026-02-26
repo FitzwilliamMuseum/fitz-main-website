@@ -5,22 +5,11 @@
         padding: 0;
     }
 }
-.cookies-rejected {
+
+.soundcloud-embed-component.cookies-rejected {
     .container {
         position: relative;
         z-index: 3;
-
-        p {
-            display: block;
-            left: 50%;
-            padding-inline: rem(20);
-            position: absolute;
-            text-align: center;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            z-index: 2;
-        }
 
         &:before {
             background: #ccc;
@@ -31,5 +20,17 @@
             width: 100%;
             z-index: 1;
         }
+    }
+
+    p {
+        display: block;
+        left: 50%;
+        padding-inline: rem(20);
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 2;
     }
 }
