@@ -12,8 +12,6 @@ function toggleEmbeds(cookie) {
 
     if (soundcloudEmbeds && soundcloudEmbeds.length > 0) {
 
-        console.log(cookie.cookie);
-
         soundcloudEmbeds.forEach(embed => {
 
             let embedContainer = embed.querySelector('.container');
