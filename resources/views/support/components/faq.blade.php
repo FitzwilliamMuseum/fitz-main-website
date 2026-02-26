@@ -44,8 +44,31 @@
                             <div id="{{ $contentID }}" class="collapse" aria-labelledby="{{ $headingID }}"
                                 data-parent="#accordionDirections">
                                 <div class="card-body">
+                                    @if(isset($accordion_item['image']) && !empty($accordion_item['image']))
+                                        @php
+                                            $accordion_image = getImageData($image_source, $accordion_item['image']);
+                                            $accordion_image_src = '';
+                                            $accordion_image_alt = '';
+
+
+                                            if(!empty($accordion_image)) {
+                                                $accordion_image_src = !empty($accordion_image['data']['full_url']) ? $accordion_image['data']['full_url'] : '';
+                                                $accordion_image_alt = !empty($accodion_image['data']['description']) ? $accodion_image['data']['description'] : '';
+                                            }
+                                        @endphp
+                                        <img class="mt-2 mb-4" src="{{ $accordion_image_src }}" alt="{{ $accordion_image_alt }}" load="lazy">
+                                    @endif
                                     @markdown($body)
+                                    @if(isset($accordion_item['embed']) && !empty($accordion_item['embed']))
+                                        <div class="soundcloud-embed-component">
+                                            <div class="container">
+                                                {!! $accordion_item['embed'] !!}
+                                                {!! SiteHelper::hideEmbed($accordion_item['embed']) !!}
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
+                            </div>
                             </div>
                         </div>
                         @php
