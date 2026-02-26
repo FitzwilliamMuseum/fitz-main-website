@@ -62,7 +62,6 @@
                                     @if(isset($accordion_item['embed']) && !empty($accordion_item['embed']))
                                         <div class="soundcloud-embed-component">
                                             <div class="container">
-                                                {!! $accordion_item['embed'] !!}
                                                 {!! SiteHelper::hideEmbed($accordion_item['embed']) !!}
                                             </div>
                                         </div>
