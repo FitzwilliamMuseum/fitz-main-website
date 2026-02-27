@@ -7,7 +7,45 @@ const cookie = '🍪';
 function gtag() {
     window.dataLayer.push(arguments);
 }
+function toggleEmbeds(cookie) {
+    let soundcloudEmbeds = document.querySelectorAll('.soundcloud-embed-component');
 
+    if (soundcloudEmbeds && soundcloudEmbeds.length > 0) {
+
+        soundcloudEmbeds.forEach(embed => {
+
+            let embedContainer = embed.querySelector('.container');
+            let iframeEl = embed.querySelector('iframe');
+            const iframeSrc = iframeEl.dataset.src;
+
+            if (cookie.cookie.categories.includes('analytics')) {
+                // Remove class
+                embed.classList.remove('cookies-rejected');
+
+                // Remove message
+                let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
+                embedContainer.removeChild(cookiesMessage);
+
+                // Update source
+                iframeEl.src = iframeSrc;
+
+            } else {
+                // Add class
+                embed.classList.add('cookies-rejected')
+
+                // Add message
+                let cookiesText = document.createElement('p');
+                cookiesText.classList.add('cookies-rejected__message');
+                cookiesText.innerHTML = 'You must accept analytics cookies to view this media';
+                embedContainer.appendChild(cookiesText);
+
+                // Update source
+                iframeEl.src = 'about:blank';
+            }
+
+        })
+    }
+}
 function updateConsent(cookie) {
     if (cookie.categories.includes('analytics')) {
         gtag('consent', 'update', {'analytics_storage': 'granted'});
@@ -205,9 +243,11 @@ CookieConsent.run({
 
     onConsent: function ({cookie}) {
         updateConsent(cookie);
+        toggleEmbeds(cookie);
     },
 
     onChange: function ({cookie}, changed_preferences) {
         updateConsent(cookie);
+        toggleEmbeds(cookie);
     }
 });
