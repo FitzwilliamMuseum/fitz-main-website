@@ -7,6 +7,22 @@
             $accordion_heading_encoded = preg_replace("/[^A-Za-z0-9 ]/", '', $accordion_heading);
             $accordion_heading_encoded = str_replace(' ', '-', $accordion_heading_encoded);
         }
+
+        function getImageData($image_source, $image_id)
+            {
+                $image_asset = [];
+                if (!empty($image_id)) {
+                    foreach ($image_source as $image_block) {
+                        if (!empty($image_block['directus_files_id'])) {
+                            $image_block['asset_id'] = $image_block['directus_files_id'];
+                        }
+                        if ($image_block['asset_id']['id'] == $image_id) {
+                            $image_asset = $image_block['asset_id'];
+                        }
+                    }
+                }
+                return $image_asset;
+            }
     @endphp
     <div class="container-fluid  faq">
         <div class="container col-max-800 faq-container">
