@@ -61,7 +61,14 @@
                                 data-parent="#accordionDirections">
                                 <div class="card-body">
                                     @if(isset($accordion_item['image']) && !empty($accordion_item['image']))
-                                        @php
+                                        @php                                        
+                                            $image_source = null;
+                                            if (!empty($page['image_blocks'])) {
+                                                $image_source = $page['image_blocks'];
+                                            } elseif (!empty($exhibition['exhibition_files'])) {
+                                                $image_source = $exhibition['exhibition_files'];
+                                            }
+
                                             $accordion_image = getImageData($image_source, $accordion_item['image']);
                                             $accordion_image_src = '';
                                             $accordion_image_alt = '';
