@@ -82,7 +82,9 @@
                                             }
                                         @endphp
                                     @endif
+                                    
                                     @markdown($body)
+
                                     @if(isset($accordion_item['embed']) && !empty($accordion_item['embed']))
                                         <div class="soundcloud-embed-component">
                                             <div class="container">
@@ -91,7 +93,6 @@
                                         </div>
                                     @endif
                                 </div>
-                            </div>
                             </div>
                         </div>
                         @php
