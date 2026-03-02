@@ -70,9 +70,10 @@
                                             if(!empty($accordion_image)) {
                                                 $accordion_image_src = !empty($accordion_image['data']['full_url']) ? $accordion_image['data']['full_url'] : '';
                                                 $accordion_image_alt = !empty($accodion_image['data']['description']) ? $accodion_image['data']['description'] : '';
+                                                
+                                                echo "<img class='mt-2 mb-4' src='$accordion_image_src' alt='$accordion_image_alt' load='lazy'>";
                                             }
                                         @endphp
-                                        <img class="mt-2 mb-4" src="{{ $accordion_image_src }}" alt="{{ $accordion_image_alt }}" load="lazy">
                                     @endif
                                     @markdown($body)
                                     @if(isset($accordion_item['embed']) && !empty($accordion_item['embed']))
