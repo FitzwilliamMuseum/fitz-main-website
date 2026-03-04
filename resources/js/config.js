@@ -18,7 +18,7 @@ function toggleEmbeds(cookie) {
             let iframeEl = embed.querySelector('iframe');
             const iframeSrc = iframeEl.dataset.src;
 
-            if (cookie.cookie.categories.includes('analytics')) {
+            if (cookie.categories.includes('analytics')) {
                 // Remove class
                 embed.classList.remove('cookies-rejected');
 
