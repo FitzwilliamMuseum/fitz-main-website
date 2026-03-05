@@ -24,7 +24,10 @@ function toggleEmbeds(cookie) {
 
                 // Remove message
                 let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
-                embedContainer.removeChild(cookiesMessage);
+                if (cookiesMessage) {
+                    embedContainer.removeChild(cookiesMessage);
+                }
+
 
                 // Update source
                 iframeEl.src = iframeSrc;
