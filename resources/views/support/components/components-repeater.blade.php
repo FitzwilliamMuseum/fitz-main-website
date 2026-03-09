@@ -76,6 +76,8 @@
                 @include('exhibitions.components.soundcloud-embed')
             @elseif(!empty($component['listing_section']))
                 @include('visit.components.events-listing')
+            @elseif(!empty($component['soundcloud_embed']))
+                @include('exhibitions.components.soundcloud-embed')
             @endif
         @endif
     @endforeach

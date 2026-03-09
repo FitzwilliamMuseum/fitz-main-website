@@ -18,13 +18,16 @@ function toggleEmbeds(cookie) {
             let iframeEl = embed.querySelector('iframe');
             const iframeSrc = iframeEl.dataset.src;
 
-            if (cookie.cookie.categories.includes('analytics')) {
+            if (cookie.categories.includes('analytics')) {
                 // Remove class
                 embed.classList.remove('cookies-rejected');
 
                 // Remove message
                 let cookiesMessage = embedContainer.querySelector('.cookies-rejected__message');
-                embedContainer.removeChild(cookiesMessage);
+                if (cookiesMessage) {
+                    embedContainer.removeChild(cookiesMessage);
+                }
+
 
                 // Update source
                 iframeEl.src = iframeSrc;
