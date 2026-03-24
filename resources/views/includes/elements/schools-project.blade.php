@@ -7,14 +7,7 @@
                         <span class="text-white">Schools at the Fitz</span>
                     </h2>
                     <p class="text-white mt-3">
-                        During the pandemic we have been hard at work, designing, creating and
-                        building new resources for schools to use.
-                    </p>
-                    <p class="text-white">
-                        Try our new activities - discover amazing artworks, browse for ideas,
-                        watch films about our collection, or book a session with us for your school.
-                        All of these are now on a new website that we have made, have a look, tell us
-                        what you think.
+                        Visit our dedicated schools website to find out more about booking a session for your school, teacher CPD and to access resources to use at home or in your classroom.
                     </p>
                     <a class="text-center btn btn-outline-light" href="http://schools.fitzmuseum.cam.ac.uk">
                         What will you discover today? Let's find out!
@@ -23,7 +16,7 @@
             </div>
             <div class="col-md-4">
                 <img
-                    src="https://content.fitz.ms/fitz-website/assets/young people in Egyptian gallery.jpg?key=directus-medium-crop"
+                    src="https://content.fitz.ms/fitz-website/assets/250930-Fitzwilliam-4-L1040123-learn-with-us.jpg?key=directus-medium-crop"
                     class="card-img-top" width="369" height="369" alt="">
             </div>
         </div>
