@@ -8,9 +8,24 @@ function gtag() {
     window.dataLayer.push(arguments);
 }
 
+function updateConsent(cookie) {
+    if (cookie.categories.includes('analytics')) {
+        gtag('consent', 'update', {'analytics_storage': 'granted'});
+    } else {
+        gtag('consent', 'update', {'analytics_storage': 'denied'});
+    }
+
+    if (cookie.categories.includes('marketing')) {
+        gtag('consent', 'update', {'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
+    } else {
+        gtag('consent', 'update', {'ad_storage': 'denied', 'ad_personalization': 'denied', 'ad_user_data': 'denied'});
+    }
+}
+
 // run plugin with config object
 CookieConsent.run({
     disablePageInteraction: true,
+    revision: 1, // Update this whenever cookies need to change
     cookie: {
         name: 'fitz-cookies',
         expiresAfterDays: 365,
@@ -188,21 +203,11 @@ CookieConsent.run({
         }
     },
 
-    onConsent: function (cookie) {
-        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
+    onConsent: function ({cookie}) {
+        updateConsent(cookie);
     },
 
-    onChange: function (cookie, changed_preferences) {
-        if (cookie.categories.includes('analytics')) {
-            gtag('consent', 'update', {'analytics_storage': 'granted'});
-        } else {
-            gtag('consent', 'update', {'analytics_storage': 'denied'});
-        }
-
-        if (cookie.categories.includes('marketing')) {
-            gtag('consent', 'update', {'ad_storage': 'granted', 'ad_personalization': 'granted', 'ad_user_data': 'granted'});
-        } else {
-            gtag('consent', 'update', {'ad_storage': 'denied', 'ad_personalization': 'denied', 'ad_user_data': 'denied'});
-        }
+    onChange: function ({cookie}, changed_preferences) {
+        updateConsent(cookie);
     }
 });
