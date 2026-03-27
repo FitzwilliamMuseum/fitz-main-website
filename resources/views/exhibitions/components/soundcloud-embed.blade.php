@@ -13,6 +13,11 @@
     @endif
     >
         <div class="container mx-auto col-max-800">
+
+            @if(!empty($component['soundcloud_embed'][0]['soundcloud_heading']))
+                <h2 class="soundcloud-title">{{ $component['soundcloud_embed'][0]['soundcloud_heading'] }}</h2>
+            @endif
+
             {!! SiteHelper::hideEmbed($embed_code) !!}
         </div>
     </div>
