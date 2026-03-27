@@ -8,9 +8,9 @@
                         <p>{{ $page }}</p>
                     </div>
                 </div>
-            </div>
+            </div>  
             <div class="mx-auto mb-3 bg-white">
-                {{ Html::form()->open(['url' => url('https://data.fitzmuseum.cam.ac.uk/search/results'),'method' => 'GET', 'class' => 'bg-white acknowledgement-collection-form']) }}
+                {{ Html::form()->method('POST')->action('https://data.fitzmuseum.cam.ac.uk/search/results')->class('bg-white acknowledgement-collection-form')->open() }}
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="collection-query">Search our objects and artworks</label>
@@ -87,7 +87,7 @@
                 {!! Html::form()->close() !!}
             </div>
 
-                {{ Html::form()->open(['url' => url('objects-and-artworks/highlights/search/results'),'method' => 'GET', 'class' => 'acknowledgement-highlights-form']) }}
+                {{ Html::form()->method('GET')->action('/objects-and-artworks/highlights/search/results')->class('acknowledgement-highlights-form')->open() }}
                 <div class="row">
                         <label for="highlights-query">Search our highlights</label>
                         <div class="col-lg-12 mb-3 form-field">
