@@ -40,29 +40,30 @@ View [deployment information](https://github.com/FitzwilliamMuseum/fitz-web-docs
 ```bash
 git clone git@github.com:FitzwilliamMuseum/fitz-main-website.git
 cd fitz-main-website
-composer install
-php artisan key:generate
+ddev start
+ddev composer install
+ddev php artisan key:generate
 cp .env.example .env
-npm install 
+ddev npm install 
 ```
 On some ubuntu machines, the npm install script fails at the npm run copy command. 
 To fix this run the commands separately:
 
 ```bash
-npm run copy-uv-html # "cp -R node_modules/universalviewer/dist/uv.html ./public", Universal viewer copy
-npm run copy-uv-css # "cp -R node_modules/universalviewer/dist/uv.css ./public/",
-npm run copy-uv-assets # "cp -R node_modules/universalviewer/dist/umd/ ./public/umd/",
-npm run copy-icons # "cp -R node_modules/super-tiny-icons/images/svg/ ./public/images/svg/",
-npm run copy-cookie-css # cp -R node_modules/vanilla-cookieconsent/dist/*.css ./resources/css/",
-npm run copy-cookie-js # "cp -R node_modules/vanilla-cookieconsent/dist/*.js ./resources/js/",
-npm run copy-pannellum-css # "cp -R node_modules/pannellum/build/*.css ./public/css/",
-npm run copy-pannellum-js # "cp -R node_modules/pannellum/build/*.js ./public/js/",
+ddev npm run copy-uv-html # "cp -R node_modules/universalviewer/dist/uv.html ./public", Universal viewer copy
+ddev npm run copy-uv-css # "cp -R node_modules/universalviewer/dist/uv.css ./public/",
+ddev npm run copy-uv-assets # "cp -R node_modules/universalviewer/dist/umd/ ./public/umd/",
+ddev npm run copy-icons # "cp -R node_modules/super-tiny-icons/images/svg/ ./public/images/svg/",
+ddev npm run copy-cookie-css # cp -R node_modules/vanilla-cookieconsent/dist/*.css ./resources/css/",
+ddev npm run copy-cookie-js # "cp -R node_modules/vanilla-cookieconsent/dist/*.js ./resources/js/",
+ddev npm run copy-pannellum-css # "cp -R node_modules/pannellum/build/*.css ./public/css/",
+ddev npm run copy-pannellum-js # "cp -R node_modules/pannellum/build/*.js ./public/js/",
 ```
 
 If the versions have been updated you may need to run the below which will compress all the css and js files:
 
 ```bash
-npm run production 
+ddev npm run production 
 ```
 ## Solr setup
 
@@ -162,7 +163,7 @@ Set the `SOLR_ENABLED` flag to `true` or `false` based on whether Solr is suppor
 If you are running locally you can preview the website via: 
 
 ```bash
-php artisan serve
+ddev launch
 ```
 
 ## Tests
@@ -172,7 +173,7 @@ PHP unit tests are found in the tests folder, [documentation included](tests/REA
 Run all tests for controllers, models, routes, components, service classes etc:
 
 ```bash
-php artisan test 
+ddev php artisan test 
 ```
 
 ### I feel the need for speed
@@ -180,8 +181,8 @@ php artisan test
 To cache icons and routes:
 
 ```bash
-php artisan icons:cache
-php artisan route:cache
+ddev php artisan icons:cache
+ddev php artisan route:cache
 ```
 
 ## License
