@@ -1,6 +1,6 @@
 @include('includes.structure.name-spaces')
-<head>
 
+    <head>
         @include('includes.structure.meta')
         <x-feed-links/>
 
@@ -9,13 +9,15 @@
         @mapstyles
 
         @include('includes.structure.manifest')
-    @include('includes.scripts.gtagconsent')
+        @include('includes.scripts.gtagconsent')
         @include('googletagmanager::head')
     </head>
+
     <body class="doc-body c_darkmode">
         @include('googletagmanager::body')
         @include('includes.structure.accessibility')
         @include('includes.structure.nav')
+        
         <main id="site-content">
                 @php
                     $anchor_menu = array();
@@ -33,12 +35,17 @@
                         if($component && !empty($component['heading'])) {
                             $heading = $component['heading'];
                         }
-                        if(!empty($heading) && !empty($component['include_in_anchor_links']) && $component['include_in_anchor_links'] === true) {
-                            // label, anchor_id
-                            array_push($anchor_menu, array(
-                                'label' => $heading,
-                                'anchor_id' => Str::slug($heading, '-')
-                            ));
+                        if(!empty($component) && empty($heading) && !empty('anchor_heading')) {
+                            $heading = $component['anchor_heading'];
+                        }
+                        if(!empty($heading) && !empty($component['include_in_anchor_links'])) {
+                            if(($component['include_in_anchor_links'] === true) || $component['include_in_anchor_links'] == 'yes') {
+                                // label, anchor_id
+                                array_push($anchor_menu, array(
+                                    'label' => $heading,
+                                    'anchor_id' => Str::slug($heading, '-')
+                                ));
+                            }
                         }
                     }
                 @endphp

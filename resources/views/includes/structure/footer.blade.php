@@ -106,7 +106,7 @@
                                 accessibility</a>
                         </li>
                         <li>
-                            <a href="#" data-cc="c-settings">Cookie preferences</a>
+                            <button type="button" data-cc="show-preferencesModal">Cookie preferences</>
                         </li>
                         <li>
                             <a href="{{ route('landing-section', ['about-us', 'terms-of-use-of-our-website'])}}"
