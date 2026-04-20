@@ -83,8 +83,7 @@
                                 of Cambridge Museums</a>
                         </li>
                         <li>
-                            <a href="https://www.fitzmuseum.cam.ac.uk/about-us/equity-diversity-and-inclusion">Equity,
-                                diversity and inclusion</a>
+                            <a href="https://www.fitzmuseum.cam.ac.uk/about-us/equity-belonging-and-representation">Equity, Belonging and Representation</a>
                         </li>
                         <li>
                             <a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
