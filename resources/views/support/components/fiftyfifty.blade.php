@@ -1,5 +1,10 @@
     {{-- fiftyfifty --}}
     @php
+
+        if(isset($card_content['anchor_heading'])) {
+            $is_anchor = $card_content['anchor_heading'];
+        }
+
         $fiftyfifty_content = isset($fiftyfifty_content) ? $fiftyfifty_content : $component['50_50_content'];
 
         // Add a contingency for the different handles for this field on different page templates that use this component
@@ -39,6 +44,9 @@
                         <div class="col-md-4 mb-3 container-home-card container-support-card"
                             @if(!empty($card_content['card_link']))
                                 data-component="card"
+                            @endif
+                            @if(isset($is_anchor) && $is_anchor)
+                                 id="{{Str::slug($card_content['anchor_heading'], '-')}}"
                             @endif
                         >
                             <div class="card {{ !empty($card_content['card_link']) ? 'card-fitz' : '' }} h-100">
