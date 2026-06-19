@@ -24,7 +24,7 @@
                 $image_source = $exhibition['exhibition_files'];
             }
 
-            function getImageData($image_source, $image_id)
+            function getGalleryImageData($image_source, $image_id)
             {
                 $image_asset = [];
                 if (!empty($image_id)) {
@@ -64,7 +64,7 @@
                             <li class="splide__slide">
                                 @php
                                     if(!empty($image['image_id'])) {
-                                        $current_image = getImageData($image_source, $image['image_id']);
+                                        $current_image = getGalleryImageData($image_source, $image['image_id']);
                                     } else {
                                         $current_image = $image;
                                     }
