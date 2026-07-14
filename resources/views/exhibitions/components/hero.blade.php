@@ -28,6 +28,9 @@
             @endif
             @if($exhibition['type'] == 'exhibition')
                 <div class="hero-footer">
+                    @if(!empty($exhibition['exhibition_banner_text']))
+                        <p>{{ $exhibition['exhibition_banner_text'] }}</p>
+                    @endif
                     <div class="hero-buttons">
                         <a class="button--block button--pink" href="/support-us/become-a-friend">
                             Become a Friend
@@ -40,9 +43,6 @@
                             </a>
                         @endif
                     </div>
-                    @if(!empty($exhibition['exhibition_banner_text']))
-                        <p style="margin-top:20px;">{{ $exhibition['exhibition_banner_text'] }}</p>
-                    @endif
                 </div>
             @endif
         </div>
