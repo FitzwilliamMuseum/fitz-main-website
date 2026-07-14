@@ -35,11 +35,14 @@
                         </a>
                         @if(!empty($exhibition['exhibition_url']))
                             <a href="{{ $exhibition['exhibition_url'] }}" class="button--block button--border">
-                                Book tickets
+                                Book now
                                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#000'])
                             </a>
                         @endif
                     </div>
+                    @if(!empty($exhibition['exhibition_banner_text']))
+                        <p style="margin-top:20px;">{{ $exhibition['exhibition_banner_text'] }}</p>
+                    @endif
                 </div>
             @endif
         </div>
