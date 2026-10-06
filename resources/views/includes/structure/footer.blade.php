@@ -86,7 +86,7 @@
                             <a href="https://www.fitzmuseum.cam.ac.uk/about-us/equity-belonging-and-representation">Equity, Belonging and Representation</a>
                         </li>
                         <li>
-                            <a href="https://www.registrarysoffice.admin.cam.ac.uk/governance-and-strategy/anti-slavery-and-anti-trafficking"
+                            <a href="https://www.governanceandcompliance.admin.cam.ac.uk/policies-and-guidance/anti-slavery-and-anti-trafficking?ucam-ref=global-footer"
                                 aria-label="Modern Slavery Act statement of compliance">Modern Slavery Act
                                 statement</a>
                         </li>
