@@ -185,6 +185,12 @@ Route::group(['domain' => 'https://tickets.museums.cam.ac.uk'], function() {
 });
 
 /*
+* Stories
+*/
+Route::get('stories', 'storiesController@index')->name('stories');
+Route::get('stories/{slug}', 'storiesController@story')->name('stories.story');
+
+/*
 * Search routing
 */
 Route::get('search', 'searchController@index')->name('search.index');

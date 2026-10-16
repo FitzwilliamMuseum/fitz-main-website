@@ -682,3 +682,16 @@ Breadcrumbs::for('search.results', function (BreadcrumbTrail $trail): void
     $trail->push('Search',route('search.index'));
     $trail->push('Results',route('search.results'));
 });
+
+
+Breadcrumbs::for('stories', function (BreadcrumbTrail $trail): void
+{
+    $trail->parent('home');
+    $trail->push('Stories', route('stories'));
+});
+
+Breadcrumbs::for('stories.story', function (BreadcrumbTrail $trail, string $slug): void
+{
+    $trail->parent('stories');
+    $trail->push('Story', route('stories.story', [$slug]));
+});
