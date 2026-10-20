@@ -6,9 +6,11 @@
 @section('keywords', 'news,stories,museum,cambridge')
 @section('content')
     <div class="row">
-        @foreach($news['data'] as $news)
-            
+        <p>Something</p>
+        @foreach($stories as $story)
+            <div class="story">
+                <a href="/stories/{{ $story['slug'] }}">{{ $story['title'] }}</a>
+            </div>
         @endforeach
     </div>
-    {{ $paginator->appends(request()->except('page'))->links() }}
 @endsection

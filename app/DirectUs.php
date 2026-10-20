@@ -34,13 +34,13 @@ class DirectUs
         $url = env('DIRECTUS_URL') . $this->_endpoint . $this->buildQuery();
         $key = md5($url);
         $expiresAt = now()->addMinutes(30);
-        if (Cache::has($key)) {
-            $data = Cache::get($key);
-        } else {
+        // if (Cache::has($key)) {
+        //     $data = Cache::get($key);
+        // } else {
             $response = Http::get($url);
             $data = $response->json();
-            Cache::put($key, $data, $expiresAt);
-        }
+        //     Cache::put($key, $data, $expiresAt);
+        // }
         return $data;
     }
 }

@@ -18,9 +18,11 @@ class Stories extends Model
      * @var string
      */
     protected static string $fields = '*,hero_image.*,'
-        . 'sections.*,'
-        . 'sections.components.*,'
-        . 'sections.components.*.*,';
+        . 'sections.story_sections_id.*,'
+        . 'sections.story_sections_id.*.*,'
+        . 'sections.story_sections_id.components.story_components_id.*,'
+        . 'sections.story_sections_id.components.story_components_id.image.*,'
+        . 'sections.story_sections_id.components.story_components_id.gallery_images.files_id.*';
 
     /**
      * @param int $limit
