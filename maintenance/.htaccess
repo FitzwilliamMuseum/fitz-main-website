@@ -1,0 +1,3 @@
+RedirectMatch 503 ^/(?!index\.html)
+ErrorDocument 503 /index.html
+Header always set Retry-After "1800"
