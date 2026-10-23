@@ -28,6 +28,9 @@
             @endif
             @if($exhibition['type'] == 'exhibition')
                 <div class="hero-footer">
+                    @if(!empty($exhibition['exhibition_banner_text']))
+                        <p>{{ $exhibition['exhibition_banner_text'] }}</p>
+                    @endif
                     <div class="hero-buttons">
                         <a class="button--block button--pink" href="/support-us/become-a-friend">
                             Become a Friend
@@ -35,7 +38,7 @@
                         </a>
                         @if(!empty($exhibition['exhibition_url']))
                             <a href="{{ $exhibition['exhibition_url'] }}" class="button--block button--border">
-                                Book tickets
+                                Book now
                                 @svg('fas-chevron-right', ['width' => '16px', 'height' => '16px', 'color' => '#000'])
                             </a>
                         @endif

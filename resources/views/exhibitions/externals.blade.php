@@ -24,7 +24,7 @@
     @endif
     @if(!empty(['biography']))
         <div class="bg-white p-3">
-            @markdown($profile['biography'])
+            @markdown($profile['biography'] ?? '')
         </div>
     @endif
 @endsection

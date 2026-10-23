@@ -37,7 +37,7 @@
                     $press = $pagesController::injectPages('about-us', 'press-room');
                     $jobs = $pagesController::injectPages('about-us', 'work-with-us');
                     $research = $pagesController::injectPages('research', 'discover-our-research');
-                    $equity = $pagesController::injectPages('about-us', 'equity-diversity-and-inclusion');
+                    $equity = $pagesController::injectPages('about-us', 'equity-belonging-and-representation');
                     $sustain = $pagesController::injectPages('about-us', 'sustainability');
                 @endphp
                 @include('includes.structure.cards', $data = $governance)

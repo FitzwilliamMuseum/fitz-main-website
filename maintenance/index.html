@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitzwilliam Museum- maintenance page</title>
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+        }
+
+        main {
+            font-family: 'Arial', sans-serif;
+            margin: 8em auto;
+            max-width: 800px;
+            padding: 20px;
+            font-size: 1.25em;
+            line-height: 1.4;
+        }
+
+        h1,
+        h2 {
+            max-width: 100%;
+        }
+
+        p {
+            max-width: 65%;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .logo {
+            border-bottom: 1px solid #ddd;
+            padding-block-end: 1.5rem;
+            margin-block-end: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="logo">
+        <img src="data:image/png;base64,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" alt="" width="147" height="132">
+    </div>
+
+    <h1>The Fitzwilliam Museum website is offline for maintenance.</h1>
+
+    <p>Our website is currently offline whilst we make the necessary updates in response to an ongoing global technical issue. We’re working to resolve this as quickly as possible.</p>
+
+    <p>In the meantime, you can still book exhibitions and events tickets, and become a Friend or join the FitzList through our ticketing website.</p>
+
+    <ul>
+        <li><a href="https://tickets.museums.cam.ac.uk/overview/10468">Book a ticket for ‘A Call to Art: William Morris and the Pre-Raphaelites’</a></li>
+        <li><a href="https://tickets.museums.cam.ac.uk/">Explore our events</li>
+        <li><a href="https://linktr.ee/FitzMuseum">Become a Friend</a></li>
+        <li><a href="https://tickets.museums.cam.ac.uk/m/15/14">Join the FitzList</a></li>
+    </ul>
+
+</main>
+</body>
+
+</html>
