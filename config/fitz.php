@@ -3,6 +3,7 @@
     return [
 
         'collections' => [
+            'enabled' => env('COLLECTION_ENABLED', true),
             'url' => env('COLLECTION_URL', ''),
         ],
 

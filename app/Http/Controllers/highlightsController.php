@@ -27,13 +27,16 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class highlightsController extends Controller
 {
-
     /**
      * @param Request $request
      * @return View
      */
-    public function index(Request $request): View
+    public function index(Request $request): View|Response
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $paginator = Highlights::list($request);
         return view('highlights.index', compact('paginator'));
     }
@@ -45,6 +48,10 @@ class highlightsController extends Controller
      */
     public function details(string $slug): Response|View
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $pharos = Highlights::find($slug);
         if (empty($pharos['data'])) {
             return response()->view('errors.404', [], 404);
@@ -67,8 +74,12 @@ class highlightsController extends Controller
      * @return View
      * @throws InvalidArgumentException
      */
-    public function associate(string $section, string $slug): View
+    public function associate(string $section, string $slug): View|Response
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $pharos = HighlightPages::list($slug, $section);
         $records = FindMoreLikeThis::find($slug, '"pharos-pages"');
         $highlights = FindMoreLikeThis::find($slug, 'highlights');
@@ -82,13 +93,17 @@ class highlightsController extends Controller
     /**
      * @return View
      */
-    public function landing(): View
+    public function landing(): View|Response
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $periods = Highlights::getPeriods();
         $periodsGrouped = $this->group_by("period_assigned", $periods['data']);
         $contexts = HighlightPages::getContexts();
         $contextsGrouped = $this->group_by("section", $contexts['data']);
-        
+
         $page = Stubs::getHighlightPage(9);
 
         return view('highlights.landing', [
@@ -125,8 +140,12 @@ class highlightsController extends Controller
      * @throws ValidationException
      * @throws InvalidArgumentException
      */
-    public function results(Request $request): View
+    public function results(Request $request): View|Response
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $this->validate($request, [
             'query' => 'required|max:200|min:3',
         ]);
@@ -166,8 +185,12 @@ class highlightsController extends Controller
     /**
      * @return View
      */
-    public function audioguide(): View
+    public function audioguide(): View|Response
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $stops = AudioGuide::list();
         return view('highlights.audioguide', compact('stops'));
     }
@@ -222,6 +245,10 @@ class highlightsController extends Controller
      */
     public function period(): View|Response
     {
+        if (config('fitz.collections.enabled') !== true) {
+            return response()->view('highlights.unavailable', [], 503);
+        }
+
         $pharos = Highlights::getPeriods();
         if(empty($pharos['data'])){
             return response()->view('errors.404', [], 404);
