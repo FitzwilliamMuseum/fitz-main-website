@@ -1,7 +1,8 @@
 # Framework for the Fitzwilliam Museum website
 
 [![Deployment Status Badge](https://studio24.deployhq.com/fitz-main-website/1c428a2d-8b1a-4768-85ea-00dda33a1831/status_badge.svg)](https://deployhq.com) 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6304361.svg)](https://doi.org/10.5281/zenodo.6304361)[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0002--0246--2335-green.svg)](http://orcid.org/0000-0002-0246-2335)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6304361.svg)](https://doi.org/10.5281/zenodo.6304361) 
+[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0002--0246--2335-green.svg)](http://orcid.org/0000-0002-0246-2335)
 
 This repository contains the code base for a Laravel based front end for the latest version of @fitzwilliammuseum website.
 
@@ -45,7 +46,6 @@ To update your local repo to use the new default branch:
 ```
 git fetch origin
 git branch -u origin/main main
-git remote set-head origin -a
 ```
 
 ## Installation
@@ -206,4 +206,5 @@ GPL V3
 
 ## Contributors
 
-Daniel Pett @portableant
+- Daniel Pett @portableant
+- [Studio 24](https://www.studio24.net/)
