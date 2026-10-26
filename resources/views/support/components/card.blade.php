@@ -5,7 +5,7 @@
                 <img class="card-img-top-support" src="{{ $image_asset_url }}" alt="{{ $image_asset_alt ?? '' }}"
                     width="{{ $image_asset_width ?? 416 }}" height="{{ $image_asset_height ?? 416 }}" loading="lazy">
             @else
-                <img src="{{ $missing_image_url ?? env('MISSING_IMAGE_URL') }}" alt=""
+                <img src="{{ $missing_image_url ?? config('fitz.assets.missing_image_url') }}" alt=""
                     class="card-img-top-support" width="{{ $image_asset_width ?? 416 }}"
                     height="{{ $image_asset_height ?? 416 }}" loading="lazy">
             @endif

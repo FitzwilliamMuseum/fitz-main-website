@@ -41,7 +41,7 @@ class SolrImporter
             }
             $title = Arr::get($record, $mapping['title']);
             $recordValue = Arr::get($record, $mapping['content']);
-            $content = strip_tags(is_string($recordValue) ? $recordValue : ''); 
+            $content = strip_tags(is_string($recordValue) ? $recordValue : '');
             if (array_key_exists('image', $mapping)) {
                 $image = $mapping['image'];
             } else {
@@ -138,10 +138,10 @@ class SolrImporter
     public function shopify(): Result|ResultInterface
     {
         $shopify = $this->getShopifyObjects();
-        $url = env('SHOPIFY_FME_URL');
-        $shop = env('SHOPIFY_FME_LIVE_URL');
-        $protocol = env('SHOPIFY_FME_PROTOCOL');
-        $catalogue = env('SHOPIFY_FME_CATALOGUE');
+        $url = config('fitz.shopify.url');
+        $shop = config('fitz.shopify.live_url');
+        $protocol = config('fitz.shopify.protocol');
+        $catalogue = config('fitz.shopify.catalogue');
         $configSolr = Config::get('solarium');
         $client = new Client(new Curl(), new EventDispatcher(), $configSolr);
         $update = $client->createUpdate();
@@ -178,9 +178,9 @@ class SolrImporter
     public function getShopifyObjects(): array
     {
         $config = array(
-            'ShopUrl' => env('SHOPIFY_FME_URL'),
-            'ApiKey' => env('SHOPIFY_FME_API_KEY'),
-            'Password' => env('SHOPIFY_FME_API_PASSWORD'),
+            'ShopUrl' => config('fitz.shopify.url'),
+            'ApiKey' => config('fitz.shopify.api_key'),
+            'Password' => config('fitz.shopify.password'),
         );
         $shop = new ShopifySDK;
         $shop->config($config);

@@ -28,7 +28,7 @@
                 @if(array_key_exists('periods', $record['_source']['lifecycle']['creation'][0]))
                     @foreach($record['_source']['lifecycle']['creation'][0]['periods'] as $date)
                         <li>
-                            <a href="{{ env('COLLECTION_URL') }}/id/terminology/{{ $date['admin']['id']}}">{{ ucfirst($date['summary_title']) }}</a>
+                            <a href="{{ config('fitz.collections.url') }}/id/terminology/{{ $date['admin']['id']}}">{{ ucfirst($date['summary_title']) }}</a>
                         </li>
                     @endforeach
                 @endif
@@ -75,7 +75,7 @@
                             @endif
 
                             @if(array_key_exists('admin', $maker))
-                                <a href="{{ env('COLLECTION_URL') }}/id/agent/{{ $maker['admin']['id']}}">{{ preg_replace('@\x{FFFD}@u', 'î',($maker['summary_title']))}}</a>
+                                <a href="{{ config('fitz.collections.url') }}/id/agent/{{ $maker['admin']['id']}}">{{ preg_replace('@\x{FFFD}@u', 'î',($maker['summary_title']))}}</a>
                         </li>
                         @else
                         {{ preg_replace('@\x{FFFD}@u', 'î',($maker['summary_title']))}}

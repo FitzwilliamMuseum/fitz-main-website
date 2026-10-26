@@ -8,7 +8,7 @@
         @endif
         @if(array_key_exists('priref', $id))
             <li>
-                <a href="{{ env('COLLECTION_URL') }}/id/object/{{ $id['priref']}}">
+                <a href="{{ config('fitz.collections.url') }}/id/object/{{ $id['priref']}}">
                     Full record
                 </a>
             </li>

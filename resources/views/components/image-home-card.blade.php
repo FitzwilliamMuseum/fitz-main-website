@@ -16,7 +16,7 @@ if ('custom' === $route) {
             </h3>
         </div>
         <div class="l-frame l-frame--3-2 card__image">
-            <img src="{{ isset($image) ? $image['data']['thumbnails'][13]['url'] : env('MISSING_IMAGE_URL') }}"
+            <img src="{{ isset($image) ? $image['data']['thumbnails'][13]['url'] : config('fitz.assets.missing_image_url') }}"
                 alt="" loading="lazy" />
         </div>
     </div>

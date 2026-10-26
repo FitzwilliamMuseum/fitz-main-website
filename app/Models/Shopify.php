@@ -55,9 +55,9 @@ class Shopify extends Model
     public static function getShopifyCollection(string $ids): array
     {
         $config = array(
-            'ShopUrl' => env('SHOPIFY_FME_URL'),
-            'ApiKey' => env('SHOPIFY_FME_API_KEY'),
-            'Password' => env('SHOPIFY_FME_API_PASSWORD'),
+            'ShopUrl' => config('fitz.shopify.url'),
+            'ApiKey' => config('fitz.shopify.api_key'),
+            'Password' => config('fitz.shopify.password'),
         );
         $shop = new ShopifySDK;
         $shop->config($config);

@@ -25,7 +25,7 @@
         <img src="{{ $image_asset['data']['url'] }}" alt="{{ !empty($image_asset['data']['description']) ? $block_image['data']['description'] : '' }}" load="lazy">
     @else
         <img
-            src="{{ env('MISSING_IMAGE_URL') }}"
+            src="{{ config('fitz.assets.missing_image_url') }}"
             load="lazy" alt="">
     @endif
     @if (!empty($caption))

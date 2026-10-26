@@ -1,6 +1,6 @@
 @extends('layouts.error')
 @section('title', 'An error has been recorded')
-@section('hero_image',env('CONTENT_STORE') . "large_PD_43_1986_201701_adn21_dc1.jpeg")
+@section('hero_image',config('fitz.assets.location') . "large_PD_43_1986_201701_adn21_dc1.jpeg")
 @section('hero_image_title', 'Vesuvius in eruption')
 @section('content')
 

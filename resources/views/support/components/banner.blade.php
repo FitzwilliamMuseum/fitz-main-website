@@ -48,7 +48,7 @@
                 @if (!empty($banner_image))
                     <img src="{{ $banner_image['data']['url'] }}"
                     alt=""> @else <img
-                        src="{{ env('MISSING_IMAGE_URL') }}" alt="">
+                        src="{{ config('fitz.assets.missing_image_url') }}" alt="">
                 @endif
             </div>
         </div>

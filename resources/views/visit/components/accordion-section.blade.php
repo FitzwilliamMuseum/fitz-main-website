@@ -3,7 +3,7 @@
 
     $heading = !empty($component['heading']) ? $component['heading'] : '';
     $image_id = !empty($component['image_id']) ? $component['image_id'] : '';
-    $image = env('MISSING_IMAGE_URL');
+    $image = config('fitz.assets.missing_image_url');
     $tagline = !empty($component['tagline']) ? $component['tagline'] : '';
     $accordion = !empty($component['accordion']) ? $component['accordion'] : '';
     $isAnchor = !empty($component['include_in_anchor_links']) ? $component['include_in_anchor_links'] : '';

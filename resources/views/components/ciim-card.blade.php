@@ -9,13 +9,13 @@
         <div class="l-box l-box--no-border card__text">
             @if (array_key_exists('title', $record['_source']))
                 <h3 class="card__heading">
-                    <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
+                    <a class="card__link" href="{{ config('fitz.collections.url') }}/id/object/{{ $pris[0] }}">
                         {{ ucfirst($record['_source']['title'][0]['value']) }}
                     </a>
                 </h3>
             @else
                 <h3 class="card__heading">
-                    <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
+                    <a class="card__link" href="{{ config('fitz.collections.url') }}/id/object/{{ $pris[0] }}">
                         {{ ucfirst($record['_source']['summary_title']) }}
                     </a>
                 </h3>
@@ -26,7 +26,7 @@
         </div>
         <div class="l-frame l-frame--3-2 card__image">
             @if (array_key_exists('multimedia', $record['_source']))
-                <img src="{{ env('COLLECTION_URL') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
+                <img src="{{ config('fitz.collections.url') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
                     alt="An image of {{ ucfirst($record['_source']['summary_title']) }}" loading="lazy" />
             @else
                 <img src="https://content.fitz.ms/fitz-website/assets/no-image-available.png?key=directus-medium-crop"

@@ -74,7 +74,7 @@ class TessituraApi
      */
     public static function getEndpoint(): string
     {
-        return env('TESSITURA_API_URL');
+        return config('fitz.tessitura.endpoint');
     }
 
     /**
@@ -86,12 +86,12 @@ class TessituraApi
             implode(
                 ':',
                 array(
-                    env('TESSITURA_USER_ID'),
-                    env('TESSITURA_MACHINE_NAME'),
-                    env('TESSITURA_LOCATION')
+                    config('fitz.tessitura.user_id'),
+                    config('fitz.tessitura.machine_name'),
+                    config('fitz.tessitura.location')
                 )
             ),
-            env('TESSITURA_PASSWORD')
+            config('fitz.tessitura.password')
         );
     }
 
@@ -278,11 +278,11 @@ class TessituraApi
                     'Accept' => 'text/json'
                 ]
             ]);
-            
+
             $data = json_decode($response->getBody()->getContents());
             Cache::put($key, $data, $expiresAt);
         }
-        
+
         return $data;
     }
 

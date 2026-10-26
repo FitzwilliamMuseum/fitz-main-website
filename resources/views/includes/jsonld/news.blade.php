@@ -31,7 +31,7 @@
     if(isset($news['field_image'])) {
         $jsonLd['image'] = $news['field_image']['data']['full_url'];
     } else {
-        $jsonLd['image'] = env('MISSING_IMAGE_URL');
+        $jsonLd['image'] = config('fitz.assets.missing_image_url');
     }
 @endphp
 {!! json_encode($jsonLd, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}

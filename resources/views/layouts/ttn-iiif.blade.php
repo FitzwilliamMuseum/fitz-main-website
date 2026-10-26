@@ -20,7 +20,7 @@
     <main id="site-content">
         @yield('content')
     </main>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GOOGLE_ANALYTICS') }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ config('fitz.google.analytics_id') }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -28,7 +28,7 @@
         dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', '{{ env('APP_GOOGLE_ANALYTICS') }}');
+    gtag('config', '{{ config('fitz.google.analytics_id') }}');
 </script>
 </body>
 

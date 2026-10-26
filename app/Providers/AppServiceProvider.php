@@ -47,9 +47,9 @@ class AppServiceProvider extends ServiceProvider
 
         BladeHelper::directive('imgkit', function ($image) {
             $imageKit = new ImageKit(
-                env('IMGKIT_PUBLIC_KEY'),
-                env('IMGKIT_PRIVATE_KEY'),
-                env('IMGKIT_ENDPOINT')
+                config('fitz.imgkit.public_key'),
+                config('fitz.imgkit.private_key'),
+                config('fitz.imgkit.endpoint')
             );
             return $imageKit->url(array(
                 "path" => $image,

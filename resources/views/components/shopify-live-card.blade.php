@@ -3,7 +3,7 @@
         <div class="l-box l-box--no-border card__text">
             <h3 class="card__heading">
                 <a class="card__link"
-                    href="{{ env('SHOPIFY_FME_PROTOCOL') }}{{ env('SHOPIFY_FME_LIVE_URL') }}{{ env('SHOPIFY_FME_CATALOGUE') }}{{ $result['handle'] }}">
+                    href="{{ config('fitz.shopify.protocol') }}{{ config('fitz.shopify.live_url') }}{{ config('fitz.shopify.catalogue') }}{{ $result['handle'] }}">
                     {{ $result['title'] }}
                 </a>
             </h3>

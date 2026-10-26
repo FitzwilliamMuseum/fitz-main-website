@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title','Research projects')
-@section('hero_image',env('CONTENT_STORE') . 'baroque.jpg')
+@section('hero_image',config('fitz.assets.location') . 'baroque.jpg')
 @section('hero_image_title', 'A Baroque feasting table by Ivan Day in feast and fast')
 @section('description', 'An overview of Fitzwilliam Museum research projects')
 @section('content')

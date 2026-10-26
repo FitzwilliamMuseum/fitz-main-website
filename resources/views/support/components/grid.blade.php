@@ -29,7 +29,7 @@
             @foreach ($component['50_50_content'] as $card_content)
                 @php
                     $image_asset = null;
-                    $image_asset_url = env('MISSING_IMAGE_URL');
+                    $image_asset_url = config('fitz.assets.missing_image_url');
                     $image_asset_alt = '';
                     $image_asset_width = 416;
                     $image_asset_height = 416;
@@ -50,7 +50,7 @@
                     'image_asset_alt' => $image_asset_alt,
                     'image_asset_width' => $image_asset_width,
                     'image_asset_height' => $image_asset_height,
-                    'missing_image_url' => env('MISSING_IMAGE_URL'),
+                    'missing_image_url' => config('fitz.assets.missing_image_url'),
                     'heading' => $card_content['heading'] ?? null,
                     'card_link' => $card_content['card_link'] ?? null,
                     'sub_heading' => $card_content['sub_heading'] ?? null,
@@ -97,13 +97,13 @@
                         $parent_page = $card['parent_page'];
                         $card_link = '/' . $parent_page['slug'] . '/' . $card['slug'];
                     }
-                    /* 
-                    If not, and the card has a slug, 
+                    /*
+                    If not, and the card has a slug,
                     use the page_root in the URL and append the slug to the end of that
-                    
+
                     For example, if we're on the visit us page it would be:
                     https://[environment_here]/plan-your-visit/[slug of page here]
-                    */ 
+                    */
                     elseif(isset($card['slug'])) {
                         $card_link = $page_root . '/' . $card['slug'];
                     }

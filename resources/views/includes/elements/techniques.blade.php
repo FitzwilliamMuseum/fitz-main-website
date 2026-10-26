@@ -4,7 +4,7 @@
         @foreach($record['_source']['techniques'] as $techniques)
             @if(array_key_exists('reference', $techniques))
                 <li>
-                    <a href="{{ env('COLLECTION_URL') }}/id/terminology/{{ $techniques['reference']['admin']['id']}}">{{ ucfirst($techniques['reference']['summary_title'])}}</a>
+                    <a href="{{ config('fitz.collections.url') }}/id/terminology/{{ $techniques['reference']['admin']['id']}}">{{ ucfirst($techniques['reference']['summary_title'])}}</a>
                     @if(array_key_exists('description', $techniques))
                         : {{ ucfirst($techniques['description'][0]['value'])}}@endif
                 </li>

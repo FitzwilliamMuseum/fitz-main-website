@@ -3,7 +3,7 @@
     <ul>
         @foreach($record['_source']['institutions'] as $institution)
             <li>
-                <a href="{{ URL::to(env('COLLECTION_URL')) }}/id/agent/{{ $institution['admin']['id']}}">
+                <a href="{{ URL::to(config('fitz.collections.url')) }}/id/agent/{{ $institution['admin']['id']}}">
                     {{ $institution['summary_title'] }}
                 </a>
             </li>

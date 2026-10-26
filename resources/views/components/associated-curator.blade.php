@@ -18,7 +18,7 @@
                 <img src="{{ $curator['associated_people_id']['profile_image']['data']['thumbnails'][13]['url'] }}"
                     alt="" loading="lazy" />
             @else
-                <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
+                <img src="{{ config('fitz.assets.missing_image_url') }}" alt="" loading="lazy" />
             @endisset
         </div>
     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title','Affiliated researchers')
-@section('hero_image',env('CONTENT_STORE') . 'baroque.jpg')
+@section('hero_image',config('fitz.assets.location') . 'baroque.jpg')
 @section('hero_image_title', 'The baroque feasting table by Ivan Day in Feast and Fast')
 @section('description', 'The Fitzwilliam Museum affiliate researchers')
 @section('keywords', 'research,active,museum, archaeology, classics,history,art')

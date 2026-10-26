@@ -2,7 +2,7 @@
 @section('title','Our events')
 @section('description', 'A search for talks,exhibitions and events from the Fitzwilliam Museum')
 @section('keywords','events,fitzwilliam')
-@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
+@section('hero_image', config('fitz.assets.location') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('content')
     <div class="container">

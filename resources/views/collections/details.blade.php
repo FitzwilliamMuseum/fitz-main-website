@@ -36,11 +36,11 @@ $records = $collectionsController::getObjects($collection['object_id_numbers']);
                 <div class="l-box l-box--no-border card__text">
                     <h3 class="card__heading">
                         @if(array_key_exists('title',$record['_source']))
-                            <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
+                            <a class="card__link" href="{{ config('fitz.collections.url') }}/id/object/{{ $pris[0] }}">
                                 {{ ucfirst($record['_source']['title'][0]['value']) }}
                             </a>
                         @else
-                            <a class="card__link" href="{{ env('COLLECTION_URL') }}/id/object/{{ $pris[0] }}">
+                            <a class="card__link" href="{{ config('fitz.collections.url') }}/id/object/{{ $pris[0] }}">
                                 {{ ucfirst($record['_source']['summary_title']) }}
                             </a>
                         @endif
@@ -49,7 +49,7 @@ $records = $collectionsController::getObjects($collection['object_id_numbers']);
                 </div>
                 <div class="l-frame l-frame--3-2 card__image">
                     @if(array_key_exists('multimedia', $record['_source']))
-                        <img src="{{ env('COLLECTION_URL') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
+                        <img src="{{ config('fitz.collections.url') }}/imagestore/{{ $record['_source']['multimedia'][0]['processed']['preview']['location'] }}"
                              loading="lazy"
                              alt="" />
                     @else
@@ -85,7 +85,7 @@ $records = $collectionsController::getObjects($collection['object_id_numbers']);
 <div class="container">
     <h2>Associated staff</h2>
     <div class="row">
-      
+
         @foreach($collection['curators'] as $curator)
         @if(!is_null($curator['staff_profiles_id']))
             <x-image-card :altTag="$curator['staff_profiles_id']['profile_image_alt_text']"

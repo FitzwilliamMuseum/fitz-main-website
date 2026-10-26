@@ -37,9 +37,9 @@ class Elastic
     {
         return [
             [
-                'scheme' => env('ELASTIC_SCHEME'),
-                'host' => env('ELASTIC_API'),
-                'path' => env('ELASTIC_PATH'),
+                'scheme' => config('fitz.elastic.scheme'),
+                'host' => config('fitz.elastic.host'),
+                'path' => config('fitz.elastic.path'),
                 'port' => 80
             ]
         ];

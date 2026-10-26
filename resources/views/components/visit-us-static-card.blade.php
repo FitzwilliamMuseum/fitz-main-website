@@ -5,7 +5,7 @@
             </h3>
         </div>
         <div class="l-frame l-frame--3-2 card__image">
-            <img src="{{ isset($image) ? $image : env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
+            <img src="{{ isset($image) ? $image : config('fitz.assets.missing_image_url') }}" alt="" loading="lazy" />
         </div>
     </div>
 </div>

@@ -42,7 +42,7 @@
             @elseif(!empty($image))
                 <img src="{{ $image['data']['thumbnails'][13]['url'] }}" alt="" loading="lazy" />
             @else
-                <img src="{{ env('MISSING_IMAGE_URL') }}" alt="" loading="lazy" />
+                <img src="{{ config('fitz.assets.missing_image_url') }}" alt="" loading="lazy" />
             @endif
         </div>
     </div>

@@ -19,7 +19,7 @@ class DirectUsTest extends TestCase
         // Ensure environment variable is set for test
         Config::set('app.env', 'testing');
         // Use the value from the .env file if set, otherwise fallback to default
-        putenv('DIRECTUS_URL=' . env('DIRECTUS_URL', 'https://example.com/api/'));
+        putenv('DIRECTUS_URL=' . config('fitz.directus.api_endpoint'));
     }
 
     public function tearDown(): void

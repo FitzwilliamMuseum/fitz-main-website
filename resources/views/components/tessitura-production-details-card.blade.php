@@ -56,7 +56,7 @@
 
                 <span property="organizer" typeof="organization">
                     <meta property="name" content="The Fitzwilliam Museum">
-                    <meta property="url" content="{{ env('APP_URL') }}">
+                    <meta property="url" content="{{ config('app.url') }}">
                 </span>
             @endisset
 

@@ -1,7 +1,7 @@
 @if(array_key_exists('department', $record['_source']))
     <p>
         Associated department: <a
-            href="{{ env('COLLECTION_URL') }}/id/departments/{{ urlencode($record['_source']['department']['value'])}}">
+            href="{{ config('fitz.collections.url') }}/id/departments/{{ urlencode($record['_source']['department']['value'])}}">
             {{ $record['_source']['department']['value'] }}
         </a>
     </p>

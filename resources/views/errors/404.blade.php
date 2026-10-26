@@ -1,6 +1,6 @@
 @extends('layouts.error')
 @section('title', 'Page not found')
-@section('hero_image',env('CONTENT_STORE') . "large_PD_43_1986_201701_adn21_dc1.jpeg")
+@section('hero_image',config('fitz.assets.location') . "large_PD_43_1986_201701_adn21_dc1.jpeg")
 @section('hero_image_title', 'Vesuvius in eruption')
 @section('content')
     <div class="col-md-12 shadow-sm p-3 mx-auto mb-3 mt-3">

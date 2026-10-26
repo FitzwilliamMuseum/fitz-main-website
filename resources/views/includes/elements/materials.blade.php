@@ -5,7 +5,7 @@
             @foreach($material as $mat)
                 @if(array_key_exists('admin', $mat))
                     <li>
-                        <a href="{{ URL::to(env('COLLECTION_URL'))}}/id/terminology/{{ $mat['admin']['id']}}">{{ ucfirst($mat['summary_title'])}}</a>
+                        <a href="{{ URL::to(config('fitz.collections.url'))}}/id/terminology/{{ $mat['admin']['id']}}">{{ ucfirst($mat['summary_title'])}}</a>
                     </li>
                 @endif
             @endforeach

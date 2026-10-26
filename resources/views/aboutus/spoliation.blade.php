@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title','Spoliation claims')
-@section('hero_image', env('CONTENT_STORE') . 'img_20190105_153947.jpg')
+@section('hero_image', config('fitz.assets.location') . 'img_20190105_153947.jpg')
 @section('hero_image_title', "The inside of our Founder's entrance")
 @section('description', 'Spoliation claims made to the Museum')
 @section('keywords', 'spoliation,stories,museum,cambridge')

@@ -112,7 +112,7 @@
                                 aria-label="Website terms and conditions">Website terms of use</a>
                         </li>
                         <li>
-                            <a aria-label="Our Collections API" href="{{env('COLLECTION_URL')}}/api">Collections
+                            <a aria-label="Our Collections API" href="{{config('fitz.collections.url')}}/api">Collections
                                 API</a>
                         </li>
                         <li>

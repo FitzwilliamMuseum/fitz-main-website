@@ -4,7 +4,7 @@
         <ul>
             @foreach($record['_source']['content']['agents'] as $agent)
                 <li>
-                    <a href="{{ env('COLLECTION_URL') }}/id/agent/{{ $agent['admin']['id']}}">
+                    <a href="{{ config('fitz.collections.url') }}/id/agent/{{ $agent['admin']['id']}}">
                         {{ ucfirst($agent['summary_title'])}}
                     </a>
                 </li>
@@ -17,7 +17,7 @@
         <ul>
             @foreach($record['_source']['content']['subjects'] as $subject)
                 <li>
-                    <a href="{{ env('COLLECTION_URL') }}/id/terminology/{{ $subject['admin']['id']}}">
+                    <a href="{{ config('fitz.collections.url') }}/id/terminology/{{ $subject['admin']['id']}}">
                         {{ ucfirst($subject['summary_title'])}}
                     </a>
                 </li>
