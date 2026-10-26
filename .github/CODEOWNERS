@@ -1,0 +1,9 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# members of this team will be requested for
+# review when someone opens a pull request.
+# See https://github.com/orgs/FitzwilliamMuseum/teams/fitz-studio24/members
+*       @FitzwilliamMuseum/fitz-studio24
+
+# Permissions for updating this file
+/.github/CODEOWNERS @simonrjones @AlanJIsaacson
