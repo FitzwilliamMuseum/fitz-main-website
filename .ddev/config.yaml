@@ -117,7 +117,8 @@ ddev_version_constraint: '>=v1.24.8'
 
 # upload_dirs: "custom/upload/dir"
 #
-# upload_dirs:
+upload_dirs:
+    - ../node_modules
 #   - custom/upload/dir
 #   - ../private
 #
