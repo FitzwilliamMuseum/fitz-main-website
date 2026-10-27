@@ -134,7 +134,7 @@
                         @endphp
                         {!! html()->form('GET', route('search.results'))
                             ->id('main-search')
-                            ->attribute('data-item-expanded', 'true')
+                            ->attribute('data-item-expanded', 'false')
                             ->open() !!}
                             {!! html()->div()->class('main-search-wrapper')->open() !!}
                                 {!! html()->label('Search ' . html()->span('the Fitzwilliam'), 'query')->class('main-search-label') !!}
