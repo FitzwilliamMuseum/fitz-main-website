@@ -68,6 +68,6 @@ dP    dP    dP `88888P'     dP        dP   dP   d888888P 8888P Y8P  dP dP dP dP 
     'url' => URL::to('/'),
     'name' => 'The Fitzwilliam Museum',
     'description' => 'The Fitzwilliam Museum is the principal museum of the University of Cambridge',
-    '@context' => 'https://schema.org'
+    '@' . 'context' => 'https://schema.org'
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
