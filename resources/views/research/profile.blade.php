@@ -169,12 +169,12 @@
                                     </div>
                                 </div>
                             @endif
-                        @endisset
                     </div>
                 </div>
             </div>
         @endsection
     @endif
+@endif
 @if(!empty($profile['research_projects']))
     @section('research-projects')
         <div class="container-fluid bg-gdbo py-3">
@@ -258,5 +258,5 @@
                 @endforeach
             </div>
         </div>
-    @endsection
+    @
 @endif --}}
