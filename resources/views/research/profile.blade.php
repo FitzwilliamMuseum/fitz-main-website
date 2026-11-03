@@ -258,5 +258,5 @@
                 @endforeach
             </div>
         </div>
-    @
+    @endsection
 @endif --}}
