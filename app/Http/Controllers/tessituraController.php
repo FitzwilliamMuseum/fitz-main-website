@@ -39,7 +39,14 @@ class tessituraController extends Controller
     public function index(): View
     {
         $events = $this->getTessituraApi()->getEventTypes();
-        $productions = $this->getTessituraApi()->getPerformances();
+        
+        try {
+            $productions = $this->getTessituraApi()->getPerformances();
+        } catch (\Exception $e) {
+            // Catch potential TNEW API issues.
+            $productions = [];
+        }
+
         return view('tessitura.index', compact('events', 'productions'));
     }
 
